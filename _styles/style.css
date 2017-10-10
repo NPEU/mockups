@@ -3887,25 +3887,34 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e7692', end
 
 */
 .header .gallery-grid {
-  text-align: justify;
-  display: block;
-}
-
-.header .gallery-grid::after {
-  content: "";
-  width: 100%;
-  display: inline-block;
+  justify-content: space-between;
 }
 
 .header .gallery-grid__item {
-  display: inline-block;
+  flex-shrink: 1;
+  flex-grow: 0;
+}
+
+.header .gallery-grid__item {
+  max-width: 38rem;
+}
+
+/*
+.header .gallery-grid::after {
+    content: "";
+    width: 100%;
+    display: inline-block;
+}
+
+.header .gallery-grid__item {
+    display: inline-block;
 }
 
 .header .gallery-grid .gallery-grid__item--pushout {
-  flex-grow: 2;
-  padding: 0;
-}
-
+    flex-grow: 2;
+    padding: 0;
+ 
+}*/
 /*
 .header .gallery-grid__item {
     flex-grow: 1;

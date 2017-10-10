@@ -256,11 +256,21 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e7692', end
 */
 
 .header .gallery-grid {
-    //justify-content: space-between;
-    text-align: justify;
-    display: block;
+    justify-content: space-between;
+
 }
 
+.header .gallery-grid__item {
+    flex-shrink: 1;
+    flex-grow: 0;
+}
+
+//.header .header__logo {
+.header .gallery-grid__item {
+    max-width: 38rem;
+}
+
+/*
 .header .gallery-grid::after {
     content: "";
     width: 100%;
@@ -275,7 +285,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e7692', end
     flex-grow: 2;
     padding: 0;
  
-}
+}*/
 /*
 .header .gallery-grid__item {
     flex-grow: 1;
