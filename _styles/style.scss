@@ -107,6 +107,9 @@ $fallback-svg--link-bg-color-alt: #fff;
 $gallery-grid-spacing-unit: $fallback--base-rem-space-unit;
 @import "../bower_components/NPEU-display-patterns/scss/_gallery-grid.scss";
 
+$card--base-color: lighten($fallback--base-ui-color, 60%);
+@import "../bower_components/NPEU-display-patterns/scss/_card.scss";
+
 /* ---------------------------------------------------------------------------------------------- */
 
 /* --| SHAME |----------------------------------------------------------------------------------- */

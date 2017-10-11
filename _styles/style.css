@@ -3672,14 +3672,183 @@ main > :not(.full-width) {
   padding: 0 2.4rem 4.8rem 2.4rem;
 }
 
+/*
+    The `height: 100%;` in the `.card` class below allows the card to fill it's contrain (if inside,
+    say, a list-grid). However, it doesn't work in Safari OSX/iOS.
+    Applying a `card-wrap` class to a list item to make those items flex-containers seems to work
+    ok, but perhaps this wojld be better abstracted as a `fill-height` class or something?
+*/
+.card-wrap {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.card-wrap .card {
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+  width: 100%;
+}
+
+.card.card {
+  color: #333;
+  background: #e0f5ff;
+  padding: 2rem;
+  /*height: 100%;*/
+  outline: 1px solid #ade5ff;
+  /*max-width: 20em;*/
+  margin-top: 0 auto;
+  margin-bottom: 1.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  /*
+            If the 'pull' is > module body content height, it'll protrude below the container,
+            so hide it:
+        */
+  overflow: hidden;
+}
+
+.card .card__image {
+  position: relative;
+  text-align: center;
+}
+
+.card .card__image img {
+  width: 100%;
+}
+
+.card .card__image-link,
+.card .card__image-link:hover {
+  border-bottom: 0;
+}
+
+.card .card__image + .card__body {
+  position: relative;
+  margin-top: -15%;
+}
+
+.card .card__body {
+  background: #e0f5ff;
+}
+
+.card .card__offset-padding {
+  margin-top: -2rem;
+  margin-left: -2rem;
+  margin-right: -2rem;
+}
+
+.card .card__body-footer,
+.card .card__body-footer * {
+  margin-bottom: 0;
+}
+
+.card a.card__cta {
+  display: inline-block;
+  /* AK. IE9 needs this. */
+  overflow: visible;
+  /* S: Internet Explorer 11-, N: Show the overflow in Edge, Firefox, and IE. */
+  background-color: #e0f5ff;
+  color: #333;
+  font-size: inherit;
+  font-family: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+  min-height: 3rem;
+  line-height: 2.4rem;
+  margin: 0.3rem 0;
+  text-transform: none;
+  /* [N0], N: Remove the inheritance of text transform in Edge, Firefox, and IE. */
+  /* -webkit-appearance: button; // [N2] */
+  -webkit-appearance: none;
+  /* AK */
+  cursor: pointer;
+  /* [N3] */
+  border-color: #ade5ff;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 3px;
+  padding-top: 0.3rem;
+  padding-top: -moz-calc(0);
+  padding-top: calc(0.3rem - 1px);
+  padding-bottom: 0.3rem;
+  padding-bottom: -moz-calc(0);
+  padding-bottom: calc(0.3rem - 1px);
+  padding-left: 0.6rem;
+  padding-right: 0.6rem;
+  vertical-align: middle;
+  /* S: Remove the tapping delay from clickable elements */
+  -ms-touch-action: manipulation;
+  /* S: IE10 */
+  touch-action: manipulation;
+  /*
+	&:hover,
+    &:active,
+    &:focus {
+        // 9999px used for shadow to ensure it'll always be big enough. Better way? Performance? Not sure.
+        @if $bg-color--state-1 == light-shadow {
+            box-shadow: 0 0 0 9999px $ui-shadow-light inset, $button-focus-shadow;
+        } @else if $bg-color--state-1 == dark-shadow {
+            box-shadow: 0 0 0 9999px $ui-shadow-dark inset, $button-focus-shadow;
+        } @else {
+            background-color: $bg-color--state-1;
+        }
+        //background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%,rgba(0,0,0,0.2) 100%)  $bg-color;
+        //filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#33000000', endColorstr='#33000000',GradientType=0 );
+    }
+	*/
+}
+
+.card a.card__cta:hover, .card a.card__cta:active, .card a.card__cta:focus {
+  box-shadow: 0 0 0 2px #47c6ff inset;
+  outline: 0;
+}
+
+.card a.card__cta:hover, .card a.card__cta:active, .card a.card__cta:focus {
+  color: #333;
+}
+
 /* ---------------------------------------------------------------------------------------------- */
 /* --| SHAME |----------------------------------------------------------------------------------- */
 h1, h2, h3 {
   font-family: 'Nunito', sans-serif;
 }
 
-main {
-  padding: 2.4rem;
+.header {
+  margin-bottom: 2.4rem;
+}
+
+.sticky-footer-expand {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.sticky-footer-expand > * {
+  flex-grow: 1;
+}
+
+.sticky-footer-expand main,
+.sticky-footer-expand main + aside {
+  padding-top: 2.4rem;
+  padding-left: 2.4rem;
+  padding-right: 2.4rem;
+}
+
+.sticky-footer-expand main + aside {
+  min-width: 32rem;
+  width: calc((105.6rem - 100%) * 1000);
+  max-width: 100%;
+  margin-left: auto;
+  flex-grow: 0;
+}
+
+.sticky-footer-expand main + aside > div {
+  max-width: 64rem;
+  margin: 0 auto;
 }
 
 .feather {
@@ -3787,11 +3956,11 @@ main {
   box-shadow: 0 0 0 4px rgba(0, 119, 173, 0.2);
 }
 
-main {
-  padding-top: 4.8rem;
+/* Signpost */
+.sign.gallery-grid__item {
+  flex-basis: 50%;
 }
 
-/* Signpost */
 .sign a[href] {
   padding: 0.6rem;
   display: block;
@@ -3895,10 +4064,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e7692', end
   flex-grow: 0;
 }
 
-.header .gallery-grid__item {
-  max-width: 38rem;
-}
-
+/*.header .gallery-grid__item {
+    max-width: 38rem;
+}*/
 /*
 .header .gallery-grid::after {
     content: "";

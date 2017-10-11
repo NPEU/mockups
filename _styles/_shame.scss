@@ -2,15 +2,51 @@ $hover-effect-opacity: 0.2;
 $hover-effect-width: 4px;
 
 
+$enough-room-at: $fallback--base-rem-space-unit + $measure + $fallback--base-rem-space-unit + $fallback--base-rem-space-unit + ($measure / 2) + $fallback--base-rem-space-unit;
 
+@debug $enough-room-at;
 
 h1, h2, h3 {
 	font-family: 'Nunito', sans-serif;
 }
 
-main {
-    padding: $fallback--base-rem-space-unit;
+.header {
+    margin-bottom: $fallback--base-rem-space-unit;
 }
+
+
+.sticky-footer-expand {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.sticky-footer-expand > * {
+    flex-grow: 1;
+}
+
+
+.sticky-footer-expand main,
+.sticky-footer-expand main + aside {
+	padding-top: $fallback--base-rem-space-unit;
+    padding-left: $fallback--base-rem-space-unit;
+    padding-right: $fallback--base-rem-space-unit;
+}
+
+.sticky-footer-expand main + aside {
+    min-width: ($measure / 2);
+    width: calc((#{$enough-room-at} - 100%) * 1000);
+    max-width: 100%;
+    margin-left: auto;
+    flex-grow: 0;
+}
+
+
+.sticky-footer-expand main + aside > div {   
+    max-width: $measure;
+    margin: 0 auto;
+}
+
 
 
 .feather {
@@ -23,7 +59,6 @@ main {
     width: 1.25em;
     height: 1.25em;
 }
-
 
 /*
 .off-canvas .nav-bar__title-section {
@@ -133,15 +168,14 @@ main {
 	box-shadow: 0 0 0 $hover-effect-width rgba($fallback--base-ui-color, $hover-effect-opacity);
 }
 
-main {
-	padding-top: $fallback--base-rem-space-unit * 2;
-}
-
 
 
 .margin-boundary {}
 
 /* Signpost */
+.sign.gallery-grid__item {
+    flex-basis: 50%;
+}
 
 .sign a[href] {
 	padding: 0.6rem;
@@ -266,9 +300,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e7692', end
 }
 
 //.header .header__logo {
-.header .gallery-grid__item {
+/*.header .gallery-grid__item {
     max-width: 38rem;
-}
+}*/
 
 /*
 .header .gallery-grid::after {
