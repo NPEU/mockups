@@ -196,7 +196,7 @@ main {
 .sign a[href] {
 	padding: $fallback--base-rem-space-unit / 4;
 	display: block;
-	background: linear-gradient(to right, #3e7692 0%,#3e7692 25%,#7b9db2 25%,#7b9db2 50%,#c5c0d2 50%,#c5c0d2 75%,#6f6992 75%,#6f6992 100%);
+	background: linear-gradient(to right, #007DB1 0%,#007DB1 25%,#64AED3 25%,#64AED3 50%,#B6B1C7 50%,#B6B1C7 75%,#6F6992 75%,#6F6992 100%);
 
 	border: 0;
 
@@ -208,9 +208,7 @@ main {
 .sign a[href]:active::before,
 .sign a[href]:focus::before {
 	border: 0;
-	//box-shadow: 0 0 5px 0 #3E7692;
-
-	background: linear-gradient(to right, #3e7692 0%,#3e7692 25%,#7b9db2 25%,#7b9db2 50%,#c5c0d2 50%,#c5c0d2 75%,#6f6992 75%,#6f6992 100%);
+	background: inherit;
 	content: "";
 	display: block;
 	position: absolute;
@@ -224,7 +222,7 @@ main {
 
 .sign span {
 	padding: $fallback--base-rem-space-unit;
-	background: #EAE7ED;
+	background: lighten(#6F6992, 40%);
 
 	font-family: 'Nunito', sans-serif;
 	font-size: 1.625em;
