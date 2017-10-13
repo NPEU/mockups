@@ -3834,37 +3834,37 @@ main > :not(.full-width) {
 .c-panel.t-white {
   color: #333;
   background: white;
-  outline: 1px solid #d5d5d5;
+  outline: 1px solid #e6e6e6;
 }
 
 .c-panel.t-white--dark {
   color: #fff;
   background: #ffffff;
-  outline: 1px solid #d5d5d5;
+  outline: 1px solid #e6e6e6;
 }
 
 .c-panel.t-anode {
   color: #333;
   background: #f1dae4;
-  outline: 1px solid #d5d5d5;
+  outline: 1px solid #e3b6ca;
 }
 
 .c-panel.t-anode--dark {
   color: #fff;
   background: #933961;
-  outline: 1px solid #d5d5d5;
+  outline: 1px solid #6e2b49;
 }
 
 .c-panel.t-minidex {
   color: #333;
   background: #ade5ff;
-  outline: 1px solid #d5d5d5;
+  outline: 1px solid #7ad5ff;
 }
 
 .c-panel.t-minidex--dark {
   color: #fff;
   background: #0077AD;
-  outline: 1px solid #d5d5d5;
+  outline: 1px solid #00547a;
 }
 
 /* --| SHAME |----------------------------------------------------------------------------------- */

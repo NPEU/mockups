@@ -6,7 +6,8 @@ $panel--text-color       : #333 !default;
 $panel--background-color : #eee !default;
 
 // Note: border color gets darken by default later, but declarng here to allow specific override:
-$panel--border-color: darken($panel--background-color, 10%) !default;
+//$panel--border-color: darken($panel--background-color, 10%) !default;
+$panel--border-color: null !default;
 $panel--border-width: 1px !default;
 $panel--border-style: solid !default;
 
@@ -33,6 +34,10 @@ $panel--padding: 2rem !default;
 		$theme-class: unquote('.')#{$theme-namespace}#{$name};
 	}
 	@debug $theme-class;
+	
+	@if $border-color == null {
+		$border-color: darken($background-color, 10%);
+	}
 
 	// Problem here is that we only want to set a darker border colour if we haven't explicated
 	// set one. Default is passed to config, but theme override may be different and we need to know
