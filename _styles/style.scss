@@ -60,6 +60,20 @@ $measure: 64rem;
 //@import "bower_components/inuit-mixins/tools.mixins";
 //@import "bower_components/inuit-responsive-tools/tools.responsive.scss";
 
+@mixin bottom-space-fix () {
+
+	padding-bottom: 0 !important;
+	
+	&::after {
+		content: "";
+		display: block;
+		margin-bottom: $fallback--base-rem-space-unit;
+		height: 1px;
+		margin-top: -1px;
+	}
+
+}
+
 /* ---------------------------------------------------------------------------------------------- */
 /* --| BASE |------------------------------------------------------------------------------------ */
 
@@ -108,9 +122,22 @@ $gallery-grid-spacing-unit: $fallback--base-rem-space-unit;
 @import "../bower_components/NPEU-display-patterns/scss/_gallery-grid.scss";
 
 $card--base-color: lighten($fallback--base-ui-color, 60%);
-@import "../bower_components/NPEU-display-patterns/scss/_card.scss";
+@import "patterns/_card.scss";
+
+
+
+@import "patterns/_info-box.scss";
+
+
+$panel--padding: $fallback--base-rem-space-unit;
+@import "patterns/_panel.scss";
 
 /* ---------------------------------------------------------------------------------------------- */
+
+
+@import "_themes_config";
+@import "_themes";
+
 
 /* --| SHAME |----------------------------------------------------------------------------------- */
 

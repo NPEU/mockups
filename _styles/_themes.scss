@@ -1,0 +1,28 @@
+// This file acts as a bridge or converter between the theme values and the soeecifc patterns.
+// Note that all patterns that need to be themeable need to follow the same 'interface'.
+// See 'panel' pattern for initial example.
+@each $name, $theme in $themes {
+
+	// Set default text color:
+	$text-color: $fallback--base-text-color;
+	@if map-has-key($theme, text-color) {
+		$text-color: map-get($theme, text-color);
+	}
+	
+	@include panel-theme(
+		(
+			name			 : #{$name},
+			background-color : lighten(map-get($theme, primary-color), 50%),
+			text-color		 : $text-color
+		)...
+	);
+	
+	@include panel-theme(
+		(
+			name			 : #{$name}--dark,
+			background-color : map-get($theme, primary-color),
+			text-color		 : #fff
+		)...
+	);
+
+}

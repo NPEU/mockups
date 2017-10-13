@@ -1,10 +1,25 @@
 $hover-effect-opacity: 0.2;
-$hover-effect-width: 4px;
+$hover-effect-width: $fallback--base-rem-space-unit / 4;
 
 
 $enough-room-at: $fallback--base-rem-space-unit + $measure + $fallback--base-rem-space-unit + $fallback--base-rem-space-unit + ($measure / 2) + $fallback--base-rem-space-unit;
 
-@debug $enough-room-at;
+//@debug $enough-room-at;
+
+
+
+.tb-baseline {
+    background: transparent url(http://lab.gridlight-design.co.uk/fallback-v1/line-grid-12px.gif) repeat;
+}
+
+.tb-outlines h1, .tb-outlines h2, .tb-outlines h3, .tb-outlines h4, .tb-outlines h5, .tb-outlines h6,
+.tb-outlines p, .tb-outlines li,
+.tb-outlines figcaption {
+    background: rgba(0,0,0,0.05);
+    outline: 1px dashed rgba(0,0,0,0.2);
+}
+
+
 
 h1, h2, h3 {
 	font-family: 'Nunito', sans-serif;
@@ -111,7 +126,7 @@ main {
 	padding-right: $fallback--base-rem-space-unit;
 	padding-left: $fallback--base-rem-space-unit;
 	background: lighten($fallback--base-ui-color, 60%);
-	border-bottom: 3px solid $fallback--base-ui-color;
+	//border-bottom: 3px solid $fallback--base-ui-color;
 
 	position: relative;
 }
@@ -128,10 +143,10 @@ main {
     background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0ODguNiA5NCI+PGRlZnM+PHN0eWxlPkBpbXBvcnQgdXJsKCJodHRwczovL2ZvbnRzLmdvb2dsZWFwaXMuY29tL2Nzcz9mYW1pbHk9TnVuaXRvOjQwMCw2MDAsNzAwIik7PC9zdHlsZT48L2RlZnM+PHBhdGggZmlsbD0ibm9uZSIgZD0iTTI5OC42IDBsLTIyLjcgMzkuNE00NjEuNSAwaDI3LjEtMjcuMWwtMjIuOCAzOS40TTM1Mi45IDBMMzgwIDQ3aC4xTDM1Mi45IDBNMTkwIDBsMjcuMiA0N0wxOTAgME0yNy4xIDBsMjcuMiA0N0wyNy4yIDBNMTM1LjcgMEwxMTMgMzkuNE0xMDguNiA0NyIvPjxwYXRoIGZpbGw9IiMwMDdEQjEiIGQ9Ik0yNy4xIDBIMHY0N2g1NC4zIi8+PHBhdGggZmlsbD0iIzY0QUVEMyIgZD0iTTEwOC42IDQ3bDQuNC03LjZMMTM1LjcgMEgyNy4ybDI3LjEgNDdoNTQuMyIvPjxwYXRoIGZpbGw9IiNCNkIxQzciIGQ9Ik0xOTAgMGgtNTQuM0wxMTMgMzkuNGwtNC40IDcuNmgxMDguNiIvPjxwYXRoIGZpbGw9IiM2RjY5OTIiIGQ9Ik0yNzEuNSA0N2w0LjQtNy42TDI5OC42IDBIMTkwbDI3LjIgNDdoNTQuMyIvPjxwYXRoIGZpbGw9IiM2NEFFRDMiIGQ9Ik0zNTIuOSAwaC01NC4zbC0yMi43IDM5LjQtNC40IDcuNkgzODAiLz48cGF0aCBmaWxsPSIjNkY2OTkyIiBkPSJNNDM0LjMgNDdsNC40LTcuNkw0NjEuNSAwSDM1Mi45bDI3LjIgNDdoNTQuMiIvPjxwYXRoIGZpbGw9IiMwMDdEQjEiIGQ9Ik00NjEuNSAwbC0yMi44IDM5LjQtNC40IDcuNmg1NC4zVjAiLz48Zz48cGF0aCBmaWxsPSJub25lIiBkPSJNMjk4LjYgOTRsLTIyLjctMzkuNE00NjEuNSA5NGgyNy4xLTI3LjFsLTIyLjgtMzkuNE0zNTIuOSA5NGwyNy4yLTQ3LTI3LjIgNDdNMTkwIDk0bDI3LjItNDdMMTkwIDk0TTI3LjIgOTRsMjcuMS00Ny0yNy4xIDQ3TTEzNS43IDk0TDExMyA1NC42TTEwOC42IDQ3Ii8+PHBhdGggZmlsbD0iIzAwN0RCMSIgZD0iTTI3LjIgOTRIMFY0N2g1NC4zIi8+PHBhdGggZmlsbD0iIzY0QUVEMyIgZD0iTTEwOC42IDQ3bDQuNCA3LjZMMTM1LjcgOTRIMjcuMmwyNy4xLTQ3aDU0LjMiLz48cGF0aCBmaWxsPSIjQjZCMUM3IiBkPSJNMTkwIDk0aC01NC4zTDExMyA1NC42bC00LjQtNy42aDEwOC42Ii8+PHBhdGggZmlsbD0iIzZGNjk5MiIgZD0iTTI3MS41IDQ3bDQuNCA3LjZMMjk4LjYgOTRIMTkwbDI3LjItNDdoNTQuMyIvPjxwYXRoIGZpbGw9IiM2NEFFRDMiIGQ9Ik0zNTIuOSA5NGgtNTQuM2wtMjIuNy0zOS40LTQuNC03LjZoMTA4LjYiLz48cGF0aCBmaWxsPSIjNkY2OTkyIiBkPSJNNDM0LjMgNDdsNC40IDcuNkw0NjEuNSA5NEgzNTIuOWwyNy4yLTQ3aDU0LjIiLz48cGF0aCBmaWxsPSIjMDA3REIxIiBkPSJNNDYxLjUgOTRsLTIyLjgtMzkuNC00LjQtNy42aDU0LjN2NDciLz48L2c+PC9zdmc+);
     background-size: 150%;
     background-position-y: 25%;
-    bottom: -21px;
+    bottom: -$fallback--base-rem-space-unit;
     content: "";
     display: block;
-    height: 2rem;
+    height: $fallback--base-rem-space-unit;
     left: 0;
     position: absolute;
     width: 100%;
@@ -148,7 +163,7 @@ main {
 .randomise-cta[href] {
 	display: block;
 	//float: right;
-	padding: 16px;
+	padding: $fallback--base-rem-space-unit / 2;
    // margin-left: auto;
 	border: 0;
 	border-radius: 6px;
@@ -159,6 +174,7 @@ main {
 	font-size: 1.375em;
     
     text-align: center;
+	margin-bottom: 0;
 }
 
 .randomise-cta[href]:hover,
@@ -178,13 +194,14 @@ main {
 }
 
 .sign a[href] {
-	padding: 0.6rem;
+	padding: $fallback--base-rem-space-unit / 4;
 	display: block;
 	background: linear-gradient(to right, #3e7692 0%,#3e7692 25%,#7b9db2 25%,#7b9db2 50%,#c5c0d2 50%,#c5c0d2 75%,#6f6992 75%,#6f6992 100%);
 
 	border: 0;
 
 	position: relative;
+	margin-bottom: 0;
 }
 
 .sign a[href]:hover::before,
@@ -221,7 +238,7 @@ main {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-	height: 4em;
+	height: $fallback--base-rem-space-unit * 5;
 	margin-bottom: $fallback--base-rem-space-unit;
 }
 
@@ -276,7 +293,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e7692', end
 	margin-left: $fallback--base-rem-space-unit / 2;
 }
 
-.svg--fixed-height--parent-logo a[href]::after {
+.svg a[href]::after {
 	display: none;
 }
 
@@ -368,3 +385,17 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e7692', end
 
 }
 */
+
+.sponsor-logo {
+	text-align: center;
+	margin-bottom: $fallback--base-rem-space-unit;
+	width: 100%;
+}
+
+.space-bottom {
+	margin-bottom: $fallback--base-rem-space-unit;
+}
+
+.text--center {
+	text-align: center;
+}

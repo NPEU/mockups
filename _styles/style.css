@@ -3811,8 +3811,74 @@ main > :not(.full-width) {
   color: #333;
 }
 
+.c-panel {
+  padding: 2.4rem;
+  padding-bottom: 0 !important;
+}
+
+.c-panel::after {
+  content: "";
+  display: block;
+  margin-bottom: 2.4rem;
+  height: 1px;
+  margin-top: -1px;
+}
+
+.c-panel {
+  color: #333;
+  background: #eee;
+  outline: 1px solid #d5d5d5;
+}
+
 /* ---------------------------------------------------------------------------------------------- */
+.c-panel.t-white {
+  color: #333;
+  background: white;
+  outline: 1px solid #d5d5d5;
+}
+
+.c-panel.t-white--dark {
+  color: #fff;
+  background: #ffffff;
+  outline: 1px solid #d5d5d5;
+}
+
+.c-panel.t-anode {
+  color: #333;
+  background: #f1dae4;
+  outline: 1px solid #d5d5d5;
+}
+
+.c-panel.t-anode--dark {
+  color: #fff;
+  background: #933961;
+  outline: 1px solid #d5d5d5;
+}
+
+.c-panel.t-minidex {
+  color: #333;
+  background: #ade5ff;
+  outline: 1px solid #d5d5d5;
+}
+
+.c-panel.t-minidex--dark {
+  color: #fff;
+  background: #0077AD;
+  outline: 1px solid #d5d5d5;
+}
+
 /* --| SHAME |----------------------------------------------------------------------------------- */
+.tb-baseline {
+  background: transparent url(http://lab.gridlight-design.co.uk/fallback-v1/line-grid-12px.gif) repeat;
+}
+
+.tb-outlines h1, .tb-outlines h2, .tb-outlines h3, .tb-outlines h4, .tb-outlines h5, .tb-outlines h6,
+.tb-outlines p, .tb-outlines li,
+.tb-outlines figcaption {
+  background: rgba(0, 0, 0, 0.05);
+  outline: 1px dashed rgba(0, 0, 0, 0.2);
+}
+
 h1, h2, h3 {
   font-family: 'Nunito', sans-serif;
 }
@@ -3886,7 +3952,7 @@ main {
 .svg__link:hover,
 .svg__link:active,
 .svg__link:focus {
-  box-shadow: 0 0 0 4px #fff, 0 0 0 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 0 0.6rem #fff, 0 0 0 1.2rem rgba(0, 0, 0, 0.2);
 }
 
 .v-center {
@@ -3906,14 +3972,13 @@ main {
   padding-right: 2.4rem;
   padding-left: 2.4rem;
   background: #e0f5ff;
-  border-bottom: 3px solid #0077AD;
   position: relative;
 }
 
 .heaader--minidex .svg__link:hover,
 .heaader--minidex .svg__link:active,
 .heaader--minidex .svg__link:focus {
-  box-shadow: 0 0 0 4px #fff, 0 0 0 8px rgba(0, 119, 173, 0.2);
+  box-shadow: 0 0 0 0.6rem #fff, 0 0 0 1.2rem rgba(0, 119, 173, 0.2);
 }
 
 .heaader--minidex::after {
@@ -3921,10 +3986,10 @@ main {
   background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0ODguNiA5NCI+PGRlZnM+PHN0eWxlPkBpbXBvcnQgdXJsKCJodHRwczovL2ZvbnRzLmdvb2dsZWFwaXMuY29tL2Nzcz9mYW1pbHk9TnVuaXRvOjQwMCw2MDAsNzAwIik7PC9zdHlsZT48L2RlZnM+PHBhdGggZmlsbD0ibm9uZSIgZD0iTTI5OC42IDBsLTIyLjcgMzkuNE00NjEuNSAwaDI3LjEtMjcuMWwtMjIuOCAzOS40TTM1Mi45IDBMMzgwIDQ3aC4xTDM1Mi45IDBNMTkwIDBsMjcuMiA0N0wxOTAgME0yNy4xIDBsMjcuMiA0N0wyNy4yIDBNMTM1LjcgMEwxMTMgMzkuNE0xMDguNiA0NyIvPjxwYXRoIGZpbGw9IiMwMDdEQjEiIGQ9Ik0yNy4xIDBIMHY0N2g1NC4zIi8+PHBhdGggZmlsbD0iIzY0QUVEMyIgZD0iTTEwOC42IDQ3bDQuNC03LjZMMTM1LjcgMEgyNy4ybDI3LjEgNDdoNTQuMyIvPjxwYXRoIGZpbGw9IiNCNkIxQzciIGQ9Ik0xOTAgMGgtNTQuM0wxMTMgMzkuNGwtNC40IDcuNmgxMDguNiIvPjxwYXRoIGZpbGw9IiM2RjY5OTIiIGQ9Ik0yNzEuNSA0N2w0LjQtNy42TDI5OC42IDBIMTkwbDI3LjIgNDdoNTQuMyIvPjxwYXRoIGZpbGw9IiM2NEFFRDMiIGQ9Ik0zNTIuOSAwaC01NC4zbC0yMi43IDM5LjQtNC40IDcuNkgzODAiLz48cGF0aCBmaWxsPSIjNkY2OTkyIiBkPSJNNDM0LjMgNDdsNC40LTcuNkw0NjEuNSAwSDM1Mi45bDI3LjIgNDdoNTQuMiIvPjxwYXRoIGZpbGw9IiMwMDdEQjEiIGQ9Ik00NjEuNSAwbC0yMi44IDM5LjQtNC40IDcuNmg1NC4zVjAiLz48Zz48cGF0aCBmaWxsPSJub25lIiBkPSJNMjk4LjYgOTRsLTIyLjctMzkuNE00NjEuNSA5NGgyNy4xLTI3LjFsLTIyLjgtMzkuNE0zNTIuOSA5NGwyNy4yLTQ3LTI3LjIgNDdNMTkwIDk0bDI3LjItNDdMMTkwIDk0TTI3LjIgOTRsMjcuMS00Ny0yNy4xIDQ3TTEzNS43IDk0TDExMyA1NC42TTEwOC42IDQ3Ii8+PHBhdGggZmlsbD0iIzAwN0RCMSIgZD0iTTI3LjIgOTRIMFY0N2g1NC4zIi8+PHBhdGggZmlsbD0iIzY0QUVEMyIgZD0iTTEwOC42IDQ3bDQuNCA3LjZMMTM1LjcgOTRIMjcuMmwyNy4xLTQ3aDU0LjMiLz48cGF0aCBmaWxsPSIjQjZCMUM3IiBkPSJNMTkwIDk0aC01NC4zTDExMyA1NC42bC00LjQtNy42aDEwOC42Ii8+PHBhdGggZmlsbD0iIzZGNjk5MiIgZD0iTTI3MS41IDQ3bDQuNCA3LjZMMjk4LjYgOTRIMTkwbDI3LjItNDdoNTQuMyIvPjxwYXRoIGZpbGw9IiM2NEFFRDMiIGQ9Ik0zNTIuOSA5NGgtNTQuM2wtMjIuNy0zOS40LTQuNC03LjZoMTA4LjYiLz48cGF0aCBmaWxsPSIjNkY2OTkyIiBkPSJNNDM0LjMgNDdsNC40IDcuNkw0NjEuNSA5NEgzNTIuOWwyNy4yLTQ3aDU0LjIiLz48cGF0aCBmaWxsPSIjMDA3REIxIiBkPSJNNDYxLjUgOTRsLTIyLjgtMzkuNC00LjQtNy42aDU0LjN2NDciLz48L2c+PC9zdmc+);
   background-size: 150%;
   background-position-y: 25%;
-  bottom: -21px;
+  bottom: -2.4rem;
   content: "";
   display: block;
-  height: 2rem;
+  height: 2.4rem;
   left: 0;
   position: absolute;
   width: 100%;
@@ -3940,20 +4005,21 @@ main {
 /* Randomisation CTA */
 .randomise-cta[href] {
   display: block;
-  padding: 16px;
+  padding: 1.2rem;
   border: 0;
   border-radius: 6px;
   background-color: #0077AD;
   color: #fff;
   font-size: 1.375em;
   text-align: center;
+  margin-bottom: 0;
 }
 
 .randomise-cta[href]:hover,
 .randomise-cta[href]:active,
 .randomise-cta[href]:focus {
   border: 0;
-  box-shadow: 0 0 0 4px rgba(0, 119, 173, 0.2);
+  box-shadow: 0 0 0 0.6rem rgba(0, 119, 173, 0.2);
 }
 
 /* Signpost */
@@ -3967,6 +4033,7 @@ main {
   background: linear-gradient(to right, #3e7692 0%, #3e7692 25%, #7b9db2 25%, #7b9db2 50%, #c5c0d2 50%, #c5c0d2 75%, #6f6992 75%, #6f6992 100%);
   border: 0;
   position: relative;
+  margin-bottom: 0;
 }
 
 .sign a[href]:hover::before,
@@ -3977,10 +4044,10 @@ main {
   content: "";
   display: block;
   position: absolute;
-  top: -4px;
-  right: -4px;
-  bottom: -4px;
-  left: -4px;
+  top: -0.6rem;
+  right: -0.6rem;
+  bottom: -0.6rem;
+  left: -0.6rem;
   z-index: -1;
   opacity: 0.2;
 }
@@ -4000,7 +4067,7 @@ main {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  height: 4em;
+  height: 12rem;
   margin-bottom: 2.4rem;
 }
 
@@ -4030,7 +4097,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e7692', end
 .footer-logos .svg__link:hover,
 .footer-logos .svg__link:active,
 .footer-logos .svg__link:focus {
-  box-shadow: 0 0 0 8px #fff, 0 0 0 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 0 1.2rem #fff, 0 0 0 1.8rem rgba(0, 0, 0, 0.2);
 }
 
 .footer-logos--start {
@@ -4044,7 +4111,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e7692', end
   margin-left: 1.2rem;
 }
 
-.svg--fixed-height--parent-logo a[href]::after {
+.svg a[href]::after {
   display: none;
 }
 
@@ -4131,6 +4198,20 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e7692', end
 
 }
 */
+.sponsor-logo {
+  text-align: center;
+  margin-bottom: 2.4rem;
+  width: 100%;
+}
+
+.space-bottom {
+  margin-bottom: 2.4rem;
+}
+
+.text--center {
+  text-align: center;
+}
+
 /* ---------------------------------------------------------------------------------------------- */
 
 /*# sourceMappingURL=style.css.map */
