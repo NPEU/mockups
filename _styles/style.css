@@ -499,8 +499,8 @@ dt {
 }
 
 /*
-    Fieldsets and legends can be difficult to style so I'm keep their appearance basically the same
-    as the default - just a bit of theming.
+    Fieldsets and legends can be difficult to style so I'm keeping their appearance basically the 
+    same as the default - just a bit of theming.
     More info here: https://thatemil.com/blog/2015/01/03/reset-your-fieldset/
 */
 fieldset {
@@ -3417,6 +3417,53 @@ body {
   border-width: 0;
 }
 
+.svg--fixed-height--funder-logo {
+  height: 9.6rem;
+  max-height: 9.6rem;
+}
+
+.svg--fixed-height--funder-logo .svg__link,
+.svg--fixed-height--funder-logo .svg__image {
+  height: 7.2rem;
+  max-height: 7.2rem;
+}
+
+.svg--fixed-height--funder-logo .svg__link {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+/*
+        1. Allow pattern to contract.
+    */
+.svg--fixed-height--funder-logo .svg__link,
+.svg--fixed-height--funder-logo .svg__image {
+  max-width: 100%;
+  /* [1] */
+}
+
+/*
+        Allow the fallback image to scale properly.
+        1. IE6 - can be removed if unnecessary.
+    */
+.svg--fixed-height--funder-logo .svg__fallback-image {
+  max-width: 100%;
+  max-height: 7.2rem;
+  height: auto;
+}
+
+.svg--fixed-height--funder-logo .svg__link {
+  padding: 1.2rem;
+  border-width: 0;
+}
+
+.svg--fixed-height--funder-logo .svg__link:hover,
+.svg--fixed-height--funder-logo .svg__link:active,
+.svg--fixed-height--funder-logo .svg__link:focus {
+  border-width: 0;
+}
+
 /*------------------------------------------------------------------------------------------------*\*------------------------------------------------------------------------------------------------*/
 /*------------------------------------------------------------------------------------------------*    Import Fall-Back vars:
 
@@ -4198,7 +4245,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e7692', end
 
 }
 */
-.sponsor-logo {
+.funder-logo {
   text-align: center;
   margin-bottom: 2.4rem;
   width: 100%;
