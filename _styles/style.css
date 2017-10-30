@@ -4022,6 +4022,10 @@ main {
   position: relative;
 }
 
+.heaader--minidex .svg__link {
+  box-shadow: 0 0 0 0.6rem rgba(0, 119, 173, 0.2);
+}
+
 .heaader--minidex .svg__link:hover,
 .heaader--minidex .svg__link:active,
 .heaader--minidex .svg__link:focus {

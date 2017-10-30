@@ -131,6 +131,10 @@ main {
 	position: relative;
 }
 
+.heaader--minidex .svg__link {
+    box-shadow: 0 0 0 $hover-effect-width rgba(#0077AD,$hover-effect-opacity);
+}
+
 .heaader--minidex .svg__link:hover,
 .heaader--minidex .svg__link:active,
 .heaader--minidex .svg__link:focus {

@@ -1,10 +1,10 @@
 # Site settings
-title: "Fall-Back"
-email: "andy.kirk@gridlight-design.co.uk"
-description: "Accessible, Progressive Enhancement patterns."
-repository: "Fall-Back/Fall-Back.github.io"
+title: "NPEU Mockups"
+email: "andy.kirk@npeu.ox.ac.uk"
+description: "Testing things out"
+repository: "https://github.com/NPEU/mockups"
 baseurl: ""
-url: "http://fall-back.github.io/"
+url: "https://lab.npeu.ox.ac.uk/mockup/"
 port: 4001
 
 # Build settings
