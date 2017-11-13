@@ -5,7 +5,7 @@ $theme-namespace: t- !default;
 $panel--text-color       : #333 !default;
 $panel--background-color : #eee !default;
 
-// Note: border color gets darken by default later, but declarng here to allow specific override:
+// Note: border color gets darkened by default later, but declarng here to allow specific override:
 //$panel--border-color: darken($panel--background-color, 10%) !default;
 $panel--border-color: null !default;
 $panel--border-width: 1px !default;

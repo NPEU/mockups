@@ -11,6 +11,7 @@
         "Fall-Back-Sticky-Footer": "https://github.com/Fall-Back/Sticky-Footer.git",
         "Fall-Back-Cookie-Notice": "https://github.com/Fall-Back/Cookie-Notice.git",
         "Fall-Back-SVG":           "https://github.com/Fall-Back/SVG.git",
-        "NPEU-display-patterns":   "https://github.com/NPEU/display-patterns.git"
+        "NPEU-display-patterns":   "https://github.com/NPEU/display-patterns.git",
+        "NPEU-layout-patterns":    "https://github.com/NPEU/layout-patterns.git"
     }
 }
