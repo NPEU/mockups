@@ -1,3 +1,6 @@
+// Hmmm. THere's way too much in here already. Needs sorting.
+
+
 $hover-effect-opacity: 0.2;
 $hover-effect-width: $fallback--base-rem-space-unit / 4;
 
@@ -53,6 +56,7 @@ h1, h2, h3 {
     width: calc((#{$enough-room-at} - 100%) * 1000);
     max-width: 100%;
     margin-left: auto;
+    margin-bottom: 0;
     flex-grow: 0;
 }
 

@@ -120,7 +120,7 @@ $fallback-svg--link-bg-color-alt: #fff;
 @import "patterns/__all";
 
 $gallery-grid-spacing-unit: $fallback--base-rem-space-unit;
-@import "../bower_components/NPEU-display-patterns/scss/_gallery-grid.scss";
+@import "../bower_components/NPEU-layout-patterns/scss/_gallery-grid.scss";
 
 $card--base-color: lighten($fallback--base-ui-color, 60%);
 @import "patterns/_card.scss";
@@ -138,6 +138,16 @@ $panel--padding: $fallback--base-rem-space-unit;
 
 @import "_themes_config";
 @import "_themes";
+
+
+
+/* --| WIREFRAME--------------------------------------------------------------------------------- */
+// http://meyerweb.com/eric/thoughts/2017/11/27/generating-wireframe-boxes-with-css-and-html5
+// Just testing this out, may not keep.
+@import "_wireframe";
+
+
+/* ---------------------------------------------------------------------------------------------- */
 
 
 /* --| SHAME |----------------------------------------------------------------------------------- */

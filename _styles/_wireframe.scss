@@ -1,0 +1,75 @@
+html.wireframe {
+   /*--wf-box-bg: #F7F6F1BB;*/
+   --wf-box-bg: #F7F6F1;
+   --wf-wire: gray;
+}
+
+.wireframe [data-wf] {
+    outline: 2px solid var(--wf-wire);
+    position: relative;
+    z-index: 1;
+}
+
+.wireframe [data-wf]::before {
+    position: absolute;
+    z-index: 8675309;
+    opacity: 0.7;
+
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+   
+   background:
+        linear-gradient(to top right,
+            transparent calc(50% - 1px), var(--wf-wire) calc(50% - 1px),
+            var(--wf-wire) calc(50% + 1px), transparent calc(50% + 1px)),
+        linear-gradient(to bottom right,
+            transparent calc(50% - 1px), var(--wf-wire) calc(50% - 1px),
+            var(--wf-wire) calc(50% + 1px), transparent calc(50% + 1px)),
+        var(--wf-box-bg);
+        
+    /*
+   background:
+        radial-gradient(ellipse at center, 
+            rgba(255,255,255,1) 10%,rgba(255,255,255,0) 10%),
+        linear-gradient(to top right,
+            transparent calc(50% - 1px), var(--wf-wire) calc(50% - 1px),
+            var(--wf-wire) calc(50% + 1px), transparent calc(50% + 1px)),
+        linear-gradient(to bottom right,
+            transparent calc(50% - 1px), var(--wf-wire) calc(50% - 1px),
+            var(--wf-wire) calc(50% + 1px), transparent calc(50% + 1px)),
+        var(--wf-box-bg);
+
+    background-size: 9em 9em, auto, auto;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    */
+
+      
+    content: attr(data-wf);
+    font: bold 2em Georgia, serif;
+    color: var(--wf-wire);
+    
+    text-shadow:
+        0 0 0.5em var(--wf-box-bg),
+        0 0 0.5em var(--wf-box-bg),
+        0 0 0.5em var(--wf-box-bg),
+        0 0 0.5em var(--wf-box-bg),
+        0 0 0.5em var(--wf-box-bg);
+        
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/*
+.wireframe [data-wf]::after {
+    position: absolute;
+    top: calc(50% - 1.5em);
+    left: calc(50% - 1.5em);
+    content: "";
+    background: #fff;
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+}*/

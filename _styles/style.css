@@ -50,12 +50,12 @@
 
 |-------------------------------------------------------------------------------------------------*/
 /*
-	Apply a border and a paddind that offsets the border-width from one spacing unit so as not to
-	affect the vertical rhythm.
-	Note the Opera Mini doesn't support `calc` so we need to include normal padding for that
-	browser.
-	Also, since we're supporting FF 8+, we're including -moz-calc fro versions up to 16.
-	I may consider removing this as those browsers are dead, but I'm just being thorough for now.
+    Apply a border and a paddind that offsets the border-width from one spacing unit so as not to
+    affect the vertical rhythm.
+    Note the Opera Mini doesn't support `calc` so we need to include normal padding for that
+    browser.
+    Also, since we're supporting FF 8+, we're including -moz-calc fro versions up to 16.
+    I may consider removing this as those browsers are dead, but I'm just being thorough for now.
 */
 /*
     This button mixin isn't really meant for generated specific/themed _types_ of button - there
@@ -101,6 +101,23 @@
     ROOT STYLES
 
 |-------------------------------------------------------------------------------------------------*/
+/*
+    https://timkadlec.com/2012/10/ie10-snap-mode-and-responsive-design/
+    https://css-tricks.com/snippets/javascript/fix-ie-10-on-windows-phone-8-viewport/
+    
+    The following rule fixes a problem with IE10 on Windows 8 snap mode, but arrparently causes
+    problems on Windows Phone where the only fix seems to be a JS one.
+    
+    https://nostrongbeliefs.com/why-i-think-we-shouldnt-use-css-viewport-in-ie10-for-now/
+    
+    This reckons it's not worth it and as I can't seem to test the Windows Phone problem (emulator
+    on BrowserStack - not real device which is why I _think) I'm not seeing the problem) I think it
+    may be safest to keep this out for now.
+    - Hmmm affect 8.1 IE11 as well... not good.
+    UPDATE: using hack to only apply the viewport declaration to IE10-11 may work?
+    
+    https://timkadlec.com/2013/01/windows-phone-8-and-device-width/
+*/
 /*
     1. Change the default box-sizing (-moz prefix for FF8-28).
 
@@ -375,7 +392,7 @@ button {
   /* S: IE10 */
   touch-action: manipulation;
   /*
-	&:hover,
+    &:hover,
     &:active,
     &:focus {
         // 9999px used for shadow to ensure it'll always be big enough. Better way? Performance? Not sure.
@@ -389,7 +406,7 @@ button {
         //background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%,rgba(0,0,0,0.2) 100%)  $bg-color;
         //filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#33000000', endColorstr='#33000000',GradientType=0 );
     }
-	*/
+    */
 }
 
 button:hover, button:active, button:focus {
@@ -485,8 +502,8 @@ dfn {
 /*
     1. Either of these will make lists behave properly next to floated items.
        (https://paulbakaus.com/tutorials/css/block-formatting-contexts-and-lists)
-	   a. This causes problems with some decoration. E.g. if the last element in the list is a link,
-	       bottom borders get cropped, so using b instead.
+       a. This causes problems with some decoration. E.g. if the last element in the list is a link,
+           bottom borders get cropped, so using b instead.
 */
 dl {
   margin-bottom: 2.4rem;
@@ -499,12 +516,13 @@ dt {
 }
 
 /*
-    Fieldsets and legends can be difficult to style so I'm keeping their appearance basically the 
+    Fieldsets and legends can be difficult to style so I'm keeping their appearance basically the
     same as the default - just a bit of theming.
     More info here: https://thatemil.com/blog/2015/01/03/reset-your-fieldset/
 */
 fieldset {
   margin-bottom: 2.4rem;
+  min-width: 0;
   border-width: 1px;
   border-style: solid;
   border-color: #0077AD;
@@ -806,7 +824,7 @@ input:not([type="checkbox"]):not([type="radio"]):not([type="file"]) {
   /* S: IE10 */
   touch-action: manipulation;
   /*
-	&:hover,
+    &:hover,
     &:active,
     &:focus {
         // 9999px used for shadow to ensure it'll always be big enough. Better way? Performance? Not sure.
@@ -820,7 +838,7 @@ input:not([type="checkbox"]):not([type="radio"]):not([type="file"]) {
         //background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%,rgba(0,0,0,0.2) 100%)  $bg-color;
         //filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#33000000', endColorstr='#33000000',GradientType=0 );
     }
-	*/
+    */
 }
 
 [type="button"]:hover, [type="button"]:active, [type="button"]:focus,
@@ -1153,14 +1171,27 @@ object {
 /*
     1. Either of these will make lists behave properly next to floated items.
        (https://paulbakaus.com/tutorials/css/block-formatting-contexts-and-lists)
-	   a. This causes problems with some decoration. E.g. if the last element in the list is a link,
-	      bottom borders get cropped, so using b instead.
-       b. `flow-root` is the better option but support is low, so using table-cell as well.
+       a. This causes problems with some decoration. E.g. if the last element in the list is a link,
+          bottom borders get cropped, so using b instead.
+       b. `flow-root` is the better option but support is low, so using table and flex fallbacks
+          as well.
 */
 ol {
   margin-bottom: 2.4rem;
-  display: table-cell;
+  display: table;
   /* 1b */
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -moz-box-orient: vertical;
+  -moz-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
   display: flow-root;
   /* 1b */
 }
@@ -1255,7 +1286,7 @@ progress {
 /*
     1. Address odd `em`-unit font size rendering in all browsers. (N)
 
-	2. Correct the inheritance and scaling of font size in all browsers. (N)
+    2. Correct the inheritance and scaling of font size in all browsers. (N)
 
     3. Prevent the element increasing the line-height of the parent.
 */
@@ -1702,8 +1733,8 @@ th {
 /*
     1. Either of these will make lists behave properly next to floated items.
        (https://paulbakaus.com/tutorials/css/block-formatting-contexts-and-lists)
-	   a. This causes problems with some decoration. E.g. if the last element in the list is a link,
-	      bottom borders get cropped, so using b instead.
+       a. This causes problems with some decoration. E.g. if the last element in the list is a link,
+          bottom borders get cropped, so using b instead.
        b. `flow-root` is the better option but support is low, so using table-cell as well.
 */
 ul {
@@ -3162,6 +3193,10 @@ body {
 }
 
 /*
+    Set the default link styles based on the settings.
+    The mixin allows variants to be easily generated.
+*/
+/*
         1. Make the link fit the content.
         2. Provide positioning context for the pseudo element.
         3. Remove underline on some older browsers (Android 2.x mainly)
@@ -3832,7 +3867,7 @@ main > :not(.full-width) {
   /* S: IE10 */
   touch-action: manipulation;
   /*
-	&:hover,
+    &:hover,
     &:active,
     &:focus {
         // 9999px used for shadow to ensure it'll always be big enough. Better way? Performance? Not sure.
@@ -3846,7 +3881,7 @@ main > :not(.full-width) {
         //background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%,rgba(0,0,0,0.2) 100%)  $bg-color;
         //filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#33000000', endColorstr='#33000000',GradientType=0 );
     }
-	*/
+    */
 }
 
 .card a.card__cta:hover, .card a.card__cta:active, .card a.card__cta:focus {
@@ -3914,6 +3949,65 @@ main > :not(.full-width) {
   outline: 1px solid #00547a;
 }
 
+/* --| WIREFRAME--------------------------------------------------------------------------------- */
+html.wireframe {
+  /*--wf-box-bg: #F7F6F1BB;*/
+  --wf-box-bg: #F7F6F1;
+  --wf-wire: gray;
+}
+
+.wireframe [data-wf] {
+  outline: 2px solid var(--wf-wire);
+  position: relative;
+  z-index: 1;
+}
+
+.wireframe [data-wf]::before {
+  position: absolute;
+  z-index: 8675309;
+  opacity: 0.7;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: linear-gradient(to top right, transparent calc(50% - 1px), var(--wf-wire) calc(50% - 1px), var(--wf-wire) calc(50% + 1px), transparent calc(50% + 1px)), linear-gradient(to bottom right, transparent calc(50% - 1px), var(--wf-wire) calc(50% - 1px), var(--wf-wire) calc(50% + 1px), transparent calc(50% + 1px)), var(--wf-box-bg);
+  /*
+   background:
+        radial-gradient(ellipse at center, 
+            rgba(255,255,255,1) 10%,rgba(255,255,255,0) 10%),
+        linear-gradient(to top right,
+            transparent calc(50% - 1px), var(--wf-wire) calc(50% - 1px),
+            var(--wf-wire) calc(50% + 1px), transparent calc(50% + 1px)),
+        linear-gradient(to bottom right,
+            transparent calc(50% - 1px), var(--wf-wire) calc(50% - 1px),
+            var(--wf-wire) calc(50% + 1px), transparent calc(50% + 1px)),
+        var(--wf-box-bg);
+
+    background-size: 9em 9em, auto, auto;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    */
+  content: attr(data-wf);
+  font: bold 2em Georgia, serif;
+  color: var(--wf-wire);
+  text-shadow: 0 0 0.5em var(--wf-box-bg), 0 0 0.5em var(--wf-box-bg), 0 0 0.5em var(--wf-box-bg), 0 0 0.5em var(--wf-box-bg), 0 0 0.5em var(--wf-box-bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*
+.wireframe [data-wf]::after {
+    position: absolute;
+    top: calc(50% - 1.5em);
+    left: calc(50% - 1.5em);
+    content: "";
+    background: #fff;
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+}*/
+/* ---------------------------------------------------------------------------------------------- */
 /* --| SHAME |----------------------------------------------------------------------------------- */
 .tb-baseline {
   background: transparent url(http://lab.gridlight-design.co.uk/fallback-v1/line-grid-12px.gif) repeat;
@@ -3956,6 +4050,7 @@ h1, h2, h3 {
   width: calc((105.6rem - 100%) * 1000);
   max-width: 100%;
   margin-left: auto;
+  margin-bottom: 0;
   flex-grow: 0;
 }
 
