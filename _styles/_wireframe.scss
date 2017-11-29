@@ -52,11 +52,30 @@ html.wireframe {
     color: var(--wf-wire);
     
     text-shadow:
-        0 0 0.5em var(--wf-box-bg),
-        0 0 0.5em var(--wf-box-bg),
-        0 0 0.5em var(--wf-box-bg),
-        0 0 0.5em var(--wf-box-bg),
-        0 0 0.5em var(--wf-box-bg);
+        1px 1px 0 var(--wf-box-bg),
+        -1px 1px 0 var(--wf-box-bg),
+        1px -1px 0 var(--wf-box-bg),
+        -1px -1px 0 var(--wf-box-bg),
+        1px 0 0 var(--wf-box-bg),
+        -1px 0 0 var(--wf-box-bg),
+        2px 2px 0 var(--wf-box-bg),
+        -2px 2px 0 var(--wf-box-bg),
+        2px -2px 0 var(--wf-box-bg),
+        -2px -2px 0 var(--wf-box-bg),
+        2px 0 0 var(--wf-box-bg),
+        -2px 0 0 var(--wf-box-bg),
+        3px 3px 0 var(--wf-box-bg),
+        -3px 3px 0 var(--wf-box-bg),
+        3px -3px 0 var(--wf-box-bg),
+        -3px -3px 0 var(--wf-box-bg),
+        3px 0 0 var(--wf-box-bg),
+        -3px 0 0 var(--wf-box-bg),
+        4px 4px 0 var(--wf-box-bg),
+        -4px 4px 0 var(--wf-box-bg),
+        4px -4px 0 var(--wf-box-bg),
+        -4px -4px 0 var(--wf-box-bg),
+        4px 0 0 var(--wf-box-bg),
+        -4px 0 0 var(--wf-box-bg);
         
     display: flex;
     justify-content: center;

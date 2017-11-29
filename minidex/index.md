@@ -1,6 +1,7 @@
 ---
 layout: project-landing
 title: Minidex Home
+project: minidex
 ---
 Minidex: *The efficacy and safety of very low dose dexamethasone used to facilitate the extubation of ventilator dependent preterm babies who are at high risk of bronchopulmonary dysplasia.*
 
