@@ -4,5 +4,4 @@ title: NPEU Home
 ---
 NPEU Homepage
 
-* [Minidex](/minidex)
-* [Project](/project)
+* [Minidex](minidex)
