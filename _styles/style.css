@@ -3893,6 +3893,12 @@ main > :not(.full-width) {
   color: #333;
 }
 
+.funder-logo {
+  text-align: center;
+  margin-bottom: 2.4rem;
+  width: 100%;
+}
+
 .c-panel {
   padding: 2.4rem;
   padding-bottom: 0 !important;
@@ -4378,20 +4384,15 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e7692', end
 
 }
 */
-.funder-logo {
-  text-align: center;
-  margin-bottom: 2.4rem;
-  width: 100%;
-}
-
+/*
 .space-bottom {
-  margin-bottom: 2.4rem;
+	margin-bottom: $fallback--base-rem-space-unit;
 }
 
 .text--center {
-  text-align: center;
+	text-align: center;
 }
-
+*/
 /* ---------------------------------------------------------------------------------------------- */
 
 /*# sourceMappingURL=style.css.map */
