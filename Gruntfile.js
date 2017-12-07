@@ -35,7 +35,7 @@ module.exports = function(grunt) {
         },
 
         // https://github.com/gruntjs/grunt-contrib-imagemin
-        imagemin: {
+        /*imagemin: {
             dynamic: {
                 options: {
                     pngquant: false,
@@ -44,16 +44,16 @@ module.exports = function(grunt) {
                 files: [{
                     expand: true,
                     cwd: '_images/',
-                    src: ['**/*.{png,jpg,gif}'],
+                    src: ['**DELETE/*.{png,jpg,gif}'],
                     dest: './img/'
                 }]
             }
-        },
+        },*/
 
         // https://github.com/yoniholmes/grunt-text-replace
-        replace: {
+        /*replace: {
             svg_cleanup: {
-                src: ['./img/**/*.svg'],
+                src: ['./img/**DELETE/*.svg'],
                 overwrite: true,
                 replacements: [
                     {
@@ -66,7 +66,7 @@ module.exports = function(grunt) {
                     }
                 ]
             }
-        },
+        },*/
 
         // https://github.com/gruntjs/grunt-contrib-sass
         // Default precision is 10
@@ -92,16 +92,16 @@ module.exports = function(grunt) {
         },
 
         // https://npmjs.org/package/grunt-svg2png
-        svg2png: {
+        /*svg2png: {
             all: {
                 files: [{
-                    src: ['_images/**/*.svg']
+                    src: ['_images/**DELETE/*.svg']
                 }]
             }
-        },
+        },*/
 
         // https://npmjs.org/package/grunt-svgmin
-        svgmin: {
+        /*svgmin: {
             options: {
                 plugins: [{
                     removeViewBox: false,
@@ -112,11 +112,11 @@ module.exports = function(grunt) {
                 files: [{
                     expand: true,
                     cwd: '_images/',
-                    src: ['**/*.svg'],
+                    src: ['*DELETE/*.svg'],
                     dest: './img/'
                 }]
             }
-        },
+        },*/
 
         // https://github.com/gruntjs/grunt-contrib-uglify
         uglify: {
@@ -146,16 +146,16 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-concat');
     //grunt.loadNpmTasks('grunt-contrib-copy');
-    grunt.loadNpmTasks('grunt-text-replace');
+    //grunt.loadNpmTasks('grunt-text-replace');
     // (S)CSS:
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-sass');
     // JS:
     grunt.loadNpmTasks('grunt-contrib-uglify');
     // SVG/PNG:
-    grunt.loadNpmTasks('grunt-svgmin');
-    grunt.loadNpmTasks('grunt-svg2png');
-    grunt.loadNpmTasks('grunt-contrib-imagemin');
+    //grunt.loadNpmTasks('grunt-svgmin');
+    //grunt.loadNpmTasks('grunt-svg2png');
+    //grunt.loadNpmTasks('grunt-contrib-imagemin');
     // FTP:
     //grunt.loadNpmTasks('grunt-ftp-deploy');
 
@@ -174,7 +174,9 @@ module.exports = function(grunt) {
 
     grunt.registerTask('css', ['sass', 'cssmin']);
     grunt.registerTask('js', ['concat', 'uglify']);
-    grunt.registerTask('img', ['svg2png', 'imagemin', 'svgmin', 'replace:svg_cleanup']);
+    //grunt.registerTask('img', ['svg2png', 'imagemin', 'svgmin', 'replace:svg_cleanup']);
+    
+    //grunt.registerTask('t', ['svg2png']);
 
     //grunt.registerTask('ftp', ['ftp-deploy']);
 };
