@@ -2432,20 +2432,19 @@ _:-o-prefocus, :root .icon {
   white-space: nowrap;
 }
 
-@supports (-webkit-flex-wrap: wrap) or (flex-wrap: wrap) { {
-    /*
-            This is a little flakey.
-            It assumes that we want any links to take up as much space as possible.
-            Anything else (e.g. buttons) would not change size.
-            Will have to see how this plays out.
-        */
-  }
+@supports (-webkit-flex-wrap: wrap) or (flex-wrap: wrap) {
   .nav-bar .nav-bar__title {
     display: -webkit-flex;
     display: flex;
     -webkit-flex-wrap: wrap;
     flex-wrap: wrap;
   }
+  /*
+            This is a little flakey.
+            It assumes that we want any links to take up as much space as possible.
+            Anything else (e.g. buttons) would not change size.
+            Will have to see how this plays out.
+        */
   .nav-bar .nav-bar__title .nav-bar__link {
     -webkit-flex: 1 0 auto;
     flex: 1 0 auto;
@@ -4394,5 +4393,3 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e7692', end
 }
 */
 /* ---------------------------------------------------------------------------------------------- */
-
-/*# sourceMappingURL=style.css.map */

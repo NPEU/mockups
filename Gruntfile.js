@@ -24,7 +24,7 @@ module.exports = function(grunt) {
         },
 
         // https://github.com/gruntjs/grunt-contrib-cssmin
-        cssmin: {
+        /*cssmin: {
             minify: {
                 expand: true,
                 cwd: './_styles/',
@@ -32,7 +32,7 @@ module.exports = function(grunt) {
                 dest: './css/',
                 ext: '.min.css'
             }
-        },
+        },*/
 
         // https://github.com/gruntjs/grunt-contrib-imagemin
         /*imagemin: {
@@ -70,7 +70,7 @@ module.exports = function(grunt) {
 
         // https://github.com/gruntjs/grunt-contrib-sass
         // Default precision is 10
-        sass: {
+        /*sass: {
             dist: {
                 options: {
                     outputStyle: 'expanded',
@@ -80,16 +80,16 @@ module.exports = function(grunt) {
                     {
                         expand: true,
                         cwd: "./_styles/",
-                        src: ["**/*.scss"],
+                        src: ["**DELETE/*.scss"],
                         dest: "./_styles/",
                         ext: ".css"
                     }
                 ]
                 /*files: {
                     '** /*.css': '** /*.scss'
-                }*/
+                }*DELETE/
             }
-        },
+        },*/
 
         // https://npmjs.org/package/grunt-svg2png
         /*svg2png: {

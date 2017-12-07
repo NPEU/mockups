@@ -1,5 +1,36 @@
 const gulp     = require('gulp');
 
+
+/*------------------------------------------------------------------------------------------------*\
+    CSS    
+\*------------------------------------------------------------------------------------------------*/
+var css_src  = './_styles/';
+var css_dest = './css/';
+
+const sass   = require('gulp-sass');
+const cssmin = require('gulp-cssmin');
+const rename = require('gulp-rename');
+
+// Compile SCSS in expanded mode so it's easier to inspect the result.
+gulp.task('sass', () =>
+    gulp.src(css_src + '**/*.scss')
+        .pipe(sass({
+            outputStyle: 'expanded'
+        }))
+        .pipe(gulp.dest(function (file) {
+            return file.base;
+        }))
+);
+
+// Then create a minified version in the output folder.
+gulp.task('cssmin', () =>
+	gulp.src(css_src + '**/*.css')
+		.pipe(cssmin())
+		.pipe(rename({extname: '.min.css'}))
+		.pipe(gulp.dest(css_dest))
+);
+
+
 /*------------------------------------------------------------------------------------------------*\
     IMAGES    
 \*------------------------------------------------------------------------------------------------*/
