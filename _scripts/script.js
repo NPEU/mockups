@@ -44,6 +44,7 @@ var cookie_html                   =
     }
 
 
+
     ready(adjustJustifyContent.run);
     window.onresize = adjustJustifyContent.run;
 })();

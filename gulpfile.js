@@ -1,5 +1,5 @@
-const gulp     = require('gulp');
-
+const gulp        = require('gulp');
+const runSequence = require('run-sequence');
 
 /*------------------------------------------------------------------------------------------------*\
     CSS    
@@ -31,9 +31,10 @@ gulp.task('cssmin', () =>
 );
 
 // This combined task makes it convenient to run all the steps together.
-gulp.task('css', ['sass', 'cssmin'], () =>
-    console.log('Processing (S)CSS. See gulpfile.js for details.')
-)
+gulp.task('css', () => {
+    console.log('Processing (S)CSS. See gulpfile.js for details.');
+    runSequence('sass', 'cssmin');
+})
 
 
 /*------------------------------------------------------------------------------------------------*\
@@ -79,9 +80,10 @@ gulp.task('svgmin', () =>
 );
 
 // This combined task makes it convenient to run all the steps together.
-gulp.task('img', ['svg2png', 'imagemin', 'svgmin'], () =>
-    console.log('Processing images. See gulpfile.js for details.')
-)
+gulp.task('img', () => {
+    console.log('Processing images. See gulpfile.js for details.');
+    runSequence('svg2png', 'imagemin', 'svgmin');
+})
 
 
 /*------------------------------------------------------------------------------------------------*\
@@ -123,9 +125,10 @@ gulp.task('uglify', (cb) =>
 
 
 // This combined task makes it convenient to run all the steps together.
-gulp.task('js', ['concat_js', 'uglify'], () =>
-    console.log('Processing js. See gulpfile.js for details.')
-)
+gulp.task('js', () => {
+    console.log('Processing js. See gulpfile.js for details.');
+    runSequence('concat_js', 'uglify');
+})
 
 
 
