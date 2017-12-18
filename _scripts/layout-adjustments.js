@@ -6,7 +6,7 @@
             document.addEventListener('DOMContentLoaded', fn);
         }
     }
-    
+
     var adjustJustifyContent = {
         run: function() {
             var containers = document.querySelectorAll('.js-adjust-me');
@@ -20,7 +20,7 @@
             });
         }
     }
-    
+
 
     ready(adjustJustifyContent.run);
     window.onresize = adjustJustifyContent.run;

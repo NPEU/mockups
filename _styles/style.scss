@@ -1,0 +1,158 @@
+/* --| SETTINGS |-------------------------------------------------------------------------------- */
+
+//@import url('https://fonts.googleapis.com/css?family=Merriweather|Source+Sans+Pro:400,700,400italic');
+//@import url('https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i|Nunito:400,700');
+@import url('https://fonts.googleapis.com/css?family=Lato:300,700,900');
+//@import url('https://fonts.googleapis.com/css?family=Lato:300,300i|Nunito:400,700');
+//font-family: 'Lato', sans-serif;
+//font-family: 'Nunito', sans-serif;
+$fallback--base-font-family: 'Lato', sans-serif;
+
+$fallback--root-font-size: 10px;
+
+$fallback--base-ui-color: #0077AD;
+$fallback--breakpoint--enhanced: 33em;
+
+//$body-padding: 0;
+
+//$namespace: '.ugc ';
+//$namespace: 'main ';
+
+
+@import '../bower_components/Fall-Back-Start-CSS/_settings.scss';
+
+$max-main-line-length: 0;
+$measure: 64rem;
+
+@import '../bower_components/Fall-Back-Start-CSS/_start.scss';
+
+@import '../bower_components/Fall-Back-Base/_icons.scss';
+
+
+
+
+// Inuit:
+
+//$breakpoints: (
+//    "palm"          "screen and (max-width: 44.9375em)",
+//    "lap"           "screen and (min-width: 45em) and (max-width: 63.9375em)",
+//    "lap-and-up"    "screen and (min-width: 45em)",
+//    "portable"      "screen and (max-width: 63.9375em)",
+//    "desk"          "screen and (min-width: 64em)",
+//    "retina"        "(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx)"
+//) !default;
+
+////@import "bower_components/inuit-defaults/settings.defaults";
+//@import "bower_components/inuit-responsive-settings/_settings.responsive.scss";
+
+
+
+
+/* ---------------------------------------------------------------------------------------------- */
+/* --| FUNCTIONS AND MIXINS |-------------------------------------------------------------------- */
+
+//@import "../bower_components/Fall-Back-Base/_fallback-base";
+
+
+// Inuit:
+//@import "bower_components/inuit-functions/tools.functions";
+//@import "bower_components/inuit-tools-widths/tools.widths";
+//@import "bower_components/inuit-mixins/tools.mixins";
+//@import "bower_components/inuit-responsive-tools/tools.responsive.scss";
+
+@mixin bottom-space-fix () {
+
+	padding-bottom: 0 !important;
+	
+	&::after {
+		content: "";
+		display: block;
+		margin-bottom: $fallback--base-rem-space-unit;
+		height: 1px;
+		margin-top: -1px;
+	}
+
+}
+
+/* ---------------------------------------------------------------------------------------------- */
+/* --| BASE |------------------------------------------------------------------------------------ */
+
+//$max-main-line-length: 0;
+//@import "../bower_components/Fall-Back-Start-CSS/_start";
+
+/* ---------------------------------------------------------------------------------------------- */
+/* --| FALL-BACK PATTERNS |---------------------------------------------------------------------- */
+
+$fallback--over-panel__contents--padding: 0;
+@import "../bower_components/Fall-Back-Over-Panel/_over-panel";
+
+
+
+//$fallback--sub-nav--bg-color:      darken($fallback--base-ui-color, 10%);
+//$fallback--nav-bar--margin-bottom: 24px;
+@import "../bower_components/Fall-Back-Nav-Bar/_nav-bar";
+
+
+//$fallback--search-form--breakpoint--enhanced: 50em;
+@import "../bower_components/Fall-Back-Search-Form/_search-form";
+
+
+@import "../bower_components/Fall-Back-Sticky-Footer/_sticky-footer";
+
+$fallback-svg--fixed-height:      120px;
+$fallback-svg--padding:           16px;
+$fallback-svg--border-width:      0;
+$fallback-svg--border-color:      #fff;
+$fallback-svg--link-bg-color:     #fff;
+$fallback-svg--link-bg-color-alt: #fff;
+@import "../bower_components/Fall-Back-SVG/_svg";
+
+@include svg--fixed-height(80px, 'svg--fixed-height--logo', 0, 0);
+@include svg--fixed-height(60px, 'svg--fixed-height--parent-logo', 0, 0);
+@include svg--fixed-height(($fallback--base-rem-space-unit * 4), 'svg--fixed-height--funder-logo', ($fallback--base-rem-space-unit / 2), 0);
+
+
+@import "../bower_components/Fall-Back-Cookie-Notice/_cookie-notice";
+/* ---------------------------------------------------------------------------------------------- */
+
+/* --| PATTERNS |-------------------------------------------------------------------------------- */
+
+@import "patterns/__all";
+
+$gallery-grid-spacing-unit: $fallback--base-rem-space-unit;
+@import "../bower_components/NPEU-layout-patterns/scss/_gallery-grid.scss";
+
+$card--base-color: lighten($fallback--base-ui-color, 60%);
+@import "patterns/_card.scss";
+
+
+
+@import "patterns/_info-box.scss";
+@import "patterns/_funder-logo.scss";
+
+
+$panel--padding: $fallback--base-rem-space-unit;
+@import "patterns/_panel.scss";
+
+/* ---------------------------------------------------------------------------------------------- */
+
+
+@import "_themes_config";
+@import "_themes";
+
+
+
+/* --| WIREFRAME--------------------------------------------------------------------------------- */
+// http://meyerweb.com/eric/thoughts/2017/11/27/generating-wireframe-boxes-with-css-and-html5
+// Just testing this out, may not keep.
+@import "_wireframe";
+
+
+/* ---------------------------------------------------------------------------------------------- */
+
+
+/* --| SHAME |----------------------------------------------------------------------------------- */
+
+@import "_shame";
+
+/* ---------------------------------------------------------------------------------------------- */

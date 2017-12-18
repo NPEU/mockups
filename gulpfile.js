@@ -87,8 +87,9 @@ gulp.task('img', ['svg2png', 'imagemin', 'svgmin'], () =>
 /*------------------------------------------------------------------------------------------------*\
     JS    
 \*------------------------------------------------------------------------------------------------*/
-var js_src  = './_scripts/';
-var js_dest = './js/';
+var js_src      = './_scripts/';
+var js_dest     = './js/';
+var js_filename = 'script.js';
 
 const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
@@ -104,17 +105,48 @@ gulp.task('concat_js', () =>
         './bower_components/Fall-Back-Cookie-Notice/cookie-notice.js',
         './bower_components/Fall-Back-SVG/svg.js'
     ])
-    .pipe(concat('script.js'))
+    .pipe(concat(js_filename))
     .pipe(gulp.dest(js_src))
 );
-/*
+
 
 gulp.task('uglify', (cb) => 
     pump([
-        gulp.src(js_src + '** /*.js'),
+        gulp.src(js_src + js_filename),
         uglify(),
+        rename({extname: '.min.js'}),
         gulp.dest(js_dest)
     ],
-    cb);
+    cb)
 );
-*/
+
+
+
+// This combined task makes it convenient to run all the steps together.
+gulp.task('js', ['concat_js', 'uglify'], () =>
+    console.log('Processing js. See gulpfile.js for details.')
+)
+
+
+
+/*------------------------------------------------------------------------------------------------*\
+    WATCHERS    
+\*------------------------------------------------------------------------------------------------*/
+
+// Watch CSS:
+gulp.task('watch_css', function(){
+    gulp.watch(css_src + '**/*.scss', ['css']); 
+});
+
+// Watch JS:
+gulp.task('watch_js', function(){
+    gulp.watch(js_src + '**/*.js', ['js']); 
+});
+
+
+// Watch all of the above:
+gulp.task('watch_all', function(){
+    gulp.watch(css_src + '**/*.scss', ['css']);
+    gulp.watch(js_src + '**/*.js', ['js']); 
+});
+

@@ -37,11 +37,11 @@ h1, h2, h3 {
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
-    
+
         -ms-flex-wrap: wrap;
     -webkit-flex-wrap: wrap;
             flex-wrap: wrap;
-        
+
               -ms-flex-pack: center;
     -webkit-justify-content: center;
             justify-content: center;
@@ -67,14 +67,14 @@ h1, h2, h3 {
     max-width: 100%;
     margin-left: auto;
     margin-bottom: 0;
-    
+
     -ms-flex-positive: 0;
     -webkit-flex-grow: 0;
             flex-grow: 0;
 }
 
 
-.sticky-footer-expand main + aside > div {   
+.sticky-footer-expand main + aside > div {
     max-width: $measure;
     margin: 0 auto;
 }
@@ -126,7 +126,7 @@ main {
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
-    
+
          -ms-flex-align: center;
     -webkit-align-items: center;
             align-items: center;
@@ -200,7 +200,7 @@ main {
 	color: #fff;
 
 	font-size: 1.375em;
-    
+
     text-align: center;
 	margin-bottom: 0;
 }
@@ -285,7 +285,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e7692', end
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
-    
+
               -ms-flex-pack: justify;
     -webkit-justify-content: space-between;
             justify-content: space-between;
@@ -300,6 +300,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e7692', end
 .footer-logos--end .svg {
 	margin-top: $fallback--base-rem-space-unit;
 	margin-right: $fallback--base-rem-space-unit;
+    max-width: 17em;
 }
 
 
@@ -319,15 +320,15 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e7692', end
 
 
 .footer-logos--end {
-	
+
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
-    
+
         -ms-flex-wrap: wrap;
     -webkit-flex-wrap: wrap;
             flex-wrap: wrap;
-        
+
               -ms-flex-pack: end;
     -webkit-justify-content: flex-end;
             justify-content: flex-end;
@@ -359,8 +360,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e7692', end
       -ms-flex-negative: 1;
     -webkit-flex-shrink: 1;
             flex-shrink: 1;
-        
-    
+
+
     -ms-flex-positive: 0;
     -webkit-flex-grow: 0;
             flex-grow: 0;
@@ -385,7 +386,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e7692', end
 .header .gallery-grid .gallery-grid__item--pushout {
     flex-grow: 2;
     padding: 0;
- 
+
 }*/
 /*
 .header .gallery-grid__item {
@@ -421,7 +422,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e7692', end
 }
 
 .header .responsive-push-right {
-    
+
 }
 */
 /*
