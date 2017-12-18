@@ -17,7 +17,7 @@ gulp.task('sass', () =>
         .pipe(sass({
             outputStyle: 'expanded'
         }))
-        .pipe(gulp.dest(function (file) {
+        .pipe(gulp.dest((file) => {
             return file.base;
         }))
 );
@@ -54,7 +54,7 @@ const svgmin   = require('gulp-svgmin');
 gulp.task('svg2png', () =>
     gulp.src(img_src + '**/*.svg')
         .pipe(svg2png())
-        .pipe(gulp.dest(function (file) {
+        .pipe(gulp.dest((file) => {
             return file.base;
         }))
 );
@@ -105,6 +105,7 @@ gulp.task('concat_js', () =>
         './bower_components/Fall-Back-SVG/svg.js'
     ])
     .pipe(concat('script.js'))
+    .pipe(gulp.dest(js_src))
 );
 /*
 
