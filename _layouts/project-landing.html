@@ -9,10 +9,10 @@ layout: structure
 			<div class="gallery-grid  gallery-grid--gutter--medium  js-adjust-me">
                 <div class="v-center  gallery-grid__item  header__logo  js-adjust-me__reference">
                     <div class="svg  svg--fixed-height">
-                        <a href="{{ page.project }}" class="svg__link">
-                            <object type="image/svg+xml" data="img/unit-logos/{{ page.project }}-logo.svg" height="100" class="svg__image" aria-hidden="true" tabindex="-1">
+                        <a href="/{{ page.project }}" class="svg__link">
+                            <object type="image/svg+xml" data="/img/unit-logos/{{ page.project }}-logo.svg" height="100" class="svg__image" aria-hidden="true" tabindex="-1">
                                 <svg display="none">
-                                    <image src="imgunit-/logos/{{ page.project }}-logo.png" height="100" class="svg__fallback-image" alt="Minidex home"></image>
+                                    <image src="/img/unit-/logos/{{ page.project }}-logo.png" height="100" class="svg__fallback-image" alt="Minidex home"></image>
                                 </svg>
                                 <span class="svg__fallback-text-alpha" data-content="Minidex home"></span>
                             </object>
@@ -20,9 +20,9 @@ layout: structure
                         </a>
 
                         <!--<a href="/listeningtoparents" class="svg__link">
-                            <object type="image/svg+xml" data="img/unit-logos/listeningtoparents-logo.svg" height="100" class="svg__image" aria-hidden="true" tabindex="-1">
+                            <object type="image/svg+xml" data="/img/unit-logos/listeningtoparents-logo.svg" height="100" class="svg__image" aria-hidden="true" tabindex="-1">
                                 <svg display="none">
-                                    <image src="img/unit-logos/listeningtoparents-logo.png" height="100" class="svg__fallback-image" alt="Minidex home"></image>
+                                    <image src="/img/unit-logos/listeningtoparents-logo.png" height="100" class="svg__fallback-image" alt="Minidex home"></image>
                                 </svg>
                                 <span class="svg__fallback-text-alpha" data-content="Minidex home"></span>
                             </object>
@@ -30,9 +30,9 @@ layout: structure
                         </a>-->
 
                         <!--<a href="/maternity-surveys" class="svg__link">
-                            <object type="image/svg+xml" data="img/unit-logos/maternity-surveys-logo.svg" height="100" class="svg__image" aria-hidden="true" tabindex="-1">
+                            <object type="image/svg+xml" data="/img/unit-logos/maternity-surveys-logo.svg" height="100" class="svg__image" aria-hidden="true" tabindex="-1">
                                 <svg display="none">
-                                    <image src="img/unit-logos/maternity-surveys-logo.png" height="100" class="svg__fallback-image" alt="Minidex home"></image>
+                                    <image src="/img/unit-logos/maternity-surveys-logo.png" height="100" class="svg__fallback-image" alt="Minidex home"></image>
                                 </svg>
                                 <span class="svg__fallback-text-alpha" data-content="Minidex home"></span>
                             </object>
@@ -42,15 +42,15 @@ layout: structure
                 </div>
 
                 <div class="v-center  gallery-grid__item  responsive-push-right">
-                    <a href="{{ project_data.randomisation_url }}" class="randomise-cta  randomise-cta--{{ page.project }}">Randomise to {{ project_data.name }}</a>
+                    <a href="/{{ project_data.randomisation_url }}" class="randomise-cta  randomise-cta--{{ page.project }}">Randomise to {{ project_data.name }}</a>
                 </div>
                 <!--<div class="nav-bar">
                     <nav class="nav-bar__title">
                         <div class="svg  svg--fixed-height  svg-logo">
                             <a class="svg__link" href="/">
-                                <object height="60" tabindex="-1" aria-hidden="true" class="svg__image" data="img/fallback-logo-wide.svg" type="image/svg+xml">
+                                <object height="60" tabindex="-1" aria-hidden="true" class="svg__image" data="/img/fallback-logo-wide.svg" type="image/svg+xml">
                                     <svg display="none">
-                                        <image alt="Fall-Back home" class="svg__fallback-image" height="60" src="img/fallback-logo-wide.png"/>
+                                        <image alt="Fall-Back home" class="svg__fallback-image" height="60" src="/img/fallback-logo-wide.png"/>
                                     </svg>
                                     <span class="svg__fallback-text-alpha" data-content="Fall Back home"></span>
                                 </object>
@@ -82,14 +82,14 @@ layout: structure
                                     </li>
                                     <!--
                                     <li class="nav-bar__item">
-                                        <a href="about-us" class="nav-bar__link">About us</a>
+                                        <a href="/about-us" class="nav-bar__link">About us</a>
                                         <button id="about-us-sub-menu-toggle" class="nav-bar__link  subnav__control  subnav__open  js-toggle-button" hidden aria-label="About Us sub-menu"><svg display="none" class="icon  icon--is-closed  feather"><use xlink:href="#icon-triangle-down"></use></svg><svg display="none" class="icon  icon--is-open  feather"><use xlink:href="#icon-triangle-up"></use></svg></button>
                                         <div class="subnav" id="about-us-sub-menu-toggle--target">
                                             <ul class="subnav__items">
-                                                <li class="subnav__item"><a href="what-we-do" class="subnav__link">What we do</a></li>
-                                                <li class="subnav__item"><a href="contact-us" class="subnav__link">Contact us</a></li>
-                                                <li class="subnav__item"><a href="meet-the-team" class="subnav__link">Meet the team</a></li>
-                                                <li class="subnav__item"><a href="testimonials" class="subnav__link">Testimonials</a></li>
+                                                <li class="subnav__item"><a href="/what-we-do" class="subnav__link">What we do</a></li>
+                                                <li class="subnav__item"><a href="/contact-us" class="subnav__link">Contact us</a></li>
+                                                <li class="subnav__item"><a href="/meet-the-team" class="subnav__link">Meet the team</a></li>
+                                                <li class="subnav__item"><a href="/testimonials" class="subnav__link">Testimonials</a></li>
                                             </ul>
                                         </div>
                                     </li>
@@ -235,23 +235,23 @@ layout: structure
 
                     <div class="svg  svg--fixed-height  svg--fixed-height--logo" itemscope="" itemtype="http://schema.org/Organization">
                         <a href="https://www.npeu.ox.ac.uk" class="svg__link" itemprop="url">
-                            <object type="image/svg+xml" data="img/unit-logos/npeu-ctu-logo.svg" height="110" class="svg__image" aria-hidden="true" tabindex="-1">
+                            <object type="image/svg+xml" data="/img/unit-logos/npeu-ctu-logo.svg" height="110" class="svg__image" aria-hidden="true" tabindex="-1">
                                 <svg display="none">
-                                    <image src="img/unit-logos/npeu-ctu-logo.png" height="110" alt="National Perinatal Epidemiology Unit (NPEU)" class="svg__fallback-image"></image>
+                                    <image src="/img/unit-logos/npeu-ctu-logo.png" height="110" alt="National Perinatal Epidemiology Unit (NPEU)" class="svg__fallback-image"></image>
                                 </svg>
                                 <span class="svg__fallback-text-alpha" data-content="National Perinatal Epidemiology Unit (NPEU)"></span>
                             </object>
                             <div><i class="svg__fallback-text-beta" itemprop="name">National Perinatal Epidemiology Unit (NPEU)</i></div>
                         </a>
                         <link itemprop="sameAs" href="https://twitter.com/npeu_oxford">
-                        <link itemprop="logo" href="https://www.npeu.ox.ac.ukimg/banner-logos/npeu-logo.svg">
+                        <link itemprop="logo" href="https://www.npeu.ox.ac.uk/img/banner-logos/npeu-logo.svg">
                     </div>
 
                     <div class="svg  svg--fixed-height  svg--fixed-height--logo">
                         <a href="/athena-swan" class="svg__link">
-                            <object type="image/svg+xml" data="img/affiliate-logos/athena-swan-silver-award.svg" height="70" class="svg__image" aria-hidden="true" tabindex="-1">
+                            <object type="image/svg+xml" data="/img/affiliate-logos/athena-swan-silver-award.svg" height="70" class="svg__image" aria-hidden="true" tabindex="-1">
                                 <svg display="none">
-                                    <image src="img/affiliate-logos/athena-swan-silver-award.png" height="70" alt="The NPEU is proud to hold an Athena Swan Silver Award" class="svg__fallback-image"></image>
+                                    <image src="/img/affiliate-logos/athena-swan-silver-award.png" height="70" alt="The NPEU is proud to hold an Athena Swan Silver Award" class="svg__fallback-image"></image>
                                 </svg>
                                 <span class="svg__fallback-text-alpha" data-content="The NPEU is proud to hold an Athena Swan Silver Award"></span>
                             </object>
@@ -264,10 +264,10 @@ layout: structure
 				<div class="footer-logos--end">
 
 					<div class="svg  svg--fixed-height  svg--fixed-height--parent-logo">
-						<a href="http://www.ndph.ox.ac.uk/" class="svg__link  ndph" rel="external" target="_blank">
-							<object type="image/svg+xml" data="img/affiliate-logos/ndph-logo.svg" height="50" class="svg__image" aria-hidden="true" tabindex="-1">
+						<a href="http://www.ndph.ox.ac.uk/" class="svg__link  ndph" rel="external noopener noreferrer" target="_blank">
+							<object type="image/svg+xml" data="/img/affiliate-logos/ndph-logo.svg" height="50" class="svg__image" aria-hidden="true" tabindex="-1">
 								<svg display="none">
-									<image src="img/affiliate-logos/ndph-logo.png" height="50" alt="Nuffield Department of Population Health website (external)" class="svg__fallback-image"></image>
+									<image src="/img/affiliate-logos/ndph-logo.png" height="50" alt="Nuffield Department of Population Health website (external)" class="svg__fallback-image"></image>
 								</svg>
 								<span class="svg__fallback-text-alpha" data-content="Nuffield Department of Population Health website (external)"></span>
 							</object>
@@ -276,10 +276,10 @@ layout: structure
 					</div>
 
 					<div class="svg  svg--fixed-height  svg--fixed-height--parent-logo">
-						<a href="http://www.ox.ac.uk/" class="svg__link  ou" rel="external" target="_blank">
-							<object type="image/svg+xml" data="img/affiliate-logos/ou-logo-rect.svg" height="50" class="svg__image" aria-hidden="true" tabindex="-1">
+						<a href="http://www.ox.ac.uk/" class="svg__link  ou" rel="external noopener noreferrer" target="_blank">
+							<object type="image/svg+xml" data="/img/affiliate-logos/ou-logo-rect.svg" height="50" class="svg__image" aria-hidden="true" tabindex="-1">
 								<svg display="none">
-									<image src="img/affiliate-logos/ou-logo-rect.png" height="50" alt="University of Oxford website (external)" class="svg__fallback-image"></image>
+									<image src="/img/affiliate-logos/ou-logo-rect.png" height="50" alt="University of Oxford website (external)" class="svg__fallback-image"></image>
 								</svg>
 								<span class="svg__fallback-text-alpha" data-content="University of Oxford website (external)"></span>
 							</object>

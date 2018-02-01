@@ -5,8 +5,8 @@
     <title>{{ page.title }}</title>
     <meta name="description" content="{{ site.description }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <base href="http://localhost:4001/">
+
+    <!--<base href="http://localhost:4001/">-->
 
     <style>
         /*Tiny fallback styles:*/
@@ -23,13 +23,35 @@
 
     <!-- Built with Jekyll and Fall-Back patterns -->
 
-    <link rel="stylesheet" href="css/style.min.css" media="
+    <link rel="stylesheet" href="/css/style.min.css" media="
         only screen and (min-resolution: 0.1dpcm),
         only screen and (-webkit-min-device-pixel-ratio:0) and (min-color-index:0)
     ">
 
-    <script src="js/script.min.js"></script>
+    <script src="/js/script.min.js"></script>
     <!--<script src="/js/script.js"></script>-->
+
+    {% if page.project != '' %}
+        {% assign project_base_url = page.project | prepend: '/' %}
+    {% else %}
+        {% assign project_base_url = '' %}
+    {% endif %}
+
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ project_base_url }}/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ project_base_url }}/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ project_base_url }}/favicon-16x16.png">
+    <link rel="manifest" href="{{ project_base_url }}/site.webmanifest">
+    <link rel="mask-icon" href="{{ project_base_url }}/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="{{ project_base_url }}/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="{{ project_base_url }}/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+
+    {% comment %}
+
+    {% endcomment %}
 </head>
 <body role="document" class="tb-baselineX tb-outlinesX">
 
