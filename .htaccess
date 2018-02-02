@@ -1020,24 +1020,62 @@ FileETag None
 
 
 
+# ######################################################################
+# # FROM SONARWHAL                                                     #
+# # https://sonarwhal.com/docs/user-guide/rules/http-cache/            #
+# ######################################################################
 
-# AK Additions
+# Where needed add `immutable` value to the `Cache-Control` header
+<IfModule mod_expires.c>
 
-# Add 'immutable' to Cache-Control
-<IfModule mod_headers.c>
+    <IfModule mod_headers.c>
 
-    # Because `mod_headers` cannot match based on the content-type,
-    # the following workaround needs to be done.
+        # Because `mod_headers` cannot match based on the content-type,
+        # the following workaround needs to be done.
 
-    # 1) Add the `immutable` value to the `Cache-Control` header
-    #    to all resources.
+        # 1) Add the `immutable` value to the `Cache-Control` header
+        #    to all resources.
 
-    Header merge Cache-Control immutable
+        Header merge Cache-Control immutable
+        Header merge Cache-Control public
 
-    # 2) Remove the value for all resources that shouldn't be have it.
+        # 2) Remove the value for all resources that shouldn't be have it.
 
-    <FilesMatch "(^[^.]+$)|(\.(appcache|cur|geojson|ico|json(ld)?|x?html?|topojson|xml)$)">
-        Header edit Cache-Control immutable ""
-    </FilesMatch>
+        <FilesMatch "\.(appcache|cur|geojson|ico|json(ld)?|x?html?|topojson|xml)$">
+            Header edit Cache-Control immutable ""
+        </FilesMatch>
+
+    </IfModule>
+
+</IfModule>
+
+
+
+# ######################################################################
+# # AK ADDITIONAS                                                      #
+# Caching info:                                                        #
+# https://varvy.com/pagespeed/cache-control.html                       #
+# ######################################################################
+
+# Better Cache-Control for requested pages
+<IfModule mod_expires.c>
+
+    <IfModule mod_headers.c>
+
+        #<FilesMatch "^[^.]+$">
+        <FilesMatch "\.(x?html?)$">
+            Header set Cache-Control "no-cache"
+            #Header edit Cache-Control immutable ""
+        </FilesMatch>
+
+        <FilesMatch "favicon.*\.png$">
+            ExpiresByType image/png "access plus 1 year"
+            #Header set Cache-Control "max-age=0, no-cache"
+            #Header edit Cache-Control immutable ""
+        </FilesMatch>
+        
+        ExpiresByType application/manifest+json  "access plus 1 year"
+        
+    </IfModule>
 
 </IfModule>

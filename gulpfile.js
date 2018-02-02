@@ -1,6 +1,8 @@
 const gulp        = require('gulp');
 const runSequence = require('run-sequence');
 const pump        = require('pump');
+const fs          = require('fs');
+const clean       = require('gulp-clean');
 
 /*------------------------------------------------------------------------------------------------*\
     CSS    
@@ -12,6 +14,8 @@ const sass   = require('gulp-sass');
 const cssmin = require('gulp-cssmin');
 const rename = require('gulp-rename');
 
+const now = Date.now()
+//console.log(now);
 
 // Compile SCSS in expanded mode so it's easier to inspect the result.
 gulp.task('sass', (cb) =>
@@ -28,9 +32,40 @@ gulp.task('sass', (cb) =>
 // Then create a minified version in the output folder.
 gulp.task('cssmin', (cb) =>
     pump([
+        gulp.src(css_dest + '**/*.*'),
+        clean(),
         gulp.src(css_src + '**/*.css'),
         cssmin(),
         rename({extname: '.min.css'}),
+        gulp.dest((file) => {
+            
+            //filename = file;
+            //console.log(filename);
+            
+            /*var keys = [];
+            for(var key in file){
+               keys.push(key);
+            }*/
+            //console.log(keys);
+            //console.log(file.history);
+            name = file.path.replace(file.base, '').replace('.min.css', '');
+            
+            
+            
+            
+            // KEEP: this is the mtime: console.log(file.stat.mtime);
+            
+            /*var filename = file.toString().replace('.min.css', '');
+            console.log(filename);
+            for(var key in filename){
+               keys.push(key);
+            }
+            console.log(keys);*/
+            //console.log(JSON.stringify(file.toString()));
+            fs.writeFile('./_data/cache_bust_css--' + name + '.yml', 'date: ' + now);
+            return css_dest;
+        }),
+        rename({suffix: '.' + now}),
         gulp.dest(css_dest)
     ],
     cb)

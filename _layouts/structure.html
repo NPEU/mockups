@@ -21,7 +21,10 @@
 
     </style>
 
+    {% assign cache_data = site.data.cache_bust_css %}
+    
     <!-- Built with Jekyll and Fall-Back patterns -->
+    <!-- CSS cache bust: {{ site.data.cache_bust_css--style.date }} -->
 
     <link rel="stylesheet" href="/css/style.min.css" media="
         only screen and (min-resolution: 0.1dpcm),
@@ -38,7 +41,7 @@
     {% endif %}
 
     
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ project_base_url }}/apple-touch-icon.png">
+    <link rel="apple-touch-icon" href="{{ project_base_url }}/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ project_base_url }}/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ project_base_url }}/favicon-16x16.png">
     <link rel="manifest" href="{{ project_base_url }}/site.webmanifest">
@@ -81,6 +84,7 @@
         <hr />
     </div>
 
+    <p>{{ site.data.cache_bust_css--style.date }}</p>
     {{ content }}
 
 </body>
