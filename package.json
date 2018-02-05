@@ -4,8 +4,9 @@
   "description": "This file lists all the Node packages required for the project's build tools.",
   "repository": "https://github.com/NPEU/mockups",
   "devDependencies": {
+    "del": "^3.0.0",
     "gulp": "^3.9.1",
-    "gulp-clean": "^0.4.0",
+    "gulp-clean-dest": "^0.2.0",
     "gulp-concat": "^2.6.1",
     "gulp-cssmin": "^0.2.0",
     "gulp-imagemin": "^4.0.0",
@@ -16,5 +17,6 @@
     "gulp-watch": "^4.3.11",
     "pump": "^2.0.0",
     "run-sequence": "^2.2.0"
-  }
+  },
+  "dependencies": {}
 }

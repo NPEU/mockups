@@ -1073,9 +1073,9 @@ FileETag None
             #Header set Cache-Control "max-age=0, no-cache"
             #Header edit Cache-Control immutable ""
         </FilesMatch>
-        
+
         ExpiresByType application/manifest+json  "access plus 1 year"
-        
+
     </IfModule>
 
 </IfModule>

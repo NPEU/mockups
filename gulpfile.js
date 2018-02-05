@@ -2,7 +2,7 @@ const gulp        = require('gulp');
 const runSequence = require('run-sequence');
 const pump        = require('pump');
 const fs          = require('fs');
-const clean       = require('gulp-clean');
+const del         = require('del');
 
 /*------------------------------------------------------------------------------------------------*\
     CSS    
@@ -32,36 +32,24 @@ gulp.task('sass', (cb) =>
 // Then create a minified version in the output folder.
 gulp.task('cssmin', (cb) =>
     pump([
-        gulp.src(css_dest + '**/*.*'),
-        clean(),
         gulp.src(css_src + '**/*.css'),
         cssmin(),
         rename({extname: '.min.css'}),
         gulp.dest((file) => {
+            // Empty the output folder:
+            del.sync([css_dest + '*.*']);
+
+            // Establish the data storage name:
+            name       = file.path.replace(file.base, '').replace('.min.css', '');
             
-            //filename = file;
-            //console.log(filename);
-            
-            /*var keys = [];
-            for(var key in file){
-               keys.push(key);
-            }*/
-            //console.log(keys);
-            //console.log(file.history);
-            name = file.path.replace(file.base, '').replace('.min.css', '');
-            
-            
-            
-            
-            // KEEP: this is the mtime: console.log(file.stat.mtime);
-            
-            /*var filename = file.toString().replace('.min.css', '');
-            console.log(filename);
-            for(var key in filename){
-               keys.push(key);
-            }
-            console.log(keys);*/
-            //console.log(JSON.stringify(file.toString()));
+            // Establish the unix timestamp of the file's mtime:
+            // Hmmm, this isn't easily available to the rename function.
+            // My JS/Node-fu isn't good enough at the moment, so stick with const now, but
+            // KEEP FOR REFERENCE
+            //mtime      = file.stat.mtime;
+            //mtimedate  = new Date(mtime);
+            //mtimestamp = Math.floor(mtimedate);
+
             fs.writeFile('./_data/cache_bust_css--' + name + '.yml', 'date: ' + now);
             return css_dest;
         }),
