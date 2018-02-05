@@ -6,6 +6,8 @@
     <meta name="description" content="{{ site.description }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <!-- Built with Jekyll and Fall-Back patterns -->
+    
     <!--<base href="http://localhost:4001/">-->
 
     <style>
@@ -20,19 +22,14 @@
         [hidden]{display:none;}
 
     </style>
-
-    {% assign cache_data = site.data.cache_bust_css %}
     
-    <!-- Built with Jekyll and Fall-Back patterns -->
-    <!-- CSS cache bust: {{ site.data.cache_bust_css--style.date }} -->
-
-    <link rel="stylesheet" href="/css/style.min.css" media="
+    
+    <link rel="stylesheet" href="/css/style.min.{{ site.data.cache_bust_css.date }}.css" media="
         only screen and (min-resolution: 0.1dpcm),
         only screen and (-webkit-min-device-pixel-ratio:0) and (min-color-index:0)
     ">
 
     <script src="/js/script.min.js"></script>
-    <!--<script src="/js/script.js"></script>-->
 
     {% if page.project != '' %}
         {% assign project_base_url = page.project | prepend: '/' %}
@@ -84,7 +81,6 @@
         <hr />
     </div>
 
-    <p>{{ site.data.cache_bust_css--style.date }}</p>
     {{ content }}
 
 </body>

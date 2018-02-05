@@ -17,6 +17,10 @@ const rename = require('gulp-rename');
 const now = Date.now()
 //console.log(now);
 
+gulp.task('empty_css_output', () =>
+    del.sync([css_dest + '*.*'])
+);
+
 // Compile SCSS in expanded mode so it's easier to inspect the result.
 gulp.task('sass', (cb) =>
     pump([
@@ -36,12 +40,10 @@ gulp.task('cssmin', (cb) =>
         cssmin(),
         rename({extname: '.min.css'}),
         gulp.dest((file) => {
-            // Empty the output folder:
-            del.sync([css_dest + '*.*']);
 
             // Establish the data storage name:
-            name       = file.path.replace(file.base, '').replace('.min.css', '');
-            
+            //name       = file.path.replace(file.base, '').replace('.min.css', '');
+            //fs.writeFile('./_data/cache_bust_css--' + name + '.yml', 'date: ' + now);
             // Establish the unix timestamp of the file's mtime:
             // Hmmm, this isn't easily available to the rename function.
             // My JS/Node-fu isn't good enough at the moment, so stick with const now, but
@@ -50,7 +52,7 @@ gulp.task('cssmin', (cb) =>
             //mtimedate  = new Date(mtime);
             //mtimestamp = Math.floor(mtimedate);
 
-            fs.writeFile('./_data/cache_bust_css--' + name + '.yml', 'date: ' + now);
+            fs.writeFile('./_data/cache_bust_css.yml', 'date: ' + now);
             return css_dest;
         }),
         rename({suffix: '.' + now}),
@@ -62,7 +64,7 @@ gulp.task('cssmin', (cb) =>
 // This combined task makes it convenient to run all the steps together.
 gulp.task('css', () => {
     console.log('Processing (S)CSS. See gulpfile.js for details.');
-    runSequence('sass', 'cssmin');
+    runSequence('empty_css_output', 'sass', 'cssmin');
 })
 
 
