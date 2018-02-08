@@ -5,7 +5,7 @@ const fs          = require('fs');
 const del         = require('del');
 
 /*------------------------------------------------------------------------------------------------*\
-    CSS    
+    CSS
 \*------------------------------------------------------------------------------------------------*/
 var css_src  = './_styles/';
 var css_dest = './css/';
@@ -69,7 +69,7 @@ gulp.task('css', () => {
 
 
 /*------------------------------------------------------------------------------------------------*\
-    IMAGES    
+    IMAGES
 \*------------------------------------------------------------------------------------------------*/
 var img_src  = './_images/';
 var img_dest = './img/';
@@ -79,7 +79,7 @@ const imagemin = require('gulp-imagemin');
 const svgmin   = require('gulp-svgmin');
 
 // Here we're converting SVG to PNG as a fallback for older browsers.
-// Note we're placing the files in the same directry as the SVG files, not the output folder as 
+// Note we're placing the files in the same directry as the SVG files, not the output folder as
 // we're not done processing them yet.
 // Also note that we're doing this BEFORE we optimise the SVG. The SVG optimisation (below) removes
 // the width and height attributes which causes problems for the PNG generation.
@@ -127,7 +127,7 @@ gulp.task('img', () => {
 
 
 /*------------------------------------------------------------------------------------------------*\
-    JS    
+    JS
 \*------------------------------------------------------------------------------------------------*/
 var js_src      = './_scripts/';
 var js_dest     = './js/';
@@ -152,7 +152,7 @@ gulp.task('concat_js', () =>
 );
 
 
-gulp.task('uglify', (cb) => 
+gulp.task('uglify', (cb) =>
     pump([
         gulp.src(js_src + js_filename),
         uglify(),
@@ -173,23 +173,23 @@ gulp.task('js', () => {
 
 
 /*------------------------------------------------------------------------------------------------*\
-    WATCHERS    
+    WATCHERS
 \*------------------------------------------------------------------------------------------------*/
 
 // Watch CSS:
 gulp.task('watch_css', function(){
-    gulp.watch(css_src + '**/*.scss', ['css']); 
+    gulp.watch(css_src + '**/*.scss', ['css']);
 });
 
 // Watch JS:
 gulp.task('watch_js', function(){
-    gulp.watch(js_src + '**/*.js', ['js']); 
+    gulp.watch(js_src + '**/*.js', ['js']);
 });
 
 
 // Watch all of the above:
 gulp.task('watch_all', function(){
     gulp.watch(css_src + '**/*.scss', ['css']);
-    gulp.watch(js_src + '**/*.js', ['js']); 
+    gulp.watch(js_src + '**/*.js', ['js']);
 });
 
