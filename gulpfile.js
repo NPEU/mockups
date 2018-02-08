@@ -4,6 +4,9 @@ const pump        = require('pump');
 const fs          = require('fs');
 const del         = require('del');
 
+
+const now = Date.now();
+
 /*------------------------------------------------------------------------------------------------*\
     CSS
 \*------------------------------------------------------------------------------------------------*/
@@ -14,12 +17,12 @@ const sass   = require('gulp-sass');
 const cssmin = require('gulp-cssmin');
 const rename = require('gulp-rename');
 
-const now = Date.now()
-//console.log(now);
 
+// Empty the CSS folder.
 gulp.task('empty_css_output', () =>
     del.sync([css_dest + '*.*'])
 );
+
 
 // Compile SCSS in expanded mode so it's easier to inspect the result.
 gulp.task('sass', (cb) =>
