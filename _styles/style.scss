@@ -22,7 +22,7 @@ $fallback--breakpoint--enhanced: 33em;
 @import '../bower_components/Fall-Back-Start-CSS/_settings.scss';
 
 $max-main-line-length: 0;
-$measure: 64rem;
+$measure: 68rem;
 
 @import '../bower_components/Fall-Back-Start-CSS/_start.scss';
 
@@ -122,7 +122,19 @@ $fallback-svg--link-bg-color-alt: #fff;
 $gallery-grid-spacing-unit: $fallback--base-rem-space-unit;
 @import "../bower_components/NPEU-layout-patterns/scss/_gallery-grid.scss";
 
-$card--base-color: lighten($fallback--base-ui-color, 60%);
+
+//$card--base-color: lighten($fallback--base-ui-color, 60%);
+$card--base-color: $fallback--base-ui-color;
+$card--text-color: #fff !default;
+//$card--background-color: $card--base-color !default;
+//$card--border-color: darken($card--background-color, 10%) !default;
+//$card--link-color: false !default;
+//$card--link-has-border-bottom: false !default;
+//$card--link-color--alt: false !default;
+//$card--link-has-border-bottom: false !default;
+//$card--link-border-bottom: false !default;
+//$card--link-border-bottom--hover: false !default;
+
 @import "patterns/_card.scss";
 
 
@@ -133,6 +145,9 @@ $card--base-color: lighten($fallback--base-ui-color, 60%);
 
 $panel--padding: $fallback--base-rem-space-unit;
 @import "patterns/_panel.scss";
+
+
+@import "patterns/_proportional-container.scss";
 
 /* ---------------------------------------------------------------------------------------------- */
 

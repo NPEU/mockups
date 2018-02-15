@@ -165,7 +165,25 @@ layout: structure
 						</div>
 					</div>
 				</div>
-
+                
+                <h2>Trial Information</h2>
+                
+                <div>
+                    <dl class="user-2-col-dl">
+                        <dt>EudraCT No.:</dt>
+                        <dd>2015-005342-63</dd>
+                        <dt>REC Reference:</dt>
+                        <dd>16/NW/0396</dd>
+                        <dt>ISRCTN:</dt>
+                        <dd>81191607</dd>
+                        <dt>Clinical Trials Unit:</dt>
+                        <dd>National Perinatal Epidemiology Unit CTU</dd>
+                        <dt>Sponsor:</dt>
+                        <dd>Liverpool Women's Foundation NHS Trust</dd>
+                        <dt>Funder:</dt>
+                        <dd>The NIHR Efficacy and Mechanism Evaluation (EME) Programme</dd>
+                    </dl>
+                </div>
             </main>
 
             <aside>
@@ -198,24 +216,8 @@ layout: structure
                         </div>
                     </section>-->
 
-                    <section class="c-panel t-{{ page.project }}--dark" data-wf="Module">
-                        <div class="c-info-box">
-                            <h2>Latest News</h2>
-
-                            <article>
-                                <h3>A Headline</h3>
-                                <p>And some intro text to give a little more info.</p>
-                            </article>
-
-                            <article>
-                                <h3>An Older Headline</h3>
-                            </article>
-
-                            <article>
-                                <h3>Another Old Headline Here</h3>
-                            </article>
-                        </div>
-                    </section>
+                    {% capture news_module %}module__news--{{ page.project }}.html{% endcapture %}
+                    {% include {{ news_module }} %}
 
 					<div class="c-panel  t-white" data-wf="Module">
                         {% capture funder_module %}module__funder--{{ page.project }}.html{% endcapture %}

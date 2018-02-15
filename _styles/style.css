@@ -3549,7 +3549,7 @@ body {
 /* ---------------------------------------------------------------------------------------------- */
 /* --| PATTERNS |-------------------------------------------------------------------------------- */
 main > :not(.full-width) {
-  max-width: 64rem;
+  max-width: 68rem;
   margin-left: auto;
   margin-right: auto;
 }
@@ -3650,6 +3650,7 @@ main > :not(.full-width) {
   position: absolute;
   width: 100%;
   top: 50%;
+  left: 0;
   transform: translateY(-50%);
 }
 
@@ -3658,7 +3659,7 @@ main > :not(.full-width) {
   .proportional-container__image-cover {
     height: 100%;
     object-fit: cover;
-    top: 0;
+    top: auto;
     transform: none;
   }
 }
@@ -3776,11 +3777,11 @@ main > :not(.full-width) {
 }
 
 .card.card {
-  color: #333;
-  background: #e0f5ff;
+  color: #fff;
+  background: #0077AD;
   padding: 2rem;
   /*height: 100%;*/
-  outline: 1px solid #ade5ff;
+  outline: 1px solid #00547a;
   /*max-width: 20em;*/
   margin-top: 0 auto;
   margin-bottom: 1.5rem;
@@ -3791,6 +3792,10 @@ main > :not(.full-width) {
             so hide it:
         */
   overflow: hidden;
+}
+
+.card a[href] {
+  color: #fff;
 }
 
 .card .card__image {
@@ -3813,7 +3818,7 @@ main > :not(.full-width) {
 }
 
 .card .card__body {
-  background: #e0f5ff;
+  background: #0077AD;
 }
 
 .card .card__offset-padding {
@@ -3832,8 +3837,8 @@ main > :not(.full-width) {
   /* AK. IE9 needs this. */
   overflow: visible;
   /* S: Internet Explorer 11-, N: Show the overflow in Edge, Firefox, and IE. */
-  background-color: #e0f5ff;
-  color: #333;
+  background-color: #0077AD;
+  color: #fff;
   font-size: inherit;
   font-family: inherit;
   font-style: inherit;
@@ -3848,7 +3853,7 @@ main > :not(.full-width) {
   /* AK */
   cursor: pointer;
   /* [N3] */
-  border-color: #ade5ff;
+  border-color: #00547a;
   border-style: solid;
   border-width: 1px;
   border-radius: 3px;
@@ -3889,7 +3894,7 @@ main > :not(.full-width) {
 }
 
 .card a.card__cta:hover, .card a.card__cta:active, .card a.card__cta:focus {
-  color: #333;
+  color: #fff;
 }
 
 .funder-logo {
@@ -3915,6 +3920,65 @@ main > :not(.full-width) {
   color: #333;
   background: #eee;
   outline: 1px solid #d5d5d5;
+}
+
+.proportional-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.proportional-container::before {
+  content: "";
+  display: block;
+  width: 100%;
+}
+
+.proportional-container__content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+/* Make the image fill the width and be vertically centered: */
+/* (in portrait images this will leave gaps at the sides) */
+.proportional-container__image-cover {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+/* If `object-fit` is supported, use that and override vertical centering: */
+@supports (object-fit: cover) {
+  .proportional-container__image-cover {
+    height: 100%;
+    object-fit: cover;
+    top: auto;
+    transform: none;
+  }
+}
+
+.proportional-container--1-1::before {
+  padding-top: 100%;
+}
+
+.proportional-container--2-1::before {
+  padding-top: 50%;
+}
+
+.proportional-container--3-1::before {
+  padding-top: 33%;
+}
+
+.proportional-container--4-3::before {
+  padding-top: 75%;
+}
+
+.proportional-container--16-9::before {
+  padding-top: 56.25%;
 }
 
 /* ---------------------------------------------------------------------------------------------- */
@@ -4059,8 +4123,8 @@ h1, h2, h3 {
 }
 
 .sticky-footer-expand main + aside {
-  min-width: 32rem;
-  width: calc((105.6rem - 100%) * 1000);
+  min-width: 34rem;
+  width: calc((111.6rem - 100%) * 1000);
   max-width: 100%;
   margin-left: auto;
   margin-bottom: 0;
@@ -4070,7 +4134,7 @@ h1, h2, h3 {
 }
 
 .sticky-footer-expand main + aside > div {
-  max-width: 64rem;
+  max-width: 68rem;
   margin: 0 auto;
 }
 
@@ -4205,6 +4269,11 @@ main {
   margin-bottom: 0;
 }
 
+/*
+.sign a[href]:hover {
+    transform: scale(1.05);
+}
+*/
 .sign a[href]:hover::before,
 .sign a[href]:active::before,
 .sign a[href]:focus::before {
@@ -4417,4 +4486,42 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e7692', end
 	text-align: center;
 }
 */
+.card .card__image img {
+  transition: all 0.5s ease;
+}
+
+.card > a:hover .card__image img {
+  transform: scale(1.2);
+}
+
+.card__image {
+  margin: -2rem;
+}
+
+.card__body h3 {
+  margin: 0;
+  padding: 1rem 2rem 0;
+}
+
+.gallery {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin: 0 -1rem;
+}
+
+.gallery.gallery > * {
+  -webkit-flex: 1 1 20em;
+  -ms-flex: 1 1 20em;
+  flex: 1 1 20em;
+  margin: 0 1rem 2rem 1rem;
+  max-width: 20em;
+}
+
 /* ---------------------------------------------------------------------------------------------- */

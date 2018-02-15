@@ -71,6 +71,10 @@ $card-pull: 5rem !default;
         */
         overflow: hidden;
     }
+    // For link colour override for whole card links (e.g. <article><a>)
+    .card a[href] {
+        color: $card--text-color;
+    }
 
         .card .card__image {
             position: relative;
