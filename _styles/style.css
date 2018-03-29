@@ -3648,10 +3648,10 @@ main > :not(.full-width) {
 /* (in portrait images this will leave gaps at the sides) */
 .proportional-container__image-cover {
   position: absolute;
-  width: 100%;
   top: 50%;
   left: 0;
   transform: translateY(-50%);
+  width: 100%;
 }
 
 /* If `object-fit` is supported, use that and override vertical centering: */
@@ -3945,10 +3945,10 @@ main > :not(.full-width) {
 /* (in portrait images this will leave gaps at the sides) */
 .proportional-container__image-cover {
   position: absolute;
-  width: 100%;
   top: 50%;
   left: 0;
   transform: translateY(-50%);
+  width: 100%;
 }
 
 /* If `object-fit` is supported, use that and override vertical centering: */
