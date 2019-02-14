@@ -12,31 +12,31 @@ layout: structure
                         <a href="/{{ page.project }}" class="svg__link">
                             <object type="image/svg+xml" data="/img/unit-logos/{{ page.project }}-logo.svg" height="100" class="svg__image" aria-hidden="true" tabindex="-1">
                                 <svg display="none">
-                                    <image src="/img/unit-/logos/{{ page.project }}-logo.png" height="100" class="svg__fallback-image" alt="Minidex home"></image>
+                                    <image src="/img/unit-/logos/{{ page.project }}-logo.png" height="100" class="svg__fallback-image" alt="{{ project_data.name }} home"></image>
                                 </svg>
-                                <span class="svg__fallback-text-alpha" data-content="Minidex home"></span>
+                                <span class="svg__fallback-text-alpha" data-content="{{ project_data.name }} home"></span>
                             </object>
-                            <div><i class="svg__fallback-text-beta">Minidex home</i></div>
+                            <div><i class="svg__fallback-text-beta">{{ project_data.name }} home</i></div>
                         </a>
 
                         <!--<a href="/listeningtoparents" class="svg__link">
                             <object type="image/svg+xml" data="/img/unit-logos/listeningtoparents-logo.svg" height="100" class="svg__image" aria-hidden="true" tabindex="-1">
                                 <svg display="none">
-                                    <image src="/img/unit-logos/listeningtoparents-logo.png" height="100" class="svg__fallback-image" alt="Minidex home"></image>
+                                    <image src="/img/unit-logos/listeningtoparents-logo.png" height="100" class="svg__fallback-image" alt="{{ project_data.name }} home"></image>
                                 </svg>
-                                <span class="svg__fallback-text-alpha" data-content="Minidex home"></span>
+                                <span class="svg__fallback-text-alpha" data-content="{{ project_data.name }} home"></span>
                             </object>
-                            <div><i class="svg__fallback-text-beta">Listening to Parents home</i></div>
+                            <div><i class="svg__fallback-text-beta">{{ project_data.name }} home</i></div>
                         </a>-->
 
                         <!--<a href="/maternity-surveys" class="svg__link">
                             <object type="image/svg+xml" data="/img/unit-logos/maternity-surveys-logo.svg" height="100" class="svg__image" aria-hidden="true" tabindex="-1">
                                 <svg display="none">
-                                    <image src="/img/unit-logos/maternity-surveys-logo.png" height="100" class="svg__fallback-image" alt="Minidex home"></image>
+                                    <image src="/img/unit-logos/maternity-surveys-logo.png" height="100" class="svg__fallback-image" alt="{{ project_data.name }} home"></image>
                                 </svg>
-                                <span class="svg__fallback-text-alpha" data-content="Minidex home"></span>
+                                <span class="svg__fallback-text-alpha" data-content="{{ project_data.name }} home"></span>
                             </object>
-                            <div><i class="svg__fallback-text-beta">Maternity Surveys home</i></div>
+                            <div><i class="svg__fallback-text-beta">{{ project_data.name }} home</i></div>
                         </a>-->
                     </div>
                 </div>
@@ -114,7 +114,11 @@ layout: structure
                 </div>-->
             </div>
         </header>
-
+        
+        {% if project_data.hero_image %}
+        <div class="proportional-container  proportional-container--3-1  hero-image--{{ page.project }}"></div>
+        {% endif %}
+        
         <div class="sticky-footer-expand">
             <main role="main" class="main-container" data-wf="Content">
 

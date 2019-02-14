@@ -5,3 +5,4 @@ title: NPEU Home
 NPEU Homepage
 
 * [Minidex](minidex)
+* [NeoCLEAR](neoclear)

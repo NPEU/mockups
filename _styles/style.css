@@ -4524,4 +4524,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e7692', end
   max-width: 20em;
 }
 
+/*---------------*/
+.hero-image--neoclear {
+  background-image: url("../img/neoclear/hero-image.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
 /* ---------------------------------------------------------------------------------------------- */
