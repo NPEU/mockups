@@ -1,0 +1,61 @@
+//$bands--base-color		 : #eee !default;
+$bands-namespace: u- !default;
+$theme-namespace: t- !default;
+
+$bands--band-color : $fallback--base-ui-color !default;
+
+
+.#{$bands-namespace}bands--left,
+.#{$bands-namespace}bands--sides {
+    border-left-style: solid;
+    border-left-width: 3px;
+}
+
+.#{$bands-namespace}bands--right,
+.#{$bands-namespace}bands--sides {
+    border-right-style: solid;
+    border-right-width: 3px;
+}
+
+.#{$bands-namespace}bands--top,
+.#{$bands-namespace}bands--above {
+    border-top-style: solid;
+    border-top-width: 3px;
+}
+
+.#{$bands-namespace}bands--bottom,
+.#{$bands-namespace}bands--below {
+    border-bottom-style: solid;
+    border-bottom-width: 3px;
+}
+
+.#{$bands-namespace}bands {
+    border-style: solid;
+    border-width: $sz-m !important;
+}
+
+@mixin bands-theme ($name: "", $theme: ()) {
+	// Set up theme name:
+	$theme-class: "";
+	@if $name != "" {
+		$theme-class: unquote('.')#{$theme-namespace}#{$name};
+	}
+	@debug $theme-class;
+
+	.#{$bands-namespace}bands#{$theme-class},
+    .#{$bands-namespace}bands--left#{$theme-class},
+    .#{$bands-namespace}bands--right#{$theme-class},
+    .#{$bands-namespace}bands--sides#{$theme-class},
+    .#{$bands-namespace}bands--top#{$theme-class},
+    .#{$bands-namespace}bands--above#{$theme-class},
+    .#{$bands-namespace}bands--bottom#{$theme-class},
+    .#{$bands-namespace}bands--below#{$theme-class} {
+		border-color: map-get($theme, band-color);
+	}
+}
+
+@include bands-theme(
+    "",
+    (
+        band-color : $bands--band-color
+    ));

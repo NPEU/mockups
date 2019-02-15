@@ -1,0 +1,70 @@
+//$panel--base-color		 : #eee !default;
+$panel-namespace: c- !default;
+$theme-namespace: t- !default;
+
+$panel--text-color       : #333 !default;
+$panel--background-color : #eee !default;
+
+// Note: border color gets darkened by default later, but declaring here to allow specific override:
+//$panel--border-color: darken($panel--background-color, 10%) !default;
+$panel--border-color: null !default;
+$panel--border-width: 1px !default;
+$panel--border-style: solid !default;
+
+$panel--padding: 2rem !default;
+
+.#{$panel-namespace}panel {
+	padding: $panel--padding;
+	
+	@include bottom-space-fix();
+}
+
+
+@mixin panel-theme ($name: "", $theme: ()) {
+	// Set up theme name:
+	$theme-class: "";
+	@if $name != "" {
+		$theme-class: unquote('.')#{$theme-namespace}#{$name};
+	}
+	@debug $theme-class;
+	
+    $text-color       : map-get($theme, text-color);
+    $background-color : map-get($theme, background-color);
+    $border-color     : map-get($theme, border-color);
+    
+	@if $border-color == null {
+		$border-color: darken($background-color, 10%);
+    }
+
+	// Problem here is that we only want to set a darker border colour if we haven't explicated
+	// set one. Default is passed to config, but theme override may be different and we need to know
+	// if it is, because we don't want to auto-darken if we've deliberately set a specific color.
+	// We want to allow a theme cascade (setting minimum properties) but also allow specific
+	// overrides, but should allow for branched cascades too.
+	// Handle override default versus specified in theme.
+
+	// Weirdly, SASS throws an error at this
+	// "Error: Base-level rules cannot contain the parent-selector-referencing character '&'."
+	// There's no '&' being used, so not sure what's going on.
+	// Using nested option as a workaround.
+	//.#{$panel-namespace}panel.#{$theme-prefix}#{$name} {
+	// + panel + . + #{$theme-prefix} + #{$name}
+	.#{$panel-namespace}panel#{$theme-class} {
+		color: $text-color;
+		background: $background-color;
+
+		outline: 1px solid $border-color;
+	}
+
+}
+
+@include panel-theme(
+    "",
+    (
+        text-color		 : $panel--text-color,
+        background-color : $panel--background-color,
+        border-color     : $panel--border-color,
+        border-width     : $panel--border-width,
+        border-style     : $panel--border-style
+    )
+);

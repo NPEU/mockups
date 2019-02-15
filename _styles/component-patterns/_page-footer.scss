@@ -1,0 +1,126 @@
+/*.page-footer {
+
+    &#{&} {
+        background-color: $fallback--base-ui-color;
+        padding: ($fallback--base-em-ratio * 1.5em) / 3;
+        font-size: 0.875em;
+        text-align: center;
+        color: #fff;
+        margin-bottom: 0;
+    }
+
+
+
+    a[href] {
+        color: lighten($fallback--base-ui-color, 40%);
+    }
+
+    a[href]:hover,
+    a[href]:active,
+    a[href]:focus {
+        color: lighten($fallback--base-ui-color, 20%);
+    }
+
+}*/
+
+.page-footer {
+
+    &#{&} {
+        font-size: 1.3rem;
+        line-height: 1.3;
+    }
+    
+    h2 {
+        font-size: 2rem;
+        line-height: 2.4rem;
+        margin-bottom: 1.2rem;
+        margin-left: -0.2em;
+    }
+    
+    address {
+        font-style: normal;
+        //font-size: 1.2rem;
+        //line-height: 1.2;
+    }
+    
+    .copyright {
+        padding: 0.6rem 1.2rem;
+        margin: 0;
+    }
+ 
+    .page-footer__social-badges {
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+
+        -webkit-flex-direction: row;
+            -ms-flex-direction: row;
+                flex-direction: row;
+
+        /*webkit-flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+                flex-wrap: wrap;*/
+        
+        -webkit-justify-content: flex-start;
+                  -ms-flex-pack: start;
+                justify-content: flex-start;
+                
+        -webkit-align-items: center;
+             -ms-flex-align: center;
+                align-items: center;
+        
+    }
+    
+    .page-footer__social-badges > * {
+        -webkit-flex: 0 1 auto;
+            -ms-flex: 0 1 auto;
+                flex: 0 1 auto;
+                
+        margin: 0 0.5em;
+    }
+    
+    /*.page-footer__social-badges > :not(:last-child) {
+        margin-right: 1.5em;
+    }*/
+    
+    .page-footer__social-badges img {
+        vertical-align: middle;
+        line-height: 0;
+    }
+    
+    
+    
+    .page-footer__social-badges--twitter {
+        max-width: 28px;
+    }
+    
+    .page-footer__social-badges--youtube {
+        max-width: 90px;
+    }
+ 
+ 
+ 
+    #{&}__bottom-bar {
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+
+        -webkit-justify-content: space-between;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+
+        -webkit-flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
+                
+        > * {
+            -webkit-flex: 0 1 auto;
+                -ms-flex: 0 1 auto;
+                    flex: 0 1 auto;
+        }
+    }
+}

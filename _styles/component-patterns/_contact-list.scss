@@ -1,0 +1,23 @@
+/*
+
+
+*/
+
+.contact-list {
+
+    dt {
+        display: none;
+    }
+
+    
+    .name {
+        font-weight: bold;
+    }
+    
+    // @TODO - this is a bit "magic number-y":
+    .icon {
+        margin-left: -1.75em;
+        margin-right: 0.5em;
+    }
+
+}

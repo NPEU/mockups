@@ -1,0 +1,61 @@
+
+
+
+$hero-breakpoint: 52em !default;
+
+.hero.hero {
+    position: relative;
+}
+
+/*
+.hero .hero-message {
+    margin-left: $body-padding;
+    margin-right: $body-padding;
+}
+*/
+/*
+@media only screen and (min-width:500px) {
+
+    .hero .hero-message {
+        position: relative;
+        z-index: 1;
+
+        margin-top: -15%;
+        margin-left: auto;
+        margin-right: auto;
+
+        width: 80%;
+    }
+
+}
+*/
+
+@media only screen and (min-width:#{$hero-breakpoint}) {
+
+    .hero .hero-message {
+        position: absolute;
+        margin: 0;
+        top: 50%;
+        left: 4vw;
+        transform: translateY(-50%);
+        z-index: 1;
+
+        width: 40%;
+    }
+
+}
+
+/*
+@media only screen and (min-width:1000px) {
+
+    .hero-box.hero-box {
+        z-index: 9999;
+        position: relative;
+
+        margin-left: $sz-xl;
+        margin-top: $sz-l;
+        margin-bottom: $sz-l;
+        width: 22em;
+    }
+
+}*/

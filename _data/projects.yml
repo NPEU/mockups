@@ -45,7 +45,7 @@ minidex:
 neoclear:
     name: NeoCLEAR
     randomisation_url: https://rct.npeu.ox.ac.uk/neoclear
-    hero_image: true
+    hero_image: /img/neoclear/hero-image.jpg
     participants_svg: |
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
             <g>
