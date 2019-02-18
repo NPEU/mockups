@@ -1,7 +1,17 @@
-$sz-xxs: $fallback--base-rem-space-unit / 8; // 3px
-$sz-xs: $fallback--base-rem-space-unit / 4; // 6px
-$sz-s: $fallback--base-rem-space-unit / 2; // 12px
-$sz-m: $fallback--base-rem-space-unit; // 24px
-$sz-l: $fallback--base-rem-space-unit * 2; // 48px
-$sz-xl: $fallback--base-rem-space-unit * 4; // 96px
-$sz-xxl: $fallback--base-rem-space-unit * 8; // 192px
+$sz-xxs : $fallback--base-rem-space-unit / 8; // 3px
+$sz-xs  : $fallback--base-rem-space-unit / 4; // 6px
+$sz-s   : $fallback--base-rem-space-unit / 2; // 12px
+$sz-m   : $fallback--base-rem-space-unit; // 24px
+$sz-l   : $fallback--base-rem-space-unit * 2; // 48px
+$sz-xl  : $fallback--base-rem-space-unit * 4; // 96px
+$sz-xxl : $fallback--base-rem-space-unit * 8; // 192px
+
+$sizes: (
+    sz-xxs : $sz-xxs,
+    sz-xs  : $sz-xs,
+    sz-s   : $sz-s,
+    sz-m   : $sz-m,
+    sz-l   : $sz-l,
+    sz-xl  : $sz-xl,
+    sz-xxl : $sz-xxl
+);

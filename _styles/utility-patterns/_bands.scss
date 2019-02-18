@@ -31,7 +31,13 @@ $bands--band-color : $fallback--base-ui-color !default;
 
 .#{$bands-namespace}bands {
     border-style: solid;
-    border-width: $sz-m !important;
+    border-width: 3px;
+}
+
+@each $name, $size in $sizes {
+    .#{$bands-namespace}bands--#{$name} {
+        border-width: $size;
+    }
 }
 
 @mixin bands-theme ($name: "", $theme: ()) {
@@ -40,7 +46,7 @@ $bands--band-color : $fallback--base-ui-color !default;
 	@if $name != "" {
 		$theme-class: unquote('.')#{$theme-namespace}#{$name};
 	}
-	@debug $theme-class;
+	//@debug $theme-class;
 
 	.#{$bands-namespace}bands#{$theme-class},
     .#{$bands-namespace}bands--left#{$theme-class},

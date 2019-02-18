@@ -39,10 +39,10 @@ $randomise-cta--padding: $fallback--base-rem-space-unit / 2 !default;
 	@if $name != "" {
 		$theme-class: unquote('.')#{$theme-namespace}#{$name};
 	}
-	@debug $theme-class;
+	//@debug $theme-class;
 
 	.#{$randomise-cta-namespace}randomise-cta#{$theme-class}[href] {
-		color: map-get($theme, text-color);
+		color: map-get($theme, cta-text-color);
 		background-color: map-get($theme, background-color);
 	}
 
@@ -52,9 +52,20 @@ $randomise-cta--padding: $fallback--base-rem-space-unit / 2 !default;
     .#{$randomise-cta-namespace}randomise-cta#{$theme-class}[href]:hover,
     .#{$randomise-cta-namespace}randomise-cta#{$theme-class}[href]:active,
     .#{$randomise-cta-namespace}randomise-cta#{$theme-class}[href]:focus {
-        box-shadow: 0 0 0 $hover-effect-width rgba(map-get($theme, background-color), $hover-effect-opacity);
-        color: map-get($theme, text-color);
-		background-color: map-get($theme, background-color);
+        //box-shadow: 0 0 0 $hover-effect-width rgba(map-get($theme, background-color), $hover-effect-opacity);
+        color: map-get($theme, cta-text-color);
+		//background-color: map-get($theme, background-color);
+        
+        @if is-int($button-background-color--alt) {
+            @if $button-background-color--alt > 0 {
+                $button-background-color--alt_percent: $button-background-color--alt * 1%;
+                background-color: lighten(map-get($theme, background-color), $button-background-color--alt_percent);
+            }
+            @if $button-background-color--alt < 0 {
+                $button-background-color--alt_percent: $button-background-color--alt * -1%;
+                background-color: darken(map-get($theme, background-color), $button-background-color--alt_percent);
+            }
+        }
     }
 }
 

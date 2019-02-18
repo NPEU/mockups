@@ -48,7 +48,11 @@ h1, h2, h3 {
             flex-grow: 1;
 }
 
+.sticky-footer-expand main {
+    max-width: 120rem;
+}
 
+/*
 .sticky-footer-expand main,
 .sticky-footer-expand main + aside {
 	padding-top: $fallback--base-rem-space-unit;
@@ -74,7 +78,7 @@ h1, h2, h3 {
     margin: 0 auto;
 }
 
-
+*/
 
 .feather {
     fill: none;
@@ -97,65 +101,6 @@ h1, h2, h3 {
 
 .margin-boundary {}
 
-/* Signpost */
-.sign.gallery-grid__item {
-    -ms-flex-preferred-size: 50%;
-         -webkit-flex-basis: 50%;
-                 flex-basis: 50%;
-}
-
-.sign a[href] {
-	padding: $fallback--base-rem-space-unit / 4;
-	display: block;
-	background: linear-gradient(to right, #007DB1 0%,#007DB1 25%,#64AED3 25%,#64AED3 50%,#B6B1C7 50%,#B6B1C7 75%,#6F6992 75%,#6F6992 100%);
-
-	border: 0;
-
-	position: relative;
-	margin-bottom: 0;
-    
-    //transition: all 0.3s ease;
-}
-/*
-.sign a[href]:hover {
-    transform: scale(1.05);
-}
-*/
-.sign a[href]:hover::before,
-.sign a[href]:active::before,
-.sign a[href]:focus::before {
-	border: 0;
-	background: inherit;
-	content: "";
-	display: block;
-	position: absolute;
-	top: -$hover-effect-width;
-	right: -$hover-effect-width;
-	bottom: -$hover-effect-width;
-	left: -$hover-effect-width;
-	z-index: -1;
-	opacity: $hover-effect-opacity;
-}
-
-.sign span {
-	padding: $fallback--base-rem-space-unit;
-	background: lighten(#6F6992, 40%);
-
-	font-family: 'Nunito', sans-serif;
-	font-size: 1.625em;
-	font-weight: bold;
-	display: block;
-	text-align: center;
-	color: #3E7692;
-}
-
-.sign svg {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	height: $fallback--base-rem-space-unit * 5;
-	margin-bottom: $fallback--base-rem-space-unit;
-}
 
 
 /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#3e7692+0,3e7692+25,3e7692+25,7b9db2+25,7b9db2+50,c5c0d2+50,c5c0d2+75,6f6992+75,6f6992+100 /
@@ -406,8 +351,58 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e7692', end
 }
 
 
+.gallery-grid.c-signpost .gallery-grid__item {
+    max-width: none;
+}
 
 
 
+.gallery-grid.c-signpost .gallery-grid__item {
+         -webkit-flex-basis: 13em;
+    -ms-flex-preferred-size: 13em;
+                 flex-basis: 13em;
+}
+
+@supports (display: grid) {
+    .gallery-grid.c-signpost {
+        grid-template-columns: repeat(auto-fit, minmax(13em, 1fr));
+    }
+    
+}
 
 /*---------------*/
+
+.hero-image {
+    z-index: -1;
+}
+
+
+@media only screen and (max-width: $fallback--breakpoint--enhanced) {
+    .js-over-panel-control.over-panel-control {
+        margin-right: auto;
+    }
+    
+    .c-randomise-cta {
+        margin-left: $sz-s;
+    }
+
+    .c-page-header__last {
+        margin-top: $sz-s;
+    }
+}
+
+
+@media only screen and (min-width: $fallback--breakpoint--enhanced) {
+    .c-page-header.u-bands--bottom {
+        border: 0;
+    }
+}
+
+
+/*----------------*/
+
+
+
+.c-recruitment__current {
+    font-size: 2em;
+}

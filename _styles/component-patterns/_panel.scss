@@ -3,7 +3,7 @@ $panel-namespace: c- !default;
 $theme-namespace: t- !default;
 
 $panel--text-color       : #333 !default;
-$panel--background-color : #eee !default;
+$panel--background-color : #fff !default;
 
 // Note: border color gets darkened by default later, but declaring here to allow specific override:
 //$panel--border-color: darken($panel--background-color, 10%) !default;
@@ -26,7 +26,7 @@ $panel--padding: 2rem !default;
 	@if $name != "" {
 		$theme-class: unquote('.')#{$theme-namespace}#{$name};
 	}
-	@debug $theme-class;
+	//@debug $theme-class;
 	
     $text-color       : map-get($theme, text-color);
     $background-color : map-get($theme, background-color);
@@ -53,7 +53,7 @@ $panel--padding: 2rem !default;
 		color: $text-color;
 		background: $background-color;
 
-		outline: 1px solid $border-color;
+		//outline: 1px solid $border-color;
 	}
 
 }

@@ -29,11 +29,11 @@ $page-header--padding: $fallback--base-rem-space-unit / 2 !default;
 	@if $name != "" {
 		$theme-class: unquote('.')#{$theme-namespace}#{$name};
 	}
-	@debug $theme-class;
+	//@debug $theme-class;
 
 	.#{$page-header-namespace}page-header#{$theme-class} {
 		color: map-get($theme, text-color);
-		background-color: map-get($theme, background-color);
+		background-color: map-get($theme, page-header-color);
 	}
 }
 

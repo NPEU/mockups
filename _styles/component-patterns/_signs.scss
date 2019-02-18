@@ -1,0 +1,75 @@
+/*
+*/
+
+$sign-namespace: c- !default;
+$theme-namespace: t- !default;
+
+
+
+
+/* Signpost */
+/*.sign.gallery-grid__item {
+    -ms-flex-preferred-size: 50%;
+         -webkit-flex-basis: 50%;
+                 flex-basis: 50%;
+}
+*/
+
+.#{$sign-namespace}sign a[href] {
+	padding: $sz-xs;
+	display: block;
+	//background: linear-gradient(to right, #007DB1 0%,#007DB1 25%,#64AED3 25%,#64AED3 50%,#B6B1C7 50%,#B6B1C7 75%,#6F6992 75%,#6F6992 100%);
+
+	border: 0;
+
+	position: relative;
+	margin-bottom: 0;
+    
+    //transition: all 0.3s ease;
+}
+/*
+.sign a[href]:hover {
+    transform: scale(1.05);
+}
+*/
+.#{$sign-namespace}sign a[href]:hover::before,
+.#{$sign-namespace}sign a[href]:active::before,
+.#{$sign-namespace}sign a[href]:focus::before {
+	border: 0;
+	background: inherit;
+	content: "";
+	display: block;
+	position: absolute;
+	top: -$hover-effect-width;
+	right: -$hover-effect-width;
+	bottom: -$hover-effect-width;
+	left: -$hover-effect-width;
+	//z-index: -1;
+	opacity: $hover-effect-opacity;
+    background: #000;
+}
+
+.#{$sign-namespace}sign span {
+	padding: $sz-s;
+	//background: rgba(255,255,255,0.5);
+
+	font-family: 'Nunito', sans-serif;
+	font-size: 1.625em;
+	font-weight: bold;
+	display: block;
+	text-align: center;
+	color: #fff;
+	//color: #333;
+    outline: 1px solid #fff;
+    position: relative;
+}
+
+.#{$sign-namespace}sign svg {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	height: $fallback--base-rem-space-unit * 2;
+	//height: $fallback--base-rem-space-unit * 5;
+	margin-bottom: $fallback--base-rem-space-unit / 2;
+	//margin-bottom: $fallback--base-rem-space-unit;
+}

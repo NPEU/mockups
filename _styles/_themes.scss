@@ -30,35 +30,18 @@ $patterns: (
 
 @each $name, $theme in $themes {
 
-    // Set default background color:
-	$background-color: map-get($theme, primary-color);
-	@if map-has-key($theme, background-color) {
-		$background-color: map-get($theme, background-color);
-	}
-
-    // Set default band color:
-	$band-color: map-get($theme, primary-color);
-	@if map-has-key($theme, band-color) {
-		$band-color: map-get($theme, band-color);
-	}
-
-    // Set default border color:
-	/*$border-color: map-get($theme, primary-color);
-	@if map-has-key($theme, border-color) {
-		$border-color: map-get($theme, border-color);
-	}*/
-
-    // Set default page-header color:
-	$page-header-color: map-get($theme, primary-color);
-	@if map-has-key($theme, page-header-color) {
-		$page-header-color: map-get($theme, page-header-color);
-	}
-
-	// Set default text color:
-	$text-color: $fallback--base-text-color;
-	@if map-has-key($theme, text-color) {
-		$text-color: map-get($theme, text-color);
-	}
+    // Set defaults:
+    $theme: map-merge(
+        (
+            background-color  : map-get($theme, primary-color),
+            band-color        : map-get($theme, primary-color),
+            border-color      : map-get($theme, primary-color),
+            cta-text-color    : #333333,
+            page-header-color : map-get($theme, primary-color),
+            text-color        : #333333
+        )
+        , $theme
+    );
 
     /* - Waiting for SASS to support. Currently pseudo code.
     @each $pattern in $patterns {
@@ -70,7 +53,9 @@ $patterns: (
         );
     }
     */
+    @debug $theme;
 
+    @include background-theme($name, $theme);
     @include bands-theme($name, $theme);
     @include page-header-theme($name, $theme);
 	@include panel-theme($name, $theme);
@@ -80,11 +65,47 @@ $patterns: (
 
     // Override StartCSS values.
     // Note this almost certainly isn't the best place for this but will do for now.
+    /*.#{$theme-namespace}#{$name}.t-color {
+        color: map-get($theme, text-color);
+    }*/
+    
 
-    .#{$theme-namespace} button {
-        border-color: $border-color;
-
-        color: $color;
-        background-color: $bg-color;
+    .#{$theme-namespace}#{$name} button,
+    .#{$theme-namespace}#{$name} button.over-panel-control {
+        
+        border-color: map-get($theme, border-color);
+        color: map-get($theme, cta-text-color);
+        background-color: map-get($theme, background-color);
+        
+        &:hover,
+        &:active,
+        &:focus, {
+            @if is-int($button-background-color--alt) {
+                @if $button-background-color--alt > 0 {
+                    $button-background-color--alt_percent: $button-background-color--alt * 1%;
+                    background-color: lighten(map-get($theme, background-color), $button-background-color--alt_percent);
+                }
+                @if $button-background-color--alt < 0 {
+                    $button-background-color--alt_percent: $button-background-color--alt * -1%;
+                    background-color: darken(map-get($theme, background-color), $button-background-color--alt_percent);
+                }
+            }
+            /*@else {
+                background-color: map-get($theme, background-color);
+            }*/
+        }
+    }
+    
+    .#{$theme-namespace}#{$name} a[href].cta {
+        
+        border-color: map-get($theme, border-color);
+        color: map-get($theme, text-color);
+        background-color: #fff;
+        
+        &:hover,
+        &:active,
+        &:focus, {
+            background-color: lighten(map-get($theme, border-color), 65%);
+        }
     }
 }

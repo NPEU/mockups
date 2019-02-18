@@ -4406,11 +4406,11 @@ _:-webkit-full-screen, _::-webkit-full-page-media, _:future, :root select[size="
     border-radius: 50%;
   }
   input[type="radio"]:checked {
-    background-image: -moz-radial-gradient(center, ellipse cover, #333333 0%, #333333 35%, rgba(0, 0, 0, 0) 35%, rgba(0, 0, 0, 0) 100%);
+    background-image: -moz-radial-gradient(center, ellipse cover, #333333 0%, #333333 35%, transparent 35%, transparent 100%);
     /* FF3.6-15 */
-    background-image: -webkit-radial-gradient(center, ellipse cover, #333333 0%, #333333 35%, rgba(0, 0, 0, 0) 35%, rgba(0, 0, 0, 0) 100%);
+    background-image: -webkit-radial-gradient(center, ellipse cover, #333333 0%, #333333 35%, transparent 35%, transparent 100%);
     /* Chrome10-25,Safari5.1-6 */
-    background-image: radial-gradient(ellipse at center, #333333 0%, #333333 35%, rgba(0, 0, 0, 0) 35%, rgba(0, 0, 0, 0) 100%);
+    background-image: radial-gradient(ellipse at center, #333333 0%, #333333 35%, transparent 35%, transparent 100%);
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   }
   input[type="checkbox"]:checked::after {
@@ -4458,8 +4458,7 @@ _:-webkit-full-screen, _::-webkit-full-page-media, _:future, :root select[size="
   -webkit-appearance: radio;
 }
 
-/*------------------------------------------------------------------------------------------------*\
-    Fall-Back Icons v1.0.0
+/*------------------------------------------------------------------------------------------------*    Fall-Back Icons v1.0.0
     
     Designed for use with the basic [CSS Mustard Cut](https://github.com/Fall-Back/CSS-Mustard-Cut)
     IE 9+, FF 8+, Opera 12, [Chrome 29+, Android ~4.4+]
@@ -4624,7 +4623,7 @@ _:-o-prefocus, :root .icon {
 /* -----------------------------------------------------------------------------------------------*/
 /* ********************************************************************************************** */
 /* -- Enhanced layout --------------------------------------------------------------------------- */
-@media only screen and (max-width: 45.9375em) {
+@media only screen and (max-width: 42.5em) {
   /*
             1. Helps compatibiliy with Nav-Bar. No down-sides I can see. May have to revise if some
                become apparent.
@@ -4657,7 +4656,7 @@ _:-o-prefocus, :root .icon {
   .js-over-panel .over-panel__contents {
     position: absolute;
     left: 0;
-    top: 2.4rem;
+    top: 3px;
     width: 100%;
     visibility: hidden;
     /* [1] */
@@ -4854,7 +4853,7 @@ _:-o-prefocus, :root .icon {
         1. Helps to position above subsequent elements so subnavs sit on top.
     */
 .nav-bar.nav-bar {
-  background-color: #999;
+  background-color: #fff;
   position: relative;
   z-index: 9999;
   /* [1] */
@@ -4936,7 +4935,7 @@ _:-o-prefocus, :root .icon {
   /* [1] */
   flex: 1 0 auto;
   /* [1] */
-  background: #999;
+  background: #fff;
   white-space: nowrap;
   position: relative;
   /* [1] */
@@ -5026,7 +5025,7 @@ _:-o-prefocus, :root .icon {
         2. Prevent any overflow and possible contain floats.
     */
 .nav-bar .nav-bar__main {
-  background-color: #999;
+  background-color: #fff;
   /* 1 */
   overflow: hidden;
   /* 2 */
@@ -5074,7 +5073,7 @@ _:-o-prefocus, :root .icon {
 .nav-bar .subnav {
   padding: 0;
   margin-left: 1.125em;
-  background-color: #999;
+  background-color: #fff;
 }
 
 .nav-bar .subnav__items {
@@ -5156,17 +5155,17 @@ _:-o-prefocus, body:last-child .nav-bar .subnav__heading {
 }
 
 .nav-bar .nav-bar__link {
-  color: #fff;
-  background-color: #999;
+  color: #333;
+  background-color: #fff;
 }
 
 .nav-bar .subnav__heading {
-  color: #fff;
+  color: #333;
 }
 
 .nav-bar .subnav__link {
-  color: #fff;
-  background-color: #999;
+  color: #333;
+  background-color: #fff;
 }
 
 /*
@@ -5177,20 +5176,20 @@ _:-o-prefocus, body:last-child .nav-bar .subnav__heading {
 .nav-bar .nav-bar__link:hover,
 .nav-bar .nav-bar__link:active,
 .nav-bar .nav-bar__link[aria-expanded="true"] {
-  color: #fff;
-  background-color: #757575;
+  color: #333;
+  background-color: #dbdbdb;
 }
 
 .nav-bar .nav-bar__link:focus {
-  color: #fff;
-  background-color: #878787;
+  color: #333;
+  background-color: #ededed;
 }
 
 .nav-bar .subnav__link:hover,
 .nav-bar .subnav__link:focus,
 .nav-bar .subnav__link:active {
-  color: #fff;
-  background-color: #757575;
+  color: #333;
+  background-color: #dbdbdb;
 }
 
 .nav-bar .subnav__control {
@@ -5206,7 +5205,7 @@ _:-o-prefocus, body:last-child .nav-bar .subnav__heading {
     (CSS only attempts weren't good enough)
     So, scoping these styles to the 'js-nav-bar' class.
 */
-@media only screen and (min-width: 46em) {
+@media only screen and (min-width: 42.5625em) {
   /*
             1. Flex is only really needed for 'additional' to fill up the space.
                I don't think this would actually do any harm...
@@ -5232,7 +5231,7 @@ _:-o-prefocus, body:last-child .nav-bar .subnav__heading {
     top: 0;
     bottom: 0;
     z-index: -1;
-    background-color: #999;
+    background-color: #fff;
   }
   /*
             Child items are floated, so clear those.
@@ -5387,7 +5386,7 @@ _:-o-prefocus, body:last-child .nav-bar .subnav__heading {
                (See http://joren.co/flex-grow-9999-hack/)
         */
   .js-nav-bar .nav-bar__additional {
-    background-color: #999;
+    background-color: #fff;
     float: right;
     /* - this causes problems on Firefox on Mac. Investigate before reinstating.
             -webkit-flex: 9999 0 auto;
@@ -5578,13 +5577,13 @@ $fallback--dropdown__button--background-color: $fallback--nav-bar__link--backgro
 /* -----------------------------------------------------------------------------------------------*/
 /* ********************************************************************************************** */
 /* -- Enhanced layout --------------------------------------------------------------------------- */
-@media only screen and (max-width: 45.9375em) {
+@media only screen and (max-width: 42.5em) {
   .search-form .search-form__collapse {
     width: 100%;
   }
 }
 
-@media only screen and (min-width: 46em) {
+@media only screen and (min-width: 42.5625em) {
   /*
             1. Reinstate all flexbox for enhanced view as no wrapping needs to occure
             (FF8-27 issue describbed above)
@@ -5604,8 +5603,7 @@ $fallback--dropdown__button--background-color: $fallback--nav-bar__link--backgro
 }
 
 /* ---------------------------------------------------------------------------------------------- */
-/*------------------------------------------------------------------------------------------------*\
-
+/*------------------------------------------------------------------------------------------------*
     Designed for use with the basic [CSS Mustard Cut](https://github.com/Fall-Back/CSS-Mustard-Cut)
     IE 9+, FF 8+, Opera 12, [Chrome 29+, Android ~4.4+]
     Chrome 29+, Opera 16+, Safari 6.1+, iOS 7+, Android ~4.4+
@@ -5688,8 +5686,7 @@ body {
 }
 
 /*------------------------------------------------------------------------------------------------*/
-/*------------------------------------------------------------------------------------------------*\
-
+/*------------------------------------------------------------------------------------------------*
     Clarification for self:
     Since this pattern is intented for use on logos, and since logos are an integral part of
     branding, this pattern is not ONLY intended as a CSS fallback.
@@ -5769,7 +5766,7 @@ body {
   right: 0;
   bottom: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0);
+  background: transparent;
   /* [1] */
 }
 
@@ -5822,8 +5819,8 @@ body {
         width. UNRESOLVED.
     */
 .svg--fixed-height {
-  height: 100px;
-  max-height: 100px;
+  height: 80px;
+  max-height: 80px;
 }
 
 .svg--fixed-height .svg__link,
@@ -5858,7 +5855,7 @@ body {
 }
 
 .svg--fixed-height .svg__link {
-  padding: 16px;
+  padding: 6px;
   border-width: 0;
 }
 
@@ -5881,7 +5878,7 @@ body {
 }
 
 .svg--fluid .svg__link {
-  padding: 16px;
+  padding: 6px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -5901,7 +5898,7 @@ body {
 
 .svg--fluid .svg__fallback-text {
   position: relative;
-  left: 16px;
+  left: 6px;
 }
 
 /*------------------------------------------------------------------------------------------------*/
@@ -6026,10 +6023,8 @@ body {
   border-width: 0;
 }
 
-/*------------------------------------------------------------------------------------------------*\
-\*------------------------------------------------------------------------------------------------*/
-/*------------------------------------------------------------------------------------------------*\
-    Import Fall-Back vars:
+/*------------------------------------------------------------------------------------------------*\*------------------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------------------*    Import Fall-Back vars:
 
     Slightly hacky way of allowing the main UI colour of this pattern to be:
      - base-ui colour (if set)
@@ -6744,7 +6739,24 @@ $event--border-color: $fallback--base-ui-color;
 
 .c-page-header {
   color: #fff;
-  background-color: #0077AD;
+}
+
+.c-panel {
+  padding: 2.4rem;
+  padding-bottom: 0 !important;
+}
+
+.c-panel::after {
+  content: "";
+  display: block;
+  height: 1px;
+  margin-bottom: -1px;
+  margin-top: 2.4rem;
+}
+
+.c-panel {
+  color: #333;
+  background: #fff;
 }
 
 .c-randomise-cta[href] {
@@ -6764,16 +6776,71 @@ $event--border-color: $fallback--base-ui-color;
 }
 
 .c-randomise-cta[href] {
-  color: #fff;
   background-color: #0077AD;
 }
 
 .c-randomise-cta[href]:hover,
 .c-randomise-cta[href]:active,
 .c-randomise-cta[href]:focus {
-  box-shadow: 0 0 0 0.6rem rgba(0, 119, 173, 0.2);
+  background-color: #00547a;
+}
+
+/*
+*/
+/* Signpost */
+/*.sign.gallery-grid__item {
+    -ms-flex-preferred-size: 50%;
+         -webkit-flex-basis: 50%;
+                 flex-basis: 50%;
+}
+*/
+.c-sign a[href] {
+  padding: 0.6rem;
+  display: block;
+  border: 0;
+  position: relative;
+  margin-bottom: 0;
+}
+
+/*
+.sign a[href]:hover {
+    transform: scale(1.05);
+}
+*/
+.c-sign a[href]:hover::before,
+.c-sign a[href]:active::before,
+.c-sign a[href]:focus::before {
+  border: 0;
+  background: inherit;
+  content: "";
+  display: block;
+  position: absolute;
+  top: -0.6rem;
+  right: -0.6rem;
+  bottom: -0.6rem;
+  left: -0.6rem;
+  opacity: 0.2;
+  background: #000;
+}
+
+.c-sign span {
+  padding: 1.2rem;
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.625em;
+  font-weight: bold;
+  display: block;
+  text-align: center;
   color: #fff;
-  background-color: #0077AD;
+  outline: 1px solid #fff;
+  position: relative;
+}
+
+.c-sign svg {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 4.8rem;
+  margin-bottom: 1.2rem;
 }
 
 /* --| Navigation Patterns |--------------------------------------------------------------------- */
@@ -7015,25 +7082,6 @@ $section-menu--background-color: #fff;
   padding-top: 140%;
 }
 
-.c-panel {
-  padding: 2.4rem;
-  padding-bottom: 0 !important;
-}
-
-.c-panel::after {
-  content: "";
-  display: block;
-  margin-bottom: 2.4rem;
-  height: 1px;
-  margin-top: -1px;
-}
-
-.c-panel {
-  color: #333;
-  background: #eee;
-  outline: 1px solid #d5d5d5;
-}
-
 /*
 
 */
@@ -7050,6 +7098,10 @@ $section-menu--background-color: #fff;
 }
 
 /* --| Utility Patterns |------------------------------------------------------------------------ */
+.u-background {
+  background-color: #0077AD;
+}
+
 .u-bands--left,
 .u-bands--sides {
   border-left-style: solid;
@@ -7076,7 +7128,35 @@ $section-menu--background-color: #fff;
 
 .u-bands {
   border-style: solid;
-  border-width: 2.4rem !important;
+  border-width: 3px;
+}
+
+.u-bands--sz-xxs {
+  border-width: 0.3rem;
+}
+
+.u-bands--sz-xs {
+  border-width: 0.6rem;
+}
+
+.u-bands--sz-s {
+  border-width: 1.2rem;
+}
+
+.u-bands--sz-m {
+  border-width: 2.4rem;
+}
+
+.u-bands--sz-l {
+  border-width: 4.8rem;
+}
+
+.u-bands--sz-xl {
+  border-width: 9.6rem;
+}
+
+.u-bands--sz-xxl {
+  border-width: 19.2rem;
 }
 
 .u-bands,
@@ -7387,6 +7467,37 @@ $section-menu--background-color: #fff;
 
 /* ---------------------------------------------------------------------------------------------- */
 /* --| THEMES |---------------------------------------------------------------------------------- */
+/*
+Note - this won't work until SASS supports dynamic calling of mixins. It's close, but hasn't been
+merged yet. Hoping that will be done soon so I can change this.
+
+// List all the includes that should be called.
+// Note that they're defined in the relevent pattern files, so it isn't ideal to list them here,
+// but I don't know of another way of doing this yet.
+// One idea could be that each pattern that needs to be theme-able adds it's own name to this list,
+// (registers itself). This may work, but may come with it's own set of problems. Investigate.
+$patterns: (
+    bands-theme,
+    page-header-theme,
+    panel-theme,
+    panel-theme--dark,
+    randomise-cta-theme
+);
+*/
+/* - Waiting for SASS to support. Currently pseudo code.
+    @each $pattern in $patterns {
+        @include $pattern (
+            (
+                name  : white,
+                theme : $theme
+            )
+        );
+    }
+    */
+.u-background.t-white {
+  background-color: #ffffff;
+}
+
 .u-bands.t-white,
 .u-bands--left.t-white,
 .u-bands--right.t-white,
@@ -7399,33 +7510,74 @@ $section-menu--background-color: #fff;
 }
 
 .c-page-header.t-white {
-  color: #ffffff;
+  color: #333333;
   background-color: #ffffff;
 }
 
 .c-panel.t-white {
-  color: #333;
-  background: white;
-  outline: 1px solid #e6e6e6;
+  color: #333333;
+  background: #ffffff;
 }
 
 .c-panel.t-white--dark {
-  color: #fff;
+  color: #333333;
   background: #ffffff;
-  outline: 1px solid #e6e6e6;
 }
 
 .c-randomise-cta.t-white[href] {
-  color: #fff;
+  color: #333333;
   background-color: #ffffff;
 }
 
 .c-randomise-cta.t-white[href]:hover,
 .c-randomise-cta.t-white[href]:active,
 .c-randomise-cta.t-white[href]:focus {
-  box-shadow: 0 0 0 0.6rem rgba(255, 255, 255, 0.2);
-  color: #fff;
+  color: #333333;
+  background-color: #e6e6e6;
+}
+
+/*.t-white.t-color {
+        color: map-get($theme, text-color);
+    }*/
+.t-white button,
+.t-white button.over-panel-control {
+  border-color: #ffffff;
+  color: #333333;
   background-color: #ffffff;
+}
+
+.t-white button:hover, .t-white button:active, .t-white button:focus,
+.t-white button.over-panel-control:hover,
+.t-white button.over-panel-control:active,
+.t-white button.over-panel-control:focus {
+  background-color: #e6e6e6;
+  /*@else {
+                background-color: map-get($theme, background-color);
+            }*/
+}
+
+.t-white a[href].cta {
+  border-color: #ffffff;
+  color: #333333;
+  background-color: #fff;
+}
+
+.t-white a[href].cta:hover, .t-white a[href].cta:active, .t-white a[href].cta:focus {
+  background-color: white;
+}
+
+/* - Waiting for SASS to support. Currently pseudo code.
+    @each $pattern in $patterns {
+        @include $pattern (
+            (
+                name  : anode,
+                theme : $theme
+            )
+        );
+    }
+    */
+.u-background.t-anode {
+  background-color: #933961;
 }
 
 .u-bands.t-anode,
@@ -7440,33 +7592,74 @@ $section-menu--background-color: #fff;
 }
 
 .c-page-header.t-anode {
-  color: #ffffff;
+  color: #333333;
   background-color: #933961;
 }
 
 .c-panel.t-anode {
-  color: #333;
-  background: #f1dae4;
-  outline: 1px solid #e3b6ca;
+  color: #333333;
+  background: #933961;
 }
 
 .c-panel.t-anode--dark {
-  color: #fff;
+  color: #333333;
   background: #933961;
-  outline: 1px solid #6e2b49;
 }
 
 .c-randomise-cta.t-anode[href] {
-  color: #fff;
+  color: #333333;
   background-color: #933961;
 }
 
 .c-randomise-cta.t-anode[href]:hover,
 .c-randomise-cta.t-anode[href]:active,
 .c-randomise-cta.t-anode[href]:focus {
-  box-shadow: 0 0 0 0.6rem rgba(147, 57, 97, 0.2);
-  color: #fff;
+  color: #333333;
+  background-color: #6e2b49;
+}
+
+/*.t-anode.t-color {
+        color: map-get($theme, text-color);
+    }*/
+.t-anode button,
+.t-anode button.over-panel-control {
+  border-color: #933961;
+  color: #333333;
   background-color: #933961;
+}
+
+.t-anode button:hover, .t-anode button:active, .t-anode button:focus,
+.t-anode button.over-panel-control:hover,
+.t-anode button.over-panel-control:active,
+.t-anode button.over-panel-control:focus {
+  background-color: #6e2b49;
+  /*@else {
+                background-color: map-get($theme, background-color);
+            }*/
+}
+
+.t-anode a[href].cta {
+  border-color: #933961;
+  color: #333333;
+  background-color: #fff;
+}
+
+.t-anode a[href].cta:hover, .t-anode a[href].cta:active, .t-anode a[href].cta:focus {
+  background-color: white;
+}
+
+/* - Waiting for SASS to support. Currently pseudo code.
+    @each $pattern in $patterns {
+        @include $pattern (
+            (
+                name  : minidex,
+                theme : $theme
+            )
+        );
+    }
+    */
+.u-background.t-minidex {
+  background-color: #0077AD;
 }
 
 .u-bands.t-minidex,
@@ -7481,33 +7674,74 @@ $section-menu--background-color: #fff;
 }
 
 .c-page-header.t-minidex {
-  color: #ffffff;
+  color: #333333;
   background-color: #0077AD;
 }
 
 .c-panel.t-minidex {
-  color: #333;
-  background: #ade5ff;
-  outline: 1px solid #7ad5ff;
+  color: #333333;
+  background: #0077AD;
 }
 
 .c-panel.t-minidex--dark {
-  color: #fff;
+  color: #333333;
   background: #0077AD;
-  outline: 1px solid #00547a;
 }
 
 .c-randomise-cta.t-minidex[href] {
-  color: #fff;
+  color: #333333;
   background-color: #0077AD;
 }
 
 .c-randomise-cta.t-minidex[href]:hover,
 .c-randomise-cta.t-minidex[href]:active,
 .c-randomise-cta.t-minidex[href]:focus {
-  box-shadow: 0 0 0 0.6rem rgba(0, 119, 173, 0.2);
-  color: #fff;
+  color: #333333;
+  background-color: #00547a;
+}
+
+/*.t-minidex.t-color {
+        color: map-get($theme, text-color);
+    }*/
+.t-minidex button,
+.t-minidex button.over-panel-control {
+  border-color: #0077AD;
+  color: #333333;
   background-color: #0077AD;
+}
+
+.t-minidex button:hover, .t-minidex button:active, .t-minidex button:focus,
+.t-minidex button.over-panel-control:hover,
+.t-minidex button.over-panel-control:active,
+.t-minidex button.over-panel-control:focus {
+  background-color: #00547a;
+  /*@else {
+                background-color: map-get($theme, background-color);
+            }*/
+}
+
+.t-minidex a[href].cta {
+  border-color: #0077AD;
+  color: #333333;
+  background-color: #fff;
+}
+
+.t-minidex a[href].cta:hover, .t-minidex a[href].cta:active, .t-minidex a[href].cta:focus {
+  background-color: #fafdff;
+}
+
+/* - Waiting for SASS to support. Currently pseudo code.
+    @each $pattern in $patterns {
+        @include $pattern (
+            (
+                name  : neoclear,
+                theme : $theme
+            )
+        );
+    }
+    */
+.u-background.t-neoclear {
+  background-color: #009590;
 }
 
 .u-bands.t-neoclear,
@@ -7522,94 +7756,64 @@ $section-menu--background-color: #fff;
 }
 
 .c-page-header.t-neoclear {
-  color: #ffffff;
+  color: #333333;
   background-color: #ffffff;
 }
 
 .c-panel.t-neoclear {
-  color: #333;
-  background: #f9d5ed;
-  outline: 1px solid #f3a8da;
+  color: #333333;
+  background: #009590;
 }
 
 .c-panel.t-neoclear--dark {
-  color: #fff;
-  background: #B51A82;
-  outline: 1px solid #881462;
+  color: #333333;
+  background: #009590;
 }
 
 .c-randomise-cta.t-neoclear[href] {
-  color: #fff;
-  background-color: #B51A82;
+  color: #ffffff;
+  background-color: #009590;
 }
 
 .c-randomise-cta.t-neoclear[href]:hover,
 .c-randomise-cta.t-neoclear[href]:active,
 .c-randomise-cta.t-neoclear[href]:focus {
-  box-shadow: 0 0 0 0.6rem rgba(181, 26, 130, 0.2);
-  color: #fff;
-  background-color: #B51A82;
+  color: #ffffff;
+  background-color: #00625f;
+}
+
+/*.t-neoclear.t-color {
+        color: map-get($theme, text-color);
+    }*/
+.t-neoclear button,
+.t-neoclear button.over-panel-control {
+  border-color: #009590;
+  color: #ffffff;
+  background-color: #009590;
+}
+
+.t-neoclear button:hover, .t-neoclear button:active, .t-neoclear button:focus,
+.t-neoclear button.over-panel-control:hover,
+.t-neoclear button.over-panel-control:active,
+.t-neoclear button.over-panel-control:focus {
+  background-color: #00625f;
+  /*@else {
+                background-color: map-get($theme, background-color);
+            }*/
+}
+
+.t-neoclear a[href].cta {
+  border-color: #009590;
+  color: #333333;
+  background-color: #fff;
+}
+
+.t-neoclear a[href].cta:hover, .t-neoclear a[href].cta:active, .t-neoclear a[href].cta:focus {
+  background-color: #e2fffe;
 }
 
 /* ---------------------------------------------------------------------------------------------- */
 /* --| WIREFRAME--------------------------------------------------------------------------------- */
-html.wireframe {
-  /*--wf-box-bg: #F7F6F1BB;*/
-  --wf-box-bg: #F7F6F1;
-  --wf-wire: gray;
-}
-
-.wireframe [data-wf] {
-  outline: 2px solid var(--wf-wire);
-  position: relative;
-  z-index: 1;
-}
-
-.wireframe [data-wf]::before {
-  position: absolute;
-  z-index: 8675309;
-  opacity: 0.7;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  background: linear-gradient(to top right, transparent calc(50% - 1px), var(--wf-wire) calc(50% - 1px), var(--wf-wire) calc(50% + 1px), transparent calc(50% + 1px)), linear-gradient(to bottom right, transparent calc(50% - 1px), var(--wf-wire) calc(50% - 1px), var(--wf-wire) calc(50% + 1px), transparent calc(50% + 1px)), var(--wf-box-bg);
-  /*
-   background:
-        radial-gradient(ellipse at center, 
-            rgba(255,255,255,1) 10%,rgba(255,255,255,0) 10%),
-        linear-gradient(to top right,
-            transparent calc(50% - 1px), var(--wf-wire) calc(50% - 1px),
-            var(--wf-wire) calc(50% + 1px), transparent calc(50% + 1px)),
-        linear-gradient(to bottom right,
-            transparent calc(50% - 1px), var(--wf-wire) calc(50% - 1px),
-            var(--wf-wire) calc(50% + 1px), transparent calc(50% + 1px)),
-        var(--wf-box-bg);
-
-    background-size: 9em 9em, auto, auto;
-    background-position: 50%;
-    background-repeat: no-repeat;
-    */
-  content: attr(data-wf);
-  font: bold 2em Georgia, serif;
-  color: var(--wf-wire);
-  text-shadow: 1px 1px 0 var(--wf-box-bg), -1px 1px 0 var(--wf-box-bg), 1px -1px 0 var(--wf-box-bg), -1px -1px 0 var(--wf-box-bg), 1px 0 0 var(--wf-box-bg), -1px 0 0 var(--wf-box-bg), 2px 2px 0 var(--wf-box-bg), -2px 2px 0 var(--wf-box-bg), 2px -2px 0 var(--wf-box-bg), -2px -2px 0 var(--wf-box-bg), 2px 0 0 var(--wf-box-bg), -2px 0 0 var(--wf-box-bg), 3px 3px 0 var(--wf-box-bg), -3px 3px 0 var(--wf-box-bg), 3px -3px 0 var(--wf-box-bg), -3px -3px 0 var(--wf-box-bg), 3px 0 0 var(--wf-box-bg), -3px 0 0 var(--wf-box-bg), 4px 4px 0 var(--wf-box-bg), -4px 4px 0 var(--wf-box-bg), 4px -4px 0 var(--wf-box-bg), -4px -4px 0 var(--wf-box-bg), 4px 0 0 var(--wf-box-bg), -4px 0 0 var(--wf-box-bg);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/*
-.wireframe [data-wf]::after {
-    position: absolute;
-    top: calc(50% - 1.5em);
-    left: calc(50% - 1.5em);
-    content: "";
-    background: #fff;
-    width: 3em;
-    height: 3em;
-    border-radius: 50%;
-}*/
 /* ---------------------------------------------------------------------------------------------- */
 /* --| SHAME |----------------------------------------------------------------------------------- */
 .tb-baseline {
@@ -7645,29 +7849,37 @@ h1, h2, h3 {
   flex-grow: 1;
 }
 
+.sticky-footer-expand main {
+  max-width: 120rem;
+}
+
+/*
 .sticky-footer-expand main,
 .sticky-footer-expand main + aside {
-  padding-top: 2.4rem;
-  padding-left: 2.4rem;
-  padding-right: 2.4rem;
+	padding-top: $fallback--base-rem-space-unit;
+    padding-left: $fallback--base-rem-space-unit;
+    padding-right: $fallback--base-rem-space-unit;
 }
 
 .sticky-footer-expand main + aside {
-  min-width: 34rem;
-  width: calc((111.6rem - 100%) * 1000);
-  max-width: 100%;
-  margin-left: auto;
-  margin-bottom: 0;
-  -ms-flex-positive: 0;
-  -webkit-flex-grow: 0;
-  flex-grow: 0;
+    min-width: ($measure / 2);
+    width: calc((111.6rem - 100%) * 1000);
+    max-width: 100%;
+    margin-left: auto;
+    margin-bottom: 0;
+
+    -ms-flex-positive: 0;
+    -webkit-flex-grow: 0;
+            flex-grow: 0;
 }
+
 
 .sticky-footer-expand main + aside > div {
-  max-width: 68rem;
-  margin: 0 auto;
+    max-width: $measure;
+    margin: 0 auto;
 }
 
+*/
 .feather {
   fill: none;
   stroke: currentColor;
@@ -7682,62 +7894,6 @@ h1, h2, h3 {
 .svg__link:active,
 .svg__link:focus {
   box-shadow: 0 0 0 0.6rem #fff, 0 0 0 1.2rem rgba(0, 0, 0, 0.2);
-}
-
-/* Signpost */
-.sign.gallery-grid__item {
-  -ms-flex-preferred-size: 50%;
-  -webkit-flex-basis: 50%;
-  flex-basis: 50%;
-}
-
-.sign a[href] {
-  padding: 0.6rem;
-  display: block;
-  background: linear-gradient(to right, #007DB1 0%, #007DB1 25%, #64AED3 25%, #64AED3 50%, #B6B1C7 50%, #B6B1C7 75%, #6F6992 75%, #6F6992 100%);
-  border: 0;
-  position: relative;
-  margin-bottom: 0;
-}
-
-/*
-.sign a[href]:hover {
-    transform: scale(1.05);
-}
-*/
-.sign a[href]:hover::before,
-.sign a[href]:active::before,
-.sign a[href]:focus::before {
-  border: 0;
-  background: inherit;
-  content: "";
-  display: block;
-  position: absolute;
-  top: -0.6rem;
-  right: -0.6rem;
-  bottom: -0.6rem;
-  left: -0.6rem;
-  z-index: -1;
-  opacity: 0.2;
-}
-
-.sign span {
-  padding: 2.4rem;
-  background: #e0dfe8;
-  font-family: 'Nunito', sans-serif;
-  font-size: 1.625em;
-  font-weight: bold;
-  display: block;
-  text-align: center;
-  color: #3E7692;
-}
-
-.sign svg {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  height: 12rem;
-  margin-bottom: 2.4rem;
 }
 
 /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#3e7692+0,3e7692+25,3e7692+25,7b9db2+25,7b9db2+50,c5c0d2+50,c5c0d2+75,6f6992+75,6f6992+100 /
@@ -7959,5 +8115,48 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e7692', end
   max-width: 20em;
 }
 
+.gallery-grid.c-signpost .gallery-grid__item {
+  max-width: none;
+}
+
+.gallery-grid.c-signpost .gallery-grid__item {
+  -webkit-flex-basis: 13em;
+  -ms-flex-preferred-size: 13em;
+  flex-basis: 13em;
+}
+
+@supports (display: grid) {
+  .gallery-grid.c-signpost {
+    grid-template-columns: repeat(auto-fit, minmax(13em, 1fr));
+  }
+}
+
 /*---------------*/
+.hero-image {
+  z-index: -1;
+}
+
+@media only screen and (max-width: 42.5625em) {
+  .js-over-panel-control.over-panel-control {
+    margin-right: auto;
+  }
+  .c-randomise-cta {
+    margin-left: 1.2rem;
+  }
+  .c-page-header__last {
+    margin-top: 1.2rem;
+  }
+}
+
+@media only screen and (min-width: 42.5625em) {
+  .c-page-header.u-bands--bottom {
+    border: 0;
+  }
+}
+
+/*----------------*/
+.c-recruitment__current {
+  font-size: 2em;
+}
+
 /* ---------------------------------------------------------------------------------------------- */
