@@ -2,98 +2,118 @@
 layout: project-structure
 ---
 {% assign project_data = site.data.projects[page.project] %}
-<div class="l-col-to-row">
-    <div class="l-col-to-row__item  ff-width-100--40--50">
-        <div class="c-panel">
-            {{ content }}
-            <p>
-                <a href="/{{ page.project }}/about" class="cta">Find out more <svg display="none" class="icon  feather"><use xlink:href="#icon-chevron-right"></use></svg></a>
-            </p>
-        </div>
-    </div>
-
-    <div class="l-col-to-row__item  ff-width-100--40--50">
-        <div class="margin-boundary  u-background  t-{{ page.project }}  u-padding--xs">
-            <div class="gallery-grid  gallery-grid--basis-15  c-signpost">
-
-                <div class="gallery-grid__item  c-sign  c-sign--participants">
-                    <a href="/{{ page.project }}/participants">
-                        <span>
-                            {{ project_data.participants_svg }}
-                            Participants
-                        </span>
-                    </a>
+<div class="l-blockrow  t-{{ page.project }}">
+    <div class="l-blockrow__limit-width">
+        <div class="l-col-to-row">
+            <div class="l-col-to-row__item  ff-width-100--40--50">
+                <div class="c-panel">
+                    {{ content }}
+                    <p>
+                        <a href="/{{ page.project }}/about" class="cta">Find out more <svg display="none" class="icon  feather"><use xlink:href="#icon-chevron-right"></use></svg></a>
+                    </p>
                 </div>
+            </div>
 
-                <div class="gallery-grid__item  c-sign  c-sign--clinicians">
-                    <a href="/{{ page.project }}/clinicians">
-                        <span>
-                            {{ project_data.clinicians_svg }}
-                            Clinicians
-                        </span>
-                    </a>
-                </div>
+            <div class="l-col-to-row__item  ff-width-100--40--50">
+                <div class="margin-boundary  u-background  t-{{ page.project }}  u-padding--xs  u-fill-height">
+                    <div class="gallery-grid  gallery-grid--basis-15  c-signpost  u-fill-height">
 
-                <div class="gallery-grid__item  c-sign  c-sign--contact">
-                    <a href="/{{ page.project }}/contact">
-                        <span>
-                            {{ project_data.contact_svg }}
-                            Contact
-                        </span>
-                    </a>
-                </div>
+                        <div class="gallery-grid__item  c-sign  c-sign--participants">
+                            <a href="/{{ page.project }}/participants">
+                                <span class="c-sign__centered-content">
+                                    {{ project_data.participants_svg }}
+                                    <span class="c-sign__display-text">Participants</span>
+                                </span>
+                            </a>
+                        </div>
 
-                <div class="gallery-grid__item  c-sign  c-sign--centres">
-                    <a href="/{{ page.project }}/centres">
-                        <span>
-                            {{ project_data.centres_svg }}
-                            Centres
-                        </span>
-                    </a>
+                        <div class="gallery-grid__item  c-sign  c-sign--clinicians">
+                            <a href="/{{ page.project }}/clinicians">
+                                <span class="c-sign__centered-content">
+                                    {{ project_data.clinicians_svg }}
+                                    <span class="c-sign__display-text">Clinicians</span>
+                                </span>
+                            </a>
+                        </div>
+
+                        <div class="gallery-grid__item  c-sign  c-sign--contact">
+                            <a href="/{{ page.project }}/contact">
+                                <span class="c-sign__centered-content">
+                                    {{ project_data.contact_svg }}
+                                    <span class="c-sign__display-text">Contact</span>
+                                </span>
+                            </a>
+                        </div>
+
+                        <div class="gallery-grid__item  c-sign  c-sign--centres">
+                            <a href="/{{ page.project }}/centres">
+                                <span class="c-sign__centered-content">
+                                    {{ project_data.centres_svg }}
+                                    <span class="c-sign__display-text">Centres</span>
+                                </span>
+                            </a>
+                        </div>
+                        
+                        <div class="gallery-grid__item  c-sign  c-sign--centres  gallery-grid__item--span-2">
+                            <a href="/{{ page.project }}/status">
+                                <span class="c-sign__centered-content">
+                                    <span class="c-sign__display-text">Recruitment</span><br>
+                                    <span class="c-sign__display-text">175</span><br>
+                                    <span class="c-sign__small-text">(Target: 1020)</span>
+                                </span>
+                                <span class="c-sign__centered-content">
+                                    <span class="c-sign__display-text">The latest infant was recruited at <b>Princess Anne Hospital, Southampton</b> on <b>13 February 2019</b></span>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
+<div class="l-blockrow  t-{{ page.project }}">
+    <div class="l-blockrow__limit-width">
+        <div class="l-col-to-row">
 
-<div class="l-col-to-row">
-
-    <div class="l-col-to-row__item  ff-width-100--40--50">
-        <div class="t-{{ page.project }}  u-bands  u-bands--sz-m">
-            <div class="c-panel">
-                <div class="c-recruitment">
-                    <h2 class="c-recruitment__title">Recruitment</h2>
-                    <p><strong class="c-recruitment__current">175</strong> babies have been recruited towards a target of <b class="c-recruitment__target">1020</b>.</p>
-                    <p>The latest infant was recruited at <b>Princess Anne Hospital, Southampton</b> on <b>13 February 2019</b></p>
-                    <p>
-                        <a href="/{{ page.project }}/status" class="cta">All recruitment <svg display="none" class="icon  feather"><use xlink:href="#icon-chevron-right"></use></svg></a>
-                    </p>
+            <div class="l-col-to-row__item  ff-width-100--40--50">
+                <div class="t-{{ page.project }}  u-bands  u-bands--sz-m">
+                    <div class="c-panel">
+                        <div class="c-recruitment">
+                            <h2 class="c-recruitment__title">Recruitment</h2>
+                            <p><strong class="c-recruitment__current">175</strong> babies have been recruited towards a target of <b class="c-recruitment__target">1020</b>.</p>
+                            <p>The latest infant was recruited at <b>Princess Anne Hospital, Southampton</b> on <b>13 February 2019</b></p>
+                            <p>
+                                <a href="/{{ page.project }}/status" class="cta">All recruitment <svg display="none" class="icon  feather"><use xlink:href="#icon-chevron-right"></use></svg></a>
+                            </p>
+                        </div>
+                    </div>
                 </div>
-        </div>
-        </div>
-    </div>
-    
-    <div class="l-col-to-row__item  ff-width-100--40--50">
-        <div class="c-panel">
-        
-            <h2>Trial Information</h2>
-            <dl class="user-2-col-dl">
-                <dt>EudraCT No.:</dt>
-                <dd>2015-005342-63</dd>
-                <dt>REC Reference:</dt>
-                <dd>16/NW/0396</dd>
-                <dt>ISRCTN:</dt>
-                <dd>81191607</dd>
-                <dt>Clinical Trials Unit:</dt>
-                <dd>National Perinatal Epidemiology Unit CTU</dd>
-                <dt>Sponsor:</dt>
-                <dd>Liverpool Women's Foundation NHS Trust</dd>
-                <dt>Funder:</dt>
-                <dd>The NIHR Efficacy and Mechanism Evaluation (EME) Programme</dd>
-            </dl>
+            </div>
+            
+            <div class="l-col-to-row__item  ff-width-100--40--50">
+                <div class="c-panel">
+                
+                    <h2>Trial Information</h2>
+                    <dl class="user-2-col-dl">
+                        <dt>EudraCT No.:</dt>
+                        <dd>2015-005342-63</dd>
+                        <dt>REC Reference:</dt>
+                        <dd>16/NW/0396</dd>
+                        <dt>ISRCTN:</dt>
+                        <dd>81191607</dd>
+                        <dt>Clinical Trials Unit:</dt>
+                        <dd>National Perinatal Epidemiology Unit CTU</dd>
+                        <dt>Sponsor:</dt>
+                        <dd>Liverpool Women's Foundation NHS Trust</dd>
+                        <dt>Funder:</dt>
+                        <dd>The NIHR Efficacy and Mechanism Evaluation (EME) Programme</dd>
+                    </dl>
 
+                </div>
+            </div>
+            
         </div>
     </div>
-    
 </div>

@@ -108,4 +108,20 @@ $patterns: (
             background-color: lighten(map-get($theme, border-color), 65%);
         }
     }
+    
+    /*
+    .#{$theme-namespace}#{$name}.d-50-50-background {
+        background: #FFFFFF;
+        background: -moz-linear-gradient(left, map-get($theme, background-color) 0%, map-get($theme, background-color) 50%, #ffffff 50%, #ffffff 100%);
+        background: -webkit-linear-gradient(left, map-get($theme, background-color) 0%,map-get($theme, background-color) 50%,#ffffff 50%,#ffffff 100%);
+        background: linear-gradient(to right, map-get($theme, background-color) 0%,map-get($theme, background-color) 50%,#ffffff 50%,#ffffff 100%);
+    }
+    
+    .#{$theme-namespace}#{$name}.d-50-50-background--flipped {
+        background: #FFFFFF; 
+        background: -moz-linear-gradient(left, #ffffff 0%, #ffffff 50%, map-get($theme, background-color) 50%, map-get($theme, background-color) 100%);
+        background: -webkit-linear-gradient(left, #ffffff 0%,#ffffff 50%,map-get($theme, background-color) 50%,map-get($theme, background-color) 100%); 
+        background: linear-gradient(to right, #ffffff 0%,#ffffff 50%,map-get($theme, background-color) 50%,map-get($theme, background-color) 100%);
+    }
+    */
 }
