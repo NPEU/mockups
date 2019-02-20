@@ -16,6 +16,16 @@ $backgrounds--background-color : $fallback--base-ui-color !default;
 	.#{$backgrounds-namespace}background#{$theme-class} {
 		background-color: map-get($theme, background-color);
 	}
+    
+    .#{$backgrounds-namespace}background--very-dark#{$theme-class} {
+		background-color: darken(map-get($theme, background-color), 20%);
+	}
+    
+    .#{$backgrounds-namespace}background--sloped#{$theme-class} {
+        background: -moz-linear-gradient(45deg, darken(map-get($theme, background-color), 5%) 0%, darken(map-get($theme, background-color), 4%) 50%, darken(map-get($theme, background-color), 1%) 50%,darken(map-get($theme, background-color), 2%) 100%);
+        background: -webkit-linear-gradient(45deg, darken(map-get($theme, background-color), 5%) 0%,darken(map-get($theme, background-color), 4%) 50%,darken(map-get($theme, background-color), 1%) 50%,darken(map-get($theme, background-color), 2%) 100%);
+        background: linear-gradient(45deg, darken(map-get($theme, background-color), 5%) 0%,darken(map-get($theme, background-color), 4%) 50%,darken(map-get($theme, background-color), 1%) 50%,darken(map-get($theme, background-color), 2%) 100%);
+    }
 }
 
 @include background-theme(

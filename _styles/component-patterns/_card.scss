@@ -104,271 +104,314 @@ $card-info--font-size: 1.4rem;
         //width: 100%;
     }
 */
-    // Themes mixin:
-    @mixin card--themer (
-        $name: "",
-        $background-color: $card--base-color
-    ) {
-        // Set up theme name:
-        $theme-class: "";
-        @if $name != "" {
-            $theme-class: unquote('.')#{$theme-namespace}#{$name};
-        }
-
-        .#{$card-namespace}card--themed-content#{$theme-class} .#{$card-namespace}card__body::before {
-            background-color: $background-color;
-        }
+// Themes mixin:
+@mixin card-theme ($name: "", $theme: ()) {
+    // Set up theme name:
+    $theme-class: "";
+    @if $name != "" {
+        $theme-class: unquote('.')#{$theme-namespace}#{$name};
     }
 
+    .#{$card-namespace}card#{$theme-class},
+    .#{$card-namespace}card#{$theme-class} .#{$card-namespace}card__main {
+		background-color: map-get($theme, card-background-color);
+	}
+    
+    .#{$card-namespace}card--themed-content#{$theme-class} .#{$card-namespace}card__body::before {
+        background-color: map-get($theme, card-background-color);
+    }
+    
+    .#{$card-namespace}card#{$theme-class} .#{$card-namespace}card__main {
+        // Positioning context for themed bar and extended actionable area:
+        position: relative;
+    
+        color: map-get($theme, card-text-color);
+        background: map-get($theme, card-background-color);
+        
+    }
+}
 
-    .#{$card-namespace}card.#{$card-namespace}card {
+
+.#{$card-namespace}card.#{$card-namespace}card {
+
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+
+    height: 100%;
+    //width: 100%;
+    
+    margin: 0;
+
+    color: $card--text-color;
+    background: $card--background-color;
+    padding: $card--padding;
+
+
+    @if $card--border-or-outline == 'outline' {
+        outline: $card--border-width $card--border-style $card--border-color;
+    }
+
+    @if $card--border-or-outline == 'border' {
+        border-color:  $card--border-color;
+        border-style:  $card--border-style;
+        border-width:  $card--border-width;
+        border-radius: $card--border-radius;
+    }
+
+    /*max-width: 20em;*/
+    /*margin-top: 0 auto;
+    margin-bottom: 1.5rem;
+    margin-left: auto;
+    margin-right: auto;*/
+
+    /*
+        If the 'pull' is > module body content height, it'll protrude below the container,
+        so hide it:
+    */
+    overflow: hidden;
+}
+
+
+
+    .#{$card-namespace}card > * {
+        -webkit-flex: 0 0 auto;
+            -ms-flex: 0 0 auto;
+                flex: 0 0 auto;
+
+        width: 100%;
+    }
+
+    .#{$card-namespace}card .#{$card-namespace}card__image {
+        position: relative;
+        text-align: center;
+    }
+
+        .#{$card-namespace}card .#{$card-namespace}card__image img {
+            width: 100%;
+        }
+
+
+        .#{$card-namespace}card .#{$card-namespace}card__image-link,
+        .#{$card-namespace}card .#{$card-namespace}card__image-link:hover {
+            border-bottom: 0;
+            margin-bottom: 0;
+        }
+        
+        .#{$card-namespace}card .#{$card-namespace}card__full-link,
+        .#{$card-namespace}card .#{$card-namespace}card__full-link:hover {
+            border-bottom: 0;
+            margin-bottom: 0;
+            padding-bottom: 0;
+            
+            background: $card-body--background-color;
+            
+            position: relative;
+            display: block;
+            height: 100%;
+        }
+
+        .#{$card-namespace}card .#{$card-namespace}card__full-link:hover::before,
+        .#{$card-namespace}card .#{$card-namespace}card__full-link:active::before,
+        .#{$card-namespace}card .#{$card-namespace}card__full-link:focus::before {
+            border: 0;
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            opacity: $hover-effect-opacity;
+            background: #000;
+            z-index: 1;
+        }
+
+        
+
+    .#{$card-namespace}card .#{$card-namespace}card__main {
+        // Positioning context for themed bar and extended actionable area:
+        position: relative;
+    
+        color: $card-body--text-color;
+        background: $card-body--background-color;
+
+        margin-left: $card-body--margin-left;
+        margin-right: $card-body--margin-right;
+        margin-top: $card-body--margin-top;
+        margin-bottom: $card-body--margin-bottom;
+        padding: $card-body--padding;
+
+        -webkit-flex: 1 0 auto;
+            -ms-flex: 1 0 auto;
+                flex: 1 0 auto;
+
 
         display: -webkit-flex;
         display: -ms-flexbox;
         display: flex;
 
-        -webkit-flex-direction: column;
-            -ms-flex-direction: column;
-                flex-direction: column;
+        -webkit-flex-direction: row;
+            -ms-flex-direction: row;
+                flex-direction: row;
 
-        height: 100%;
-        //width: 100%;
+        -webkit-flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
 
-        color: $card--text-color;
-        background: $card--background-color;
-        padding: $card--padding;
+        -webkit-align-items: flex-end;
+             -ms-flex-align: end;
+                align-items: flex-end;
+
+        -webkit-align-content: space-between;
+           -ms-flex-line-pack: justify;
+                align-content: space-between;
+
+        -webkit-justify-content: flex-end;
+                  -ms-flex-pack: end;
+                justify-content: flex-end;
 
 
-        @if $card--border-or-outline == 'outline' {
-            outline: $card--border-width $card--border-style $card--border-color;
-        }
-
-        @if $card--border-or-outline == 'border' {
-            border-color:  $card--border-color;
-            border-style:  $card--border-style;
-            border-width:  $card--border-width;
-            border-radius: $card--border-radius;
-        }
-
-        /*max-width: 20em;*/
-        /*margin-top: 0 auto;
-        margin-bottom: 1.5rem;
-        margin-left: auto;
-        margin-right: auto;*/
-
-        /*
-            If the 'pull' is > module body content height, it'll protrude below the container,
-            so hide it:
-        */
-        overflow: hidden;
+        position: relative;
     }
-    
-    
-
-        .#{$card-namespace}card > * {
-            -webkit-flex: 0 0 auto;
-                -ms-flex: 0 0 auto;
-                    flex: 0 0 auto;
-
-            width: 100%;
-        }
-
-        .#{$card-namespace}card .#{$card-namespace}card__image {
-            position: relative;
-            text-align: center;
-        }
-
-            .#{$card-namespace}card .#{$card-namespace}card__image img {
-                width: 100%;
-            }
 
 
-            .#{$card-namespace}card .#{$card-namespace}card__image-link,
-            .#{$card-namespace}card .#{$card-namespace}card__image-link:hover {
-                border-bottom: 0;
-            }
-
-
-
-        .#{$card-namespace}card .#{$card-namespace}card__main {
-            // Positioning context for themed bar and extended actionable area:
-            position: relative;
-        
-            color: $card-body--text-color;
-            background: $card-body--background-color;
-
-            margin-left: $card-body--margin-left;
-            margin-right: $card-body--margin-right;
-            margin-top: $card-body--margin-top;
-            margin-bottom: $card-body--margin-bottom;
-            padding: $card-body--padding;
-
+        .#{$card-namespace}card .#{$card-namespace}card__body {
             -webkit-flex: 1 0 auto;
                 -ms-flex: 1 0 auto;
                     flex: 1 0 auto;
 
+            width: 100%;
+            //max-width: 100%;
+        }
 
-            display: -webkit-flex;
-            display: -ms-flexbox;
-            display: flex;
-
-            -webkit-flex-direction: row;
-                -ms-flex-direction: row;
-                    flex-direction: row;
-
-            -webkit-flex-wrap: wrap;
-                -ms-flex-wrap: wrap;
-                    flex-wrap: wrap;
-
-            -webkit-align-items: flex-end;
-                 -ms-flex-align: end;
-                    align-items: flex-end;
-
-            -webkit-align-content: space-between;
-               -ms-flex-line-pack: justify;
-                    align-content: space-between;
-
-            -webkit-justify-content: flex-end;
-                      -ms-flex-pack: end;
-                    justify-content: flex-end;
-
-
+        /*.#{$card-namespace}card .#{$card-namespace}card__image + .#{$card-namespace}card__body--pull-over {
             position: relative;
-        }
+            z-index: 1;
+            margin-top: $card-body--pull-over;
+        }*/
 
 
-            .#{$card-namespace}card .#{$card-namespace}card__body {
-                -webkit-flex: 1 0 auto;
-                    -ms-flex: 1 0 auto;
-                        flex: 1 0 auto;
-
+            .#{$card-namespace}card .#{$card-namespace}card__title {
+                font-size:   $card-title--font-size;
+                line-height: $card-title--line-height;
                 width: 100%;
-                //max-width: 100%;
-            }
-
-            /*.#{$card-namespace}card .#{$card-namespace}card__image + .#{$card-namespace}card__body--pull-over {
-                position: relative;
-                z-index: 1;
-                margin-top: $card-body--pull-over;
-            }*/
-
-
-                .#{$card-namespace}card .#{$card-namespace}card__title {
-                    font-size:   $card-title--font-size;
-                    line-height: $card-title--line-height;
-                    width: 100%;
-                    
-                    
-                    
-                    a {
-                        // Reset any inherited link effects:
-                        all: initial;
-                        
-                        // Un-reset font settings:
-                        font-size: inherit;
-                        line-height: inherit;
-                        font-weight: inherit;
-                        font-family: inherit;
-                        color: inherit;
-                        
-                        cursor: pointer;
-                        
-                        // Extend actionable area:
-                        /*&:before {
-                            content: "";
-                            display: block;
-                            position: absolute;
-                            left: 0;
-                            top: 0;
-                            right: 0;
-                            bottom: 0;
-                            background: #ddd;
-                        }*/
-                    }
-                }
+                margin: 0;
                 
-                .#{$card-namespace}card.#{$card-namespace}card--stub .#{$card-namespace}card__title {
-                    font-size:   $card-stub-title--font-size;
-                    line-height: $card-stub-title--line-height;
+                
+                a {
+                    // Reset any inherited link effects:
+                    all: initial;
+                    
+                    // Un-reset font settings:
+                    font-size: inherit;
+                    line-height: inherit;
+                    font-weight: inherit;
+                    font-family: inherit;
+                    color: inherit;
+                    
+                    cursor: pointer;
+                    
+                    // Extend actionable area:
+                    /*&:before {
+                        content: "";
+                        display: block;
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        right: 0;
+                        bottom: 0;
+                        background: #ddd;
+                    }*/
                 }
-
-
-                /*
-                @if $card--link-color != false {
-                    .#{$card-namespace}card .#{$card-namespace}card__body a {
-                        color: $card--link-color;
-                        @if $card--link-has-border-bottom != false {
-                            border-bottom: $card--link-border-bottom;
-                        }
-                    }
-
-                    .#{$card-namespace}card .#{$card-namespace}card__body a:hover,
-                    .#{$card-namespace}card .#{$card-namespace}card__body a:active,
-                    .#{$card-namespace}card .#{$card-namespace}card__body a:focus {
-                        color: $card--link-color--alt;
-                        @if $card--link-has-border-bottom != false {
-                            border-bottom: $card--link-border-bottom--alt;
-                        }
-                    }
-                }
-                */
-
-
-
-            .#{$card-namespace}card .#{$card-namespace}card__footer {
-                margin-left: $card-body--margin-left;
-                margin-right: $card-body--margin-right;
-                margin-top: 0;
-                margin-bottom: 0;
-                padding-top: $card-body--padding / 2;
-                width: 100%;
+            }
+            
+            .#{$card-namespace}card.#{$card-namespace}card--stub .#{$card-namespace}card__title {
+                font-size:   $card-stub-title--font-size;
+                line-height: $card-stub-title--line-height;
             }
 
 
-                .#{$card-namespace}card .#{$card-namespace}card__footer > * {
-                    margin: 0;
+            /*
+            @if $card--link-color != false {
+                .#{$card-namespace}card .#{$card-namespace}card__body a {
+                    color: $card--link-color;
+                    @if $card--link-has-border-bottom != false {
+                        border-bottom: $card--link-border-bottom;
+                    }
                 }
 
-
-                .#{$card-namespace}card .#{$card-namespace}card__info {
-                    font-size: $card-info--font-size;
-
-                    margin-bottom: -($card-body--padding / 2);
-                    margin-top: -($card-body--padding / 2);
-                    border-top: 1px solid #999;
-                    padding-top: calc((#{$card-body--padding / 2} - 1px);
+                .#{$card-namespace}card .#{$card-namespace}card__body a:hover,
+                .#{$card-namespace}card .#{$card-namespace}card__body a:active,
+                .#{$card-namespace}card .#{$card-namespace}card__body a:focus {
+                    color: $card--link-color--alt;
+                    @if $card--link-has-border-bottom != false {
+                        border-bottom: $card--link-border-bottom--alt;
+                    }
                 }
+            }
+            */
 
 
 
-        .#{$card-namespace}card--allow-wide .#{$card-namespace}card__body {
-            width: 70%;
+        .#{$card-namespace}card .#{$card-namespace}card__footer {
+            margin-left: $card-body--margin-left;
+            margin-right: $card-body--margin-right;
+            margin-top: 0;
+            margin-bottom: 0;
+            padding-top: $card-body--padding / 2;
+            width: 100%;
         }
 
-        .#{$card-namespace}card--allow-wide .#{$card-namespace}card__footer {
-            width: auto;
-            padding-left: $card-body--padding;
-        }
+
+            .#{$card-namespace}card .#{$card-namespace}card__footer > * {
+                margin: 0;
+            }
+
+
+            .#{$card-namespace}card .#{$card-namespace}card__info {
+                font-size: $card-info--font-size;
+
+                margin-bottom: -($card-body--padding / 2);
+                margin-top: -($card-body--padding / 2);
+                border-top: 1px solid #999;
+                padding-top: calc((#{$card-body--padding / 2} - 1px);
+            }
+
+
+
+    .#{$card-namespace}card--allow-wide .#{$card-namespace}card__body {
+        width: 70%;
+    }
+
+    .#{$card-namespace}card--allow-wide .#{$card-namespace}card__footer {
+        width: auto;
+        padding-left: $card-body--padding;
+    }
 
 
 
 
 
-        .#{$card-namespace}card--themed-content .#{$card-namespace}card__main > * {
-            padding-left: 1rem;
-        }
+    .#{$card-namespace}card--themed-content .#{$card-namespace}card__main > * {
+        padding-left: 1rem;
+    }
 
-        // Note that this themed bar should a visual representation of the category or group to 
-        // to which this card belongs. If you're using this themed bar, make sure you also include
-        // the category/group information somewhere (e.g. in the footer info or as a kicker), 
-        // Otherwise this information isn't accessible.
-        .#{$card-namespace}card--themed-content .#{$card-namespace}card__body::before {
-            display: block;
-            content: "";
-            width: 0.75rem;
-            position: absolute;
-            top: 1rem;
-            bottom: 1rem;
-            left: 1rem;
-            background-color: #999;
-        }
+    // Note that this themed bar should a visual representation of the category or group to 
+    // to which this card belongs. If you're using this themed bar, make sure you also include
+    // the category/group information somewhere (e.g. in the footer info or as a kicker), 
+    // Otherwise this information isn't accessible.
+    .#{$card-namespace}card--themed-content .#{$card-namespace}card__body::before {
+        display: block;
+        content: "";
+        width: 0.75rem;
+        position: absolute;
+        top: 1rem;
+        bottom: 1rem;
+        left: 1rem;
+        background-color: #999;
+    }

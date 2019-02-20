@@ -4,14 +4,20 @@
 $sign-namespace: c- !default;
 $theme-namespace: t- !default;
 
+@supports (display: grid) {
+    .#{$sign-namespace}signpost {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(14em, 1fr));
+    }
 
 
-.#{$sign-namespace}sign {
-    height: 100%;
 
+    .#{$sign-namespace}sign--status {
+        grid-column: 1/-1;
+    }
 }
 
-.#{$sign-namespace}sign a[href] {
+.#{$sign-namespace}sign a[href].#{$sign-namespace}sign__link {
 	padding: $sz-xs;
 	display: block;
 	//background: linear-gradient(to right, #007DB1 0%,#007DB1 25%,#64AED3 25%,#64AED3 50%,#B6B1C7 50%,#B6B1C7 75%,#6F6992 75%,#6F6992 100%);
@@ -26,12 +32,16 @@ $theme-namespace: t- !default;
     
     color: #fff;
     background-color: transparent;
+    
+    &:hover,
+    &:active,
+    &:focus {
+        color: #fff;
+        background-color: transparent;
+    }
 }
-/*
-.sign a[href]:hover {
-    transform: scale(1.05);
-}
-*/
+
+
 .#{$sign-namespace}sign a[href]:hover::before,
 .#{$sign-namespace}sign a[href]:active::before,
 .#{$sign-namespace}sign a[href]:focus::before {
@@ -39,25 +49,29 @@ $theme-namespace: t- !default;
 	content: "";
 	display: block;
 	position: absolute;
-	top: -$hover-effect-width;
-	right: -$hover-effect-width;
-	bottom: -$hover-effect-width;
-	left: -$hover-effect-width;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
 	opacity: $hover-effect-opacity;
     background: #000;
 }
 
-.#{$sign-namespace}sign .#{$sign-namespace}sign__display-text {
-    font-family: 'Nunito', sans-serif;
-	font-size: 1.625em;
-	font-weight: bold;
+.#{$sign-namespace}sign .#{$sign-namespace}sign__text {
 	text-align: center;
+    display: inline-block;
     width: 100%;
 }
 
-.#{$sign-namespace}sign .#{$sign-namespace}sign__small-text {
+
+.#{$sign-namespace}sign .#{$sign-namespace}sign__text--large {
+    font-family: 'Nunito', sans-serif;
+	font-size: 1.625em;
+	font-weight: bold;
+}
+
+.#{$sign-namespace}sign .#{$sign-namespace}sign__text--small {
 	font-size: 0.875em;
-	text-align: center;
 }
 
 .#{$sign-namespace}sign .#{$sign-namespace}sign__centered-content {

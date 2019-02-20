@@ -157,13 +157,12 @@ $fallback-svg--link-bg-color-alt: #fff;
 @import "../bower_components/NPEU-layout-patterns/dev/scss/_scl--n-up.scss";
 
 
-
 $gallery-grid-spacing-unit: $fallback--base-rem-space-unit;
 @import "../bower_components/NPEU-layout-patterns/dev/scss/_gallery-grid.scss";
 
 /* --| Component Patterns |---------------------------------------------------------------------- */
 
-/*@import "component-patterns/_badge.scss";*/
+@import "component-patterns/_badge.scss";
 
 /*$brochure-spacing-unit: $fallback--base-rem-space-unit;
 $brochure--border-or-outline: false;
@@ -172,9 +171,13 @@ $brochure--border-or-outline: false;
 $card--base-color: $fallback--base-ui-color;
 $card--text-color: #fff !default;
 
-$card-title--line-height: $fallback--base-rem-space-unit * 1.25;
+$card-title--font-size: 2rem;
+//$card-title--line-height: $fallback--base-rem-space-unit * 1.25;
 $card-spacing-unit: $fallback--base-rem-space-unit;
-$card--border-or-outline: 'border';
+//$card--border-or-outline: 'border';
+$card--border-width: 0;
+$card--background-color: #eee;
+
 @import "component-patterns/_card.scss";
 
 
@@ -198,8 +201,13 @@ $event--border-color: $fallback--base-ui-color;
 //@import "component-patterns/_glimpse.scss";
 
 
+@import "component-patterns/_hero.scss";
+
+
 @import "component-patterns/_page-header.scss";
-//@import "component-patterns/_page-footer.scss";
+
+@import "component-patterns/_page-footer.scss";
+
 
 $panel--padding: $fallback--base-rem-space-unit;
 @import "component-patterns/_panel.scss";
@@ -209,7 +217,10 @@ $panel--padding: $fallback--base-rem-space-unit;
 
 @import "component-patterns/_signs.scss";
 
+@import "component-patterns/_social-badges.scss";
+
 //@import "component-patterns/_tool-form.scss";
+
 
 /* --| Navigation Patterns |--------------------------------------------------------------------- */
 
@@ -232,7 +243,7 @@ $col-to-row-spacing-unit: $fallback--base-rem-space-unit;
 @import "layout-patterns/_col-to-row.scss";
 
 //$content-area-max-width: 42em;
-//@import "layout-patterns/_content-area.scss";
+@import "layout-patterns/_content-area.scss";
 
 @import "layout-patterns/_proportional-container.scss";
 

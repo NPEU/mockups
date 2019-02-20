@@ -63,9 +63,9 @@ layout: structure
 
                                 <ul class="nav-bar__items">
 
-                                    <li class="nav-bar__item"><a href="/{{ page.project }}/about" class="nav-bar__link">About</a></li>
+                                    <!--<li class="nav-bar__item"><a href="/{{ page.project }}/about" class="nav-bar__link">About</a></li>-->
 
-                                    <li class="nav-bar__item"><a href="/{{ page.project }}/participants" class="nav-bar__link">Participants</a></li>
+                                    <li class="nav-bar__item"><a href="/{{ page.project }}/{{ project_data.participants_url }}" class="nav-bar__link">{{ project_data.participants_label }}</a></li>
 
                                     <li class="nav-bar__item"><a href="/{{ page.project }}/clinicians" class="nav-bar__link">Clinicians</a></li>
 
@@ -75,7 +75,7 @@ layout: structure
                                     
                                     <li class="nav-bar__item"><a href="/{{ page.project }}/status" class="nav-bar__link">Status</a></li>
                                     
-                                    <li class="nav-bar__item"><a href="/{{ page.project }}/updaates" class="nav-bar__link">Updates</a></li>
+                                    <li class="nav-bar__item"><a href="/{{ page.project }}/updates" class="nav-bar__link">Updates</a></li>
 
                                     <!--<li class="nav-bar__item dropdown js-dropdown">
 
@@ -114,63 +114,28 @@ layout: structure
         </header>
         
         
-        {% if project_data.hero_image %}
-        <div class="proportional-container  proportional-container--5-1  u-bands--bottom  t-{{ page.project }}  hero-image">
-            <div class="proportional-container__content">
-                <img class="proportional-container__image-cover" src="{{ project_data.hero_image }}" width="600" alt="">
+        {% if page.is_home and project_data.hero_image and project_data.hero_message %}
+        <div id="hero" class="c-hero">
+            <div class="c-hero__image">
+                <div class="proportional-container  proportional-container--5-1  u-bands--bottom  t-{{ page.project }}  hero-image">
+                    <div class="proportional-container__content">
+                        <img class="proportional-container__image-cover" src="{{ project_data.hero_image }}" width="600" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="c-hero__message">
+                <p><b>{{ project_data.hero_message }}</b></p>
             </div>
         </div>
         {% endif %}
         
         <div class="sticky-footer-expand">
-            <main role="main" class="main-container">
+            <main role="main" class="main-container  u-background--very-dark  t-{{ page.project }}">
                 {{ content }}
             </main>
-
-            <aside>
-                <div>
-
-                    <!--<section class="c-panel  t-{{ page.project }}--dark">
-                        <div class="c-info-box">
-                            <h2>Contact</h2>
-
-                            <h3>Coordinating Centre</h3>
-                            <ul>
-                                <li>Adress<br>address<br>address<br>address</li>
-                            </ul>
-
-                            <h3>A Person</h3>
-                            <ul>
-                                <li>Some contact</li>
-                                <li>Info here</li>
-                                <li>Like email</li>
-                                <li>And phone</li>
-                            </ul>
-
-                            <h3>Ann Other Person</h3>
-                            <ul>
-                                <li>Some contact</li>
-                                <li>Info here</li>
-                                <li>Like email</li>
-                                <li>And phone</li>
-                            </ul>
-                        </div>
-                    </section>-->
-
-                    {% capture news_module %}module__news--{{ page.project }}.html{% endcapture %}
-                    {% include {{ news_module }} %}
-
-					<div class="c-panel  t-white">
-                        {% capture funder_module %}module__funder--{{ page.project }}.html{% endcapture %}
-						{% include {{ funder_module }} %}
-
-					</div>
-
-                </div>
-            </aside>
         </div>
 
-        <footer class="sticky-footer" role="contentinfo">
+        <footer class="sticky-footer  u-bands--top  t-{{ page.project }}" role="contentinfo">
 
 			<div class="footer-logos">
 
@@ -234,7 +199,7 @@ layout: structure
 
 			</div>
 
-            <p class="page-footer">
+            <p class="c-page-footer  u-text-align--center">
                 &copy; NPEU {{ site.time | date: '%Y'}}
             </p>
         </footer>

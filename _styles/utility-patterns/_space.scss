@@ -52,6 +52,9 @@ $space-namespace: u- !default;
     margin: $sz-m !important;
 }
 
+.#{$space-namespace}space--none {
+    margin: 0 !important;
+}
 
 
 .#{$space-namespace}space--none {
