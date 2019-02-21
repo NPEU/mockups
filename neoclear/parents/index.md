@@ -2,6 +2,7 @@
 layout: project-page
 title: Information for Parents
 project: neoclear
+headline_image: /img/neoclear/holding-baby-182368333.jpg
 ---
 
 
@@ -20,7 +21,9 @@ project: neoclear
 <p>A stylet sits inside the needle to prevent skin cells getting stuck in the needle. During the procedure, the stylet would either be removed after the needle is through the skin but before it reaches the cerebrospinal fluid, or it will be removed from the needle after it reaches the cerebrospinal fluid.</p>
 
 <p class="u-text-align--center">
-<a href="/downloads/files/neoclear/parents/NeoCLEAR%20PIL%20v1%20-%2028-Mar-2018.pdf" type="application/pdf" class="thumbnail  thumbnail--medium"><img src="/downloads/thumbs/1877/medium-NeoCLEAR%20PIL%20v1%20-%2028-Mar-2018.png" alt=""></a>
-<br>
-<a href="/downloads/files/neoclear/parents/NeoCLEAR%20PIL%20v1%20-%2028-Mar-2018.pdf" type="application/pdf">Parent Information Leaflet</a>
+<a href="/downloads/files/neoclear/parents/NeoCLEAR%20PIL%20v1%20-%2028-Mar-2018.pdf" type="application/pdf" class="c-thumbnail  c-thumbnail--medium">
+    <img src="/downloads/thumbs/1877/medium-NeoCLEAR%20PIL%20v1%20-%2028-Mar-2018.png" alt="">
+    <br>
+    Parent Information Leaflet
+</a>
 </p>

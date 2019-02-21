@@ -23,6 +23,7 @@ $fallback--breakpoint--enhanced: 42.5625em;
 
 $max-main-line-length: 0;
 $measure: 68rem;
+$not-too-small: 18em;
 
 @import '../bower_components/Fall-Back-Start-CSS/dist/scss/_start.scss';
 
@@ -74,8 +75,7 @@ $hover-effect-width: $fallback--base-rem-space-unit / 4;
 		content: "";
 		display: block;
 		height: 1px;
-		margin-bottom: -1px;
-        margin-top: $fallback--base-rem-space-unit;
+        margin-top: calc(#{$fallback--base-rem-space-unit} - 1px);
 	}
 
 }
@@ -145,12 +145,32 @@ $fallback-svg--link-bg-color-alt: #fff;
 
 
 /* --| PATTERNS |-------------------------------------------------------------------------------- */
+$ff-breakpoints: (
+    10em,
+    15em,
+    20em,
+    25em,
+    30em,
+    40em,
+    50em,
+    60em
+) !default;
+
+$ff-min-widths: (
+    20%,
+    25%,
+    33.333%,
+    40%,
+    50%,
+    60%,
+    66.666%,
+    75%
+    80%
+) !default;
 
 
 @import "../bower_components/NPEU-layout-patterns/dev/scss/_ff-widths.scss";
-.#{$ff-prefix}100--25--50 {
-    @include ff-width(100%, 25em, 50%);
-}
+
 
 @import "../bower_components/NPEU-layout-patterns/dev/scss/_scl--pushed-apart.scss";
 
@@ -176,7 +196,7 @@ $card-title--font-size: 2rem;
 $card-spacing-unit: $fallback--base-rem-space-unit;
 //$card--border-or-outline: 'border';
 $card--border-width: 0;
-$card--background-color: #eee;
+$card--background-color: rgba(0,0,0,0.1);
 
 @import "component-patterns/_card.scss";
 
@@ -209,6 +229,9 @@ $event--border-color: $fallback--base-ui-color;
 @import "component-patterns/_page-footer.scss";
 
 
+@import "component-patterns/_meter.scss";
+
+
 $panel--padding: $fallback--base-rem-space-unit;
 @import "component-patterns/_panel.scss";
 @import "component-patterns/_panel--dark.scss";
@@ -218,6 +241,8 @@ $panel--padding: $fallback--base-rem-space-unit;
 @import "component-patterns/_signs.scss";
 
 @import "component-patterns/_social-badges.scss";
+
+@import "component-patterns/_thumbnail.scss";
 
 //@import "component-patterns/_tool-form.scss";
 
@@ -262,6 +287,7 @@ $col-to-row-spacing-unit: $fallback--base-rem-space-unit;
 @import "utility-patterns/_fill-height.scss";
 @import "utility-patterns/_fill-width.scss";
 @import "utility-patterns/_lists.scss";
+@import "utility-patterns/_max-measure.scss";
 @import "utility-patterns/_space.scss";
 @import "utility-patterns/_text-align.scss";
 @import "utility-patterns/_text-groups.scss";

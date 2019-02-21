@@ -6,3 +6,27 @@ $fill-height-namespace: u- !default;
 .#{$fill-height-namespace}fill-height {
     height: 100%;
 }
+
+
+
+.#{$fill-height-namespace}fill-height--column {
+    display: -ms-flexbox !important;
+    display: -webkit-flex !important;
+    display: flex !important;
+
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+
+    & > * {
+        -webkit-flex: 0 0 auto;
+            -ms-flex: 0 0 auto;
+                flex: 0 0 auto;
+    }
+    
+    & > .#{$fill-height-namespace}fill-height--column__expand {
+        -webkit-flex: 1 0 auto;
+            -ms-flex: 1 0 auto;
+                flex: 1 0 auto;
+    }
+}

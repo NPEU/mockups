@@ -4,16 +4,18 @@
 $sign-namespace: c- !default;
 $theme-namespace: t- !default;
 
-@supports (display: grid) {
-    .#{$sign-namespace}signpost {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(14em, 1fr));
-    }
+@media only screen and (min-width: $not-too-small) {
+    @supports (display: grid) {
+        .#{$sign-namespace}signpost {
+            display: grid;
+            grid-template-columns:repeat(auto-fit,minmax(calc(20% + 6em),1fr));
+        }
 
 
 
-    .#{$sign-namespace}sign--status {
-        grid-column: 1/-1;
+        .#{$sign-namespace}sign--status {
+            grid-column: 1/-1;
+        }
     }
 }
 
@@ -66,8 +68,8 @@ $theme-namespace: t- !default;
 
 .#{$sign-namespace}sign .#{$sign-namespace}sign__text--large {
     font-family: 'Nunito', sans-serif;
-	font-size: 1.625em;
-	font-weight: bold;
+	font-size: 1.5em;
+	//font-weight: bold;
 }
 
 .#{$sign-namespace}sign .#{$sign-namespace}sign__text--small {
@@ -107,6 +109,11 @@ $theme-namespace: t- !default;
 	margin-left: auto;
 	margin-right: auto;
     width: 100%;
-	height: $fallback--base-rem-space-unit * 2;
-	margin-bottom: $fallback--base-rem-space-unit / 2;
+	//height: $fallback--base-rem-space-unit * 2;
+	//margin-bottom: $fallback--base-rem-space-unit / 2;
+    
+    height: 90%;
+    position: absolute;
+    bottom: 0;
+    opacity: 0.3;
 }

@@ -36,11 +36,12 @@ $patterns: (
             background-color      : map-get($theme, primary-color),
             band-color            : map-get($theme, primary-color),
             border-color          : map-get($theme, primary-color),
-            card-background-color : #eee,
-            card-text-color       : #333333,
-            cta-text-color        : #333333,
+            card-background-color : rgba(0,0,0,0.1),
+            card-text-color       : #fff,
+            cta-text-color        : #333,
+            meter-text-color      : #fff,
             page-header-color     : map-get($theme, primary-color),
-            text-color            : #333333
+            text-color            : #333
         )
         , $theme
     );
@@ -60,6 +61,7 @@ $patterns: (
     @include background-theme($name, $theme);
     @include bands-theme($name, $theme);
     @include card-theme($name, $theme);
+    @include meter-theme($name, $theme);
     @include page-header-theme($name, $theme);
 	@include panel-theme($name, $theme);
 	@include panel-theme--dark($name, $theme);
@@ -74,7 +76,8 @@ $patterns: (
     
 
     .#{$theme-namespace}#{$name} button,
-    .#{$theme-namespace}#{$name} button.over-panel-control {
+    .#{$theme-namespace}#{$name} button.over-panel-control,
+    .#{$theme-namespace}#{$name} button.over-panel-control[aria-expanded=true] {
         
         border-color: map-get($theme, border-color);
         color: map-get($theme, cta-text-color);

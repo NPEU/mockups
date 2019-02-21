@@ -15,8 +15,16 @@ layout: project-structure
             </div>
         </div>-->
     
-        <div class="c-panel  u-padding--above">
-        
+        {% if page.headline_image %}
+        <div id="headline_image" class="l-content-area__main__headline_image">
+            <div class="proportional-container  proportional-container--3-1  u-bands--bottom  t-{{ page.project }}">
+                <div class="proportional-container__content">
+                    <img class="proportional-container__image-cover" src="{{ page.headline_image }}" width="600" alt="">
+                </div>
+            </div>
+        </div>
+        {% endif %}
+        <div class="c-panel  u-padding--above  u-padding--sides--l  u-space--below">
             <h1>{{ page.title }}</h1>
         
             {{ content }}
@@ -49,19 +57,26 @@ layout: project-structure
            
         </div>-->
         
-        <!--<div class="l-content-area__pull-out  u-space--below">
-            <div wf-area="white+outline+medium-padding">
-                <h2>Side bar - bottom section</h2>
-                    <p>
-                    Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque tincidunt lorem sit amet enim congue, non molestie arcu aliquam. Vestibulum sagittis feugiat vulputate. Sed pharetra aliquam diam, eu euismod quam ullamcorper in. Sed a tempor tellus. Suspendisse in tellus hendrerit, aliquam ipsum nec, faucibus neque. Fusce a neque urna.
-                </p>
-
-                <p>
-                    Maecenas vehicula, felis a tincidunt ultrices, ante velit aliquet lectus, sed sollicitudin libero tellus at elit. Fusce eget quam et tortor gravida hendrerit. In urna libero, vulputate sit amet mauris eget, efficitur luctus tortor.
-                </p>
-               
+        <div class="l-content-area__pull-out  u-space--below">
+            <div class="c-panel  u-space--below">
+            
+                {% capture connect_module %}module__connect--{{ page.project }}.html{% endcapture %}
+                {% include {{ connect_module }} %}
+            
             </div>
-        </div>-->
+            <div class="c-panel  u-space--below">
+            
+                {% capture support_module %}module__support--{{ page.project }}.html{% endcapture %}
+                {% include {{ support_module }} %}
+                
+            </div>
+            <div class="c-panel">
+            
+                {% capture funder_module %}module__funder--{{ page.project }}.html{% endcapture %}
+                {% include {{ funder_module }} %}
+
+            </div>
+        </div>
         
     </div>
     

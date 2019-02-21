@@ -63,11 +63,13 @@ $space-namespace: u- !default;
 
 
 
-.#{$space-namespace}padding--left--xs {
+.#{$space-namespace}padding--left--xs,
+.#{$space-namespace}padding--sides--xs {
     padding-left: $sz-xs !important;
 }
 
-.#{$space-namespace}padding--right--xs {
+.#{$space-namespace}padding--right--xs,
+.#{$space-namespace}padding--sides--xs {
     padding-right: $sz-xs !important;
 }
 
@@ -134,6 +136,112 @@ $space-namespace: u- !default;
     padding-bottom: $sz-m !important;
 }
 
-.#{$space-namespace}padding {
+
+// Set large and x-large padding to medium by default:...
+.#{$space-namespace}padding--left--l,
+.#{$space-namespace}padding--sides--l {
+    padding-left: $sz-m !important;
+}
+
+.#{$space-namespace}padding--right--l,
+.#{$space-namespace}padding--sides--l {
+    padding-right: $sz-m !important;
+}
+
+.#{$space-namespace}padding--top--l,
+.#{$space-namespace}padding--above--l {
+    padding-top: $sz-m !important;
+}
+
+.#{$space-namespace}padding--bottom--l,
+.#{$space-namespace}padding--below--l {
+    padding-bottom: $sz-m !important;
+}
+
+.#{$space-namespace}padding--l {
     padding: $sz-m !important;
 }
+
+
+
+.#{$space-namespace}padding--left--xl,
+.#{$space-namespace}padding--sides--xl {
+    padding-left: $sz-m !important;
+}
+
+.#{$space-namespace}padding--right--xl,
+.#{$space-namespace}padding--sides--xl {
+    padding-right: $sz-m !important;
+}
+
+.#{$space-namespace}padding--top--xl,
+.#{$space-namespace}padding--above--xl {
+    padding-top: $sz-m !important;
+}
+
+.#{$space-namespace}padding--bottom--xl,
+.#{$space-namespace}padding--below--xl {
+    padding-bottom: $sz-m !important;
+}
+
+.#{$space-namespace}padding--xl {
+    padding: $sz-m !important;
+}
+
+// ...then allow full sozed padding when there's more room:
+@media only screen and (min-width: $not-too-small +10em) {
+    .#{$space-namespace}padding--left--l,
+    .#{$space-namespace}padding--sides--l {
+        padding-left: $sz-l !important;
+    }
+
+    .#{$space-namespace}padding--right--l,
+    .#{$space-namespace}padding--sides--l {
+        padding-right: $sz-l !important;
+    }
+
+    .#{$space-namespace}padding--top--l,
+    .#{$space-namespace}padding--above--l {
+        padding-top: $sz-l !important;
+    }
+
+    .#{$space-namespace}padding--bottom--l,
+    .#{$space-namespace}padding--below--l {
+        padding-bottom: $sz-l !important;
+    }
+
+    .#{$space-namespace}padding--l {
+        padding: $sz-l !important;
+    }
+
+
+
+    .#{$space-namespace}padding--left--xl,
+    .#{$space-namespace}padding--sides--xl {
+        padding-left: $sz-xl !important;
+    }
+
+    .#{$space-namespace}padding--right--xl,
+    .#{$space-namespace}padding--sides--xl {
+        padding-right: $sz-xl !important;
+    }
+
+    .#{$space-namespace}padding--top--xl,
+    .#{$space-namespace}padding--above--xl {
+        padding-top: $sz-xl !important;
+    }
+
+    .#{$space-namespace}padding--bottom--xl,
+    .#{$space-namespace}padding--below--xl {
+        padding-bottom: $sz-xl !important;
+    }
+
+    .#{$space-namespace}padding--xl {
+        padding: $sz-xl !important;
+    }
+}
+
+
+    .#{$space-namespace}padding {
+        padding: $sz-m !important;
+    }

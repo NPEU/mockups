@@ -68,7 +68,6 @@ var cookie_html                   =
             outerloop:
             for (var i = 0; i < cssSheets.length; i++) {
                 var sheet = cssSheets[i];
-                
                 // Some browsers don't allow checking of rules if not on the same domain (CORS), so
                 // checking for that here:
                 if (sheet.href !== null && domain_regex.exec(sheet.href) === null) {
