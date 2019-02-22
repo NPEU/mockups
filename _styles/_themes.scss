@@ -73,19 +73,6 @@ $patterns: (
 	@include panel-theme--dark($name, $theme);
     @include randomise-cta-theme($name, $theme);
 
-    // Alternate colours:
-    @if map-has-key($theme, "secondary-color") {
-        //@debug map-get($theme, secondary-color);
-        $theme: map-merge(
-            $theme,
-            (
-                background-color : map-get($theme, secondary-color)
-            )
-        );
-
-        @include background-theme("#{$name}--alt", $theme);
-    }
-
 
     // Override StartCSS values.
     // Note this almost certainly isn't the best place for this but will do for now.
@@ -162,4 +149,18 @@ $patterns: (
         background: linear-gradient(to right, #ffffff 0%,#ffffff 50%,map-get($theme, background-color) 50%,map-get($theme, background-color) 100%);
     }
     */
+    
+    
+    // Alternate colours:
+    @if map-has-key($theme, "secondary-color") {
+        //@debug map-get($theme, secondary-color);
+        $theme: map-merge(
+            $theme,
+            (
+                background-color : map-get($theme, secondary-color)
+            )
+        );
+
+        @include background-theme("#{$name}--alt", $theme);
+    }
 }
