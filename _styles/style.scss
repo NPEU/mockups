@@ -18,12 +18,14 @@ $fallback--breakpoint--enhanced: 42.5625em;
 //$namespace: '.ugc ';
 //$namespace: 'main ';
 
-
 @import '../bower_components/Fall-Back-Start-CSS/dist/scss/_start__settings.scss';
 
 $max-main-line-length: 0;
 $measure: 68rem;
 $not-too-small: 18em;
+
+$h2-font-size: 34px / $fallback--base-font-size * 1em !default;
+$h3-font-size: 26px / $fallback--base-font-size * 1em !default;
 
 @import '../bower_components/Fall-Back-Start-CSS/dist/scss/_start.scss';
 
@@ -164,7 +166,7 @@ $ff-min-widths: (
     50%,
     60%,
     66.666%,
-    75%
+    75%,
     80%
 ) !default;
 
@@ -255,11 +257,13 @@ $pagination-spacing-unit: $fallback--base-rem-space-unit;
 $pagination--link-color--alt: #ccc;
 $pagination--background-color: #fff;
 @import "navigation-patterns/_pagination.scss";
-
+*/
 $section-menu-spacing-unit: $fallback--base-rem-space-unit;
 $section-menu--link-color--alt: #ccc;
 $section-menu--background-color: #fff;
-@import "navigation-patterns/_section-menu.scss";*/
+$section-menu--padding: 0;
+$section-menu--border-width: 0;
+@import "navigation-patterns/_section-menu.scss";
 
 
 /* --| Layout Patterns |------------------------------------------------------------------------- */

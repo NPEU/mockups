@@ -34,24 +34,10 @@ $section-menu--separator-color:  darken($section-menu--background-color, 10%) !d
 
 
 // Section menu body:
-/*
-$section-menu-body--text-color: $section-menu--text-color !default;
-$section-menu-body--background-color: $section-menu--background-color !default;
-
-$section-menu-title--text-color: $section-menu--text-color !default;
-$section-menu-title--background-color: $section-menu--background-color !default;
-
-*/
 $section-menu--padding: $section-menu-spacing-unit !default;
 
 
-/*
-$section-menu-cta--border-width: 1px !default;
-$section-menu-cta--border-style: solid !default;
-$section-menu-cta--border-radius: 3px !default;
-*/
-
-$section-menu-body--padding:       $section-menu-spacing-unit !default;
+//$section-menu-body--padding:       $section-menu-spacing-unit !default;
 $section-menu-body--margin-left:   0 !default;
 $section-menu-body--margin-right:  0 !default;
 $section-menu-body--margin-top:    0 !default;
@@ -86,65 +72,9 @@ $section-menu--link-border-bottom--alt: false !default;
     $section-menu--link-border-bottom--alt: 2px solid lighten($section-menu--link-color--alt, 30%) !default;
 }
 
-// Section menu buttons:
-/*
-$section-menu-button--text-color: #fff !default;
-$section-menu-button--background-color: $section-menu--base-color !default;
-$section-menu-button--background-color-alt: lighten($section-menu--base-color, 20%) !default;
-$section-menu-button--border-color: darken($section-menu--base-color, 20%) !default;
-*/
-/*
-.#{$section-menu-namespace}section-menu-wrap {
-
-
-}
-
-    .#{$section-menu-namespace}section-menu-wrap .#{$section-menu-namespace}section-menu {
-
-        //width: 100%;
-    }
-*/
-    // Themes mixin:
-    //@mixin section-menu--themer (
-    //    $name: "",
-    //    $background-color: $section-menu--base-color
-    //) {
-    //    // Set up theme name:
-    //    $theme-class: "";
-    //    @if $name != "" {
-    //        $theme-class: unquote('.')#{$theme-namespace}#{$name};
-    //    }
-    //
-    //    .#{$section-menu-namespace}section-menu--themed-content#{$theme-class} .#{$section-menu-namespace}section-menu__body::before {
-    //        background-color: $background-color;
-    //    }
-    //}
 
 
     .#{$section-menu-namespace}section-menu.#{$section-menu-namespace}section-menu {
-
-        /*display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex;
-
-        -webkit-flex-direction: row;
-            -ms-flex-direction: row;
-                flex-direction: row;
-
-            -webkit-flex-wrap: wrap;
-                -ms-flex-wrap: wrap;
-                    flex-wrap: wrap;
-
-        -webkit-justify-content: space-between;
-                  -ms-flex-pack: justify;
-                justify-content: space-between;
-
-        -webkit-align-items: flex-end;
-             -ms-flex-align: end;
-                align-items: flex-end;
-
-        height: 100%;
-        //width: 100%;*/
 
         color: $section-menu--text-color;
         background: $section-menu--background-color;
@@ -162,12 +92,6 @@ $section-menu-button--border-color: darken($section-menu--base-color, 20%) !defa
             border-radius: $section-menu--border-radius;
         }
 
-        /*max-width: 20em;*/
-        /*margin-top: 0 auto;
-        margin-bottom: 1.5rem;
-        margin-left: auto;
-        margin-right: auto;*/
-
         /*
             If the 'pull' is > module body content height, it'll protrude below the container,
             so hide it:
@@ -175,18 +99,6 @@ $section-menu-button--border-color: darken($section-menu--base-color, 20%) !defa
         overflow: hidden;
     }
 
-        /*.#{$section-menu-namespace}section-menu > * {
-            -webkit-flex: 0 1 auto;
-                -ms-flex: 0 1 auto;
-                    flex: 0 1 auto;
-
-            width: 100%;
-        }*/
-
-
-        /*.#{$section-menu-namespace}section-menu .#{$section-menu-namespace}section-menu__title {
-            border-bottom: 1px solid #999;
-        }*/
 
 
         .#{$section-menu-namespace}section-menu .#{$section-menu-namespace}section-menu__list {
@@ -202,9 +114,9 @@ $section-menu-button--border-color: darken($section-menu--base-color, 20%) !defa
 
             @if $section-menu--separator-width != false {
                 .#{$section-menu-namespace}section-menu .#{$section-menu-namespace}section-menu__item:not(:last-child) .#{$section-menu-namespace}section-menu__link {
-                    border-bottom-color:  $card--border-color;
-                    border-bottom-style:  $card--border-style;
-                    border-bottom-width:  $card--border-width;
+                    border-bottom-color:  $section-menu--separator-color;
+                    border-bottom-style:  $section-menu--separator-style;
+                    border-bottom-width:  $section-menu--separator-width;
                 }
             }
             
@@ -226,19 +138,6 @@ $section-menu-button--border-color: darken($section-menu--base-color, 20%) !defa
 
                     display: block;
 
-                    /*display: -webkit-flex;
-                    display: -ms-flexbox;
-                    display: flex;
-
-                    -webkit-justify-content: center;
-                              -ms-flex-pack: center;
-                            justify-content: center;
-
-                    -webkit-align-items: center;
-                         -ms-flex-align: center;
-                            align-items: center;*/
-
-
                     &:hover {
                         border: 0;
                         @if $section-menu--link-color--alt != false {
@@ -246,186 +145,12 @@ $section-menu-button--border-color: darken($section-menu--base-color, 20%) !defa
                         }
                     }
                 }
-                
-                
-
-
-/*
-        .#{$section-menu-namespace}section-menu .#{$section-menu-namespace}section-menu__image {
-            position: relative;
-            text-align: center;
-        }
-
-            .#{$section-menu-namespace}section-menu .#{$section-menu-namespace}section-menu__image img {
-                width: 100%;
-            }
-
-
-            .#{$section-menu-namespace}section-menu .#{$section-menu-namespace}section-menu__image-link,
-            .#{$section-menu-namespace}section-menu .#{$section-menu-namespace}section-menu__image-link:hover {
-                border-bottom: 0;
-            }
-
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        /*.#{$section-menu-namespace}section-menu .#{$section-menu-namespace}section-menu__main {
-            color: $section-menu-body--text-color;
-            background: $section-menu-body--background-color;
-
-            margin-left: $section-menu-body--margin-left;
-            margin-right: $section-menu-body--margin-right;
-            margin-top: $section-menu-body--margin-top;
-            margin-bottom: $section-menu-body--margin-bottom;
-            padding: $section-menu-body--padding;
-
-            -webkit-flex: 1 0 auto;
-                -ms-flex: 1 0 auto;
-                    flex: 1 0 auto;
-
-
-            display: -webkit-flex;
-            display: -ms-flexbox;
-            display: flex;
-
-            -webkit-flex-direction: row;
-                -ms-flex-direction: row;
-                    flex-direction: row;
-
-            -webkit-flex-wrap: wrap;
-                -ms-flex-wrap: wrap;
-                    flex-wrap: wrap;
-
-            -webkit-align-items: flex-end;
-                 -ms-flex-align: end;
-                    align-items: flex-end;
-
-            -webkit-align-content: space-between;
-               -ms-flex-line-pack: justify;
-                    align-content: space-between;
-
-            -webkit-justify-content: flex-end;
-                      -ms-flex-pack: end;
-                    justify-content: flex-end;
-
-
-            position: relative;
-        }*/
-
-
-            /*.#{$section-menu-namespace}section-menu .#{$section-menu-namespace}section-menu__body {
-                -webkit-flex: 1 0 auto;
-                    -ms-flex: 1 0 auto;
-                        flex: 1 0 auto;
-
-                position: relative;
-
-                width: 100%;
-                //max-width: 100%;
-            }*/
-
-            /*.#{$section-menu-namespace}section-menu .#{$section-menu-namespace}section-menu__image + .#{$section-menu-namespace}section-menu__body--pull-over {
-                position: relative;
-                z-index: 1;
-                margin-top: $section-menu-body--pull-over;
-            }*/
 
 
                 .#{$section-menu-namespace}section-menu .#{$section-menu-namespace}section-menu__title {
-                    font-size: $section-menu-title--font-size;
+                    //font-size: $section-menu-title--font-size;
+                    margin-bottom: 0;
                 }
 
 
-                /*
-                @if $section-menu--link-color != false {
-                    .#{$section-menu-namespace}section-menu .#{$section-menu-namespace}section-menu__body a {
-                        color: $section-menu--link-color;
-                        @if $section-menu--link-has-border-bottom != false {
-                            border-bottom: $section-menu--link-border-bottom;
-                        }
-                    }
 
-                    .#{$section-menu-namespace}section-menu .#{$section-menu-namespace}section-menu__body a:hover,
-                    .#{$section-menu-namespace}section-menu .#{$section-menu-namespace}section-menu__body a:active,
-                    .#{$section-menu-namespace}section-menu .#{$section-menu-namespace}section-menu__body a:focus {
-                        color: $section-menu--link-color--alt;
-                        @if $section-menu--link-has-border-bottom != false {
-                            border-bottom: $section-menu--link-border-bottom--alt;
-                        }
-                    }
-                }
-                */
-
-
-
-            /*.#{$section-menu-namespace}section-menu .#{$section-menu-namespace}section-menu__footer {
-                margin-left: $section-menu-body--margin-left;
-                margin-right: $section-menu-body--margin-right;
-                margin-top: 0;
-                margin-bottom: 0;
-                padding-top: $section-menu-body--padding;
-                width: 100%;
-            }*/
-
-
-                /*.#{$section-menu-namespace}section-menu .#{$section-menu-namespace}section-menu__footer > * {
-                    margin: 0;
-                }*/
-
-
-                /*.#{$section-menu-namespace}section-menu .#{$section-menu-namespace}section-menu__info {
-                    font-size: 0.875em;
-
-                    margin-bottom: -($section-menu-body--padding / 2);
-                    margin-top: -($section-menu-body--padding / 2);
-                    border-top: 1px solid #999;
-                    padding-top: calc((#{$section-menu-body--padding / 2} - 1px);
-                }*/
-
-
-
-        /*.#{$section-menu-namespace}section-menu--allow-wide .#{$section-menu-namespace}section-menu__body {
-            width: 70%;
-        }*/
-
-        /*.#{$section-menu-namespace}section-menu--allow-wide .#{$section-menu-namespace}section-menu__footer {
-            width: auto;
-            padding-left: $section-menu-body--padding;
-        }*/
-
-
-
-/*
-
-        .#{$section-menu-namespace}section-menu--themed-content .#{$section-menu-namespace}section-menu__body > * {
-            padding-left: 1rem;
-        }
-
-        // Note that this themed bar should a visual representation of the category or group to
-        // to which this section-menu belongs. If you're using this themed bar, make sure you also include
-        // the category/group information somewhere (e.g. in the footer info or as a kicker),
-        // Otherwise this information isn't accessible.
-        .#{$section-menu-namespace}section-menu--themed-content .#{$section-menu-namespace}section-menu__body::before {
-            display: block;
-            content: "";
-            width: 0.5rem;
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: -1rem;
-            background-color: #999;
-        }
-*/

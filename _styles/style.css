@@ -688,13 +688,13 @@ h1 {
 
 h2 {
   margin-bottom: 2.4rem;
-  font-size: 2.5em;
+  font-size: 2.125em;
   line-height: 4.8rem;
 }
 
 h3 {
   margin-bottom: 2.4rem;
-  font-size: 1.875em;
+  font-size: 1.625em;
   line-height: 3.6rem;
 }
 
@@ -2544,13 +2544,13 @@ h1 {
 
 h2 {
   margin-bottom: 2.4rem;
-  font-size: 2.5em;
+  font-size: 2.125em;
   line-height: 4.8rem;
 }
 
 h3 {
   margin-bottom: 2.4rem;
-  font-size: 1.875em;
+  font-size: 1.625em;
   line-height: 3.6rem;
 }
 
@@ -4407,11 +4407,11 @@ _:-webkit-full-screen, _::-webkit-full-page-media, _:future, :root select[size="
     border-radius: 50%;
   }
   input[type="radio"]:checked {
-    background-image: -moz-radial-gradient(center, ellipse cover, #333333 0%, #333333 35%, transparent 35%, transparent 100%);
+    background-image: -moz-radial-gradient(center, ellipse cover, #333333 0%, #333333 35%, rgba(0, 0, 0, 0) 35%, rgba(0, 0, 0, 0) 100%);
     /* FF3.6-15 */
-    background-image: -webkit-radial-gradient(center, ellipse cover, #333333 0%, #333333 35%, transparent 35%, transparent 100%);
+    background-image: -webkit-radial-gradient(center, ellipse cover, #333333 0%, #333333 35%, rgba(0, 0, 0, 0) 35%, rgba(0, 0, 0, 0) 100%);
     /* Chrome10-25,Safari5.1-6 */
-    background-image: radial-gradient(ellipse at center, #333333 0%, #333333 35%, transparent 35%, transparent 100%);
+    background-image: radial-gradient(ellipse at center, #333333 0%, #333333 35%, rgba(0, 0, 0, 0) 35%, rgba(0, 0, 0, 0) 100%);
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   }
   input[type="checkbox"]:checked::after {
@@ -4459,7 +4459,8 @@ _:-webkit-full-screen, _::-webkit-full-page-media, _:future, :root select[size="
   -webkit-appearance: radio;
 }
 
-/*------------------------------------------------------------------------------------------------*    Fall-Back Icons v1.0.0
+/*------------------------------------------------------------------------------------------------*\
+    Fall-Back Icons v1.0.0
     
     Designed for use with the basic [CSS Mustard Cut](https://github.com/Fall-Back/CSS-Mustard-Cut)
     IE 9+, FF 8+, Opera 12, [Chrome 29+, Android ~4.4+]
@@ -5604,7 +5605,8 @@ $fallback--dropdown__button--background-color: $fallback--nav-bar__link--backgro
 }
 
 /* ---------------------------------------------------------------------------------------------- */
-/*------------------------------------------------------------------------------------------------*
+/*------------------------------------------------------------------------------------------------*\
+
     Designed for use with the basic [CSS Mustard Cut](https://github.com/Fall-Back/CSS-Mustard-Cut)
     IE 9+, FF 8+, Opera 12, [Chrome 29+, Android ~4.4+]
     Chrome 29+, Opera 16+, Safari 6.1+, iOS 7+, Android ~4.4+
@@ -5687,7 +5689,8 @@ body {
 }
 
 /*------------------------------------------------------------------------------------------------*/
-/*------------------------------------------------------------------------------------------------*
+/*------------------------------------------------------------------------------------------------*\
+
     Clarification for self:
     Since this pattern is intented for use on logos, and since logos are an integral part of
     branding, this pattern is not ONLY intended as a CSS fallback.
@@ -5767,7 +5770,7 @@ body {
   right: 0;
   bottom: 0;
   left: 0;
-  background: transparent;
+  background: rgba(0, 0, 0, 0);
   /* [1] */
 }
 
@@ -6024,8 +6027,10 @@ body {
   border-width: 0;
 }
 
-/*------------------------------------------------------------------------------------------------*\*------------------------------------------------------------------------------------------------*/
-/*------------------------------------------------------------------------------------------------*    Import Fall-Back vars:
+/*------------------------------------------------------------------------------------------------*\
+\*------------------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------------------*\
+    Import Fall-Back vars:
 
     Slightly hacky way of allowing the main UI colour of this pattern to be:
      - base-ui colour (if set)
@@ -6123,6 +6128,18 @@ body {
   min-width: 66.666%;
 }
 
+.ff-width-100--10--75 {
+  max-width: 100%;
+  width: calc((10em - 100%) * 1000);
+  min-width: 75%;
+}
+
+.ff-width-100--10--80 {
+  max-width: 100%;
+  width: calc((10em - 100%) * 1000);
+  min-width: 80%;
+}
+
 .ff-width-100--15--20 {
   max-width: 100%;
   width: calc((15em - 100%) * 1000);
@@ -6163,6 +6180,18 @@ body {
   max-width: 100%;
   width: calc((15em - 100%) * 1000);
   min-width: 66.666%;
+}
+
+.ff-width-100--15--75 {
+  max-width: 100%;
+  width: calc((15em - 100%) * 1000);
+  min-width: 75%;
+}
+
+.ff-width-100--15--80 {
+  max-width: 100%;
+  width: calc((15em - 100%) * 1000);
+  min-width: 80%;
 }
 
 .ff-width-100--20--20 {
@@ -6207,6 +6236,18 @@ body {
   min-width: 66.666%;
 }
 
+.ff-width-100--20--75 {
+  max-width: 100%;
+  width: calc((20em - 100%) * 1000);
+  min-width: 75%;
+}
+
+.ff-width-100--20--80 {
+  max-width: 100%;
+  width: calc((20em - 100%) * 1000);
+  min-width: 80%;
+}
+
 .ff-width-100--25--20 {
   max-width: 100%;
   width: calc((25em - 100%) * 1000);
@@ -6247,6 +6288,18 @@ body {
   max-width: 100%;
   width: calc((25em - 100%) * 1000);
   min-width: 66.666%;
+}
+
+.ff-width-100--25--75 {
+  max-width: 100%;
+  width: calc((25em - 100%) * 1000);
+  min-width: 75%;
+}
+
+.ff-width-100--25--80 {
+  max-width: 100%;
+  width: calc((25em - 100%) * 1000);
+  min-width: 80%;
 }
 
 .ff-width-100--30--20 {
@@ -6291,6 +6344,18 @@ body {
   min-width: 66.666%;
 }
 
+.ff-width-100--30--75 {
+  max-width: 100%;
+  width: calc((30em - 100%) * 1000);
+  min-width: 75%;
+}
+
+.ff-width-100--30--80 {
+  max-width: 100%;
+  width: calc((30em - 100%) * 1000);
+  min-width: 80%;
+}
+
 .ff-width-100--40--20 {
   max-width: 100%;
   width: calc((40em - 100%) * 1000);
@@ -6331,6 +6396,18 @@ body {
   max-width: 100%;
   width: calc((40em - 100%) * 1000);
   min-width: 66.666%;
+}
+
+.ff-width-100--40--75 {
+  max-width: 100%;
+  width: calc((40em - 100%) * 1000);
+  min-width: 75%;
+}
+
+.ff-width-100--40--80 {
+  max-width: 100%;
+  width: calc((40em - 100%) * 1000);
+  min-width: 80%;
 }
 
 .ff-width-100--50--20 {
@@ -6375,6 +6452,18 @@ body {
   min-width: 66.666%;
 }
 
+.ff-width-100--50--75 {
+  max-width: 100%;
+  width: calc((50em - 100%) * 1000);
+  min-width: 75%;
+}
+
+.ff-width-100--50--80 {
+  max-width: 100%;
+  width: calc((50em - 100%) * 1000);
+  min-width: 80%;
+}
+
 .ff-width-100--60--20 {
   max-width: 100%;
   width: calc((60em - 100%) * 1000);
@@ -6415,6 +6504,18 @@ body {
   max-width: 100%;
   width: calc((60em - 100%) * 1000);
   min-width: 66.666%;
+}
+
+.ff-width-100--60--75 {
+  max-width: 100%;
+  width: calc((60em - 100%) * 1000);
+  min-width: 75%;
+}
+
+.ff-width-100--60--80 {
+  max-width: 100%;
+  width: calc((60em - 100%) * 1000);
+  min-width: 80%;
 }
 
 /*
@@ -7318,11 +7419,66 @@ $pagination-spacing-unit: $fallback--base-rem-space-unit;
 $pagination--link-color--alt: #ccc;
 $pagination--background-color: #fff;
 @import "navigation-patterns/_pagination.scss";
+*/
+/*
+    The `height: 100%;` in the `.section-menu` class below allows the section-menu to fill it's container (if inside,
+    say, a list-grid). However, it doesn't work in Safari OSX/iOS.
+    Applying a `section-menu-wrap` class to a list item to make those items flex-containers seems to work
+    OK, but perhaps this would be better abstracted as a `fill-height` class or something?
+*/
+.n-section-menu.n-section-menu {
+  color: #333;
+  background: #fff;
+  padding: 0;
+  outline: 0 solid #e6e6e6;
+  /*
+            If the 'pull' is > module body content height, it'll protrude below the container,
+            so hide it:
+        */
+  overflow: hidden;
+}
 
-$section-menu-spacing-unit: $fallback--base-rem-space-unit;
-$section-menu--link-color--alt: #ccc;
-$section-menu--background-color: #fff;
-@import "navigation-patterns/_section-menu.scss";*/
+.n-section-menu .n-section-menu__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.n-section-menu .n-section-menu__item {
+  padding: 0;
+  margin: 0;
+}
+
+.n-section-menu .n-section-menu__item:not(:last-child) .n-section-menu__link {
+  border-bottom-color: #e6e6e6;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+}
+
+.n-section-menu .n-section-menu__item--active .n-section-menu__link {
+  background: #e6e6e6;
+}
+
+.n-section-menu .n-section-menu__item--active span {
+  border-bottom: 2px dashed;
+}
+
+.n-section-menu .n-section-menu__link {
+  padding: 0.6rem;
+  margin: 0 -0.6rem;
+  border: 0;
+  display: block;
+}
+
+.n-section-menu .n-section-menu__link:hover {
+  border: 0;
+  background: #ccc;
+}
+
+.n-section-menu .n-section-menu__title {
+  margin-bottom: 0;
+}
+
 /* --| Layout Patterns |------------------------------------------------------------------------- */
 /*
     Col to Row
@@ -9115,10 +9271,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e7692', end
 /* If `object-fit` is supported, use that and override vertical centering: */
 @supports (object-fit: cover) {
   .u-image-cover {
+    position: relative;
     height: 100%;
     width: 100%;
-    display: grid;
-    min-height: 10em;
+  }
+  .u-image-cover__inner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
   }
   .u-image-cover__image {
     object-fit: cover;
@@ -9152,6 +9312,16 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e7692', end
 
 .over-panel-control {
   z-index: 999 !important;
+}
+
+/*-----------------*/
+.contact-list dt {
+  display: none;
+}
+
+.contact-avatar {
+  float: left;
+  margin: 0.5em;
 }
 
 /* ---------------------------------------------------------------------------------------------- */

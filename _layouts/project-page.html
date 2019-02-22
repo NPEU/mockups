@@ -58,6 +58,15 @@ layout: project-structure
         </div>-->
         
         <div class="l-content-area__pull-out  u-space--below">
+            {% if page.section_menu %}
+            <div class="c-panel  u-space--below">
+            
+                {% capture section_menu_module %}module__section-menu--{{ page.project }}--{{ page.section_menu }}.html{% endcapture %}
+                {% include {{ section_menu_module }} %}
+            
+            </div>
+            {% endif %}
+        
             <div class="c-panel  u-space--below">
             
                 {% capture connect_module %}module__connect--{{ page.project }}.html{% endcapture %}

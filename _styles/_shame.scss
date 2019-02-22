@@ -478,17 +478,21 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e7692', end
 /* If `object-fit` is supported, use that and override vertical centering: */
 @supports (object-fit:cover) {
     .u-image-cover {
+        position: relative;
         height: 100%;
         width: 100%;
-        display: grid;
-        min-height: 10em;
     }
-    
-        .u-image-cover__image {   
-            object-fit: cover;
-            height: 100%;
+        .u-image-cover__inner {
+            position: absolute;
             width: 100%;
+            height: 100%;
         }
+    
+            .u-image-cover__image {   
+                object-fit: cover;
+                height: 100%;
+                width: 100%;
+            }
 }
 
 
@@ -522,4 +526,15 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e7692', end
 
 .over-panel-control {
     z-index: 999 !important;
+}
+
+
+/*-----------------*/
+.contact-list dt {
+    display: none;
+}
+
+.contact-avatar {
+    float: left;
+    margin: 0.5em;
 }

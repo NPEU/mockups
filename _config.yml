@@ -15,6 +15,7 @@ defaults:
     values:
       is_home: false
       headline_image: false
+      section_menu: false
 
 # Build settings
 markdown: kramdown
