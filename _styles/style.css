@@ -8426,11 +8426,11 @@ $patterns: (
         background: -webkit-linear-gradient(left, map-get($theme, background-color) 0%,map-get($theme, background-color) 50%,#ffffff 50%,#ffffff 100%);
         background: linear-gradient(to right, map-get($theme, background-color) 0%,map-get($theme, background-color) 50%,#ffffff 50%,#ffffff 100%);
     }
-    
+
     .t-white.d-50-50-background--flipped {
-        background: #FFFFFF; 
+        background: #FFFFFF;
         background: -moz-linear-gradient(left, #ffffff 0%, #ffffff 50%, map-get($theme, background-color) 50%, map-get($theme, background-color) 100%);
-        background: -webkit-linear-gradient(left, #ffffff 0%,#ffffff 50%,map-get($theme, background-color) 50%,map-get($theme, background-color) 100%); 
+        background: -webkit-linear-gradient(left, #ffffff 0%,#ffffff 50%,map-get($theme, background-color) 50%,map-get($theme, background-color) 100%);
         background: linear-gradient(to right, #ffffff 0%,#ffffff 50%,map-get($theme, background-color) 50%,map-get($theme, background-color) 100%);
     }
     */
@@ -8569,11 +8569,11 @@ $patterns: (
         background: -webkit-linear-gradient(left, map-get($theme, background-color) 0%,map-get($theme, background-color) 50%,#ffffff 50%,#ffffff 100%);
         background: linear-gradient(to right, map-get($theme, background-color) 0%,map-get($theme, background-color) 50%,#ffffff 50%,#ffffff 100%);
     }
-    
+
     .t-anode.d-50-50-background--flipped {
-        background: #FFFFFF; 
+        background: #FFFFFF;
         background: -moz-linear-gradient(left, #ffffff 0%, #ffffff 50%, map-get($theme, background-color) 50%, map-get($theme, background-color) 100%);
-        background: -webkit-linear-gradient(left, #ffffff 0%,#ffffff 50%,map-get($theme, background-color) 50%,map-get($theme, background-color) 100%); 
+        background: -webkit-linear-gradient(left, #ffffff 0%,#ffffff 50%,map-get($theme, background-color) 50%,map-get($theme, background-color) 100%);
         background: linear-gradient(to right, #ffffff 0%,#ffffff 50%,map-get($theme, background-color) 50%,map-get($theme, background-color) 100%);
     }
     */
@@ -8712,11 +8712,11 @@ $patterns: (
         background: -webkit-linear-gradient(left, map-get($theme, background-color) 0%,map-get($theme, background-color) 50%,#ffffff 50%,#ffffff 100%);
         background: linear-gradient(to right, map-get($theme, background-color) 0%,map-get($theme, background-color) 50%,#ffffff 50%,#ffffff 100%);
     }
-    
+
     .t-minidex.d-50-50-background--flipped {
-        background: #FFFFFF; 
+        background: #FFFFFF;
         background: -moz-linear-gradient(left, #ffffff 0%, #ffffff 50%, map-get($theme, background-color) 50%, map-get($theme, background-color) 100%);
-        background: -webkit-linear-gradient(left, #ffffff 0%,#ffffff 50%,map-get($theme, background-color) 50%,map-get($theme, background-color) 100%); 
+        background: -webkit-linear-gradient(left, #ffffff 0%,#ffffff 50%,map-get($theme, background-color) 50%,map-get($theme, background-color) 100%);
         background: linear-gradient(to right, #ffffff 0%,#ffffff 50%,map-get($theme, background-color) 50%,map-get($theme, background-color) 100%);
     }
     */
@@ -8804,6 +8804,20 @@ $patterns: (
   background-color: #00625f;
 }
 
+.u-background.t-neoclear--alt {
+  background-color: #B51A82;
+}
+
+.u-background--very-dark.t-neoclear--alt {
+  background-color: #5c0d42;
+}
+
+.u-background--sloped.t-neoclear--alt {
+  background: -moz-linear-gradient(45deg, #9f1772 0%, #a31775 50%, #ac197c 50%, #a81878 100%);
+  background: -webkit-linear-gradient(45deg, #9f1772 0%, #a31775 50%, #ac197c 50%, #a81878 100%);
+  background: linear-gradient(45deg, #9f1772 0%, #a31775 50%, #ac197c 50%, #a81878 100%);
+}
+
 /*.t-neoclear.t-color {
         color: map-get($theme, text-color);
     }*/
@@ -8812,7 +8826,7 @@ $patterns: (
 .t-neoclear button.over-panel-control[aria-expanded=true] {
   border-color: #009590;
   color: #ffffff;
-  background-color: #009590;
+  background-color: #B51A82;
 }
 
 .t-neoclear button:hover, .t-neoclear button:active, .t-neoclear button:focus,
@@ -8822,7 +8836,7 @@ $patterns: (
 .t-neoclear button.over-panel-control[aria-expanded=true]:hover,
 .t-neoclear button.over-panel-control[aria-expanded=true]:active,
 .t-neoclear button.over-panel-control[aria-expanded=true]:focus {
-  background-color: #00625f;
+  background-color: #881462;
   /*@else {
                 background-color: map-get($theme, background-color);
             }*/
@@ -8855,11 +8869,11 @@ $patterns: (
         background: -webkit-linear-gradient(left, map-get($theme, background-color) 0%,map-get($theme, background-color) 50%,#ffffff 50%,#ffffff 100%);
         background: linear-gradient(to right, map-get($theme, background-color) 0%,map-get($theme, background-color) 50%,#ffffff 50%,#ffffff 100%);
     }
-    
+
     .t-neoclear.d-50-50-background--flipped {
-        background: #FFFFFF; 
+        background: #FFFFFF;
         background: -moz-linear-gradient(left, #ffffff 0%, #ffffff 50%, map-get($theme, background-color) 50%, map-get($theme, background-color) 100%);
-        background: -webkit-linear-gradient(left, #ffffff 0%,#ffffff 50%,map-get($theme, background-color) 50%,map-get($theme, background-color) 100%); 
+        background: -webkit-linear-gradient(left, #ffffff 0%,#ffffff 50%,map-get($theme, background-color) 50%,map-get($theme, background-color) 100%);
         background: linear-gradient(to right, #ffffff 0%,#ffffff 50%,map-get($theme, background-color) 50%,map-get($theme, background-color) 100%);
     }
     */

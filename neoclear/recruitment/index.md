@@ -1,6 +1,6 @@
 ---
 layout: project-page
-title: Trial Status
+title: Recruitment
 project: neoclear
 ---
 

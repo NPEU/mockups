@@ -30,6 +30,8 @@ $patterns: (
 
 @each $name, $theme in $themes {
 
+
+
     // Set defaults:
     $theme: map-merge(
         (
@@ -46,6 +48,10 @@ $patterns: (
         , $theme
     );
 
+
+
+
+
     /* - Waiting for SASS to support. Currently pseudo code.
     @each $pattern in $patterns {
         @include $pattern (
@@ -56,7 +62,7 @@ $patterns: (
         );
     }
     */
-    @debug $theme;
+    //@debug $theme;
 
     @include background-theme($name, $theme);
     @include bands-theme($name, $theme);
@@ -67,22 +73,35 @@ $patterns: (
 	@include panel-theme--dark($name, $theme);
     @include randomise-cta-theme($name, $theme);
 
+    // Alternate colours:
+    @if map-has-key($theme, "secondary-color") {
+        //@debug map-get($theme, secondary-color);
+        $theme: map-merge(
+            $theme,
+            (
+                background-color : map-get($theme, secondary-color)
+            )
+        );
+
+        @include background-theme("#{$name}--alt", $theme);
+    }
+
 
     // Override StartCSS values.
     // Note this almost certainly isn't the best place for this but will do for now.
     /*.#{$theme-namespace}#{$name}.t-color {
         color: map-get($theme, text-color);
     }*/
-    
+
 
     .#{$theme-namespace}#{$name} button,
     .#{$theme-namespace}#{$name} button.over-panel-control,
     .#{$theme-namespace}#{$name} button.over-panel-control[aria-expanded=true] {
-        
+
         border-color: map-get($theme, border-color);
         color: map-get($theme, cta-text-color);
         background-color: map-get($theme, background-color);
-        
+
         &:hover,
         &:active,
         &:focus, {
@@ -101,33 +120,33 @@ $patterns: (
             }*/
         }
     }
-    
+
     .#{$theme-namespace}#{$name} a[href] {
-        
+
         border-color: map-get($theme, border-color);
         color: map-get($theme, text-color);
         background-color: transparent;
-        
+
         &:hover,
         &:active,
         &:focus, {
             color: map-get($theme, text-color);
         }
     }
-    
+
     .#{$theme-namespace}#{$name} a[href].cta {
-        
+
         border-color: map-get($theme, border-color);
         color: map-get($theme, text-color);
         background-color: #fff;
-        
+
         &:hover,
         &:active,
         &:focus, {
             background-color: lighten(map-get($theme, border-color), 65%);
         }
     }
-    
+
     /*
     .#{$theme-namespace}#{$name}.d-50-50-background {
         background: #FFFFFF;
@@ -135,11 +154,11 @@ $patterns: (
         background: -webkit-linear-gradient(left, map-get($theme, background-color) 0%,map-get($theme, background-color) 50%,#ffffff 50%,#ffffff 100%);
         background: linear-gradient(to right, map-get($theme, background-color) 0%,map-get($theme, background-color) 50%,#ffffff 50%,#ffffff 100%);
     }
-    
+
     .#{$theme-namespace}#{$name}.d-50-50-background--flipped {
-        background: #FFFFFF; 
+        background: #FFFFFF;
         background: -moz-linear-gradient(left, #ffffff 0%, #ffffff 50%, map-get($theme, background-color) 50%, map-get($theme, background-color) 100%);
-        background: -webkit-linear-gradient(left, #ffffff 0%,#ffffff 50%,map-get($theme, background-color) 50%,map-get($theme, background-color) 100%); 
+        background: -webkit-linear-gradient(left, #ffffff 0%,#ffffff 50%,map-get($theme, background-color) 50%,map-get($theme, background-color) 100%);
         background: linear-gradient(to right, #ffffff 0%,#ffffff 50%,map-get($theme, background-color) 50%,map-get($theme, background-color) 100%);
     }
     */

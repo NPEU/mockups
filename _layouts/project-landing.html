@@ -59,8 +59,15 @@ layout: project-structure
                             </a>
                         </div>
                         -->{% endcomment %}
-                        <div class="c-sign  c-sign--status  u-background--sloped  t-{{ page.project }}">
-                            <a href="/{{ page.project }}/status" class="c-sign__link">
+                        {% comment %}<!--
+                        
+                            Add a marker to the meter with the number.
+                            ALSO: it's possible that a trial might not have a target, if that's the 
+                            case then skip the (Target: XX) and the meter completely.
+                        
+                        -->{% endcomment %}
+                        <div class="c-sign  c-sign--status  u-background--sloped  t-{{ page.project }}--alt">
+                            <a href="/{{ page.project }}/recruitment" class="c-sign__link">
                                 <span class="c-sign__centered-content">
                                     <span class="l-col-to-row">
                                         <span class="l-col-to-row__item  ff-width-100--30--50">
