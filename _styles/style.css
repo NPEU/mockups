@@ -5903,6 +5903,43 @@ body {
 }
 
 /*------------------------------------------------------------------------------------------------*/
+.svg--fixed-height--logo--large,
+.svg--fixed-height--logo--large .svg__link,
+.svg--fixed-height--logo--large .svg__image {
+  height: 120px;
+  max-height: 120px;
+}
+
+/*
+        1. Allow pattern to contract.
+    */
+.svg--fixed-height--logo--large .svg__link,
+.svg--fixed-height--logo--large .svg__image {
+  max-width: 100%;
+  /* [1] */
+}
+
+/*
+        Allow the fallback image to scale properly.
+        1. IE6 - can be removed if unnecessary.
+    */
+.svg--fixed-height--logo--large .svg__fallback-image {
+  max-width: 100%;
+  max-height: 120px;
+  height: auto;
+}
+
+.svg--fixed-height--logo--large .svg__link {
+  padding: 0;
+  border-width: 0;
+}
+
+.svg--fixed-height--logo--large .svg__link:hover,
+.svg--fixed-height--logo--large .svg__link:active,
+.svg--fixed-height--logo--large .svg__link:focus {
+  border-width: 0;
+}
+
 .svg--fixed-height--logo,
 .svg--fixed-height--logo .svg__link,
 .svg--fixed-height--logo .svg__image {
@@ -9196,7 +9233,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e7692', end
     .gallery-grid.c-signpost {
         grid-template-columns: repeat(auto-fit, minmax(13.5em, 1fr));
     }
-    
+
 }*/
 /*--------------*/
 /*
@@ -9222,7 +9259,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e7692', end
 }
 
 @media only screen and (min-width: 42.5625em) {
-  .c-page-header.u-bands--bottom {
+  .nav-bar.u-bands--bottom {
     border: 0;
   }
 }

@@ -118,7 +118,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e7692', end
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
-    
+
         -ms-flex-wrap: wrap;
     -webkit-flex-wrap: wrap;
             flex-wrap: wrap;
@@ -138,7 +138,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e7692', end
         -ms-flex-wrap: wrap;
     -webkit-flex-wrap: wrap;
             flex-wrap: wrap;
-            
+
     -webkit-justify-content: center;
               -ms-flex-pack: center;
             justify-content: center;
@@ -329,7 +329,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e7692', end
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    
+
     -webkit-flex-wrap: wrap;
         -ms-flex-wrap: wrap;
             flex-wrap: wrap;
@@ -337,7 +337,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e7692', end
     -webkit-justify-content: center;
               -ms-flex-pack: center;
             justify-content: center;
-    
+
     margin: 0 -1rem;
 }
 
@@ -346,7 +346,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e7692', end
     -webkit-flex: 1 1 20em;
         -ms-flex: 1 1 20em;
             flex: 1 1 20em;
-    
+
     margin: 0 1rem 2rem 1rem;
     max-width: 20em;
 }
@@ -369,7 +369,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e7692', end
     .gallery-grid.c-signpost {
         grid-template-columns: repeat(auto-fit, minmax(13.5em, 1fr));
     }
-    
+
 }*/
 /*--------------*/
 /*
@@ -389,7 +389,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e7692', end
     .js-over-panel-control.over-panel-control {
         margin-right: auto;
     }
-    
+
     .c-randomise-cta {
         margin-left: $sz-s;
     }
@@ -401,7 +401,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e7692', end
 
 
 @media only screen and (min-width: $fallback--breakpoint--enhanced) {
-    .c-page-header.u-bands--bottom {
+    .nav-bar.u-bands--bottom {
         border: 0;
     }
 }
@@ -437,7 +437,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e7692', end
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
-    
+
         -ms-flex-wrap: wrap;
     -webkit-flex-wrap: wrap;
             flex-wrap: wrap;
@@ -488,8 +488,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e7692', end
             width: 100%;
             height: 100%;
         }
-    
-            .u-image-cover__image {   
+
+            .u-image-cover__image {
                 object-fit: cover;
                 height: 100%;
                 width: 100%;

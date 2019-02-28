@@ -136,6 +136,7 @@ $fallback-svg--link-bg-color:     #fff;
 $fallback-svg--link-bg-color-alt: #fff;
 @import "../bower_components/Fall-Back-SVG/_svg";
 
+@include svg--fixed-height(120px, 'svg--fixed-height--logo--large', 0, 0);
 @include svg--fixed-height(80px, 'svg--fixed-height--logo', 0, 0);
 @include svg--fixed-height(60px, 'svg--fixed-height--parent-logo', 0, 0);
 @include svg--fixed-height(($fallback--base-rem-space-unit * 4), 'svg--fixed-height--funder-logo', ($fallback--base-rem-space-unit / 2), 0);
