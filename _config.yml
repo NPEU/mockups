@@ -32,13 +32,10 @@ exclude: [
     "bower_components",
     "Gemfile",
     "Gemfile.lock",
-    "Gruntfile.js",
     "gulpfile.js",
-    "local-grunt.bat",
     "local-gulp.bat",
     "local-jekyll.bat",
     "node_modules", 
     "package.json",
-    "package-bk.json",
     "README.md"
 ]
