@@ -9,10 +9,10 @@ project: neoclear
 <p>If you would like more information about the NeoCLEAR trial please contact the NeoCLEAR Coordinating Centre:</p>
 
 <div>
-    <img src="/img/avatars/rachel-williams-889-avatar.jpg?s=200" alt="" class="contact-avatar  u-bands  t-neoclear">
+    <img src="/img/avatars/rachel-williams-889-avatar.jpg?s=200" alt="" class="c-contact-avatar  u-bands  t-neoclear">
 </div>
 
-<dl class="contact-list" itemscope="" itemtype="http://schema.org/Person">
+<dl class="c-contact-list" itemscope="" itemtype="http://schema.org/Person">
 	<dt>Name</dt>
 	<dd class="Xicon  Xicon-person"><a href="/people/rachel-williams-889" itemprop="name">Mrs Rachel Williams</a></dd>
 	<dt>Role</dt>
@@ -43,7 +43,7 @@ project: neoclear
 
 <p>If you require clinical information about the trial, please contact Dr Alex Scrivens, (Clinical Research Fellow), or Dr Andrew Marshall (Clinical Lead).&nbsp;The Chief Investigator for this trial is Associate Professor Charles Roehr.</p>
 
-<dl class="contact-list" itemscope="itemscope" itemtype="http://schema.org/Person">
+<dl class="c-contact-list" itemscope="itemscope" itemtype="http://schema.org/Person">
 	<dt>Name</dt>
 	<dd class="Xicon  Xicon-person"><b><span itemprop="honorificPrefix">Dr.</span> <span itemprop="name">Alexandra Scrivens</span></b></dd>
 	<dt>Tel</dt>
@@ -52,14 +52,14 @@ project: neoclear
 	<dd class="Xicon  Xicon-email" itemprop="email"><a href="mailto:alexandra.scrivens@npeu.ox.ac.uk" itemprop="email">alexandra.scrivens@npeu.ox.ac.uk</a></dd>
 </dl>
 
-<dl class="contact-list" itemscope="itemscope" itemtype="http://schema.org/Person">
+<dl class="c-contact-list" itemscope="itemscope" itemtype="http://schema.org/Person">
 	<dt>Name</dt>
 	<dd class="Xicon  Xicon-person"><b><span itemprop="honorificPrefix">Dr.</span> <span itemprop="name">Andrew Marshall </span></b></dd>
 	<dt>Email</dt>
 	<dd class="Xicon  Xicon-email" itemprop="email"><a href="mailto:a.marshall@doctors.org.uk" itemprop="email">a.marshall@doctors.org.uk</a></dd>
 </dl>
 
-<dl class="contact-list" itemscope="itemscope" itemtype="http://schema.org/Person">
+<dl class="c-contact-list" itemscope="itemscope" itemtype="http://schema.org/Person">
 	<dt>Name</dt>
 	<dd class="Xicon  Xicon-person"><b><span itemprop="honorificPrefix">Associate Professor</span> <span itemprop="name">Charles Roehr</span></b></dd>
 	<dt>Tel</dt>

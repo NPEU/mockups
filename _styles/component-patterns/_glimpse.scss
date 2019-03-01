@@ -34,7 +34,8 @@ $glimpse-footer--font-size:  1.4rem !default;
 
 
 
-    .#{$glimpse-namespace}glimpse.#{$glimpse-namespace}glimpse {
+.#{$glimpse-namespace}glimpse {
+    &#{&} {
         position: relative;
         max-width: $glimpse--max-width;
         //@if $glimpse--border-size != false {
@@ -56,7 +57,7 @@ $glimpse-footer--font-size:  1.4rem !default;
         //box-shadow: 0 0 9px inset;
     }
 
-    .#{$glimpse-namespace}glimpse__heading {
+    #{&}__heading {
         font-size: $glimpse-heading--font-size;
         //line-height: 2rem;
         margin: 0;
@@ -82,7 +83,7 @@ $glimpse-footer--font-size:  1.4rem !default;
         }
     }
 
-    .#{$glimpse-namespace}glimpse__image {
+    #{&}__image {
         width: $glimpse--image-size;
         height: $glimpse--image-size;
 
@@ -98,22 +99,24 @@ $glimpse-footer--font-size:  1.4rem !default;
             max-width: 100%;
         }
     }
-
-    @supports(object-fit: cover) {
-        .#{$glimpse-namespace}glimpse__image img {
-            object-fit: cover;
-            width: 100%;
-            height: 100%;
-        }
-    }
-
-    .#{$glimpse-namespace}glimpse__content {
+    
+    #{&}__content {
         font-size: $glimpse-footer--font-size;
 
         margin: 0;
     }
 
-    .#{$glimpse-namespace}glimpse__content * {
-        margin: 0;
-    }
+        #{&}__content * {
+            margin: 0;
+        }
 
+
+}
+
+@supports(object-fit: cover) {
+    .#{$glimpse-namespace}glimpse__image img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+}

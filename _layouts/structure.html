@@ -25,8 +25,9 @@
 
 
     <link rel="stylesheet" href="/css/style.min.{{ site.data.cache_bust_css.date }}.css" media="
-        only screen and (min-resolution: 0.1dpcm),
-        only screen and (-webkit-min-device-pixel-ratio:0) and (min-color-index:0)
+        only print,
+        only all and (pointer: fine), only all and (pointer: coarse), only all and (pointer: none),
+        only all and (min--moz-device-pixel-ratio:0) and (display-mode:browser), (min--moz-device-pixel-ratio:0) and (display-mode:fullscreen)
     ">
 
     <script src="/js/script.min.js"></script>
@@ -53,7 +54,7 @@
 
     {% endcomment %}
 </head>
-<body role="document" class="tb-baselineX tb-outlinesX  t-{{ page.project }}">
+<body role="document" class="tb-baselineX tb-outlinesX  t-{{ page.project }}" data-layout="{{ page.layout_name }}">
 
     <svg xmlns="http://www.w3.org/2000/svg" display="none">
         <symbol id="icon-building" viewBox="0 0 24 24">

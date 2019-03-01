@@ -2,7 +2,7 @@
 layout: project-page
 title: Information for Clinicians
 project: neoclear
-headline_image: /img/neoclear/meningitis-pathogen-240402028.jpg
+hero_image: "/img/neoclear/meningitis-pathogen-240402028.jpg"
 section_menu: clinicians
 ---
 

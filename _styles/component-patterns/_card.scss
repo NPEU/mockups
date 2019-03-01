@@ -132,53 +132,47 @@ $card-info--font-size: 1.4rem;
 }
 
 
-.#{$card-namespace}card.#{$card-namespace}card {
+.#{$card-namespace}card {
+    &#{&} {
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
 
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
+        -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+                flex-direction: column;
 
-    -webkit-flex-direction: column;
-        -ms-flex-direction: column;
-            flex-direction: column;
+        height: 100%;
+        //width: 100%;
+        
+        margin: 0;
 
-    height: 100%;
-    //width: 100%;
-    
-    margin: 0;
-
-    color: $card--text-color;
-    background: $card--background-color;
-    padding: $card--padding;
+        color: $card--text-color;
+        background: $card--background-color;
+        padding: $card--padding;
 
 
-    @if $card--border-or-outline == 'outline' {
-        outline: $card--border-width $card--border-style $card--border-color;
+        @if $card--border-or-outline == 'outline' {
+            outline: $card--border-width $card--border-style $card--border-color;
+        }
+
+        @if $card--border-or-outline == 'border' {
+            border-color:  $card--border-color;
+            border-style:  $card--border-style;
+            border-width:  $card--border-width;
+            border-radius: $card--border-radius;
+        }
+
+        /*
+            If the 'pull' is > module body content height, it'll protrude below the container,
+            so hide it:
+        */
+        overflow: hidden;
     }
 
-    @if $card--border-or-outline == 'border' {
-        border-color:  $card--border-color;
-        border-style:  $card--border-style;
-        border-width:  $card--border-width;
-        border-radius: $card--border-radius;
-    }
-
-    /*max-width: 20em;*/
-    /*margin-top: 0 auto;
-    margin-bottom: 1.5rem;
-    margin-left: auto;
-    margin-right: auto;*/
-
-    /*
-        If the 'pull' is > module body content height, it'll protrude below the container,
-        so hide it:
-    */
-    overflow: hidden;
-}
 
 
-
-    .#{$card-namespace}card > * {
+    > * {
         -webkit-flex: 0 0 auto;
             -ms-flex: 0 0 auto;
                 flex: 0 0 auto;
@@ -186,24 +180,24 @@ $card-info--font-size: 1.4rem;
         width: 100%;
     }
 
-    .#{$card-namespace}card .#{$card-namespace}card__image {
+    #{&}__image {
         position: relative;
         text-align: center;
     }
 
-        .#{$card-namespace}card .#{$card-namespace}card__image img {
+        #{&}__image img {
             width: 100%;
         }
 
 
-        .#{$card-namespace}card .#{$card-namespace}card__image-link,
-        .#{$card-namespace}card .#{$card-namespace}card__image-link:hover {
+        #{&}__image-link,
+        #{&}__image-link:hover {
             border-bottom: 0;
             margin-bottom: 0;
         }
         
-        .#{$card-namespace}card .#{$card-namespace}card__full-link,
-        .#{$card-namespace}card .#{$card-namespace}card__full-link:hover {
+        #{&}__full-link,
+        #{&}__full-link:hover {
             border-bottom: 0;
             margin-bottom: 0;
             padding-bottom: 0;
@@ -215,9 +209,9 @@ $card-info--font-size: 1.4rem;
             height: 100%;
         }
 
-        .#{$card-namespace}card .#{$card-namespace}card__full-link:hover::before,
-        .#{$card-namespace}card .#{$card-namespace}card__full-link:active::before,
-        .#{$card-namespace}card .#{$card-namespace}card__full-link:focus::before {
+        #{&}__full-link:hover::before,
+        #{&}__full-link:active::before,
+        #{&}__full-link:focus::before {
             border: 0;
             content: "";
             display: block;
@@ -233,7 +227,7 @@ $card-info--font-size: 1.4rem;
 
         
 
-    .#{$card-namespace}card .#{$card-namespace}card__main {
+    #{&}__main {
         // Positioning context for themed bar and extended actionable area:
         position: relative;
     
@@ -280,23 +274,17 @@ $card-info--font-size: 1.4rem;
     }
 
 
-        .#{$card-namespace}card .#{$card-namespace}card__body {
+        #{&}__body {
             -webkit-flex: 1 0 auto;
                 -ms-flex: 1 0 auto;
                     flex: 1 0 auto;
 
             width: 100%;
-            //max-width: 100%;
         }
 
-        /*.#{$card-namespace}card .#{$card-namespace}card__image + .#{$card-namespace}card__body--pull-over {
-            position: relative;
-            z-index: 1;
-            margin-top: $card-body--pull-over;
-        }*/
 
 
-            .#{$card-namespace}card .#{$card-namespace}card__title {
+            #{&}__title {
                 font-size:   $card-title--font-size;
                 line-height: $card-title--line-height;
                 width: 100%;
@@ -315,50 +303,17 @@ $card-info--font-size: 1.4rem;
                     color: inherit;
                     
                     cursor: pointer;
-                    
-                    // Extend actionable area:
-                    /*&:before {
-                        content: "";
-                        display: block;
-                        position: absolute;
-                        left: 0;
-                        top: 0;
-                        right: 0;
-                        bottom: 0;
-                        background: #ddd;
-                    }*/
+
                 }
             }
             
-            .#{$card-namespace}card.#{$card-namespace}card--stub .#{$card-namespace}card__title {
+            &#{&}--stub #{&}__title {
                 font-size:   $card-stub-title--font-size;
                 line-height: $card-stub-title--line-height;
             }
 
 
-            /*
-            @if $card--link-color != false {
-                .#{$card-namespace}card .#{$card-namespace}card__body a {
-                    color: $card--link-color;
-                    @if $card--link-has-border-bottom != false {
-                        border-bottom: $card--link-border-bottom;
-                    }
-                }
-
-                .#{$card-namespace}card .#{$card-namespace}card__body a:hover,
-                .#{$card-namespace}card .#{$card-namespace}card__body a:active,
-                .#{$card-namespace}card .#{$card-namespace}card__body a:focus {
-                    color: $card--link-color--alt;
-                    @if $card--link-has-border-bottom != false {
-                        border-bottom: $card--link-border-bottom--alt;
-                    }
-                }
-            }
-            */
-
-
-
-        .#{$card-namespace}card .#{$card-namespace}card__footer {
+        #{&}__footer {
             margin-left: $card-body--margin-left;
             margin-right: $card-body--margin-right;
             margin-top: 0;
@@ -368,12 +323,12 @@ $card-info--font-size: 1.4rem;
         }
 
 
-            .#{$card-namespace}card .#{$card-namespace}card__footer > * {
+            #{&}__footer > * {
                 margin: 0;
             }
 
 
-            .#{$card-namespace}card .#{$card-namespace}card__info {
+            #{&}__info {
                 font-size: $card-info--font-size;
 
                 margin-bottom: -($card-body--padding / 2);
@@ -384,11 +339,11 @@ $card-info--font-size: 1.4rem;
 
 
 
-    .#{$card-namespace}card--allow-wide .#{$card-namespace}card__body {
+    &#{&}--allow-wide #{&}__body {
         width: 70%;
     }
 
-    .#{$card-namespace}card--allow-wide .#{$card-namespace}card__footer {
+    &#{&}--allow-wide #{&}__footer {
         width: auto;
         padding-left: $card-body--padding;
     }
@@ -397,7 +352,7 @@ $card-info--font-size: 1.4rem;
 
 
 
-    .#{$card-namespace}card--themed-content .#{$card-namespace}card__main > * {
+    #{&}--themed-content #{&}__main > * {
         padding-left: 1rem;
     }
 
@@ -405,7 +360,7 @@ $card-info--font-size: 1.4rem;
     // to which this card belongs. If you're using this themed bar, make sure you also include
     // the category/group information somewhere (e.g. in the footer info or as a kicker), 
     // Otherwise this information isn't accessible.
-    .#{$card-namespace}card--themed-content .#{$card-namespace}card__body::before {
+    #{&}--themed-content #{&}__body::before {
         display: block;
         content: "";
         width: 0.75rem;
@@ -415,3 +370,4 @@ $card-info--font-size: 1.4rem;
         left: 1rem;
         background-color: #999;
     }
+}

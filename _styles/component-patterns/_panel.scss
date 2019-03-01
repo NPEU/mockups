@@ -14,9 +14,19 @@ $panel--border-style: solid !default;
 $panel--padding: 2rem !default;
 
 .#{$panel-namespace}panel {
-	padding: $panel--padding;
+
+    &#{&} {
+        padding: $panel--padding;
 	
-	@include bottom-space-fix();
+        @include bottom-space-fix();
+    }
+	
+    
+    &--module {
+        h2 {
+            font-size: 24px / $fallback--base-font-size * 1em;
+        }
+    }
 }
 
 
@@ -49,7 +59,7 @@ $panel--padding: 2rem !default;
 	// Using nested option as a workaround.
 	//.#{$panel-namespace}panel.#{$theme-prefix}#{$name} {
 	// + panel + . + #{$theme-prefix} + #{$name}
-	.#{$panel-namespace}panel#{$theme-class} {
+	.#{$panel-namespace}panel.#{$panel-namespace}panel#{$theme-class} {
 		color: $text-color;
 		background: $background-color;
 

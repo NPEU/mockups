@@ -43,21 +43,25 @@ layout: structure
                     </div>
 
                     <div class="l-col-to-row__item  ff-width-100--40--50  l-v-center  u-text-align--right  c-page-header__last">
+                        {% if page.landing_display_navbar %}
                         <button class="over-panel-control" hidden aria-controls="menu-panel" aria-label="Main menu" aria-expanded="false" data-js="overpanel__control">
                             <svg display="none" class="icon  icon--is-closed  feather"><use xlink:href="#icon-menu"></use></svg><svg display="none" class="icon  icon--is-open  feather"><use xlink:href="#icon-cross"></use></svg>
                         </button>
-                        
-                        <a href="/{{ project_data.randomisation_url }}" class="c-randomise-cta  t-{{ page.project }}">Randomise to {{ project_data.name }}</a>
+                        {% endif %}
+                        {% if page.landing_display_cta %}
+                        <a href="/{{ project_data.randomisation_url }}" class="c-primary-cta  t-{{ page.project }}">Randomise to {{ project_data.name }}</a>
+                        {% endif %}
                     </div>
                 </div>
             </div>
             
+            {% if page.display_navbar %}
             <div class="">
                 <div class="over-panel over-panel--fade js-over-panel" id="menu-panel" data-js="over-panel">
                     <button class="over-panel__overlay" hidden="" aria-hidden="true" tabindex="-1" data-js="over-panel__overlay"></button>
-                    <div class="over-panel__contents" data-js="over-panel__contents">
+                    <div class="over-panel__contents  u-background--sloped  t-{{ page.project }}" data-js="over-panel__contents">
 
-                        <div class="nav-bar  u-padding--sides--s  t-neoclear  u-bands--bottom">
+                        <div class="nav-bar  u-padding--sides--s  t-{{ page.project }}  u-bands--bottom">
 
                             <nav class="nav-bar__main">
 
@@ -111,31 +115,34 @@ layout: structure
                     </div>
                 </div>
             </div>
+            {% endif %}
         </header>
         
         
-        {% if page.is_home and project_data.hero_image and project_data.hero_message %}
+        {% if page.display_hero and page.hero_image %}
         <div id="hero" class="c-hero">
             <div class="c-hero__image">
                 <div class="proportional-container  proportional-container--5-1  u-bands--bottom  t-{{ page.project }}  hero-image">
                     <div class="proportional-container__content">
-                        <img class="proportional-container__image-cover" src="{{ project_data.hero_image }}" width="600" alt="">
+                        <img class="proportional-container__image-cover" src="{{ page.hero_image }}" width="600" alt="">
                     </div>
                 </div>
             </div>
+            {% if page.is_home and project_data.hero_message %}
             <div class="c-hero__message">
                 <p><b>{{ project_data.hero_message }}</b></p>
             </div>
+            {% endif %}
         </div>
         {% endif %}
         
         <div class="sticky-footer-expand">
-            <main role="main" class="main-container  u-background--very-dark  t-{{ page.project }}">
+            <main role="main" class="main-container  u-background--very-dark  t-{{ page.project }}  u-fill-area">
                 {{ content }}
             </main>
         </div>
 
-        <footer class="sticky-footer  u-bands--top  t-{{ page.project }}" role="contentinfo">
+        <footer class="sticky-footer    t-{{ page.project }}  u-bands--top"" role="contentinfo">
 
 			<div class="footer-logos">
 

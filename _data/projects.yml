@@ -1,7 +1,6 @@
 minidex:
     name: Minidex
     randomisation_url: https://rct.npeu.ox.ac.uk/minidex
-    hero_image: false
     participants_svg: |
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="40">
             <g>
@@ -45,7 +44,6 @@ minidex:
 neoclear:
     name: NeoCLEAR
     randomisation_url: https://rct.npeu.ox.ac.uk/neoclear
-    hero_image: /img/neoclear/hero-image.jpg
     hero_message: "NeoCLEAR: Understanding the best technique for lumbar puncture in newborn babies"
     intro_video_id: Knkl9l8-F34
     participants_label: Parents

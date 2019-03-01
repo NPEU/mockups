@@ -2,7 +2,7 @@
 layout: project-page
 title: Information for Parents
 project: neoclear
-headline_image: /img/neoclear/holding-baby-182368333.jpg
+hero_image: "/img/neoclear/hero-image-2.jpg"
 ---
 
 

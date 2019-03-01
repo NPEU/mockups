@@ -114,7 +114,8 @@ $event-button--border-color: darken($event--base-color, 20%) !default;
     //}
 
 
-    .#{$event-namespace}event.#{$event-namespace}event {
+.#{$event-namespace}event {
+    &#{&} {
 
         display: -webkit-flex;
         display: -ms-flexbox;
@@ -127,15 +128,15 @@ $event-button--border-color: darken($event--base-color, 20%) !default;
             -webkit-flex-wrap: wrap;
                 -ms-flex-wrap: wrap;
                     flex-wrap: wrap;
-                    
+
         -webkit-justify-content: space-between;
                   -ms-flex-pack: justify;
                 justify-content: space-between;
-                
+
         -webkit-align-items: flex-end;
              -ms-flex-align: end;
                 align-items: flex-end;
-        
+
         height: 100%;
         //width: 100%;
 
@@ -155,25 +156,18 @@ $event-button--border-color: darken($event--base-color, 20%) !default;
             border-radius: $event--border-radius;
         }
 
-        /*max-width: 20em;*/
-        /*margin-top: 0 auto;
-        margin-bottom: 1.5rem;
-        margin-left: auto;
-        margin-right: auto;*/
+        // If the 'pull' is > module body content height, it'll protrude below the container,
+        // so hide it:
 
-        /*
-            If the 'pull' is > module body content height, it'll protrude below the container,
-            so hide it:
-        */
         overflow: hidden;
     }
-    
-    .#{$event-namespace}event.#{$event-namespace}event--cancelled {
-        background: $event--background-color--alt;
-    }
-    
 
-        .#{$event-namespace}event > * {
+        &#{&}--cancelled {
+            background: $event--background-color--alt;
+        }
+
+
+        > * {
             -webkit-flex: 0 1 auto;
                 -ms-flex: 0 1 auto;
                     flex: 0 1 auto;
@@ -182,222 +176,48 @@ $event-button--border-color: darken($event--base-color, 20%) !default;
         }
 
 
-        .#{$event-namespace}event .#{$event-namespace}event__title {
+        #{&}__title {
             border-bottom: 1px solid #999;
             padding-bottom: $event-spacing-unit / 2;
             margin-bottom: $event-spacing-unit / 2;
         }
-    
 
-        .#{$event-namespace}event .#{$event-namespace}event__speaker {
+
+        #{&}__speaker {
             font-weight: bold;
             font-size: 2.4rem;
-            
+
             margin: 0;
         }
-    
-    
-        .#{$event-namespace}event .#{$event-namespace}event__speaker-role {
+
+
+        #{&}__speaker-role {
             font-weight: normal;
             font-size: 1.4rem;
-            
+
             border-bottom: 1px solid #999;
             padding-bottom: $event-spacing-unit / 2;
             margin-bottom: 0;
         }
-        
-        
-        .#{$event-namespace}event .#{$event-namespace}event__datetime {
+
+
+        #{&}__datetime {
             width: auto;
-            
+
             font-weight: bold;
             font-size: 2.4rem;
-            
+
             margin: $event-spacing-unit 0 0 0;
         }
 
-        .#{$event-namespace}event .#{$event-namespace}event__action {
+        #{&}__action {
             width: auto;
             margin: $event-spacing-unit 0 0 auto;
             padding-left: $event-spacing-unit;
         }
-        
-/*
-        .#{$event-namespace}event .#{$event-namespace}event__image {
-            position: relative;
-            text-align: center;
+
+
+        #{&}__title {
+            font-size: $event-title--font-size;
         }
-
-            .#{$event-namespace}event .#{$event-namespace}event__image img {
-                width: 100%;
-            }
-
-
-            .#{$event-namespace}event .#{$event-namespace}event__image-link,
-            .#{$event-namespace}event .#{$event-namespace}event__image-link:hover {
-                border-bottom: 0;
-            }
-
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        /*.#{$event-namespace}event .#{$event-namespace}event__main {
-            color: $event-body--text-color;
-            background: $event-body--background-color;
-
-            margin-left: $event-body--margin-left;
-            margin-right: $event-body--margin-right;
-            margin-top: $event-body--margin-top;
-            margin-bottom: $event-body--margin-bottom;
-            padding: $event-body--padding;
-
-            -webkit-flex: 1 0 auto;
-                -ms-flex: 1 0 auto;
-                    flex: 1 0 auto;
-
-
-            display: -webkit-flex;
-            display: -ms-flexbox;
-            display: flex;
-
-            -webkit-flex-direction: row;
-                -ms-flex-direction: row;
-                    flex-direction: row;
-
-            -webkit-flex-wrap: wrap;
-                -ms-flex-wrap: wrap;
-                    flex-wrap: wrap;
-
-            -webkit-align-items: flex-end;
-                 -ms-flex-align: end;
-                    align-items: flex-end;
-
-            -webkit-align-content: space-between;
-               -ms-flex-line-pack: justify;
-                    align-content: space-between;
-
-            -webkit-justify-content: flex-end;
-                      -ms-flex-pack: end;
-                    justify-content: flex-end;
-
-
-            position: relative;
-        }*/
-
-
-            /*.#{$event-namespace}event .#{$event-namespace}event__body {
-                -webkit-flex: 1 0 auto;
-                    -ms-flex: 1 0 auto;
-                        flex: 1 0 auto;
-
-                position: relative;
-
-                width: 100%;
-                //max-width: 100%;
-            }*/
-
-            /*.#{$event-namespace}event .#{$event-namespace}event__image + .#{$event-namespace}event__body--pull-over {
-                position: relative;
-                z-index: 1;
-                margin-top: $event-body--pull-over;
-            }*/
-
-
-                .#{$event-namespace}event .#{$event-namespace}event__title {
-                    font-size: $event-title--font-size;
-                }
-
-
-                /*
-                @if $event--link-color != false {
-                    .#{$event-namespace}event .#{$event-namespace}event__body a {
-                        color: $event--link-color;
-                        @if $event--link-has-border-bottom != false {
-                            border-bottom: $event--link-border-bottom;
-                        }
-                    }
-
-                    .#{$event-namespace}event .#{$event-namespace}event__body a:hover,
-                    .#{$event-namespace}event .#{$event-namespace}event__body a:active,
-                    .#{$event-namespace}event .#{$event-namespace}event__body a:focus {
-                        color: $event--link-color--alt;
-                        @if $event--link-has-border-bottom != false {
-                            border-bottom: $event--link-border-bottom--alt;
-                        }
-                    }
-                }
-                */
-
-
-
-            /*.#{$event-namespace}event .#{$event-namespace}event__footer {
-                margin-left: $event-body--margin-left;
-                margin-right: $event-body--margin-right;
-                margin-top: 0;
-                margin-bottom: 0;
-                padding-top: $event-body--padding;
-                width: 100%;
-            }*/
-
-
-                /*.#{$event-namespace}event .#{$event-namespace}event__footer > * {
-                    margin: 0;
-                }*/
-
-
-                /*.#{$event-namespace}event .#{$event-namespace}event__info {
-                    font-size: 0.875em;
-
-                    margin-bottom: -($event-body--padding / 2);
-                    margin-top: -($event-body--padding / 2);
-                    border-top: 1px solid #999;
-                    padding-top: calc((#{$event-body--padding / 2} - 1px);
-                }*/
-
-
-
-        /*.#{$event-namespace}event--allow-wide .#{$event-namespace}event__body {
-            width: 70%;
-        }*/
-
-        /*.#{$event-namespace}event--allow-wide .#{$event-namespace}event__footer {
-            width: auto;
-            padding-left: $event-body--padding;
-        }*/
-
-
-
-/*
-
-        .#{$event-namespace}event--themed-content .#{$event-namespace}event__body > * {
-            padding-left: 1rem;
-        }
-
-        // Note that this themed bar should a visual representation of the category or group to
-        // to which this event belongs. If you're using this themed bar, make sure you also include
-        // the category/group information somewhere (e.g. in the footer info or as a kicker),
-        // Otherwise this information isn't accessible.
-        .#{$event-namespace}event--themed-content .#{$event-namespace}event__body::before {
-            display: block;
-            content: "";
-            width: 0.5rem;
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: -1rem;
-            background-color: #999;
-        }
-*/
+}

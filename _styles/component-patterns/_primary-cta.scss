@@ -1,0 +1,79 @@
+//$primary-cta--base-color		 : #eee !default;
+$primary-cta-namespace: c- !default;
+$theme-namespace: t- !default;
+
+$primary-cta--text-color       : #fff !default;
+$primary-cta--background-color : $fallback--base-ui-color !default;
+
+// Note: border color gets darkened by default later, but declaring here to allow specific override:
+//$panel--border-color: darken($panel--background-color, 10%) !default;
+//$primary-cta--border-color: null !default;
+//$primary-cta--border-width: 1px !default;
+//$primary-cta--border-style: solid !default;
+
+$primary-cta--padding: $fallback--base-rem-space-unit / 2 !default;
+
+
+.#{$primary-cta-namespace}primary-cta {
+    &[href] {
+        display: inline-block;
+        padding: $primary-cta--padding / 2;
+        border: 0;
+        border-radius: 6px;
+
+        font-size: 1.375em;
+
+        text-align: center;
+        margin-bottom: 0;
+
+            &:hover,
+            &:active,
+            &:focus {
+                border: 0;
+            }
+    }
+}
+
+@mixin primary-cta-theme ($name: "", $theme: ()) {
+	// Set up theme name:
+	$theme-class: "";
+	@if $name != "" {
+		$theme-class: unquote('.')#{$theme-namespace}#{$name};
+	}
+	//@debug $theme-class;
+
+	.#{$primary-cta-namespace}primary-cta#{$theme-class}[href] {
+		color: map-get($theme, cta-text-color);
+		background-color: map-get($theme, cta-background-color);
+
+
+        // Note the hover effect classes are declared globally.
+        // This isn't deal, but this component isn't (yet) intended for re-use in other projects.
+
+        &:hover,
+        &:active,
+        &:focus {
+            //box-shadow: 0 0 0 $hover-effect-width rgba(map-get($theme, background-color), $hover-effect-opacity);
+            color: map-get($theme, cta-text-color);
+
+            @if is-int($button-background-color--alt) {
+                @if $button-background-color--alt > 0 {
+                    $button-background-color--alt_percent: $button-background-color--alt * 1%;
+                    background-color: lighten(map-get($theme, cta-background-color), $button-background-color--alt_percent);
+                }
+                @if $button-background-color--alt < 0 {
+                    $button-background-color--alt_percent: $button-background-color--alt * -1%;
+                    background-color: darken(map-get($theme, cta-background-color), $button-background-color--alt_percent);
+                }
+            }
+        }
+    }
+}
+
+@include primary-cta-theme(
+    "",
+    (
+        cta-text-color       : $primary-cta--text-color,
+        cta-background-color : $primary-cta--background-color
+    )
+);

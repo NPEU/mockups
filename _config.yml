@@ -13,8 +13,20 @@ defaults:
     scope:
       path: "" # an empty string here means all files in the project
     values:
+      display_hero: true
+      display_funder: true
+      display_navbar: true
+      display_social: true
+      display_support: true
       is_home: false
-      headline_image: false
+      headline_image: true
+      landing_display_cta: true
+      landing_display_info: true
+      landing_display_signpost_bottom: true
+      landing_display_signpost_top: true
+      landing_display_updates: true
+      landing_display_video: true
+      layout_name: "default"
       section_menu: false
 
 # Build settings
@@ -24,18 +36,18 @@ markdown: kramdown
 kramdown:
   auto_ids:       true
 
-  
-  
+
+
 exclude: [
     "_archive",
-    "bower.json", 
+    "bower.json",
     "bower_components",
     "Gemfile",
     "Gemfile.lock",
     "gulpfile.js",
     "local-gulp.bat",
     "local-jekyll.bat",
-    "node_modules", 
+    "node_modules",
     "package.json",
     "README.md"
 ]

@@ -149,7 +149,7 @@ gulp.task('concat_js', () =>
         //'./bower_components/Fall-Back-Dropdown/dropdown.js',
         './bower_components/Fall-Back-Over-Panel/over-panel.js',
         './bower_components/Fall-Back-Cookie-Notice/cookie-notice.js',
-        './bower_components/Fall-Back-SVG/svg.js'
+        //'./bower_components/Fall-Back-SVG/svg.js'
     ])
     .pipe(concat(js_filename))
     .pipe(gulp.dest(js_src))

@@ -22,11 +22,11 @@ $enough-room-at: $fallback--base-rem-space-unit + $measure + $fallback--base-rem
 }
 
 
-
+/*
 h1, h2, h3 {
 	font-family: 'Nunito', sans-serif;
 }
-
+*/
 
 .sticky-footer-expand {
     display: -ms-flexbox;
@@ -531,11 +531,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e7692', end
 
 
 /*-----------------*/
-.contact-list dt {
-    display: none;
-}
 
-.contact-avatar {
-    float: left;
-    margin: 0.5em;
+
+
+.l-blockrow:last-child > .u-bands--bottom {
+    border: 0 !important;
 }
+/*-----------------*/

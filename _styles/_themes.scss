@@ -24,7 +24,7 @@ $patterns: (
     page-header-theme,
     panel-theme,
     panel-theme--dark,
-    randomise-cta-theme
+    primary-cta-theme
 );
 */
 
@@ -41,6 +41,7 @@ $patterns: (
             card-background-color : rgba(0,0,0,0.1),
             card-text-color       : #fff,
             cta-text-color        : #333,
+            cta-background-color  : map-get($theme, primary-color),
             meter-text-color      : #fff,
             page-header-color     : map-get($theme, primary-color),
             text-color            : #333
@@ -71,7 +72,7 @@ $patterns: (
     @include page-header-theme($name, $theme);
 	@include panel-theme($name, $theme);
 	@include panel-theme--dark($name, $theme);
-    @include randomise-cta-theme($name, $theme);
+    @include primary-cta-theme($name, $theme);
 
 
     // Override StartCSS values.
@@ -121,7 +122,7 @@ $patterns: (
         }
     }
 
-    .#{$theme-namespace}#{$name} a[href].cta {
+    :not(.overpanel) .#{$theme-namespace}#{$name} a[href].cta {
 
         border-color: map-get($theme, border-color);
         color: map-get($theme, text-color);

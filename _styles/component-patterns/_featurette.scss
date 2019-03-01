@@ -92,27 +92,30 @@ $featurette-button--border-color: darken($featurette--base-color, 20%) !default;
         //width: 100%;
     }
 */
-    // Themes mixin:
-    @mixin featurette--themer (
-        $name: "",
-        $background-color: $featurette--base-color,
-        $text-color: $featurette--text-color
-    ) {
-        // Set up theme name:
-        $theme-class: "";
-        @if $name != "" {
-            $theme-class: unquote('.')#{$theme-namespace}#{$name};
-        }
 
-        .#{$featurette-namespace}featurette#{$theme-class},
-        .#{$featurette-namespace}featurette#{$theme-class} a {
-            background-color: $background-color;
-            color: $text-color;
-        }
+// Themes mixin:
+@mixin featurette--themer (
+    $name: "",
+    $background-color: $featurette--base-color,
+    $text-color: $featurette--text-color
+) {
+    // Set up theme name:
+    $theme-class: "";
+    @if $name != "" {
+        $theme-class: unquote('.')#{$theme-namespace}#{$name};
     }
 
-    .#{$featurette-namespace}featurette.#{$featurette-namespace}featurette {
+    .#{$featurette-namespace}featurette#{$theme-class},
+    .#{$featurette-namespace}featurette#{$theme-class} a {
+        background-color: $background-color;
+        color: $text-color;
+    }
+}
 
+
+.#{$featurette-namespace}featurette {
+
+    &#{&} {
         display: -webkit-flex;
         display: -ms-flexbox;
         display: flex;
@@ -152,81 +155,85 @@ $featurette-button--border-color: darken($featurette--base-color, 20%) !default;
             border-width:  $featurette--border-width;
             border-radius: $featurette--border-radius;
         }
+
+
+    & > * {
+        -webkit-flex: 1 0 auto;
+            -ms-flex: 1 0 auto;
+                flex: 1 0 auto;
+
+        width: 100%;
     }
 
-        .#{$featurette-namespace}featurette > * {
-            -webkit-flex: 1 0 auto;
-                -ms-flex: 1 0 auto;
-                    flex: 1 0 auto;
 
+    &#{&}__image {
+        position: relative;
+        text-align: center;
+        max-width: 17em;
+        order: -1;
+    
+
+        & img {
             width: 100%;
         }
 
 
-        .#{$featurette-namespace}featurette .#{$featurette-namespace}featurette__image {
-            position: relative;
-            text-align: center;
-            max-width: 17em;
-            order: -1;
+        &-link,
+        &-link:hover {
+            border-bottom: 0;
         }
 
-            .#{$featurette-namespace}featurette .#{$featurette-namespace}featurette__image img {
-                width: 100%;
-            }
+    }
 
-
-            .#{$featurette-namespace}featurette .#{$featurette-namespace}featurette__image-link,
-            .#{$featurette-namespace}featurette .#{$featurette-namespace}featurette__image-link:hover {
-                border-bottom: 0;
-            }
-
-
-
-        .#{$featurette-namespace}featurette .#{$featurette-namespace}featurette__body {
-            padding: $featurette-body--padding;
+    &#{&}__body {
+        padding: $featurette-body--padding;
+    
+    
+        // Featurettes are designed for Power Quotes, so putting these styles here, though they do
+        // seem a little out of place:
+        & > blockquote {
+            margin-left: 0;
         }
+    }
+}
 
+@media (min-width: #{$featurette-breakpoint}) {
+    .#{$featurette-namespace}featurette {
+        &#{&} {
+            padding-left: 8%;
+            padding-right: 8%;
+        
 
-        @media (min-width: #{$featurette-breakpoint}) {
-            .#{$featurette-namespace}featurette.#{$featurette-namespace}featurette {
-                padding-left: 8%;
-                padding-right: 8%;
-            }
-
-            .#{$featurette-namespace}featurette__image {
+            #{&}__image {
                 width: auto;
                 max-width: none;
             }
             
-            .#{$featurette-namespace}featurette__body,
-            .#{$featurette-namespace}featurette__body--50 {
+            #{&}__body,
+            #{&}__body--50 {
                 max-width: 50%;
             }
             
-            .#{$featurette-namespace}featurette__body--60 {
+            #{&}__body--60 {
                 max-width: 60%;
             }
             
-            .#{$featurette-namespace}featurette__body--70 {
+            #{&}__body--70 {
                 max-width: 70%;
             }
             
-            .#{$featurette-namespace}featurette__body--80 {
+            #{&}__body--80 {
                 max-width: 80%;
             }
             
-            .#{$featurette-namespace}featurette__body--90 {
+            #{&}__body--90 {
                 max-width: 90%;
             }
             
-            .#{$featurette-namespace}featurette__body--fill {
+            #{&}__body--fill {
                 max-width: none;
                 width: 100%;
             }
         }
-
-        // Featurettes are designed for Power Quotes, so putting these styles here, though they do
-        // seem a little out of place:
-        .#{$featurette-namespace}featurette__body  > blockquote {
-            margin-left: 0;
-        }
+    }
+}

@@ -24,10 +24,10 @@ $max-main-line-length: 0;
 $measure: 68rem;
 $not-too-small: 18em;
 
-$h2-font-size: 34px / $fallback--base-font-size * 1em !default;
+$h1-font-size: 40px / $fallback--base-font-size * 1em !default;
+$h2-font-size: 32px / $fallback--base-font-size * 1em !default;
 $h3-font-size: 26px / $fallback--base-font-size * 1em !default;
 
-@import '../bower_components/Fall-Back-Start-CSS/dist/scss/_start.scss';
 
 $experimental_checkradios: true;
 @import '../bower_components/Fall-Back-Start-CSS/dist/scss/_start.scss';
@@ -99,17 +99,18 @@ $fallback--over-panel__overlay--background-color: #000;
 
 
 /**/
-$fallback--nav-bar--background-color:            #fff;//#fff;
-$fallback--nav-bar__link--color:                 #333;//#333;
+$fallback--nav-bar--background-color:            transparent;//#fff;
+$fallback--nav-bar__link--color:                 #fff;//#333;
 $fallback--nav-bar__link--background-color:      $fallback--nav-bar--background-color;
+$fallback--nav-bar__link--background-color--alt: rgba(0,0,0,0.3);
 
 $fallback--sub-nav--background-color:            $fallback--nav-bar--background-color;
 $fallback--sub-nav__link--color:                 $fallback--nav-bar__link--color;
 $fallback--sub-nav__link--background-color:      $fallback--nav-bar--background-color;
-$fallback--sub-nav__link--background-color--alt: darken($fallback--nav-bar--background-color, 14%);
+//$fallback--sub-nav__link--background-color--alt: darken($fallback--nav-bar--background-color, 14%);
+$fallback--sub-nav__link--background-color--alt: rgba(0,0,0,0.3);
 
 @import "../bower_components/Fall-Back-Nav-Bar/_nav-bar";
-
 /**/
 
 /*
@@ -154,8 +155,11 @@ $ff-breakpoints: (
     20em,
     25em,
     30em,
+    35em,
     40em,
+    45em,
     50em,
+    55em,
     60em
 ) !default;
 
@@ -204,7 +208,7 @@ $card--background-color: rgba(0,0,0,0.1);
 @import "component-patterns/_card.scss";
 
 
-/*@import "component-patterns/_contact-list.scss";*/
+@import "component-patterns/_contact-list.scss";
 
 /*$event-spacing-unit: $fallback--base-rem-space-unit;
 $event--background-color: #fff;
@@ -226,6 +230,8 @@ $event--border-color: $fallback--base-ui-color;
 
 @import "component-patterns/_hero.scss";
 
+@import "component-patterns/_longform-content.scss";
+
 
 @import "component-patterns/_page-header.scss";
 
@@ -239,7 +245,7 @@ $panel--padding: $fallback--base-rem-space-unit;
 @import "component-patterns/_panel.scss";
 @import "component-patterns/_panel--dark.scss";
 
-@import "component-patterns/_randomise-cta.scss";
+@import "component-patterns/_primary-cta.scss";
 
 @import "component-patterns/_signs.scss";
 
@@ -289,6 +295,7 @@ $col-to-row-spacing-unit: $fallback--base-rem-space-unit;
 @import "utility-patterns/_background.scss";
 @import "utility-patterns/_bands.scss";
 //@import "utility-patterns/_full-width.scss";
+@import "utility-patterns/_fill-area.scss";
 @import "utility-patterns/_fill-height.scss";
 @import "utility-patterns/_fill-width.scss";
 @import "utility-patterns/_lists.scss";

@@ -93,8 +93,8 @@ $brochure-button--border-color: darken($brochure--base-color, 20%) !default;
         //width: 100%;
     }
 */
-    .#{$brochure-namespace}brochure.#{$brochure-namespace}brochure {
-
+.#{$brochure-namespace}brochure {
+    &#{&} {
         display: -webkit-flex;
         display: -ms-flexbox;
         display: flex;
@@ -139,7 +139,7 @@ $brochure-button--border-color: darken($brochure--base-color, 20%) !default;
         overflow: hidden;
     }
 
-        .#{$brochure-namespace}brochure > * {
+        & > * {
             -webkit-flex: 1 0 auto;
                 -ms-flex: 1 0 auto;
                     flex: 1 0 auto;
@@ -152,26 +152,24 @@ $brochure-button--border-color: darken($brochure--base-color, 20%) !default;
         
         
 
-        .#{$brochure-namespace}brochure .#{$brochure-namespace}brochure__image {
+        #{&}__image {
             position: relative;
             text-align: center;
-            //max-height: 10em;
-        }
-
-            .#{$brochure-namespace}brochure .#{$brochure-namespace}brochure__image img {
+            
+            img {
                 width: 100%;
             }
+        }
 
-
-            .#{$brochure-namespace}brochure .#{$brochure-namespace}brochure__image-link,
-            .#{$brochure-namespace}brochure .#{$brochure-namespace}brochure__image-link:hover {
+            #{&}__image-link,
+            #{&}__image-link:hover {
                 border-bottom: 0;
             }
 
 
 
 
-        .#{$brochure-namespace}brochure .#{$brochure-namespace}brochure__body {
+        #{&}__body {
             /*color: $brochure-body--text-color;
             background: $brochure-body--background-color;
 
@@ -199,27 +197,27 @@ $brochure-button--border-color: darken($brochure--base-color, 20%) !default;
         
         
         
-        @media (min-width: #{$brochure-breakpoint}) {
-            .#{$brochure-namespace}brochure--reversed .#{$brochure-namespace}brochure__image {
-                order: -1;
-            }
-        
-            .#{$brochure-namespace}brochure > * {
-                width: 50%;
-            }
-            
-            @supports (display: grid) {
-                .#{$brochure-namespace}brochure.#{$brochure-namespace}brochure {
-                    display: grid;
-                    grid-template-columns: 50% 50%;
-                }
-                
-                .#{$brochure-namespace}brochure > * {
-                    width: auto;
-                }
-            }
-            
-            .#{$brochure-namespace}brochure .#{$brochure-namespace}brochure__image {
-                max-height: none;
-            }
+@media (min-width: #{$brochure-breakpoint}) {
+    .#{$brochure-namespace}brochure--reversed .#{$brochure-namespace}brochure__image {
+        order: -1;
+    }
+
+    .#{$brochure-namespace}brochure > * {
+        width: 50%;
+    }
+    
+    @supports (display: grid) {
+        .#{$brochure-namespace}brochure.#{$brochure-namespace}brochure {
+            display: grid;
+            grid-template-columns: 50% 50%;
         }
+        
+        .#{$brochure-namespace}brochure > * {
+            width: auto;
+        }
+    }
+    
+    .#{$brochure-namespace}brochure .#{$brochure-namespace}brochure__image {
+        max-height: none;
+    }
+}
