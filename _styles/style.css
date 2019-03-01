@@ -6655,11 +6655,6 @@ $patterns: (
   background: #ffffff;
 }
 
-.c-panel.c-panel.t-white--dark {
-  color: #333;
-  background: #ffffff;
-}
-
 .c-primary-cta.t-white[href] {
   color: #333;
   background-color: #ffffff;
@@ -6729,6 +6724,11 @@ $patterns: (
         background: linear-gradient(to right, #ffffff 0%,#ffffff 50%,map-get($theme, background-color) 50%,map-get($theme, background-color) 100%);
     }
     */
+.c-panel.c-panel.t-white--dark {
+  color: #fff;
+  background: #cccccc;
+}
+
 /* - Waiting for SASS to support. Currently pseudo code.
     @each $pattern in $patterns {
         @include $pattern (
@@ -6792,11 +6792,6 @@ $patterns: (
 }
 
 .c-panel.c-panel.t-anode {
-  color: #333;
-  background: #933961;
-}
-
-.c-panel.c-panel.t-anode--dark {
   color: #333;
   background: #933961;
 }
@@ -6870,6 +6865,11 @@ $patterns: (
         background: linear-gradient(to right, #ffffff 0%,#ffffff 50%,map-get($theme, background-color) 50%,map-get($theme, background-color) 100%);
     }
     */
+.c-panel.c-panel.t-anode--dark {
+  color: #fff;
+  background: #4a1d31;
+}
+
 /* - Waiting for SASS to support. Currently pseudo code.
     @each $pattern in $patterns {
         @include $pattern (
@@ -6933,11 +6933,6 @@ $patterns: (
 }
 
 .c-panel.c-panel.t-minidex {
-  color: #333;
-  background: #0077AD;
-}
-
-.c-panel.c-panel.t-minidex--dark {
   color: #333;
   background: #0077AD;
 }
@@ -7011,6 +7006,11 @@ $patterns: (
         background: linear-gradient(to right, #ffffff 0%,#ffffff 50%,map-get($theme, background-color) 50%,map-get($theme, background-color) 100%);
     }
     */
+.c-panel.c-panel.t-minidex--dark {
+  color: #fff;
+  background: #003147;
+}
+
 /* - Waiting for SASS to support. Currently pseudo code.
     @each $pattern in $patterns {
         @include $pattern (
@@ -7074,11 +7074,6 @@ $patterns: (
 }
 
 .c-panel.c-panel.t-neoclear {
-  color: #333;
-  background: #009590;
-}
-
-.c-panel.c-panel.t-neoclear--dark {
   color: #333;
   background: #009590;
 }
@@ -7164,6 +7159,11 @@ $patterns: (
   background: -moz-linear-gradient(45deg, #9f1772 0%, #a31775 50%, #ac197c 50%, #a81878 100%);
   background: -webkit-linear-gradient(45deg, #9f1772 0%, #a31775 50%, #ac197c 50%, #a81878 100%);
   background: linear-gradient(45deg, #9f1772 0%, #a31775 50%, #ac197c 50%, #a81878 100%);
+}
+
+.c-panel.c-panel.t-neoclear--dark {
+  color: #fff;
+  background: #002f2d;
 }
 
 /* ---------------------------------------------------------------------------------------------- */

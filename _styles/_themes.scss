@@ -70,8 +70,7 @@ $patterns: (
     @include card-theme($name, $theme);
     @include meter-theme($name, $theme);
     @include page-header-theme($name, $theme);
-	@include panel-theme($name, $theme);
-	@include panel-theme--dark($name, $theme);
+    @include panel-theme($name, $theme);
     @include primary-cta-theme($name, $theme);
 
 
@@ -164,4 +163,18 @@ $patterns: (
 
         @include background-theme("#{$name}--alt", $theme);
     }
+    
+    // Dark theme:
+    
+    $theme: map-merge(
+        $theme,
+        (
+            background-color      : darken(map-get($theme, primary-color), 20%),
+            cta-text-color        : #fff,
+            cta-background-color  : darken(map-get($theme, primary-color), 20%),
+            text-color            : #fff
+        )
+    );
+    
+    @include panel-theme(#{$name}--dark, $theme);
 }

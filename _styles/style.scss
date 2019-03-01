@@ -243,7 +243,7 @@ $event--border-color: $fallback--base-ui-color;
 
 $panel--padding: $fallback--base-rem-space-unit;
 @import "component-patterns/_panel.scss";
-@import "component-patterns/_panel--dark.scss";
+//@import "component-patterns/_panel--dark.scss";
 
 @import "component-patterns/_primary-cta.scss";
 

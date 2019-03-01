@@ -3,7 +3,7 @@ layout: project-structure
 ---
 {% assign project_data = site.data.projects[page.project] %}
 <div class="l-blockrow  u-fill-area">
-    <div class="l-blockrow__limit-width  u-bands--bottom  t-{{ page.project }}  u-fill-area">
+    <div class="l-blockrow__limit-widthX  u-bands--bottom  t-{{ page.project }}  u-fill-area">
         <div class="l-col-to-row  u-fill-area">
             <div class="l-col-to-row__item  ff-width-100--40--66-666">
                 <div class="c-panel  u-fill-height  u-padding--sides--l">
@@ -95,7 +95,7 @@ layout: project-structure
 
 {% if page.landing_display_video and project_data.intro_video_id %}
 <div class="l-blockrow">
-    <div class="l-blockrow__limit-width  u-bands--bottom  t-{{ page.project }}">
+    <div class="l-blockrow__limit-widthX  u-bands--bottom  t-{{ page.project }}">
         <div class="embed-container">
             <iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/{{ project_data.intro_video_id }}?rel=0" width="560"></iframe>
         </div>
@@ -104,7 +104,7 @@ layout: project-structure
 {% endif %}
 {% if page.landing_display_updates %}
 <div class="l-blockrow">
-    <div class="l-blockrow__limit-width  u-bands--bottom  t-{{ page.project }}">
+    <div class="l-blockrow__limit-widthX  u-bands--bottom  t-{{ page.project }}">
         {% capture news_module %}module__news--{{ page.project }}.html{% endcapture %}
         {% include {{ news_module }} %}
     </div>
@@ -112,7 +112,7 @@ layout: project-structure
 {% endif %}
 {% if page.display_funder %}
 <div class="l-blockrow">
-    <div class="l-blockrow__limit-width  u-bands--bottom  t-{{ page.project }}">
+    <div class="l-blockrow__limit-widthX  u-bands--bottom  t-{{ page.project }}">
         <div class="l-col-to-row">            
             
             <div class="l-col-to-row__item  ff-width-100--40--66-666">
@@ -136,7 +136,7 @@ layout: project-structure
 {% endif %}
 {% if page.landing_display_info or page.display_social or page.display_support %}
 <div class="l-blockrow">
-    <div class="l-blockrow__limit-width  u-bands--bottom  t-{{ page.project }} ">
+    <div class="l-blockrow__limit-widthX  u-bands--bottom  t-{{ page.project }} ">
         <div class="l-col-to-row">            
             {% if page.landing_display_info %}
             <div class="l-col-to-row__item  ff-width-100--40--50">
