@@ -127,7 +127,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e7692', end
     -webkit-justify-content: space-between;
             justify-content: space-between;
 	margin-bottom: $fallback--base-rem-space-unit;
-    padding: 0 $fallback--base-rem-space-unit;;
+    padding: 0 $fallback--base-rem-space-unit;
 }
 
 .footer-logos > * {
@@ -142,17 +142,23 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e7692', end
     -webkit-justify-content: center;
               -ms-flex-pack: center;
             justify-content: center;
+            
+    -webkit-box-align: center;
+       -ms-flex-align: center;
+          align-items: center;
 }
 
 .footer-logos--start .svg {
-    margin-top: $fallback--base-rem-space-unit;
+    //margin-top: $fallback--base-rem-space-unit;
 }
 .footer-logos--end .svg {
-    margin-top: $fallback--base-rem-space-unit;
-    max-width: 17em;
+    //margin-top: $fallback--base-rem-space-unit;
+    //max-width: 17em;
 }
 
-
+.footer-logos img {
+    margin: 0 $fallback--base-rem-space-unit;
+}
 
 
 
@@ -162,7 +168,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e7692', end
 	box-shadow: 0 0 0 ($hover-effect-width * 2) #fff, 0 0 0 ($hover-effect-width * 3) rgba(0,0,0,$hover-effect-opacity);
 }
 
-
+/*
 .footer-logos--start {
 	margin-right: $fallback--base-rem-space-unit / 2;
 }
@@ -195,7 +201,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e7692', end
         margin-left: $fallback--base-rem-space-unit / 2;
     }
 }
-
+*/
 .svg a[href]::after {
 	display: none;
 }
