@@ -189,7 +189,7 @@ $gallery-grid-spacing-unit: $fallback--base-rem-space-unit;
 
 /* --| Component Patterns |---------------------------------------------------------------------- */
 
-@import "component-patterns/_badge.scss";
+@import "component-patterns/_badges.scss";
 
 /*$brochure-spacing-unit: $fallback--base-rem-space-unit;
 $brochure--border-or-outline: false;
@@ -248,8 +248,6 @@ $panel--padding: $fallback--base-rem-space-unit;
 @import "component-patterns/_primary-cta.scss";
 
 @import "component-patterns/_signs.scss";
-
-@import "component-patterns/_social-badges.scss";
 
 @import "component-patterns/_thumbnail.scss";
 

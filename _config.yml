@@ -13,8 +13,9 @@ defaults:
     scope:
       path: "" # an empty string here means all files in the project
     values:
-      display_hero: true
+      display_cta: true
       display_funder: true
+      display_hero: true
       display_navbar: true
       display_social: true
       display_support: true

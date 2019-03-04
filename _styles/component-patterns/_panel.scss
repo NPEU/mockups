@@ -23,8 +23,11 @@ $panel--padding: 2rem !default;
 	
     
     &--module {
+        margin-bottom: $fallback--base-rem-space-unit / 2;
+        
         h2 {
             font-size: 24px / $fallback--base-font-size * 1em;
+            margin-bottom: $fallback--base-rem-space-unit / 2;
         }
     }
 }

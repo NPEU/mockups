@@ -3,8 +3,9 @@ layout: project-landing
 title: NeoCLEAR Home
 project: neoclear
 is_home: true
-display_hero: false
+display_cta: false
 display_funder: false
+display_hero: false
 display_navbar: false
 display_social: false
 display_support: false

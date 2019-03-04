@@ -9,9 +9,11 @@ layout: project-structure
                 <div class="c-panel  u-fill-height  u-padding--sides--l">
                     <div class="u-max-measure">
                         {{ content }}
+                        {% if page.landing_display_cta %}
                         <p>
                             <a href="/{{ page.project }}/parents" class="cta">Find out more <svg display="none" class="icon  feather"><use xlink:href="#icon-chevron-right"></use></svg></a>
                         </p>
+                        {% endif %}
                     </div>
                 </div><!--
                 <div class="embed-container">

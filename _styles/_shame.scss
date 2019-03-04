@@ -1,7 +1,19 @@
 // Hmmm. THere's way too much in here already. Needs sorting.
 
+html, body {
+    background-color: #8e8279;
+}
 
 
+.limit-page-width {
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+
+.sticky-footer {
+    background: #fff;
+}
 
 
 $enough-room-at: $fallback--base-rem-space-unit + $measure + $fallback--base-rem-space-unit + $fallback--base-rem-space-unit + ($measure / 2) + $fallback--base-rem-space-unit;
@@ -113,7 +125,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e7692', end
 
 /* Footer logos */
 
-
+/*
 .footer-logos {
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -167,7 +179,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e7692', end
 .footer-logos .svg__link:focus {
 	box-shadow: 0 0 0 ($hover-effect-width * 2) #fff, 0 0 0 ($hover-effect-width * 3) rgba(0,0,0,$hover-effect-opacity);
 }
-
+*/
 /*
 .footer-logos--start {
 	margin-right: $fallback--base-rem-space-unit / 2;
@@ -385,10 +397,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e7692', end
 */
 
 /*---------------*/
-
+/*
 .hero-image {
     z-index: -1;
-}
+}*/
 
 
 @media only screen and (max-width: $fallback--breakpoint--enhanced) {

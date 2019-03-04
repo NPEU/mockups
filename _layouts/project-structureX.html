@@ -2,7 +2,7 @@
 layout: structure
 ---
     {% assign project_data = site.data.projects[page.project] %}
-    <div class="sticky-footer-wrap  limit-page-width">
+    <div class="sticky-footer-wrap">
 
         <header class="c-page-header  t-{{ page.project }}  u-bands--bottom">
             
@@ -48,7 +48,7 @@ layout: structure
                             <svg display="none" class="icon  icon--is-closed  feather"><use xlink:href="#icon-menu"></use></svg><svg display="none" class="icon  icon--is-open  feather"><use xlink:href="#icon-cross"></use></svg>
                         </button>
                         {% endif %}
-                        {% if page.display_cta %}
+                        {% if page.landing_display_cta %}
                         <a href="/{{ project_data.randomisation_url }}" class="c-primary-cta  t-{{ page.project }}">Randomise to {{ project_data.name }}</a>
                         {% endif %}
                     </div>
@@ -128,13 +128,9 @@ layout: structure
                     </div>
                 </div>
             </div>
-            {% if page.hero_message %}
+            {% if page.is_home and project_data.hero_message %}
             <div class="c-hero__message">
-                {% if page.is_home %}
-                <h1>{{ page.hero_message }}</h1>
-                {% else %}
-                <p><b>{{ page.hero_message }}</b></h1>
-                {% endif %}
+                <p><b>{{ project_data.hero_message }}</b></p>
             </div>
             {% endif %}
         </div>
@@ -146,35 +142,85 @@ layout: structure
             </main>
         </div>
 
-        <footer class="sticky-footer  t-{{ page.project }}  u-bands--top"" role="contentinfo">
+        <footer class="sticky-footer    t-{{ page.project }}  u-bands--top"" role="contentinfo">
 
-			<div class="c-badge-list">
-
-                <div class="u-padding--s">
-                    <a href="https://www.npeu.ox.ac.uk" class="c-badge  npeu  l-v-center">
-                        <img src="/img/unit-logos/npeu-ctu-logo.svg" onerror="this.src='/img/unit-logos/npeu-ctu-logo.png'; this.onerror=null;" alt="Logo: NPEU CTU" height="80">
-                    </a>
-                </div>
-
-                <div class="u-padding--s">
-                    <a href="https://www.npeu.ox.ac.uk" class="c-badge  athena-swan  l-v-center" rel="external noopener noreferrer" target="_blank">
-                        <img src="/img/affiliate-logos/athena-swan-silver-award.svg" onerror="this.src='/img/affiliate-logos/athena-swan-silver-award.png'; this.onerror=null;" alt="Logo: Athena Swan Silver Award" height="70">
-                    </a>
-                </div>
+			<div class="l-col-to-row">
                 
-                <div class="u-padding--s">
-                    <a href="http://www.ndph.ox.ac.uk/" class="c-badge  ndph  l-v-center" rel="external noopener noreferrer" target="_blank">
-                        <img src="/img/affiliate-logos/ndph-logo.svg" onerror="this.src='/img/affiliate-logos/ndph-logo.png'; this.onerror=null;" alt="Logo: Nuffield Department of Population Health" height="50">
-                    </a>
-                </div>
+                <div class="l-col-to-row__item  ff-width-100--30--50  l-v-center">
+                    <div class="u-padding">
+                        <a href="https://www.npeu.ox.ac.uk" class="c-badge  c-badge--limit-height--80  npeu  l-v-center">
+                            <img src="/img/unit-logos/npeu-ctu-logo.svg" onerror="this.src='/img/unit-logos/npeu-ctu-logo.png'; this.onerror=null;" alt="Logo: NPEU CTU" height="80">
+                        </a>
+                    </div>
+                    <!--<div class="svg  svg--fixed-height  svg--fixed-height--logo" itemscope="" itemtype="http://schema.org/Organization">
+                        <a href="https://www.npeu.ox.ac.uk" class="svg__link" itemprop="url">
+                            <object type="image/svg+xml" data="/img/unit-logos/npeu-ctu-logo.svg" height="110" class="svg__image" aria-hidden="true" tabindex="-1">
+                                <svg display="none">
+                                    <image src="/img/unit-logos/npeu-ctu-logo.png" height="110" alt="National Perinatal Epidemiology Unit (NPEU)" class="svg__fallback-image"></image>
+                                </svg>
+                                <span class="svg__fallback-text-alpha" data-content="National Perinatal Epidemiology Unit (NPEU)"></span>
+                            </object>
+                            <div><i class="svg__fallback-text-beta" itemprop="name">National Perinatal Epidemiology Unit (NPEU)</i></div>
+                        </a>
+                        <link itemprop="sameAs" href="https://twitter.com/npeu_oxford">
+                        <link itemprop="logo" href="https://www.npeu.ox.ac.uk/img/banner-logos/npeu-logo.svg">
+                    </div>-->
+                    <div class="u-padding">
+                        <a href="https://www.npeu.ox.ac.uk" class="c-badge  c-badge--limit-height--80  athena-swan  l-v-center" rel="external noopener noreferrer" target="_blank">
+                            <img src="/img/affiliate-logos/athena-swan-silver-award.svg" onerror="this.src='/img/affiliate-logos/athena-swan-silver-award.png'; this.onerror=null;" alt="Logo: Athena Swan Silver Award" height="70">
+                        </a>
+                    </div>
+                    <!--<div class="svg  svg--fixed-height  svg--fixed-height--logo">
+                        <a href="/athena-swan" class="svg__link">
+                            <object type="image/svg+xml" data="/img/affiliate-logos/athena-swan-silver-award.svg" height="70" class="svg__image" aria-hidden="true" tabindex="-1">
+                                <svg display="none">
+                                    <image src="/img/affiliate-logos/athena-swan-silver-award.png" height="70" alt="The NPEU is proud to hold an Athena Swan Silver Award" class="svg__fallback-image"></image>
+                                </svg>
+                                <span class="svg__fallback-text-alpha" data-content="The NPEU is proud to hold an Athena Swan Silver Award"></span>
+                            </object>
+                           <div><i class="svg__fallback-text-beta">The NPEU is proud to hold an Athena Swan Silver Award</i></div>
+                        </a>
+                    </div>-->
 
-                <div class="u-padding--s">
-                    <a href="http://www.ox.ac.uk/" class="c-badge  ou  l-v-center" rel="external noopener noreferrer" target="_blank">
-                        <img src="/img/affiliate-logos/ou-logo-rect.svg" onerror="this.src='/img/affiliate-logos/ou-logo-rect.png'; this.onerror=null;" alt="Logo: University of Oxford" height="60">
-                    </a>
-                </div>
+				</div>
 
-            </div>
+				<div class="l-col-to-row__item  ff-width-100--30--50  l-v-center">
+                    <div class="u-padding">
+                        <a href="http://www.ndph.ox.ac.uk/" class="c-badge  c-badge--limit-height--80  ndph  l-v-center" rel="external noopener noreferrer" target="_blank">
+                            <img src="/img/affiliate-logos/ndph-logo.svg" onerror="this.src='/img/affiliate-logos/ndph-logo.png'; this.onerror=null;" alt="Logo: Nuffield Department of Population Health" height="50">
+                        </a>
+                    </div>
+                    <!--<div class="svg  svg--fixed-height  svg--fixed-height--parent-logo">
+						<a href="http://www.ndph.ox.ac.uk/" class="svg__link  ndph" rel="external noopener noreferrer" target="_blank">
+							<object type="image/svg+xml" data="/img/affiliate-logos/ndph-logo.svg" height="50" class="svg__image" aria-hidden="true" tabindex="-1">
+								<svg display="none">
+									<image src="/img/affiliate-logos/ndph-logo.png" height="50" alt="Nuffield Department of Population Health website (external)" class="svg__fallback-image"></image>
+								</svg>
+								<span class="svg__fallback-text-alpha" data-content="Nuffield Department of Population Health website (external)"></span>
+							</object>
+						   <div><i class="svg__fallback-text-beta">Nuffield Department of Population Health website (external)</i></div>
+						</a>
+					</div>-->
+                    <div class="u-padding">
+                        <a href="http://www.ox.ac.uk/" class="c-badge  c-badge--limit-height--80  ou  l-v-center" rel="external noopener noreferrer" target="_blank">
+                            <img src="/img/affiliate-logos/ou-logo-rect.svg" onerror="this.src='/img/affiliate-logos/ou-logo-rect.png'; this.onerror=null;" alt="Logo: University of Oxford" height="60">
+                        </a>
+                    </div>
+                    <!--<div class="svg  svg--fixed-height  svg--fixed-height--parent-logo">
+						<a href="http://www.ox.ac.uk/" class="svg__link  ou" rel="external noopener noreferrer" target="_blank">
+							<object type="image/svg+xml" data="/img/affiliate-logos/ou-logo-rect.svg" height="50" class="svg__image" aria-hidden="true" tabindex="-1">
+								<svg display="none">
+									<image src="/img/affiliate-logos/ou-logo-rect.png" height="50" alt="University of Oxford website (external)" class="svg__fallback-image"></image>
+								</svg>
+								<span class="svg__fallback-text-alpha" data-content="University of Oxford website (external)"></span>
+							</object>
+						   <div><i class="svg__fallback-text-beta">University of Oxford website (external)</i></div>
+						</a>
+					</div>-->
+
+				</div>
+
+			</div>
 
             <p class="c-page-footer  u-text-align--center">
                 &copy; NPEU {{ site.time | date: '%Y'}}
