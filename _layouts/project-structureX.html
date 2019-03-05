@@ -4,7 +4,7 @@ layout: structure
     {% assign project_data = site.data.projects[page.project] %}
     <div class="sticky-footer-wrap">
 
-        <header class="c-page-header  t-{{ page.project }}  u-bands--bottom">
+        <header class="c-page-header  t-{{ page.project }}  d-bands--bottom">
             
             <div class="u-padding--s">
                 <div class="l-col-to-row">
@@ -59,9 +59,9 @@ layout: structure
             <div class="">
                 <div class="over-panel over-panel--fade js-over-panel" id="menu-panel" data-js="over-panel">
                     <button class="over-panel__overlay" hidden="" aria-hidden="true" tabindex="-1" data-js="over-panel__overlay"></button>
-                    <div class="over-panel__contents  u-background--sloped  t-{{ page.project }}" data-js="over-panel__contents">
+                    <div class="over-panel__contents  d-background--sloped  t-{{ page.project }}" data-js="over-panel__contents">
 
-                        <div class="nav-bar  u-padding--sides--s  t-{{ page.project }}  u-bands--bottom">
+                        <div class="nav-bar  u-padding--sides--s  t-{{ page.project }}  d-bands--bottom">
 
                             <nav class="nav-bar__main">
 
@@ -122,7 +122,7 @@ layout: structure
         {% if page.display_hero and page.hero_image %}
         <div id="hero" class="c-hero">
             <div class="c-hero__image">
-                <div class="proportional-container  proportional-container--5-1  u-bands--bottom  t-{{ page.project }}  hero-image">
+                <div class="proportional-container  proportional-container--5-1  d-bands--bottom  t-{{ page.project }}  hero-image">
                     <div class="proportional-container__content">
                         <img class="proportional-container__image-cover" src="{{ page.hero_image }}" width="600" alt="">
                     </div>
@@ -137,12 +137,12 @@ layout: structure
         {% endif %}
         
         <div class="sticky-footer-expand">
-            <main role="main" class="main-container  u-background--very-dark  t-{{ page.project }}  u-fill-area">
+            <main role="main" class="main-container  d-background--very-dark  t-{{ page.project }}  u-fill-area">
                 {{ content }}
             </main>
         </div>
 
-        <footer class="sticky-footer    t-{{ page.project }}  u-bands--top"" role="contentinfo">
+        <footer class="sticky-footer    t-{{ page.project }}  d-bands--top"" role="contentinfo">
 
 			<div class="l-col-to-row">
                 

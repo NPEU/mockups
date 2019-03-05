@@ -1,20 +1,15 @@
 // Hmmm. THere's way too much in here already. Needs sorting.
 
-html, body {
-    background-color: #8e8279;
-}
-
-
 .limit-page-width {
     max-width: 1600px;
     margin: 0 auto;
 }
 
-
+/*
 .sticky-footer {
     background: #fff;
 }
-
+*/
 
 $enough-room-at: $fallback--base-rem-space-unit + $measure + $fallback--base-rem-space-unit + $fallback--base-rem-space-unit + ($measure / 2) + $fallback--base-rem-space-unit;
 
@@ -60,11 +55,11 @@ h1, h2, h3 {
             flex-grow: 1;
 }
 
-
+/*
 .sticky-footer-expand {
     background-color: #000;
 }
-
+*/
 /*
 .sticky-footer-expand main,
 .sticky-footer-expand main + aside {
@@ -419,7 +414,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e7692', end
 
 
 @media only screen and (min-width: $fallback--breakpoint--enhanced) {
-    .nav-bar.u-bands--bottom {
+    .nav-bar.d-bands--bottom {
         border: 0;
     }
 }
@@ -552,7 +547,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e7692', end
 
 
 
-.l-blockrow:last-child > .u-bands--bottom {
+.l-blockrow:last-child > .d-bands--bottom {
     border: 0 !important;
 }
 /*-----------------*/

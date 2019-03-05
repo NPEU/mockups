@@ -371,3 +371,13 @@ $card-info--font-size: 1.4rem;
         background-color: #999;
     }
 }
+
+/*
+@include card-theme(
+    "",
+    (
+        card-text-color       : $primary-cta--text-color,
+        card-background-color : $primary-cta--background-color
+    )
+);
+*/

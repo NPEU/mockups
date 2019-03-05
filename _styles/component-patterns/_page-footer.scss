@@ -31,6 +31,7 @@ $theme-namespace: t- !default;
 .#{$page-footer-namespace}page-footer {
 
     &#{&} {
-        padding: 0 $sz-m;
+        padding: 0 $sz-m $sz-m $sz-m;
+        margin: 0;
     }
 }

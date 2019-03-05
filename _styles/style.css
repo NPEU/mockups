@@ -2550,11 +2550,11 @@ _:-webkit-full-screen, _::-webkit-full-page-media, _:future, :root select[size="
     border-radius: 50%;
   }
   input[type="radio"]:checked {
-    background-image: -moz-radial-gradient(center, ellipse cover, #333333 0%, #333333 35%, transparent 35%, transparent 100%);
+    background-image: -moz-radial-gradient(center, ellipse cover, #333333 0%, #333333 35%, rgba(0, 0, 0, 0) 35%, rgba(0, 0, 0, 0) 100%);
     /* FF3.6-15 */
-    background-image: -webkit-radial-gradient(center, ellipse cover, #333333 0%, #333333 35%, transparent 35%, transparent 100%);
+    background-image: -webkit-radial-gradient(center, ellipse cover, #333333 0%, #333333 35%, rgba(0, 0, 0, 0) 35%, rgba(0, 0, 0, 0) 100%);
     /* Chrome10-25,Safari5.1-6 */
-    background-image: radial-gradient(ellipse at center, #333333 0%, #333333 35%, transparent 35%, transparent 100%);
+    background-image: radial-gradient(ellipse at center, #333333 0%, #333333 35%, rgba(0, 0, 0, 0) 35%, rgba(0, 0, 0, 0) 100%);
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   }
   input[type="checkbox"]:checked::after {
@@ -2602,7 +2602,8 @@ _:-webkit-full-screen, _::-webkit-full-page-media, _:future, :root select[size="
   -webkit-appearance: radio;
 }
 
-/*------------------------------------------------------------------------------------------------*    Fall-Back Icons v1.0.0
+/*------------------------------------------------------------------------------------------------*\
+    Fall-Back Icons v1.0.0
     
     Designed for use with the basic [CSS Mustard Cut](https://github.com/Fall-Back/CSS-Mustard-Cut)
     IE 9+, FF 8+, Opera 12, [Chrome 29+, Android ~4.4+]
@@ -2929,7 +2930,6 @@ _:-o-prefocus, :root .icon {
         }*/
   .js-over-panel .over-panel__overlay {
     display: block;
-    position: fixed;
     z-index: -1;
     left: 0;
     top: 0;
@@ -2953,6 +2953,7 @@ _:-o-prefocus, :root .icon {
   }
   /* Bring the overlay to the front and fade in when there's an over-panel target: */
   .js-over-panel_is-open .over-panel__overlay {
+    position: fixed;
     z-index: 0;
     opacity: 0.5;
     visibility: visible;
@@ -3326,7 +3327,7 @@ _:-o-prefocus, body:last-child .nav-bar .subnav__heading {
 
 .nav-bar .nav-bar__link[href]:focus {
   color: #fff;
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0);
 }
 
 .nav-bar .subnav__link[href]:hover,
@@ -3747,7 +3748,8 @@ $fallback--dropdown__button--background-color: $fallback--nav-bar__link--backgro
 }
 
 /* ---------------------------------------------------------------------------------------------- */
-/*------------------------------------------------------------------------------------------------*
+/*------------------------------------------------------------------------------------------------*\
+
     Designed for use with the basic [CSS Mustard Cut](https://github.com/Fall-Back/CSS-Mustard-Cut)
     IE 9+, FF 8+, Opera 12, [Chrome 29+, Android ~4.4+]
     Chrome 29+, Opera 16+, Safari 6.1+, iOS 7+, Android ~4.4+
@@ -3830,7 +3832,8 @@ body {
 }
 
 /*------------------------------------------------------------------------------------------------*/
-/*------------------------------------------------------------------------------------------------*
+/*------------------------------------------------------------------------------------------------*\
+
     Clarification for self:
     Since this pattern is intented for use on logos, and since logos are an integral part of
     branding, this pattern is not ONLY intended as a CSS fallback.
@@ -3910,7 +3913,7 @@ body {
   right: 0;
   bottom: 0;
   left: 0;
-  background: transparent;
+  background: rgba(0, 0, 0, 0);
   /* [1] */
 }
 
@@ -4204,8 +4207,10 @@ body {
   border-width: 0;
 }
 
-/*------------------------------------------------------------------------------------------------*\*------------------------------------------------------------------------------------------------*/
-/*------------------------------------------------------------------------------------------------*    Import Fall-Back vars:
+/*------------------------------------------------------------------------------------------------*\
+\*------------------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------------------*\
+    Import Fall-Back vars:
 
     Slightly hacky way of allowing the main UI colour of this pattern to be:
      - base-ui colour (if set)
@@ -5073,14 +5078,28 @@ body {
 
 */
 .c-badge {
-  display: block;
   /*
-        1. This is to provide positioning context for the ::after pseudo-element.
-        2. This is so a broken image is still 100%Z.
+    &.c-badge--circle {
+        border-radius: 50%;
+        overflow: hidden;
+    }
+
+    &.c-badge--rounded {
+        border-radius: 0.2em;
+        overflow: hidden;
+    }
     */
 }
 
+.c-badge.c-badge {
+  display: block;
+}
+
 .c-badge img {
+  /*
+                1. This is to provide positioning context for the ::after pseudo-element.
+                2. This is so a broken image is still 100%.
+            */
   position: relative;
   /* 1 */
   display: block;
@@ -5088,28 +5107,14 @@ body {
   border-style: none;
 }
 
-.c-badge.c-badge--limit-height--50 {
-  height: 50px;
+.c-badge.c-badge--small {
+  height: 2em;
+  width: 2em;
 }
 
-.c-badge.c-badge--limit-height--60 {
-  height: 60px;
-}
-
-.c-badge.c-badge--limit-height--70 {
-  height: 70px;
-}
-
-.c-badge.c-badge--limit-height--80 {
-  height: 80px;
-}
-
-.c-badge.c-badge--limit-height--90 {
-  height: 90px;
-}
-
-.c-badge.c-badge--limit-height--100 {
-  height: 100px;
+.c-badge.c-badge--small img {
+  width: 100%;
+  height: 100%;
 }
 
 a[href].c-badge {
@@ -5119,57 +5124,6 @@ a[href].c-badge {
 a[href].c-badge:hover, a[href].c-badge:active, a[href].c-badge:focus {
   border: 0;
   box-shadow: 0 0 0 0.6rem #fff, 0 0 0 1.2rem rgba(0, 0, 0, 0.2);
-}
-
-.c-badge-list.c-badge-list {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-justify-content: space-evenly;
-  -ms-flex-pack: space-evenly;
-  justify-content: space-evenly;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c-badge-list > * {
-  -webkit-flex: 0 1 auto;
-  -ms-flex: 0 1 auto;
-  flex: 0 1 auto;
-  margin: 0.6rem;
-}
-
-.c-badge-list.c-badge-list--align-start {
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-}
-
-.c-badge-list.c-badge-list--small-badges .c-badge {
-  max-height: 2em;
-  max-width: 2em;
-}
-
-.c-badge-list.c-badge-list--small-badges .c-badge img {
-  max-width: 100%;
-  max-height: 100%;
-}
-
-.c-badge-list.c-badge-list--circle-badges .c-badge {
-  border-radius: 50%;
-  overflow: hidden;
-}
-
-.c-badge-list.c-badge-list--rounded-badges .c-badge {
-  border-radius: 0.2em;
-  overflow: hidden;
 }
 
 /*$brochure-spacing-unit: $fallback--base-rem-space-unit;
@@ -5232,9 +5186,9 @@ $card-button--border-color: darken($card--base-color, 20%) !default;
   height: 100%;
   margin: 0;
   color: #fff;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.5);
   padding: 0;
-  outline: 0 solid rgba(0, 0, 0, 0.1);
+  outline: 0 solid rgba(0, 0, 0, 0.5);
   /*
             If the 'pull' is > module body content height, it'll protrude below the container,
             so hide it:
@@ -5269,7 +5223,7 @@ $card-button--border-color: darken($card--base-color, 20%) !default;
   border-bottom: 0;
   margin-bottom: 0;
   padding-bottom: 0;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.5);
   position: relative;
   display: block;
   height: 100%;
@@ -5294,7 +5248,7 @@ $card-button--border-color: darken($card--base-color, 20%) !default;
 .c-card .c-card__main {
   position: relative;
   color: #fff;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.5);
   margin-left: 0;
   margin-right: 0;
   margin-top: 0;
@@ -5399,6 +5353,15 @@ $card-button--border-color: darken($card--base-color, 20%) !default;
 }
 
 /*
+@include card-theme(
+    "",
+    (
+        card-text-color       : $primary-cta--text-color,
+        card-background-color : $primary-cta--background-color
+    )
+);
+*/
+/*
 */
 .c-contact-list.c-contact-list dt {
   display: none;
@@ -5479,6 +5442,15 @@ $event--border-color: $fallback--base-ui-color;
   margin-bottom: 0;
 }
 
+.c-page-header .c-page-header__primary-logo {
+  display: inline-block;
+}
+
+.c-page-header .c-page-header__primary-logo svg {
+  max-width: 100%;
+  height: 80px;
+}
+
 .c-page-header {
   color: #fff;
 }
@@ -5510,7 +5482,8 @@ $event--border-color: $fallback--base-ui-color;
 
 }*/
 .c-page-footer.c-page-footer {
-  padding: 0 2.4rem;
+  padding: 0 2.4rem 2.4rem 2.4rem;
+  margin: 0;
 }
 
 /*
@@ -5582,6 +5555,7 @@ $event--border-color: $fallback--base-ui-color;
   font-size: 1.375em;
   text-align: center;
   margin-bottom: 0;
+  margin-left: 1.2rem;
 }
 
 .c-primary-cta[href]:hover, .c-primary-cta[href]:active, .c-primary-cta[href]:focus {
@@ -5786,6 +5760,7 @@ $pagination--background-color: #fff;
   margin-bottom: 0;
 }
 
+/* ---------------------------------------------------------------------------------------------- */
 /* --| Layout Patterns |------------------------------------------------------------------------- */
 /*
     Col to Row
@@ -5951,6 +5926,44 @@ $pagination--background-color: #fff;
   }
 }
 
+/*    Distribute items inside a container.*/
+.l-distribute.l-distribute {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.l-distribute > * {
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+  margin: 0.6rem;
+}
+
+.l-distribute.l-distribute--start {
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
+.l-distribute.l-distribute--end {
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
 .proportional-container {
   position: relative;
   overflow: hidden;
@@ -6069,7 +6082,7 @@ $pagination--background-color: #fff;
 /*
 
 */
-.l-v-center {
+.l-v-center.l-v-center {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
@@ -6081,89 +6094,96 @@ $pagination--background-color: #fff;
   justify-content: center;
 }
 
-/* --| Utility Patterns |------------------------------------------------------------------------ */
-.u-background {
+/* ---------------------------------------------------------------------------------------------- */
+/* --| Decoration Patterns |--------------------------------------------------------------------- */
+.d-background {
   background-color: #0077AD;
 }
 
-.u-background--very-dark {
+.d-background--dark {
+  background-color: #00547a;
+}
+
+.d-background--very-dark {
   background-color: #003147;
 }
 
-.u-background--sloped {
+.d-background--sloped {
   background: -moz-linear-gradient(45deg, #006594 0%, #006999 50%, #0070a3 50%, #006c9e 100%);
   background: -webkit-linear-gradient(45deg, #006594 0%, #006999 50%, #0070a3 50%, #006c9e 100%);
   background: linear-gradient(45deg, #006594 0%, #006999 50%, #0070a3 50%, #006c9e 100%);
 }
 
-.u-bands--left,
-.u-bands--sides {
+.d-bands--left,
+.d-bands--sides {
   border-left-style: solid;
   border-left-width: 3px;
 }
 
-.u-bands--right,
-.u-bands--sides {
+.d-bands--right,
+.d-bands--sides {
   border-right-style: solid;
   border-right-width: 3px;
 }
 
-.u-bands--top,
-.u-bands--above {
+.d-bands--top,
+.d-bands--above {
   border-top-style: solid;
   border-top-width: 3px;
 }
 
-.u-bands--bottom,
-.u-bands--below {
+.d-bands--bottom,
+.d-bands--below {
   border-bottom-style: solid;
   border-bottom-width: 3px;
 }
 
-.u-bands {
+.d-bands {
   border-style: solid;
   border-width: 3px;
 }
 
-.u-bands--sz-xxs {
+.d-bands--sz-xxs {
   border-width: 0.3rem;
 }
 
-.u-bands--sz-xs {
+.d-bands--sz-xs {
   border-width: 0.6rem;
 }
 
-.u-bands--sz-s {
+.d-bands--sz-s {
   border-width: 1.2rem;
 }
 
-.u-bands--sz-m {
+.d-bands--sz-m {
   border-width: 2.4rem;
 }
 
-.u-bands--sz-l {
+.d-bands--sz-l {
   border-width: 4.8rem;
 }
 
-.u-bands--sz-xl {
+.d-bands--sz-xl {
   border-width: 9.6rem;
 }
 
-.u-bands--sz-xxl {
+.d-bands--sz-xxl {
   border-width: 19.2rem;
 }
 
-.u-bands,
-.u-bands--left,
-.u-bands--right,
-.u-bands--sides,
-.u-bands--top,
-.u-bands--above,
-.u-bands--bottom,
-.u-bands--below {
+.d-bands,
+.d-bands--left,
+.d-bands--right,
+.d-bands--sides,
+.d-bands--top,
+.d-bands--above,
+.d-bands--bottom,
+.d-bands--below {
   border-color: #0077AD;
 }
 
+/* ---------------------------------------------------------------------------------------------- */
+/* --| Utility Patterns |------------------------------------------------------------------------ */
 /*
 */
 .u-fill-area {
@@ -6602,6 +6622,24 @@ $pagination--background-color: #fff;
   hyphens: auto;
 }
 
+.d-background.t-neutral {
+  background-color: #8e8279;
+}
+
+.d-background--dark.t-neutral {
+  background-color: #736961;
+}
+
+.d-background--very-dark.t-neutral {
+  background-color: #57504a;
+}
+
+.d-background--sloped.t-neutral {
+  background: -moz-linear-gradient(45deg, #81756d 0%, #84786f 50%, #897d74 50%, #867a71 100%);
+  background: -webkit-linear-gradient(45deg, #81756d 0%, #84786f 50%, #897d74 50%, #867a71 100%);
+  background: linear-gradient(45deg, #81756d 0%, #84786f 50%, #897d74 50%, #867a71 100%);
+}
+
 /* ---------------------------------------------------------------------------------------------- */
 /* --| THEMES |---------------------------------------------------------------------------------- */
 /*
@@ -6631,28 +6669,32 @@ $patterns: (
         );
     }
     */
-.u-background.t-white {
+.d-background.t-white {
   background-color: #ffffff;
 }
 
-.u-background--very-dark.t-white {
+.d-background--dark.t-white {
+  background-color: #e6e6e6;
+}
+
+.d-background--very-dark.t-white {
   background-color: #cccccc;
 }
 
-.u-background--sloped.t-white {
+.d-background--sloped.t-white {
   background: -moz-linear-gradient(45deg, #f2f2f2 0%, whitesmoke 50%, #fafafa 50%, #f7f7f7 100%);
   background: -webkit-linear-gradient(45deg, #f2f2f2 0%, whitesmoke 50%, #fafafa 50%, #f7f7f7 100%);
   background: linear-gradient(45deg, #f2f2f2 0%, whitesmoke 50%, #fafafa 50%, #f7f7f7 100%);
 }
 
-.u-bands.t-white,
-.u-bands--left.t-white,
-.u-bands--right.t-white,
-.u-bands--sides.t-white,
-.u-bands--top.t-white,
-.u-bands--above.t-white,
-.u-bands--bottom.t-white,
-.u-bands--below.t-white {
+.d-bands.t-white,
+.d-bands--left.t-white,
+.d-bands--right.t-white,
+.d-bands--sides.t-white,
+.d-bands--top.t-white,
+.d-bands--above.t-white,
+.d-bands--bottom.t-white,
+.d-bands--below.t-white {
   border-color: #ffffff;
 }
 
@@ -6772,28 +6814,32 @@ $patterns: (
         );
     }
     */
-.u-background.t-anode {
+.d-background.t-anode {
   background-color: #933961;
 }
 
-.u-background--very-dark.t-anode {
+.d-background--dark.t-anode {
+  background-color: #6e2b49;
+}
+
+.d-background--very-dark.t-anode {
   background-color: #4a1d31;
 }
 
-.u-background--sloped.t-anode {
+.d-background--sloped.t-anode {
   background: -moz-linear-gradient(45deg, #813255 0%, #843357 50%, #8c365c 50%, #88355a 100%);
   background: -webkit-linear-gradient(45deg, #813255 0%, #843357 50%, #8c365c 50%, #88355a 100%);
   background: linear-gradient(45deg, #813255 0%, #843357 50%, #8c365c 50%, #88355a 100%);
 }
 
-.u-bands.t-anode,
-.u-bands--left.t-anode,
-.u-bands--right.t-anode,
-.u-bands--sides.t-anode,
-.u-bands--top.t-anode,
-.u-bands--above.t-anode,
-.u-bands--bottom.t-anode,
-.u-bands--below.t-anode {
+.d-bands.t-anode,
+.d-bands--left.t-anode,
+.d-bands--right.t-anode,
+.d-bands--sides.t-anode,
+.d-bands--top.t-anode,
+.d-bands--above.t-anode,
+.d-bands--bottom.t-anode,
+.d-bands--below.t-anode {
   border-color: #933961;
 }
 
@@ -6913,28 +6959,32 @@ $patterns: (
         );
     }
     */
-.u-background.t-minidex {
+.d-background.t-minidex {
   background-color: #0077AD;
 }
 
-.u-background--very-dark.t-minidex {
+.d-background--dark.t-minidex {
+  background-color: #00547a;
+}
+
+.d-background--very-dark.t-minidex {
   background-color: #003147;
 }
 
-.u-background--sloped.t-minidex {
+.d-background--sloped.t-minidex {
   background: -moz-linear-gradient(45deg, #006594 0%, #006999 50%, #0070a3 50%, #006c9e 100%);
   background: -webkit-linear-gradient(45deg, #006594 0%, #006999 50%, #0070a3 50%, #006c9e 100%);
   background: linear-gradient(45deg, #006594 0%, #006999 50%, #0070a3 50%, #006c9e 100%);
 }
 
-.u-bands.t-minidex,
-.u-bands--left.t-minidex,
-.u-bands--right.t-minidex,
-.u-bands--sides.t-minidex,
-.u-bands--top.t-minidex,
-.u-bands--above.t-minidex,
-.u-bands--bottom.t-minidex,
-.u-bands--below.t-minidex {
+.d-bands.t-minidex,
+.d-bands--left.t-minidex,
+.d-bands--right.t-minidex,
+.d-bands--sides.t-minidex,
+.d-bands--top.t-minidex,
+.d-bands--above.t-minidex,
+.d-bands--bottom.t-minidex,
+.d-bands--below.t-minidex {
   border-color: #0077AD;
 }
 
@@ -7054,28 +7104,32 @@ $patterns: (
         );
     }
     */
-.u-background.t-neoclear {
+.d-background.t-neoclear {
   background-color: #009590;
 }
 
-.u-background--very-dark.t-neoclear {
+.d-background--dark.t-neoclear {
+  background-color: #00625f;
+}
+
+.d-background--very-dark.t-neoclear {
   background-color: #002f2d;
 }
 
-.u-background--sloped.t-neoclear {
+.d-background--sloped.t-neoclear {
   background: -moz-linear-gradient(45deg, #007c77 0%, #00817c 50%, #008b86 50%, #008681 100%);
   background: -webkit-linear-gradient(45deg, #007c77 0%, #00817c 50%, #008b86 50%, #008681 100%);
   background: linear-gradient(45deg, #007c77 0%, #00817c 50%, #008b86 50%, #008681 100%);
 }
 
-.u-bands.t-neoclear,
-.u-bands--left.t-neoclear,
-.u-bands--right.t-neoclear,
-.u-bands--sides.t-neoclear,
-.u-bands--top.t-neoclear,
-.u-bands--above.t-neoclear,
-.u-bands--bottom.t-neoclear,
-.u-bands--below.t-neoclear {
+.d-bands.t-neoclear,
+.d-bands--left.t-neoclear,
+.d-bands--right.t-neoclear,
+.d-bands--sides.t-neoclear,
+.d-bands--top.t-neoclear,
+.d-bands--above.t-neoclear,
+.d-bands--bottom.t-neoclear,
+.d-bands--below.t-neoclear {
   border-color: #009590;
 }
 
@@ -7180,15 +7234,19 @@ $patterns: (
         background: linear-gradient(to right, #ffffff 0%,#ffffff 50%,map-get($theme, background-color) 50%,map-get($theme, background-color) 100%);
     }
     */
-.u-background.t-neoclear--alt {
+.d-background.t-neoclear--alt {
   background-color: #B51A82;
 }
 
-.u-background--very-dark.t-neoclear--alt {
+.d-background--dark.t-neoclear--alt {
+  background-color: #881462;
+}
+
+.d-background--very-dark.t-neoclear--alt {
   background-color: #5c0d42;
 }
 
-.u-background--sloped.t-neoclear--alt {
+.d-background--sloped.t-neoclear--alt {
   background: -moz-linear-gradient(45deg, #9f1772 0%, #a31775 50%, #ac197c 50%, #a81878 100%);
   background: -webkit-linear-gradient(45deg, #9f1772 0%, #a31775 50%, #ac197c 50%, #a81878 100%);
   background: linear-gradient(45deg, #9f1772 0%, #a31775 50%, #ac197c 50%, #a81878 100%);
@@ -7201,21 +7259,402 @@ $patterns: (
 
 /* ---------------------------------------------------------------------------------------------- */
 /* --| WIREFRAME--------------------------------------------------------------------------------- */
-/* ---------------------------------------------------------------------------------------------- */
-/* --| SHAME |----------------------------------------------------------------------------------- */
-html, body {
-  background-color: #8e8279;
+html.wireframe {
+  filter: grayscale(1);
 }
 
+.wireframe [wf-box] {
+  outline-style: solid;
+  outline-width: 1px;
+  outline-color: #444;
+  position: relative;
+  z-index: 1;
+  display: flow-root;
+  height: 100%;
+}
+
+.wireframe [wf-box]::before {
+  content: attr(wf-box);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.5em;
+  color: #444;
+  text-shadow: 0 0 0.25em #ccc, 0 0 0.25em #ccc, 0 0 0.25em #ccc, 0 0 0.25em #ccc, 0 0 0.25em #ccc;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: #ccc;
+  background-size: 100% 100%;
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3Cg%20stroke-width%3D%221px%22%20stroke%3D%22#444%22%20%3E%3Cline%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%20vector-effect%3D%22non-scaling-stroke%22%2F%3E%3Cline%20x1%3D%221%22%20y1%3D%220%22%20x2%3D%220%22%20y2%3D%221%22%20vector-effect%3D%22non-scaling-stroke%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+  /* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" preserveAspectRatio="none"><g stroke-width="1px" stroke="$wf-wire"><line x1="0" y1="0" x2="1" y2="1" vector-effect="non-scaling-stroke"/><line x1="1" y1="0" x2="0" y2="1" vector-effect="non-scaling-stroke"/></g></svg> */
+}
+
+/*
+.wireframe [data-wf]::before {
+    position: absolute;
+    z-index: 999;
+    opacity: 0.7;
+
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+
+   background:
+        linear-gradient(to top right,
+            transparent calc(50% - 1px), $wf-wire calc(50% - 1px),
+            $wf-wire calc(50% + 1px), transparent calc(50% + 1px)),
+        linear-gradient(to bottom right,
+            transparent calc(50% - 1px), $wf-wire calc(50% - 1px),
+            $wf-wire calc(50% + 1px), transparent calc(50% + 1px)),
+        $wf-fill--mid;
+
+
+    content: attr(data-wf);
+    font: bold 2em Georgia, serif;
+    color: $wf-wire;
+
+    text-shadow:
+        1px 1px 0 $wf-fill--mid,
+        -1px 1px 0 $wf-fill--mid,
+        1px -1px 0 $wf-fill--mid,
+        -1px -1px 0 $wf-fill--mid,
+        1px 0 0 $wf-fill--mid,
+        -1px 0 0 $wf-fill--mid,
+        2px 2px 0 $wf-fill--mid,
+        -2px 2px 0 $wf-fill--mid,
+        2px -2px 0 $wf-fill--mid,
+        -2px -2px 0 $wf-fill--mid,
+        2px 0 0 $wf-fill--mid,
+        -2px 0 0 $wf-fill--mid,
+        3px 3px 0 $wf-fill--mid,
+        -3px 3px 0 $wf-fill--mid,
+        3px -3px 0 $wf-fill--mid,
+        -3px -3px 0 $wf-fill--mid,
+        3px 0 0 $wf-fill--mid,
+        -3px 0 0 $wf-fill--mid,
+        4px 4px 0 $wf-fill--mid,
+        -4px 4px 0 $wf-fill--mid,
+        4px -4px 0 $wf-fill--mid,
+        -4px -4px 0 $wf-fill--mid,
+        4px 0 0 $wf-fill--mid,
+        -4px 0 0 $wf-fill--mid;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+*/
+.wireframe [wf-links] a[href] {
+  color: inherit;
+  background-color: inherit;
+}
+
+.wireframe [wf-links] a[href]:hover,
+.wireframe [wf-links] a[href]:active,
+.wireframe [wf-links] a[href]:focus {
+  color: inherit;
+}
+
+.wireframe [wf-area] {
+  /*a[href] {
+        color: inherit;
+        background-color: inherit;
+    }
+
+    a[href]:hover,
+    a[href]:active,
+    a[href]:focus {
+        color: inherit;
+    }*/
+}
+
+.wireframe [wf-area*=outline] {
+  outline-style: solid;
+  outline-width: 1px;
+  outline-color: #444;
+}
+
+.wireframe [wf-area*=white] {
+  background-color: #fff;
+  color: #333;
+}
+
+.wireframe [wf-area*=light] {
+  background-color: #eee;
+  color: #333;
+}
+
+.wireframe [wf-area*=mid] {
+  background-color: #ccc;
+  color: #333;
+}
+
+.wireframe [wf-area*=dark] {
+  background-color: #666;
+  color: #fff;
+}
+
+.wireframe [wf-area*=darkest] {
+  background-color: #333;
+  color: #fff;
+}
+
+/*
+.wireframe [wf-area*=padding] {
+
+    &:after {
+        content: "";
+        display: block;
+        height: 1px;
+        margin-bottom: -1px;
+        width: 100%;
+    }
+}*/
+.wireframe [wf-area*=xs-padding] {
+  padding-left: 0.6rem;
+  padding-right: 0.6rem;
+  padding-top: 0.6rem;
+}
+
+.wireframe [wf-area*=xs-padding]::after {
+  content: "";
+  display: block;
+  margin-top: 0.6rem;
+  margin-bottom: -1px;
+  height: 1px;
+}
+
+.wireframe [wf-area*=small-padding] {
+  padding-left: 1.2rem;
+  padding-right: 1.2rem;
+  padding-top: 1.2rem;
+}
+
+.wireframe [wf-area*=small-padding]::after {
+  content: "";
+  display: block;
+  margin-top: 1.2rem;
+  margin-bottom: -1px;
+  height: 1px;
+}
+
+.wireframe [wf-area*=medium-padding] {
+  padding-left: 2.4rem;
+  padding-right: 2.4rem;
+  padding-top: 2.4rem;
+}
+
+.wireframe [wf-area*=medium-padding]::after {
+  content: "";
+  display: block;
+  margin-top: 2.4rem;
+  margin-bottom: -1px;
+  height: 1px;
+}
+
+.wireframe [wf-area*=large-padding] {
+  padding-left: 4.8rem;
+  padding-right: 4.8rem;
+  padding-top: 4.8rem;
+}
+
+.wireframe [wf-area*=large-padding]::after {
+  content: "";
+  display: block;
+  margin-top: 4.8rem;
+  margin-bottom: -1px;
+  height: 1px;
+}
+
+.wireframe [wf-bar-links] {
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.wireframe [wf-bar-links] li {
+  margin: 0;
+  padding: 0;
+}
+
+.wireframe [wf-bar-links] a[href] {
+  display: block;
+  border: 0;
+  margin: 0;
+}
+
+.wireframe [wf-bar-links] a[href]:hover,
+.wireframe [wf-bar-links] a[href]:active,
+.wireframe [wf-bar-links] a[href]:focus {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.wireframe [wf-bar-links*=small-padding] a[href] {
+  padding: 0.6rem 1.2rem;
+}
+
+.wireframe [wf-area*=white] [wf-bar-links] a[href]:hover,
+.wireframe [wf-area*=white] [wf-bar-links] a[href]:active,
+.wireframe [wf-area*=white] [wf-bar-links] a[href]:focus {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.wireframe [wf-bar-links*=divided] {
+  overflow: hidden;
+}
+
+.wireframe [wf-bar-links*=divided] > li {
+  position: relative;
+  margin: 0 0 0 -3px;
+}
+
+.wireframe [wf-bar-links*=divided] > li:before {
+  content: "";
+  display: block;
+  height: 1em;
+  width: 2px;
+  background: #fff;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.wireframe [wf-bar-links*=divided] a[href] {
+  margin: 0 2px;
+}
+
+.wireframe [wf-bar-links*=small-text] {
+  font-size: 0.85em;
+}
+
+.wireframe [wf-heading*=large] {
+  font-size: 1.625em;
+  line-height: 1.1;
+  border-bottom: 1px solid;
+  padding-bottom: 0.5em;
+}
+
+.wireframe button[wf-button] {
+  display: inline-block;
+  /* AK. IE9 needs this. */
+  overflow: visible;
+  /* S: Internet Explorer 11-, N: Show the overflow in Edge, Firefox, and IE. */
+  background-color: #663399;
+  color: #fff;
+  font-size: inherit;
+  font-family: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+  min-height: 3rem;
+  line-height: 2.4rem;
+  margin: 0.3rem 0;
+  text-transform: none;
+  /* [N0], N: Remove the inheritance of text transform in Edge, Firefox, and IE. */
+  /* -webkit-appearance: button; // [N2] */
+  -webkit-appearance: none;
+  /* AK */
+  cursor: pointer;
+  /* [N3] */
+  border-color: rgba(0, 0, 0, 0.2);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 3px;
+  padding-top: 0.3rem;
+  padding-top: -moz-calc(0);
+  padding-top: calc(0.3rem - 1px);
+  padding-bottom: 0.3rem;
+  padding-bottom: -moz-calc(0);
+  padding-bottom: calc(0.3rem - 1px);
+  padding-left: 0.6rem;
+  padding-right: 0.6rem;
+  vertical-align: middle;
+  /* S: Remove the tapping delay from clickable elements */
+  -ms-touch-action: manipulation;
+  /* S: IE10 */
+  touch-action: manipulation;
+}
+
+.wireframe button[wf-button]:hover,
+.wireframe button[wf-button]:active,
+.wireframe button[wf-button]:focus {
+  box-shadow: 0 0 0 2px #b38cd9 inset;
+  outline: 0;
+  border-color: rgba(0, 0, 0, 0.2);
+  border-style: solid;
+  border-width: 1px;
+  color: #fff;
+}
+
+.wireframe a[href][wf-cta] {
+  display: inline-block;
+  color: #663399;
+  background-color: #ffffff;
+  font-size: inherit;
+  font-family: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+  min-height: 3rem;
+  line-height: 2.4rem;
+  margin: 0.3rem 0;
+  text-transform: none;
+  cursor: pointer;
+  border-color: rgba(0, 0, 0, 0.4);
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 3px;
+  padding-top: 0.3rem;
+  padding-top: -moz-calc(0);
+  padding-top: calc(0.3rem - 1px);
+  padding-bottom: 0.3rem;
+  padding-bottom: -moz-calc(0);
+  padding-bottom: calc(0.3rem - 1px);
+  padding-left: 0.6rem;
+  padding-right: 0.6rem;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+}
+
+.wireframe a[href][wf-cta]:hover,
+.wireframe a[href][wf-cta]:active,
+.wireframe a[href][wf-cta]:focus {
+  box-shadow: 0 0 0 2px #bbbbbb inset;
+  outline: 0;
+  border-color: rgba(0, 0, 0, 0.4);
+  border-style: solid;
+  border-width: 2px;
+  background-color: #eeeeee;
+}
+
+.wireframe a[href] svg {
+  vertical-align: text-top;
+}
+
+/* ---------------------------------------------------------------------------------------------- */
+/* --| SHAME |----------------------------------------------------------------------------------- */
 .limit-page-width {
   max-width: 1600px;
   margin: 0 auto;
 }
 
+/*
 .sticky-footer {
-  background: #fff;
+    background: #fff;
 }
-
+*/
 .tb-baseline {
   background: transparent url(http://lab.gridlight-design.co.uk/fallback-v1/line-grid-12px.gif) repeat;
 }
@@ -7250,10 +7689,11 @@ h1, h2, h3 {
   flex-grow: 1;
 }
 
+/*
 .sticky-footer-expand {
-  background-color: #000;
+    background-color: #000;
 }
-
+*/
 /*
 .sticky-footer-expand main,
 .sticky-footer-expand main + aside {
@@ -7579,7 +8019,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e7692', end
 }
 
 @media only screen and (min-width: 42.5625em) {
-  .nav-bar.u-bands--bottom {
+  .nav-bar.d-bands--bottom {
     border: 0;
   }
 }
@@ -7682,7 +8122,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e7692', end
 }
 
 /*-----------------*/
-.l-blockrow:last-child > .u-bands--bottom {
+.l-blockrow:last-child > .d-bands--bottom {
   border: 0 !important;
 }
 

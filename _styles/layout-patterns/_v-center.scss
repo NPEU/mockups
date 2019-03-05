@@ -5,15 +5,17 @@ $v-center-namespace: l- !default;
 
 
 .#{$v-center-namespace}v-center {
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
+    &#{&} {
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
 
-         -ms-flex-align: center;
-    -webkit-align-items: center;
-            align-items: center;
+             -ms-flex-align: center;
+        -webkit-align-items: center;
+                align-items: center;
 
-              -ms-flex-pack: center;
-    -webkit-justify-content: center;
-            justify-content: center;
+                  -ms-flex-pack: center;
+        -webkit-justify-content: center;
+                justify-content: center;
+}
 }

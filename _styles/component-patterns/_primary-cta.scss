@@ -25,6 +25,7 @@ $primary-cta--padding: $fallback--base-rem-space-unit / 2 !default;
 
         text-align: center;
         margin-bottom: 0;
+        margin-left: $fallback--base-rem-space-unit / 2 ;
 
             &:hover,
             &:active,

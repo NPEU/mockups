@@ -39,20 +39,6 @@ $experimental_checkradios: true;
 @import "_sizes";
 
 
-// Inuit:
-
-//$breakpoints: (
-//    "palm"          "screen and (max-width: 44.9375em)",
-//    "lap"           "screen and (min-width: 45em) and (max-width: 63.9375em)",
-//    "lap-and-up"    "screen and (min-width: 45em)",
-//    "portable"      "screen and (max-width: 63.9375em)",
-//    "desk"          "screen and (min-width: 64em)",
-//    "retina"        "(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx)"
-//) !default;
-
-////@import "bower_components/inuit-defaults/settings.defaults";
-//@import "bower_components/inuit-responsive-settings/_settings.responsive.scss";
-
 $hover-effect-opacity: 0.2;
 $hover-effect-width: $fallback--base-rem-space-unit / 4;
 
@@ -189,13 +175,13 @@ $gallery-grid-spacing-unit: $fallback--base-rem-space-unit;
 
 /* --| Component Patterns |---------------------------------------------------------------------- */
 
-@import "component-patterns/_badges.scss";
+@import "component-patterns/_badge.scss";
 
 /*$brochure-spacing-unit: $fallback--base-rem-space-unit;
 $brochure--border-or-outline: false;
 @import "component-patterns/_brochure.scss";*/
 
-$card--base-color: $fallback--base-ui-color;
+$card--base-color: darken($fallback--base-ui-color, 20%);
 $card--text-color: #fff !default;
 
 $card-title--font-size: 2rem;
@@ -203,7 +189,7 @@ $card-title--font-size: 2rem;
 $card-spacing-unit: $fallback--base-rem-space-unit;
 //$card--border-or-outline: 'border';
 $card--border-width: 0;
-$card--background-color: rgba(0,0,0,0.1);
+$card--background-color: rgba(0,0,0,0.5);
 
 @import "component-patterns/_card.scss";
 
@@ -223,15 +209,12 @@ $event--border-color: $fallback--base-ui-color;
 
 @import "patterns/_funder-logo.scss";
 
-
 //$glimpse-spacing-unit: $fallback--base-rem-space-unit;
 //@import "component-patterns/_glimpse.scss";
-
 
 @import "component-patterns/_hero.scss";
 
 @import "component-patterns/_longform-content.scss";
-
 
 @import "component-patterns/_page-header.scss";
 
@@ -270,6 +253,8 @@ $section-menu--padding: 0;
 $section-menu--border-width: 0;
 @import "navigation-patterns/_section-menu.scss";
 
+/* ---------------------------------------------------------------------------------------------- */
+
 
 /* --| Layout Patterns |------------------------------------------------------------------------- */
 
@@ -279,6 +264,8 @@ $col-to-row-spacing-unit: $fallback--base-rem-space-unit;
 //$content-area-max-width: 42em;
 @import "layout-patterns/_content-area.scss";
 
+@import "layout-patterns/_distribute.scss";
+
 @import "layout-patterns/_proportional-container.scss";
 
 .proportional-container--1-1_4::before {
@@ -287,11 +274,18 @@ $col-to-row-spacing-unit: $fallback--base-rem-space-unit;
 
 @import "layout-patterns/_v-center.scss";
 
+/* ---------------------------------------------------------------------------------------------- */
+
+
+/* --| Decoration Patterns |--------------------------------------------------------------------- */
+
+@import "decoration-patterns/_background.scss";
+@import "decoration-patterns/_bands.scss";
+
+/* ---------------------------------------------------------------------------------------------- */
+
 
 /* --| Utility Patterns |------------------------------------------------------------------------ */
-
-@import "utility-patterns/_background.scss";
-@import "utility-patterns/_bands.scss";
 //@import "utility-patterns/_full-width.scss";
 @import "utility-patterns/_fill-area.scss";
 @import "utility-patterns/_fill-height.scss";
@@ -302,6 +296,13 @@ $col-to-row-spacing-unit: $fallback--base-rem-space-unit;
 @import "utility-patterns/_text-align.scss";
 @import "utility-patterns/_text-groups.scss";
 @import "utility-patterns/_word-wrap.scss";
+
+
+@include background-theme(
+    "neutral",
+    (
+        background-color : #8e8279
+    ));
 
 /* ---------------------------------------------------------------------------------------------- */
 
@@ -319,7 +320,7 @@ $col-to-row-spacing-unit: $fallback--base-rem-space-unit;
 /* --| WIREFRAME--------------------------------------------------------------------------------- */
 // http://meyerweb.com/eric/thoughts/2017/11/27/generating-wireframe-boxes-with-css-and-html5
 // Just testing this out, may not keep.
-//@import "_wireframe";
+@import "_wireframe";
 
 /* ---------------------------------------------------------------------------------------------- */
 
