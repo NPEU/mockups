@@ -6,9 +6,9 @@ layout: structure
 
         <header class="c-page-header  t-{{ page.project }}  d-bands--bottom">
             
-            <div class="u-padding--s">
+            <div class="u-padding--bottom--s">
                 <div class="l-col-to-row">
-                    <div class="l-col-to-row__item  ff-width-100--40--50  u-text-align--left  c-page-header__first">
+                    <div class="l-col-to-row__item  ff-width-100--40--50  u-text-align--left  c-page-header__first  u-padding--top--s  u-padding--sides--s">
                         <a href="/{{ page.project }}" class="c-badge  c-page-header__primary-logo">
                             {{ project_data.logo_svg }}
                         </a>
@@ -47,14 +47,19 @@ layout: structure
                         <!--</div>-->
                     </div>
 
-                    <div class="l-col-to-row__item  ff-width-100--40--50  l-v-center  u-text-align--right  c-page-header__last">
+                    <!--<div class="l-col-to-row__item  ff-width-100--40--50  l-v-center  u-text-align--right  c-page-header__last">-->
+                    <div class="l-col-to-row__item  ff-width-100--40--50  l-distribute  u-padding--top--s  u-padding--sides--s">
                         {% if page.display_navbar %}
-                        <button class="over-panel-control" hidden aria-controls="menu-panel" aria-label="Main menu" aria-expanded="false" data-js="overpanel__control">
-                            <svg display="none" class="icon  icon--is-closed  feather"><use xlink:href="#icon-menu"></use></svg><svg display="none" class="icon  icon--is-open  feather"><use xlink:href="#icon-cross"></use></svg>
-                        </button>
+                        <span>
+                            <button class="over-panel-control" hidden aria-controls="menu-panel" aria-label="Main menu" aria-expanded="false" data-js="overpanel__control">
+                                <svg display="none" class="icon  icon--is-closed  feather"><use xlink:href="#icon-menu"></use></svg><svg display="none" class="icon  icon--is-open  feather"><use xlink:href="#icon-cross"></use></svg>
+                            </button>
+                        </span>
                         {% endif %}
                         {% if page.display_cta %}
-                        <a href="/{{ project_data.randomisation_url }}" class="c-primary-cta  t-{{ page.project }}">Randomise to {{ project_data.name }}</a>
+                        <span>
+                            <a href="/{{ project_data.randomisation_url }}" class="c-primary-cta  t-{{ page.project }}">Randomise to {{ project_data.name }}</a>
+                        </span>
                         {% endif %}
                     </div>
                 </div>
@@ -143,8 +148,8 @@ layout: structure
         </div>
         {% endif %}
         
-        <div class="sticky-footer-expand">
-            <main role="main" class="main-container  d-background--very-dark  t-{{ page.project }}  u-fill-area">
+        <div class="sticky-footer-expand  t-white  d-background">
+            <main role="main" class="main-container  Xd-background--very-dark  Xt-{{ page.project }}  Xu-fill-area">
                 {{ content }}
             </main>
         </div>

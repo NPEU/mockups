@@ -1,3 +1,28 @@
+/*html,
+body {
+    min-height: 100%;
+    height: auto;
+    
+    display: -ms-flexbox;
+    display: flex;
+    
+    -ms-flex-direction: column;
+        flex-direction: column;
+    
+    -ms-flex-align: center;
+       align-items: center;
+
+}
+
+
+body,
+.sticky-footer-wrap {
+    -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
+}
+
+
+*/
 // Hmmm. THere's way too much in here already. Needs sorting.
 
 .limit-page-width {
@@ -441,7 +466,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e7692', end
     max-width: 130rem;
     margin: 0 auto;
 }
-
 
 
 

@@ -33,6 +33,9 @@ $col-to-row-spacing-unit--large: ($col-to-row-spacing-unit * 2) !default;
 .#{$col-to-row-namespace}col-to-row {
 
     &#{&} {
+        /*
+            1. IE11 needs this to calculate widths properly.
+        */
         display: -webkit-flex;
         display: -ms-flexbox;
         display: flex;
@@ -45,6 +48,8 @@ $col-to-row-spacing-unit--large: ($col-to-row-spacing-unit * 2) !default;
         margin: 0;
         padding: 0;
         list-style-type: none;
+        
+        position: relative; /* [1] */
     }
 
 

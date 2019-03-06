@@ -1,6 +1,6 @@
 /* --| SETTINGS |-------------------------------------------------------------------------------- */
 
-//@import url('https://fonts.googleapis.com/css?family=Merriweather|Source+Sans+Pro:400,700,400italic');
+
 //@import url('https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i|Nunito:400,700');
 @import url('https://fonts.googleapis.com/css?family=Lato:300,700,900');
 //@import url('https://fonts.googleapis.com/css?family=Lato:300,300i|Nunito:400,700');
@@ -13,10 +13,8 @@ $fallback--root-font-size: 10px;
 $fallback--base-ui-color: #0077AD;
 $fallback--breakpoint--enhanced: 42.5625em;
 
-//$body-padding: 0;
 
-//$namespace: '.ugc ';
-//$namespace: 'main ';
+
 
 @import '../bower_components/Fall-Back-Start-CSS/dist/scss/_start__settings.scss';
 
