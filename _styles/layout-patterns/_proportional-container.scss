@@ -44,7 +44,12 @@ $proportions: (
     /* Make the image fill the width and be vertically centered: */
     /* (in portrait images this will leave gaps at the sides) */
     .proportional-container__image-cover {
+        /*
+            1. For IE to fill container.
+        */
         position: absolute;
+        left: 0;  /* [1] */
+        right: 0; /* [1] */
         width: 100%;
         top: 50%;
         transform: translateY(-50%);

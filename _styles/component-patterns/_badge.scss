@@ -16,17 +16,17 @@ $badge-namespace: c- !default;
                 2. This is so a broken image is still 100%.
             */
 
-            position: relative; /* 1 */
+            position: relative; /* [1] */
 
-            display: block; /* 2 */
+            display: block; /* [2] */
 
             //width: 100%;
 
-            //height: auto;
+            //height: auto; /* [3] */
 
             //max-width: 100%;
 
-            //max-height: 100%;
+            //max-height: 80px; /* [3, 4] */
 
             border-style: none;
 
@@ -65,3 +65,18 @@ a[href].#{$badge-namespace}badge {
     }
 }
 
+/* 
+    IE9-11 
+
+    1. IE11- seems to need this.
+    2. Magic number (tmp), needs to be set via class names.
+*/
+
+@media screen and (min-width:0\0) and (min-resolution:+72dpi) {
+
+    .#{$badge-namespace}badge img {
+        height: auto; /* [1] */
+        max-height: 80px; /* [1, 2] */
+    }
+    
+}

@@ -1,8 +1,7 @@
 ---
-layout: landing
-title: NPEU Home
+layout: structure--basic
+title: NPEU Mockups
 ---
-NPEU Homepage
 
 * [Minidex](minidex)
 * [NeoCLEAR](neoclear)

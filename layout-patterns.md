@@ -1,6 +1,6 @@
 ---
 layout: structure--basic
-title: NPEU Wireframe Layout Patterns
+title: NPEU Layout Patterns
 ---
 <h2 class="u-padding--s">Col to Row</h2>
 <div class="l-col-to-row">
@@ -343,10 +343,16 @@ title: NPEU Wireframe Layout Patterns
 
 <h2 class="u-padding--s">Proportional Container</h2>
 
+<div class="proportional-container  proportional-container--5-1">
+    <div class="proportional-container__content">
+        <img class="proportional-container__image-cover" src="/img/neoclear/hero-image-1.jpg" width="600" alt="">
+    </div>
+</div>
+
 <div class="proportional-container  proportional-container--4-3  proportional-container--3-1--wide">
     <div class="proportional-container__content" wf-area="light+outline">
-        <a href="/about/athena-swan">
-            <img src="/img/affiliate-logos/athena-swan-silver-award.svg" class="proportional-container__image-contain" style="height: 100%;" onerror="this.src='/img/affiliate-logos/athena-swan-silver-award.png'; this.onerror=null;" alt="ECU Gender Charter Athena Swan Silver Award" width="257" height="141">
+        <a href="https://www.npeu.ox.ac.uk" class="c-badge  athena-swan  l-v-center" rel="external noopener noreferrer" target="_blank">
+            <img src="/img/affiliate-logos/athena-swan-silver-award.svg" onerror="this.src='/img/affiliate-logos/athena-swan-silver-award.png'; this.onerror=null;" alt="Logo: Athena Swan Silver Award" height="70">
         </a>
     </div>
 </div>

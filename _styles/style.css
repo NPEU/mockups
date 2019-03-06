@@ -2550,11 +2550,11 @@ _:-webkit-full-screen, _::-webkit-full-page-media, _:future, :root select[size="
     border-radius: 50%;
   }
   input[type="radio"]:checked {
-    background-image: -moz-radial-gradient(center, ellipse cover, #333333 0%, #333333 35%, rgba(0, 0, 0, 0) 35%, rgba(0, 0, 0, 0) 100%);
+    background-image: -moz-radial-gradient(center, ellipse cover, #333333 0%, #333333 35%, transparent 35%, transparent 100%);
     /* FF3.6-15 */
-    background-image: -webkit-radial-gradient(center, ellipse cover, #333333 0%, #333333 35%, rgba(0, 0, 0, 0) 35%, rgba(0, 0, 0, 0) 100%);
+    background-image: -webkit-radial-gradient(center, ellipse cover, #333333 0%, #333333 35%, transparent 35%, transparent 100%);
     /* Chrome10-25,Safari5.1-6 */
-    background-image: radial-gradient(ellipse at center, #333333 0%, #333333 35%, rgba(0, 0, 0, 0) 35%, rgba(0, 0, 0, 0) 100%);
+    background-image: radial-gradient(ellipse at center, #333333 0%, #333333 35%, transparent 35%, transparent 100%);
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   }
   input[type="checkbox"]:checked::after {
@@ -2602,8 +2602,7 @@ _:-webkit-full-screen, _::-webkit-full-page-media, _:future, :root select[size="
   -webkit-appearance: radio;
 }
 
-/*------------------------------------------------------------------------------------------------*\
-    Fall-Back Icons v1.0.0
+/*------------------------------------------------------------------------------------------------*    Fall-Back Icons v1.0.0
     
     Designed for use with the basic [CSS Mustard Cut](https://github.com/Fall-Back/CSS-Mustard-Cut)
     IE 9+, FF 8+, Opera 12, [Chrome 29+, Android ~4.4+]
@@ -2930,6 +2929,7 @@ _:-o-prefocus, :root .icon {
         }*/
   .js-over-panel .over-panel__overlay {
     display: block;
+    position: fixed;
     z-index: -1;
     left: 0;
     top: 0;
@@ -2953,7 +2953,6 @@ _:-o-prefocus, :root .icon {
   }
   /* Bring the overlay to the front and fade in when there's an over-panel target: */
   .js-over-panel_is-open .over-panel__overlay {
-    position: fixed;
     z-index: 0;
     opacity: 0.5;
     visibility: visible;
@@ -3327,7 +3326,7 @@ _:-o-prefocus, body:last-child .nav-bar .subnav__heading {
 
 .nav-bar .nav-bar__link[href]:focus {
   color: #fff;
-  background-color: rgba(0, 0, 0, 0);
+  background-color: transparent;
 }
 
 .nav-bar .subnav__link[href]:hover,
@@ -3748,8 +3747,7 @@ $fallback--dropdown__button--background-color: $fallback--nav-bar__link--backgro
 }
 
 /* ---------------------------------------------------------------------------------------------- */
-/*------------------------------------------------------------------------------------------------*\
-
+/*------------------------------------------------------------------------------------------------*
     Designed for use with the basic [CSS Mustard Cut](https://github.com/Fall-Back/CSS-Mustard-Cut)
     IE 9+, FF 8+, Opera 12, [Chrome 29+, Android ~4.4+]
     Chrome 29+, Opera 16+, Safari 6.1+, iOS 7+, Android ~4.4+
@@ -3832,8 +3830,7 @@ body {
 }
 
 /*------------------------------------------------------------------------------------------------*/
-/*------------------------------------------------------------------------------------------------*\
-
+/*------------------------------------------------------------------------------------------------*
     Clarification for self:
     Since this pattern is intented for use on logos, and since logos are an integral part of
     branding, this pattern is not ONLY intended as a CSS fallback.
@@ -3913,7 +3910,7 @@ body {
   right: 0;
   bottom: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0);
+  background: transparent;
   /* [1] */
 }
 
@@ -4207,10 +4204,8 @@ body {
   border-width: 0;
 }
 
-/*------------------------------------------------------------------------------------------------*\
-\*------------------------------------------------------------------------------------------------*/
-/*------------------------------------------------------------------------------------------------*\
-    Import Fall-Back vars:
+/*------------------------------------------------------------------------------------------------*\*------------------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------------------*    Import Fall-Back vars:
 
     Slightly hacky way of allowing the main UI colour of this pattern to be:
      - base-ui colour (if set)
@@ -5101,9 +5096,9 @@ body {
                 2. This is so a broken image is still 100%.
             */
   position: relative;
-  /* 1 */
+  /* [1] */
   display: block;
-  /* 2 */
+  /* [2] */
   border-style: none;
 }
 
@@ -5124,6 +5119,21 @@ a[href].c-badge {
 a[href].c-badge:hover, a[href].c-badge:active, a[href].c-badge:focus {
   border: 0;
   box-shadow: 0 0 0 0.6rem #fff, 0 0 0 1.2rem rgba(0, 0, 0, 0.2);
+}
+
+/* 
+    IE9-11 
+
+    1. IE11- seems to need this.
+    2. Magic number (tmp), needs to be set via class names.
+*/
+@media screen and (min-width: 0\0) and (min-resolution: 72dpi) {
+  .c-badge img {
+    height: auto;
+    /* [1] */
+    max-height: 80px;
+    /* [1, 2] */
+  }
 }
 
 /*$brochure-spacing-unit: $fallback--base-rem-space-unit;
@@ -5393,11 +5403,16 @@ $event--border-color: $fallback--base-ui-color;
 }
 
 .c-hero .c-hero__message > * {
+  /*
+            1. For IE10 to wrap text.
+        */
   padding: 2.4rem;
   font-size: 1.25em;
   line-height: 1.3;
   font-weight: bold;
   margin: 0;
+  max-width: 100%;
+  /* [1] */
 }
 
 .c-hero .c-hero__message * {
@@ -5937,9 +5952,9 @@ $pagination--background-color: #fff;
   webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  -webkit-justify-content: space-evenly;
-  -ms-flex-pack: space-evenly;
-  justify-content: space-evenly;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
@@ -5964,6 +5979,7 @@ $pagination--background-color: #fff;
   justify-content: flex-end;
 }
 
+/*@supports (justify-content:space-evenly) {    .l-distribute {        & {            justify-content: space-evenly;        }    }}*/
 .proportional-container {
   position: relative;
   overflow: hidden;
@@ -5995,7 +6011,14 @@ $pagination--background-color: #fff;
 /* Make the image fill the width and be vertically centered: */
 /* (in portrait images this will leave gaps at the sides) */
 .proportional-container__image-cover {
+  /*
+            1. For IE to fill container.
+        */
   position: absolute;
+  left: 0;
+  /* [1] */
+  right: 0;
+  /* [1] */
   width: 100%;
   top: 50%;
   transform: translateY(-50%);
@@ -7257,6 +7280,151 @@ $patterns: (
   background: #002f2d;
 }
 
+/* - Waiting for SASS to support. Currently pseudo code.
+    @each $pattern in $patterns {
+        @include $pattern (
+            (
+                name  : npeu,
+                theme : $theme
+            )
+        );
+    }
+    */
+.d-background.t-npeu {
+  background-color: #614776;
+}
+
+.d-background--dark.t-npeu {
+  background-color: #473456;
+}
+
+.d-background--very-dark.t-npeu {
+  background-color: #2d2136;
+}
+
+.d-background--sloped.t-npeu {
+  background: -moz-linear-gradient(45deg, #543d66 0%, #573f69 50%, #5c4370 50%, #59416c 100%);
+  background: -webkit-linear-gradient(45deg, #543d66 0%, #573f69 50%, #5c4370 50%, #59416c 100%);
+  background: linear-gradient(45deg, #543d66 0%, #573f69 50%, #5c4370 50%, #59416c 100%);
+}
+
+.d-bands.t-npeu,
+.d-bands--left.t-npeu,
+.d-bands--right.t-npeu,
+.d-bands--sides.t-npeu,
+.d-bands--top.t-npeu,
+.d-bands--above.t-npeu,
+.d-bands--bottom.t-npeu,
+.d-bands--below.t-npeu {
+  border-color: #614776;
+}
+
+.c-card.t-npeu,
+.c-card.t-npeu .c-card__main {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.c-card--themed-content.t-npeu .c-card__body::before {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.c-card.t-npeu .c-card__main {
+  position: relative;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+/*@if $border-color == null {
+		$border-color: darken($background-color, 10%);
+    }*/
+.c-meter.t-npeu {
+  color: #fff;
+}
+
+.c-page-header.t-npeu {
+  color: #333;
+  background-color: #614776;
+}
+
+.c-panel.c-panel.t-npeu {
+  color: #333;
+  background: #614776;
+}
+
+.c-primary-cta.t-npeu[href] {
+  color: #333;
+  background-color: #614776;
+}
+
+.c-primary-cta.t-npeu[href]:hover, .c-primary-cta.t-npeu[href]:active, .c-primary-cta.t-npeu[href]:focus {
+  color: #333;
+  background-color: #473456;
+}
+
+/*.t-npeu.t-color {
+        color: map-get($theme, text-color);
+    }*/
+.t-npeu button,
+.t-npeu button.over-panel-control,
+.t-npeu button.over-panel-control[aria-expanded=true] {
+  border-color: #614776;
+  color: #333;
+  background-color: #614776;
+}
+
+.t-npeu button:hover, .t-npeu button:active, .t-npeu button:focus,
+.t-npeu button.over-panel-control:hover,
+.t-npeu button.over-panel-control:active,
+.t-npeu button.over-panel-control:focus,
+.t-npeu button.over-panel-control[aria-expanded=true]:hover,
+.t-npeu button.over-panel-control[aria-expanded=true]:active,
+.t-npeu button.over-panel-control[aria-expanded=true]:focus {
+  background-color: #473456;
+  /*@else {
+                background-color: map-get($theme, background-color);
+            }*/
+}
+
+.t-npeu a[href] {
+  border-color: #614776;
+  color: #333;
+  background-color: transparent;
+}
+
+.t-npeu a[href]:hover, .t-npeu a[href]:active, .t-npeu a[href]:focus {
+  color: #333;
+}
+
+:not(.overpanel) .t-npeu a[href].cta {
+  border-color: #614776;
+  color: #333;
+  background-color: #fff;
+}
+
+:not(.overpanel) .t-npeu a[href].cta:hover, :not(.overpanel) .t-npeu a[href].cta:active, :not(.overpanel) .t-npeu a[href].cta:focus {
+  background-color: white;
+}
+
+/*
+    .t-npeu.d-50-50-background {
+        background: #FFFFFF;
+        background: -moz-linear-gradient(left, map-get($theme, background-color) 0%, map-get($theme, background-color) 50%, #ffffff 50%, #ffffff 100%);
+        background: -webkit-linear-gradient(left, map-get($theme, background-color) 0%,map-get($theme, background-color) 50%,#ffffff 50%,#ffffff 100%);
+        background: linear-gradient(to right, map-get($theme, background-color) 0%,map-get($theme, background-color) 50%,#ffffff 50%,#ffffff 100%);
+    }
+
+    .t-npeu.d-50-50-background--flipped {
+        background: #FFFFFF;
+        background: -moz-linear-gradient(left, #ffffff 0%, #ffffff 50%, map-get($theme, background-color) 50%, map-get($theme, background-color) 100%);
+        background: -webkit-linear-gradient(left, #ffffff 0%,#ffffff 50%,map-get($theme, background-color) 50%,map-get($theme, background-color) 100%);
+        background: linear-gradient(to right, #ffffff 0%,#ffffff 50%,map-get($theme, background-color) 50%,map-get($theme, background-color) 100%);
+    }
+    */
+.c-panel.c-panel.t-npeu--dark {
+  color: #fff;
+  background: #2d2136;
+}
+
 /* ---------------------------------------------------------------------------------------------- */
 /* --| WIREFRAME--------------------------------------------------------------------------------- */
 html.wireframe {
@@ -7671,24 +7839,27 @@ h1, h2, h3 {
 	font-family: 'Nunito', sans-serif;
 }
 */
+/*
 .sticky-footer-expand {
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  -webkit-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+
+        -ms-flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+            flex-wrap: wrap;
+
+              -ms-flex-pack: center;
+    -webkit-justify-content: center;
+            justify-content: center;
 }
 
 .sticky-footer-expand > * {
-  -ms-flex-positive: 1;
-  -webkit-flex-grow: 1;
-  flex-grow: 1;
+    -ms-flex-positive: 1;
+    -webkit-flex-grow: 1;
+            flex-grow: 1;
 }
-
+*/
 /*
 .sticky-footer-expand {
     background-color: #000;

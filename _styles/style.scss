@@ -49,11 +49,6 @@ $hover-effect-width: $fallback--base-rem-space-unit / 4;
 //@import "../bower_components/Fall-Back-Base/_fallback-base";
 
 
-// Inuit:
-//@import "bower_components/inuit-functions/tools.functions";
-//@import "bower_components/inuit-tools-widths/tools.widths";
-//@import "bower_components/inuit-mixins/tools.mixins";
-//@import "bower_components/inuit-responsive-tools/tools.responsive.scss";
 
 @mixin bottom-space-fix () {
 
@@ -160,7 +155,6 @@ $ff-min-widths: (
     75%,
     80%
 ) !default;
-
 
 @import "../bower_components/NPEU-layout-patterns/dev/scss/_ff-widths.scss";
 

@@ -14,11 +14,15 @@ $hero-breakpoint: 40em !default;
     }
 
     #{&}__message > * {
+        /*
+            1. For IE10 to wrap text.
+        */
         padding: $sz-m;
         font-size: 1.25em;
         line-height: 1.3;
         font-weight: bold;
         margin: 0;
+        max-width: 100%; /* [1] */
     }
 
     #{&}__message * {
