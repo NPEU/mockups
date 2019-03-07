@@ -26,23 +26,15 @@
     <!--
         Print (Edge doesn't apply to print otherwise)
         IE 10, 11
-        Edge
-        Chrome 29+, Opera 16+, Safari 6.1+, iOS 7+, Android ~4.3+
-        FF 29+
-        
-        IE9  only print, screen and (min-width: 1vm),
+        Edge, Chrome 39+, Opera 26+, Safari 9+, iOS 9+, Android ~5+, Android UCBrowser 11.8+
+        FF 47+
     -->
     <link rel="stylesheet" href="/css/style.min.{{ site.data.cache_bust_css.date }}.css" media="
         only print, screen and (min-width: 1vm),
         only all and (-ms-high-contrast: none), only all and (-ms-high-contrast: active),
         only all and (pointer: fine), only all and (pointer: coarse), only all and (pointer: none),
-        only all and (-webkit-min-device-pixel-ratio:0) and (min-color-index:0),
-        only all and (min--moz-device-pixel-ratio:0) and (min-resolution: 3e1dpcm)
+        only all and (min--moz-device-pixel-ratio:0) and (display-mode:browser), (min--moz-device-pixel-ratio:0) and (display-mode:fullscreen)
     ">
-    
-    {% comment %}<!--[if IE 9]>
-        <link rel="stylesheet" href="/css/ie9.min.{{ site.data.cache_bust_css.date }}.css">
-    <![endif]-->{% endcomment %}
 
     <script src="/js/script.min.js"></script>
 
