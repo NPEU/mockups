@@ -2927,9 +2927,14 @@ _:-o-prefocus, :root .icon {
             top: 0;
             right: 0;
         }*/
+  /*
+            1. This is the obvious place for this rule but there's a weird chrome bug that means
+               the postiion/dimensions are ignore if it's initiallty hidden.
+               Moving to the is-open declaration fixes this, as it only gets applie when it's
+               visisble.
+        */
   .js-over-panel .over-panel__overlay {
     display: block;
-    position: fixed;
     z-index: -1;
     left: 0;
     top: 0;
@@ -2953,6 +2958,7 @@ _:-o-prefocus, :root .icon {
   }
   /* Bring the overlay to the front and fade in when there's an over-panel target: */
   .js-over-panel_is-open .over-panel__overlay {
+    position: fixed;
     z-index: 0;
     opacity: 0.5;
     visibility: visible;
@@ -5669,6 +5675,14 @@ $event--border-color: $fallback--base-ui-color;
   flex-wrap: wrap;
 }
 
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .c-sign .c-sign__centered-content {
+    /*
+                1. IE 11 needs this to size things properly in the case of nested flex ff-widths.
+            */
+  }
+}
+
 .c-sign .c-sign__centered-content svg {
   display: block;
   margin-left: auto;
@@ -5815,11 +5829,11 @@ $pagination--background-color: #fff;
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  -ms-flex-preferred-size: 100%;
+  /* [1] */
   margin: 0;
   padding: 0;
   list-style-type: none;
-  position: relative;
-  /* [1] */
 }
 
 .l-col-to-row.l-col-to-row--gutter--small {
@@ -5884,6 +5898,11 @@ $pagination--background-color: #fff;
 }
 
 .l-col-to-row__item {
+  /*
+                    1. IE10 needs this to calculate widths properly.
+                */
+  display: inline-block;
+  /* [1] */
   -webkit-flex: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;

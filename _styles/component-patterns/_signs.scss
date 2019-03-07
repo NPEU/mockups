@@ -82,6 +82,7 @@ $theme-namespace: t- !default;
     }
 
     #{&}__centered-content {
+        
         padding: $sz-s;
         outline: 1px solid #fff;
         position: relative;
@@ -91,6 +92,7 @@ $theme-namespace: t- !default;
         display: -ms-flexbox;
         display: -webkit-flex;
         display: flex;
+        
 
              -ms-flex-align: center;
         -webkit-align-items: center;
@@ -107,7 +109,17 @@ $theme-namespace: t- !default;
         -webkit-flex-wrap: wrap;
             -ms-flex-wrap: wrap;
                 flex-wrap: wrap;
+    
+        @media screen and (-ms-high-contrast:active), (-ms-high-contrast:none) {
+            /*
+                1. IE 11 needs this to size things properly in the case of nested flex ff-widths.
+            */
+            //display: list-item; /* [1] */
+        }
+    
     }
+    
+
 
     #{&}__centered-content svg {
         display: block;

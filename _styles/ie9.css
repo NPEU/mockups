@@ -2,6 +2,10 @@
     Experimental. Not decided if I want to do this yet, and if so how.
     Idea is that if I have to support IE9 NOW, I won't in the future so it'll be easier to drop
     support by keeping this seperate.
+    
+    UPDATE - Actually, why bother? IE9 usage for trials sites is low - the 100's of hits are for 
+    elsewhere - and the CURRENT trials sites get unstyled content for IE9 anyway, so why put effort
+    into improving that?
 */
 /*
     Col to Row

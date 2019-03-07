@@ -33,16 +33,16 @@
         IE9  only print, screen and (min-width: 1vm),
     -->
     <link rel="stylesheet" href="/css/style.min.{{ site.data.cache_bust_css.date }}.css" media="
-        only print,
+        only print, screen and (min-width: 1vm),
         only all and (-ms-high-contrast: none), only all and (-ms-high-contrast: active),
         only all and (pointer: fine), only all and (pointer: coarse), only all and (pointer: none),
         only all and (-webkit-min-device-pixel-ratio:0) and (min-color-index:0),
         only all and (min--moz-device-pixel-ratio:0) and (min-resolution: 3e1dpcm)
     ">
     
-    <!--[if IE 9]>
+    {% comment %}<!--[if IE 9]>
         <link rel="stylesheet" href="/css/ie9.min.{{ site.data.cache_bust_css.date }}.css">
-    <![endif]-->
+    <![endif]-->{% endcomment %}
 
     <script src="/js/script.min.js"></script>
 

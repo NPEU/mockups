@@ -44,12 +44,13 @@ $col-to-row-spacing-unit--large: ($col-to-row-spacing-unit * 2) !default;
             -ms-flex-wrap: wrap;
                 flex-wrap: wrap;
 
+        -ms-flex-preferred-size: 100%; /* [1] */
 
         margin: 0;
         padding: 0;
         list-style-type: none;
         
-        position: relative; /* [1] */
+        //position: relative; /* [1] */
     }
 
 
@@ -126,6 +127,11 @@ $col-to-row-spacing-unit--large: ($col-to-row-spacing-unit * 2) !default;
         
 
             #{&}__item {
+                /*
+                    1. IE10 needs this to calculate widths properly.
+                */
+                display: inline-block; /* [1] */
+                
                      -webkit-flex: 1;
                 -ms-flex-positive: 1;
                         flex-grow: 1;
