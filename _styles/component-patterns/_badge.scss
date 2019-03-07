@@ -20,13 +20,11 @@ $badge-namespace: c- !default;
 
             display: block; /* [2] */
 
-            //width: 100%;
+            height: auto; 
 
-            //height: auto; /* [3] */
+            width: 100%;
+            max-height: 8rem;
 
-            //max-width: 100%;
-
-            //max-height: 80px; /* [3, 4] */
 
             border-style: none;
 
@@ -66,17 +64,15 @@ a[href].#{$badge-namespace}badge {
 }
 
 /* 
-    IE9-11 
+    IE10-11 
 
     1. IE11- seems to need this.
-    2. Magic number (tmp), needs to be set via class names.
 */
 
-@media screen and (min-width:0\0) and (min-resolution:+72dpi) {
+@media only all and (-ms-high-contrast: none), only all and (-ms-high-contrast: active) {
 
     .#{$badge-namespace}badge img {
-        height: auto; /* [1] */
-        max-height: 80px; /* [1, 2] */
+        height: 100%; /* [1] */
     }
     
 }

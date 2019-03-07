@@ -5105,6 +5105,9 @@ body {
   /* [1] */
   display: block;
   /* [2] */
+  height: auto;
+  width: 100%;
+  max-height: 8rem;
   border-style: none;
 }
 
@@ -5128,17 +5131,14 @@ a[href].c-badge:hover, a[href].c-badge:active, a[href].c-badge:focus {
 }
 
 /* 
-    IE9-11 
+    IE10-11 
 
     1. IE11- seems to need this.
-    2. Magic number (tmp), needs to be set via class names.
 */
-@media screen and (min-width: 0\0) and (min-resolution: 72dpi) {
+@media only all and (-ms-high-contrast: none), only all and (-ms-high-contrast: active) {
   .c-badge img {
-    height: auto;
+    height: 100%;
     /* [1] */
-    max-height: 80px;
-    /* [1, 2] */
   }
 }
 
@@ -8313,6 +8313,28 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e7692', end
     object-fit: cover;
     height: 100%;
     width: 100%;
+  }
+}
+
+/* 
+    IE10-11
+    
+    ! NOTE: test this in all non-object-fit-supporting browsers as it may be a fix for those too.
+*/
+@media only all and (-ms-high-contrast: none), only all and (-ms-high-contrast: active) {
+  .u-image-cover {
+    height: 100%;
+    min-height: 12.8rem;
+  }
+  .u-image-cover__inner {
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+  }
+  .u-image-cover__image {
+    position: absolute;
+    width: 100%;
+    transform: translateY(-25%);
   }
 }
 

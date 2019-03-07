@@ -534,6 +534,32 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e7692', end
 }
 
 
+/* 
+    IE10-11
+    
+    ! NOTE: test this in all non-object-fit-supporting browsers as it may be a fix for those too.
+*/
+
+@media only all and (-ms-high-contrast: none), only all and (-ms-high-contrast: active) {
+
+    .u-image-cover {
+        height: 100%;
+        min-height: 12.8rem; // Magic number alert!
+    }
+ 
+        .u-image-cover__inner {
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+        }
+        
+            .u-image-cover__image {
+                position: absolute;
+                width: 100%;
+                transform: translateY(-25%);
+            }
+}
+
 
 /*------------------*/
 
