@@ -254,9 +254,9 @@ title: NPEU Layout Patterns
 <hr>
 <hr>
 
-<h2 class="u-padding--s">Content Area</h2>
+<h2 class="u-padding--s  d-background  t-white">Content Area</h2>
 
-<div class="l-content-area  l-content-area--has-pull-outs">
+<div class="l-content-area  l-content-area--has-pull-outs  d-background  t-white">
 
     <div class="l-content-area__main">
     

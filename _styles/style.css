@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* --| SETTINGS |-------------------------------------------------------------------------------- */
 @import url("https://fonts.googleapis.com/css?family=Lato:300,700,900");
 /*-------------------------------------------------------------------------------------------------|
@@ -2550,11 +2551,11 @@ _:-webkit-full-screen, _::-webkit-full-page-media, _:future, :root select[size="
     border-radius: 50%;
   }
   input[type="radio"]:checked {
-    background-image: -moz-radial-gradient(center, ellipse cover, #333333 0%, #333333 35%, transparent 35%, transparent 100%);
+    background-image: -moz-radial-gradient(center, ellipse cover, #333333 0%, #333333 35%, rgba(0, 0, 0, 0) 35%, rgba(0, 0, 0, 0) 100%);
     /* FF3.6-15 */
-    background-image: -webkit-radial-gradient(center, ellipse cover, #333333 0%, #333333 35%, transparent 35%, transparent 100%);
+    background-image: -webkit-radial-gradient(center, ellipse cover, #333333 0%, #333333 35%, rgba(0, 0, 0, 0) 35%, rgba(0, 0, 0, 0) 100%);
     /* Chrome10-25,Safari5.1-6 */
-    background-image: radial-gradient(ellipse at center, #333333 0%, #333333 35%, transparent 35%, transparent 100%);
+    background-image: radial-gradient(ellipse at center, #333333 0%, #333333 35%, rgba(0, 0, 0, 0) 35%, rgba(0, 0, 0, 0) 100%);
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   }
   input[type="checkbox"]:checked::after {
@@ -2602,7 +2603,8 @@ _:-webkit-full-screen, _::-webkit-full-page-media, _:future, :root select[size="
   -webkit-appearance: radio;
 }
 
-/*------------------------------------------------------------------------------------------------*    Fall-Back Icons v1.0.0
+/*------------------------------------------------------------------------------------------------*\
+    Fall-Back Icons v1.0.0
     
     Designed for use with the basic [CSS Mustard Cut](https://github.com/Fall-Back/CSS-Mustard-Cut)
     IE 9+, FF 8+, Opera 12, [Chrome 29+, Android ~4.4+]
@@ -3332,7 +3334,7 @@ _:-o-prefocus, body:last-child .nav-bar .subnav__heading {
 
 .nav-bar .nav-bar__link[href]:focus {
   color: #fff;
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0);
 }
 
 .nav-bar .subnav__link[href]:hover,
@@ -3753,7 +3755,8 @@ $fallback--dropdown__button--background-color: $fallback--nav-bar__link--backgro
 }
 
 /* ---------------------------------------------------------------------------------------------- */
-/*------------------------------------------------------------------------------------------------*
+/*------------------------------------------------------------------------------------------------*\
+
     Designed for use with the basic [CSS Mustard Cut](https://github.com/Fall-Back/CSS-Mustard-Cut)
     IE 9+, FF 8+, Opera 12, [Chrome 29+, Android ~4.4+]
     Chrome 29+, Opera 16+, Safari 6.1+, iOS 7+, Android ~4.4+
@@ -3836,7 +3839,8 @@ body {
 }
 
 /*------------------------------------------------------------------------------------------------*/
-/*------------------------------------------------------------------------------------------------*
+/*------------------------------------------------------------------------------------------------*\
+
     Clarification for self:
     Since this pattern is intented for use on logos, and since logos are an integral part of
     branding, this pattern is not ONLY intended as a CSS fallback.
@@ -3916,7 +3920,7 @@ body {
   right: 0;
   bottom: 0;
   left: 0;
-  background: transparent;
+  background: rgba(0, 0, 0, 0);
   /* [1] */
 }
 
@@ -4210,8 +4214,10 @@ body {
   border-width: 0;
 }
 
-/*------------------------------------------------------------------------------------------------*\*------------------------------------------------------------------------------------------------*/
-/*------------------------------------------------------------------------------------------------*    Import Fall-Back vars:
+/*------------------------------------------------------------------------------------------------*\
+\*------------------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------------------*\
+    Import Fall-Back vars:
 
     Slightly hacky way of allowing the main UI colour of this pattern to be:
      - base-ui colour (if set)
@@ -5555,12 +5561,12 @@ $event--border-color: $fallback--base-ui-color;
 }
 
 .c-panel--module {
-  margin-bottom: 1.2rem;
+  margin-bottom: 0;
 }
 
 .c-panel--module h2 {
   font-size: 1.5em;
-  margin-bottom: 1.2rem;
+  margin-bottom: 0;
 }
 
 .c-panel.c-panel {
@@ -5725,8 +5731,47 @@ $event--border-color: $fallback--base-ui-color;
 }
 
 /* --| Navigation Patterns |--------------------------------------------------------------------- */
-/*@import "navigation-patterns/_breadcrumbs.scss";
+/*
 
+*/
+.n-breadcrumbs {
+  /*
+            .n-breadcrumbs__link {
+
+            }
+            */
+}
+
+.n-breadcrumbs.n-breadcrumbs {
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  font-size: 1em;
+}
+
+.n-breadcrumbs .n-breadcrumbs__title,
+.n-breadcrumbs .n-breadcrumbs__item {
+  margin: 0;
+  padding: 0;
+}
+
+.n-breadcrumbs .n-breadcrumbs__title {
+  margin-right: 1rem;
+}
+
+.n-breadcrumbs .n-breadcrumbs__item:not(:first-of-type)::before {
+  content: " /";
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+/*
 $pagination-spacing-unit: $fallback--base-rem-space-unit;
 $pagination--link-color--alt: #ccc;
 $pagination--background-color: #fff;
@@ -5777,7 +5822,7 @@ $pagination--background-color: #fff;
 
 .n-section-menu .n-section-menu__link {
   padding: 0.6rem;
-  margin: 0 -0.6rem;
+  margin: 0;
   border: 0;
   display: block;
 }
@@ -5785,6 +5830,12 @@ $pagination--background-color: #fff;
 .n-section-menu .n-section-menu__link:hover {
   border: 0;
   background: #ccc;
+}
+
+.n-section-menu__item > ul {
+  list-style: none;
+  padding: 0;
+  margin-left: 2.4rem;
 }
 
 .n-section-menu .n-section-menu__title {
@@ -5953,14 +6004,15 @@ $pagination--background-color: #fff;
   }
   .l-content-area.l-content-area--has-pull-outs .l-content-area__main > * {
     width: 66.666%;
-    float: right;
+    float: left;
     padding: 0 2rem;
   }
   .l-content-area.l-content-area--has-pull-outs .l-content-area__main > .l-content-area__pull-out {
     width: 33.333%;
-    float: left;
+    float: right;
     padding: 0 2rem 0 0;
     margin: 0;
+    clear: right;
   }
   .l-content-area.l-content-area--has-pull-outs .l-content-area__main__headline_image {
     padding: 0;
@@ -6411,12 +6463,70 @@ $pagination--background-color: #fff;
   margin: 2.4rem !important;
 }
 
-.u-space--none {
+.u-margin--top--none,
+.u-margin--above--none {
+  margin-top: 0 !important;
+}
+
+.u-margin--below--none,
+.u-margin--bottom--none {
+  margin-bottom: 0 !important;
+}
+
+.u-margin--left--none {
+  margin-left: 0 !important;
+}
+
+.u-margin--right--none {
+  margin-right: 0 !important;
+}
+
+.u-margin--none {
   margin: 0 !important;
 }
 
-.u-space--none {
-  margin: 0 !important;
+.u-space--left--l {
+  margin-left: 4.8rem !important;
+}
+
+.u-space--right--l {
+  margin-right: 4.8rem !important;
+}
+
+.u-space--top--l,
+.u-space--above--l {
+  margin-top: 4.8rem !important;
+}
+
+.u-space--bottom--l,
+.u-space--below--l {
+  margin-bottom: 4.8rem !important;
+}
+
+.u-space--l {
+  margin: 4.8rem !important;
+}
+
+.u-space--left--xl {
+  margin-left: 9.6rem !important;
+}
+
+.u-space--right--xl {
+  margin-right: 9.6rem !important;
+}
+
+.u-space--top--xl,
+.u-space--above--xl {
+  margin-top: 9.6rem !important;
+}
+
+.u-space--bottom--xl,
+.u-space--below--xl {
+  margin-bottom: 9.6rem !important;
+}
+
+.u-space--xl {
+  margin: 9.6rem !important;
 }
 
 .u-padding--left--xs,
@@ -6578,6 +6688,28 @@ $pagination--background-color: #fff;
 
 .u-padding {
   padding: 2.4rem !important;
+}
+
+.u-padding--top--none,
+.u-padding--above--none {
+  padding-top: 0 !important;
+}
+
+.u-padding--below--none,
+.u-padding--bottom--none {
+  padding-bottom: 0 !important;
+}
+
+.u-padding--left--none {
+  padding-left: 0 !important;
+}
+
+.u-padding--right--none {
+  padding-right: 0 !important;
+}
+
+.u-padding--none {
+  padding: 0 !important;
 }
 
 /*

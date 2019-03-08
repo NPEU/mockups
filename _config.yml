@@ -29,10 +29,11 @@ defaults:
       landing_display_video: true
       layout_name: "default"
       section_menu: false
+      toc: false
+      has_pull_outs: false
 
 # Build settings
 markdown: kramdown
-
 
 kramdown:
   auto_ids:       true

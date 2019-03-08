@@ -11,6 +11,15 @@ $content-area-spacing-unit: 2rem !default;
 $content-area-spacing-unit--small: ($content-area-spacing-unit / 2) !default;
 $content-area-spacing-unit--large: ($content-area-spacing-unit * 2) !default;
 
+$content-area-pull-out-side: left !default;
+$content-area-main-side: false;
+
+@if $content-area-pull-out-side == left {
+    $content-area-main-side: right;
+} @else {
+    $content-area-main-side: left;
+}
+
 /*
 @mixin content-area-size ($width, $breakpoint) {
 
@@ -56,16 +65,17 @@ $content-area-spacing-unit--large: ($content-area-spacing-unit * 2) !default;
         /* Position all children: */
         &#{&}--has-pull-outs #{&}__main > * {
             width: 66.666%;
-            float: right;
+            float: $content-area-main-side;
             padding: 0 $content-area-spacing-unit;
         }
 
         /* Pull out: */
         &#{&}--has-pull-outs #{&}__main > #{&}__pull-out {
             width: 33.333%;
-            float: left;
+            float: $content-area-pull-out-side;
             padding: 0 $content-area-spacing-unit 0 0;
             margin: 0;
+            clear: right;
         }
         
         &#{&}--has-pull-outs #{&}__main__headline_image {

@@ -2,11 +2,12 @@
 layout: project-page
 title: Contact Details
 project: neoclear
+toc: true
 ---
 
-<h2>During office hours</h2>
+## During office hours
 
-<p>If you would like more information about the NeoCLEAR trial please contact the NeoCLEAR Coordinating Centre:</p>
+If you would like more information about the NeoCLEAR trial please contact the NeoCLEAR Coordinating Centre:
 
 <div>
     <img src="/img/avatars/rachel-williams-889-avatar.jpg?s=200" alt="" class="c-contact-avatar  u-bands  t-neoclear">
@@ -31,17 +32,17 @@ project: neoclear
 	<dd class="Xicon  Xicon-phone" itemprop="telephone">01865 289278</dd>
 </dl>
 
-<h2 class="h2" data-varient="">Out-of-hours</h2>
+## Out-of-hours
 
-<p>In the case of urgent out-of-hours queries please phone&nbsp;<strong>0800 138 5451</strong>. When you call this Freephone number you will go through to a call centre which provides 24 hour emergency call service. They will ask for your&nbsp;<strong>name</strong>, the&nbsp;<strong>hospital</strong>&nbsp;you are calling from, your full&nbsp;<strong>phone number</strong>, and the&nbsp;<strong>name of the trial</strong>&nbsp;(NeoCLEAR), before they are able to address your urgent query.</p>
+In the case of urgent out-of-hours queries please phone&nbsp;<strong>0800 138 5451</strong>. When you call this Freephone number you will go through to a call centre which provides 24 hour emergency call service. They will ask for your&nbsp;<strong>name</strong>, the&nbsp;<strong>hospital</strong>&nbsp;you are calling from, your full&nbsp;<strong>phone number</strong>, and the&nbsp;<strong>name of the trial</strong>&nbsp;(NeoCLEAR), before they are able to address your urgent query.
 
-<p>N.B. The out-of-hours service will not be able to perform remote randomisation in the case of internet failure at centres.</p>
+N.B. The out-of-hours service will not be able to perform remote randomisation in the case of internet failure at centres.
 
-<p>If your query is not urgent please email&nbsp;<a href="mailto:neoclear@npeu.ox.ac.uk">neoclear@npeu.ox.ac.uk</a>&nbsp;or leave a message on the study answerphone&nbsp;01865 289278.</p>
+If your query is not urgent please email&nbsp;<a href="mailto:neoclear@npeu.ox.ac.uk">neoclear@npeu.ox.ac.uk</a>&nbsp;or leave a message on the study answerphone&nbsp;01865 289278.
 
-<h2 class="h2" data-varient="">Clinical queries</h2>
+## Clinical queries
 
-<p>If you require clinical information about the trial, please contact Dr Alex Scrivens, (Clinical Research Fellow), or Dr Andrew Marshall (Clinical Lead).&nbsp;The Chief Investigator for this trial is Associate Professor Charles Roehr.</p>
+If you require clinical information about the trial, please contact Dr Alex Scrivens, (Clinical Research Fellow), or Dr Andrew Marshall (Clinical Lead).&nbsp;The Chief Investigator for this trial is Associate Professor Charles Roehr.
 
 <dl class="c-contact-list" itemscope="itemscope" itemtype="http://schema.org/Person">
 	<dt>Name</dt>

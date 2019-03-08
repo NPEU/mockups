@@ -52,13 +52,74 @@ $space-namespace: u- !default;
     margin: $sz-m !important;
 }
 
-.#{$space-namespace}space--none {
+.#{$space-namespace}margin--top--none,
+.#{$space-namespace}margin--above--none {
+    margin-top: 0 !important;
+}
+
+.#{$space-namespace}margin--below--none,
+.#{$space-namespace}margin--bottom--none {
+    margin-bottom: 0 !important;
+}    
+
+.#{$space-namespace}margin--left--none {
+    margin-left: 0 !important;
+}
+
+.#{$space-namespace}margin--right--none {
+    margin-right: 0 !important;
+}
+
+.#{$space-namespace}margin--none {
     margin: 0 !important;
 }
 
 
-.#{$space-namespace}space--none {
-    margin: 0 !important;
+
+.#{$space-namespace}space--left--l {
+    margin-left: $sz-l !important;
+}
+
+.#{$space-namespace}space--right--l {
+    margin-right: $sz-l !important;
+}
+
+.#{$space-namespace}space--top--l,
+.#{$space-namespace}space--above--l {
+    margin-top: $sz-l !important;
+}
+
+.#{$space-namespace}space--bottom--l,
+.#{$space-namespace}space--below--l{
+    margin-bottom: $sz-l !important;
+}
+
+.#{$space-namespace}space--l {
+    margin: $sz-l !important;
+}
+
+
+
+.#{$space-namespace}space--left--xl {
+    margin-left: $sz-xl !important;
+}
+
+.#{$space-namespace}space--right--xl {
+    margin-right: $sz-xl !important;
+}
+
+.#{$space-namespace}space--top--xl,
+.#{$space-namespace}space--above--xl {
+    margin-top: $sz-xl !important;
+}
+
+.#{$space-namespace}space--bottom--xl,
+.#{$space-namespace}space--below--xl{
+    margin-bottom: $sz-xl !important;
+}
+
+.#{$space-namespace}space--xl {
+    margin: $sz-xl !important;
 }
 
 
@@ -188,7 +249,7 @@ $space-namespace: u- !default;
     padding: $sz-m !important;
 }
 
-// ...then allow full sozed padding when there's more room:
+// ...then allow full sized padding when there's more room:
 @media only screen and (min-width: $not-too-small +10em) {
     .#{$space-namespace}padding--left--l,
     .#{$space-namespace}padding--sides--l {
@@ -245,3 +306,26 @@ $space-namespace: u- !default;
     .#{$space-namespace}padding {
         padding: $sz-m !important;
     }
+
+    
+.#{$space-namespace}padding--top--none,
+.#{$space-namespace}padding--above--none {
+    padding-top: 0 !important;
+}
+
+.#{$space-namespace}padding--below--none,
+.#{$space-namespace}padding--bottom--none {
+    padding-bottom: 0 !important;
+}    
+
+.#{$space-namespace}padding--left--none {
+    padding-left: 0 !important;
+}
+
+.#{$space-namespace}padding--right--none {
+    padding-right: 0 !important;
+}
+
+.#{$space-namespace}padding--none {
+    padding: 0 !important;
+}

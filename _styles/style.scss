@@ -15,7 +15,6 @@ $fallback--breakpoint--enhanced: 42.5625em;
 
 
 
-
 @import '../bower_components/Fall-Back-Start-CSS/dist/scss/_start__settings.scss';
 
 $max-main-line-length: 0;
@@ -230,9 +229,10 @@ $panel--padding: $fallback--base-rem-space-unit;
 
 
 /* --| Navigation Patterns |--------------------------------------------------------------------- */
+$breadcrumbs-font-size: 1em;
+@import "navigation-patterns/_breadcrumbs.scss";
 
-/*@import "navigation-patterns/_breadcrumbs.scss";
-
+/*
 $pagination-spacing-unit: $fallback--base-rem-space-unit;
 $pagination--link-color--alt: #ccc;
 $pagination--background-color: #fff;
@@ -243,6 +243,7 @@ $section-menu--link-color--alt: #ccc;
 $section-menu--background-color: #fff;
 $section-menu--padding: 0;
 $section-menu--border-width: 0;
+$section-menu--link-margin: 0;
 @import "navigation-patterns/_section-menu.scss";
 
 /* ---------------------------------------------------------------------------------------------- */
@@ -254,6 +255,7 @@ $col-to-row-spacing-unit: $fallback--base-rem-space-unit;
 @import "layout-patterns/_col-to-row.scss";
 
 //$content-area-max-width: 42em;
+$content-area-pull-out-side: right;
 @import "layout-patterns/_content-area.scss";
 
 @import "layout-patterns/_distribute.scss";

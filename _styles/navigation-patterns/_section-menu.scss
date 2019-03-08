@@ -145,6 +145,12 @@ $section-menu--link-border-bottom--alt: false !default;
                         }
                     }
                 }
+                
+                .#{$section-menu-namespace}section-menu__item > ul {
+                    list-style: none;
+                    padding: 0;
+                    margin-left: $section-menu-spacing-unit;
+                }
 
 
                 .#{$section-menu-namespace}section-menu .#{$section-menu-namespace}section-menu__title {
