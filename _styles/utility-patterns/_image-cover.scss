@@ -30,6 +30,22 @@ $image-cover-namespace: u- !default;
         height: 100%;
         width: 100%;
         min-height: 10em;
+        
+        &#{&}--min-20 {
+            min-height: 20vw;
+        }
+        
+        &#{&}--min-30 {
+            min-height: 30vw;
+        }
+        
+        &#{&}--min-40 {
+            min-height: 40vw;
+        }
+        
+        &#{&}--min-50 {
+            min-height: 50vw;
+        }
     }
         .#{$image-cover-namespace}image-cover__inner {
             position: absolute;

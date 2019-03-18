@@ -267,7 +267,7 @@ $theme-only: false !default;
                 -ms-flex-wrap: wrap;
                     flex-wrap: wrap;
 
-            -webkit-align-items: flex-end;
+            /*-webkit-align-items: flex-end;
                  -ms-flex-align: end;
                     align-items: flex-end;
 
@@ -277,7 +277,11 @@ $theme-only: false !default;
 
             -webkit-justify-content: flex-end;
                       -ms-flex-pack: end;
-                    justify-content: flex-end;
+                    justify-content: flex-end;*/
+                    
+            -webkit-align-content: space-between;
+               -ms-flex-line-pack: justify;
+                    align-content: space-between;
 
 
             position: relative;

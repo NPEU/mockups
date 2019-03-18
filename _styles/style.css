@@ -2555,11 +2555,11 @@ _:-webkit-full-screen, _::-webkit-full-page-media, _:future, :root select[size="
     border-radius: 50%;
   }
   input[type="radio"]:checked {
-    background-image: -moz-radial-gradient(center, ellipse cover, #333333 0%, #333333 35%, transparent 35%, transparent 100%);
+    background-image: -moz-radial-gradient(center, ellipse cover, #333333 0%, #333333 35%, rgba(0, 0, 0, 0) 35%, rgba(0, 0, 0, 0) 100%);
     /* FF3.6-15 */
-    background-image: -webkit-radial-gradient(center, ellipse cover, #333333 0%, #333333 35%, transparent 35%, transparent 100%);
+    background-image: -webkit-radial-gradient(center, ellipse cover, #333333 0%, #333333 35%, rgba(0, 0, 0, 0) 35%, rgba(0, 0, 0, 0) 100%);
     /* Chrome10-25,Safari5.1-6 */
-    background-image: radial-gradient(ellipse at center, #333333 0%, #333333 35%, transparent 35%, transparent 100%);
+    background-image: radial-gradient(ellipse at center, #333333 0%, #333333 35%, rgba(0, 0, 0, 0) 35%, rgba(0, 0, 0, 0) 100%);
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   }
   input[type="checkbox"]:checked::after {
@@ -2607,7 +2607,8 @@ _:-webkit-full-screen, _::-webkit-full-page-media, _:future, :root select[size="
   -webkit-appearance: radio;
 }
 
-/*------------------------------------------------------------------------------------------------*    Fall-Back Icons v1.0.0
+/*------------------------------------------------------------------------------------------------*\
+    Fall-Back Icons v1.0.0
     
     Designed for use with the basic [CSS Mustard Cut](https://github.com/Fall-Back/CSS-Mustard-Cut)
     IE 9+, FF 8+, Opera 12, [Chrome 29+, Android ~4.4+]
@@ -2935,14 +2936,9 @@ _:-o-prefocus, :root .icon {
             top: 0;
             right: 0;
         }*/
-  /*
-            1. This is the obvious place for this rule but there's a weird chrome bug that means
-               the postiion/dimensions are ignore if it's initiallty hidden.
-               Moving to the is-open declaration fixes this, as it only gets applie when it's
-               visisble.
-        */
   .js-over-panel .over-panel__overlay {
     display: block;
+    position: fixed;
     z-index: -1;
     left: 0;
     top: 0;
@@ -2966,7 +2962,6 @@ _:-o-prefocus, :root .icon {
   }
   /* Bring the overlay to the front and fade in when there's an over-panel target: */
   .js-over-panel_is-open .over-panel__overlay {
-    position: fixed;
     z-index: 0;
     opacity: 0.5;
     visibility: visible;
@@ -3340,7 +3335,7 @@ _:-o-prefocus, body:last-child .nav-bar .subnav__heading {
 
 .nav-bar .nav-bar__link[href]:focus {
   color: #fff;
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0);
 }
 
 .nav-bar .subnav__link[href]:hover,
@@ -3761,7 +3756,8 @@ $fallback--dropdown__button--background-color: $fallback--nav-bar__link--backgro
 }
 
 /* ---------------------------------------------------------------------------------------------- */
-/*------------------------------------------------------------------------------------------------*
+/*------------------------------------------------------------------------------------------------*\
+
     Designed for use with the basic [CSS Mustard Cut](https://github.com/Fall-Back/CSS-Mustard-Cut)
     IE 9+, FF 8+, Opera 12, [Chrome 29+, Android ~4.4+]
     Chrome 29+, Opera 16+, Safari 6.1+, iOS 7+, Android ~4.4+
@@ -3858,8 +3854,10 @@ $fallback-svg--link-bg-color-alt: #fff;
 @include svg--fixed-height(60px, 'svg--fixed-height--parent-logo', 0, 0);
 @include svg--fixed-height(($fallback--base-rem-space-unit * 4), 'svg--fixed-height--funder-logo', ($fallback--base-rem-space-unit / 2), 0);
 */
-/*------------------------------------------------------------------------------------------------*\*------------------------------------------------------------------------------------------------*/
-/*------------------------------------------------------------------------------------------------*    Import Fall-Back vars:
+/*------------------------------------------------------------------------------------------------*\
+\*------------------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------------------*\
+    Import Fall-Back vars:
 
     Slightly hacky way of allowing the main UI colour of this pattern to be:
      - base-ui colour (if set)
@@ -5167,15 +5165,20 @@ $card-button--border-color: darken($card--base-color, 20%) !default;
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  -webkit-align-items: flex-end;
-  -ms-flex-align: end;
-  align-items: flex-end;
+  /*-webkit-align-items: flex-end;
+                 -ms-flex-align: end;
+                    align-items: flex-end;
+
+            -webkit-align-content: space-between;
+               -ms-flex-line-pack: justify;
+                    align-content: space-between;
+
+            -webkit-justify-content: flex-end;
+                      -ms-flex-pack: end;
+                    justify-content: flex-end;*/
   -webkit-align-content: space-between;
   -ms-flex-line-pack: justify;
   align-content: space-between;
-  -webkit-justify-content: flex-end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
   position: relative;
 }
 
@@ -6270,6 +6273,18 @@ $pagination--background-color: #fff;
     height: 100%;
     width: 100%;
     min-height: 10em;
+  }
+  .u-image-cover.u-image-cover--min-20 {
+    min-height: 20vw;
+  }
+  .u-image-cover.u-image-cover--min-30 {
+    min-height: 30vw;
+  }
+  .u-image-cover.u-image-cover--min-40 {
+    min-height: 40vw;
+  }
+  .u-image-cover.u-image-cover--min-50 {
+    min-height: 50vw;
   }
   .u-image-cover__inner {
     position: absolute;
@@ -7659,4 +7674,103 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e7692', end
 }
 
 /*-----------------*/
+.flex-grid {
+  /* MODIFIERS */
+  /* Widths */
+  /* @TODO make breakpoint a variable */
+  /* Gutters */
+  /* Alignment */
+}
+
+.flex-grid.flex-grid {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.flex-grid.flex-grid--centered {
+  -webkit-justify-content: center;
+  cc-ms-flex-pack: center;
+  justify-content: center;
+}
+
+.flex-grid.flex-grid--spaced {
+  --webkit-justify-content: space-around;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+}
+
+.flex-grid .flex-grid__item {
+  margin: 0;
+  -webkit-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+}
+
+.flex-grid.flex-grid--basis-20 .flex-grid__item {
+  -webkit-flex-basis: 20em;
+  -ms-flex-preferred-size: 20em;
+  flex-basis: 20em;
+  max-width: 20em;
+}
+
+.flex-grid.flex-grid--basis-15 .flex-grid__item {
+  -webkit-flex-basis: 15em;
+  -ms-flex-preferred-size: 15em;
+  flex-basis: 15em;
+  max-width: 15em;
+}
+
+.flex-grid.flex-grid--basis-10 .flex-grid__item {
+  -webkit-flex-basis: 10em;
+  -ms-flex-preferred-size: 10em;
+  flex-basis: 10em;
+  max-width: 10em;
+}
+
+.flex-grid.flex-grid--gutter--small {
+  margin-left: -0.6rem;
+  margin-right: -0.6rem;
+}
+
+.flex-grid.flex-grid--gutter--small .flex-grid__item {
+  padding: 0 0.6rem 1.2rem 0.6rem;
+}
+
+.flex-grid.flex-grid--gutter--medium {
+  margin-left: -1.2rem;
+  margin-right: -1.2rem;
+}
+
+.flex-grid.flex-grid--gutter--medium .flex-grid__item {
+  padding: 0 1.2rem 2.4rem 1.2rem;
+}
+
+.flex-grid.flex-grid--gutter--large {
+  margin-left: -2.4rem;
+  margin-right: -2.4rem;
+}
+
+.flex-grid.flex-grid--gutter--large .flex-grid__item {
+  padding: 0 2.4rem 4.8rem 2.4rem;
+}
+
+.flex-grid.flex-grid--align-center {
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
 /* ---------------------------------------------------------------------------------------------- */
