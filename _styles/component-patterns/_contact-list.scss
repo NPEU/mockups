@@ -3,19 +3,25 @@
 $contact-list-namespace: c- !default;
 $theme-namespace: t- !default;
 
+$theme-only: false !default;
 
+// Note - no theme yet!
 
-.#{$contact-list-namespace}contact-list {
+// We don't need this if we're only themeing the pattern:
+@if $theme-only == false {
 
-    &#{&} {
+    .#{$contact-list-namespace}contact-list {
 
-        dt {
-            display: none;
+        &#{&} {
+
+            dt {
+                display: none;
+            }
         }
     }
-}
 
-.#{$contact-list-namespace}contact-avatar {
-    float: left;
-    margin: 0.5em;
+    .#{$contact-list-namespace}contact-avatar {
+        float: left;
+        margin: 0.5em;
+    }
 }

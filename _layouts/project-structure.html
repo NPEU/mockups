@@ -148,20 +148,27 @@ layout: structure
         </div>
         {% endif %}
         
-        <div class="sticky-footer-expand  t-white  d-background">
+        <div class="sticky-footer-expand  Xt-white  Xd-background">
             <main role="main" class="main-container  Xd-background--very-dark  Xt-{{ page.project }}  Xu-fill-area">
                 {{ content }}
             </main>
         </div>
 
         <footer class="sticky-footer  t-{{ page.project }}  d-bands--top" role="contentinfo">
-            <div class="d-background  t-white">
+            <div class="Xd-background  Xt-white">
                 <div class="l-distribute">
 
                     <div class="u-padding--s">
-                        <a href="https://www.npeu.ox.ac.uk" class="c-badge  npeu  l-v-center">
+                        
+                        {% if page.npeu_unit == "ctu" %}
+                        <a href="https://www.npeu.ox.ac.uk/ctu" class="c-badge  npeu  l-v-center">
                             <img src="/img/unit-logos/npeu-ctu-logo.svg" onerror="this.src='/img/unit-logos/npeu-ctu-logo.png'; this.onerror=null;" alt="Logo: NPEU CTU" height="80">
                         </a>
+                        {% else %}
+                        <a href="https://www.npeu.ox.ac.uk/" class="c-badge  npeu  l-v-center">
+                            <img src="/img/unit-logos/npeu-logo.svg" onerror="this.src='/img/unit-logos/npeu-logo.png'; this.onerror=null;" alt="Logo: NPEU" height="80">
+                        </a>
+                        {% endif %}
                     </div>
 
                     <div class="u-padding--s">

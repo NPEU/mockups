@@ -12,7 +12,7 @@ $event--base-color: #eee !default;
 
 $event-spacing-unit: 2rem !default;
 
-// Card outer:
+// Event outer:
 
 $event--text-color: #333 !default;
 $event--background-color: $event--base-color !default;
@@ -29,7 +29,7 @@ $event-breakpoint: 30em !default;
 
 
 
-// Card body:
+// Event body:
 
 $event-body--text-color: $event--text-color !default;
 $event-body--background-color: $event--background-color !default;
@@ -55,11 +55,11 @@ $event-body--margin-bottom: 0 !default;
 $event-body--pull-over: 0 !default;
 
 
-// Card title:
+// Event title:
 $event-title--font-size: 3rem !default;
 
 
-// Card text links:
+// Event text links:
 /*
 $event--link-color: false !default;
 $event--link-color--alt: false !default;
@@ -79,7 +79,7 @@ $event--link-border-bottom--alt: false !default;
     $event--link-border-bottom--alt: 2px solid lighten($event--link-color--alt, 30%) !default;
 }
 */
-// Card buttons:
+// Event buttons:
 /*
 $event-button--text-color: #fff !default;
 $event-button--background-color: $event--base-color !default;
@@ -113,111 +113,118 @@ $event-button--border-color: darken($event--base-color, 20%) !default;
     //    }
     //}
 
+$theme-only: false !default;
 
-.#{$event-namespace}event {
-    &#{&} {
+// Note - no theme yet!
 
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex;
+// We don't need this if we're only themeing the pattern:
+@if $theme-only == false {
 
-        -webkit-flex-direction: row;
-            -ms-flex-direction: row;
-                flex-direction: row;
+    .#{$event-namespace}event {
+        &#{&} {
 
-            -webkit-flex-wrap: wrap;
-                -ms-flex-wrap: wrap;
-                    flex-wrap: wrap;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
 
-        -webkit-justify-content: space-between;
-                  -ms-flex-pack: justify;
-                justify-content: space-between;
+            -webkit-flex-direction: row;
+                -ms-flex-direction: row;
+                    flex-direction: row;
 
-        -webkit-align-items: flex-end;
-             -ms-flex-align: end;
-                align-items: flex-end;
+                -webkit-flex-wrap: wrap;
+                    -ms-flex-wrap: wrap;
+                        flex-wrap: wrap;
 
-        height: 100%;
-        //width: 100%;
+            -webkit-justify-content: space-between;
+                      -ms-flex-pack: justify;
+                    justify-content: space-between;
 
-        color: $event--text-color;
-        background: $event--background-color;
-        padding: $event--padding;
+            -webkit-align-items: flex-end;
+                 -ms-flex-align: end;
+                    align-items: flex-end;
+
+            height: 100%;
+            //width: 100%;
+
+            color: $event--text-color;
+            background: $event--background-color;
+            padding: $event--padding;
 
 
-        @if $event--border-or-outline == 'outline' {
-            outline: $event--border-width $event--border-style $event--border-color;
+            @if $event--border-or-outline == 'outline' {
+                outline: $event--border-width $event--border-style $event--border-color;
+            }
+
+            @if $event--border-or-outline == 'border' {
+                border-color:  $event--border-color;
+                border-style:  $event--border-style;
+                border-width:  $event--border-width;
+                border-radius: $event--border-radius;
+            }
+
+            // If the 'pull' is > module body content height, it'll protrude below the container,
+            // so hide it:
+
+            overflow: hidden;
         }
 
-        @if $event--border-or-outline == 'border' {
-            border-color:  $event--border-color;
-            border-style:  $event--border-style;
-            border-width:  $event--border-width;
-            border-radius: $event--border-radius;
-        }
+            &#{&}--cancelled {
+                background: $event--background-color--alt;
+            }
 
-        // If the 'pull' is > module body content height, it'll protrude below the container,
-        // so hide it:
 
-        overflow: hidden;
+            > * {
+                -webkit-flex: 0 1 auto;
+                    -ms-flex: 0 1 auto;
+                        flex: 0 1 auto;
+
+                width: 100%;
+            }
+
+
+            #{&}__title {
+                border-bottom: 1px solid #999;
+                padding-bottom: $event-spacing-unit / 2;
+                margin-bottom: $event-spacing-unit / 2;
+            }
+
+
+            #{&}__speaker {
+                font-weight: bold;
+                font-size: 2.4rem;
+
+                margin: 0;
+            }
+
+
+            #{&}__speaker-role {
+                font-weight: normal;
+                font-size: 1.4rem;
+
+                border-bottom: 1px solid #999;
+                padding-bottom: $event-spacing-unit / 2;
+                margin-bottom: 0;
+            }
+
+
+            #{&}__datetime {
+                width: auto;
+
+                font-weight: bold;
+                font-size: 2.4rem;
+
+                margin: $event-spacing-unit 0 0 0;
+            }
+
+            #{&}__action {
+                width: auto;
+                margin: $event-spacing-unit 0 0 auto;
+                padding-left: $event-spacing-unit;
+            }
+
+
+            #{&}__title {
+                font-size: $event-title--font-size;
+            }
     }
-
-        &#{&}--cancelled {
-            background: $event--background-color--alt;
-        }
-
-
-        > * {
-            -webkit-flex: 0 1 auto;
-                -ms-flex: 0 1 auto;
-                    flex: 0 1 auto;
-
-            width: 100%;
-        }
-
-
-        #{&}__title {
-            border-bottom: 1px solid #999;
-            padding-bottom: $event-spacing-unit / 2;
-            margin-bottom: $event-spacing-unit / 2;
-        }
-
-
-        #{&}__speaker {
-            font-weight: bold;
-            font-size: 2.4rem;
-
-            margin: 0;
-        }
-
-
-        #{&}__speaker-role {
-            font-weight: normal;
-            font-size: 1.4rem;
-
-            border-bottom: 1px solid #999;
-            padding-bottom: $event-spacing-unit / 2;
-            margin-bottom: 0;
-        }
-
-
-        #{&}__datetime {
-            width: auto;
-
-            font-weight: bold;
-            font-size: 2.4rem;
-
-            margin: $event-spacing-unit 0 0 0;
-        }
-
-        #{&}__action {
-            width: auto;
-            margin: $event-spacing-unit 0 0 auto;
-            padding-left: $event-spacing-unit;
-        }
-
-
-        #{&}__title {
-            font-size: $event-title--font-size;
-        }
 }

@@ -27,32 +27,40 @@ $tool-form--link-has-border-bottom: false !default;
 $tool-form--link-border-bottom: false !default;
 $tool-form--link-border-bottom--hover: false !default;*/
 
-.#{$tool-form-namespace}tool-form {
+$theme-only: false !default;
 
-    &#{&} {
-        background-color: $tool-form--background-color;
-        color: $tool-form--text-color;
-        //padding-left: $tool-form--spacing-unit / 2;
+// Note - no theme yet!
 
-        @if $tool-form--border-radius != false {
-            border-radius: $tool-form--border-radius;
+// We don't need this if we're only themeing the pattern:
+@if $theme-only == false {
+
+    .#{$tool-form-namespace}tool-form {
+
+        &#{&} {
+            background-color: $tool-form--background-color;
+            color: $tool-form--text-color;
+            //padding-left: $tool-form--spacing-unit / 2;
+
+            @if $tool-form--border-radius != false {
+                border-radius: $tool-form--border-radius;
+            }
+
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-flex-wrap: wrap;
+                -ms-flex-wrap: wrap;
+                    flex-wrap: wrap;
         }
 
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-flex-wrap: wrap;
-            -ms-flex-wrap: wrap;
-                flex-wrap: wrap;
-    }
-
-    #{&}__fieldset {
-        margin-right: $tool-form--spacing-unit / 2;
-    }
-
-        #{&}__group {
-            display: inline-block;
-            white-space: nowrap;
+        #{&}__fieldset {
             margin-right: $tool-form--spacing-unit / 2;
         }
+
+            #{&}__group {
+                display: inline-block;
+                white-space: nowrap;
+                margin-right: $tool-form--spacing-unit / 2;
+            }
+    }
 }

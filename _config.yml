@@ -21,6 +21,7 @@ defaults:
       display_support: true
       is_home: false
       headline_image: true
+      landing_brochure: false
       landing_display_cta: true
       landing_display_info: true
       landing_display_signpost_bottom: true
@@ -28,6 +29,7 @@ defaults:
       landing_display_updates: true
       landing_display_video: true
       layout_name: "default"
+      npeu_unit: false
       section_menu: false
       toc: false
       has_pull_outs: false

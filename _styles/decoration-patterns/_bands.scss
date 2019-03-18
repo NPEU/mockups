@@ -4,41 +4,7 @@ $theme-namespace: t- !default;
 
 $bands--band-color : $fallback--base-ui-color !default;
 
-
-.#{$bands-namespace}bands--left,
-.#{$bands-namespace}bands--sides {
-    border-left-style: solid;
-    border-left-width: 3px;
-}
-
-.#{$bands-namespace}bands--right,
-.#{$bands-namespace}bands--sides {
-    border-right-style: solid;
-    border-right-width: 3px;
-}
-
-.#{$bands-namespace}bands--top,
-.#{$bands-namespace}bands--above {
-    border-top-style: solid;
-    border-top-width: 3px;
-}
-
-.#{$bands-namespace}bands--bottom,
-.#{$bands-namespace}bands--below {
-    border-bottom-style: solid;
-    border-bottom-width: 3px;
-}
-
-.#{$bands-namespace}bands {
-    border-style: solid;
-    border-width: 3px;
-}
-
-@each $name, $size in $sizes {
-    .#{$bands-namespace}bands--#{$name} {
-        border-width: $size;
-    }
-}
+$theme-only: false !default;
 
 @mixin bands-theme ($name: "", $theme: ()) {
 	// Set up theme name:
@@ -60,8 +26,50 @@ $bands--band-color : $fallback--base-ui-color !default;
 	}
 }
 
-@include bands-theme(
-    "",
-    (
-        band-color : $bands--band-color
-    ));
+
+// We don't need this if we're only themeing the pattern:
+@if $theme-only == false {
+
+    .#{$bands-namespace}bands--left,
+    .#{$bands-namespace}bands--sides {
+        border-left-style: solid;
+        border-left-width: 3px;
+    }
+
+    .#{$bands-namespace}bands--right,
+    .#{$bands-namespace}bands--sides {
+        border-right-style: solid;
+        border-right-width: 3px;
+    }
+
+    .#{$bands-namespace}bands--top,
+    .#{$bands-namespace}bands--above {
+        border-top-style: solid;
+        border-top-width: 3px;
+    }
+
+    .#{$bands-namespace}bands--bottom,
+    .#{$bands-namespace}bands--below {
+        border-bottom-style: solid;
+        border-bottom-width: 3px;
+    }
+
+    .#{$bands-namespace}bands {
+        border-style: solid;
+        border-width: 3px;
+    }
+
+    @each $name, $size in $sizes {
+        .#{$bands-namespace}bands--#{$name} {
+            border-width: $size;
+        }
+    }
+
+
+
+    @include bands-theme(
+        "",
+        (
+            band-color : $bands--band-color
+        ));
+}

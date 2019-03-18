@@ -4,136 +4,144 @@
 $sign-namespace: c- !default;
 $theme-namespace: t- !default;
 
-@media only screen and (min-width: $not-too-small) {
-    @supports (display: grid) {
+$theme-only: false !default;
 
-        .#{$sign-namespace}signpost {
-            display: grid;
-            grid-template-columns:repeat(auto-fit,minmax(calc(20% + 6em),1fr));
-        }
+// Note - no theme yet!
+
+// We don't need this if we're only themeing the pattern:
+@if $theme-only == false {
+
+    @media only screen and (min-width: $not-too-small) {
+        @supports (display: grid) {
+
+            .#{$sign-namespace}signpost {
+                display: grid;
+                grid-template-columns:repeat(auto-fit,minmax(calc(20% + 6em),1fr));
+            }
 
 
 
-        .#{$sign-namespace}sign {
-            &#{&}--span-all {
-                grid-column: 1/-1;
+            .#{$sign-namespace}sign {
+                &#{&}--span-all {
+                    grid-column: 1/-1;
+                }
             }
         }
     }
-}
 
-.#{$sign-namespace}sign {
+    .#{$sign-namespace}sign {
 
-    a[href]#{&}__link {
-        padding: $sz-xs;
-        display: block;
-        //background: linear-gradient(to right, #007DB1 0%,#007DB1 25%,#64AED3 25%,#64AED3 50%,#B6B1C7 50%,#B6B1C7 75%,#6F6992 75%,#6F6992 100%);
+        a[href]#{&}__link {
+            padding: $sz-xs;
+            display: block;
+            //background: linear-gradient(to right, #007DB1 0%,#007DB1 25%,#64AED3 25%,#64AED3 50%,#B6B1C7 50%,#B6B1C7 75%,#6F6992 75%,#6F6992 100%);
 
-        border: 0;
+            border: 0;
 
-        position: relative;
-        margin-bottom: 0;
-        
-        height: 100%;
-        //transition: all 0.3s ease;
-        
-        color: #fff;
-        background-color: transparent;
-        
-        &:hover,
-        &:active,
-        &:focus {
+            position: relative;
+            margin-bottom: 0;
+            
+            height: 100%;
+            //transition: all 0.3s ease;
+            
             color: #fff;
             background-color: transparent;
+            
+            &:hover,
+            &:active,
+            &:focus {
+                color: #fff;
+                background-color: transparent;
+            }
         }
-    }
 
 
-    a[href]:hover::before,
-    a[href]:active::before,
-    a[href]:focus::before {
-        border: 0;
-        content: "";
-        display: block;
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        opacity: $hover-effect-opacity;
-        background: #000;
-    }
-
-    #{&}__text {
-        text-align: center;
-        display: inline-block;
-        width: 100%;
-    }
-
-
-    #{&}__text--large {
-        font-family: 'Nunito', sans-serif;
-        font-size: 1.5em;
-        //font-weight: bold;
-    }
-
-    #{&}__text--small {
-        font-size: 0.875em;
-    }
-
-    #{&}__centered-content {
-        
-        padding: $sz-s;
-        outline: 1px solid #fff;
-        position: relative;
-        
-        height: 100%;
-        
-        display: -ms-flexbox;
-        display: -webkit-flex;
-        display: flex;
-        
-
-             -ms-flex-align: center;
-        -webkit-align-items: center;
-                align-items: center;
-
-        -webkit-align-content: center;
-           -ms-flex-line-pack: center;
-                align-content: center;
-                
-                  -ms-flex-pack: center;
-        -webkit-justify-content: center;
-                justify-content: center;
-                
-        -webkit-flex-wrap: wrap;
-            -ms-flex-wrap: wrap;
-                flex-wrap: wrap;
-    
-        @media screen and (-ms-high-contrast:active), (-ms-high-contrast:none) {
-            /*
-                1. IE 11 needs this to size things properly in the case of nested flex ff-widths.
-            */
-            //display: list-item; /* [1] */
+        a[href]:hover::before,
+        a[href]:active::before,
+        a[href]:focus::before {
+            border: 0;
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            opacity: $hover-effect-opacity;
+            background: #000;
         }
-    
-    }
-    
+
+        #{&}__text {
+            text-align: center;
+            display: inline-block;
+            width: 100%;
+        }
 
 
-    #{&}__centered-content svg {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        width: 100%;
-        //height: $fallback--base-rem-space-unit * 2;
-        //margin-bottom: $fallback--base-rem-space-unit / 2;
+        #{&}__text--large {
+            font-family: 'Nunito', sans-serif;
+            font-size: 1.5em;
+            //font-weight: bold;
+        }
+
+        #{&}__text--small {
+            font-size: 0.875em;
+        }
+
+        #{&}__centered-content {
+            
+            padding: $sz-s;
+            outline: 1px solid #fff;
+            position: relative;
+            
+            height: 100%;
+            
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            
+
+                 -ms-flex-align: center;
+            -webkit-align-items: center;
+                    align-items: center;
+
+            -webkit-align-content: center;
+               -ms-flex-line-pack: center;
+                    align-content: center;
+                    
+                      -ms-flex-pack: center;
+            -webkit-justify-content: center;
+                    justify-content: center;
+                    
+            -webkit-flex-wrap: wrap;
+                -ms-flex-wrap: wrap;
+                    flex-wrap: wrap;
         
-        height: 90%;
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        opacity: 0.3;
+            @media screen and (-ms-high-contrast:active), (-ms-high-contrast:none) {
+                /*
+                    1. IE 11 needs this to size things properly in the case of nested flex ff-widths.
+                */
+                //display: list-item; /* [1] */
+            }
+        
+        }
+        
+
+
+        #{&}__centered-content svg {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+            //height: $fallback--base-rem-space-unit * 2;
+            //margin-bottom: $fallback--base-rem-space-unit / 2;
+            
+            height: 90%;
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0.3;
+        }
     }
 }

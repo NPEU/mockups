@@ -2,36 +2,22 @@
 
 
 //@import url('https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i|Nunito:400,700');
-@import url('https://fonts.googleapis.com/css?family=Lato:300,700,900');
+@import url("https://fonts.googleapis.com/css?family=Lato:300,700,900");
 //@import url('https://fonts.googleapis.com/css?family=Lato:300,300i|Nunito:400,700');
 //font-family: 'Lato', sans-serif;
 //font-family: 'Nunito', sans-serif;
-$fallback--base-font-family: 'Lato', sans-serif;
-
-$fallback--root-font-size: 10px;
-
-$fallback--base-ui-color: #0077AD;
-$fallback--breakpoint--enhanced: 42.5625em;
 
 
 
-@import '../bower_components/Fall-Back-Start-CSS/dist/scss/_start__settings.scss';
-
-$max-main-line-length: 0;
-$measure: 68rem;
-$not-too-small: 18em;
-
-$h1-font-size: 40px / $fallback--base-font-size * 1em !default;
-$h2-font-size: 32px / $fallback--base-font-size * 1em !default;
-$h3-font-size: 26px / $fallback--base-font-size * 1em !default;
+@import "_settings.scss";
 
 
 $experimental_checkradios: true;
-@import '../bower_components/Fall-Back-Start-CSS/dist/scss/_start.scss';
-@import '../bower_components/Fall-Back-Start-CSS/dist/scss/_start-classes.scss';
-@import '../bower_components/Fall-Back-Start-CSS/dist/scss/_start-experimental.scss';
+@import "../bower_components/Fall-Back-Start-CSS/dist/scss/_start.scss";
+@import "../bower_components/Fall-Back-Start-CSS/dist/scss/_start-classes.scss";
+@import "../bower_components/Fall-Back-Start-CSS/dist/scss/_start-experimental.scss";
 
-@import '../bower_components/Fall-Back-Base/_icons.scss';
+@import "../bower_components/Fall-Back-Base/_icons.scss";
 
 @import "_sizes";
 
@@ -47,18 +33,7 @@ $hover-effect-width: $fallback--base-rem-space-unit / 4;
 
 
 
-@mixin bottom-space-fix () {
 
-	padding-bottom: 0 !important;
-
-	&::after {
-		content: "";
-		display: block;
-		height: 1px;
-        margin-top: calc(#{$fallback--base-rem-space-unit} - 1px);
-	}
-
-}
 
 /* ---------------------------------------------------------------------------------------------- */
 /* --| BASE |------------------------------------------------------------------------------------ */
@@ -106,7 +81,7 @@ $fallback--dropdown__button--background-color: $fallback--nav-bar__link--backgro
 
 
 @import "../bower_components/Fall-Back-Sticky-Footer/_sticky-footer";
-
+/*
 $fallback-svg--fixed-height:      80px;
 $fallback-svg--padding:           calc-px-from-rem($sz-xs);
 $fallback-svg--border-width:      0;
@@ -119,7 +94,7 @@ $fallback-svg--link-bg-color-alt: #fff;
 @include svg--fixed-height(80px, 'svg--fixed-height--logo', 0, 0);
 @include svg--fixed-height(60px, 'svg--fixed-height--parent-logo', 0, 0);
 @include svg--fixed-height(($fallback--base-rem-space-unit * 4), 'svg--fixed-height--funder-logo', ($fallback--base-rem-space-unit / 2), 0);
-
+*/
 
 @import "../bower_components/Fall-Back-Cookie-Notice/_cookie-notice";
 /* ---------------------------------------------------------------------------------------------- */
@@ -164,87 +139,27 @@ $ff-min-widths: (
 $gallery-grid-spacing-unit: $fallback--base-rem-space-unit;
 @import "../bower_components/NPEU-layout-patterns/dev/scss/_gallery-grid.scss";
 
+/* --| Themeable Patterns |---------------------------------------------------------------------- */
+@import "_themes-config";
+@import "_themeable-patterns.scss";
+
+
 /* --| Component Patterns |---------------------------------------------------------------------- */
+// These patterns are themeable and so are included via '_themeable_patterns.scss' above.
 
-@import "component-patterns/_badge.scss";
-
-/*$brochure-spacing-unit: $fallback--base-rem-space-unit;
-$brochure--border-or-outline: false;
-@import "component-patterns/_brochure.scss";*/
-
-$card--base-color: darken($fallback--base-ui-color, 20%);
-$card--text-color: #fff !default;
-
-$card-title--font-size: 2rem;
-//$card-title--line-height: $fallback--base-rem-space-unit * 1.25;
-$card-spacing-unit: $fallback--base-rem-space-unit;
-//$card--border-or-outline: 'border';
-$card--border-width: 0;
-$card--background-color: rgba(0,0,0,0.5);
-
-@import "component-patterns/_card.scss";
+/* ---------------------------------------------------------------------------------------------- */
 
 
-@import "component-patterns/_contact-list.scss";
+/* --| Decoration Patterns |--------------------------------------------------------------------- */
+// These patterns are themeable and so are included via '_themeable_patterns.scss' .
 
-/*$event-spacing-unit: $fallback--base-rem-space-unit;
-$event--background-color: #fff;
-$event--border-color: $fallback--base-ui-color;
-@import "component-patterns/_event.scss";*/
+$neutral-theme: map-get($themes, neutral);
+@include background-theme(
+    "neutral",
+    (
+        background-color: map-get($neutral-theme, background-color)
+    ));
 
-// Probably need card variants, esp max-widths.
-/*$featurette-spacing-unit: $fallback--base-rem-space-unit;
-@import "component-patterns/_featurette.scss";
-@include featurette--themer("featurette--dark", #555, #fff);*/
-
-
-@import "patterns/_funder-logo.scss";
-
-//$glimpse-spacing-unit: $fallback--base-rem-space-unit;
-//@import "component-patterns/_glimpse.scss";
-
-@import "component-patterns/_hero.scss";
-
-@import "component-patterns/_longform-content.scss";
-
-@import "component-patterns/_page-header.scss";
-
-@import "component-patterns/_page-footer.scss";
-
-
-@import "component-patterns/_meter.scss";
-
-
-$panel--padding: $fallback--base-rem-space-unit;
-@import "component-patterns/_panel.scss";
-//@import "component-patterns/_panel--dark.scss";
-
-@import "component-patterns/_primary-cta.scss";
-
-@import "component-patterns/_signs.scss";
-
-@import "component-patterns/_thumbnail.scss";
-
-//@import "component-patterns/_tool-form.scss";
-
-
-/* --| Navigation Patterns |--------------------------------------------------------------------- */
-$breadcrumbs-font-size: 1em;
-@import "navigation-patterns/_breadcrumbs.scss";
-
-/*
-$pagination-spacing-unit: $fallback--base-rem-space-unit;
-$pagination--link-color--alt: #ccc;
-$pagination--background-color: #fff;
-@import "navigation-patterns/_pagination.scss";
-*/
-$section-menu-spacing-unit: $fallback--base-rem-space-unit;
-$section-menu--link-color--alt: #ccc;
-$section-menu--background-color: #fff;
-$section-menu--padding: 0;
-$section-menu--border-width: 0;
-$section-menu--link-margin: 0;
-@import "navigation-patterns/_section-menu.scss";
 
 /* ---------------------------------------------------------------------------------------------- */
 
@@ -271,10 +186,23 @@ $content-area-pull-out-side: right;
 /* ---------------------------------------------------------------------------------------------- */
 
 
-/* --| Decoration Patterns |--------------------------------------------------------------------- */
+/* --| Navigation Patterns |--------------------------------------------------------------------- */
+$breadcrumbs-font-size: 1em;
+@import "navigation-patterns/_breadcrumbs.scss";
 
-@import "decoration-patterns/_background.scss";
-@import "decoration-patterns/_bands.scss";
+/*
+$pagination-spacing-unit: $fallback--base-rem-space-unit;
+$pagination--link-color--alt: #ccc;
+$pagination--background-color: #fff;
+@import "navigation-patterns/_pagination.scss";
+*/
+$section-menu-spacing-unit: $fallback--base-rem-space-unit;
+$section-menu--link-color--alt: #ccc;
+$section-menu--background-color: #fff;
+$section-menu--padding: 0;
+$section-menu--border-width: 0;
+$section-menu--link-margin: 0;
+@import "navigation-patterns/_section-menu.scss";
 
 /* ---------------------------------------------------------------------------------------------- */
 
@@ -291,21 +219,22 @@ $content-area-pull-out-side: right;
 @import "utility-patterns/_text-groups.scss";
 @import "utility-patterns/_word-wrap.scss";
 
+/*
 
 @include background-theme(
     "neutral",
     (
         background-color : #8e8279
     ));
-
+*/
 /* ---------------------------------------------------------------------------------------------- */
 
 
 
 /* --| THEMES |---------------------------------------------------------------------------------- */
 
-@import "_themes_config";
-@import "_themes";
+//@import "_themes-config";
+//@import "_themes";
 
 /* ---------------------------------------------------------------------------------------------- */
 

@@ -3,35 +3,45 @@
 $page-footer-namespace: c- !default;
 $theme-namespace: t- !default;
 
-/*.page-footer {
 
-    &#{&} {
-        background-color: $fallback--base-ui-color;
-        padding: ($fallback--base-em-ratio * 1.5em) / 3;
-        font-size: 0.875em;
-        text-align: center;
-        color: #fff;
-        margin-bottom: 0;
-    }
+$theme-only: false !default;
+
+// Note - no theme yet!
+
+// We don't need this if we're only themeing the pattern:
+@if $theme-only == false {
+
+    /*.page-footer {
+
+        &#{&} {
+            background-color: $fallback--base-ui-color;
+            padding: ($fallback--base-em-ratio * 1.5em) / 3;
+            font-size: 0.875em;
+            text-align: center;
+            color: #fff;
+            margin-bottom: 0;
+        }
 
 
 
-    a[href] {
-        color: lighten($fallback--base-ui-color, 40%);
-    }
+        a[href] {
+            color: lighten($fallback--base-ui-color, 40%);
+        }
 
-    a[href]:hover,
-    a[href]:active,
-    a[href]:focus {
-        color: lighten($fallback--base-ui-color, 20%);
-    }
+        a[href]:hover,
+        a[href]:active,
+        a[href]:focus {
+            color: lighten($fallback--base-ui-color, 20%);
+        }
 
-}*/
+    }*/
 
-.#{$page-footer-namespace}page-footer {
+    .#{$page-footer-namespace}page-footer {
 
-    &#{&} {
-        padding: 0 $sz-m $sz-m $sz-m;
-        margin: 0;
+        &#{&} {
+            background-color: #fff;
+            padding: 0 $sz-m $sz-m $sz-m;
+            margin: 0;
+        }
     }
 }

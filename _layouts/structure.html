@@ -6,6 +6,12 @@
     <meta name="description" content="{{ site.description }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    {% if page.project != '' %}
+        {% assign project_base_url = page.project | prepend: '/' %}
+    {% else %}
+        {% assign project_base_url = '' %}
+    {% endif %}
+
     <!-- Built with Jekyll and Fall-Back patterns -->
 
     <!--<base href="http://localhost:4001/">-->
@@ -36,25 +42,27 @@
         only all and (min--moz-device-pixel-ratio:0) and (display-mode:browser), (min--moz-device-pixel-ratio:0) and (display-mode:fullscreen)
     ">
 
-    <script src="/js/script.min.js"></script>
-
     {% if page.project != '' %}
-        {% assign project_base_url = page.project | prepend: '/' %}
-    {% else %}
-        {% assign project_base_url = '' %}
+        <link rel="stylesheet" href="/css/theme-{{ page.project }}.min.{{ site.data.cache_bust_css.date }}.css" media="
+            only print, screen and (min-width: 1vm),
+            only all and (-ms-high-contrast: none), only all and (-ms-high-contrast: active),
+            only all and (pointer: fine), only all and (pointer: coarse), only all and (pointer: none),
+            only all and (min--moz-device-pixel-ratio:0) and (display-mode:browser), (min--moz-device-pixel-ratio:0) and (display-mode:fullscreen)
+        ">
     {% endif %}
 
+    <script src="/js/script.min.js"></script>
 
-    <link rel="apple-touch-icon" href="{{ project_base_url }}/apple-touch-icon.png">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ project_base_url }}/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ project_base_url }}/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ project_base_url }}/favicon-16x16.png">
     <link rel="manifest" href="{{ project_base_url }}/site.webmanifest">
     <link rel="mask-icon" href="{{ project_base_url }}/safari-pinned-tab.svg" color="#5bbad5">
     <link rel="shortcut icon" href="{{ project_base_url }}/favicon.ico">
-    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-config" content="{{ project_base_url }}/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
-
 
     {% comment %}
 

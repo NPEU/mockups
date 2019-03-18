@@ -1,0 +1,39 @@
+/*
+
+*/
+
+
+$fallback--base-font-family: 'Lato', sans-serif;
+
+$fallback--root-font-size: 10px;
+
+$fallback--base-ui-color: #614776;
+$fallback--breakpoint--enhanced: 42.5625em;
+
+@import '../bower_components/Fall-Back-Start-CSS/dist/scss/_start__settings.scss';
+
+
+$max-main-line-length: 0;
+$measure: 68rem;
+$not-too-small: 18em;
+
+$h1-font-size: 40px / $fallback--base-font-size * 1em !default;
+$h2-font-size: 32px / $fallback--base-font-size * 1em !default;
+$h3-font-size: 26px / $fallback--base-font-size * 1em !default;
+$hover-effect-opacity: 0.2;
+$hover-effect-width: $fallback--base-rem-space-unit / 4;
+
+/* --| FUNCTIONS AND MIXINS |-------------------------------------------------------------------- */
+
+@mixin bottom-space-fix () {
+
+	padding-bottom: 0 !important;
+
+	&::after {
+		content: "";
+		display: block;
+		height: 1px;
+        margin-top: calc(#{$fallback--base-rem-space-unit} - 1px);
+	}
+
+}

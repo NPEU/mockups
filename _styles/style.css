@@ -1,6 +1,9 @@
 @charset "UTF-8";
 /* --| SETTINGS |-------------------------------------------------------------------------------- */
 @import url("https://fonts.googleapis.com/css?family=Lato:300,700,900");
+/*
+
+*/
 /*-------------------------------------------------------------------------------------------------|
     Fall-Back Start-CSS Settings v1.0.0
 
@@ -19,6 +22,7 @@
     `.{pattern}.{pattren}`
 
 |-------------------------------------------------------------------------------------------------*/
+/* --| FUNCTIONS AND MIXINS |-------------------------------------------------------------------- */
 /*! Start CSS. See SCSS file for documentation. */
 /*
 
@@ -341,7 +345,7 @@ a[href] {
   margin-bottom: -2px;
   padding-bottom: 2px;
   border-bottom: 2px solid;
-  color: #0077AD;
+  color: #614776;
   background-color: transparent;
   /* 1 */
   text-decoration: none;
@@ -375,12 +379,12 @@ a[href] {
 
 a[href]:hover, a[href]:active {
   border-bottom: 2px dashed;
-  color: #00547a;
+  color: #473456;
 }
 
 a[href]:focus {
   outline: 0;
-  box-shadow: 0 0 0 3px rgba(0, 119, 173, 0.5);
+  box-shadow: 0 0 0 3px rgba(97, 71, 118, 0.5);
 }
 
 a[href][rel="external"]::after {
@@ -483,7 +487,7 @@ button {
   border-width: 1px;
   border-radius: 3px;
   color: #fff;
-  background-color: #0077AD;
+  background-color: #614776;
   font-weight: inherit;
   font-style: inherit;
   font-size: inherit;
@@ -511,12 +515,12 @@ button {
 }
 
 button:hover, button:active {
-  background-color: #00547a;
+  background-color: #473456;
 }
 
 button:focus {
   outline: 0;
-  box-shadow: 0 0 0 3px rgba(0, 119, 173, 0.5);
+  box-shadow: 0 0 0 3px rgba(97, 71, 118, 0.5);
 }
 
 _:-o-prefocus, :root button {
@@ -561,7 +565,7 @@ caption {
   padding-bottom: 1.2rem;
   padding-left: 1.2rem;
   color: #fff;
-  background-color: #0077AD;
+  background-color: #614776;
   font-weight: bold;
 }
 
@@ -621,7 +625,7 @@ fieldset {
   min-width: 0;
   border-width: 1px;
   border-style: solid;
-  border-color: #0077AD;
+  border-color: #614776;
   padding-top: 2.4rem;
   padding-top: -moz-calc(2.4rem - 1px);
   padding-top: calc(2.4rem - 1px);
@@ -727,7 +731,7 @@ hr {
   margin-bottom: 2.4rem;
   border-top: none;
   border-right: none;
-  border-bottom: 1px solid #0077AD;
+  border-bottom: 1px solid #614776;
   border-left: none;
 }
 
@@ -827,7 +831,7 @@ input:not([type]):focus,
 [type="time"]:focus,
 [type="url"]:focus,
 [type="week"]:focus {
-  box-shadow: 0 0 0 3px rgba(0, 119, 173, 0.5);
+  box-shadow: 0 0 0 3px rgba(97, 71, 118, 0.5);
   outline: 0;
 }
 
@@ -837,7 +841,7 @@ input:not([type]):focus,
     */
 [type="checkbox"]:focus,
 [type="radio"]:focus {
-  box-shadow: 0 0 0 3px rgba(0, 119, 173, 0.5);
+  box-shadow: 0 0 0 3px rgba(97, 71, 118, 0.5);
   outline: 0;
 }
 
@@ -916,7 +920,7 @@ _::-webkit-full-page-media, _:future, :root [type="radio"]:focus {
   border-width: 1px;
   border-radius: 3px;
   color: #fff;
-  background-color: #0077AD;
+  background-color: #614776;
   font-weight: inherit;
   font-style: inherit;
   font-size: inherit;
@@ -948,14 +952,14 @@ _::-webkit-full-page-media, _:future, :root [type="radio"]:focus {
 [type="reset"]:active,
 [type="submit"]:hover,
 [type="submit"]:active {
-  background-color: #00547a;
+  background-color: #473456;
 }
 
 [type="button"]:focus,
 [type="reset"]:focus,
 [type="submit"]:focus {
   outline: 0;
-  box-shadow: 0 0 0 3px rgba(0, 119, 173, 0.5);
+  box-shadow: 0 0 0 3px rgba(97, 71, 118, 0.5);
 }
 
 /*
@@ -995,7 +999,7 @@ _:-moz-any-link, :root [type="file"] {
 }
 
 _:-ms-input-placeholder, :root [type="file"] {
-  background-color: #0077AD;
+  background-color: #614776;
 }
 
 @media screen and (min-width: 0\0) and (min-resolution: 72dpi) {
@@ -1221,7 +1225,7 @@ option {
 }
 
 option:hover {
-  background-color: #7ad5ff;
+  background-color: #c6b6d3;
   color: #333;
 }
 
@@ -1247,7 +1251,7 @@ pre {
   /* 1 */
   margin-bottom: 3.1rem;
   /* 1 */
-  background-color: #c7edff;
+  background-color: #ebe6f0;
   /*1 */
   font-size: 1em;
   /* 2 */
@@ -1399,7 +1403,7 @@ _:-moz-tree-row(hover), select:not([multiple]) {
 }
 
 select:focus {
-  box-shadow: 0 0 0 3px rgba(0, 119, 173, 0.5);
+  box-shadow: 0 0 0 3px rgba(97, 71, 118, 0.5);
   outline: 0;
 }
 
@@ -1501,7 +1505,7 @@ summary {
 }
 
 summary:focus {
-  outline: 2px solid rgba(0, 119, 173, 0.6);
+  outline: 2px solid rgba(97, 71, 118, 0.6);
   outline-offset: 2px;
 }
 
@@ -1565,7 +1569,7 @@ table {
   /* 1 */
   margin-bottom: calc(2.4rem - 1px);
   /* 2 */
-  border: 1px solid #0077AD;
+  border: 1px solid #614776;
   background-color: #fff;
   border-spacing: 0;
 }
@@ -1582,7 +1586,7 @@ td {
   padding-bottom: calc(1.2rem - 1px);
   /* 2 */
   padding-left: 1.2rem;
-  border: 1px solid #0077AD;
+  border: 1px solid #614776;
 }
 
 /*
@@ -1631,7 +1635,7 @@ textarea {
 }
 
 textarea:focus {
-  box-shadow: 0 0 0 3px rgba(0, 119, 173, 0.5);
+  box-shadow: 0 0 0 3px rgba(97, 71, 118, 0.5);
   outline: 0;
 }
 
@@ -1655,7 +1659,7 @@ th {
   padding-bottom: calc(1.2rem - 1px);
   /* 2 */
   padding-left: 1.2rem;
-  border: 1px solid #0077AD;
+  border: 1px solid #614776;
 }
 
 /*
@@ -1751,7 +1755,7 @@ video {
 ::-moz-selection,
 ::selection {
   color: #fff;
-  background-color: #47c6ff;
+  background-color: #ad96c0;
   text-shadow: none;
 }
 
@@ -1900,11 +1904,11 @@ a[href].cta {
   padding-bottom: -moz-calc(0);
   padding-bottom: calc(0.3rem - 1px);
   padding-left: 0.6rem;
-  border-color: #0077AD;
+  border-color: #614776;
   border-style: solid;
   border-width: 1px;
   border-radius: 3px;
-  color: #0077AD;
+  color: #614776;
   background-color: #fff;
   font-weight: inherit;
   font-style: inherit;
@@ -1948,7 +1952,7 @@ a[href].button:hover, a[href].button:active, a[href].button:focus,
 a[href].cta:hover,
 a[href].cta:active,
 a[href].cta:focus {
-  background-color: #c7edff;
+  background-color: #ebe6f0;
 }
 
 .button[data-text][aria-hidden="true"] {
@@ -1971,7 +1975,7 @@ a[href].cta:focus {
   border-width: 1px;
   border-radius: 3px;
   color: #fff;
-  background-color: #0077AD;
+  background-color: #614776;
   font-weight: inherit;
   font-style: inherit;
   font-size: inherit;
@@ -1999,12 +2003,12 @@ a[href].cta:focus {
 }
 
 .button[data-text][aria-hidden="true"]:hover, .button[data-text][aria-hidden="true"]:active {
-  background-color: #00547a;
+  background-color: #473456;
 }
 
 .button[data-text][aria-hidden="true"]:focus {
   outline: 0;
-  box-shadow: 0 0 0 3px rgba(0, 119, 173, 0.5);
+  box-shadow: 0 0 0 3px rgba(97, 71, 118, 0.5);
 }
 
 .button[data-text][aria-hidden="true"]::before {
@@ -2014,7 +2018,7 @@ a[href].cta:focus {
 .bordered {
   border-width: 6px;
   border-style: solid;
-  border-color: #0077AD;
+  border-color: #614776;
   padding-top: 24px;
   padding-top: -moz-calc(24px - 6px);
   padding-top: calc(24px - 6px);
@@ -2039,7 +2043,7 @@ a[href].cta:focus {
 .padded {
   border-width: 0px;
   border-style: solid;
-  border-color: #0077AD;
+  border-color: #614776;
   padding-top: 2.4rem;
   padding-top: -moz-calc(2.4rem - 0px);
   padding-top: calc(2.4rem - 0px);
@@ -2173,7 +2177,7 @@ p.subtitle {
 }
 
 .custom-input:focus + .custom-input-label::before {
-  box-shadow: 0 0 0 2px #14b6ff;
+  box-shadow: 0 0 0 2px #9476ad;
   outline: 0;
 }
 
@@ -2201,7 +2205,7 @@ p.subtitle {
 
 /* Define the checkbox :checked state: */
 .custom-input[type="checkbox"]:checked + .custom-input-label::before {
-  background: #0077AD;
+  background: #614776;
 }
 
 /* Define the checkbox 'tick': */
@@ -2223,7 +2227,7 @@ p.subtitle {
 /* Define the radio 'dot': */
 .custom-input[type="radio"]:checked + .custom-input-label::before {
   background: #fff;
-  border-color: #0077AD;
+  border-color: #614776;
   border-width: 0.25em;
   border-style: solid;
 }
@@ -2346,7 +2350,7 @@ p.subtitle {
   border-top-right-radius: 2px;
   border-bottom-right-radius: 2px;
   color: #fff;
-  background-color: #0077AD;
+  background-color: #614776;
   font-weight: inherit;
   font-style: inherit;
   font-size: inherit;
@@ -2387,7 +2391,7 @@ p.subtitle {
   border-color: rgba(0, 0, 0, 0.2);
   border-radius: 0;
   color: #fff;
-  background-color: #0077AD;
+  background-color: #614776;
   font-weight: inherit;
   font-style: inherit;
   font-size: inherit;
@@ -2551,11 +2555,11 @@ _:-webkit-full-screen, _::-webkit-full-page-media, _:future, :root select[size="
     border-radius: 50%;
   }
   input[type="radio"]:checked {
-    background-image: -moz-radial-gradient(center, ellipse cover, #333333 0%, #333333 35%, rgba(0, 0, 0, 0) 35%, rgba(0, 0, 0, 0) 100%);
+    background-image: -moz-radial-gradient(center, ellipse cover, #333333 0%, #333333 35%, transparent 35%, transparent 100%);
     /* FF3.6-15 */
-    background-image: -webkit-radial-gradient(center, ellipse cover, #333333 0%, #333333 35%, rgba(0, 0, 0, 0) 35%, rgba(0, 0, 0, 0) 100%);
+    background-image: -webkit-radial-gradient(center, ellipse cover, #333333 0%, #333333 35%, transparent 35%, transparent 100%);
     /* Chrome10-25,Safari5.1-6 */
-    background-image: radial-gradient(ellipse at center, #333333 0%, #333333 35%, rgba(0, 0, 0, 0) 35%, rgba(0, 0, 0, 0) 100%);
+    background-image: radial-gradient(ellipse at center, #333333 0%, #333333 35%, transparent 35%, transparent 100%);
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   }
   input[type="checkbox"]:checked::after {
@@ -2603,8 +2607,7 @@ _:-webkit-full-screen, _::-webkit-full-page-media, _:future, :root select[size="
   -webkit-appearance: radio;
 }
 
-/*------------------------------------------------------------------------------------------------*\
-    Fall-Back Icons v1.0.0
+/*------------------------------------------------------------------------------------------------*    Fall-Back Icons v1.0.0
     
     Designed for use with the basic [CSS Mustard Cut](https://github.com/Fall-Back/CSS-Mustard-Cut)
     IE 9+, FF 8+, Opera 12, [Chrome 29+, Android ~4.4+]
@@ -2694,6 +2697,9 @@ _:-o-prefocus, :root .icon {
   justify-content: center;
 }
 
+/*
+    Global sizes
+*/
 /* ---------------------------------------------------------------------------------------------- */
 /* --| FUNCTIONS AND MIXINS |-------------------------------------------------------------------- */
 /* ---------------------------------------------------------------------------------------------- */
@@ -2751,7 +2757,7 @@ _:-o-prefocus, :root .icon {
 }
 
 .over-panel__contents {
-  background-color: #0077AD;
+  background-color: #614776;
   color: #fff;
   padding: 0;
 }
@@ -2878,7 +2884,7 @@ _:-o-prefocus, :root .icon {
     box-shadow: none;
     /* 1 */
     color: #fff;
-    background-color: #0077AD;
+    background-color: #614776;
     position: relative;
     z-index: 1;
     /* [2] */
@@ -2892,11 +2898,11 @@ _:-o-prefocus, :root .icon {
   .js-over-panel-control.over-panel-control:active,
   .js-over-panel-control.over-panel-control[aria-expanded="true"] {
     color: #fff;
-    background-color: #004666;
+    background-color: #3c2c49;
   }
   .js-over-panel-control.over-panel-control:focus {
     color: #fff;
-    background-color: #005e89;
+    background-color: #4f3a60;
   }
   .js-over-panel-control.over-panel-control .icon--is-open,
   .js-over-panel-control.over-panel-control[aria-expanded="true"] .icon--is-closed {
@@ -3334,7 +3340,7 @@ _:-o-prefocus, body:last-child .nav-bar .subnav__heading {
 
 .nav-bar .nav-bar__link[href]:focus {
   color: #fff;
-  background-color: rgba(0, 0, 0, 0);
+  background-color: transparent;
 }
 
 .nav-bar .subnav__link[href]:hover,
@@ -3611,7 +3617,7 @@ $fallback--dropdown__button--background-color: $fallback--nav-bar__link--backgro
         1. Prevent extra bottom space when form is inside a container.
     */
 .search-form.search-form {
-  background: #0077AD;
+  background: #614776;
   display: -moz-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3703,7 +3709,7 @@ $fallback--dropdown__button--background-color: $fallback--nav-bar__link--backgro
   z-index: 1;
   border-radius: 0;
   border: 0;
-  background: #ade5ff;
+  background: #dfd6e6;
   color: #333;
   height: 1.875em;
   line-height: 0;
@@ -3718,7 +3724,7 @@ $fallback--dropdown__button--background-color: $fallback--nav-bar__link--backgro
 
 .search-form .search-form__submit:hover,
 .search-form .search-form__submit:focus {
-  background-color: #ade5ff;
+  background-color: #dfd6e6;
 }
 
 /*.search-form .search-form__submit svg {
@@ -3755,8 +3761,7 @@ $fallback--dropdown__button--background-color: $fallback--nav-bar__link--backgro
 }
 
 /* ---------------------------------------------------------------------------------------------- */
-/*------------------------------------------------------------------------------------------------*\
-
+/*------------------------------------------------------------------------------------------------*
     Designed for use with the basic [CSS Mustard Cut](https://github.com/Fall-Back/CSS-Mustard-Cut)
     IE 9+, FF 8+, Opera 12, [Chrome 29+, Android ~4.4+]
     Chrome 29+, Opera 16+, Safari 6.1+, iOS 7+, Android ~4.4+
@@ -3839,385 +3844,22 @@ body {
 }
 
 /*------------------------------------------------------------------------------------------------*/
-/*------------------------------------------------------------------------------------------------*\
-
-    Clarification for self:
-    Since this pattern is intented for use on logos, and since logos are an integral part of
-    branding, this pattern is not ONLY intended as a CSS fallback.
-    The markup is really important to provide an image of the logo even if CSS fails or is cut.
-
-    However, since these patterns are intended for use with the CSS Mustard Cut (original) then
-    styles for older browsers are omitted here since they won't load.
-\*------------------------------------------------------------------------------------------------*/
 /*
-	Make the container fit the content.
-    Note: `*:not(body)` avoids clash with Modernizr-added class.
-    1. IE9 needs this to avoid extra height. (Others too?)
+$fallback-svg--fixed-height:      80px;
+$fallback-svg--padding:           calc-px-from-rem($sz-xs);
+$fallback-svg--border-width:      0;
+$fallback-svg--border-color:      #fff;
+$fallback-svg--link-bg-color:     #fff;
+$fallback-svg--link-bg-color-alt: #fff;
+@import "../bower_components/Fall-Back-SVG/_svg";
+
+@include svg--fixed-height(120px, 'svg--fixed-height--logo--large', 0, 0);
+@include svg--fixed-height(80px, 'svg--fixed-height--logo', 0, 0);
+@include svg--fixed-height(60px, 'svg--fixed-height--parent-logo', 0, 0);
+@include svg--fixed-height(($fallback--base-rem-space-unit * 4), 'svg--fixed-height--funder-logo', ($fallback--base-rem-space-unit / 2), 0);
 */
-.svg:not(html) {
-  display: inline-block;
-  max-width: 100%;
-  vertical-align: middle;
-  /* [1] */
-}
-
-/*
-	Zero out any inherited margins and padding for child elements.
-    Note: `*:not(body)` avoids clash with Modernizr-added class.
-*/
-.svg > *:not(body) {
-  margin: 0;
-  padding: 0;
-}
-
-/*
-    Set the default link styles based on the settings.
-    The mixin allows variants to be easily generated.
-*/
-/*
-        1. Make the link fit the content.
-        2. Provide positioning context for the pseudo element.
-        3. Remove underline on some older browsers (Android 2.x mainly)
-        4. IE9 needs this to avoid extra height. (Others too?)
-    */
-.svg .svg__link {
-  display: inline-block;
-  /* [1] */
-  position: relative;
-  /* [2] */
-  text-decoration: none;
-  /* [3] */
-  vertical-align: middle;
-  /* [4] */
-  background-color: #fff;
-  border-width: 0;
-  border-style: solid;
-  border-color: #fff;
-}
-
-.svg .svg__link:hover,
-.svg .svg__link:active,
-.svg .svg__link:focus {
-  text-decoration: none;
-  background-color: #fff;
-  border-width: 0;
-  border-style: 0;
-  border-color: 0;
-}
-
-/*
-        Objects inside links prevent the link from functioning, this hack fixes
-        that. `pointer-events: none;` would solve it but support isn't good
-        enough (http://caniuse.com/#search=pointer-events).
-
-        1. This is needed for IE9+ or hover effects don't work over images
-           embedded in the SVG.
-    */
-.svg .svg__link:after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background: rgba(0, 0, 0, 0);
-  /* [1] */
-}
-
-/*
-        1. Remove gap below.
-    */
-.svg .svg__image {
-  vertical-align: top;
-  /* [1] */
-}
-
-/*
-        1. Prevent pointer-events blocking link action in supporting browsers.
-    */
-.svg .svg__link .svg__image {
-  pointer-events: none;
-  /* [1] */
-}
-
-/*
-        Allows the fallback text to show ONLY if CSS is available AND the SVG fails to load (the PNG is
-        hidden if SVG is supported so that won't be an issue).
-    */
-.svg .svg__fallback-text-alpha::before {
-  content: attr(data-content);
-}
-
-/*
-        Hide the fallback text ONLY if CSS is available (but not from screenreaders).
-    */
-.svg .svg__fallback-text-beta {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-}
-
-/*------ Fixed Height ------*/
-/*
-        Set this to your required height.
-        If you need more variants, create separate modification classes instead.
-    */
-/*
-        NOTE: FF 32- (XP and Win8) seems to set a 3xheight width on initial page load / force refresh.
-        If any relevent properties are altered or page is normally refreshed, it snaps to the correct
-        width. UNRESOLVED.
-    */
-.svg--fixed-height {
-  height: 80px;
-  max-height: 80px;
-}
-
-.svg--fixed-height .svg__link,
-.svg--fixed-height .svg__image {
-  height: 68px;
-  max-height: 68px;
-}
-
-.svg--fixed-height .svg__link {
-  -webkit-box-sizing: content-box;
-  -moz-box-sizing: content-box;
-  box-sizing: content-box;
-}
-
-/*
-        1. Allow pattern to contract.
-    */
-.svg--fixed-height .svg__link,
-.svg--fixed-height .svg__image {
-  max-width: 100%;
-  /* [1] */
-}
-
-/*
-        Allow the fallback image to scale properly.
-        1. IE6 - can be removed if unnecessary.
-    */
-.svg--fixed-height .svg__fallback-image {
-  max-width: 100%;
-  max-height: 68px;
-  height: auto;
-}
-
-.svg--fixed-height .svg__link {
-  padding: 6px;
-  border-width: 0;
-}
-
-.svg--fixed-height .svg__link:hover,
-.svg--fixed-height .svg__link:active,
-.svg--fixed-height .svg__link:focus {
-  border-width: 0;
-}
-
-/*------ Fluid ------*/
-/*
-       1. Force the svg wrapper and link to fill their containers.
-    */
-.svg--fluid,
-.svg--fluid .svg__link {
-  display: block;
-  /* [1] */
-  width: 100%;
-  /* [1] */
-}
-
-.svg--fluid .svg__link {
-  padding: 6px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-/*
-       1. Force the object and fallback image to proportionally fill their
-          containers, overriding attribute values.
-    */
-.svg--fluid .svg__image,
-.svg--fluid .svg__fallback-image {
-  height: auto;
-  /* [1] */
-  width: 100%;
-  /* [1] */
-}
-
-.svg--fluid .svg__fallback-text {
-  position: relative;
-  left: 6px;
-}
-
-/*------------------------------------------------------------------------------------------------*/
-.svg--fixed-height--logo--large,
-.svg--fixed-height--logo--large .svg__link,
-.svg--fixed-height--logo--large .svg__image {
-  height: 120px;
-  max-height: 120px;
-}
-
-/*
-        1. Allow pattern to contract.
-    */
-.svg--fixed-height--logo--large .svg__link,
-.svg--fixed-height--logo--large .svg__image {
-  max-width: 100%;
-  /* [1] */
-}
-
-/*
-        Allow the fallback image to scale properly.
-        1. IE6 - can be removed if unnecessary.
-    */
-.svg--fixed-height--logo--large .svg__fallback-image {
-  max-width: 100%;
-  max-height: 120px;
-  height: auto;
-}
-
-.svg--fixed-height--logo--large .svg__link {
-  padding: 0;
-  border-width: 0;
-}
-
-.svg--fixed-height--logo--large .svg__link:hover,
-.svg--fixed-height--logo--large .svg__link:active,
-.svg--fixed-height--logo--large .svg__link:focus {
-  border-width: 0;
-}
-
-.svg--fixed-height--logo,
-.svg--fixed-height--logo .svg__link,
-.svg--fixed-height--logo .svg__image {
-  height: 80px;
-  max-height: 80px;
-}
-
-/*
-        1. Allow pattern to contract.
-    */
-.svg--fixed-height--logo .svg__link,
-.svg--fixed-height--logo .svg__image {
-  max-width: 100%;
-  /* [1] */
-}
-
-/*
-        Allow the fallback image to scale properly.
-        1. IE6 - can be removed if unnecessary.
-    */
-.svg--fixed-height--logo .svg__fallback-image {
-  max-width: 100%;
-  max-height: 80px;
-  height: auto;
-}
-
-.svg--fixed-height--logo .svg__link {
-  padding: 0;
-  border-width: 0;
-}
-
-.svg--fixed-height--logo .svg__link:hover,
-.svg--fixed-height--logo .svg__link:active,
-.svg--fixed-height--logo .svg__link:focus {
-  border-width: 0;
-}
-
-.svg--fixed-height--parent-logo,
-.svg--fixed-height--parent-logo .svg__link,
-.svg--fixed-height--parent-logo .svg__image {
-  height: 60px;
-  max-height: 60px;
-}
-
-/*
-        1. Allow pattern to contract.
-    */
-.svg--fixed-height--parent-logo .svg__link,
-.svg--fixed-height--parent-logo .svg__image {
-  max-width: 100%;
-  /* [1] */
-}
-
-/*
-        Allow the fallback image to scale properly.
-        1. IE6 - can be removed if unnecessary.
-    */
-.svg--fixed-height--parent-logo .svg__fallback-image {
-  max-width: 100%;
-  max-height: 60px;
-  height: auto;
-}
-
-.svg--fixed-height--parent-logo .svg__link {
-  padding: 0;
-  border-width: 0;
-}
-
-.svg--fixed-height--parent-logo .svg__link:hover,
-.svg--fixed-height--parent-logo .svg__link:active,
-.svg--fixed-height--parent-logo .svg__link:focus {
-  border-width: 0;
-}
-
-.svg--fixed-height--funder-logo {
-  height: 9.6rem;
-  max-height: 9.6rem;
-}
-
-.svg--fixed-height--funder-logo .svg__link,
-.svg--fixed-height--funder-logo .svg__image {
-  height: 7.2rem;
-  max-height: 7.2rem;
-}
-
-.svg--fixed-height--funder-logo .svg__link {
-  -webkit-box-sizing: content-box;
-  -moz-box-sizing: content-box;
-  box-sizing: content-box;
-}
-
-/*
-        1. Allow pattern to contract.
-    */
-.svg--fixed-height--funder-logo .svg__link,
-.svg--fixed-height--funder-logo .svg__image {
-  max-width: 100%;
-  /* [1] */
-}
-
-/*
-        Allow the fallback image to scale properly.
-        1. IE6 - can be removed if unnecessary.
-    */
-.svg--fixed-height--funder-logo .svg__fallback-image {
-  max-width: 100%;
-  max-height: 7.2rem;
-  height: auto;
-}
-
-.svg--fixed-height--funder-logo .svg__link {
-  padding: 1.2rem;
-  border-width: 0;
-}
-
-.svg--fixed-height--funder-logo .svg__link:hover,
-.svg--fixed-height--funder-logo .svg__link:active,
-.svg--fixed-height--funder-logo .svg__link:focus {
-  border-width: 0;
-}
-
-/*------------------------------------------------------------------------------------------------*\
-\*------------------------------------------------------------------------------------------------*/
-/*------------------------------------------------------------------------------------------------*\
-    Import Fall-Back vars:
+/*------------------------------------------------------------------------------------------------*\*------------------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------------------*    Import Fall-Back vars:
 
     Slightly hacky way of allowing the main UI colour of this pattern to be:
      - base-ui colour (if set)
@@ -4250,13 +3892,13 @@ body {
 }
 
 .cookie_notice .cookie_notice__message a[href] {
-  color: #7ad5ff;
+  color: #c6b6d3;
 }
 
 .cookie_notice .cookie_notice__message a[href]:hover,
 .cookie_notice .cookie_notice__message a[href]:active,
 .cookie_notice .cookie_notice__message a[href]:focus {
-  color: #14b6ff;
+  color: #9476ad;
 }
 
 .cookie_notice .cookie_notice__action {
@@ -5080,22 +4722,259 @@ body {
   }
 }
 
+/* --| Themeable Patterns |---------------------------------------------------------------------- */
+/*
+    Many (soon all?) of these patterns are themeable, so they are configured and imported here
+    (separately) so that they can be imported into other theme files without resulting in 
+    re-declared base-styles. E.g. bands defines a set of size classes, these only need to appear in 
+    the stylesheet once. The file that includes *this* file should set `$theme-only: true` to toggle
+    this behaviour.
+*/
+/*
+
+*/
+/*-------------------------------------------------------------------------------------------------|
+    Fall-Back Start-CSS Settings v1.0.0
+
+    Fall-Back is designed for use with the basic
+    [CSS Mustard Cut](https://github.com/Fall-Back/CSS-Mustard-Cut)
+
+    This determines a browser support base of:
+
+    IE 9+, FF 8+, Opera 12, [Chrome 29+, Android ~4.4+]
+    Chrome 29+, Opera 16+, Safari 6.1+, iOS 7+, Android ~4.4+
+
+
+    Any double-classing (e.g. `.class.class`) is deliberate and intended to increase specifity.
+    This allows any applicable Start-CSS declarations to be overidden.
+    E.g. `.{pattern} .{pattern}__child` would `a[href]`, but just `.{pattern}` wouldn't, so we use
+    `.{pattern}.{pattren}`
+
+|-------------------------------------------------------------------------------------------------*/
+/* --| FUNCTIONS AND MIXINS |-------------------------------------------------------------------- */
+/*
+    Global sizes
+*/
+/*! Start CSS. See SCSS file for documentation. */
+/*
+
+    Start CSS is designed for use with the basic
+    [CSS Mustard Cut](https://github.com/Fall-Back/CSS-Mustard-Cut)
+
+    This determines a browser support base of:
+
+    IE 9+, FF 8+, Opera 12, [Chrome 29+, Android ~4.4+]
+    Chrome 29+, Opera 16+, Safari 6.1+, iOS 7+, Android ~4.4+
+
+    Notes:
+
+    -moz-calc because this supports FF8+ and I like to be thorough.
+
+    CSS hacks from http://browserstrangeness.com/css_hacks.html
+    (hack and browser support in comments above each usage)
+
+    !!! Maybe don't include custom properties in this, I think it over-complicates things and needs
+    gradient background overlays to lighten/darken background colors dynamically.
+    Possibly include a separate file to add custom property support that overrides what it needs,
+    all wrapped in an `@supports`.
+
+    Resources:
+    * http://www.smashingmagazine.com/2012/12/css-baseline-the-good-the-bad-and-the-ugly/
+    * https://24ways.org/2006/compose-to-a-vertical-rhythm
+
+    NOTE TO SELF.
+    Where borders are concerned, probably best to leave margins alone and use padding to maintain
+    baseline-grid. After all, if there's a border, there will have to be padding too.
+
+    overflow-y makes element focussable in FireFox.
+
+*/
+/*-------------------------------------------------------------------------------------------------|
+    Fall-Back Start-CSS Settings v1.0.0
+
+    Fall-Back is designed for use with the basic
+    [CSS Mustard Cut](https://github.com/Fall-Back/CSS-Mustard-Cut)
+
+    This determines a browser support base of:
+
+    IE 9+, FF 8+, Opera 12, [Chrome 29+, Android ~4.4+]
+    Chrome 29+, Opera 16+, Safari 6.1+, iOS 7+, Android ~4.4+
+
+
+    Any double-classing (e.g. `.class.class`) is deliberate and intended to increase specifity.
+    This allows any applicable Start-CSS declarations to be overidden.
+    E.g. `.{pattern} .{pattern}__child` would `a[href]`, but just `.{pattern}` wouldn't, so we use
+    `.{pattern}.{pattren}`
+
+|-------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------|
+
+    FUNCTIONS AND MIXINS
+   (These must come before the Setting, as the settings make use of some of these)
+
+|-------------------------------------------------------------------------------------------------*/
+/*
+    Colour contrast from https://gist.github.com/FStop/8959422
+    
+    Usage:
+    @if color_contrast($colour, #fff) < 2 {
+        color: #333;
+    }
+    @else{
+        color: #fff;
+    }
+*/
+/* Awesome contrast ratio function
+* via https://gist.github.com/voxpelli/6304812
+**/
+/*
+    Apply a border and a padding that offsets the border-width from one spacing unit so as not to
+    affect the vertical rhythm.
+    Note the Opera Mini doesn't support `calc` so we need to include normal padding for that
+    browser.
+    Also, since we're supporting FF 8+, we're including -moz-calc for versions up to 16.
+    I may consider removing this as those browsers are dead, but I'm just being thorough for now.
+
+    Note on the 'last margin' issue/hack:
+    The pseudo element is intended to provide a collapsible margin to cancel out any 'trailing'
+    margins from content elements. However, since we're reducing the whole padding space by the
+    border-width to maintain the vertical rhythm, that margin is also less, BUT the content margin
+    is NOT being reduced, so that wins out - the reduction is ignored.
+    If the pseudo element bottom margin is adjusted to cancel out the height (1px) AS WELL AS
+    the amount of border-width, but the last element DOES NOT have a margin, then the space becomes
+    too small.
+    If pseudo-element height is 0, it doesn't work in IE, Chrome, Safari, without inline-block
+*/
+/*
+    This button mixin isn't really meant for generating specific/themed _types_ of button - there
+    would be too much code duplication for that.
+    Instead, this is intended to create buttons for new/custom selectors.
+    For example:
+
+    ```
+    [role="button"] {
+        @include button;
+    }
+    ```
+
+    rather than:
+
+    ```
+        .btn--affirmative {
+            @include button(<text-color>, <bg-color>);
+        }
+    ```
+
+    Note - because of this, think about removing parameters (it changed from my original intention -
+    I may change it back or split this into 2 mixins, or even just move things that are meant for
+    input[type="button"] to that ruleset - actually that's not a bad idea).
+
+*/
+/*
+    1. Remove the tapping delay from clickable elements.
+
+    Sort out the height of buttons. At 12px spacing, should be 30px high with 3px top/bottom margin.
+    Note Edge doesn't like: `line-height: calc(3rem - 2px)` if `display: inline-flex`
+    FF8 - ? doesn't like `line-height: -moz-calc()` and ignores
+    Need to make sure height is governed by line-height in case of breaks within buttons.
+*/
+/*-------------------------------------------------------------------------------------------------|
+
+    SETTINGS
+
+|-------------------------------------------------------------------------------------------------*/
+/* Global focus style: */
+/*
+$anchor-focus-text-color: false;
+@if $anchor-focus-background-color != false {
+    @if color_light_or_dark($anchor-focus-background-color) == 'light' {
+        $anchor-focus-text-color: darken($anchor-text-color, 50%);
+    } @else {
+        $anchor-focus-text-color: lighten($anchor-text-color, 70%);
+    }
+}
+@debug $anchor-focus-text-color;
+*/
+/*
+//$button-focus-outline-width: $ui-focus-outline-width !default;
+$button-focus-outline-width: false !default;
+$button-focus-outline-style: $ui-focus-outline-style !default;
+$button-focus-outline-color: rgba(255,255,255,0.6) !default;
+//$button-focus-outline-offset: -($ui-focus-outline-offset + $button-border-width) !default;
+$button-focus-outline-offset: -($ui-focus-outline-offset + $button-border-width) !default;
+*/
+/*$input-focus-indicator-color: false !default;
+@if color_light_or_dark($input-background-color) == 'light' {
+    $input-focus-indicator-color: darken($input-background-color, 30%);
+} @else {
+    $input-focus-indicator-color: lighten($input-background-color, 30%);
+}
+@debug color_light_or_dark($input-background-color);*/
+/* Output class for reference (tmp): */
+.ref {
+  fallback--base-rem-space-unit: 2.4rem;
+  fallback--base-rem-1px: 0.1rem;
+  fallback--root-font-size: 10px;
+  fallback--root-font-size-percent: 62.5;
+}
+
+/*-------------------------------------------------------------------------------------------------|
+
+    ACCESSIBILITY / ARIA
+    Moved to it's own file. Still debating this.
+
+|-------------------------------------------------------------------------------------------------*/
+/*! Start CSS Accessibility. See SCSS file for documentation. */
+/*
+
+    Notes:
+
+    I'm debating moving separating this from the core file.
+    I'm not sure which approach I prefer.
+    Will probably go down the route of only having optional stuff in separate files - not sure.
+*/
+/*-------------------------------------------------------------------------------------------------|
+
+    ACCESSIBILITY / ARIA
+
+|-------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------|
+
+    UTILITIES
+    Moved to it's own file. Still debating this.
+
+-|------------------------------------------------------------------------------------------------*/
+/*! Start CSS Utilities. See SCSS file for documentation. */
+/*
+
+    Notes:
+
+    I'm debating moving separating this from the core file.
+    I'm not sure which approach I prefer.
+    Will probably go down the route of only having optional stuff in separate files - not sure.
+*/
+/*-------------------------------------------------------------------------------------------------|
+
+    UTILITIES
+
+-|------------------------------------------------------------------------------------------------*/
+/*! End Start CSS */
 /* --| Component Patterns |---------------------------------------------------------------------- */
 /*
 
 */
 .c-badge {
   /*
-    &.c-badge--circle {
-        border-radius: 50%;
-        overflow: hidden;
-    }
+        &.c-badge--circle {
+            border-radius: 50%;
+            overflow: hidden;
+        }
 
-    &.c-badge--rounded {
-        border-radius: 0.2em;
-        overflow: hidden;
-    }
-    */
+        &.c-badge--rounded {
+            border-radius: 0.2em;
+            overflow: hidden;
+        }
+        */
 }
 
 .c-badge.c-badge {
@@ -5104,9 +4983,9 @@ body {
 
 .c-badge img {
   /*
-                1. This is to provide positioning context for the ::after pseudo-element.
-                2. This is so a broken image is still 100%.
-            */
+                    1. This is to provide positioning context for the ::after pseudo-element.
+                    2. This is so a broken image is still 100%.
+                */
   position: relative;
   /* [1] */
   display: block;
@@ -5137,10 +5016,10 @@ a[href].c-badge:hover, a[href].c-badge:active, a[href].c-badge:focus {
 }
 
 /* 
-    IE10-11 
+        IE10-11 
 
-    1. IE11- seems to need this.
-*/
+        1. IE11- seems to need this.
+    */
 @media only all and (-ms-high-contrast: none), only all and (-ms-high-contrast: active) {
   .c-badge img {
     height: 100%;
@@ -5212,9 +5091,9 @@ $card-button--border-color: darken($card--base-color, 20%) !default;
   padding: 0;
   outline: 0 solid rgba(0, 0, 0, 0.5);
   /*
-            If the 'pull' is > module body content height, it'll protrude below the container,
-            so hide it:
-        */
+                If the 'pull' is > module body content height, it'll protrude below the container,
+                so hide it:
+            */
   overflow: hidden;
 }
 
@@ -5375,14 +5254,14 @@ $card-button--border-color: darken($card--base-color, 20%) !default;
 }
 
 /*
-@include card-theme(
-    "",
-    (
-        card-text-color       : $primary-cta--text-color,
-        card-background-color : $primary-cta--background-color
-    )
-);
-*/
+    @include card-theme(
+        "",
+        (
+            card-text-color       : $primary-cta--text-color,
+            card-background-color : $primary-cta--background-color
+        )
+    );
+    */
 /*
 */
 .c-contact-list.c-contact-list dt {
@@ -5401,12 +5280,6 @@ $event--border-color: $fallback--base-ui-color;
 /*$featurette-spacing-unit: $fallback--base-rem-space-unit;
 @import "component-patterns/_featurette.scss";
 @include featurette--themer("featurette--dark", #555, #fff);*/
-.funder-logo {
-  text-align: center;
-  margin-bottom: 2.4rem;
-  width: 100%;
-}
-
 /*
 */
 .c-hero.c-hero {
@@ -5416,8 +5289,8 @@ $event--border-color: $fallback--base-ui-color;
 
 .c-hero .c-hero__message > * {
   /*
-            1. For IE10 to wrap text.
-        */
+                1. For IE10 to wrap text.
+            */
   padding: 2.4rem;
   font-size: 1.25em;
   line-height: 1.3;
@@ -5432,11 +5305,11 @@ $event--border-color: $fallback--base-ui-color;
 }
 
 /*
-.hero .hero-message {
-    margin-left: $body-padding;
-    margin-right: $body-padding;
-}
-*/
+    .hero .hero-message {
+        margin-left: $body-padding;
+        margin-right: $body-padding;
+    }
+    */
 @media only screen and (min-width: 40em) {
   .c-hero .c-hero__message {
     position: absolute;
@@ -5466,6 +5339,7 @@ $event--border-color: $fallback--base-ui-color;
 }
 
 .c-page-header.c-page-header {
+  background-color: #fff;
   margin-bottom: 0;
 }
 
@@ -5486,29 +5360,30 @@ $event--border-color: $fallback--base-ui-color;
 */
 /*.page-footer {
 
-    & {
-        background-color: $fallback--base-ui-color;
-        padding: ($fallback--base-em-ratio * 1.5em) / 3;
-        font-size: 0.875em;
-        text-align: center;
-        color: #fff;
-        margin-bottom: 0;
-    }
+        & {
+            background-color: $fallback--base-ui-color;
+            padding: ($fallback--base-em-ratio * 1.5em) / 3;
+            font-size: 0.875em;
+            text-align: center;
+            color: #fff;
+            margin-bottom: 0;
+        }
 
 
 
-    a[href] {
-        color: lighten($fallback--base-ui-color, 40%);
-    }
+        a[href] {
+            color: lighten($fallback--base-ui-color, 40%);
+        }
 
-    a[href]:hover,
-    a[href]:active,
-    a[href]:focus {
-        color: lighten($fallback--base-ui-color, 20%);
-    }
+        a[href]:hover,
+        a[href]:active,
+        a[href]:focus {
+            color: lighten($fallback--base-ui-color, 20%);
+        }
 
-}*/
+    }*/
 .c-page-footer.c-page-footer {
+  background-color: #fff;
   padding: 0 2.4rem 2.4rem 2.4rem;
   margin: 0;
 }
@@ -5545,7 +5420,7 @@ $event--border-color: $fallback--base-ui-color;
 		$border-color: darken($background-color, 10%);
     }*/
 .c-meter {
-  color: #333;
+  color: #fff;
 }
 
 .c-panel.c-panel {
@@ -5591,12 +5466,23 @@ $event--border-color: $fallback--base-ui-color;
 
 .c-primary-cta[href] {
   color: #fff;
-  background-color: #0077AD;
+  background-color: #614776;
 }
 
 .c-primary-cta[href]:hover, .c-primary-cta[href]:active, .c-primary-cta[href]:focus {
   color: #fff;
-  background-color: #00547a;
+  /*@if is-int($button-background-color--alt) {
+                @if $button-background-color--alt > 0 {
+                    $button-background-color--alt_percent: $button-background-color--alt * 1%;
+                    background-color: lighten(map-get($theme, cta-background-color), $button-background-color--alt_percent);
+                }
+                @if $button-background-color--alt < 0 {
+                    $button-background-color--alt_percent: $button-background-color--alt * -1%;
+                    background-color: darken(map-get($theme, cta-background-color), $button-background-color--alt_percent);
+                }
+            }
+            */
+  background-color: #473456;
 }
 
 /*
@@ -5684,8 +5570,8 @@ $event--border-color: $fallback--base-ui-color;
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .c-sign .c-sign__centered-content {
     /*
-                1. IE 11 needs this to size things properly in the case of nested flex ff-widths.
-            */
+                    1. IE 11 needs this to size things properly in the case of nested flex ff-widths.
+                */
   }
 }
 
@@ -5730,116 +5616,113 @@ $event--border-color: $fallback--base-ui-color;
   color: #333;
 }
 
-/* --| Navigation Patterns |--------------------------------------------------------------------- */
-/*
-
-*/
-.n-breadcrumbs {
-  /*
-            .n-breadcrumbs__link {
-
-            }
-            */
+/* ---------------------------------------------------------------------------------------------- */
+/* --| Decoration Patterns |--------------------------------------------------------------------- */
+.d-background {
+  background-color: #614776;
 }
 
-.n-breadcrumbs.n-breadcrumbs {
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  font-size: 1em;
+.d-background--dark {
+  background-color: #473456;
 }
 
-.n-breadcrumbs .n-breadcrumbs__title,
-.n-breadcrumbs .n-breadcrumbs__item {
-  margin: 0;
-  padding: 0;
+.d-background--very-dark {
+  background-color: #2d2136;
 }
 
-.n-breadcrumbs .n-breadcrumbs__title {
-  margin-right: 1rem;
+.d-background--sloped {
+  background: -moz-linear-gradient(45deg, #543d66 0%, #573f69 50%, #5c4370 50%, #59416c 100%);
+  background: -webkit-linear-gradient(45deg, #543d66 0%, #573f69 50%, #5c4370 50%, #59416c 100%);
+  background: linear-gradient(45deg, #543d66 0%, #573f69 50%, #5c4370 50%, #59416c 100%);
 }
 
-.n-breadcrumbs .n-breadcrumbs__item:not(:first-of-type)::before {
-  content: " /";
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
+.d-bands--left,
+.d-bands--sides {
+  border-left-style: solid;
+  border-left-width: 3px;
 }
 
-/*
-$pagination-spacing-unit: $fallback--base-rem-space-unit;
-$pagination--link-color--alt: #ccc;
-$pagination--background-color: #fff;
-@import "navigation-patterns/_pagination.scss";
-*/
-/*
-    The `height: 100%;` in the `.section-menu` class below allows the section-menu to fill it's container (if inside,
-    say, a list-grid). However, it doesn't work in Safari OSX/iOS.
-    Applying a `section-menu-wrap` class to a list item to make those items flex-containers seems to work
-    OK, but perhaps this would be better abstracted as a `fill-height` class or something?
-*/
-.n-section-menu.n-section-menu {
-  color: #333;
-  background: #fff;
-  padding: 0;
-  outline: 0 solid #e6e6e6;
-  /*
-            If the 'pull' is > module body content height, it'll protrude below the container,
-            so hide it:
-        */
-  overflow: hidden;
+.d-bands--right,
+.d-bands--sides {
+  border-right-style: solid;
+  border-right-width: 3px;
 }
 
-.n-section-menu .n-section-menu__list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.d-bands--top,
+.d-bands--above {
+  border-top-style: solid;
+  border-top-width: 3px;
 }
 
-.n-section-menu .n-section-menu__item {
-  padding: 0;
-  margin: 0;
-}
-
-.n-section-menu .n-section-menu__item:not(:last-child) .n-section-menu__link {
-  border-bottom-color: #e6e6e6;
+.d-bands--bottom,
+.d-bands--below {
   border-bottom-style: solid;
-  border-bottom-width: 1px;
+  border-bottom-width: 3px;
 }
 
-.n-section-menu .n-section-menu__item--active .n-section-menu__link {
-  background: #e6e6e6;
+.d-bands {
+  border-style: solid;
+  border-width: 3px;
 }
 
-.n-section-menu .n-section-menu__item--active span {
-  border-bottom: 2px dashed;
+.d-bands--sz-xxs {
+  border-width: 0.3rem;
 }
 
-.n-section-menu .n-section-menu__link {
-  padding: 0.6rem;
-  margin: 0;
-  border: 0;
-  display: block;
+.d-bands--sz-xs {
+  border-width: 0.6rem;
 }
 
-.n-section-menu .n-section-menu__link:hover {
-  border: 0;
-  background: #ccc;
+.d-bands--sz-s {
+  border-width: 1.2rem;
 }
 
-.n-section-menu__item > ul {
-  list-style: none;
-  padding: 0;
-  margin-left: 2.4rem;
+.d-bands--sz-m {
+  border-width: 2.4rem;
 }
 
-.n-section-menu .n-section-menu__title {
-  margin-bottom: 0;
+.d-bands--sz-l {
+  border-width: 4.8rem;
+}
+
+.d-bands--sz-xl {
+  border-width: 9.6rem;
+}
+
+.d-bands--sz-xxl {
+  border-width: 19.2rem;
+}
+
+.d-bands,
+.d-bands--left,
+.d-bands--right,
+.d-bands--sides,
+.d-bands--top,
+.d-bands--above,
+.d-bands--bottom,
+.d-bands--below {
+  border-color: #614776;
+}
+
+/* --| Component Patterns |---------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------------------------- */
+/* --| Decoration Patterns |--------------------------------------------------------------------- */
+.d-background.t-neutral {
+  background-color: #8e8279;
+}
+
+.d-background--dark.t-neutral {
+  background-color: #736961;
+}
+
+.d-background--very-dark.t-neutral {
+  background-color: #57504a;
+}
+
+.d-background--sloped.t-neutral {
+  background: -moz-linear-gradient(45deg, #81756d 0%, #84786f 50%, #897d74 50%, #867a71 100%);
+  background: -webkit-linear-gradient(45deg, #81756d 0%, #84786f 50%, #897d74 50%, #867a71 100%);
+  background: linear-gradient(45deg, #81756d 0%, #84786f 50%, #897d74 50%, #867a71 100%);
 }
 
 /* ---------------------------------------------------------------------------------------------- */
@@ -6196,91 +6079,116 @@ $pagination--background-color: #fff;
 }
 
 /* ---------------------------------------------------------------------------------------------- */
-/* --| Decoration Patterns |--------------------------------------------------------------------- */
-.d-background {
-  background-color: #0077AD;
+/* --| Navigation Patterns |--------------------------------------------------------------------- */
+/*
+
+*/
+.n-breadcrumbs {
+  /*
+            .n-breadcrumbs__link {
+
+            }
+            */
 }
 
-.d-background--dark {
-  background-color: #00547a;
+.n-breadcrumbs.n-breadcrumbs {
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  font-size: 1em;
 }
 
-.d-background--very-dark {
-  background-color: #003147;
+.n-breadcrumbs .n-breadcrumbs__title,
+.n-breadcrumbs .n-breadcrumbs__item {
+  margin: 0;
+  padding: 0;
 }
 
-.d-background--sloped {
-  background: -moz-linear-gradient(45deg, #006594 0%, #006999 50%, #0070a3 50%, #006c9e 100%);
-  background: -webkit-linear-gradient(45deg, #006594 0%, #006999 50%, #0070a3 50%, #006c9e 100%);
-  background: linear-gradient(45deg, #006594 0%, #006999 50%, #0070a3 50%, #006c9e 100%);
+.n-breadcrumbs .n-breadcrumbs__title {
+  margin-right: 1rem;
 }
 
-.d-bands--left,
-.d-bands--sides {
-  border-left-style: solid;
-  border-left-width: 3px;
+.n-breadcrumbs .n-breadcrumbs__item:not(:first-of-type)::before {
+  content: " /";
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
 }
 
-.d-bands--right,
-.d-bands--sides {
-  border-right-style: solid;
-  border-right-width: 3px;
+/*
+$pagination-spacing-unit: $fallback--base-rem-space-unit;
+$pagination--link-color--alt: #ccc;
+$pagination--background-color: #fff;
+@import "navigation-patterns/_pagination.scss";
+*/
+/*
+    The `height: 100%;` in the `.section-menu` class below allows the section-menu to fill it's container (if inside,
+    say, a list-grid). However, it doesn't work in Safari OSX/iOS.
+    Applying a `section-menu-wrap` class to a list item to make those items flex-containers seems to work
+    OK, but perhaps this would be better abstracted as a `fill-height` class or something?
+*/
+.n-section-menu.n-section-menu {
+  color: #333;
+  background: #fff;
+  padding: 0;
+  outline: 0 solid #e6e6e6;
+  /*
+            If the 'pull' is > module body content height, it'll protrude below the container,
+            so hide it:
+        */
+  overflow: hidden;
 }
 
-.d-bands--top,
-.d-bands--above {
-  border-top-style: solid;
-  border-top-width: 3px;
+.n-section-menu .n-section-menu__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.d-bands--bottom,
-.d-bands--below {
+.n-section-menu .n-section-menu__item {
+  padding: 0;
+  margin: 0;
+}
+
+.n-section-menu .n-section-menu__item:not(:last-child) .n-section-menu__link {
+  border-bottom-color: #e6e6e6;
   border-bottom-style: solid;
-  border-bottom-width: 3px;
+  border-bottom-width: 1px;
 }
 
-.d-bands {
-  border-style: solid;
-  border-width: 3px;
+.n-section-menu .n-section-menu__item--active .n-section-menu__link {
+  background: #e6e6e6;
 }
 
-.d-bands--sz-xxs {
-  border-width: 0.3rem;
+.n-section-menu .n-section-menu__item--active span {
+  border-bottom: 2px dashed;
 }
 
-.d-bands--sz-xs {
-  border-width: 0.6rem;
+.n-section-menu .n-section-menu__link {
+  padding: 0.6rem;
+  margin: 0;
+  border: 0;
+  display: block;
 }
 
-.d-bands--sz-s {
-  border-width: 1.2rem;
+.n-section-menu .n-section-menu__link:hover {
+  border: 0;
+  background: #ccc;
 }
 
-.d-bands--sz-m {
-  border-width: 2.4rem;
+.n-section-menu__item > ul {
+  list-style: none;
+  padding: 0;
+  margin-left: 2.4rem;
 }
 
-.d-bands--sz-l {
-  border-width: 4.8rem;
-}
-
-.d-bands--sz-xl {
-  border-width: 9.6rem;
-}
-
-.d-bands--sz-xxl {
-  border-width: 19.2rem;
-}
-
-.d-bands,
-.d-bands--left,
-.d-bands--right,
-.d-bands--sides,
-.d-bands--top,
-.d-bands--above,
-.d-bands--bottom,
-.d-bands--below {
-  border-color: #0077AD;
+.n-section-menu .n-section-menu__title {
+  margin-bottom: 0;
 }
 
 /* ---------------------------------------------------------------------------------------------- */
@@ -6803,786 +6711,16 @@ $pagination--background-color: #fff;
   hyphens: auto;
 }
 
-.d-background.t-neutral {
-  background-color: #8e8279;
-}
+/*
 
-.d-background--dark.t-neutral {
-  background-color: #736961;
-}
-
-.d-background--very-dark.t-neutral {
-  background-color: #57504a;
-}
-
-.d-background--sloped.t-neutral {
-  background: -moz-linear-gradient(45deg, #81756d 0%, #84786f 50%, #897d74 50%, #867a71 100%);
-  background: -webkit-linear-gradient(45deg, #81756d 0%, #84786f 50%, #897d74 50%, #867a71 100%);
-  background: linear-gradient(45deg, #81756d 0%, #84786f 50%, #897d74 50%, #867a71 100%);
-}
-
+@include background-theme(
+    "neutral",
+    (
+        background-color : #8e8279
+    ));
+*/
 /* ---------------------------------------------------------------------------------------------- */
 /* --| THEMES |---------------------------------------------------------------------------------- */
-/*
-Note - this won't work until SASS supports dynamic calling of mixins. It's close, but hasn't been
-merged yet. Hoping that will be done soon so I can change this.
-
-// List all the includes that should be called.
-// Note that they're defined in the relevent pattern files, so it isn't ideal to list them here,
-// but I don't know of another way of doing this yet.
-// One idea could be that each pattern that needs to be theme-able adds it's own name to this list,
-// (registers itself). This may work, but may come with it's own set of problems. Investigate.
-$patterns: (
-    bands-theme,
-    page-header-theme,
-    panel-theme,
-    panel-theme--dark,
-    primary-cta-theme
-);
-*/
-/* - Waiting for SASS to support. Currently pseudo code.
-    @each $pattern in $patterns {
-        @include $pattern (
-            (
-                name  : white,
-                theme : $theme
-            )
-        );
-    }
-    */
-.d-background.t-white {
-  background-color: #ffffff;
-}
-
-.d-background--dark.t-white {
-  background-color: #e6e6e6;
-}
-
-.d-background--very-dark.t-white {
-  background-color: #cccccc;
-}
-
-.d-background--sloped.t-white {
-  background: -moz-linear-gradient(45deg, #f2f2f2 0%, whitesmoke 50%, #fafafa 50%, #f7f7f7 100%);
-  background: -webkit-linear-gradient(45deg, #f2f2f2 0%, whitesmoke 50%, #fafafa 50%, #f7f7f7 100%);
-  background: linear-gradient(45deg, #f2f2f2 0%, whitesmoke 50%, #fafafa 50%, #f7f7f7 100%);
-}
-
-.d-bands.t-white,
-.d-bands--left.t-white,
-.d-bands--right.t-white,
-.d-bands--sides.t-white,
-.d-bands--top.t-white,
-.d-bands--above.t-white,
-.d-bands--bottom.t-white,
-.d-bands--below.t-white {
-  border-color: #ffffff;
-}
-
-.c-card.t-white,
-.c-card.t-white .c-card__main {
-  background-color: rgba(0, 0, 0, 0.1);
-}
-
-.c-card--themed-content.t-white .c-card__body::before {
-  background-color: rgba(0, 0, 0, 0.1);
-}
-
-.c-card.t-white .c-card__main {
-  position: relative;
-  color: #fff;
-  background: rgba(0, 0, 0, 0.1);
-}
-
-/*@if $border-color == null {
-		$border-color: darken($background-color, 10%);
-    }*/
-.c-meter.t-white {
-  color: #fff;
-}
-
-.c-page-header.t-white {
-  color: #333;
-  background-color: #ffffff;
-}
-
-.c-panel.c-panel.t-white {
-  color: #333;
-  background: #ffffff;
-}
-
-.c-primary-cta.t-white[href] {
-  color: #333;
-  background-color: #ffffff;
-}
-
-.c-primary-cta.t-white[href]:hover, .c-primary-cta.t-white[href]:active, .c-primary-cta.t-white[href]:focus {
-  color: #333;
-  background-color: #e6e6e6;
-}
-
-/*.t-white.t-color {
-        color: map-get($theme, text-color);
-    }*/
-.t-white button,
-.t-white button.over-panel-control,
-.t-white button.over-panel-control[aria-expanded=true] {
-  border-color: #ffffff;
-  color: #333;
-  background-color: #ffffff;
-}
-
-.t-white button:hover, .t-white button:active, .t-white button:focus,
-.t-white button.over-panel-control:hover,
-.t-white button.over-panel-control:active,
-.t-white button.over-panel-control:focus,
-.t-white button.over-panel-control[aria-expanded=true]:hover,
-.t-white button.over-panel-control[aria-expanded=true]:active,
-.t-white button.over-panel-control[aria-expanded=true]:focus {
-  background-color: #e6e6e6;
-  /*@else {
-                background-color: map-get($theme, background-color);
-            }*/
-}
-
-.t-white a[href] {
-  border-color: #ffffff;
-  color: #333;
-  background-color: transparent;
-}
-
-.t-white a[href]:hover, .t-white a[href]:active, .t-white a[href]:focus {
-  color: #333;
-}
-
-:not(.overpanel) .t-white a[href].cta {
-  border-color: #ffffff;
-  color: #333;
-  background-color: #fff;
-}
-
-:not(.overpanel) .t-white a[href].cta:hover, :not(.overpanel) .t-white a[href].cta:active, :not(.overpanel) .t-white a[href].cta:focus {
-  background-color: white;
-}
-
-/*
-    .t-white.d-50-50-background {
-        background: #FFFFFF;
-        background: -moz-linear-gradient(left, map-get($theme, background-color) 0%, map-get($theme, background-color) 50%, #ffffff 50%, #ffffff 100%);
-        background: -webkit-linear-gradient(left, map-get($theme, background-color) 0%,map-get($theme, background-color) 50%,#ffffff 50%,#ffffff 100%);
-        background: linear-gradient(to right, map-get($theme, background-color) 0%,map-get($theme, background-color) 50%,#ffffff 50%,#ffffff 100%);
-    }
-
-    .t-white.d-50-50-background--flipped {
-        background: #FFFFFF;
-        background: -moz-linear-gradient(left, #ffffff 0%, #ffffff 50%, map-get($theme, background-color) 50%, map-get($theme, background-color) 100%);
-        background: -webkit-linear-gradient(left, #ffffff 0%,#ffffff 50%,map-get($theme, background-color) 50%,map-get($theme, background-color) 100%);
-        background: linear-gradient(to right, #ffffff 0%,#ffffff 50%,map-get($theme, background-color) 50%,map-get($theme, background-color) 100%);
-    }
-    */
-.c-panel.c-panel.t-white--dark {
-  color: #fff;
-  background: #cccccc;
-}
-
-/* - Waiting for SASS to support. Currently pseudo code.
-    @each $pattern in $patterns {
-        @include $pattern (
-            (
-                name  : anode,
-                theme : $theme
-            )
-        );
-    }
-    */
-.d-background.t-anode {
-  background-color: #933961;
-}
-
-.d-background--dark.t-anode {
-  background-color: #6e2b49;
-}
-
-.d-background--very-dark.t-anode {
-  background-color: #4a1d31;
-}
-
-.d-background--sloped.t-anode {
-  background: -moz-linear-gradient(45deg, #813255 0%, #843357 50%, #8c365c 50%, #88355a 100%);
-  background: -webkit-linear-gradient(45deg, #813255 0%, #843357 50%, #8c365c 50%, #88355a 100%);
-  background: linear-gradient(45deg, #813255 0%, #843357 50%, #8c365c 50%, #88355a 100%);
-}
-
-.d-bands.t-anode,
-.d-bands--left.t-anode,
-.d-bands--right.t-anode,
-.d-bands--sides.t-anode,
-.d-bands--top.t-anode,
-.d-bands--above.t-anode,
-.d-bands--bottom.t-anode,
-.d-bands--below.t-anode {
-  border-color: #933961;
-}
-
-.c-card.t-anode,
-.c-card.t-anode .c-card__main {
-  background-color: rgba(0, 0, 0, 0.1);
-}
-
-.c-card--themed-content.t-anode .c-card__body::before {
-  background-color: rgba(0, 0, 0, 0.1);
-}
-
-.c-card.t-anode .c-card__main {
-  position: relative;
-  color: #fff;
-  background: rgba(0, 0, 0, 0.1);
-}
-
-/*@if $border-color == null {
-		$border-color: darken($background-color, 10%);
-    }*/
-.c-meter.t-anode {
-  color: #fff;
-}
-
-.c-page-header.t-anode {
-  color: #333;
-  background-color: #933961;
-}
-
-.c-panel.c-panel.t-anode {
-  color: #333;
-  background: #933961;
-}
-
-.c-primary-cta.t-anode[href] {
-  color: #333;
-  background-color: #933961;
-}
-
-.c-primary-cta.t-anode[href]:hover, .c-primary-cta.t-anode[href]:active, .c-primary-cta.t-anode[href]:focus {
-  color: #333;
-  background-color: #6e2b49;
-}
-
-/*.t-anode.t-color {
-        color: map-get($theme, text-color);
-    }*/
-.t-anode button,
-.t-anode button.over-panel-control,
-.t-anode button.over-panel-control[aria-expanded=true] {
-  border-color: #933961;
-  color: #333;
-  background-color: #933961;
-}
-
-.t-anode button:hover, .t-anode button:active, .t-anode button:focus,
-.t-anode button.over-panel-control:hover,
-.t-anode button.over-panel-control:active,
-.t-anode button.over-panel-control:focus,
-.t-anode button.over-panel-control[aria-expanded=true]:hover,
-.t-anode button.over-panel-control[aria-expanded=true]:active,
-.t-anode button.over-panel-control[aria-expanded=true]:focus {
-  background-color: #6e2b49;
-  /*@else {
-                background-color: map-get($theme, background-color);
-            }*/
-}
-
-.t-anode a[href] {
-  border-color: #933961;
-  color: #333;
-  background-color: transparent;
-}
-
-.t-anode a[href]:hover, .t-anode a[href]:active, .t-anode a[href]:focus {
-  color: #333;
-}
-
-:not(.overpanel) .t-anode a[href].cta {
-  border-color: #933961;
-  color: #333;
-  background-color: #fff;
-}
-
-:not(.overpanel) .t-anode a[href].cta:hover, :not(.overpanel) .t-anode a[href].cta:active, :not(.overpanel) .t-anode a[href].cta:focus {
-  background-color: white;
-}
-
-/*
-    .t-anode.d-50-50-background {
-        background: #FFFFFF;
-        background: -moz-linear-gradient(left, map-get($theme, background-color) 0%, map-get($theme, background-color) 50%, #ffffff 50%, #ffffff 100%);
-        background: -webkit-linear-gradient(left, map-get($theme, background-color) 0%,map-get($theme, background-color) 50%,#ffffff 50%,#ffffff 100%);
-        background: linear-gradient(to right, map-get($theme, background-color) 0%,map-get($theme, background-color) 50%,#ffffff 50%,#ffffff 100%);
-    }
-
-    .t-anode.d-50-50-background--flipped {
-        background: #FFFFFF;
-        background: -moz-linear-gradient(left, #ffffff 0%, #ffffff 50%, map-get($theme, background-color) 50%, map-get($theme, background-color) 100%);
-        background: -webkit-linear-gradient(left, #ffffff 0%,#ffffff 50%,map-get($theme, background-color) 50%,map-get($theme, background-color) 100%);
-        background: linear-gradient(to right, #ffffff 0%,#ffffff 50%,map-get($theme, background-color) 50%,map-get($theme, background-color) 100%);
-    }
-    */
-.c-panel.c-panel.t-anode--dark {
-  color: #fff;
-  background: #4a1d31;
-}
-
-/* - Waiting for SASS to support. Currently pseudo code.
-    @each $pattern in $patterns {
-        @include $pattern (
-            (
-                name  : minidex,
-                theme : $theme
-            )
-        );
-    }
-    */
-.d-background.t-minidex {
-  background-color: #0077AD;
-}
-
-.d-background--dark.t-minidex {
-  background-color: #00547a;
-}
-
-.d-background--very-dark.t-minidex {
-  background-color: #003147;
-}
-
-.d-background--sloped.t-minidex {
-  background: -moz-linear-gradient(45deg, #006594 0%, #006999 50%, #0070a3 50%, #006c9e 100%);
-  background: -webkit-linear-gradient(45deg, #006594 0%, #006999 50%, #0070a3 50%, #006c9e 100%);
-  background: linear-gradient(45deg, #006594 0%, #006999 50%, #0070a3 50%, #006c9e 100%);
-}
-
-.d-bands.t-minidex,
-.d-bands--left.t-minidex,
-.d-bands--right.t-minidex,
-.d-bands--sides.t-minidex,
-.d-bands--top.t-minidex,
-.d-bands--above.t-minidex,
-.d-bands--bottom.t-minidex,
-.d-bands--below.t-minidex {
-  border-color: #0077AD;
-}
-
-.c-card.t-minidex,
-.c-card.t-minidex .c-card__main {
-  background-color: rgba(0, 0, 0, 0.1);
-}
-
-.c-card--themed-content.t-minidex .c-card__body::before {
-  background-color: rgba(0, 0, 0, 0.1);
-}
-
-.c-card.t-minidex .c-card__main {
-  position: relative;
-  color: #fff;
-  background: rgba(0, 0, 0, 0.1);
-}
-
-/*@if $border-color == null {
-		$border-color: darken($background-color, 10%);
-    }*/
-.c-meter.t-minidex {
-  color: #fff;
-}
-
-.c-page-header.t-minidex {
-  color: #333;
-  background-color: #0077AD;
-}
-
-.c-panel.c-panel.t-minidex {
-  color: #333;
-  background: #0077AD;
-}
-
-.c-primary-cta.t-minidex[href] {
-  color: #333;
-  background-color: #0077AD;
-}
-
-.c-primary-cta.t-minidex[href]:hover, .c-primary-cta.t-minidex[href]:active, .c-primary-cta.t-minidex[href]:focus {
-  color: #333;
-  background-color: #00547a;
-}
-
-/*.t-minidex.t-color {
-        color: map-get($theme, text-color);
-    }*/
-.t-minidex button,
-.t-minidex button.over-panel-control,
-.t-minidex button.over-panel-control[aria-expanded=true] {
-  border-color: #0077AD;
-  color: #333;
-  background-color: #0077AD;
-}
-
-.t-minidex button:hover, .t-minidex button:active, .t-minidex button:focus,
-.t-minidex button.over-panel-control:hover,
-.t-minidex button.over-panel-control:active,
-.t-minidex button.over-panel-control:focus,
-.t-minidex button.over-panel-control[aria-expanded=true]:hover,
-.t-minidex button.over-panel-control[aria-expanded=true]:active,
-.t-minidex button.over-panel-control[aria-expanded=true]:focus {
-  background-color: #00547a;
-  /*@else {
-                background-color: map-get($theme, background-color);
-            }*/
-}
-
-.t-minidex a[href] {
-  border-color: #0077AD;
-  color: #333;
-  background-color: transparent;
-}
-
-.t-minidex a[href]:hover, .t-minidex a[href]:active, .t-minidex a[href]:focus {
-  color: #333;
-}
-
-:not(.overpanel) .t-minidex a[href].cta {
-  border-color: #0077AD;
-  color: #333;
-  background-color: #fff;
-}
-
-:not(.overpanel) .t-minidex a[href].cta:hover, :not(.overpanel) .t-minidex a[href].cta:active, :not(.overpanel) .t-minidex a[href].cta:focus {
-  background-color: #fafdff;
-}
-
-/*
-    .t-minidex.d-50-50-background {
-        background: #FFFFFF;
-        background: -moz-linear-gradient(left, map-get($theme, background-color) 0%, map-get($theme, background-color) 50%, #ffffff 50%, #ffffff 100%);
-        background: -webkit-linear-gradient(left, map-get($theme, background-color) 0%,map-get($theme, background-color) 50%,#ffffff 50%,#ffffff 100%);
-        background: linear-gradient(to right, map-get($theme, background-color) 0%,map-get($theme, background-color) 50%,#ffffff 50%,#ffffff 100%);
-    }
-
-    .t-minidex.d-50-50-background--flipped {
-        background: #FFFFFF;
-        background: -moz-linear-gradient(left, #ffffff 0%, #ffffff 50%, map-get($theme, background-color) 50%, map-get($theme, background-color) 100%);
-        background: -webkit-linear-gradient(left, #ffffff 0%,#ffffff 50%,map-get($theme, background-color) 50%,map-get($theme, background-color) 100%);
-        background: linear-gradient(to right, #ffffff 0%,#ffffff 50%,map-get($theme, background-color) 50%,map-get($theme, background-color) 100%);
-    }
-    */
-.c-panel.c-panel.t-minidex--dark {
-  color: #fff;
-  background: #003147;
-}
-
-/* - Waiting for SASS to support. Currently pseudo code.
-    @each $pattern in $patterns {
-        @include $pattern (
-            (
-                name  : neoclear,
-                theme : $theme
-            )
-        );
-    }
-    */
-.d-background.t-neoclear {
-  background-color: #009590;
-}
-
-.d-background--dark.t-neoclear {
-  background-color: #00625f;
-}
-
-.d-background--very-dark.t-neoclear {
-  background-color: #002f2d;
-}
-
-.d-background--sloped.t-neoclear {
-  background: -moz-linear-gradient(45deg, #007c77 0%, #00817c 50%, #008b86 50%, #008681 100%);
-  background: -webkit-linear-gradient(45deg, #007c77 0%, #00817c 50%, #008b86 50%, #008681 100%);
-  background: linear-gradient(45deg, #007c77 0%, #00817c 50%, #008b86 50%, #008681 100%);
-}
-
-.d-bands.t-neoclear,
-.d-bands--left.t-neoclear,
-.d-bands--right.t-neoclear,
-.d-bands--sides.t-neoclear,
-.d-bands--top.t-neoclear,
-.d-bands--above.t-neoclear,
-.d-bands--bottom.t-neoclear,
-.d-bands--below.t-neoclear {
-  border-color: #009590;
-}
-
-.c-card.t-neoclear,
-.c-card.t-neoclear .c-card__main {
-  background-color: rgba(0, 0, 0, 0.1);
-}
-
-.c-card--themed-content.t-neoclear .c-card__body::before {
-  background-color: rgba(0, 0, 0, 0.1);
-}
-
-.c-card.t-neoclear .c-card__main {
-  position: relative;
-  color: #fff;
-  background: rgba(0, 0, 0, 0.1);
-}
-
-/*@if $border-color == null {
-		$border-color: darken($background-color, 10%);
-    }*/
-.c-meter.t-neoclear {
-  color: #fff;
-}
-
-.c-page-header.t-neoclear {
-  color: #333;
-  background-color: #ffffff;
-}
-
-.c-panel.c-panel.t-neoclear {
-  color: #333;
-  background: #009590;
-}
-
-.c-primary-cta.t-neoclear[href] {
-  color: #ffffff;
-  background-color: #B51A82;
-}
-
-.c-primary-cta.t-neoclear[href]:hover, .c-primary-cta.t-neoclear[href]:active, .c-primary-cta.t-neoclear[href]:focus {
-  color: #ffffff;
-  background-color: #881462;
-}
-
-/*.t-neoclear.t-color {
-        color: map-get($theme, text-color);
-    }*/
-.t-neoclear button,
-.t-neoclear button.over-panel-control,
-.t-neoclear button.over-panel-control[aria-expanded=true] {
-  border-color: #009590;
-  color: #ffffff;
-  background-color: #009590;
-}
-
-.t-neoclear button:hover, .t-neoclear button:active, .t-neoclear button:focus,
-.t-neoclear button.over-panel-control:hover,
-.t-neoclear button.over-panel-control:active,
-.t-neoclear button.over-panel-control:focus,
-.t-neoclear button.over-panel-control[aria-expanded=true]:hover,
-.t-neoclear button.over-panel-control[aria-expanded=true]:active,
-.t-neoclear button.over-panel-control[aria-expanded=true]:focus {
-  background-color: #00625f;
-  /*@else {
-                background-color: map-get($theme, background-color);
-            }*/
-}
-
-.t-neoclear a[href] {
-  border-color: #009590;
-  color: #333;
-  background-color: transparent;
-}
-
-.t-neoclear a[href]:hover, .t-neoclear a[href]:active, .t-neoclear a[href]:focus {
-  color: #333;
-}
-
-:not(.overpanel) .t-neoclear a[href].cta {
-  border-color: #009590;
-  color: #333;
-  background-color: #fff;
-}
-
-:not(.overpanel) .t-neoclear a[href].cta:hover, :not(.overpanel) .t-neoclear a[href].cta:active, :not(.overpanel) .t-neoclear a[href].cta:focus {
-  background-color: #e2fffe;
-}
-
-/*
-    .t-neoclear.d-50-50-background {
-        background: #FFFFFF;
-        background: -moz-linear-gradient(left, map-get($theme, background-color) 0%, map-get($theme, background-color) 50%, #ffffff 50%, #ffffff 100%);
-        background: -webkit-linear-gradient(left, map-get($theme, background-color) 0%,map-get($theme, background-color) 50%,#ffffff 50%,#ffffff 100%);
-        background: linear-gradient(to right, map-get($theme, background-color) 0%,map-get($theme, background-color) 50%,#ffffff 50%,#ffffff 100%);
-    }
-
-    .t-neoclear.d-50-50-background--flipped {
-        background: #FFFFFF;
-        background: -moz-linear-gradient(left, #ffffff 0%, #ffffff 50%, map-get($theme, background-color) 50%, map-get($theme, background-color) 100%);
-        background: -webkit-linear-gradient(left, #ffffff 0%,#ffffff 50%,map-get($theme, background-color) 50%,map-get($theme, background-color) 100%);
-        background: linear-gradient(to right, #ffffff 0%,#ffffff 50%,map-get($theme, background-color) 50%,map-get($theme, background-color) 100%);
-    }
-    */
-.d-background.t-neoclear--alt {
-  background-color: #B51A82;
-}
-
-.d-background--dark.t-neoclear--alt {
-  background-color: #881462;
-}
-
-.d-background--very-dark.t-neoclear--alt {
-  background-color: #5c0d42;
-}
-
-.d-background--sloped.t-neoclear--alt {
-  background: -moz-linear-gradient(45deg, #9f1772 0%, #a31775 50%, #ac197c 50%, #a81878 100%);
-  background: -webkit-linear-gradient(45deg, #9f1772 0%, #a31775 50%, #ac197c 50%, #a81878 100%);
-  background: linear-gradient(45deg, #9f1772 0%, #a31775 50%, #ac197c 50%, #a81878 100%);
-}
-
-.c-panel.c-panel.t-neoclear--dark {
-  color: #fff;
-  background: #002f2d;
-}
-
-/* - Waiting for SASS to support. Currently pseudo code.
-    @each $pattern in $patterns {
-        @include $pattern (
-            (
-                name  : npeu,
-                theme : $theme
-            )
-        );
-    }
-    */
-.d-background.t-npeu {
-  background-color: #614776;
-}
-
-.d-background--dark.t-npeu {
-  background-color: #473456;
-}
-
-.d-background--very-dark.t-npeu {
-  background-color: #2d2136;
-}
-
-.d-background--sloped.t-npeu {
-  background: -moz-linear-gradient(45deg, #543d66 0%, #573f69 50%, #5c4370 50%, #59416c 100%);
-  background: -webkit-linear-gradient(45deg, #543d66 0%, #573f69 50%, #5c4370 50%, #59416c 100%);
-  background: linear-gradient(45deg, #543d66 0%, #573f69 50%, #5c4370 50%, #59416c 100%);
-}
-
-.d-bands.t-npeu,
-.d-bands--left.t-npeu,
-.d-bands--right.t-npeu,
-.d-bands--sides.t-npeu,
-.d-bands--top.t-npeu,
-.d-bands--above.t-npeu,
-.d-bands--bottom.t-npeu,
-.d-bands--below.t-npeu {
-  border-color: #614776;
-}
-
-.c-card.t-npeu,
-.c-card.t-npeu .c-card__main {
-  background-color: rgba(0, 0, 0, 0.1);
-}
-
-.c-card--themed-content.t-npeu .c-card__body::before {
-  background-color: rgba(0, 0, 0, 0.1);
-}
-
-.c-card.t-npeu .c-card__main {
-  position: relative;
-  color: #fff;
-  background: rgba(0, 0, 0, 0.1);
-}
-
-/*@if $border-color == null {
-		$border-color: darken($background-color, 10%);
-    }*/
-.c-meter.t-npeu {
-  color: #fff;
-}
-
-.c-page-header.t-npeu {
-  color: #333;
-  background-color: #614776;
-}
-
-.c-panel.c-panel.t-npeu {
-  color: #333;
-  background: #614776;
-}
-
-.c-primary-cta.t-npeu[href] {
-  color: #333;
-  background-color: #614776;
-}
-
-.c-primary-cta.t-npeu[href]:hover, .c-primary-cta.t-npeu[href]:active, .c-primary-cta.t-npeu[href]:focus {
-  color: #333;
-  background-color: #473456;
-}
-
-/*.t-npeu.t-color {
-        color: map-get($theme, text-color);
-    }*/
-.t-npeu button,
-.t-npeu button.over-panel-control,
-.t-npeu button.over-panel-control[aria-expanded=true] {
-  border-color: #614776;
-  color: #333;
-  background-color: #614776;
-}
-
-.t-npeu button:hover, .t-npeu button:active, .t-npeu button:focus,
-.t-npeu button.over-panel-control:hover,
-.t-npeu button.over-panel-control:active,
-.t-npeu button.over-panel-control:focus,
-.t-npeu button.over-panel-control[aria-expanded=true]:hover,
-.t-npeu button.over-panel-control[aria-expanded=true]:active,
-.t-npeu button.over-panel-control[aria-expanded=true]:focus {
-  background-color: #473456;
-  /*@else {
-                background-color: map-get($theme, background-color);
-            }*/
-}
-
-.t-npeu a[href] {
-  border-color: #614776;
-  color: #333;
-  background-color: transparent;
-}
-
-.t-npeu a[href]:hover, .t-npeu a[href]:active, .t-npeu a[href]:focus {
-  color: #333;
-}
-
-:not(.overpanel) .t-npeu a[href].cta {
-  border-color: #614776;
-  color: #333;
-  background-color: #fff;
-}
-
-:not(.overpanel) .t-npeu a[href].cta:hover, :not(.overpanel) .t-npeu a[href].cta:active, :not(.overpanel) .t-npeu a[href].cta:focus {
-  background-color: white;
-}
-
-/*
-    .t-npeu.d-50-50-background {
-        background: #FFFFFF;
-        background: -moz-linear-gradient(left, map-get($theme, background-color) 0%, map-get($theme, background-color) 50%, #ffffff 50%, #ffffff 100%);
-        background: -webkit-linear-gradient(left, map-get($theme, background-color) 0%,map-get($theme, background-color) 50%,#ffffff 50%,#ffffff 100%);
-        background: linear-gradient(to right, map-get($theme, background-color) 0%,map-get($theme, background-color) 50%,#ffffff 50%,#ffffff 100%);
-    }
-
-    .t-npeu.d-50-50-background--flipped {
-        background: #FFFFFF;
-        background: -moz-linear-gradient(left, #ffffff 0%, #ffffff 50%, map-get($theme, background-color) 50%, map-get($theme, background-color) 100%);
-        background: -webkit-linear-gradient(left, #ffffff 0%,#ffffff 50%,map-get($theme, background-color) 50%,map-get($theme, background-color) 100%);
-        background: linear-gradient(to right, #ffffff 0%,#ffffff 50%,map-get($theme, background-color) 50%,map-get($theme, background-color) 100%);
-    }
-    */
-.c-panel.c-panel.t-npeu--dark {
-  color: #fff;
-  background: #2d2136;
-}
-
 /* ---------------------------------------------------------------------------------------------- */
 /* --| WIREFRAME--------------------------------------------------------------------------------- */
 html.wireframe {
@@ -8017,6 +7155,12 @@ body,
   outline: 1px dashed rgba(0, 0, 0, 0.2);
 }
 
+.sticky-footer-wrap {
+  background-color: #fff;
+  min-height: 100%;
+  height: auto;
+}
+
 /*
 h1, h2, h3 {
 	font-family: 'Nunito', sans-serif;
@@ -8421,55 +7565,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e7692', end
 }
 
 /*------------*/
-/* Make the image fill the width and be vertically centered: */
-/* (in portrait images this will leave gaps at the sides) */
-/*.u-image-cover {
-    width: 100%;
-    top: 50%;
-    transform: translateY(-50%);
-}*/
-/* If `object-fit` is supported, use that and override vertical centering: */
-@supports (object-fit: cover) {
-  .u-image-cover {
-    position: relative;
-    height: 100%;
-    width: 100%;
-    min-height: 10em;
-  }
-  .u-image-cover__inner {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-  }
-  .u-image-cover__image {
-    object-fit: cover;
-    height: 100%;
-    width: 100%;
-  }
-}
-
-/* 
-    IE10-11
-    
-    ! NOTE: test this in all non-object-fit-supporting browsers as it may be a fix for those too.
-*/
-@media only all and (-ms-high-contrast: none), only all and (-ms-high-contrast: active) {
-  .u-image-cover {
-    height: 100%;
-    min-height: 12.8rem;
-  }
-  .u-image-cover__inner {
-    position: relative;
-    overflow: hidden;
-    height: 100%;
-  }
-  .u-image-cover__image {
-    position: absolute;
-    width: 100%;
-    transform: translateY(-25%);
-  }
-}
-
 /*------------------*/
 .s-updates.c-panel .c-card__full-link {
   max-width: 41rem;

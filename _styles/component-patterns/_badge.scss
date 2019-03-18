@@ -4,75 +4,83 @@
 
 $badge-namespace: c- !default;
 
-.#{$badge-namespace}badge {
+$theme-only: false !default;
 
-    &#{&} {
-        display: block;
-    }
-    
-        img {
-            /*
-                1. This is to provide positioning context for the ::after pseudo-element.
-                2. This is so a broken image is still 100%.
-            */
+// Note - no theme yet!
 
-            position: relative; /* [1] */
+// We don't need this if we're only themeing the pattern:
+@if $theme-only == false {
 
-            display: block; /* [2] */
+    .#{$badge-namespace}badge {
 
-            height: auto; 
-
-            width: 100%;
-            max-height: 8rem;
-
-
-            border-style: none;
-
+        &#{&} {
+            display: block;
         }
-
-    &#{&}--small{
-        height: 2em;
-        width: 2em;
         
-        & img {
-            width: 100%;
-            height: 100%;
+            img {
+                /*
+                    1. This is to provide positioning context for the ::after pseudo-element.
+                    2. This is so a broken image is still 100%.
+                */
+
+                position: relative; /* [1] */
+
+                display: block; /* [2] */
+
+                height: auto; 
+
+                width: 100%;
+                max-height: 8rem;
+
+
+                border-style: none;
+
+            }
+
+        &#{&}--small{
+            height: 2em;
+            width: 2em;
+            
+            & img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        /*
+        &#{&}--circle {
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        &#{&}--rounded {
+            border-radius: 0.2em;
+            overflow: hidden;
+        }
+        */
+    }
+
+    a[href].#{$badge-namespace}badge {
+        border: 0;
+
+        &:hover,
+        &:active,
+        &:focus {
+            border: 0;
+            box-shadow: 0 0 0 0.6rem #fff, 0 0 0 1.2rem rgba(0,0,0,.2);
         }
     }
-    /*
-    &#{&}--circle {
-        border-radius: 50%;
-        overflow: hidden;
-    }
 
-    &#{&}--rounded {
-        border-radius: 0.2em;
-        overflow: hidden;
-    }
+    /* 
+        IE10-11 
+
+        1. IE11- seems to need this.
     */
-}
 
-a[href].#{$badge-namespace}badge {
-    border: 0;
+    @media only all and (-ms-high-contrast: none), only all and (-ms-high-contrast: active) {
 
-    &:hover,
-    &:active,
-    &:focus {
-        border: 0;
-        box-shadow: 0 0 0 0.6rem #fff, 0 0 0 1.2rem rgba(0,0,0,.2);
+        .#{$badge-namespace}badge img {
+            height: 100%; /* [1] */
+        }
+        
     }
-}
-
-/* 
-    IE10-11 
-
-    1. IE11- seems to need this.
-*/
-
-@media only all and (-ms-high-contrast: none), only all and (-ms-high-contrast: active) {
-
-    .#{$badge-namespace}badge img {
-        height: 100%; /* [1] */
-    }
-    
 }

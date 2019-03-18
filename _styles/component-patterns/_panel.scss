@@ -13,26 +13,7 @@ $panel--border-style: solid !default;
 
 $panel--padding: 2rem !default;
 
-.#{$panel-namespace}panel {
-
-    &#{&} {
-        padding: $panel--padding;
-	
-        @include bottom-space-fix();
-    }
-	
-    
-    &--module {
-        margin-bottom:0;
-        //margin-bottom: $fallback--base-rem-space-unit / 2;
-        
-        h2 {
-            font-size: 24px / $fallback--base-font-size * 1em;
-            //margin-bottom: $fallback--base-rem-space-unit / 2;
-            margin-bottom: 0;
-        }
-    }
-}
+$theme-only: false !default;
 
 
 @mixin panel-theme ($name: "", $theme: ()) {
@@ -73,13 +54,41 @@ $panel--padding: 2rem !default;
 
 }
 
-@include panel-theme(
-    "",
-    (
-        text-color		 : $panel--text-color,
-        background-color : $panel--background-color,
-        border-color     : $panel--border-color,
-        border-width     : $panel--border-width,
-        border-style     : $panel--border-style
-    )
-);
+
+// We don't need this if we're only themeing the pattern:
+@if $theme-only == false {
+
+    .#{$panel-namespace}panel {
+
+        &#{&} {
+            padding: $panel--padding;
+        
+            @include bottom-space-fix();
+        }
+        
+        
+        &--module {
+            margin-bottom:0;
+            //margin-bottom: $fallback--base-rem-space-unit / 2;
+            
+            h2 {
+                font-size: 24px / $fallback--base-font-size * 1em;
+                //margin-bottom: $fallback--base-rem-space-unit / 2;
+                margin-bottom: 0;
+            }
+        }
+    }
+
+
+
+    @include panel-theme(
+        "",
+        (
+            text-color		 : $panel--text-color,
+            background-color : $panel--background-color,
+            border-color     : $panel--border-color,
+            border-width     : $panel--border-width,
+            border-style     : $panel--border-style
+        )
+    );
+}

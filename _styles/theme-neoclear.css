@@ -1,0 +1,510 @@
+/*
+    NeoCLEAR Theme
+    Note this theme file needs to be loaded *in addition* to the base 'style' file.
+*/
+/* --| START THEME |----------------------------------------------------------------------------- */
+/*
+    Many (soon all?) of these patterns are themeable, so they are configured and imported here
+    (separately) so that they can be imported into other theme files without resulting in 
+    re-declared base-styles. E.g. bands defines a set of size classes, these only need to appear in 
+    the stylesheet once. The file that includes *this* file should set `$theme-only: true` to toggle
+    this behaviour.
+*/
+/*
+
+*/
+/*-------------------------------------------------------------------------------------------------|
+    Fall-Back Start-CSS Settings v1.0.0
+
+    Fall-Back is designed for use with the basic
+    [CSS Mustard Cut](https://github.com/Fall-Back/CSS-Mustard-Cut)
+
+    This determines a browser support base of:
+
+    IE 9+, FF 8+, Opera 12, [Chrome 29+, Android ~4.4+]
+    Chrome 29+, Opera 16+, Safari 6.1+, iOS 7+, Android ~4.4+
+
+
+    Any double-classing (e.g. `.class.class`) is deliberate and intended to increase specifity.
+    This allows any applicable Start-CSS declarations to be overidden.
+    E.g. `.{pattern} .{pattern}__child` would `a[href]`, but just `.{pattern}` wouldn't, so we use
+    `.{pattern}.{pattren}`
+
+|-------------------------------------------------------------------------------------------------*/
+/* --| FUNCTIONS AND MIXINS |-------------------------------------------------------------------- */
+/*
+    Global sizes
+*/
+/*! Start CSS. See SCSS file for documentation. */
+/*
+
+    Start CSS is designed for use with the basic
+    [CSS Mustard Cut](https://github.com/Fall-Back/CSS-Mustard-Cut)
+
+    This determines a browser support base of:
+
+    IE 9+, FF 8+, Opera 12, [Chrome 29+, Android ~4.4+]
+    Chrome 29+, Opera 16+, Safari 6.1+, iOS 7+, Android ~4.4+
+
+    Notes:
+
+    -moz-calc because this supports FF8+ and I like to be thorough.
+
+    CSS hacks from http://browserstrangeness.com/css_hacks.html
+    (hack and browser support in comments above each usage)
+
+    !!! Maybe don't include custom properties in this, I think it over-complicates things and needs
+    gradient background overlays to lighten/darken background colors dynamically.
+    Possibly include a separate file to add custom property support that overrides what it needs,
+    all wrapped in an `@supports`.
+
+    Resources:
+    * http://www.smashingmagazine.com/2012/12/css-baseline-the-good-the-bad-and-the-ugly/
+    * https://24ways.org/2006/compose-to-a-vertical-rhythm
+
+    NOTE TO SELF.
+    Where borders are concerned, probably best to leave margins alone and use padding to maintain
+    baseline-grid. After all, if there's a border, there will have to be padding too.
+
+    overflow-y makes element focussable in FireFox.
+
+*/
+/*-------------------------------------------------------------------------------------------------|
+    Fall-Back Start-CSS Settings v1.0.0
+
+    Fall-Back is designed for use with the basic
+    [CSS Mustard Cut](https://github.com/Fall-Back/CSS-Mustard-Cut)
+
+    This determines a browser support base of:
+
+    IE 9+, FF 8+, Opera 12, [Chrome 29+, Android ~4.4+]
+    Chrome 29+, Opera 16+, Safari 6.1+, iOS 7+, Android ~4.4+
+
+
+    Any double-classing (e.g. `.class.class`) is deliberate and intended to increase specifity.
+    This allows any applicable Start-CSS declarations to be overidden.
+    E.g. `.{pattern} .{pattern}__child` would `a[href]`, but just `.{pattern}` wouldn't, so we use
+    `.{pattern}.{pattren}`
+
+|-------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------|
+
+    FUNCTIONS AND MIXINS
+   (These must come before the Setting, as the settings make use of some of these)
+
+|-------------------------------------------------------------------------------------------------*/
+/*
+    Colour contrast from https://gist.github.com/FStop/8959422
+    
+    Usage:
+    @if color_contrast($colour, #fff) < 2 {
+        color: #333;
+    }
+    @else{
+        color: #fff;
+    }
+*/
+/* Awesome contrast ratio function
+* via https://gist.github.com/voxpelli/6304812
+**/
+/*
+    Apply a border and a padding that offsets the border-width from one spacing unit so as not to
+    affect the vertical rhythm.
+    Note the Opera Mini doesn't support `calc` so we need to include normal padding for that
+    browser.
+    Also, since we're supporting FF 8+, we're including -moz-calc for versions up to 16.
+    I may consider removing this as those browsers are dead, but I'm just being thorough for now.
+
+    Note on the 'last margin' issue/hack:
+    The pseudo element is intended to provide a collapsible margin to cancel out any 'trailing'
+    margins from content elements. However, since we're reducing the whole padding space by the
+    border-width to maintain the vertical rhythm, that margin is also less, BUT the content margin
+    is NOT being reduced, so that wins out - the reduction is ignored.
+    If the pseudo element bottom margin is adjusted to cancel out the height (1px) AS WELL AS
+    the amount of border-width, but the last element DOES NOT have a margin, then the space becomes
+    too small.
+    If pseudo-element height is 0, it doesn't work in IE, Chrome, Safari, without inline-block
+*/
+/*
+    This button mixin isn't really meant for generating specific/themed _types_ of button - there
+    would be too much code duplication for that.
+    Instead, this is intended to create buttons for new/custom selectors.
+    For example:
+
+    ```
+    [role="button"] {
+        @include button;
+    }
+    ```
+
+    rather than:
+
+    ```
+        .btn--affirmative {
+            @include button(<text-color>, <bg-color>);
+        }
+    ```
+
+    Note - because of this, think about removing parameters (it changed from my original intention -
+    I may change it back or split this into 2 mixins, or even just move things that are meant for
+    input[type="button"] to that ruleset - actually that's not a bad idea).
+
+*/
+/*
+    1. Remove the tapping delay from clickable elements.
+
+    Sort out the height of buttons. At 12px spacing, should be 30px high with 3px top/bottom margin.
+    Note Edge doesn't like: `line-height: calc(3rem - 2px)` if `display: inline-flex`
+    FF8 - ? doesn't like `line-height: -moz-calc()` and ignores
+    Need to make sure height is governed by line-height in case of breaks within buttons.
+*/
+/*-------------------------------------------------------------------------------------------------|
+
+    SETTINGS
+
+|-------------------------------------------------------------------------------------------------*/
+/* Global focus style: */
+/*
+$anchor-focus-text-color: false;
+@if $anchor-focus-background-color != false {
+    @if color_light_or_dark($anchor-focus-background-color) == 'light' {
+        $anchor-focus-text-color: darken($anchor-text-color, 50%);
+    } @else {
+        $anchor-focus-text-color: lighten($anchor-text-color, 70%);
+    }
+}
+@debug $anchor-focus-text-color;
+*/
+/*
+//$button-focus-outline-width: $ui-focus-outline-width !default;
+$button-focus-outline-width: false !default;
+$button-focus-outline-style: $ui-focus-outline-style !default;
+$button-focus-outline-color: rgba(255,255,255,0.6) !default;
+//$button-focus-outline-offset: -($ui-focus-outline-offset + $button-border-width) !default;
+$button-focus-outline-offset: -($ui-focus-outline-offset + $button-border-width) !default;
+*/
+/*$input-focus-indicator-color: false !default;
+@if color_light_or_dark($input-background-color) == 'light' {
+    $input-focus-indicator-color: darken($input-background-color, 30%);
+} @else {
+    $input-focus-indicator-color: lighten($input-background-color, 30%);
+}
+@debug color_light_or_dark($input-background-color);*/
+/* Output class for reference (tmp): */
+.ref {
+  fallback--base-rem-space-unit: 2.4rem;
+  fallback--base-rem-1px: 0.1rem;
+  fallback--root-font-size: 10px;
+  fallback--root-font-size-percent: 62.5;
+}
+
+/*-------------------------------------------------------------------------------------------------|
+
+    ACCESSIBILITY / ARIA
+    Moved to it's own file. Still debating this.
+
+|-------------------------------------------------------------------------------------------------*/
+/*! Start CSS Accessibility. See SCSS file for documentation. */
+/*
+
+    Notes:
+
+    I'm debating moving separating this from the core file.
+    I'm not sure which approach I prefer.
+    Will probably go down the route of only having optional stuff in separate files - not sure.
+*/
+/*-------------------------------------------------------------------------------------------------|
+
+    ACCESSIBILITY / ARIA
+
+|-------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------|
+
+    UTILITIES
+    Moved to it's own file. Still debating this.
+
+-|------------------------------------------------------------------------------------------------*/
+/*! Start CSS Utilities. See SCSS file for documentation. */
+/*
+
+    Notes:
+
+    I'm debating moving separating this from the core file.
+    I'm not sure which approach I prefer.
+    Will probably go down the route of only having optional stuff in separate files - not sure.
+*/
+/*-------------------------------------------------------------------------------------------------|
+
+    UTILITIES
+
+-|------------------------------------------------------------------------------------------------*/
+/*! End Start CSS */
+/* --| Component Patterns |---------------------------------------------------------------------- */
+/*
+
+*/
+/*$brochure-spacing-unit: $fallback--base-rem-space-unit;
+$brochure--border-or-outline: false;
+@import "component-patterns/_brochure.scss";*/
+/*
+    The `height: 100%;` in the `.card` class below allows the card to fill it's container (if inside,
+    say, a list-grid). However, it doesn't work in Safari OSX/iOS.
+    Applying a `card-wrap` class to a list item to make those items flex-containers seems to work
+    OK, but perhaps this would be better abstracted as a `fill-height` class or something?
+*/
+/*
+$card-cta--border-width: 1px !default;
+$card-cta--border-style: solid !default;
+$card-cta--border-radius: 3px !default;
+*/
+/*
+$card--link-color: false !default;
+$card--link-color--alt: false !default;
+$card--link-has-border-bottom: false !default;
+$card--link-border-bottom: false !default;
+$card--link-border-bottom--alt: false !default;
+
+// If we've specified a link color for the card, but not an alt state (e.g. hover)
+// then generate one
+@if $card--link-color != false and $card--link-color--alt == false {
+    $card--link-color--alt: darken($card--link-color, 10%) !default;;
+}
+
+// If we've specified a link color for the card, and we want bottom borders, generate the borders:
+@if $card--link-color != false and $card--link-has-border-bottom != false {
+    $card--link-border-bottom: 1px solid lighten($card--link-color, 20%) !default;
+    $card--link-border-bottom--alt: 2px solid lighten($card--link-color--alt, 30%) !default;
+}
+*/
+/*
+$card-button--text-color: #fff !default;
+$card-button--background-color: $card--base-color !default;
+$card-button--background-color-alt: lighten($card--base-color, 20%) !default;
+$card-button--border-color: darken($card--base-color, 20%) !default;
+*/
+/*
+.c-card-wrap {
+
+
+}
+
+    .c-card-wrap .c-card {
+
+        //width: 100%;
+    }
+*/
+/*
+*/
+/*$event-spacing-unit: $fallback--base-rem-space-unit;
+$event--background-color: #fff;
+$event--border-color: $fallback--base-ui-color;
+@import "component-patterns/_event.scss";*/
+/*$featurette-spacing-unit: $fallback--base-rem-space-unit;
+@import "component-patterns/_featurette.scss";
+@include featurette--themer("featurette--dark", #555, #fff);*/
+/*
+*/
+/*
+*/
+/*
+*/
+/*
+*/
+/*
+*/
+/*
+*/
+/* ---------------------------------------------------------------------------------------------- */
+/* --| Decoration Patterns |--------------------------------------------------------------------- */
+/*
+Note - this won't work until SASS supports dynamic calling of mixins. It's close, but hasn't been
+merged yet. Hoping that will be done soon so I can change this.
+
+// List all the includes that should be called.
+// Note that they're defined in the relevent pattern files, so it isn't ideal to list them here,
+// but I don't know of another way of doing this yet.
+// One idea could be that each pattern that needs to be theme-able adds it's own name to this list,
+// (registers itself). This may work, but may come with it's own set of problems. Investigate.
+$patterns: (
+    bands-theme,
+    page-header-theme,
+    panel-theme,
+    panel-theme--dark,
+    primary-cta-theme
+);
+*/
+/* - Waiting for SASS to support. Currently pseudo code.
+@each $pattern in $patterns {
+    @include $pattern (
+        (
+            name  : neoclear,
+            theme : $theme
+        )
+    );
+}
+*/
+.d-background.t-neoclear {
+  background-color: #009590;
+}
+
+.d-background--dark.t-neoclear {
+  background-color: #00625f;
+}
+
+.d-background--very-dark.t-neoclear {
+  background-color: #002f2d;
+}
+
+.d-background--sloped.t-neoclear {
+  background: -moz-linear-gradient(45deg, #007c77 0%, #00817c 50%, #008b86 50%, #008681 100%);
+  background: -webkit-linear-gradient(45deg, #007c77 0%, #00817c 50%, #008b86 50%, #008681 100%);
+  background: linear-gradient(45deg, #007c77 0%, #00817c 50%, #008b86 50%, #008681 100%);
+}
+
+.d-bands.t-neoclear,
+.d-bands--left.t-neoclear,
+.d-bands--right.t-neoclear,
+.d-bands--sides.t-neoclear,
+.d-bands--top.t-neoclear,
+.d-bands--above.t-neoclear,
+.d-bands--bottom.t-neoclear,
+.d-bands--below.t-neoclear {
+  border-color: #009590;
+}
+
+.c-card.t-neoclear,
+.c-card.t-neoclear .c-card__main {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.c-card--themed-content.t-neoclear .c-card__body::before {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.c-card.t-neoclear .c-card__main {
+  position: relative;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+/*@if $border-color == null {
+		$border-color: darken($background-color, 10%);
+    }*/
+.c-meter.t-neoclear {
+  color: #fff;
+}
+
+.c-page-header.t-neoclear {
+  color: #333;
+  background-color: #ffffff;
+}
+
+.c-panel.c-panel.t-neoclear {
+  color: #333;
+  background: #009590;
+}
+
+.c-primary-cta.t-neoclear[href] {
+  color: #ffffff;
+  background-color: #B51A82;
+}
+
+.c-primary-cta.t-neoclear[href]:hover, .c-primary-cta.t-neoclear[href]:active, .c-primary-cta.t-neoclear[href]:focus {
+  color: #ffffff;
+  /*@if is-int($button-background-color--alt) {
+                @if $button-background-color--alt > 0 {
+                    $button-background-color--alt_percent: $button-background-color--alt * 1%;
+                    background-color: lighten(map-get($theme, cta-background-color), $button-background-color--alt_percent);
+                }
+                @if $button-background-color--alt < 0 {
+                    $button-background-color--alt_percent: $button-background-color--alt * -1%;
+                    background-color: darken(map-get($theme, cta-background-color), $button-background-color--alt_percent);
+                }
+            }
+            */
+  background-color: #881462;
+}
+
+/*.t-neoclear.t-color {
+    color: map-get($theme, text-color);
+}*/
+.t-neoclear button,
+.t-neoclear button.over-panel-control,
+.t-neoclear button.over-panel-control[aria-expanded=true] {
+  border-color: #009590;
+  color: #ffffff;
+  background-color: #009590;
+}
+
+.t-neoclear button:hover, .t-neoclear button:active, .t-neoclear button:focus,
+.t-neoclear button.over-panel-control:hover,
+.t-neoclear button.over-panel-control:active,
+.t-neoclear button.over-panel-control:focus,
+.t-neoclear button.over-panel-control[aria-expanded=true]:hover,
+.t-neoclear button.over-panel-control[aria-expanded=true]:active,
+.t-neoclear button.over-panel-control[aria-expanded=true]:focus {
+  background-color: #00625f;
+  /*@else {
+            background-color: map-get($theme, background-color);
+        }*/
+}
+
+.t-neoclear a[href] {
+  border-color: #009590;
+  color: #333;
+  background-color: transparent;
+}
+
+.t-neoclear a[href]:hover, .t-neoclear a[href]:active, .t-neoclear a[href]:focus {
+  color: #333;
+}
+
+:not(.overpanel) .t-neoclear a[href].cta {
+  border-color: #009590;
+  color: #333;
+  background-color: #fff;
+}
+
+:not(.overpanel) .t-neoclear a[href].cta:hover, :not(.overpanel) .t-neoclear a[href].cta:active, :not(.overpanel) .t-neoclear a[href].cta:focus {
+  background-color: #e2fffe;
+}
+
+/*
+.t-neoclear.d-50-50-background {
+    background: #FFFFFF;
+    background: -moz-linear-gradient(left, map-get($theme, background-color) 0%, map-get($theme, background-color) 50%, #ffffff 50%, #ffffff 100%);
+    background: -webkit-linear-gradient(left, map-get($theme, background-color) 0%,map-get($theme, background-color) 50%,#ffffff 50%,#ffffff 100%);
+    background: linear-gradient(to right, map-get($theme, background-color) 0%,map-get($theme, background-color) 50%,#ffffff 50%,#ffffff 100%);
+}
+
+.t-neoclear.d-50-50-background--flipped {
+    background: #FFFFFF;
+    background: -moz-linear-gradient(left, #ffffff 0%, #ffffff 50%, map-get($theme, background-color) 50%, map-get($theme, background-color) 100%);
+    background: -webkit-linear-gradient(left, #ffffff 0%,#ffffff 50%,map-get($theme, background-color) 50%,map-get($theme, background-color) 100%);
+    background: linear-gradient(to right, #ffffff 0%,#ffffff 50%,map-get($theme, background-color) 50%,map-get($theme, background-color) 100%);
+}
+*/
+.d-background.t-neoclear--alt {
+  background-color: #B51A82;
+}
+
+.d-background--dark.t-neoclear--alt {
+  background-color: #881462;
+}
+
+.d-background--very-dark.t-neoclear--alt {
+  background-color: #5c0d42;
+}
+
+.d-background--sloped.t-neoclear--alt {
+  background: -moz-linear-gradient(45deg, #9f1772 0%, #a31775 50%, #ac197c 50%, #a81878 100%);
+  background: -webkit-linear-gradient(45deg, #9f1772 0%, #a31775 50%, #ac197c 50%, #a81878 100%);
+  background: linear-gradient(45deg, #9f1772 0%, #a31775 50%, #ac197c 50%, #a81878 100%);
+}
+
+.c-panel.c-panel.t-neoclear--dark {
+  color: #fff;
+  background: #002f2d;
+}
+
+/* ---------------------------------------------------------------------------------------------- */

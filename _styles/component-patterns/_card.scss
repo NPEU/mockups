@@ -12,6 +12,8 @@ $card--base-color: #eee !default;
 
 $card-spacing-unit: 2rem !default;
 
+$card--hover-effect-opacity: 0.2 !default;
+
 // Card outer:
 
 $card--text-color: #333 !default;
@@ -93,6 +95,8 @@ $card-button--border-color: darken($card--base-color, 20%) !default;
 // Card info:
 $card-info--font-size: 1.4rem;
 
+$theme-only: false !default;
+
 /*
 .#{$card-namespace}card-wrap {
 
@@ -132,252 +136,259 @@ $card-info--font-size: 1.4rem;
 }
 
 
-.#{$card-namespace}card {
-    &#{&} {
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex;
 
-        -webkit-flex-direction: column;
-            -ms-flex-direction: column;
-                flex-direction: column;
+// Note - no theme yet!
 
-        height: 100%;
-        //width: 100%;
-        
-        margin: 0;
+// We don't need this if we're only themeing the pattern:
+@if $theme-only == false {
 
-        color: $card--text-color;
-        background: $card--background-color;
-        padding: $card--padding;
+    .#{$card-namespace}card {
+        &#{&} {
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+
+            -webkit-flex-direction: column;
+                -ms-flex-direction: column;
+                    flex-direction: column;
+
+            height: 100%;
+            //width: 100%;
+            
+            margin: 0;
+
+            color: $card--text-color;
+            background: $card--background-color;
+            padding: $card--padding;
 
 
-        @if $card--border-or-outline == 'outline' {
-            outline: $card--border-width $card--border-style $card--border-color;
+            @if $card--border-or-outline == 'outline' {
+                outline: $card--border-width $card--border-style $card--border-color;
+            }
+
+            @if $card--border-or-outline == 'border' {
+                border-color:  $card--border-color;
+                border-style:  $card--border-style;
+                border-width:  $card--border-width;
+                border-radius: $card--border-radius;
+            }
+
+            /*
+                If the 'pull' is > module body content height, it'll protrude below the container,
+                so hide it:
+            */
+            overflow: hidden;
         }
 
-        @if $card--border-or-outline == 'border' {
-            border-color:  $card--border-color;
-            border-style:  $card--border-style;
-            border-width:  $card--border-width;
-            border-radius: $card--border-radius;
-        }
-
-        /*
-            If the 'pull' is > module body content height, it'll protrude below the container,
-            so hide it:
-        */
-        overflow: hidden;
-    }
 
 
+        > * {
+            -webkit-flex: 0 0 auto;
+                -ms-flex: 0 0 auto;
+                    flex: 0 0 auto;
 
-    > * {
-        -webkit-flex: 0 0 auto;
-            -ms-flex: 0 0 auto;
-                flex: 0 0 auto;
-
-        width: 100%;
-    }
-
-    #{&}__image {
-        position: relative;
-        text-align: center;
-    }
-
-        #{&}__image img {
             width: 100%;
         }
 
-
-        #{&}__image-link,
-        #{&}__image-link:hover {
-            border-bottom: 0;
-            margin-bottom: 0;
-        }
-        
-        #{&}__full-link,
-        #{&}__full-link:hover {
-            border-bottom: 0;
-            margin-bottom: 0;
-            padding-bottom: 0;
-            
-            background: $card-body--background-color;
-            
+        #{&}__image {
             position: relative;
-            display: block;
-            height: 100%;
+            text-align: center;
         }
 
-        #{&}__full-link:hover::before,
-        #{&}__full-link:active::before,
-        #{&}__full-link:focus::before {
-            border: 0;
-            content: "";
-            display: block;
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            opacity: $hover-effect-opacity;
-            background: #000;
-            z-index: 1;
-        }
+            #{&}__image img {
+                width: 100%;
+            }
 
+
+            #{&}__image-link,
+            #{&}__image-link:hover {
+                border-bottom: 0;
+                margin-bottom: 0;
+            }
+            
+            #{&}__full-link,
+            #{&}__full-link:hover {
+                border-bottom: 0;
+                margin-bottom: 0;
+                padding-bottom: 0;
+                
+                background: $card-body--background-color;
+                
+                position: relative;
+                display: block;
+                height: 100%;
+            }
+
+            #{&}__full-link:hover::before,
+            #{&}__full-link:active::before,
+            #{&}__full-link:focus::before {
+                border: 0;
+                content: "";
+                display: block;
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                opacity: $card--hover-effect-opacity;
+                background: #000;
+                z-index: 1;
+            }
+
+            
+
+        #{&}__main {
+            // Positioning context for themed bar and extended actionable area:
+            position: relative;
         
+            color: $card-body--text-color;
+            background: $card-body--background-color;
 
-    #{&}__main {
-        // Positioning context for themed bar and extended actionable area:
-        position: relative;
-    
-        color: $card-body--text-color;
-        background: $card-body--background-color;
+            margin-left: $card-body--margin-left;
+            margin-right: $card-body--margin-right;
+            margin-top: $card-body--margin-top;
+            margin-bottom: $card-body--margin-bottom;
+            padding: $card-body--padding;
 
-        margin-left: $card-body--margin-left;
-        margin-right: $card-body--margin-right;
-        margin-top: $card-body--margin-top;
-        margin-bottom: $card-body--margin-bottom;
-        padding: $card-body--padding;
-
-        -webkit-flex: 1 0 auto;
-            -ms-flex: 1 0 auto;
-                flex: 1 0 auto;
-
-
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex;
-
-        -webkit-flex-direction: row;
-            -ms-flex-direction: row;
-                flex-direction: row;
-
-        -webkit-flex-wrap: wrap;
-            -ms-flex-wrap: wrap;
-                flex-wrap: wrap;
-
-        -webkit-align-items: flex-end;
-             -ms-flex-align: end;
-                align-items: flex-end;
-
-        -webkit-align-content: space-between;
-           -ms-flex-line-pack: justify;
-                align-content: space-between;
-
-        -webkit-justify-content: flex-end;
-                  -ms-flex-pack: end;
-                justify-content: flex-end;
-
-
-        position: relative;
-    }
-
-
-        #{&}__body {
             -webkit-flex: 1 0 auto;
                 -ms-flex: 1 0 auto;
                     flex: 1 0 auto;
 
-            width: 100%;
+
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+
+            -webkit-flex-direction: row;
+                -ms-flex-direction: row;
+                    flex-direction: row;
+
+            -webkit-flex-wrap: wrap;
+                -ms-flex-wrap: wrap;
+                    flex-wrap: wrap;
+
+            -webkit-align-items: flex-end;
+                 -ms-flex-align: end;
+                    align-items: flex-end;
+
+            -webkit-align-content: space-between;
+               -ms-flex-line-pack: justify;
+                    align-content: space-between;
+
+            -webkit-justify-content: flex-end;
+                      -ms-flex-pack: end;
+                    justify-content: flex-end;
+
+
+            position: relative;
         }
 
 
+            #{&}__body {
+                -webkit-flex: 1 0 auto;
+                    -ms-flex: 1 0 auto;
+                        flex: 1 0 auto;
 
-            #{&}__title {
-                font-size:   $card-title--font-size;
-                line-height: $card-title--line-height;
                 width: 100%;
-                margin: 0;
-                
-                
-                a {
-                    // Reset any inherited link effects:
-                    all: initial;
-                    
-                    // Un-reset font settings:
-                    font-size: inherit;
-                    line-height: inherit;
-                    font-weight: inherit;
-                    font-family: inherit;
-                    color: inherit;
-                    
-                    cursor: pointer;
+            }
 
+
+
+                #{&}__title {
+                    font-size:   $card-title--font-size;
+                    line-height: $card-title--line-height;
+                    width: 100%;
+                    margin: 0;
+                    
+                    
+                    a {
+                        // Reset any inherited link effects:
+                        all: initial;
+                        
+                        // Un-reset font settings:
+                        font-size: inherit;
+                        line-height: inherit;
+                        font-weight: inherit;
+                        font-family: inherit;
+                        color: inherit;
+                        
+                        cursor: pointer;
+
+                    }
                 }
-            }
-            
-            &#{&}--stub #{&}__title {
-                font-size:   $card-stub-title--font-size;
-                line-height: $card-stub-title--line-height;
+                
+                &#{&}--stub #{&}__title {
+                    font-size:   $card-stub-title--font-size;
+                    line-height: $card-stub-title--line-height;
+                }
+
+
+            #{&}__footer {
+                margin-left: $card-body--margin-left;
+                margin-right: $card-body--margin-right;
+                margin-top: 0;
+                margin-bottom: 0;
+                padding-top: $card-body--padding / 2;
+                width: 100%;
             }
 
 
-        #{&}__footer {
-            margin-left: $card-body--margin-left;
-            margin-right: $card-body--margin-right;
-            margin-top: 0;
-            margin-bottom: 0;
-            padding-top: $card-body--padding / 2;
-            width: 100%;
+                #{&}__footer > * {
+                    margin: 0;
+                }
+
+
+                #{&}__info {
+                    font-size: $card-info--font-size;
+
+                    margin-bottom: -($card-body--padding / 2);
+                    margin-top: -($card-body--padding / 2);
+                    border-top: 1px solid #999;
+                    padding-top: calc((#{$card-body--padding / 2} - 1px);
+                }
+
+
+
+        &#{&}--allow-wide #{&}__body {
+            width: 70%;
+        }
+
+        &#{&}--allow-wide #{&}__footer {
+            width: auto;
+            padding-left: $card-body--padding;
         }
 
 
-            #{&}__footer > * {
-                margin: 0;
-            }
-
-
-            #{&}__info {
-                font-size: $card-info--font-size;
-
-                margin-bottom: -($card-body--padding / 2);
-                margin-top: -($card-body--padding / 2);
-                border-top: 1px solid #999;
-                padding-top: calc((#{$card-body--padding / 2} - 1px);
-            }
 
 
 
-    &#{&}--allow-wide #{&}__body {
-        width: 70%;
+        #{&}--themed-content #{&}__main > * {
+            padding-left: 1rem;
+        }
+
+        // Note that this themed bar should a visual representation of the category or group to 
+        // to which this card belongs. If you're using this themed bar, make sure you also include
+        // the category/group information somewhere (e.g. in the footer info or as a kicker), 
+        // Otherwise this information isn't accessible.
+        #{&}--themed-content #{&}__body::before {
+            display: block;
+            content: "";
+            width: 0.75rem;
+            position: absolute;
+            top: 1rem;
+            bottom: 1rem;
+            left: 1rem;
+            background-color: #999;
+        }
     }
 
-    &#{&}--allow-wide #{&}__footer {
-        width: auto;
-        padding-left: $card-body--padding;
-    }
-
-
-
-
-
-    #{&}--themed-content #{&}__main > * {
-        padding-left: 1rem;
-    }
-
-    // Note that this themed bar should a visual representation of the category or group to 
-    // to which this card belongs. If you're using this themed bar, make sure you also include
-    // the category/group information somewhere (e.g. in the footer info or as a kicker), 
-    // Otherwise this information isn't accessible.
-    #{&}--themed-content #{&}__body::before {
-        display: block;
-        content: "";
-        width: 0.75rem;
-        position: absolute;
-        top: 1rem;
-        bottom: 1rem;
-        left: 1rem;
-        background-color: #999;
-    }
+    /*
+    @include card-theme(
+        "",
+        (
+            card-text-color       : $primary-cta--text-color,
+            card-background-color : $primary-cta--background-color
+        )
+    );
+    */
 }
-
-/*
-@include card-theme(
-    "",
-    (
-        card-text-color       : $primary-cta--text-color,
-        card-background-color : $primary-cta--background-color
-    )
-);
-*/

@@ -4,6 +4,7 @@ $theme-namespace: t- !default;
 
 $backgrounds--background-color : $fallback--base-ui-color !default;
 
+$theme-only: false !default;
 
 @mixin background-theme ($name: "", $theme: ()) {
 	// Set up theme name:
@@ -33,8 +34,12 @@ $backgrounds--background-color : $fallback--base-ui-color !default;
     }
 }
 
-@include background-theme(
-    "",
-    (
-        background-color : $backgrounds--background-color
-    ));
+// We don't need this if we're only themeing the pattern:
+@if $theme-only == false {
+
+    @include background-theme(
+        "",
+        (
+            background-color : $backgrounds--background-color
+        ));
+}
