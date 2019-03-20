@@ -1,5 +1,5 @@
 ---
-layout: project-page
+layout: page--project
 title: Contact Details
 project: neoclear
 toc: true

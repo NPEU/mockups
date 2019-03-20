@@ -33,7 +33,7 @@ layout: structure
             </div>
             
             {% if page.display_navbar %}
-                {% capture navbar %}navbar__{{ page.project }}.html{% endcapture %}
+                {% capture navbar %}header__navbar--{{ page.project }}.html{% endcapture %}
                 {% include {{ navbar }} %}
             {% endif %}
         </header>

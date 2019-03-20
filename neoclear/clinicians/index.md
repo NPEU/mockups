@@ -1,5 +1,5 @@
 ---
-layout: project-page
+layout: page--project
 title: Information for Clinicians
 project: neoclear
 hero_image: "/img/neoclear/meningitis-pathogen-240402028.jpg"

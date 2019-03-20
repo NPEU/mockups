@@ -1,5 +1,5 @@
 ---
-layout: pru-landing
+layout: landing--pru
 title: PRU-MNHC Home
 project: prumnhc
 Xhero_image: "/img/neoclear/hero-image-1.jpg"

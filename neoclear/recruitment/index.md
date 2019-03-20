@@ -1,5 +1,5 @@
 ---
-layout: project-page
+layout: page--project
 title: Recruitment
 project: neoclear
 npeu_unit: ctu
