@@ -5,8 +5,8 @@
 /* --| START THEME |----------------------------------------------------------------------------- */
 /*
     Many (soon all?) of these patterns are themeable, so they are configured and imported here
-    (separately) so that they can be imported into other theme files without resulting in 
-    re-declared base-styles. E.g. bands defines a set of size classes, these only need to appear in 
+    (separately) so that they can be imported into other theme files without resulting in
+    re-declared base-styles. E.g. bands defines a set of size classes, these only need to appear in
     the stylesheet once. The file that includes *this* file should set `$theme-only: true` to toggle
     this behaviour.
 */
@@ -303,6 +303,16 @@ $event--border-color: $fallback--base-ui-color;
 @import "component-patterns/_featurette.scss";
 @include featurette--themer("featurette--dark", #555, #fff);*/
 /*
+
+
+*/
+/*$glimpse--link-color: false !default;
+$glimpse--link-has-border-bottom: false !default;
+$glimpse--link-color--alt: false !default;
+$glimpse--link-has-border-bottom: false !default;
+$glimpse--link-border-bottom: false !default;
+$glimpse--link-border-bottom--hover: false !default;*/
+/*
 */
 /*
 */
@@ -343,6 +353,14 @@ $patterns: (
     );
 }
 */
+.d-background--very-light.t-neoclear {
+  background-color: #c8fffd;
+}
+
+.d-background--light.t-neoclear {
+  background-color: #49fff9;
+}
+
 .d-background.t-neoclear {
   background-color: #009590;
 }
@@ -402,6 +420,30 @@ $patterns: (
 .c-panel.c-panel.t-neoclear {
   color: #333;
   background: #009590;
+  /*
+        a[href]:hover,
+        a[href]:active,
+        a[href]:focus {
+            color: $text-color;
+            background: $background-color;
+        }*/
+}
+
+.c-panel.c-panel.t-neoclear a[href] {
+  color: #333;
+  background-color: #009590;
+}
+
+.c-panel.c-panel.t-neoclear a[href].cta {
+  border-color: #333;
+  color: #333;
+  background-color: transparent;
+}
+
+.c-panel.c-panel.t-neoclear a[href].cta:hover,
+.c-panel.c-panel.t-neoclear a[href].cta:active,
+.c-panel.c-panel.t-neoclear a[href].cta:focus {
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .c-primary-cta.t-neoclear[href] {
@@ -449,26 +491,44 @@ $patterns: (
         }*/
 }
 
+/* - Don't do this, it's too generic and results in equal specifivity that's resolved in source 
+    order, thus later themes win out, causing problems.
 .t-neoclear a[href] {
-  border-color: #009590;
-  color: #333;
-  background-color: transparent;
-}
 
-.t-neoclear a[href]:hover, .t-neoclear a[href]:active, .t-neoclear a[href]:focus {
-  color: #333;
-}
+    border-color: map-get($theme, border-color);
+    color: map-get($theme, text-color);
+    background-color: map-get($theme, background-color);
 
+    &:hover,
+    &:active,
+    &:focus {
+        color: map-get($theme, text-color);
+    }
+}
+*/
+/*
 :not(.overpanel) .t-neoclear a[href].cta {
-  border-color: #009590;
-  color: #333;
-  background-color: #fff;
-}
 
-:not(.overpanel) .t-neoclear a[href].cta:hover, :not(.overpanel) .t-neoclear a[href].cta:active, :not(.overpanel) .t-neoclear a[href].cta:focus {
-  background-color: #e2fffe;
-}
+    border-color: map-get($theme, border-color);
+    color: map-get($theme, text-color);
+    background-color: transparent;
+    //background-color: map-get($theme, background-color);
+    content: "neoclear";
 
+    &:hover,
+    &:active,
+    &:focus {
+        @if color_light_or_dark(map-get($theme, background-color)) == 'light' {
+            background-color: rgba(0,0,0,0.2);
+        } @else {
+            background-color: rgba(255,255,255,0.2);
+        }
+     
+
+        //background-color: lighten(map-get($theme, border-color), 65%);
+    }
+}
+*/
 /*
 .t-neoclear.d-50-50-background {
     background: #FFFFFF;
@@ -484,6 +544,14 @@ $patterns: (
     background: linear-gradient(to right, #ffffff 0%,#ffffff 50%,map-get($theme, background-color) 50%,map-get($theme, background-color) 100%);
 }
 */
+.d-background--very-light.t-neoclear--alt {
+  background-color: white;
+}
+
+.d-background--light.t-neoclear--alt {
+  background-color: #ef92d1;
+}
+
 .d-background.t-neoclear--alt {
   background-color: #B51A82;
 }
@@ -502,9 +570,120 @@ $patterns: (
   background: linear-gradient(45deg, #9f1772 0%, #a31775 50%, #ac197c 50%, #a81878 100%);
 }
 
+.c-panel.c-panel.t-neoclear--very-light {
+  color: #333;
+  background: #c8fffd;
+  /*
+        a[href]:hover,
+        a[href]:active,
+        a[href]:focus {
+            color: $text-color;
+            background: $background-color;
+        }*/
+}
+
+.c-panel.c-panel.t-neoclear--very-light a[href] {
+  color: #333;
+  background-color: #c8fffd;
+}
+
+.c-panel.c-panel.t-neoclear--very-light a[href].cta {
+  border-color: #333;
+  color: #333;
+  background-color: transparent;
+}
+
+.c-panel.c-panel.t-neoclear--very-light a[href].cta:hover,
+.c-panel.c-panel.t-neoclear--very-light a[href].cta:active,
+.c-panel.c-panel.t-neoclear--very-light a[href].cta:focus {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.c-panel.c-panel.t-neoclear--light {
+  color: #333;
+  background: #49fff9;
+  /*
+        a[href]:hover,
+        a[href]:active,
+        a[href]:focus {
+            color: $text-color;
+            background: $background-color;
+        }*/
+}
+
+.c-panel.c-panel.t-neoclear--light a[href] {
+  color: #333;
+  background-color: #49fff9;
+}
+
+.c-panel.c-panel.t-neoclear--light a[href].cta {
+  border-color: #333;
+  color: #333;
+  background-color: transparent;
+}
+
+.c-panel.c-panel.t-neoclear--light a[href].cta:hover,
+.c-panel.c-panel.t-neoclear--light a[href].cta:active,
+.c-panel.c-panel.t-neoclear--light a[href].cta:focus {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
 .c-panel.c-panel.t-neoclear--dark {
   color: #fff;
+  background: #00625f;
+  /*
+        a[href]:hover,
+        a[href]:active,
+        a[href]:focus {
+            color: $text-color;
+            background: $background-color;
+        }*/
+}
+
+.c-panel.c-panel.t-neoclear--dark a[href] {
+  color: #fff;
+  background-color: #00625f;
+}
+
+.c-panel.c-panel.t-neoclear--dark a[href].cta {
+  border-color: #fff;
+  color: #fff;
+  background-color: transparent;
+}
+
+.c-panel.c-panel.t-neoclear--dark a[href].cta:hover,
+.c-panel.c-panel.t-neoclear--dark a[href].cta:active,
+.c-panel.c-panel.t-neoclear--dark a[href].cta:focus {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.c-panel.c-panel.t-neoclear--very-dark {
+  color: #fff;
   background: #002f2d;
+  /*
+        a[href]:hover,
+        a[href]:active,
+        a[href]:focus {
+            color: $text-color;
+            background: $background-color;
+        }*/
+}
+
+.c-panel.c-panel.t-neoclear--very-dark a[href] {
+  color: #fff;
+  background-color: #002f2d;
+}
+
+.c-panel.c-panel.t-neoclear--very-dark a[href].cta {
+  border-color: #fff;
+  color: #fff;
+  background-color: transparent;
+}
+
+.c-panel.c-panel.t-neoclear--very-dark a[href].cta:hover,
+.c-panel.c-panel.t-neoclear--very-dark a[href].cta:active,
+.c-panel.c-panel.t-neoclear--very-dark a[href].cta:focus {
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 /* ---------------------------------------------------------------------------------------------- */

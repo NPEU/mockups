@@ -18,10 +18,17 @@ $theme-only: false !default;
                 display: none;
             }
         }
+        
+        // @TODO - this is a bit "magic number-y":
+        .icon {
+            margin-left: -1.75em;
+            margin-right: 0.5em;
+        }
     }
 
     .#{$contact-list-namespace}contact-avatar {
         float: left;
         margin: 0.5em;
     }
+
 }

@@ -105,11 +105,13 @@ $theme: map-merge(
     }
 }
 
+/* - Don't do this, it's too generic and results in equal specifivity that's resolved in source 
+    order, thus later themes win out, causing problems.
 .#{$theme-namespace}#{$name} a[href] {
 
     border-color: map-get($theme, border-color);
     color: map-get($theme, text-color);
-    background-color: transparent;
+    background-color: map-get($theme, background-color);
 
     &:hover,
     &:active,
@@ -117,20 +119,30 @@ $theme: map-merge(
         color: map-get($theme, text-color);
     }
 }
-
+*/
+/*
 :not(.overpanel) .#{$theme-namespace}#{$name} a[href].cta {
 
     border-color: map-get($theme, border-color);
     color: map-get($theme, text-color);
-    background-color: #fff;
+    background-color: transparent;
+    //background-color: map-get($theme, background-color);
+    content: "#{$name}";
 
     &:hover,
     &:active,
     &:focus {
-        background-color: lighten(map-get($theme, border-color), 65%);
+        @if color_light_or_dark(map-get($theme, background-color)) == 'light' {
+            background-color: rgba(0,0,0,0.2);
+        } @else {
+            background-color: rgba(255,255,255,0.2);
+        }
+     
+
+        //background-color: lighten(map-get($theme, border-color), 65%);
     }
 }
-
+*/
 /*
 .#{$theme-namespace}#{$name}.d-50-50-background {
     background: #FFFFFF;
@@ -161,8 +173,52 @@ $theme: map-merge(
     @include background-theme("#{$name}--alt", $theme);
 }
 
+
+// Very light theme:
+
+$theme: map-merge(
+    $theme,
+    (
+        background-color      : lighten(map-get($theme, primary-color), 60%),
+        cta-text-color        : #333,
+        cta-background-color  : lighten(map-get($theme, primary-color), 60%),
+        text-color            : #333
+    )
+);
+
+@include panel-theme(#{$name}--very-light, $theme);
+
+// Light theme:
+
+$theme: map-merge(
+    $theme,
+    (
+        background-color      : lighten(map-get($theme, primary-color), 35%),
+        cta-text-color        : #333,
+        cta-background-color  : lighten(map-get($theme, primary-color), 35%),
+        text-color            : #333
+    )
+);
+
+@include panel-theme(#{$name}--light, $theme);
+
+
 // Dark theme:
 
+$theme: map-merge(
+    $theme,
+    (
+        background-color      : darken(map-get($theme, primary-color), 10%),
+        cta-text-color        : #fff,
+        cta-background-color  : darken(map-get($theme, primary-color), 10%),
+        text-color            : #fff
+    )
+);
+
+@include panel-theme(#{$name}--dark, $theme);
+
+
+// Very dark theme:
 $theme: map-merge(
     $theme,
     (
@@ -173,5 +229,5 @@ $theme: map-merge(
     )
 );
 
-@include panel-theme(#{$name}--dark, $theme);
+@include panel-theme(#{$name}--very-dark, $theme);
 

@@ -33,6 +33,7 @@ defaults:
       section_menu: false
       toc: false
       has_pull_outs: false
+      had_map: false
 
 # Build settings
 markdown: kramdown

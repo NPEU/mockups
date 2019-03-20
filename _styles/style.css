@@ -2555,11 +2555,11 @@ _:-webkit-full-screen, _::-webkit-full-page-media, _:future, :root select[size="
     border-radius: 50%;
   }
   input[type="radio"]:checked {
-    background-image: -moz-radial-gradient(center, ellipse cover, #333333 0%, #333333 35%, rgba(0, 0, 0, 0) 35%, rgba(0, 0, 0, 0) 100%);
+    background-image: -moz-radial-gradient(center, ellipse cover, #333333 0%, #333333 35%, transparent 35%, transparent 100%);
     /* FF3.6-15 */
-    background-image: -webkit-radial-gradient(center, ellipse cover, #333333 0%, #333333 35%, rgba(0, 0, 0, 0) 35%, rgba(0, 0, 0, 0) 100%);
+    background-image: -webkit-radial-gradient(center, ellipse cover, #333333 0%, #333333 35%, transparent 35%, transparent 100%);
     /* Chrome10-25,Safari5.1-6 */
-    background-image: radial-gradient(ellipse at center, #333333 0%, #333333 35%, rgba(0, 0, 0, 0) 35%, rgba(0, 0, 0, 0) 100%);
+    background-image: radial-gradient(ellipse at center, #333333 0%, #333333 35%, transparent 35%, transparent 100%);
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   }
   input[type="checkbox"]:checked::after {
@@ -2607,8 +2607,7 @@ _:-webkit-full-screen, _::-webkit-full-page-media, _:future, :root select[size="
   -webkit-appearance: radio;
 }
 
-/*------------------------------------------------------------------------------------------------*\
-    Fall-Back Icons v1.0.0
+/*------------------------------------------------------------------------------------------------*    Fall-Back Icons v1.0.0
     
     Designed for use with the basic [CSS Mustard Cut](https://github.com/Fall-Back/CSS-Mustard-Cut)
     IE 9+, FF 8+, Opera 12, [Chrome 29+, Android ~4.4+]
@@ -2936,9 +2935,14 @@ _:-o-prefocus, :root .icon {
             top: 0;
             right: 0;
         }*/
+  /*
+            1. This is the obvious place for this rule but there's a weird chrome bug that means
+               the postiion/dimensions are ignore if it's initiallty hidden.
+               Moving to the is-open declaration fixes this, as it only gets applie when it's
+               visisble.
+        */
   .js-over-panel .over-panel__overlay {
     display: block;
-    position: fixed;
     z-index: -1;
     left: 0;
     top: 0;
@@ -2962,6 +2966,7 @@ _:-o-prefocus, :root .icon {
   }
   /* Bring the overlay to the front and fade in when there's an over-panel target: */
   .js-over-panel_is-open .over-panel__overlay {
+    position: fixed;
     z-index: 0;
     opacity: 0.5;
     visibility: visible;
@@ -2976,7 +2981,6 @@ _:-o-prefocus, :root .icon {
 }
 
 /* ---------------------------------------------------------------------------------------------- */
-/**/
 /*-------------------------------------------------------------------------------------------------|
     Fall-Back Start-CSS Settings v1.0.0
 
@@ -3252,6 +3256,7 @@ _:-o-prefocus, :root .icon {
 
 .nav-bar .subnav__items--stacked .subnav__item {
   float: none;
+  margin-left: 1.125em;
 }
 
 .nav-bar .subnav__item::before {
@@ -3335,7 +3340,7 @@ _:-o-prefocus, body:last-child .nav-bar .subnav__heading {
 
 .nav-bar .nav-bar__link[href]:focus {
   color: #fff;
-  background-color: rgba(0, 0, 0, 0);
+  background-color: transparent;
 }
 
 .nav-bar .subnav__link[href]:hover,
@@ -3453,7 +3458,7 @@ _:-o-prefocus, body:last-child .nav-bar .subnav__heading {
     border-left-width: 0;
     border-right-width: 1px;
   }
-  .js.nav-bar .nav-bar__link[href] + .subnav__control {
+  .js-nav-bar .nav-bar__link[href] + .subnav__control {
     border-style: dashed;
     border-color: rgba(255, 255, 255, 0.3);
     border-top-width: 0;
@@ -3467,7 +3472,7 @@ _:-o-prefocus, body:last-child .nav-bar .subnav__heading {
         */
   .js-nav-bar .nav-bar__title,
   .js-nav-bar .nav-bar__item,
-  .js.nav-bar .nav-bar__link[href],
+  .js-nav-bar .nav-bar__link[href],
   .js-nav-bar .subnav__link[href],
   .js-nav-bar .subnav__heading {
     white-space: nowrap;
@@ -3534,6 +3539,9 @@ _:-o-prefocus, body:last-child .nav-bar .subnav__heading {
   .js-nav-bar .subnav__items {
     float: left;
   }
+  .js-nav-bar .nav-bar .subnav__items--stacked .subnav__item {
+    margin-left: 0;
+  }
   /*
             1. The 9999 hack forces this element to take up as much room as it can.
                (See http://joren.co/flex-grow-9999-hack/)
@@ -3576,15 +3584,206 @@ _:-o-prefocus, body:last-child .nav-bar .subnav__heading {
 }
 
 /* -----------------------------------------------------------------------------------------------*/
-/**/
-/*
-$fallback--dropdown--background-color:         $fallback--nav-bar--background-color;
-$fallback--dropdown--text-color:               $fallback--nav-bar__link--color;
-$fallback--dropdown__button--color:            $fallback--nav-bar__link--color;
-$fallback--dropdown__button--background-color: $fallback--nav-bar__link--background-color;
+/*-------------------------------------------------------------------------------------------------|
+    Fall-Back Start-CSS Settings v1.0.0
 
-@import "../bower_components/Fall-Back-Dropdown/_dropdown";
+    Fall-Back is designed for use with the basic
+    [CSS Mustard Cut](https://github.com/Fall-Back/CSS-Mustard-Cut)
+
+    This determines a browser support base of:
+
+    IE 9+, FF 8+, Opera 12, [Chrome 29+, Android ~4.4+]
+    Chrome 29+, Opera 16+, Safari 6.1+, iOS 7+, Android ~4.4+
+
+
+    Any double-classing (e.g. `.class.class`) is deliberate and intended to increase specificity.
+    This allows any applicable Start-CSS declarations to be overridden.
+    E.g. `.{pattern} .{pattern}__child` would `a[href]`, but just `.{pattern}` wouldn't, so we use
+    `.{pattern}.{pattern}`
+
+
+    
+|-------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------|
+    Fall-Back Dropdown Pattern v1.0.0
+|-------------------------------------------------------------------------------------------------*/
+/* -- Basic/fallback layout --------------------------------------------------------------------- */
+/* -- .dropdown -------------------------------------------------------------------------------*/
+/*
+        1. Helps to position above subsequent elements so subnavs sit on top.
+    */
+/*.dropdown.dropdown {
+        background-color: $fallback--dropdown--background-color;
+        position: relative;
+        z-index: $fallback--dropdown-z-index; /* [1] *
+
+        @if $fallback--dropdown--font-size != $fallback--base-font-size {
+            font-size: $fallback--dropdown--font-size;
+        }
+    }*/
+/*
+		This is a bit of a hack, but it's a way of letting JS know that this CSS has loaded.
+		It doesn't work for Opera Mini, but I'm happy to provide this browser only with the
+		unenhanced version.
+        UPDATE: Due to problem with FOBP, now checking for existence of class in styesheet earlier
+        on, so this isn't needed:
+	*/
+/*.nav-bar::before {
+		content: 'CSS Loaded';
+        display: none;
+	}*/
+.js-dropdown {
+  border: 0;
+}
+
+/* -------------------------------------------------------------------------------------------*/
+/* -- .dropdown__area ------------------------------------------------------------------------*/
+/*
+        1. Duplicating parent background-color here. There HAS to be a color here for the pattern
+           to work, the parent background-color is there to allow things to be NOT BROKEN on
+           browsers that don't support HTML semantic elements.
+
+        2. Prevent any overflow and possible contain floats.
+    */
+.dropdown .dropdown__area {
+  background-color: transparent;
+  /* 1 */
+  color: #fff;
+  overflow: hidden;
+  /* 2 */
+  padding: 0;
+}
+
+/* -------------------------------------------------------------------------------------------*/
+/* -- .dropdown__button ----------------------------------------------------------------------*/
+/*
+		1. These override button styles defined as part of StartCSS. I may consider making these
+		   customisable via more variables.
+	*/
+.dropdown .dropdown__button {
+  display: block;
+  margin: 0;
+  padding-left: 0.5625em;
+  padding-right: 0.5625em;
+  padding-bottom: 0;
+  /* 1 */
+  padding-top: 0;
+  /* 1 */
+  border: 0;
+  border-radius: 0;
+  line-height: 2.25em;
+  text-decoration: none;
+  outline: 0;
+  box-shadow: none;
+  /* 1 */
+}
+
+.dropdown .dropdown__button:hover,
+.dropdown .dropdown__button:active,
+.dropdown .dropdown__button:focus {
+  border: 0;
+}
+
+.dropdown__button--centered {
+  text-align: center;
+}
+
+/*
+        Fix for Opera Mini vertical centering:
+        (affects Opera 12.10-16 as well)
+    */
+_:-o-prefocus, body:last-child .dropdown .dropdown__button {
+  line-height: 2.25em !important;
+}
+
+.dropdown .dropdown__button {
+  color: #fff;
+  background-color: transparent;
+}
+
+/*
+        Provide interaction effects for dropdown links that ARE links:
+        (this excludes submenu heading links - note that submenu links should never also be
+        submenu heading links)
+    */
+.dropdown .dropdown__button:hover,
+.dropdown .dropdown__button:active,
+.dropdown .dropdown__button[aria-expanded="true"] {
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.dropdown .dropdown__button:focus {
+  color: #fff;
+  background-color: transparent;
+}
+
+.dropdown .dropdown__button {
+  display: none;
+}
+
+/* -------------------------------------------------------------------------------------------*/
+/* -----------------------------------------------------------------------------------------------*/
+/* ********************************************************************************************** */
+/* -- Enhanced layout --------------------------------------------------------------------------- */
+/*
+    This layout can only be used if JS is there to support the toggling of hidden submenus.
+    (CSS only attempts weren't good enough)
+    So, scoping these styles to the 'js-dropdown' class.
 */
+@media only screen and (min-width: 42.5625em) {
+  /*
+            1. Flex is only really needed for 'additional' to fill up the space.
+               I don't think this would actually do any harm...
+        */
+  /*.js-dropdown.dropdown {
+            position: relative;
+            z-index: 1000; // @var
+
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex; /* 1 *
+        }*/
+  /*
+            1. Floating left to allow 'additional' to appear on the same line, but width 100% to
+               make sure any subnavs are properly obscured, otherwise it looks weird.
+               However, this makes 'additional' collapse to it's content.
+               In the case of search form, this means the form is smaller than it could be.
+               It's still usable, but ...
+
+            2. ... flex makes this better ...
+        */
+  .js-dropdown .dropdown__area {
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: opacity ease 0.8s, visibility 0s 0.8s ease;
+    -moz-transition: opacity ease 0.8s, visibility 0s 0.8s ease;
+    -o-transition: opacity ease 0.8s, visibility 0s 0.8s ease;
+    transition: opacity ease 0.8s, visibility 0s 0.8s ease;
+  }
+  .js-dropdown .dropdown__button {
+    display: block;
+  }
+  .js-dropdown .dropdown__button .icon--is-open,
+  .js-dropdown .dropdown__button[aria-expanded="true"] .icon--is-closed {
+    display: none;
+  }
+  .js-dropdown .dropdown__button .icon--is-closed,
+  .js-dropdown .dropdown__button[aria-expanded="true"] .icon--is-open {
+    display: inline;
+  }
+  .js-dropdown .dropdown__button[aria-expanded="true"] ~ .dropdown__area {
+    visibility: visible;
+    opacity: 1;
+    -webkit-transition: opacity ease 0.8s;
+    -moz-transition: opacity ease 0.8s;
+    -o-transition: opacity ease 0.8s;
+    transition: opacity ease 0.8s;
+  }
+}
+
+/* -----------------------------------------------------------------------------------------------*/
 /*-------------------------------------------------------------------------------------------------|
     Fall-Back Start-CSS Settings v1.0.0
 
@@ -3756,8 +3955,7 @@ $fallback--dropdown__button--background-color: $fallback--nav-bar__link--backgro
 }
 
 /* ---------------------------------------------------------------------------------------------- */
-/*------------------------------------------------------------------------------------------------*\
-
+/*------------------------------------------------------------------------------------------------*
     Designed for use with the basic [CSS Mustard Cut](https://github.com/Fall-Back/CSS-Mustard-Cut)
     IE 9+, FF 8+, Opera 12, [Chrome 29+, Android ~4.4+]
     Chrome 29+, Opera 16+, Safari 6.1+, iOS 7+, Android ~4.4+
@@ -3854,10 +4052,8 @@ $fallback-svg--link-bg-color-alt: #fff;
 @include svg--fixed-height(60px, 'svg--fixed-height--parent-logo', 0, 0);
 @include svg--fixed-height(($fallback--base-rem-space-unit * 4), 'svg--fixed-height--funder-logo', ($fallback--base-rem-space-unit / 2), 0);
 */
-/*------------------------------------------------------------------------------------------------*\
-\*------------------------------------------------------------------------------------------------*/
-/*------------------------------------------------------------------------------------------------*\
-    Import Fall-Back vars:
+/*------------------------------------------------------------------------------------------------*\*------------------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------------------*    Import Fall-Back vars:
 
     Slightly hacky way of allowing the main UI colour of this pattern to be:
      - base-ui colour (if set)
@@ -4723,8 +4919,8 @@ $fallback-svg--link-bg-color-alt: #fff;
 /* --| Themeable Patterns |---------------------------------------------------------------------- */
 /*
     Many (soon all?) of these patterns are themeable, so they are configured and imported here
-    (separately) so that they can be imported into other theme files without resulting in 
-    re-declared base-styles. E.g. bands defines a set of size classes, these only need to appear in 
+    (separately) so that they can be imported into other theme files without resulting in
+    re-declared base-styles. E.g. bands defines a set of size classes, these only need to appear in
     the stylesheet once. The file that includes *this* file should set `$theme-only: true` to toggle
     this behaviour.
 */
@@ -5271,6 +5467,11 @@ $card-button--border-color: darken($card--base-color, 20%) !default;
   display: none;
 }
 
+.c-contact-list .icon {
+  margin-left: -1.75em;
+  margin-right: 0.5em;
+}
+
 .c-contact-avatar {
   float: left;
   margin: 0.5em;
@@ -5283,6 +5484,76 @@ $event--border-color: $fallback--base-ui-color;
 /*$featurette-spacing-unit: $fallback--base-rem-space-unit;
 @import "component-patterns/_featurette.scss";
 @include featurette--themer("featurette--dark", #555, #fff);*/
+/*
+
+
+*/
+/*$glimpse--link-color: false !default;
+$glimpse--link-has-border-bottom: false !default;
+$glimpse--link-color--alt: false !default;
+$glimpse--link-has-border-bottom: false !default;
+$glimpse--link-border-bottom: false !default;
+$glimpse--link-border-bottom--hover: false !default;*/
+.c-glimpse.c-glimpse {
+  position: relative;
+  max-width: 30em;
+  padding-left: 9.2rem;
+  min-height: 7.2rem;
+}
+
+.c-glimpse .c-glimpse__heading {
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.c-glimpse .c-glimpse__heading a {
+  border-bottom: 0;
+}
+
+.c-glimpse .c-glimpse__heading a:hover {
+  border-bottom: 0;
+}
+
+.c-glimpse .c-glimpse__heading a:hover span {
+  border-bottom: 1px solid;
+}
+
+.c-glimpse .c-glimpse__heading a:hover .c-glimpse__image {
+  outline: 2px solid;
+}
+
+.c-glimpse .c-glimpse__image {
+  width: 7.2rem;
+  height: 7.2rem;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: 0;
+  border: 1px solid currentColor;
+}
+
+.c-glimpse .c-glimpse__image img {
+  vertical-align: middle;
+  max-width: 100%;
+}
+
+.c-glimpse .c-glimpse__content {
+  font-size: 1.4rem;
+  margin: 0;
+}
+
+.c-glimpse .c-glimpse__content * {
+  margin: 0;
+}
+
+@supports (object-fit: cover) {
+  .c-glimpse__image img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+}
+
 /*
 */
 .c-hero.c-hero {
@@ -5450,6 +5721,30 @@ $event--border-color: $fallback--base-ui-color;
 .c-panel.c-panel {
   color: #333;
   background: #fff;
+  /*
+        a[href]:hover,
+        a[href]:active,
+        a[href]:focus {
+            color: $text-color;
+            background: $background-color;
+        }*/
+}
+
+.c-panel.c-panel a[href] {
+  color: #333;
+  background-color: #fff;
+}
+
+.c-panel.c-panel a[href].cta {
+  border-color: #333;
+  color: #333;
+  background-color: transparent;
+}
+
+.c-panel.c-panel a[href].cta:hover,
+.c-panel.c-panel a[href].cta:active,
+.c-panel.c-panel a[href].cta:focus {
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .c-primary-cta[href] {
@@ -5621,6 +5916,14 @@ $event--border-color: $fallback--base-ui-color;
 
 /* ---------------------------------------------------------------------------------------------- */
 /* --| Decoration Patterns |--------------------------------------------------------------------- */
+.d-background--very-light {
+  background-color: #f8f6f9;
+}
+
+.d-background--light {
+  background-color: #baa6c9;
+}
+
 .d-background {
   background-color: #614776;
 }
@@ -5710,6 +6013,14 @@ $event--border-color: $fallback--base-ui-color;
 /* --| Component Patterns |---------------------------------------------------------------------- */
 /* ---------------------------------------------------------------------------------------------- */
 /* --| Decoration Patterns |--------------------------------------------------------------------- */
+.d-background--very-light.t-neutral {
+  background-color: white;
+}
+
+.d-background--light.t-neutral {
+  background-color: #e0dcda;
+}
+
 .d-background.t-neutral {
   background-color: #8e8279;
 }
@@ -6797,6 +7108,340 @@ $pagination--background-color: #fff;
 */
 /* ---------------------------------------------------------------------------------------------- */
 /* --| THEMES |---------------------------------------------------------------------------------- */
+/*
+Note - this won't work until SASS supports dynamic calling of mixins. It's close, but hasn't been
+merged yet. Hoping that will be done soon so I can change this.
+
+// List all the includes that should be called.
+// Note that they're defined in the relevent pattern files, so it isn't ideal to list them here,
+// but I don't know of another way of doing this yet.
+// One idea could be that each pattern that needs to be theme-able adds it's own name to this list,
+// (registers itself). This may work, but may come with it's own set of problems. Investigate.
+$patterns: (
+    bands-theme,
+    page-header-theme,
+    panel-theme,
+    panel-theme--dark,
+    primary-cta-theme
+);
+*/
+/* - Waiting for SASS to support. Currently pseudo code.
+@each $pattern in $patterns {
+    @include $pattern (
+        (
+            name  : white,
+            theme : $theme
+        )
+    );
+}
+*/
+.d-background--very-light.t-white {
+  background-color: white;
+}
+
+.d-background--light.t-white {
+  background-color: white;
+}
+
+.d-background.t-white {
+  background-color: #ffffff;
+}
+
+.d-background--dark.t-white {
+  background-color: #e6e6e6;
+}
+
+.d-background--very-dark.t-white {
+  background-color: #cccccc;
+}
+
+.d-background--sloped.t-white {
+  background: -moz-linear-gradient(45deg, #f2f2f2 0%, whitesmoke 50%, #fafafa 50%, #f7f7f7 100%);
+  background: -webkit-linear-gradient(45deg, #f2f2f2 0%, whitesmoke 50%, #fafafa 50%, #f7f7f7 100%);
+  background: linear-gradient(45deg, #f2f2f2 0%, whitesmoke 50%, #fafafa 50%, #f7f7f7 100%);
+}
+
+.d-bands.t-white,
+.d-bands--left.t-white,
+.d-bands--right.t-white,
+.d-bands--sides.t-white,
+.d-bands--top.t-white,
+.d-bands--above.t-white,
+.d-bands--bottom.t-white,
+.d-bands--below.t-white {
+  border-color: #ffffff;
+}
+
+.c-card.t-white,
+.c-card.t-white .c-card__main {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.c-card--themed-content.t-white .c-card__body::before {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.c-card.t-white .c-card__main {
+  position: relative;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+/*@if $border-color == null {
+		$border-color: darken($background-color, 10%);
+    }*/
+.c-meter.t-white {
+  color: #fff;
+}
+
+.c-page-header.t-white {
+  color: #333;
+  background-color: #ffffff;
+}
+
+.c-panel.c-panel.t-white {
+  color: #333;
+  background: #ffffff;
+  /*
+        a[href]:hover,
+        a[href]:active,
+        a[href]:focus {
+            color: $text-color;
+            background: $background-color;
+        }*/
+}
+
+.c-panel.c-panel.t-white a[href] {
+  color: #333;
+  background-color: #ffffff;
+}
+
+.c-panel.c-panel.t-white a[href].cta {
+  border-color: #333;
+  color: #333;
+  background-color: transparent;
+}
+
+.c-panel.c-panel.t-white a[href].cta:hover,
+.c-panel.c-panel.t-white a[href].cta:active,
+.c-panel.c-panel.t-white a[href].cta:focus {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.c-primary-cta.t-white[href] {
+  color: #333;
+  background-color: #ffffff;
+}
+
+.c-primary-cta.t-white[href]:hover, .c-primary-cta.t-white[href]:active, .c-primary-cta.t-white[href]:focus {
+  color: #333;
+  /*@if is-int($button-background-color--alt) {
+                @if $button-background-color--alt > 0 {
+                    $button-background-color--alt_percent: $button-background-color--alt * 1%;
+                    background-color: lighten(map-get($theme, cta-background-color), $button-background-color--alt_percent);
+                }
+                @if $button-background-color--alt < 0 {
+                    $button-background-color--alt_percent: $button-background-color--alt * -1%;
+                    background-color: darken(map-get($theme, cta-background-color), $button-background-color--alt_percent);
+                }
+            }
+            */
+  background-color: #e6e6e6;
+}
+
+/*.t-white.t-color {
+    color: map-get($theme, text-color);
+}*/
+.t-white button,
+.t-white button.over-panel-control,
+.t-white button.over-panel-control[aria-expanded=true] {
+  border-color: #ffffff;
+  color: #333;
+  background-color: #ffffff;
+}
+
+.t-white button:hover, .t-white button:active, .t-white button:focus,
+.t-white button.over-panel-control:hover,
+.t-white button.over-panel-control:active,
+.t-white button.over-panel-control:focus,
+.t-white button.over-panel-control[aria-expanded=true]:hover,
+.t-white button.over-panel-control[aria-expanded=true]:active,
+.t-white button.over-panel-control[aria-expanded=true]:focus {
+  background-color: #e6e6e6;
+  /*@else {
+            background-color: map-get($theme, background-color);
+        }*/
+}
+
+/* - Don't do this, it's too generic and results in equal specifivity that's resolved in source 
+    order, thus later themes win out, causing problems.
+.t-white a[href] {
+
+    border-color: map-get($theme, border-color);
+    color: map-get($theme, text-color);
+    background-color: map-get($theme, background-color);
+
+    &:hover,
+    &:active,
+    &:focus {
+        color: map-get($theme, text-color);
+    }
+}
+*/
+/*
+:not(.overpanel) .t-white a[href].cta {
+
+    border-color: map-get($theme, border-color);
+    color: map-get($theme, text-color);
+    background-color: transparent;
+    //background-color: map-get($theme, background-color);
+    content: "white";
+
+    &:hover,
+    &:active,
+    &:focus {
+        @if color_light_or_dark(map-get($theme, background-color)) == 'light' {
+            background-color: rgba(0,0,0,0.2);
+        } @else {
+            background-color: rgba(255,255,255,0.2);
+        }
+     
+
+        //background-color: lighten(map-get($theme, border-color), 65%);
+    }
+}
+*/
+/*
+.t-white.d-50-50-background {
+    background: #FFFFFF;
+    background: -moz-linear-gradient(left, map-get($theme, background-color) 0%, map-get($theme, background-color) 50%, #ffffff 50%, #ffffff 100%);
+    background: -webkit-linear-gradient(left, map-get($theme, background-color) 0%,map-get($theme, background-color) 50%,#ffffff 50%,#ffffff 100%);
+    background: linear-gradient(to right, map-get($theme, background-color) 0%,map-get($theme, background-color) 50%,#ffffff 50%,#ffffff 100%);
+}
+
+.t-white.d-50-50-background--flipped {
+    background: #FFFFFF;
+    background: -moz-linear-gradient(left, #ffffff 0%, #ffffff 50%, map-get($theme, background-color) 50%, map-get($theme, background-color) 100%);
+    background: -webkit-linear-gradient(left, #ffffff 0%,#ffffff 50%,map-get($theme, background-color) 50%,map-get($theme, background-color) 100%);
+    background: linear-gradient(to right, #ffffff 0%,#ffffff 50%,map-get($theme, background-color) 50%,map-get($theme, background-color) 100%);
+}
+*/
+.c-panel.c-panel.t-white--very-light {
+  color: #333;
+  background: white;
+  /*
+        a[href]:hover,
+        a[href]:active,
+        a[href]:focus {
+            color: $text-color;
+            background: $background-color;
+        }*/
+}
+
+.c-panel.c-panel.t-white--very-light a[href] {
+  color: #333;
+  background-color: white;
+}
+
+.c-panel.c-panel.t-white--very-light a[href].cta {
+  border-color: #333;
+  color: #333;
+  background-color: transparent;
+}
+
+.c-panel.c-panel.t-white--very-light a[href].cta:hover,
+.c-panel.c-panel.t-white--very-light a[href].cta:active,
+.c-panel.c-panel.t-white--very-light a[href].cta:focus {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.c-panel.c-panel.t-white--light {
+  color: #333;
+  background: white;
+  /*
+        a[href]:hover,
+        a[href]:active,
+        a[href]:focus {
+            color: $text-color;
+            background: $background-color;
+        }*/
+}
+
+.c-panel.c-panel.t-white--light a[href] {
+  color: #333;
+  background-color: white;
+}
+
+.c-panel.c-panel.t-white--light a[href].cta {
+  border-color: #333;
+  color: #333;
+  background-color: transparent;
+}
+
+.c-panel.c-panel.t-white--light a[href].cta:hover,
+.c-panel.c-panel.t-white--light a[href].cta:active,
+.c-panel.c-panel.t-white--light a[href].cta:focus {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.c-panel.c-panel.t-white--dark {
+  color: #fff;
+  background: #e6e6e6;
+  /*
+        a[href]:hover,
+        a[href]:active,
+        a[href]:focus {
+            color: $text-color;
+            background: $background-color;
+        }*/
+}
+
+.c-panel.c-panel.t-white--dark a[href] {
+  color: #fff;
+  background-color: #e6e6e6;
+}
+
+.c-panel.c-panel.t-white--dark a[href].cta {
+  border-color: #fff;
+  color: #fff;
+  background-color: transparent;
+}
+
+.c-panel.c-panel.t-white--dark a[href].cta:hover,
+.c-panel.c-panel.t-white--dark a[href].cta:active,
+.c-panel.c-panel.t-white--dark a[href].cta:focus {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.c-panel.c-panel.t-white--very-dark {
+  color: #fff;
+  background: #cccccc;
+  /*
+        a[href]:hover,
+        a[href]:active,
+        a[href]:focus {
+            color: $text-color;
+            background: $background-color;
+        }*/
+}
+
+.c-panel.c-panel.t-white--very-dark a[href] {
+  color: #fff;
+  background-color: #cccccc;
+}
+
+.c-panel.c-panel.t-white--very-dark a[href].cta {
+  border-color: #fff;
+  color: #fff;
+  background-color: transparent;
+}
+
+.c-panel.c-panel.t-white--very-dark a[href].cta:hover,
+.c-panel.c-panel.t-white--very-dark a[href].cta:active,
+.c-panel.c-panel.t-white--very-dark a[href].cta:focus {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
 /* ---------------------------------------------------------------------------------------------- */
 /* --| WIREFRAME--------------------------------------------------------------------------------- */
 html.wireframe {
@@ -7771,6 +8416,40 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e7692', end
   -ms-flex-pack: center;
   -webkit-justify-content: center;
   justify-content: center;
+}
+
+.c-map {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.c-map > * {
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+}
+
+.c-map.c-map.c-map .leaflet-container a[href] {
+  background-color: transparent;
+  margin-bottom: 0;
+  border-bottom: 0;
+  color: #0078A8;
+}
+
+.c-map.c-map.c-map .leaflet-container a[href]:hover, .c-map.c-map.c-map .leaflet-container a[href]:active, .c-map.c-map.c-map .leaflet-container a[href]:focus {
+  color: #002b41;
+}
+
+.c-map.c-map.c-map .leaflet-container .leaflet-bar a[href] {
+  background-color: #fff;
+  color: #000;
+}
+
+.c-map.c-map.c-map .leaflet-container .leaflet-bar a[href]:hover, .c-map.c-map.c-map .leaflet-container .leaflet-bar a[href]:active, .c-map.c-map.c-map .leaflet-container .leaflet-bar a[href]:focus {
+  background-color: #f4f4f4;
 }
 
 /* ---------------------------------------------------------------------------------------------- */

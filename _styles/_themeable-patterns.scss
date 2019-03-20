@@ -1,7 +1,7 @@
 /*
     Many (soon all?) of these patterns are themeable, so they are configured and imported here
-    (separately) so that they can be imported into other theme files without resulting in 
-    re-declared base-styles. E.g. bands defines a set of size classes, these only need to appear in 
+    (separately) so that they can be imported into other theme files without resulting in
+    re-declared base-styles. E.g. bands defines a set of size classes, these only need to appear in
     the stylesheet once. The file that includes *this* file should set `$theme-only: true` to toggle
     this behaviour.
 */
@@ -51,8 +51,8 @@ $event--border-color: $fallback--base-ui-color;
 
 //@import "patterns/_funder-logo.scss";
 
-//$glimpse-spacing-unit: $fallback--base-rem-space-unit;
-//@import "component-patterns/_glimpse.scss";
+$glimpse-spacing-unit: $fallback--base-rem-space-unit;
+@import "component-patterns/_glimpse.scss";
 
 @import "component-patterns/_hero.scss";
 

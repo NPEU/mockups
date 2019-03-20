@@ -1,0 +1,48 @@
+            <div class="over-panel over-panel--fade" id="menu-panel" data-js="over-panel">
+                <button class="over-panel__overlay" hidden="" aria-hidden="true" tabindex="-1" data-js="over-panel__overlay"></button>
+                <div class="over-panel__contents  d-background--sloped  t-{{ page.project }}" data-js="over-panel__contents">
+
+                    <div class="nav-bar  u-padding--sides--s  t-{{ page.project }}  d-bands--bottom">
+
+                        <nav class="nav-bar__main">
+
+                            <ul class="nav-bar__items">
+
+                                <!--<li class="nav-bar__item"><a href="#" class="nav-bar__link">Themes</a></li>-->
+                                
+                                <li class="nav-bar__item  dropdown">
+
+                                    <a href="/{{ page.project }}#main" class="nav-bar__link">Themes</a>
+                                    <button id="themes-sub-menu-toggle" class="dropdown__button" data-js="dropdown__button" hidden="" aria-label="About Us sub menu" aria-expanded="false"><svg display="none" class="icon  icon--is-closed  feather"><use xlink:href="#icon-chevron-down"></use></svg><svg display="none" class="icon  icon--is-open  feather"><use xlink:href="#icon-chevron-up"></use></svg></button>
+
+                                    <div class="dropdown__area  d-background--sloped  t-{{ page.project }}" id="themes-sub-menu-toggle--target">
+                                        <ul class="subnav__items  subnav__items--stacked">                                    
+                                            <li class="subnav__item"><a href="/wireframes/about/jobs" class="subnav__link" data-js="dropdown__focus-start">Theme 1: Pre-conception health and prevention across the maternity pathway</a></li>
+                                            <li class="subnav__item"><a href="/wireframes/about/postgrad" class="subnav__link">Theme 2: Pregnancy loss and perinatal morbidity and mortality</a></li>
+                                            <li class="subnav__item"><a href="/wireframes/about/privacy-notice" class="subnav__link">Theme 3: Maternal health outcomes and experience of care</a></li>
+                                            <li class="subnav__item"><a href="/wireframes/about/seminars" class="subnav__link">Theme 4: Neonatal care</a></li>                                                                                             
+                                            <li class="subnav__item"><a href="/wireframes/about/working-in-npeu" class="subnav__link">Theme 5: Health systems</a></li>
+                                        </ul>
+                                    </div>
+
+                                </li>
+                                
+                                <li class="nav-bar__item"><a href="#" class="nav-bar__link">Research Team</a></li>
+                                
+                                <li class="nav-bar__item"><a href="#" class="nav-bar__link">PPPI</a></li>
+                            </ul>
+
+                        </nav>
+                        <div class="nav-bar__search">
+                            <button>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20" height="20">
+                                    <path fill="#fff" d="M 12.917 11.667 h -0.662 l -0.229 -0.229 c 0.817 -0.946 1.308 -2.175 1.308 -3.521 c 0 -2.992 -2.425 -5.417 -5.417 -5.417 s -5.417 2.425 -5.417 5.417 s 2.425 5.417 5.417 5.417 c 1.346 0 2.575 -0.492 3.521 -1.304 l 0.229 0.229 v 0.658 l 4.167 4.158 l 1.242 -1.242 l -4.158 -4.167 Z M 7.917 11.667 c -2.071 0 -3.75 -1.679 -3.75 -3.75 s 1.679 -3.75 3.75 -3.75 s 3.75 1.679 3.75 3.75 s -1.679 3.75 -3.75 3.75 Z"></path>
+                                    <text y="-10">Search</text>
+                                </svg>
+                                <span>Search</span>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>

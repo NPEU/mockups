@@ -3,8 +3,8 @@
 */
 /*
     Many (soon all?) of these patterns are themeable, so they are configured and imported here
-    (separately) so that they can be imported into other theme files without resulting in 
-    re-declared base-styles. E.g. bands defines a set of size classes, these only need to appear in 
+    (separately) so that they can be imported into other theme files without resulting in
+    re-declared base-styles. E.g. bands defines a set of size classes, these only need to appear in
     the stylesheet once. The file that includes *this* file should set `$theme-only: true` to toggle
     this behaviour.
 */
@@ -301,6 +301,16 @@ $event--border-color: $fallback--base-ui-color;
 @import "component-patterns/_featurette.scss";
 @include featurette--themer("featurette--dark", #555, #fff);*/
 /*
+
+
+*/
+/*$glimpse--link-color: false !default;
+$glimpse--link-has-border-bottom: false !default;
+$glimpse--link-color--alt: false !default;
+$glimpse--link-has-border-bottom: false !default;
+$glimpse--link-border-bottom: false !default;
+$glimpse--link-border-bottom--hover: false !default;*/
+/*
 */
 /*
 */
@@ -341,6 +351,14 @@ $patterns: (
         );
     }
     */
+.d-background--very-light.t-white {
+  background-color: white;
+}
+
+.d-background--light.t-white {
+  background-color: white;
+}
+
 .d-background.t-white {
   background-color: #ffffff;
 }
@@ -467,6 +485,14 @@ $patterns: (
         );
     }
     */
+.d-background--very-light.t-anode {
+  background-color: white;
+}
+
+.d-background--light.t-anode {
+  background-color: #dba3bc;
+}
+
 .d-background.t-anode {
   background-color: #933961;
 }
@@ -593,6 +619,14 @@ $patterns: (
         );
     }
     */
+.d-background--very-light.t-minidex {
+  background-color: #e0f5ff;
+}
+
+.d-background--light.t-minidex {
+  background-color: #61ceff;
+}
+
 .d-background.t-minidex {
   background-color: #0077AD;
 }
@@ -719,6 +753,14 @@ $patterns: (
         );
     }
     */
+.d-background--very-light.t-neoclear {
+  background-color: #c8fffd;
+}
+
+.d-background--light.t-neoclear {
+  background-color: #49fff9;
+}
+
 .d-background.t-neoclear {
   background-color: #009590;
 }
@@ -845,6 +887,14 @@ $patterns: (
         );
     }
     */
+.d-background--very-light.t-neutral {
+  background-color: white;
+}
+
+.d-background--light.t-neutral {
+  background-color: #e0dcda;
+}
+
 .d-background.t-neutral {
   background-color: #8e8279;
 }
@@ -971,6 +1021,14 @@ $patterns: (
         );
     }
     */
+.d-background--very-light.t-npeu {
+  background-color: #f8f6f9;
+}
+
+.d-background--light.t-npeu {
+  background-color: #baa6c9;
+}
+
 .d-background.t-npeu {
   background-color: #614776;
 }
@@ -1097,6 +1155,14 @@ $patterns: (
         );
     }
     */
+.d-background--very-light.t-prumnhc {
+  background-color: #f8f6f9;
+}
+
+.d-background--light.t-prumnhc {
+  background-color: #baa6c9;
+}
+
 .d-background.t-prumnhc {
   background-color: #614776;
 }

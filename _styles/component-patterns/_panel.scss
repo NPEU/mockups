@@ -50,6 +50,34 @@ $theme-only: false !default;
 		background: $background-color;
 
 		//outline: 1px solid $border-color;
+        
+        a[href] {
+            color: $text-color;
+            background-color: $background-color;
+        }
+        /*
+        a[href]:hover,
+        a[href]:active,
+        a[href]:focus {
+            color: $text-color;
+            background: $background-color;
+        }*/
+        
+        a[href].cta {
+            border-color: $text-color;
+            color: $text-color;
+            background-color: transparent;
+        }
+        
+        a[href].cta:hover,
+        a[href].cta:active,
+        a[href].cta:focus {
+            @if color_light_or_dark(map-get($theme, background-color)) == 'light' {
+                background-color: rgba(0,0,0,0.1);
+            } @else {
+                background-color: rgba(255,255,255,0.1);
+            }
+        }
 	}
 
 }

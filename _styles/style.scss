@@ -33,8 +33,6 @@ $hover-effect-width: $fallback--base-rem-space-unit / 4;
 
 
 
-
-
 /* ---------------------------------------------------------------------------------------------- */
 /* --| BASE |------------------------------------------------------------------------------------ */
 
@@ -51,7 +49,7 @@ $fallback--over-panel__overlay--background-color: #000;
 
 
 
-/**/
+
 $fallback--nav-bar--background-color:            transparent;//#fff;
 $fallback--nav-bar__link--color:                 #fff;//#333;
 $fallback--nav-bar__link--background-color:      $fallback--nav-bar--background-color;
@@ -64,20 +62,24 @@ $fallback--sub-nav__link--background-color:      $fallback--nav-bar--background-
 $fallback--sub-nav__link--background-color--alt: rgba(0,0,0,0.3);
 
 @import "../bower_components/Fall-Back-Nav-Bar/_nav-bar";
-/**/
 
-/*
-$fallback--dropdown--background-color:         $fallback--nav-bar--background-color;
-$fallback--dropdown--text-color:               $fallback--nav-bar__link--color;
-$fallback--dropdown__button--color:            $fallback--nav-bar__link--color;
-$fallback--dropdown__button--background-color: $fallback--nav-bar__link--background-color;
+
+
+
+$fallback--dropdown--background-color:              $fallback--nav-bar--background-color;
+$fallback--dropdown--text-color:                    $fallback--nav-bar__link--color;
+$fallback--dropdown__button--color:                 $fallback--nav-bar__link--color;
+$fallback--dropdown__button--background-color:      $fallback--nav-bar__link--background-color;
+$fallback--dropdown__button--background-color--alt: $fallback--nav-bar__link--background-color--alt;
 
 @import "../bower_components/Fall-Back-Dropdown/_dropdown";
-*/
+
 
 
 //$fallback--search-form--breakpoint--enhanced: 50em;
 @import "../bower_components/Fall-Back-Search-Form/_search-form";
+
+
 
 
 @import "../bower_components/Fall-Back-Sticky-Footer/_sticky-footer";
@@ -236,6 +238,15 @@ $section-menu--link-margin: 0;
 
 //@import "_themes-config";
 //@import "_themes";
+
+// Some themes DO need to be available in the core stylesheet. E.g. white theme, so it's possible to
+// be explicit.
+
+$name: white;
+$theme: map_get($themes, $name);
+
+
+@import "_theme";
 
 /* ---------------------------------------------------------------------------------------------- */
 

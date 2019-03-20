@@ -5,8 +5,8 @@
 /* --| START THEME |----------------------------------------------------------------------------- */
 /*
     Many (soon all?) of these patterns are themeable, so they are configured and imported here
-    (separately) so that they can be imported into other theme files without resulting in 
-    re-declared base-styles. E.g. bands defines a set of size classes, these only need to appear in 
+    (separately) so that they can be imported into other theme files without resulting in
+    re-declared base-styles. E.g. bands defines a set of size classes, these only need to appear in
     the stylesheet once. The file that includes *this* file should set `$theme-only: true` to toggle
     this behaviour.
 */
@@ -303,6 +303,16 @@ $event--border-color: $fallback--base-ui-color;
 @import "component-patterns/_featurette.scss";
 @include featurette--themer("featurette--dark", #555, #fff);*/
 /*
+
+
+*/
+/*$glimpse--link-color: false !default;
+$glimpse--link-has-border-bottom: false !default;
+$glimpse--link-color--alt: false !default;
+$glimpse--link-has-border-bottom: false !default;
+$glimpse--link-border-bottom: false !default;
+$glimpse--link-border-bottom--hover: false !default;*/
+/*
 */
 /*
 */
@@ -343,6 +353,14 @@ $patterns: (
     );
 }
 */
+.d-background--very-light.t-prumnhc {
+  background-color: #f8f6f9;
+}
+
+.d-background--light.t-prumnhc {
+  background-color: #baa6c9;
+}
+
 .d-background.t-prumnhc {
   background-color: #614776;
 }
@@ -402,15 +420,39 @@ $patterns: (
 .c-panel.c-panel.t-prumnhc {
   color: #333;
   background: #614776;
+  /*
+        a[href]:hover,
+        a[href]:active,
+        a[href]:focus {
+            color: $text-color;
+            background: $background-color;
+        }*/
 }
 
-.c-primary-cta.t-prumnhc[href] {
+.c-panel.c-panel.t-prumnhc a[href] {
   color: #333;
   background-color: #614776;
 }
 
-.c-primary-cta.t-prumnhc[href]:hover, .c-primary-cta.t-prumnhc[href]:active, .c-primary-cta.t-prumnhc[href]:focus {
+.c-panel.c-panel.t-prumnhc a[href].cta {
+  border-color: #333;
   color: #333;
+  background-color: transparent;
+}
+
+.c-panel.c-panel.t-prumnhc a[href].cta:hover,
+.c-panel.c-panel.t-prumnhc a[href].cta:active,
+.c-panel.c-panel.t-prumnhc a[href].cta:focus {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.c-primary-cta.t-prumnhc[href] {
+  color: #ffffff;
+  background-color: #614776;
+}
+
+.c-primary-cta.t-prumnhc[href]:hover, .c-primary-cta.t-prumnhc[href]:active, .c-primary-cta.t-prumnhc[href]:focus {
+  color: #ffffff;
   /*@if is-int($button-background-color--alt) {
                 @if $button-background-color--alt > 0 {
                     $button-background-color--alt_percent: $button-background-color--alt * 1%;
@@ -432,7 +474,7 @@ $patterns: (
 .t-prumnhc button.over-panel-control,
 .t-prumnhc button.over-panel-control[aria-expanded=true] {
   border-color: #614776;
-  color: #333;
+  color: #ffffff;
   background-color: #614776;
 }
 
@@ -449,26 +491,44 @@ $patterns: (
         }*/
 }
 
+/* - Don't do this, it's too generic and results in equal specifivity that's resolved in source 
+    order, thus later themes win out, causing problems.
 .t-prumnhc a[href] {
-  border-color: #614776;
-  color: #333;
-  background-color: transparent;
-}
 
-.t-prumnhc a[href]:hover, .t-prumnhc a[href]:active, .t-prumnhc a[href]:focus {
-  color: #333;
-}
+    border-color: map-get($theme, border-color);
+    color: map-get($theme, text-color);
+    background-color: map-get($theme, background-color);
 
+    &:hover,
+    &:active,
+    &:focus {
+        color: map-get($theme, text-color);
+    }
+}
+*/
+/*
 :not(.overpanel) .t-prumnhc a[href].cta {
-  border-color: #614776;
-  color: #333;
-  background-color: #fff;
-}
 
-:not(.overpanel) .t-prumnhc a[href].cta:hover, :not(.overpanel) .t-prumnhc a[href].cta:active, :not(.overpanel) .t-prumnhc a[href].cta:focus {
-  background-color: white;
-}
+    border-color: map-get($theme, border-color);
+    color: map-get($theme, text-color);
+    background-color: transparent;
+    //background-color: map-get($theme, background-color);
+    content: "prumnhc";
 
+    &:hover,
+    &:active,
+    &:focus {
+        @if color_light_or_dark(map-get($theme, background-color)) == 'light' {
+            background-color: rgba(0,0,0,0.2);
+        } @else {
+            background-color: rgba(255,255,255,0.2);
+        }
+     
+
+        //background-color: lighten(map-get($theme, border-color), 65%);
+    }
+}
+*/
 /*
 .t-prumnhc.d-50-50-background {
     background: #FFFFFF;
@@ -484,9 +544,120 @@ $patterns: (
     background: linear-gradient(to right, #ffffff 0%,#ffffff 50%,map-get($theme, background-color) 50%,map-get($theme, background-color) 100%);
 }
 */
+.c-panel.c-panel.t-prumnhc--very-light {
+  color: #333;
+  background: #f8f6f9;
+  /*
+        a[href]:hover,
+        a[href]:active,
+        a[href]:focus {
+            color: $text-color;
+            background: $background-color;
+        }*/
+}
+
+.c-panel.c-panel.t-prumnhc--very-light a[href] {
+  color: #333;
+  background-color: #f8f6f9;
+}
+
+.c-panel.c-panel.t-prumnhc--very-light a[href].cta {
+  border-color: #333;
+  color: #333;
+  background-color: transparent;
+}
+
+.c-panel.c-panel.t-prumnhc--very-light a[href].cta:hover,
+.c-panel.c-panel.t-prumnhc--very-light a[href].cta:active,
+.c-panel.c-panel.t-prumnhc--very-light a[href].cta:focus {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.c-panel.c-panel.t-prumnhc--light {
+  color: #333;
+  background: #baa6c9;
+  /*
+        a[href]:hover,
+        a[href]:active,
+        a[href]:focus {
+            color: $text-color;
+            background: $background-color;
+        }*/
+}
+
+.c-panel.c-panel.t-prumnhc--light a[href] {
+  color: #333;
+  background-color: #baa6c9;
+}
+
+.c-panel.c-panel.t-prumnhc--light a[href].cta {
+  border-color: #333;
+  color: #333;
+  background-color: transparent;
+}
+
+.c-panel.c-panel.t-prumnhc--light a[href].cta:hover,
+.c-panel.c-panel.t-prumnhc--light a[href].cta:active,
+.c-panel.c-panel.t-prumnhc--light a[href].cta:focus {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
 .c-panel.c-panel.t-prumnhc--dark {
   color: #fff;
+  background: #473456;
+  /*
+        a[href]:hover,
+        a[href]:active,
+        a[href]:focus {
+            color: $text-color;
+            background: $background-color;
+        }*/
+}
+
+.c-panel.c-panel.t-prumnhc--dark a[href] {
+  color: #fff;
+  background-color: #473456;
+}
+
+.c-panel.c-panel.t-prumnhc--dark a[href].cta {
+  border-color: #fff;
+  color: #fff;
+  background-color: transparent;
+}
+
+.c-panel.c-panel.t-prumnhc--dark a[href].cta:hover,
+.c-panel.c-panel.t-prumnhc--dark a[href].cta:active,
+.c-panel.c-panel.t-prumnhc--dark a[href].cta:focus {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.c-panel.c-panel.t-prumnhc--very-dark {
+  color: #fff;
   background: #2d2136;
+  /*
+        a[href]:hover,
+        a[href]:active,
+        a[href]:focus {
+            color: $text-color;
+            background: $background-color;
+        }*/
+}
+
+.c-panel.c-panel.t-prumnhc--very-dark a[href] {
+  color: #fff;
+  background-color: #2d2136;
+}
+
+.c-panel.c-panel.t-prumnhc--very-dark a[href].cta {
+  border-color: #fff;
+  color: #fff;
+  background-color: transparent;
+}
+
+.c-panel.c-panel.t-prumnhc--very-dark a[href].cta:hover,
+.c-panel.c-panel.t-prumnhc--very-dark a[href].cta:active,
+.c-panel.c-panel.t-prumnhc--very-dark a[href].cta:focus {
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 /* ---------------------------------------------------------------------------------------------- */

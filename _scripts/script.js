@@ -50,6 +50,73 @@ var cookie_html                   =
 })();
 
 /*!
+    Fall-Back Cookie Notice v1.1.0
+    https://github.com/Fall-Back/Cookie-Notice
+    Copyright (c) 2017, Andy Kirk
+    Released under the MIT license https://git.io/vwTVl
+*/
+(function() {
+    var ready = function(fn) {
+        if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+            fn();
+        } else {
+            document.addEventListener('DOMContentLoaded', fn);
+        }
+    }
+    
+    var createCookie = function(name,value,days) {
+        if (days) {
+            var date = new Date();
+            date.setTime(date.getTime()+(days*24*60*60*1000));
+            var expires = "; expires="+date.toGMTString();
+        }
+        else var expires = "";
+        document.cookie = name+"="+value+expires+"; path=/";
+    }
+
+    var readCookie = function(name) {
+        var nameEQ = name + "=";
+        var ca = document.cookie.split(';');
+        for(var i=0;i < ca.length;i++) {
+            var c = ca[i];
+            while (c.charAt(0)==' ') c = c.substring(1,c.length);
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+        }
+        return null;
+    }
+
+    var eraseCookie = function(name) {
+        createCookie(name,"",-1);
+    }
+    
+    var cookienotice = {
+
+        init: function() {
+            var accepted_cookies = readCookie(cookie_name);
+            if (!accepted_cookies) {
+                var body_el = document.getElementsByTagName('body')[0];
+                body_el.insertAdjacentHTML('afterbegin', cookie_html);
+                
+                document.getElementById(cookie_button_id).onclick = function(){
+                    createCookie(cookie_name, 'true', cookie_expire_days);
+                    document.getElementById(cookie_notice_id).className += '  ' + cookie_close_class;
+                    /*
+                        Without CSS (or transition suport - IE9) the notice won't disappear, so wait until fade 
+                        has finished then remove:
+                    */
+                    setTimeout(function(){
+                        var c = document.getElementById(cookie_notice_id);
+                        c.parentNode.removeChild(c);
+                    }, cookie_notice_effect_duration);
+                };
+            }
+        }
+    }
+    
+    ready(cookienotice.init);
+})();
+
+/*!
     Fall-Back Nav-Bar v2.0.0
     https://github.com/Fall-Back/Nav-Bar
     Copyright (c) 2017, Andy Kirk
@@ -66,7 +133,7 @@ var cookie_html                   =
         if (typeof document.styleSheets != "undefined") {// is this supported
             var cssSheets = document.styleSheets;
             
-            // IE doesn't have lovation.origin, so fix that:
+            // IE doesn't have document.location.origin, so fix that:
             if (!document.location.origin) {
                 document.location.origin = document.location.protocol + "//" + document.location.hostname + (document.location.port ? ':' + document.location.port: '');
             }
@@ -197,7 +264,7 @@ var cookie_html                   =
         if (typeof document.styleSheets != "undefined") {// is this supported
             var cssSheets = document.styleSheets;
             
-            // IE doesn't have lovation.origin, so fix that:
+            // IE doesn't have document.location.origin, so fix that:
             if (!document.location.origin) {
                 document.location.origin = document.location.protocol + "//" + document.location.hostname + (document.location.port ? ':' + document.location.port: '');
             }
@@ -412,12 +479,51 @@ var cookie_html                   =
 })();
 
 /*!
-    Fall-Back Cookie Notice v1.1.0
-    https://github.com/Fall-Back/Cookie-Notice
+    Fall-Back Dropdown v1.0.0
+    https://github.com/Fall-Back/Dropdown
     Copyright (c) 2017, Andy Kirk
     Released under the MIT license https://git.io/vwTVl
 */
 (function() {
+
+    var dropdown_js_classname = 'js-dropdown';
+
+    var check_for_css = function(selector) {
+
+        var rules;
+        var haveRule = false;
+        if (typeof document.styleSheets != "undefined") {// is this supported
+            var cssSheets = document.styleSheets;
+
+            // IE doesn't have document.location.origin, so fix that:
+            if (!document.location.origin) {
+                document.location.origin = document.location.protocol + "//" + document.location.hostname + (document.location.port ? ':' + document.location.port: '');
+            }
+            var domain_regex  = RegExp('^' + document.location.origin);
+
+            outerloop:
+            for (var i = 0; i < cssSheets.length; i++) {
+                var sheet = cssSheets[i];
+
+                // Some browsers don't allow checking of rules if not on the same domain (CORS), so
+                // checking for that here:
+                if (sheet.href !== null && domain_regex.exec(sheet.href) === null) {
+                    continue;
+                }
+
+                // Check for IE or standards:
+                rules = (typeof sheet.cssRules != "undefined") ? sheet.cssRules : sheet.rules;
+                for (var j = 0; j < rules.length; j++) {
+                    if (rules[j].selectorText == selector) {
+                        haveRule = true;
+                        break outerloop;
+                    }
+                }
+            }
+        }
+        return haveRule;
+    }
+
     var ready = function(fn) {
         if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
             fn();
@@ -425,55 +531,77 @@ var cookie_html                   =
             document.addEventListener('DOMContentLoaded', fn);
         }
     }
-    
-    var createCookie = function(name,value,days) {
-        if (days) {
-            var date = new Date();
-            date.setTime(date.getTime()+(days*24*60*60*1000));
-            var expires = "; expires="+date.toGMTString();
-        }
-        else var expires = "";
-        document.cookie = name+"="+value+expires+"; path=/";
-    }
 
-    var readCookie = function(name) {
-        var nameEQ = name + "=";
-        var ca = document.cookie.split(';');
-        for(var i=0;i < ca.length;i++) {
-            var c = ca[i];
-            while (c.charAt(0)==' ') c = c.substring(1,c.length);
-            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
-        }
-        return null;
-    }
-
-    var eraseCookie = function(name) {
-        createCookie(name,"",-1);
-    }
-    
-    var cookienotice = {
+	var dropdown = {
 
         init: function() {
-            var accepted_cookies = readCookie(cookie_name);
-            if (!accepted_cookies) {
-                var body_el = document.getElementsByTagName('body')[0];
-                body_el.insertAdjacentHTML('afterbegin', cookie_html);
-                
-                document.getElementById(cookie_button_id).onclick = function(){
-                    createCookie(cookie_name, 'true', cookie_expire_days);
-                    document.getElementById(cookie_notice_id).className += '  ' + cookie_close_class;
-                    /*
-                        Without CSS (or transition suport - IE9) the notice won't disappear, so wait until fade 
-                        has finished then remove:
-                    */
-                    setTimeout(function(){
-                        var c = document.getElementById(cookie_notice_id);
-                        c.parentNode.removeChild(c);
-                    }, cookie_notice_effect_duration);
-                };
+            var dropdowns = document.querySelectorAll('.dropdown');
+            /*var dropdown_js_classname = 'js-dropdown';
+            // Note that `getComputedStyle` on pseudo elements doesn't work in Opera Mini, but in
+            // this case I'm happy to serve only the un-enhanced version to Opera Mini.
+            var css_is_loaded = (
+                window.getComputedStyle(dropdown, ':before')
+                .getPropertyValue('content')
+                .replace(/(\"|\')/g, '')
+                == 'CSS Loaded'
+            );*/
+
+            if (css_is_loaded) {
+                Array.prototype.forEach.call(dropdowns, function(dropdown, i) {
+                    // Add the JS class names ...
+                    if (dropdown.classList) {
+                        dropdown.classList.add(dropdown_js_classname);
+                    } else {
+                        dropdown.className += ' ' + dropdown_js_classname;
+                    }
+                    // ... and button actions:
+                    var buttons = document.querySelectorAll('[data-js="dropdown__button"]');
+                    Array.prototype.forEach.call(buttons, function(button, i) {
+                        var button_id = button.getAttribute('id');
+
+                        button.setAttribute('aria-expanded', 'false');
+
+                        // Main button:
+                        button.addEventListener('click', function() {
+                            // Switch the `aria-expanded` attribute:
+                            var expanded = this.getAttribute('aria-expanded') === 'true' || false;
+
+                            // Close any open dropdown:
+                            var expanded_buttons = document.querySelectorAll('[data-js="dropdown__button"][aria-expanded="true"]');
+                            Array.prototype.forEach.call(expanded_buttons, function(expanded_button, i) {
+                                expanded_button.setAttribute('aria-expanded', 'false');
+                            });
+
+                            // Set the attribute:
+                            this.setAttribute('aria-expanded', !expanded);
+
+                            // Set the focus to the first link if submenu newly opened:
+                            if (!expanded) {
+                                var first_link = document.querySelector('#' + button_id + '--target [data-js="dropdown__focus-start"]');
+                                if (first_link) {
+                                    first_link.focus();
+                                }
+                            }
+                        });
+                    });
+                });
             }
         }
+	}
+
+    // This is _here_ to mitigate a Flash of Basic Styled Dropdown:
+    var css_is_loaded = check_for_css('.' + dropdown_js_classname);
+
+    if (css_is_loaded) {
+        // Add the JS class name ...
+        var hmtl_el = document.querySelector('html');
+
+        if (hmtl_el.classList) {
+            hmtl_el.classList.add(dropdown_js_classname);
+        } else {
+            hmtl_el.className += ' ' + dropdown_js_classname;
+        }
     }
-    
-    ready(cookienotice.init);
+
+	ready(dropdown.init);
 })();
