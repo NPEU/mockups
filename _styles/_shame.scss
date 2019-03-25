@@ -721,3 +721,49 @@ $flex-grid-spacing-unit--large: ($flex-grid-spacing-unit * 2) !default;
             background-color: #f4f4f4;
         }
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+/***************************/
+// Navbar tweaks;
+
+// Contain floats:
+.nav-bar::before,
+.nav-bar::after {
+    content: " ";
+    display: table;
+}
+
+.nav-bar::after {
+    clear: both;
+}
+
+.nav-bar__main {
+    float: left;
+}
+
+.nav-bar__search {
+    float: right;
+}
+
+.js-over-panel .nav-bar .over-panel {
+    top: 3.3rem;
+}
+
+
+@media only screen and (max-width: $content-area-breakpoint) {
+    .l-content-area__pull-out.u-space--above {
+        margin-top: 0 !important;
+    }
+    
+    .l-content-area__pull-out .c-panel {
+        padding-top: 0 !important;
+    }
+}

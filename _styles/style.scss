@@ -50,16 +50,18 @@ $fallback--over-panel__overlay--background-color: #000;
 
 
 
-$fallback--nav-bar--background-color:            transparent;//#fff;
-$fallback--nav-bar__link--color:                 #fff;//#333;
-$fallback--nav-bar__link--background-color:      $fallback--nav-bar--background-color;
-$fallback--nav-bar__link--background-color--alt: rgba(0,0,0,0.3);
+$fallback--nav-bar--background-color:             transparent;//#fff;
+$fallback--nav-bar__link--color:                  #fff;//#333;
+$fallback--nav-bar__link--background-color:       $fallback--nav-bar--background-color;
+$fallback--nav-bar__link--background-color--alt:  rgba(0,0,0,0.3);
+$fallback--nav-bar__link--background-color--alt2: rgba(0,0,0,0.3);
 
-$fallback--sub-nav--background-color:            $fallback--nav-bar--background-color;
-$fallback--sub-nav__link--color:                 $fallback--nav-bar__link--color;
-$fallback--sub-nav__link--background-color:      $fallback--nav-bar--background-color;
+$fallback--sub-nav--background-color:             $fallback--nav-bar--background-color;
+$fallback--sub-nav__link--color:                  $fallback--nav-bar__link--color;
+$fallback--sub-nav__link--background-color:       $fallback--nav-bar--background-color;
 //$fallback--sub-nav__link--background-color--alt: darken($fallback--nav-bar--background-color, 14%);
-$fallback--sub-nav__link--background-color--alt: rgba(0,0,0,0.3);
+$fallback--sub-nav__link--background-color--alt:  rgba(0,0,0,0.3);
+
 
 @import "../bower_components/Fall-Back-Nav-Bar/_nav-bar";
 
@@ -172,7 +174,9 @@ $col-to-row-spacing-unit: $fallback--base-rem-space-unit;
 @import "layout-patterns/_col-to-row.scss";
 
 //$content-area-max-width: 42em;
+$content-area-spacing-unit: $fallback--base-rem-space-unit;
 $content-area-pull-out-side: right;
+$content-area-pull-out-side-space: 0 $content-area-spacing-unit; 
 @import "layout-patterns/_content-area.scss";
 
 @import "layout-patterns/_distribute.scss";
@@ -247,6 +251,13 @@ $theme: map_get($themes, $name);
 
 
 @import "_theme";
+
+
+$name: neutral;
+$theme: map_get($themes, $name);
+
+@import "_theme";
+
 
 /* ---------------------------------------------------------------------------------------------- */
 

@@ -14,6 +14,9 @@ $content-area-spacing-unit--large: ($content-area-spacing-unit * 2) !default;
 $content-area-pull-out-side: left !default;
 $content-area-main-side: false;
 
+
+$content-area-pull-out-side-space: 0 $content-area-spacing-unit 0 0 !default;
+
 @if $content-area-pull-out-side == left {
     $content-area-main-side: right;
 } @else {
@@ -42,6 +45,7 @@ $content-area-main-side: false;
     }
 
     #{&}__main {
+        width: 100%;
         max-width: $content-area-max-width;
         margin-left: auto;
         margin-right: auto;
@@ -73,7 +77,7 @@ $content-area-main-side: false;
         &#{&}--has-pull-outs #{&}__main > #{&}__pull-out {
             width: 33.333%;
             float: $content-area-pull-out-side;
-            padding: 0 $content-area-spacing-unit 0 0;
+            padding: $content-area-pull-out-side-space;
             margin: 0;
             clear: right;
         }

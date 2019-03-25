@@ -4,7 +4,7 @@ layout: structure
     {% assign project_data = site.data.projects[page.project] %}
     <div class="sticky-footer-wrap  limit-page-width">
 
-        <header class="c-page-header  t-{{ page.project }}  d-bands--bottom">
+        <header class="c-page-header  t-{{ page.project }}  d-bands--bottomX">
             
             <div class="u-padding--bottom--s">
                 <div class="l-col-to-row">
@@ -14,21 +14,14 @@ layout: structure
                         </a>
                     </div>
 
-                    <!--<div class="l-col-to-row__item  ff-width-100--40--50  l-v-center  u-text-align--right  c-page-header__last">-->
+                    {% if page.display_cta %}
                     <div class="l-col-to-row__item  ff-width-100--40--50  l-distribute  u-padding--top--s  u-padding--sides--s">
-                        {% if page.display_navbar %}
-                        <span>
-                            <button class="over-panel-control" hidden aria-controls="menu-panel" aria-label="Main menu" aria-expanded="false" data-js="overpanel__control">
-                                <svg display="none" class="icon  icon--is-closed  feather"><use xlink:href="#icon-menu"></use></svg><svg display="none" class="icon  icon--is-open  feather"><use xlink:href="#icon-cross"></use></svg>
-                            </button>
-                        </span>
-                        {% endif %}
-                        {% if page.display_cta %}
+                        
                         <span>
                             <a href="/{{ project_data.randomisation_url }}" class="c-primary-cta  t-{{ page.project }}">Randomise to {{ project_data.name }}</a>
                         </span>
-                        {% endif %}
                     </div>
+                    {% endif %}
                 </div>
             </div>
             

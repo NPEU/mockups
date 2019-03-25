@@ -6,7 +6,7 @@ layout: structure--project
 
         <div class="l-content-area  d-bands--bottom  t-{{ page.project }}{% if page.has_pull_outs or page.section_menu or page.toc %}  l-content-area--has-pull-outs{% endif %}">
 
-            <div class="l-content-area__main">
+            <div class="l-content-area__main  d-background--light  t-neutral">
 
             
                 {% include module__breadcrumbs.html %}
@@ -25,24 +25,14 @@ layout: structure--project
                 -->{% endcomment %}
                 <div class="c-panel  Xu-padding--above  Xu-space--below  c-longform-content">                   
                     <h1>{{ page.title }}</h1>
-                {% if page.section_menu or page.toc %}
+                {% if page.toc %}
                 </div>
                 <div class="l-content-area__pull-out">
-                    {% if page.section_menu %}
-                    <div class="c-panel  u-padding--top--none">
-                    
-                        {% capture section_menu_module %}module__section-menu--{{ page.project }}--{{ page.section_menu }}.html{% endcapture %}
-                        {% include {{ section_menu_module }} %}
-                    
-                    </div>
-                    {% endif %}
-                    {% if page.toc %}
-                    <div class="c-panel  u-padding--top--none">
+                    <div class="c-panel">
                         
                         {% include module__toc.html %}
                         
                     </div>
-                    {% endif %}
                 </div>
                 <div class="c-panel  Xu-padding--above  Xu-space--below  c-longform-content">   
                 {% endif %}
@@ -50,6 +40,17 @@ layout: structure--project
                     {{ content }}
 
                 </div>
+                
+                {% if page.section_menu %}
+                <div class="l-content-area__pull-out  u-space--above">
+                    <div class="c-panel">
+                    
+                        {% capture section_menu_module %}module__section-menu--{{ page.project }}--{{ page.section_menu }}.html{% endcapture %}
+                        {% include {{ section_menu_module }} %}
+                    
+                    </div>
+                </div>
+                {% endif %}
                 
                 <!--<div class="l-content-area__pull-out  u-space--below">
                     <div wf-area="white+outline+medium-padding">
@@ -118,7 +119,7 @@ layout: structure--project
                         </div>
                     </div>
                     
-                    <div class="l-col-to-row__item  ff-width-100--45--33-333">
+                    <div class="l-col-to-row__item  ff-width-100--45--66-666">
                         <div class="c-panel  t-white  u-fill-height">
                             
                             {% if page.display_support %}
@@ -127,13 +128,13 @@ layout: structure--project
                             {% endif %}
                         </div>
                     </div>
-                   
+                    <!--
                     <div class="l-col-to-row__item  ff-width-100--45--33-333">
                         <div class="c-panel  t-white  u-fill-height">
                             
                         </div>
                     </div>
-                   
+                    -->
                 </div>
             </div>
         </div>

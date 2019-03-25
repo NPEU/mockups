@@ -130,7 +130,7 @@ $section-menu--link-border-bottom--alt: false !default;
                 border-bottom: 2px dashed;
             }
 
-                .#{$section-menu-namespace}section-menu .#{$section-menu-namespace}section-menu__link {
+                .#{$section-menu-namespace}section-menu .#{$section-menu-namespace}section-menu__link[href] {
                     padding: $section-menu--link-padding;
                     margin: $section-menu--link-margin;
   
@@ -139,7 +139,7 @@ $section-menu--link-border-bottom--alt: false !default;
                     display: block;
 
                     &:hover {
-                        border: 0;
+                        //border: 0;
                         @if $section-menu--link-color--alt != false {
                             background: $section-menu--link-color--alt;
                         }

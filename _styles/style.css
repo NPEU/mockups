@@ -3340,7 +3340,7 @@ _:-o-prefocus, body:last-child .nav-bar .subnav__heading {
 
 .nav-bar .nav-bar__link[href]:focus {
   color: #fff;
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 .nav-bar .subnav__link[href]:hover,
@@ -6179,10 +6179,11 @@ $glimpse--link-border-bottom--hover: false !default;*/
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   margin: 0;
-  padding: 0 2rem;
+  padding: 0 2.4rem;
 }
 
 .l-content-area .l-content-area__main {
+  width: 100%;
   max-width: 42em;
   margin-left: auto;
   margin-right: auto;
@@ -6197,17 +6198,17 @@ $glimpse--link-border-bottom--hover: false !default;*/
     /* For Block formatting context (contain float): */
     display: table;
     display: flow-root;
-    max-width: calc(42em + 21em + 10rem);
+    max-width: calc(42em + 21em + 12rem);
   }
   .l-content-area.l-content-area--has-pull-outs .l-content-area__main > * {
     width: 66.666%;
     float: left;
-    padding: 0 2rem;
+    padding: 0 2.4rem;
   }
   .l-content-area.l-content-area--has-pull-outs .l-content-area__main > .l-content-area__pull-out {
     width: 33.333%;
     float: right;
-    padding: 0 2rem 0 0;
+    padding: 0 2.4rem;
     margin: 0;
     clear: right;
   }
@@ -6483,15 +6484,14 @@ $pagination--background-color: #fff;
   border-bottom: 2px dashed;
 }
 
-.n-section-menu .n-section-menu__link {
+.n-section-menu .n-section-menu__link[href] {
   padding: 0.6rem;
   margin: 0;
   border: 0;
   display: block;
 }
 
-.n-section-menu .n-section-menu__link:hover {
-  border: 0;
+.n-section-menu .n-section-menu__link[href]:hover {
   background: #ccc;
 }
 
@@ -7440,6 +7440,340 @@ $patterns: (
 .c-panel.c-panel.t-white--very-dark a[href].cta:active,
 .c-panel.c-panel.t-white--very-dark a[href].cta:focus {
   background-color: rgba(0, 0, 0, 0.1);
+}
+
+/*
+Note - this won't work until SASS supports dynamic calling of mixins. It's close, but hasn't been
+merged yet. Hoping that will be done soon so I can change this.
+
+// List all the includes that should be called.
+// Note that they're defined in the relevent pattern files, so it isn't ideal to list them here,
+// but I don't know of another way of doing this yet.
+// One idea could be that each pattern that needs to be theme-able adds it's own name to this list,
+// (registers itself). This may work, but may come with it's own set of problems. Investigate.
+$patterns: (
+    bands-theme,
+    page-header-theme,
+    panel-theme,
+    panel-theme--dark,
+    primary-cta-theme
+);
+*/
+/* - Waiting for SASS to support. Currently pseudo code.
+@each $pattern in $patterns {
+    @include $pattern (
+        (
+            name  : neutral,
+            theme : $theme
+        )
+    );
+}
+*/
+.d-background--very-light.t-neutral {
+  background-color: white;
+}
+
+.d-background--light.t-neutral {
+  background-color: #e0dcda;
+}
+
+.d-background.t-neutral {
+  background-color: #8e8279;
+}
+
+.d-background--dark.t-neutral {
+  background-color: #736961;
+}
+
+.d-background--very-dark.t-neutral {
+  background-color: #57504a;
+}
+
+.d-background--sloped.t-neutral {
+  background: -moz-linear-gradient(45deg, #81756d 0%, #84786f 50%, #897d74 50%, #867a71 100%);
+  background: -webkit-linear-gradient(45deg, #81756d 0%, #84786f 50%, #897d74 50%, #867a71 100%);
+  background: linear-gradient(45deg, #81756d 0%, #84786f 50%, #897d74 50%, #867a71 100%);
+}
+
+.d-bands.t-neutral,
+.d-bands--left.t-neutral,
+.d-bands--right.t-neutral,
+.d-bands--sides.t-neutral,
+.d-bands--top.t-neutral,
+.d-bands--above.t-neutral,
+.d-bands--bottom.t-neutral,
+.d-bands--below.t-neutral {
+  border-color: #8e8279;
+}
+
+.c-card.t-neutral,
+.c-card.t-neutral .c-card__main {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.c-card--themed-content.t-neutral .c-card__body::before {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.c-card.t-neutral .c-card__main {
+  position: relative;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+/*@if $border-color == null {
+		$border-color: darken($background-color, 10%);
+    }*/
+.c-meter.t-neutral {
+  color: #fff;
+}
+
+.c-page-header.t-neutral {
+  color: #333;
+  background-color: #8e8279;
+}
+
+.c-panel.c-panel.t-neutral {
+  color: #333;
+  background: #8e8279;
+  /*
+        a[href]:hover,
+        a[href]:active,
+        a[href]:focus {
+            color: $text-color;
+            background: $background-color;
+        }*/
+}
+
+.c-panel.c-panel.t-neutral a[href] {
+  color: #333;
+  background-color: #8e8279;
+}
+
+.c-panel.c-panel.t-neutral a[href].cta {
+  border-color: #333;
+  color: #333;
+  background-color: transparent;
+}
+
+.c-panel.c-panel.t-neutral a[href].cta:hover,
+.c-panel.c-panel.t-neutral a[href].cta:active,
+.c-panel.c-panel.t-neutral a[href].cta:focus {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.c-primary-cta.t-neutral[href] {
+  color: #333;
+  background-color: #8e8279;
+}
+
+.c-primary-cta.t-neutral[href]:hover, .c-primary-cta.t-neutral[href]:active, .c-primary-cta.t-neutral[href]:focus {
+  color: #333;
+  /*@if is-int($button-background-color--alt) {
+                @if $button-background-color--alt > 0 {
+                    $button-background-color--alt_percent: $button-background-color--alt * 1%;
+                    background-color: lighten(map-get($theme, cta-background-color), $button-background-color--alt_percent);
+                }
+                @if $button-background-color--alt < 0 {
+                    $button-background-color--alt_percent: $button-background-color--alt * -1%;
+                    background-color: darken(map-get($theme, cta-background-color), $button-background-color--alt_percent);
+                }
+            }
+            */
+  background-color: #736961;
+}
+
+/*.t-neutral.t-color {
+    color: map-get($theme, text-color);
+}*/
+.t-neutral button,
+.t-neutral button.over-panel-control,
+.t-neutral button.over-panel-control[aria-expanded=true] {
+  border-color: #8e8279;
+  color: #333;
+  background-color: #8e8279;
+}
+
+.t-neutral button:hover, .t-neutral button:active, .t-neutral button:focus,
+.t-neutral button.over-panel-control:hover,
+.t-neutral button.over-panel-control:active,
+.t-neutral button.over-panel-control:focus,
+.t-neutral button.over-panel-control[aria-expanded=true]:hover,
+.t-neutral button.over-panel-control[aria-expanded=true]:active,
+.t-neutral button.over-panel-control[aria-expanded=true]:focus {
+  background-color: #736961;
+  /*@else {
+            background-color: map-get($theme, background-color);
+        }*/
+}
+
+/* - Don't do this, it's too generic and results in equal specifivity that's resolved in source 
+    order, thus later themes win out, causing problems.
+.t-neutral a[href] {
+
+    border-color: map-get($theme, border-color);
+    color: map-get($theme, text-color);
+    background-color: map-get($theme, background-color);
+
+    &:hover,
+    &:active,
+    &:focus {
+        color: map-get($theme, text-color);
+    }
+}
+*/
+/*
+:not(.overpanel) .t-neutral a[href].cta {
+
+    border-color: map-get($theme, border-color);
+    color: map-get($theme, text-color);
+    background-color: transparent;
+    //background-color: map-get($theme, background-color);
+    content: "neutral";
+
+    &:hover,
+    &:active,
+    &:focus {
+        @if color_light_or_dark(map-get($theme, background-color)) == 'light' {
+            background-color: rgba(0,0,0,0.2);
+        } @else {
+            background-color: rgba(255,255,255,0.2);
+        }
+     
+
+        //background-color: lighten(map-get($theme, border-color), 65%);
+    }
+}
+*/
+/*
+.t-neutral.d-50-50-background {
+    background: #FFFFFF;
+    background: -moz-linear-gradient(left, map-get($theme, background-color) 0%, map-get($theme, background-color) 50%, #ffffff 50%, #ffffff 100%);
+    background: -webkit-linear-gradient(left, map-get($theme, background-color) 0%,map-get($theme, background-color) 50%,#ffffff 50%,#ffffff 100%);
+    background: linear-gradient(to right, map-get($theme, background-color) 0%,map-get($theme, background-color) 50%,#ffffff 50%,#ffffff 100%);
+}
+
+.t-neutral.d-50-50-background--flipped {
+    background: #FFFFFF;
+    background: -moz-linear-gradient(left, #ffffff 0%, #ffffff 50%, map-get($theme, background-color) 50%, map-get($theme, background-color) 100%);
+    background: -webkit-linear-gradient(left, #ffffff 0%,#ffffff 50%,map-get($theme, background-color) 50%,map-get($theme, background-color) 100%);
+    background: linear-gradient(to right, #ffffff 0%,#ffffff 50%,map-get($theme, background-color) 50%,map-get($theme, background-color) 100%);
+}
+*/
+.c-panel.c-panel.t-neutral--very-light {
+  color: #333;
+  background: white;
+  /*
+        a[href]:hover,
+        a[href]:active,
+        a[href]:focus {
+            color: $text-color;
+            background: $background-color;
+        }*/
+}
+
+.c-panel.c-panel.t-neutral--very-light a[href] {
+  color: #333;
+  background-color: white;
+}
+
+.c-panel.c-panel.t-neutral--very-light a[href].cta {
+  border-color: #333;
+  color: #333;
+  background-color: transparent;
+}
+
+.c-panel.c-panel.t-neutral--very-light a[href].cta:hover,
+.c-panel.c-panel.t-neutral--very-light a[href].cta:active,
+.c-panel.c-panel.t-neutral--very-light a[href].cta:focus {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.c-panel.c-panel.t-neutral--light {
+  color: #333;
+  background: #e0dcda;
+  /*
+        a[href]:hover,
+        a[href]:active,
+        a[href]:focus {
+            color: $text-color;
+            background: $background-color;
+        }*/
+}
+
+.c-panel.c-panel.t-neutral--light a[href] {
+  color: #333;
+  background-color: #e0dcda;
+}
+
+.c-panel.c-panel.t-neutral--light a[href].cta {
+  border-color: #333;
+  color: #333;
+  background-color: transparent;
+}
+
+.c-panel.c-panel.t-neutral--light a[href].cta:hover,
+.c-panel.c-panel.t-neutral--light a[href].cta:active,
+.c-panel.c-panel.t-neutral--light a[href].cta:focus {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.c-panel.c-panel.t-neutral--dark {
+  color: #fff;
+  background: #736961;
+  /*
+        a[href]:hover,
+        a[href]:active,
+        a[href]:focus {
+            color: $text-color;
+            background: $background-color;
+        }*/
+}
+
+.c-panel.c-panel.t-neutral--dark a[href] {
+  color: #fff;
+  background-color: #736961;
+}
+
+.c-panel.c-panel.t-neutral--dark a[href].cta {
+  border-color: #fff;
+  color: #fff;
+  background-color: transparent;
+}
+
+.c-panel.c-panel.t-neutral--dark a[href].cta:hover,
+.c-panel.c-panel.t-neutral--dark a[href].cta:active,
+.c-panel.c-panel.t-neutral--dark a[href].cta:focus {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.c-panel.c-panel.t-neutral--very-dark {
+  color: #fff;
+  background: #57504a;
+  /*
+        a[href]:hover,
+        a[href]:active,
+        a[href]:focus {
+            color: $text-color;
+            background: $background-color;
+        }*/
+}
+
+.c-panel.c-panel.t-neutral--very-dark a[href] {
+  color: #fff;
+  background-color: #57504a;
+}
+
+.c-panel.c-panel.t-neutral--very-dark a[href].cta {
+  border-color: #fff;
+  color: #fff;
+  background-color: transparent;
+}
+
+.c-panel.c-panel.t-neutral--very-dark a[href].cta:hover,
+.c-panel.c-panel.t-neutral--very-dark a[href].cta:active,
+.c-panel.c-panel.t-neutral--very-dark a[href].cta:focus {
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 /* ---------------------------------------------------------------------------------------------- */
@@ -8450,6 +8784,38 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e7692', end
 
 .c-map.c-map.c-map .leaflet-container .leaflet-bar a[href]:hover, .c-map.c-map.c-map .leaflet-container .leaflet-bar a[href]:active, .c-map.c-map.c-map .leaflet-container .leaflet-bar a[href]:focus {
   background-color: #f4f4f4;
+}
+
+/***************************/
+.nav-bar::before,
+.nav-bar::after {
+  content: " ";
+  display: table;
+}
+
+.nav-bar::after {
+  clear: both;
+}
+
+.nav-bar__main {
+  float: left;
+}
+
+.nav-bar__search {
+  float: right;
+}
+
+.js-over-panel .nav-bar .over-panel {
+  top: 3.3rem;
+}
+
+@media only screen and (max-width: 60em) {
+  .l-content-area__pull-out.u-space--above {
+    margin-top: 0 !important;
+  }
+  .l-content-area__pull-out .c-panel {
+    padding-top: 0 !important;
+  }
 }
 
 /* ---------------------------------------------------------------------------------------------- */
