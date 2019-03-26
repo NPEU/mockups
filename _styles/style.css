@@ -2555,11 +2555,11 @@ _:-webkit-full-screen, _::-webkit-full-page-media, _:future, :root select[size="
     border-radius: 50%;
   }
   input[type="radio"]:checked {
-    background-image: -moz-radial-gradient(center, ellipse cover, #333333 0%, #333333 35%, transparent 35%, transparent 100%);
+    background-image: -moz-radial-gradient(center, ellipse cover, #333333 0%, #333333 35%, rgba(0, 0, 0, 0) 35%, rgba(0, 0, 0, 0) 100%);
     /* FF3.6-15 */
-    background-image: -webkit-radial-gradient(center, ellipse cover, #333333 0%, #333333 35%, transparent 35%, transparent 100%);
+    background-image: -webkit-radial-gradient(center, ellipse cover, #333333 0%, #333333 35%, rgba(0, 0, 0, 0) 35%, rgba(0, 0, 0, 0) 100%);
     /* Chrome10-25,Safari5.1-6 */
-    background-image: radial-gradient(ellipse at center, #333333 0%, #333333 35%, transparent 35%, transparent 100%);
+    background-image: radial-gradient(ellipse at center, #333333 0%, #333333 35%, rgba(0, 0, 0, 0) 35%, rgba(0, 0, 0, 0) 100%);
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   }
   input[type="checkbox"]:checked::after {
@@ -2607,7 +2607,8 @@ _:-webkit-full-screen, _::-webkit-full-page-media, _:future, :root select[size="
   -webkit-appearance: radio;
 }
 
-/*------------------------------------------------------------------------------------------------*    Fall-Back Icons v1.0.0
+/*------------------------------------------------------------------------------------------------*\
+    Fall-Back Icons v1.0.0
     
     Designed for use with the basic [CSS Mustard Cut](https://github.com/Fall-Back/CSS-Mustard-Cut)
     IE 9+, FF 8+, Opera 12, [Chrome 29+, Android ~4.4+]
@@ -3715,7 +3716,7 @@ _:-o-prefocus, body:last-child .dropdown .dropdown__button {
 
 .dropdown .dropdown__button:focus {
   color: #fff;
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0);
 }
 
 .dropdown .dropdown__button {
@@ -3955,7 +3956,8 @@ _:-o-prefocus, body:last-child .dropdown .dropdown__button {
 }
 
 /* ---------------------------------------------------------------------------------------------- */
-/*------------------------------------------------------------------------------------------------*
+/*------------------------------------------------------------------------------------------------*\
+
     Designed for use with the basic [CSS Mustard Cut](https://github.com/Fall-Back/CSS-Mustard-Cut)
     IE 9+, FF 8+, Opera 12, [Chrome 29+, Android ~4.4+]
     Chrome 29+, Opera 16+, Safari 6.1+, iOS 7+, Android ~4.4+
@@ -4052,8 +4054,10 @@ $fallback-svg--link-bg-color-alt: #fff;
 @include svg--fixed-height(60px, 'svg--fixed-height--parent-logo', 0, 0);
 @include svg--fixed-height(($fallback--base-rem-space-unit * 4), 'svg--fixed-height--funder-logo', ($fallback--base-rem-space-unit / 2), 0);
 */
-/*------------------------------------------------------------------------------------------------*\*------------------------------------------------------------------------------------------------*/
-/*------------------------------------------------------------------------------------------------*    Import Fall-Back vars:
+/*------------------------------------------------------------------------------------------------*\
+\*------------------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------------------*\
+    Import Fall-Back vars:
 
     Slightly hacky way of allowing the main UI colour of this pattern to be:
      - base-ui colour (if set)
@@ -5179,15 +5183,19 @@ $button-focus-outline-offset: -($ui-focus-outline-offset + $button-border-width)
   /*
                     1. This is to provide positioning context for the ::after pseudo-element.
                     2. This is so a broken image is still 100%.
+                    3. Center in container.
                 */
   position: relative;
   /* [1] */
   display: block;
   /* [2] */
   height: auto;
-  width: 100%;
+  width: auto;
+  max-width: 100%;
   max-height: 8rem;
   border-style: none;
+  margin: 0 auto;
+  /* [3] */
 }
 
 .c-badge.c-badge--small {
@@ -5202,6 +5210,7 @@ $button-focus-outline-offset: -($ui-focus-outline-offset + $button-border-width)
 
 a[href].c-badge {
   border: 0;
+  padding: 0;
 }
 
 a[href].c-badge:hover, a[href].c-badge:active, a[href].c-badge:focus {
@@ -5209,8 +5218,8 @@ a[href].c-badge:hover, a[href].c-badge:active, a[href].c-badge:focus {
   box-shadow: 0 0 0 0.6rem #fff, 0 0 0 1.2rem rgba(0, 0, 0, 0.2);
 }
 
-/* 
-        IE10-11 
+/*
+        IE10-11
 
         1. IE11- seems to need this.
     */
@@ -6237,9 +6246,9 @@ $glimpse--link-border-bottom--hover: false !default;*/
 }
 
 .l-distribute > * {
-  -webkit-flex: 0 1 auto;
-  -ms-flex: 0 1 auto;
-  flex: 0 1 auto;
+  -webkit-flex: 1 1 12em;
+  -ms-flex: 1 1 12em;
+  flex: 1 1 12em;
   margin: 0.6rem;
 }
 
