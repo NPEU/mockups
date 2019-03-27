@@ -6,8 +6,10 @@
     <meta name="description" content="{{ site.description }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    {% if page.project != '' %}
+    {% if page.project != false %}
         {% assign project_base_url = page.project | prepend: '/' %}
+    {% else if page.project_base_url != false %}
+        {% assign project_base_url = page.project_base_url | prepend: '/' %}
     {% else %}
         {% assign project_base_url = '' %}
     {% endif %}
@@ -42,7 +44,7 @@
         only all and (min--moz-device-pixel-ratio:0) and (display-mode:browser), (min--moz-device-pixel-ratio:0) and (display-mode:fullscreen)
     ">
 
-    {% if page.project != '' %}
+    {% if page.project != false %}
         <link rel="stylesheet" href="/css/theme-{{ page.project }}.min.{{ site.data.cache_bust_css.date }}.css" media="
             only print, screen and (min-width: 1vm),
             only all and (-ms-high-contrast: none), only all and (-ms-high-contrast: active),

@@ -30,6 +30,12 @@ body,
     margin: 0 auto;
 }
 
+
+.proportional-container__content svg {
+    width: 100%;
+    height: 100%;
+}
+
 /*
 .sticky-footer {
     background: #fff;

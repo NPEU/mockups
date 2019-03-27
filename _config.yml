@@ -30,6 +30,8 @@ defaults:
       landing_display_video: true
       layout_name: "default"
       npeu_unit: false
+      project: false
+      project_base_url: false
       section_menu: false
       toc: false
       has_pull_outs: false

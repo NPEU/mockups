@@ -6,3 +6,5 @@ title: NPEU Mockups
 * [Minidex](minidex)
 * [NeoCLEAR](neoclear)
 * [PRU-MNHC](prumnhc)
+
+* [Patterns](patterns)
