@@ -490,10 +490,6 @@ $patterns: (
   background-color: #009590;
 }
 
-.c-card--themed-content.t-neoclear .c-card__body::before {
-  background-color: #009590;
-}
-
 .c-card.t-neoclear .c-card__main {
   position: relative;
   color: #fff;

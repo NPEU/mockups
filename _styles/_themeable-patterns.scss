@@ -21,19 +21,22 @@ $suppress_styles: true;
 $brochure--border-or-outline: false;
 @import "component-patterns/_brochure.scss";*/
 
+$neutral-theme: map-get($themes, neutral);
 
 // Probably need card variants, esp max-widths.
-$card--base-color: darken($fallback--base-ui-color, 20%);
-$card--text-color: #fff !default;
+//$card--base-color: darken($fallback--base-ui-color, 20%);
+$card--base-color: map-get($neutral-theme, primary-color);
+//$card--text-color: #fff !default;
 
 $card--hover-effect-opacity: $hover-effect-opacity;
 
 $card-title--font-size: 2rem;
 //$card-title--line-height: $fallback--base-rem-space-unit * 1.25;
 $card-spacing-unit: $fallback--base-rem-space-unit;
-//$card--border-or-outline: 'border';
-$card--border-width: 0;
-$card--background-color: darken($fallback--base-ui-color, 20%);
+$card--border-color: $card--base-color;
+$card--border-or-outline: 'border';
+//$card--border-width: 2px;
+$card--background-color: lighten(map-get($neutral-theme, background-color), 40%);
 
 @import "component-patterns/_card.scss";
 /*@include card-theme("card", (

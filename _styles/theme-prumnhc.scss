@@ -5,9 +5,9 @@
 
 /* --| START THEME |----------------------------------------------------------------------------- */
 $theme-only: true;
+@import "_themes-config.scss";
 @import "_themeable-patterns.scss";
 
-@import "_themes-config";
 
 $name: prumnhc;
 $theme: map_get($themes, $name);

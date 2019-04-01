@@ -5289,10 +5289,13 @@ $card-button--border-color: darken($card--base-color, 20%) !default;
   flex-direction: column;
   height: 100%;
   margin: 0;
-  color: #fff;
-  background: #2d2136;
+  color: #333;
+  background: #ebe9e8;
   padding: 0;
-  outline: 0 solid #120e16;
+  border-color: #8e8279;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 0;
   /*
                 If the 'pull' is > module body content height, it'll protrude below the container,
                 so hide it:
@@ -5327,7 +5330,7 @@ $card-button--border-color: darken($card--base-color, 20%) !default;
   border-bottom: 0;
   margin-bottom: 0;
   padding-bottom: 0;
-  background: #2d2136;
+  background: #ebe9e8;
   position: relative;
   display: block;
   height: 100%;
@@ -5351,8 +5354,8 @@ $card-button--border-color: darken($card--base-color, 20%) !default;
 
 .c-card .c-card__main {
   position: relative;
-  color: #fff;
-  background: #2d2136;
+  color: #333;
+  background: #ebe9e8;
   margin-left: 0;
   margin-right: 0;
   margin-top: 0;
@@ -5446,11 +5449,11 @@ $card-button--border-color: darken($card--base-color, 20%) !default;
   padding-left: 2.4rem;
 }
 
-.c-card .c-card--themed-content .c-card__main > * {
+.c-card.c-card--themed-content .c-card__main > * {
   padding-left: 1rem;
 }
 
-.c-card .c-card--themed-content .c-card__body::before {
+.c-card.c-card--themed-content .c-card__main::before {
   display: block;
   content: "";
   width: 0.75rem;
@@ -7488,10 +7491,6 @@ $patterns: (
   background-color: #ffffff;
 }
 
-.c-card--themed-content.t-white .c-card__body::before {
-  background-color: #ffffff;
-}
-
 .c-card.t-white .c-card__main {
   position: relative;
   color: #fff;
@@ -7825,10 +7824,6 @@ $patterns: (
 
 .c-card.t-neutral,
 .c-card.t-neutral .c-card__main {
-  background-color: #8e8279;
-}
-
-.c-card--themed-content.t-neutral .c-card__body::before {
   background-color: #8e8279;
 }
 

@@ -483,6 +483,10 @@ $patterns: (
   border-color: #ffffff;
 }
 
+.c-card--themed-content.t-white .c-card__main::before {
+  background-color: #ffffff;
+}
+
 /*.t-white.t-color {
         color: map-get($theme, text-color);
     }*/
@@ -615,6 +619,10 @@ $patterns: (
 .d-bands--bottom.t-anode,
 .d-bands--below.t-anode {
   border-color: #933961;
+}
+
+.c-card--themed-content.t-anode .c-card__main::before {
+  background-color: #933961;
 }
 
 /*.t-anode.t-color {
@@ -751,6 +759,10 @@ $patterns: (
   border-color: #0077AD;
 }
 
+.c-card--themed-content.t-minidex .c-card__main::before {
+  background-color: #0077AD;
+}
+
 /*.t-minidex.t-color {
         color: map-get($theme, text-color);
     }*/
@@ -883,6 +895,10 @@ $patterns: (
 .d-bands--bottom.t-neoclear,
 .d-bands--below.t-neoclear {
   border-color: #009590;
+}
+
+.c-card--themed-content.t-neoclear .c-card__main::before {
+  background-color: #009590;
 }
 
 /*.t-neoclear.t-color {
@@ -1019,6 +1035,10 @@ $patterns: (
   border-color: #8e8279;
 }
 
+.c-card--themed-content.t-neutral .c-card__main::before {
+  background-color: #8e8279;
+}
+
 /*.t-neutral.t-color {
         color: map-get($theme, text-color);
     }*/
@@ -1153,6 +1173,10 @@ $patterns: (
   border-color: #614776;
 }
 
+.c-card--themed-content.t-npeu .c-card__main::before {
+  background-color: #614776;
+}
+
 /*.t-npeu.t-color {
         color: map-get($theme, text-color);
     }*/
@@ -1285,6 +1309,10 @@ $patterns: (
 .d-bands--bottom.t-prumnhc,
 .d-bands--below.t-prumnhc {
   border-color: #614776;
+}
+
+.c-card--themed-content.t-prumnhc .c-card__main::before {
+  background-color: #614776;
 }
 
 /*.t-prumnhc.t-color {

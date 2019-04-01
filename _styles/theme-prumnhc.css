@@ -490,10 +490,6 @@ $patterns: (
   background-color: #614776;
 }
 
-.c-card--themed-content.t-prumnhc .c-card__body::before {
-  background-color: #614776;
-}
-
 .c-card.t-prumnhc .c-card__main {
   position: relative;
   color: #fff;

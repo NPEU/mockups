@@ -120,21 +120,29 @@ $theme-only: false !default;
     .#{$card-namespace}card#{$theme-class} .#{$card-namespace}card__main {
 		background-color: map-get($theme, card-background-color);
 	}
-    
-    .#{$card-namespace}card--themed-content#{$theme-class} .#{$card-namespace}card__body::before {
-        background-color: map-get($theme, card-background-color);
-    }
-    
+
     .#{$card-namespace}card#{$theme-class} .#{$card-namespace}card__main {
         // Positioning context for themed bar and extended actionable area:
         position: relative;
-    
+
         color: map-get($theme, card-text-color);
         background: map-get($theme, card-background-color);
-        
     }
 }
 
+
+// Themed content mixin:
+@mixin card-themed-content ($name: "", $theme: ()) {
+    // Set up theme name:
+    $theme-class: "";
+    @if $name != "" {
+        $theme-class: unquote('.')#{$theme-namespace}#{$name};
+    }
+
+    .#{$card-namespace}card--themed-content#{$theme-class} .#{$card-namespace}card__main::before {
+        background-color: map-get($theme, primary-color);
+    }
+}
 
 
 // Note - no theme yet!
@@ -154,7 +162,7 @@ $theme-only: false !default;
 
             height: 100%;
             //width: 100%;
-            
+
             margin: 0;
 
             color: $card--text-color;
@@ -205,15 +213,15 @@ $theme-only: false !default;
                 border-bottom: 0;
                 margin-bottom: 0;
             }
-            
+
             #{&}__full-link,
             #{&}__full-link:hover {
                 border-bottom: 0;
                 margin-bottom: 0;
                 padding-bottom: 0;
-                
+
                 background: $card-body--background-color;
-                
+
                 position: relative;
                 display: block;
                 height: 100%;
@@ -235,12 +243,12 @@ $theme-only: false !default;
                 z-index: 1;
             }
 
-            
+
 
         #{&}__main {
             // Positioning context for themed bar and extended actionable area:
             position: relative;
-        
+
             color: $card-body--text-color;
             background: $card-body--background-color;
 
@@ -278,7 +286,7 @@ $theme-only: false !default;
             -webkit-justify-content: flex-end;
                       -ms-flex-pack: end;
                     justify-content: flex-end;*/
-                    
+
             -webkit-align-content: space-between;
                -ms-flex-line-pack: justify;
                     align-content: space-between;
@@ -303,24 +311,24 @@ $theme-only: false !default;
                     line-height: $card-title--line-height;
                     width: 100%;
                     margin: 0;
-                    
-                    
+
+
                     a {
                         // Reset any inherited link effects:
                         all: initial;
-                        
+
                         // Un-reset font settings:
                         font-size: inherit;
                         line-height: inherit;
                         font-weight: inherit;
                         font-family: inherit;
                         color: inherit;
-                        
+
                         cursor: pointer;
 
                     }
                 }
-                
+
                 &#{&}--stub #{&}__title {
                     font-size:   $card-stub-title--font-size;
                     line-height: $card-stub-title--line-height;
@@ -366,15 +374,15 @@ $theme-only: false !default;
 
 
 
-        #{&}--themed-content #{&}__main > * {
+        &#{&}--themed-content #{&}__main > * {
             padding-left: 1rem;
         }
 
-        // Note that this themed bar should a visual representation of the category or group to 
+        // Note that this themed bar should a visual representation of the category or group to
         // to which this card belongs. If you're using this themed bar, make sure you also include
-        // the category/group information somewhere (e.g. in the footer info or as a kicker), 
+        // the category/group information somewhere (e.g. in the footer info or as a kicker),
         // Otherwise this information isn't accessible.
-        #{&}--themed-content #{&}__body::before {
+        &#{&}--themed-content #{&}__main::before {
             display: block;
             content: "";
             width: 0.75rem;

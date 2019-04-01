@@ -3,12 +3,8 @@
 */
 
 $theme-only: true;
+@import "_themes-config.scss";
 @import "_themeable-patterns.scss";
-
-@import "_themes-config";
-
-
-
 
 
 
@@ -81,6 +77,7 @@ $patterns: (
 
     @include background-theme($name, $theme);
     @include bands-theme($name, $theme);
+    @include card-themed-content($name, $theme);
     //@include card-theme($name, $theme);
     //@include meter-theme($name, $theme);
     //@include page-header-theme($name, $theme);
