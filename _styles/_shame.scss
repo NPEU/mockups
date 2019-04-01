@@ -1,28 +1,3 @@
-/*html,
-body {
-    min-height: 100%;
-    height: auto;
-    
-    display: -ms-flexbox;
-    display: flex;
-    
-    -ms-flex-direction: column;
-        flex-direction: column;
-    
-    -ms-flex-align: center;
-       align-items: center;
-
-}
-
-
-body,
-.sticky-footer-wrap {
-    -ms-flex: 1 1 auto;
-        flex: 1 1 auto;
-}
-
-
-*/
 // Hmmm. THere's way too much in here already. Needs sorting.
 
 .limit-page-width {
@@ -31,16 +6,9 @@ body,
 }
 
 
-.proportional-container__content svg {
-    width: 100%;
-    height: 100%;
-}
 
-/*
-.sticky-footer {
-    background: #fff;
-}
-*/
+
+
 
 $enough-room-at: $fallback--base-rem-space-unit + $measure + $fallback--base-rem-space-unit + $fallback--base-rem-space-unit + ($measure / 2) + $fallback--base-rem-space-unit;
 
@@ -67,64 +35,6 @@ $enough-room-at: $fallback--base-rem-space-unit + $measure + $fallback--base-rem
     height: auto;
 }
 
-/*
-h1, h2, h3 {
-	font-family: 'Nunito', sans-serif;
-}
-*/
-/*
-.sticky-footer-expand {
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-
-        -ms-flex-wrap: wrap;
-    -webkit-flex-wrap: wrap;
-            flex-wrap: wrap;
-
-              -ms-flex-pack: center;
-    -webkit-justify-content: center;
-            justify-content: center;
-}
-
-.sticky-footer-expand > * {
-    -ms-flex-positive: 1;
-    -webkit-flex-grow: 1;
-            flex-grow: 1;
-}
-*/
-/*
-.sticky-footer-expand {
-    background-color: #000;
-}
-*/
-/*
-.sticky-footer-expand main,
-.sticky-footer-expand main + aside {
-	padding-top: $fallback--base-rem-space-unit;
-    padding-left: $fallback--base-rem-space-unit;
-    padding-right: $fallback--base-rem-space-unit;
-}
-
-.sticky-footer-expand main + aside {
-    min-width: ($measure / 2);
-    width: calc((#{$enough-room-at} - 100%) * 1000);
-    max-width: 100%;
-    margin-left: auto;
-    margin-bottom: 0;
-
-    -ms-flex-positive: 0;
-    -webkit-flex-grow: 0;
-            flex-grow: 0;
-}
-
-
-.sticky-footer-expand main + aside > div {
-    max-width: $measure;
-    margin: 0 auto;
-}
-
-*/
 
 .feather {
     fill: none;
@@ -187,7 +97,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e7692', end
     -webkit-justify-content: center;
               -ms-flex-pack: center;
             justify-content: center;
-            
+
     -webkit-box-align: center;
        -ms-flex-align: center;
           align-items: center;
@@ -585,23 +495,23 @@ $flex-grid-spacing-unit--large: ($flex-grid-spacing-unit * 2) !default;
         padding: 0;
         list-style-type: none;
     }
-    
+
     &#{&}--centered {
         -webkit-justify-content: center;
                 cc-ms-flex-pack: center;
                 justify-content: center;
     }
-    
+
     &#{&}--spaced {
         --webkit-justify-content: space-around;
                    -ms-flex-pack: distribute;
                  justify-content: space-around;
     }
-    
+
 
         .flex-grid__item {
             margin: 0;
-            
+
                  -webkit-flex: 1;
             -ms-flex-positive: 1;
                     flex-grow: 1;
@@ -616,9 +526,9 @@ $flex-grid-spacing-unit--large: ($flex-grid-spacing-unit * 2) !default;
         }
 
     /* MODIFIERS */
-    
+
     /* Widths */
-        
+
     &.flex-grid--basis-20 .flex-grid__item {
              -webkit-flex-basis: 20em;
         -ms-flex-preferred-size: 20em;
@@ -643,11 +553,11 @@ $flex-grid-spacing-unit--large: ($flex-grid-spacing-unit * 2) !default;
 
 
     /* Gutters */
-    
+
     &.flex-grid--gutter--small {
         margin-left: -($flex-grid-spacing-unit--small / 2);
         margin-right: -($flex-grid-spacing-unit--small / 2);
-        
+
         .flex-grid__item {
             padding: 0 ($flex-grid-spacing-unit--small / 2) $flex-grid-spacing-unit--small ($flex-grid-spacing-unit--small / 2);
         }
@@ -662,25 +572,25 @@ $flex-grid-spacing-unit--large: ($flex-grid-spacing-unit * 2) !default;
         }
     }
 
-        
+
     &.flex-grid--gutter--large {
         margin-left: -($flex-grid-spacing-unit--large / 2);
         margin-right: -($flex-grid-spacing-unit--large / 2);
-        
+
         .flex-grid__item {
             padding: 0 ($flex-grid-spacing-unit--large / 2) $flex-grid-spacing-unit--large ($flex-grid-spacing-unit--large / 2);
         }
     }
-    
-    
+
+
     /* Alignment */
-    
+
     &.flex-grid--align-center {
                       -ms-flex-pack: center;
         -webkit-justify-content: center;
                 justify-content: center;
     }
-    
+
 
 }
 
@@ -700,23 +610,23 @@ $flex-grid-spacing-unit--large: ($flex-grid-spacing-unit * 2) !default;
         height: 100%;
         min-height: 300px;
     }
-    
-    
+
+
     // Fix map links inheriting styles:
-    
+
     .c-map.c-map.c-map .leaflet-container a[href] {
         background-color: transparent;
         margin-bottom: 0;
         border-bottom: 0;
         color: #0078A8;
-        
+
         &:hover,
         &:active,
         &:focus {
             color: #002b41;
         }
     }
-    
+
     .c-map.c-map.c-map .leaflet-container .leaflet-bar a[href] {
         background-color: #fff;
         color: #000;
@@ -727,16 +637,16 @@ $flex-grid-spacing-unit--large: ($flex-grid-spacing-unit * 2) !default;
             background-color: #f4f4f4;
         }
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
+
+
+
 /***************************/
 // Navbar tweaks;
 
@@ -768,7 +678,7 @@ $flex-grid-spacing-unit--large: ($flex-grid-spacing-unit * 2) !default;
     .l-content-area__pull-out.u-space--above {
         margin-top: 0 !important;
     }
-    
+
     .l-content-area__pull-out .c-panel {
         padding-top: 0 !important;
     }

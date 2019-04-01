@@ -176,7 +176,7 @@ $col-to-row-spacing-unit: $fallback--base-rem-space-unit;
 //$content-area-max-width: 42em;
 $content-area-spacing-unit: $fallback--base-rem-space-unit;
 $content-area-pull-out-side: right;
-$content-area-pull-out-side-space: 0 $content-area-spacing-unit; 
+$content-area-pull-out-side-space: 0 $content-area-spacing-unit;
 @import "layout-patterns/_content-area.scss";
 
 @import "layout-patterns/_distribute.scss";
@@ -187,7 +187,9 @@ $content-area-pull-out-side-space: 0 $content-area-spacing-unit;
     padding-top: 140%;
 }
 
-@import "layout-patterns/_v-center.scss";
+@import "layout-patterns/_center.scss";
+@import "layout-patterns/_start.scss";
+@import "layout-patterns/_end.scss";
 
 /* ---------------------------------------------------------------------------------------------- */
 

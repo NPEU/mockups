@@ -53,6 +53,12 @@ $col-to-row-spacing-unit--large: ($col-to-row-spacing-unit * 2) !default;
         //position: relative; /* [1] */
     }
 
+    // Reverse order - USE WITH CAUTION:
+    &#{&}--reversed {
+        -webkit-flex-direction: row-reverse;
+            -ms-flex-direction: row-reverse;
+                flex-direction: row-reverse;
+    }
 
     // Add gutters:
     

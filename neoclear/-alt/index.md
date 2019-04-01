@@ -1,5 +1,5 @@
 ---
-layout: project-landing
+layout: landing--project
 title: NeoCLEAR Home
 project: neoclear
 is_home: true

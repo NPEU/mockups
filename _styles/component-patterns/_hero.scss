@@ -52,8 +52,8 @@ $theme-only: false !default;
                 position: absolute;
                 z-index: 1;
 
-                bottom: 3px; // Because of the bottom border.
-                right: 0;
+                bottom: 0;
+                left: 0;
                 width: calc(10em + 20%);
                 top: 0;
                 background: rgba(255,255,255,0.75);
@@ -69,6 +69,14 @@ $theme-only: false !default;
                           -ms-flex-pack: center;
                 -webkit-justify-content: center;
                         justify-content: center;
+            }
+
+        }
+        
+        .#{$hero-namespace}hero--reversed {
+
+            #{&}__message {
+                right: 0;
             }
 
         }

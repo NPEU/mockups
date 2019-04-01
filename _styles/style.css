@@ -5597,8 +5597,8 @@ $glimpse--link-border-bottom--hover: false !default;*/
   .c-hero .c-hero__message {
     position: absolute;
     z-index: 1;
-    bottom: 3px;
-    right: 0;
+    bottom: 0;
+    left: 0;
     width: calc(10em + 20%);
     top: 0;
     background: rgba(255, 255, 255, 0.75);
@@ -5611,6 +5611,9 @@ $glimpse--link-border-bottom--hover: false !default;*/
     -ms-flex-pack: center;
     -webkit-justify-content: center;
     justify-content: center;
+  }
+  .c-hero--reversed .c-hero--reversed__message {
+    right: 0;
   }
 }
 
@@ -6093,6 +6096,12 @@ $glimpse--link-border-bottom--hover: false !default;*/
   list-style-type: none;
 }
 
+.l-col-to-row.l-col-to-row--reversed {
+  -webkit-flex-direction: row-reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+}
+
 .l-col-to-row.l-col-to-row--gutter--small {
   padding-top: 1.2rem;
 }
@@ -6265,18 +6274,29 @@ $glimpse--link-border-bottom--hover: false !default;*/
 }
 
 /*@supports (justify-content:space-evenly) {    .l-distribute {        & {            justify-content: space-evenly;        }    }}*/
-.proportional-container {
+/*
+    Help from http://www.mademyday.de/css-height-equals-width-with-pure-css.html
+    and https://css-tricks.com/snippets/sass/maintain-aspect-ratio-mixin/
+*/
+.l-proportional-container {
+  /* Make the image fill the width and be vertically centered: */
+  /* (in portrait images this will leave gaps at the sides) */
+  /* If `object-fit` is supported, use that and override vertical centering: */
+  /* If `object-fit` is supported, use that and override vertical centering: */
+}
+
+.l-proportional-container.l-proportional-container {
   position: relative;
   overflow: hidden;
 }
 
-.proportional-container::before {
+.l-proportional-container.l-proportional-container::before {
   content: "";
   display: block;
   width: 100%;
 }
 
-.proportional-container__content {
+.l-proportional-container .l-proportional-container__content {
   position: absolute;
   top: 0;
   left: 0;
@@ -6293,12 +6313,10 @@ $glimpse--link-border-bottom--hover: false !default;*/
   align-items: center;
 }
 
-/* Make the image fill the width and be vertically centered: */
-/* (in portrait images this will leave gaps at the sides) */
-.proportional-container__image-cover {
+.l-proportional-container .l-proportional-container__image-cover {
   /*
-            1. For IE to fill container.
-        */
+                1. For IE to fill container.
+            */
   position: absolute;
   left: 0;
   /* [1] */
@@ -6309,9 +6327,13 @@ $glimpse--link-border-bottom--hover: false !default;*/
   transform: translateY(-50%);
 }
 
-/* If `object-fit` is supported, use that and override vertical centering: */
+.l-proportional-container .l-proportional-container__content svg {
+  width: 100%;
+  height: 100%;
+}
+
 @supports (object-fit: cover) {
-  .proportional-container__image-cover {
+  .l-proportional-container .l-proportional-container__image-cover {
     height: 100%;
     object-fit: cover;
     top: 0;
@@ -6320,9 +6342,8 @@ $glimpse--link-border-bottom--hover: false !default;*/
   }
 }
 
-/* If `object-fit` is supported, use that and override vertical centering: */
 @supports (object-fit: contain) {
-  .proportional-container__image-contain {
+  .l-proportional-container .l-proportional-container__image-contain {
     height: 100%;
     object-fit: contain;
     top: 0;
@@ -6331,54 +6352,54 @@ $glimpse--link-border-bottom--hover: false !default;*/
   }
 }
 
-.proportional-container--1-1::before {
+.l-proportional-container--1-1::before {
   padding-top: 100%;
 }
 
-.proportional-container--2-1::before {
+.l-proportional-container--2-1::before {
   padding-top: 50%;
 }
 
-.proportional-container--3-1::before {
+.l-proportional-container--3-1::before {
   padding-top: 33%;
 }
 
-.proportional-container--4-1::before {
+.l-proportional-container--4-1::before {
   padding-top: 25%;
 }
 
-.proportional-container--4-3::before {
+.l-proportional-container--4-3::before {
   padding-top: 75%;
 }
 
-.proportional-container--5-1::before {
+.l-proportional-container--5-1::before {
   padding-top: 20%;
 }
 
-.proportional-container--16-9::before {
+.l-proportional-container--16-9::before {
   padding-top: 56.25%;
 }
 
 @media (min-width: 45em) {
-  .proportional-container--1-1--wide::before {
+  .l-proportional-container--1-1--wide::before {
     padding-top: 100%;
   }
-  .proportional-container--2-1--wide::before {
+  .l-proportional-container--2-1--wide::before {
     padding-top: 50%;
   }
-  .proportional-container--3-1--wide::before {
+  .l-proportional-container--3-1--wide::before {
     padding-top: 33%;
   }
-  .proportional-container--4-1--wide::before {
+  .l-proportional-container--4-1--wide::before {
     padding-top: 25%;
   }
-  .proportional-container--4-3--wide::before {
+  .l-proportional-container--4-3--wide::before {
     padding-top: 75%;
   }
-  .proportional-container--5-1--wide::before {
+  .l-proportional-container--5-1--wide::before {
     padding-top: 20%;
   }
-  .proportional-container--16-9--wide::before {
+  .l-proportional-container--16-9--wide::before {
     padding-top: 56.25%;
   }
 }
@@ -6390,7 +6411,7 @@ $glimpse--link-border-bottom--hover: false !default;*/
 /*
 
 */
-.l-v-center.l-v-center {
+.l-center.l-center {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
@@ -6400,6 +6421,54 @@ $glimpse--link-border-bottom--hover: false !default;*/
   -ms-flex-pack: center;
   -webkit-justify-content: center;
   justify-content: center;
+}
+
+.l-center.l-center > * {
+  webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+}
+
+/*
+
+*/
+.l-start.l-start {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -ms-flex-align: start;
+  -webkit-align-items: start;
+  align-items: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: start;
+  justify-content: start;
+}
+
+.l-start.l-start > * {
+  webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+}
+
+/*
+
+*/
+.l-end.l-end {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -ms-flex-align: end;
+  -webkit-align-items: end;
+  align-items: end;
+  -ms-flex-pack: end;
+  -webkit-justify-content: end;
+  justify-content: end;
+}
+
+.l-end.l-end > * {
+  webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
 }
 
 /* ---------------------------------------------------------------------------------------------- */
@@ -8173,46 +8242,11 @@ html.wireframe {
 
 /* ---------------------------------------------------------------------------------------------- */
 /* --| SHAME |----------------------------------------------------------------------------------- */
-/*html,
-body {
-    min-height: 100%;
-    height: auto;
-    
-    display: -ms-flexbox;
-    display: flex;
-    
-    -ms-flex-direction: column;
-        flex-direction: column;
-    
-    -ms-flex-align: center;
-       align-items: center;
-
-}
-
-
-body,
-.sticky-footer-wrap {
-    -ms-flex: 1 1 auto;
-        flex: 1 1 auto;
-}
-
-
-*/
 .limit-page-width {
   max-width: 1600px;
   margin: 0 auto;
 }
 
-.proportional-container__content svg {
-  width: 100%;
-  height: 100%;
-}
-
-/*
-.sticky-footer {
-    background: #fff;
-}
-*/
 .tb-baseline {
   background: transparent url(http://lab.gridlight-design.co.uk/fallback-v1/line-grid-12px.gif) repeat;
 }
@@ -8230,64 +8264,6 @@ body,
   height: auto;
 }
 
-/*
-h1, h2, h3 {
-	font-family: 'Nunito', sans-serif;
-}
-*/
-/*
-.sticky-footer-expand {
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-
-        -ms-flex-wrap: wrap;
-    -webkit-flex-wrap: wrap;
-            flex-wrap: wrap;
-
-              -ms-flex-pack: center;
-    -webkit-justify-content: center;
-            justify-content: center;
-}
-
-.sticky-footer-expand > * {
-    -ms-flex-positive: 1;
-    -webkit-flex-grow: 1;
-            flex-grow: 1;
-}
-*/
-/*
-.sticky-footer-expand {
-    background-color: #000;
-}
-*/
-/*
-.sticky-footer-expand main,
-.sticky-footer-expand main + aside {
-	padding-top: $fallback--base-rem-space-unit;
-    padding-left: $fallback--base-rem-space-unit;
-    padding-right: $fallback--base-rem-space-unit;
-}
-
-.sticky-footer-expand main + aside {
-    min-width: ($measure / 2);
-    width: calc((111.6rem - 100%) * 1000);
-    max-width: 100%;
-    margin-left: auto;
-    margin-bottom: 0;
-
-    -ms-flex-positive: 0;
-    -webkit-flex-grow: 0;
-            flex-grow: 0;
-}
-
-
-.sticky-footer-expand main + aside > div {
-    max-width: $measure;
-    margin: 0 auto;
-}
-
-*/
 .feather {
   fill: none;
   stroke: currentColor;
@@ -8340,7 +8316,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e7692', end
     -webkit-justify-content: center;
               -ms-flex-pack: center;
             justify-content: center;
-            
+
     -webkit-box-align: center;
        -ms-flex-align: center;
           align-items: center;

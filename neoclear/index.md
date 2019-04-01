@@ -1,5 +1,5 @@
 ---
-layout: project-landing
+layout: landing--project
 title: NeoCLEAR Home
 project: neoclear
 hero_image: "/img/neoclear/hero-image-1.jpg"

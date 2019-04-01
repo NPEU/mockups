@@ -20,6 +20,10 @@ var cookie_html                   =
 '<span class="cookie_notice__action"><button id="' + cookie_button_id + '" class="' + cookie_button_class + '">Dismiss</button></span>' + "\n" +
 '</div>';
 
+/*
+    Can't be totally sure what this is for, now...
+    It'll come back to me...
+*/
 (function() {
     var ready = function(fn) {
         if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {

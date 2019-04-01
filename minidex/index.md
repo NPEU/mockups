@@ -1,5 +1,5 @@
 ---
-layout: project-landing
+layout: landing--project
 title: Minidex Home
 project: minidex
 ---
