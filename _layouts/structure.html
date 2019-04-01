@@ -43,6 +43,13 @@
         only all and (pointer: fine), only all and (pointer: coarse), only all and (pointer: none),
         only all and (min--moz-device-pixel-ratio:0) and (display-mode:browser), (min--moz-device-pixel-ratio:0) and (display-mode:fullscreen)
     ">
+    
+    <link rel="stylesheet" href="/css/theme-all-basic.min.{{ site.data.cache_bust_css.date }}.css" media="
+        only print, screen and (min-width: 1vm),
+        only all and (-ms-high-contrast: none), only all and (-ms-high-contrast: active),
+        only all and (pointer: fine), only all and (pointer: coarse), only all and (pointer: none),
+        only all and (min--moz-device-pixel-ratio:0) and (display-mode:browser), (min--moz-device-pixel-ratio:0) and (display-mode:fullscreen)
+    ">
 
     {% if page.project != false %}
         <link rel="stylesheet" href="/css/theme-{{ page.project }}.min.{{ site.data.cache_bust_css.date }}.css" media="

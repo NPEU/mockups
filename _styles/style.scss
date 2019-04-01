@@ -144,7 +144,7 @@ $gallery-grid-spacing-unit: $fallback--base-rem-space-unit;
 @import "../bower_components/NPEU-layout-patterns/dev/scss/_gallery-grid.scss";
 
 /* --| Themeable Patterns |---------------------------------------------------------------------- */
-@import "_themes-config";
+@import "_themes-config.scss";
 @import "_themeable-patterns.scss";
 
 
@@ -166,7 +166,6 @@ $neutral-theme: map-get($themes, neutral);
 
 
 /* ---------------------------------------------------------------------------------------------- */
-
 
 /* --| Layout Patterns |------------------------------------------------------------------------- */
 
@@ -223,6 +222,7 @@ $section-menu--link-margin: 0;
 @import "utility-patterns/_image-cover.scss";
 @import "utility-patterns/_lists.scss";
 @import "utility-patterns/_max-measure.scss";
+@import "utility-patterns/_padding.scss";
 @import "utility-patterns/_space.scss";
 @import "utility-patterns/_text-align.scss";
 @import "utility-patterns/_text-groups.scss";

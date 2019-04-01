@@ -36,14 +36,6 @@ $theme-only: false !default;
         }
     }
 
-
-    /*
-    .hero .hero-message {
-        margin-left: $body-padding;
-        margin-right: $body-padding;
-    }
-    */
-
     @media only screen and (min-width:#{$hero-breakpoint}) {
 
         .#{$hero-namespace}hero {
@@ -73,12 +65,10 @@ $theme-only: false !default;
 
         }
         
-        .#{$hero-namespace}hero--reversed {
-
-            #{&}__message {
-                right: 0;
-            }
-
+        .#{$hero-namespace}hero--reversed .#{$hero-namespace}hero__message {
+            right: 0;
+            left: auto;
         }
+
     }
 }

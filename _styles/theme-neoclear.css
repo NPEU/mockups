@@ -293,15 +293,110 @@ $card-button--border-color: darken($card--base-color, 20%) !default;
         //width: 100%;
     }
 */
+/*@include card-theme("card", (
+    background-color: darken($fallback--base-ui-color, 20%),
+    text-color: #fff
+    )
+);*/
 /*
 */
-/*$event-spacing-unit: $fallback--base-rem-space-unit;
-$event--background-color: #fff;
-$event--border-color: $fallback--base-ui-color;
-@import "component-patterns/_event.scss";*/
-/*$featurette-spacing-unit: $fallback--base-rem-space-unit;
-@import "component-patterns/_featurette.scss";
-@include featurette--themer("featurette--dark", #555, #fff);*/
+/*
+    The `height: 100%;` in the `.event` class below allows the event to fill it's container (if inside,
+    say, a list-grid). However, it doesn't work in Safari OSX/iOS.
+    Applying a `event-wrap` class to a list item to make those items flex-containers seems to work
+    OK, but perhaps this would be better abstracted as a `fill-height` class or something?
+*/
+/*
+$event-cta--border-width: 1px !default;
+$event-cta--border-style: solid !default;
+$event-cta--border-radius: 3px !default;
+*/
+/*
+$event--link-color: false !default;
+$event--link-color--alt: false !default;
+$event--link-has-border-bottom: false !default;
+$event--link-border-bottom: false !default;
+$event--link-border-bottom--alt: false !default;
+
+// If we've specified a link color for the event, but not an alt state (e.g. hover)
+// then generate one
+@if $event--link-color != false and $event--link-color--alt == false {
+    $event--link-color--alt: darken($event--link-color, 10%) !default;;
+}
+
+// If we've specified a link color for the event, and we want bottom borders, generate the borders:
+@if $event--link-color != false and $event--link-has-border-bottom != false {
+    $event--link-border-bottom: 1px solid lighten($event--link-color, 20%) !default;
+    $event--link-border-bottom--alt: 2px solid lighten($event--link-color--alt, 30%) !default;
+}
+*/
+/*
+$event-button--text-color: #fff !default;
+$event-button--background-color: $event--base-color !default;
+$event-button--background-color-alt: lighten($event--base-color, 20%) !default;
+$event-button--border-color: darken($event--base-color, 20%) !default;
+*/
+/*
+.c-event-wrap {
+
+
+}
+
+    .c-event-wrap .c-event {
+
+        //width: 100%;
+    }
+*/
+/*
+    Note featurettes should only appear in the main body and fill the width, so media queries are
+    ok here - we don't need to worry about other contexts and container-queries.
+*/
+/*
+$featurette-cta--border-width: 1px !default;
+$featurette-cta--border-style: solid !default;
+$featurette-cta--border-radius: 3px !default;
+*/
+/*
+$featurette--link-color: false !default;
+$featurette--link-color--alt: false !default;
+$featurette--link-has-border-bottom: false !default;
+$featurette--link-border-bottom: false !default;
+$featurette--link-border-bottom--alt: false !default;
+
+// If we've specified a link color for the featurette, but not an alt state (e.g. hover)
+// then generate one
+@if $featurette--link-color != false and $featurette--link-color--alt == false {
+    $featurette--link-color--alt: darken($featurette--link-color, 10%) !default;;
+}
+
+// If we've specified a link color for the featurette, and we want bottom borders, generate the borders:
+@if $featurette--link-color != false and $featurette--link-has-border-bottom != false {
+    $featurette--link-border-bottom: 1px solid lighten($featurette--link-color, 20%) !default;
+    $featurette--link-border-bottom--alt: 2px solid lighten($featurette--link-color--alt, 30%) !default;
+}
+*/
+/*
+$featurette-button--text-color: #fff !default;
+$featurette-button--background-color: $featurette--base-color !default;
+$featurette-button--background-color-alt: lighten($featurette--base-color, 20%) !default;
+$featurette-button--border-color: darken($featurette--base-color, 20%) !default;
+*/
+/*.c-featurette-wrap {
+
+
+}
+
+    .c-featurette-wrap .c-featurette {
+
+        //width: 100%;
+    }
+*/
+.c-featurette.t-featurette--dark,
+.c-featurette.t-featurette--dark a {
+  background-color: #2d2136;
+  color: #fff;
+}
+
 /*
 
 
@@ -392,17 +487,23 @@ $patterns: (
 
 .c-card.t-neoclear,
 .c-card.t-neoclear .c-card__main {
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: #009590;
 }
 
 .c-card--themed-content.t-neoclear .c-card__body::before {
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: #009590;
 }
 
 .c-card.t-neoclear .c-card__main {
   position: relative;
   color: #fff;
-  background: rgba(0, 0, 0, 0.1);
+  background: #009590;
+}
+
+.c-featurette.t-neoclear,
+.c-featurette.t-neoclear a {
+  background-color: #009590;
+  color: #333;
 }
 
 /*@if $border-color == null {

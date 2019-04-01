@@ -21,6 +21,8 @@ $suppress_styles: true;
 $brochure--border-or-outline: false;
 @import "component-patterns/_brochure.scss";*/
 
+
+// Probably need card variants, esp max-widths.
 $card--base-color: darken($fallback--base-ui-color, 20%);
 $card--text-color: #fff !default;
 
@@ -31,22 +33,31 @@ $card-title--font-size: 2rem;
 $card-spacing-unit: $fallback--base-rem-space-unit;
 //$card--border-or-outline: 'border';
 $card--border-width: 0;
-$card--background-color: rgba(0,0,0,0.5);
+$card--background-color: darken($fallback--base-ui-color, 20%);
 
 @import "component-patterns/_card.scss";
+/*@include card-theme("card", (
+    background-color: darken($fallback--base-ui-color, 20%),
+    text-color: #fff
+    )
+);*/
 
 
 @import "component-patterns/_contact-list.scss";
 
-/*$event-spacing-unit: $fallback--base-rem-space-unit;
+$event-spacing-unit: $fallback--base-rem-space-unit;
 $event--background-color: #fff;
 $event--border-color: $fallback--base-ui-color;
-@import "component-patterns/_event.scss";*/
+@import "component-patterns/_event.scss";
 
-// Probably need card variants, esp max-widths.
-/*$featurette-spacing-unit: $fallback--base-rem-space-unit;
+
+$featurette-spacing-unit: $fallback--base-rem-space-unit;
 @import "component-patterns/_featurette.scss";
-@include featurette--themer("featurette--dark", #555, #fff);*/
+@include featurette-theme("featurette--dark", (
+    background-color: darken($fallback--base-ui-color, 20%),
+    text-color: #fff
+    )
+);
 
 
 //@import "patterns/_funder-logo.scss";

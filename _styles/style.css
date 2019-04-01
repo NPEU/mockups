@@ -5290,9 +5290,9 @@ $card-button--border-color: darken($card--base-color, 20%) !default;
   height: 100%;
   margin: 0;
   color: #fff;
-  background: rgba(0, 0, 0, 0.5);
+  background: #2d2136;
   padding: 0;
-  outline: 0 solid rgba(0, 0, 0, 0.5);
+  outline: 0 solid #120e16;
   /*
                 If the 'pull' is > module body content height, it'll protrude below the container,
                 so hide it:
@@ -5327,7 +5327,7 @@ $card-button--border-color: darken($card--base-color, 20%) !default;
   border-bottom: 0;
   margin-bottom: 0;
   padding-bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: #2d2136;
   position: relative;
   display: block;
   height: 100%;
@@ -5352,7 +5352,7 @@ $card-button--border-color: darken($card--base-color, 20%) !default;
 .c-card .c-card__main {
   position: relative;
   color: #fff;
-  background: rgba(0, 0, 0, 0.5);
+  background: #2d2136;
   margin-left: 0;
   margin-right: 0;
   margin-top: 0;
@@ -5470,6 +5470,11 @@ $card-button--border-color: darken($card--base-color, 20%) !default;
         )
     );
     */
+/*@include card-theme("card", (
+    background-color: darken($fallback--base-ui-color, 20%),
+    text-color: #fff
+    )
+);*/
 /*
 */
 .c-contact-list.c-contact-list dt {
@@ -5486,13 +5491,267 @@ $card-button--border-color: darken($card--base-color, 20%) !default;
   margin: 0.5em;
 }
 
-/*$event-spacing-unit: $fallback--base-rem-space-unit;
-$event--background-color: #fff;
-$event--border-color: $fallback--base-ui-color;
-@import "component-patterns/_event.scss";*/
-/*$featurette-spacing-unit: $fallback--base-rem-space-unit;
-@import "component-patterns/_featurette.scss";
-@include featurette--themer("featurette--dark", #555, #fff);*/
+/*
+    The `height: 100%;` in the `.event` class below allows the event to fill it's container (if inside,
+    say, a list-grid). However, it doesn't work in Safari OSX/iOS.
+    Applying a `event-wrap` class to a list item to make those items flex-containers seems to work
+    OK, but perhaps this would be better abstracted as a `fill-height` class or something?
+*/
+/*
+$event-cta--border-width: 1px !default;
+$event-cta--border-style: solid !default;
+$event-cta--border-radius: 3px !default;
+*/
+/*
+$event--link-color: false !default;
+$event--link-color--alt: false !default;
+$event--link-has-border-bottom: false !default;
+$event--link-border-bottom: false !default;
+$event--link-border-bottom--alt: false !default;
+
+// If we've specified a link color for the event, but not an alt state (e.g. hover)
+// then generate one
+@if $event--link-color != false and $event--link-color--alt == false {
+    $event--link-color--alt: darken($event--link-color, 10%) !default;;
+}
+
+// If we've specified a link color for the event, and we want bottom borders, generate the borders:
+@if $event--link-color != false and $event--link-has-border-bottom != false {
+    $event--link-border-bottom: 1px solid lighten($event--link-color, 20%) !default;
+    $event--link-border-bottom--alt: 2px solid lighten($event--link-color--alt, 30%) !default;
+}
+*/
+/*
+$event-button--text-color: #fff !default;
+$event-button--background-color: $event--base-color !default;
+$event-button--background-color-alt: lighten($event--base-color, 20%) !default;
+$event-button--border-color: darken($event--base-color, 20%) !default;
+*/
+/*
+.c-event-wrap {
+
+
+}
+
+    .c-event-wrap .c-event {
+
+        //width: 100%;
+    }
+*/
+.c-event.c-event {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: flex-end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+  height: 100%;
+  color: #333;
+  background: #fff;
+  padding: 2.4rem;
+  outline: 1px solid #614776;
+  overflow: hidden;
+}
+
+.c-event.c-event--cancelled {
+  background: #c8c8c8;
+}
+
+.c-event > * {
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+  width: 100%;
+}
+
+.c-event .c-event__title {
+  border-bottom: 1px solid #999;
+  padding-bottom: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+
+.c-event .c-event__speaker {
+  font-weight: bold;
+  font-size: 2.4rem;
+  margin: 0;
+}
+
+.c-event .c-event__speaker-role {
+  font-weight: normal;
+  font-size: 1.4rem;
+  border-bottom: 1px solid #999;
+  padding-bottom: 1.2rem;
+  margin-bottom: 0;
+}
+
+.c-event .c-event__datetime {
+  width: auto;
+  font-weight: bold;
+  font-size: 2.4rem;
+  margin: 2.4rem 0 0 0;
+}
+
+.c-event .c-event__action {
+  width: auto;
+  margin: 2.4rem 0 0 auto;
+  padding-left: 2.4rem;
+}
+
+.c-event .c-event__title {
+  font-size: 3rem;
+}
+
+/*
+    Note featurettes should only appear in the main body and fill the width, so media queries are
+    ok here - we don't need to worry about other contexts and container-queries.
+*/
+/*
+$featurette-cta--border-width: 1px !default;
+$featurette-cta--border-style: solid !default;
+$featurette-cta--border-radius: 3px !default;
+*/
+/*
+$featurette--link-color: false !default;
+$featurette--link-color--alt: false !default;
+$featurette--link-has-border-bottom: false !default;
+$featurette--link-border-bottom: false !default;
+$featurette--link-border-bottom--alt: false !default;
+
+// If we've specified a link color for the featurette, but not an alt state (e.g. hover)
+// then generate one
+@if $featurette--link-color != false and $featurette--link-color--alt == false {
+    $featurette--link-color--alt: darken($featurette--link-color, 10%) !default;;
+}
+
+// If we've specified a link color for the featurette, and we want bottom borders, generate the borders:
+@if $featurette--link-color != false and $featurette--link-has-border-bottom != false {
+    $featurette--link-border-bottom: 1px solid lighten($featurette--link-color, 20%) !default;
+    $featurette--link-border-bottom--alt: 2px solid lighten($featurette--link-color--alt, 30%) !default;
+}
+*/
+/*
+$featurette-button--text-color: #fff !default;
+$featurette-button--background-color: $featurette--base-color !default;
+$featurette-button--background-color-alt: lighten($featurette--base-color, 20%) !default;
+$featurette-button--border-color: darken($featurette--base-color, 20%) !default;
+*/
+/*.c-featurette-wrap {
+
+
+}
+
+    .c-featurette-wrap .c-featurette {
+
+        //width: 100%;
+    }
+*/
+.c-featurette.c-featurette {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  color: #333;
+  background: #fff;
+  padding: 0;
+}
+
+.c-featurette > * {
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+  width: 100%;
+}
+
+.c-featurette .c-featurette__image {
+  position: relative;
+  text-align: center;
+  max-width: 13em;
+  order: -1;
+}
+
+.c-featurette .c-featurette__image img {
+  width: 100%;
+}
+
+.c-featurette .c-featurette__image-link, .c-featurette .c-featurette__image-link:hover {
+  border-bottom: 0;
+}
+
+.c-featurette .c-featurette__image--round {
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.c-featurette .c-featurette__image--pull-up {
+  margin-top: -3.6rem;
+  margin-bottom: -2.4rem;
+}
+
+.c-featurette .c-featurette__body {
+  padding: 2.4rem;
+}
+
+.c-featurette .c-featurette__body > blockquote {
+  margin-left: 0;
+}
+
+@media (min-width: 45em) {
+  .c-featurette.c-featurette {
+    padding-left: 8%;
+    padding-right: 8%;
+  }
+  .c-featurette .c-featurette__image {
+    width: auto;
+    max-width: none;
+  }
+  .c-featurette .c-featurette__body,
+  .c-featurette .c-featurette__body--50 {
+    max-width: 50%;
+  }
+  .c-featurette .c-featurette__body--60 {
+    max-width: 60%;
+  }
+  .c-featurette .c-featurette__body--70 {
+    max-width: 70%;
+  }
+  .c-featurette .c-featurette__body--80 {
+    max-width: 80%;
+  }
+  .c-featurette .c-featurette__body--90 {
+    max-width: 90%;
+  }
+  .c-featurette .c-featurette__body--fill {
+    max-width: none;
+    width: 100%;
+  }
+}
+
+.c-featurette.t-featurette--dark,
+.c-featurette.t-featurette--dark a {
+  background-color: #2d2136;
+  color: #fff;
+}
+
 /*
 
 
@@ -5587,12 +5846,6 @@ $glimpse--link-border-bottom--hover: false !default;*/
   margin: 0;
 }
 
-/*
-    .hero .hero-message {
-        margin-left: $body-padding;
-        margin-right: $body-padding;
-    }
-    */
 @media only screen and (min-width: 40em) {
   .c-hero .c-hero__message {
     position: absolute;
@@ -5612,8 +5865,9 @@ $glimpse--link-border-bottom--hover: false !default;*/
     -webkit-justify-content: center;
     justify-content: center;
   }
-  .c-hero--reversed .c-hero--reversed__message {
+  .c-hero--reversed .c-hero__message {
     right: 0;
+    left: auto;
   }
 }
 
@@ -6788,7 +7042,179 @@ $pagination--background-color: #fff;
 }
 
 /*
-    Text alignment.
+    Box padding.
+    
+    @To Do: allow for responsive variations.
+*/
+.u-padding--left--xs,
+.u-padding--sides--xs {
+  padding-left: 0.6rem !important;
+}
+
+.u-padding--right--xs,
+.u-padding--sides--xs {
+  padding-right: 0.6rem !important;
+}
+
+.u-padding--top--xs {
+  padding-top: 0.6rem !important;
+}
+
+.u-padding--bottom--xs {
+  padding-bottom: 0.6rem !important;
+}
+
+.u-padding--xs {
+  padding: 0.6rem !important;
+}
+
+.u-padding--left--s,
+.u-padding--sides--s {
+  padding-left: 1.2rem !important;
+}
+
+.u-padding--right--s,
+.u-padding--sides--s {
+  padding-right: 1.2rem !important;
+}
+
+.u-padding--top--s {
+  padding-top: 1.2rem !important;
+}
+
+.u-padding--bottom--s {
+  padding-bottom: 1.2rem !important;
+}
+
+.u-padding--s {
+  padding: 1.2rem !important;
+}
+
+.u-padding--left,
+.u-padding--sides {
+  padding-left: 2.4rem !important;
+}
+
+.u-padding--right,
+.u-padding--sides {
+  padding-right: 2.4rem !important;
+}
+
+.u-padding--top {
+  padding-top: 2.4rem !important;
+}
+
+.u-padding--bottom {
+  padding-bottom: 2.4rem !important;
+}
+
+.u-padding--left--l,
+.u-padding--sides--l {
+  padding-left: 2.4rem !important;
+}
+
+.u-padding--right--l,
+.u-padding--sides--l {
+  padding-right: 2.4rem !important;
+}
+
+.u-padding--top--l {
+  padding-top: 2.4rem !important;
+}
+
+.u-padding--bottom--l {
+  padding-bottom: 2.4rem !important;
+}
+
+.u-padding--l {
+  padding: 2.4rem !important;
+}
+
+.u-padding--left--xl,
+.u-padding--sides--xl {
+  padding-left: 2.4rem !important;
+}
+
+.u-padding--right--xl,
+.u-padding--sides--xl {
+  padding-right: 2.4rem !important;
+}
+
+.u-padding--top--xl {
+  padding-top: 2.4rem !important;
+}
+
+.u-padding--bottom--xl {
+  padding-bottom: 2.4rem !important;
+}
+
+.u-padding--xl {
+  padding: 2.4rem !important;
+}
+
+@media only screen and (min-width: 28em) {
+  .u-padding--left--l,
+  .u-padding--sides--l {
+    padding-left: 4.8rem !important;
+  }
+  .u-padding--right--l,
+  .u-padding--sides--l {
+    padding-right: 4.8rem !important;
+  }
+  .u-padding--top--l {
+    padding-top: 4.8rem !important;
+  }
+  .u-padding--bottom--l {
+    padding-bottom: 4.8rem !important;
+  }
+  .u-padding--l {
+    padding: 4.8rem !important;
+  }
+  .u-padding--left--xl,
+  .u-padding--sides--xl {
+    padding-left: 9.6rem !important;
+  }
+  .u-padding--right--xl,
+  .u-padding--sides--xl {
+    padding-right: 9.6rem !important;
+  }
+  .u-padding--top--xl {
+    padding-top: 9.6rem !important;
+  }
+  .u-padding--bottom--xl {
+    padding-bottom: 9.6rem !important;
+  }
+  .u-padding--xl {
+    padding: 9.6rem !important;
+  }
+}
+
+.u-padding {
+  padding: 2.4rem !important;
+}
+
+.u-padding--top--none {
+  padding-top: 0 !important;
+}
+
+.u-padding--bottom--none {
+  padding-bottom: 0 !important;
+}
+
+.u-padding--left--none {
+  padding-left: 0 !important;
+}
+
+.u-padding--right--none {
+  padding-right: 0 !important;
+}
+
+.u-padding--none {
+  padding: 0 !important;
+}
+
+/*
+    Box spacing
     
     @To Do: allow for responsive variations.
 */
@@ -6800,12 +7226,10 @@ $pagination--background-color: #fff;
   margin-right: 1.2rem !important;
 }
 
-.u-space--top--s,
 .u-space--above--s {
   margin-top: 1.2rem !important;
 }
 
-.u-space--bottom--s,
 .u-space--below--s {
   margin-bottom: 1.2rem !important;
 }
@@ -6822,12 +7246,10 @@ $pagination--background-color: #fff;
   margin-right: 2.4rem !important;
 }
 
-.u-space--top,
 .u-space--above {
   margin-top: 2.4rem !important;
 }
 
-.u-space--bottom,
 .u-space--below {
   margin-bottom: 2.4rem !important;
 }
@@ -6836,12 +7258,10 @@ $pagination--background-color: #fff;
   margin: 2.4rem !important;
 }
 
-.u-margin--top--none,
-.u-margin--above--none {
+.u-space--above--none {
   margin-top: 0 !important;
 }
 
-.u-margin--below--none,
 .u-margin--bottom--none {
   margin-bottom: 0 !important;
 }
@@ -6866,12 +7286,10 @@ $pagination--background-color: #fff;
   margin-right: 4.8rem !important;
 }
 
-.u-space--top--l,
 .u-space--above--l {
   margin-top: 4.8rem !important;
 }
 
-.u-space--bottom--l,
 .u-space--below--l {
   margin-bottom: 4.8rem !important;
 }
@@ -6888,201 +7306,16 @@ $pagination--background-color: #fff;
   margin-right: 9.6rem !important;
 }
 
-.u-space--top--xl,
 .u-space--above--xl {
   margin-top: 9.6rem !important;
 }
 
-.u-space--bottom--xl,
 .u-space--below--xl {
   margin-bottom: 9.6rem !important;
 }
 
 .u-space--xl {
   margin: 9.6rem !important;
-}
-
-.u-padding--left--xs,
-.u-padding--sides--xs {
-  padding-left: 0.6rem !important;
-}
-
-.u-padding--right--xs,
-.u-padding--sides--xs {
-  padding-right: 0.6rem !important;
-}
-
-.u-padding--top--xs,
-.u-padding--above--xs {
-  padding-top: 0.6rem !important;
-}
-
-.u-padding--bottom--xs,
-.u-padding--below--xs {
-  padding-bottom: 0.6rem !important;
-}
-
-.u-padding--xs {
-  padding: 0.6rem !important;
-}
-
-.u-padding--left--s,
-.u-padding--sides--s {
-  padding-left: 1.2rem !important;
-}
-
-.u-padding--right--s,
-.u-padding--sides--s {
-  padding-right: 1.2rem !important;
-}
-
-.u-padding--top--s,
-.u-padding--above--s {
-  padding-top: 1.2rem !important;
-}
-
-.u-padding--bottom--s,
-.u-padding--below--s {
-  padding-bottom: 1.2rem !important;
-}
-
-.u-padding--s {
-  padding: 1.2rem !important;
-}
-
-.u-padding--left,
-.u-padding--sides {
-  padding-left: 2.4rem !important;
-}
-
-.u-padding--right,
-.u-padding--sides {
-  padding-right: 2.4rem !important;
-}
-
-.u-padding--top,
-.u-padding--above {
-  padding-top: 2.4rem !important;
-}
-
-.u-padding--bottom,
-.u-padding--below {
-  padding-bottom: 2.4rem !important;
-}
-
-.u-padding--left--l,
-.u-padding--sides--l {
-  padding-left: 2.4rem !important;
-}
-
-.u-padding--right--l,
-.u-padding--sides--l {
-  padding-right: 2.4rem !important;
-}
-
-.u-padding--top--l,
-.u-padding--above--l {
-  padding-top: 2.4rem !important;
-}
-
-.u-padding--bottom--l,
-.u-padding--below--l {
-  padding-bottom: 2.4rem !important;
-}
-
-.u-padding--l {
-  padding: 2.4rem !important;
-}
-
-.u-padding--left--xl,
-.u-padding--sides--xl {
-  padding-left: 2.4rem !important;
-}
-
-.u-padding--right--xl,
-.u-padding--sides--xl {
-  padding-right: 2.4rem !important;
-}
-
-.u-padding--top--xl,
-.u-padding--above--xl {
-  padding-top: 2.4rem !important;
-}
-
-.u-padding--bottom--xl,
-.u-padding--below--xl {
-  padding-bottom: 2.4rem !important;
-}
-
-.u-padding--xl {
-  padding: 2.4rem !important;
-}
-
-@media only screen and (min-width: 28em) {
-  .u-padding--left--l,
-  .u-padding--sides--l {
-    padding-left: 4.8rem !important;
-  }
-  .u-padding--right--l,
-  .u-padding--sides--l {
-    padding-right: 4.8rem !important;
-  }
-  .u-padding--top--l,
-  .u-padding--above--l {
-    padding-top: 4.8rem !important;
-  }
-  .u-padding--bottom--l,
-  .u-padding--below--l {
-    padding-bottom: 4.8rem !important;
-  }
-  .u-padding--l {
-    padding: 4.8rem !important;
-  }
-  .u-padding--left--xl,
-  .u-padding--sides--xl {
-    padding-left: 9.6rem !important;
-  }
-  .u-padding--right--xl,
-  .u-padding--sides--xl {
-    padding-right: 9.6rem !important;
-  }
-  .u-padding--top--xl,
-  .u-padding--above--xl {
-    padding-top: 9.6rem !important;
-  }
-  .u-padding--bottom--xl,
-  .u-padding--below--xl {
-    padding-bottom: 9.6rem !important;
-  }
-  .u-padding--xl {
-    padding: 9.6rem !important;
-  }
-}
-
-.u-padding {
-  padding: 2.4rem !important;
-}
-
-.u-padding--top--none,
-.u-padding--above--none {
-  padding-top: 0 !important;
-}
-
-.u-padding--below--none,
-.u-padding--bottom--none {
-  padding-bottom: 0 !important;
-}
-
-.u-padding--left--none {
-  padding-left: 0 !important;
-}
-
-.u-padding--right--none {
-  padding-right: 0 !important;
-}
-
-.u-padding--none {
-  padding: 0 !important;
 }
 
 /*
@@ -7252,17 +7485,23 @@ $patterns: (
 
 .c-card.t-white,
 .c-card.t-white .c-card__main {
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
 }
 
 .c-card--themed-content.t-white .c-card__body::before {
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
 }
 
 .c-card.t-white .c-card__main {
   position: relative;
   color: #fff;
-  background: rgba(0, 0, 0, 0.1);
+  background: #ffffff;
+}
+
+.c-featurette.t-white,
+.c-featurette.t-white a {
+  background-color: #ffffff;
+  color: #333;
 }
 
 /*@if $border-color == null {
@@ -7586,17 +7825,23 @@ $patterns: (
 
 .c-card.t-neutral,
 .c-card.t-neutral .c-card__main {
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: #8e8279;
 }
 
 .c-card--themed-content.t-neutral .c-card__body::before {
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: #8e8279;
 }
 
 .c-card.t-neutral .c-card__main {
   position: relative;
   color: #fff;
-  background: rgba(0, 0, 0, 0.1);
+  background: #8e8279;
+}
+
+.c-featurette.t-neutral,
+.c-featurette.t-neutral a {
+  background-color: #8e8279;
+  color: #333;
 }
 
 /*@if $border-color == null {

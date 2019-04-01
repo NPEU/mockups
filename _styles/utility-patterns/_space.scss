@@ -1,5 +1,5 @@
 /*
-    Text alignment.
+    Box spacing
     
     @To Do: allow for responsive variations.
 */
@@ -14,12 +14,10 @@ $space-namespace: u- !default;
     margin-right: $sz-s !important;
 }
 
-.#{$space-namespace}space--top--s,
 .#{$space-namespace}space--above--s {
     margin-top: $sz-s !important;
 }
 
-.#{$space-namespace}space--bottom--s,
 .#{$space-namespace}space--below--s {
     margin-bottom: $sz-s !important;
 }
@@ -38,12 +36,10 @@ $space-namespace: u- !default;
     margin-right: $sz-m !important;
 }
 
-.#{$space-namespace}space--top,
 .#{$space-namespace}space--above {
     margin-top: $sz-m !important;
 }
 
-.#{$space-namespace}space--bottom,
 .#{$space-namespace}space--below {
     margin-bottom: $sz-m !important;
 }
@@ -52,12 +48,10 @@ $space-namespace: u- !default;
     margin: $sz-m !important;
 }
 
-.#{$space-namespace}margin--top--none,
-.#{$space-namespace}margin--above--none {
+.#{$space-namespace}space--above--none {
     margin-top: 0 !important;
 }
 
-.#{$space-namespace}margin--below--none,
 .#{$space-namespace}margin--bottom--none {
     margin-bottom: 0 !important;
 }    
@@ -84,13 +78,11 @@ $space-namespace: u- !default;
     margin-right: $sz-l !important;
 }
 
-.#{$space-namespace}space--top--l,
 .#{$space-namespace}space--above--l {
     margin-top: $sz-l !important;
 }
 
-.#{$space-namespace}space--bottom--l,
-.#{$space-namespace}space--below--l{
+.#{$space-namespace}space--below--l {
     margin-bottom: $sz-l !important;
 }
 
@@ -108,224 +100,14 @@ $space-namespace: u- !default;
     margin-right: $sz-xl !important;
 }
 
-.#{$space-namespace}space--top--xl,
 .#{$space-namespace}space--above--xl {
     margin-top: $sz-xl !important;
 }
 
-.#{$space-namespace}space--bottom--xl,
-.#{$space-namespace}space--below--xl{
+.#{$space-namespace}space--below--xl {
     margin-bottom: $sz-xl !important;
 }
 
 .#{$space-namespace}space--xl {
     margin: $sz-xl !important;
-}
-
-
-
-.#{$space-namespace}padding--left--xs,
-.#{$space-namespace}padding--sides--xs {
-    padding-left: $sz-xs !important;
-}
-
-.#{$space-namespace}padding--right--xs,
-.#{$space-namespace}padding--sides--xs {
-    padding-right: $sz-xs !important;
-}
-
-.#{$space-namespace}padding--top--xs,
-.#{$space-namespace}padding--above--xs {
-    padding-top: $sz-xs !important;
-}
-
-.#{$space-namespace}padding--bottom--xs,
-.#{$space-namespace}padding--below--xs {
-    padding-bottom: $sz-xs !important;
-}
-
-.#{$space-namespace}padding--xs {
-    padding: $sz-xs !important;
-}
-
-
-
-
-.#{$space-namespace}padding--left--s,
-.#{$space-namespace}padding--sides--s {
-    padding-left: $sz-s !important;
-}
-
-.#{$space-namespace}padding--right--s,
-.#{$space-namespace}padding--sides--s {
-    padding-right: $sz-s !important;
-}
-
-.#{$space-namespace}padding--top--s,
-.#{$space-namespace}padding--above--s {
-    padding-top: $sz-s !important;
-}
-
-.#{$space-namespace}padding--bottom--s,
-.#{$space-namespace}padding--below--s {
-    padding-bottom: $sz-s !important;
-}
-
-.#{$space-namespace}padding--s {
-    padding: $sz-s !important;
-}
-
-
-
-.#{$space-namespace}padding--left,
-.#{$space-namespace}padding--sides {
-    padding-left: $sz-m !important;
-}
-
-.#{$space-namespace}padding--right,
-.#{$space-namespace}padding--sides {
-    padding-right: $sz-m !important;
-}
-
-.#{$space-namespace}padding--top,
-.#{$space-namespace}padding--above {
-    padding-top: $sz-m !important;
-}
-
-.#{$space-namespace}padding--bottom,
-.#{$space-namespace}padding--below {
-    padding-bottom: $sz-m !important;
-}
-
-
-// Set large and x-large padding to medium by default:...
-.#{$space-namespace}padding--left--l,
-.#{$space-namespace}padding--sides--l {
-    padding-left: $sz-m !important;
-}
-
-.#{$space-namespace}padding--right--l,
-.#{$space-namespace}padding--sides--l {
-    padding-right: $sz-m !important;
-}
-
-.#{$space-namespace}padding--top--l,
-.#{$space-namespace}padding--above--l {
-    padding-top: $sz-m !important;
-}
-
-.#{$space-namespace}padding--bottom--l,
-.#{$space-namespace}padding--below--l {
-    padding-bottom: $sz-m !important;
-}
-
-.#{$space-namespace}padding--l {
-    padding: $sz-m !important;
-}
-
-
-
-.#{$space-namespace}padding--left--xl,
-.#{$space-namespace}padding--sides--xl {
-    padding-left: $sz-m !important;
-}
-
-.#{$space-namespace}padding--right--xl,
-.#{$space-namespace}padding--sides--xl {
-    padding-right: $sz-m !important;
-}
-
-.#{$space-namespace}padding--top--xl,
-.#{$space-namespace}padding--above--xl {
-    padding-top: $sz-m !important;
-}
-
-.#{$space-namespace}padding--bottom--xl,
-.#{$space-namespace}padding--below--xl {
-    padding-bottom: $sz-m !important;
-}
-
-.#{$space-namespace}padding--xl {
-    padding: $sz-m !important;
-}
-
-// ...then allow full sized padding when there's more room:
-@media only screen and (min-width: $not-too-small +10em) {
-    .#{$space-namespace}padding--left--l,
-    .#{$space-namespace}padding--sides--l {
-        padding-left: $sz-l !important;
-    }
-
-    .#{$space-namespace}padding--right--l,
-    .#{$space-namespace}padding--sides--l {
-        padding-right: $sz-l !important;
-    }
-
-    .#{$space-namespace}padding--top--l,
-    .#{$space-namespace}padding--above--l {
-        padding-top: $sz-l !important;
-    }
-
-    .#{$space-namespace}padding--bottom--l,
-    .#{$space-namespace}padding--below--l {
-        padding-bottom: $sz-l !important;
-    }
-
-    .#{$space-namespace}padding--l {
-        padding: $sz-l !important;
-    }
-
-
-
-    .#{$space-namespace}padding--left--xl,
-    .#{$space-namespace}padding--sides--xl {
-        padding-left: $sz-xl !important;
-    }
-
-    .#{$space-namespace}padding--right--xl,
-    .#{$space-namespace}padding--sides--xl {
-        padding-right: $sz-xl !important;
-    }
-
-    .#{$space-namespace}padding--top--xl,
-    .#{$space-namespace}padding--above--xl {
-        padding-top: $sz-xl !important;
-    }
-
-    .#{$space-namespace}padding--bottom--xl,
-    .#{$space-namespace}padding--below--xl {
-        padding-bottom: $sz-xl !important;
-    }
-
-    .#{$space-namespace}padding--xl {
-        padding: $sz-xl !important;
-    }
-}
-
-
-    .#{$space-namespace}padding {
-        padding: $sz-m !important;
-    }
-
-    
-.#{$space-namespace}padding--top--none,
-.#{$space-namespace}padding--above--none {
-    padding-top: 0 !important;
-}
-
-.#{$space-namespace}padding--below--none,
-.#{$space-namespace}padding--bottom--none {
-    padding-bottom: 0 !important;
-}    
-
-.#{$space-namespace}padding--left--none {
-    padding-left: 0 !important;
-}
-
-.#{$space-namespace}padding--right--none {
-    padding-right: 0 !important;
-}
-
-.#{$space-namespace}padding--none {
-    padding: 0 !important;
 }
