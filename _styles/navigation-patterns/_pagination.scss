@@ -69,11 +69,15 @@ $pagination-title--font-size: 3rem !default;
 // Pagination text links:
 
 $pagination--link-padding: ($pagination-spacing-unit / 4) ($pagination-spacing-unit / 2) !default;
+$pagination--link-background-color: false !default;
+$pagination--link-background-color--alt: false !default;
 $pagination--link-color: false !default;
 $pagination--link-color--alt: false !default;
 $pagination--link-has-border-bottom: false !default;
 $pagination--link-border-bottom: false !default;
 $pagination--link-border-bottom--alt: false !default;
+
+$pagination--active-background-color: false !default;
 
 // If we've specified a link color for the pagination, but not an alt state (e.g. hover)
 // then generate one
@@ -131,7 +135,7 @@ $pagination-button--border-color: darken($pagination--base-color, 20%) !default;
        /*-webkit-flex-direction: row;
             -ms-flex-direction: row;
                 flex-direction: row;
-        
+
             -webkit-flex-wrap: wrap;
                 -ms-flex-wrap: wrap;
                     flex-wrap: wrap;*/
@@ -193,7 +197,7 @@ $pagination-button--border-color: darken($pagination--base-color, 20%) !default;
             list-style: none;
             padding: 0;
             margin: 0;
-            
+
             display: -webkit-flex;
             display: -ms-flexbox;
             display: flex;
@@ -210,15 +214,16 @@ $pagination-button--border-color: darken($pagination--base-color, 20%) !default;
 
             @if $pagination--separator-width != false {
                 .#{$pagination-namespace}pagination .#{$pagination-namespace}pagination__item:not(:last-child) {
-                    border-right-color:  $card--border-color;
-                    border-right-style:  $card--border-style;
-                    border-right-width:  $card--border-width;
+                    border-right-color:  $pagination--border-color;
+                    border-right-style:  $pagination--border-style;
+                    border-right-width:  $pagination--border-width;
                 }
             }
-            
-            // @TODO - make this configurable
-            .#{$pagination-namespace}pagination .#{$pagination-namespace}pagination__item--active span {
-                text-decoration: underline;
+
+            .#{$pagination-namespace}pagination .#{$pagination-namespace}pagination__item--active {
+                @if $pagination--active-background-color != false {
+                    background: $pagination--active-background-color;
+                }
             }
 
                 .#{$pagination-namespace}pagination .#{$pagination-namespace}pagination__link {
@@ -226,6 +231,10 @@ $pagination-button--border-color: darken($pagination--base-color, 20%) !default;
                     margin: 0;
 
                     border: 0;
+                    
+                    @if $pagination--link-background-color != false {
+                        background: $pagination--link-background-color;
+                    }
 
                     display: block;
 
@@ -241,196 +250,20 @@ $pagination-button--border-color: darken($pagination--base-color, 20%) !default;
                          -ms-flex-align: center;
                             align-items: center;*/
                 }
-                
+
                 .#{$pagination-namespace}pagination a.#{$pagination-namespace}pagination__link {
                     &:hover {
                         border: 0;
-                        @if $pagination--link-color--alt != false {
-                            background: $pagination--link-color--alt;
+                        @if $pagination--link-background-color--alt != false {
+                            background: $pagination--link-background-color--alt;
                         }
                     }
                 }
-                
+
                 .#{$pagination-namespace}pagination span.#{$pagination-namespace}pagination__link {
                     color: $pagination--text-color--disabled;
                 }
 
-/*
-        .#{$pagination-namespace}pagination .#{$pagination-namespace}pagination__image {
-            position: relative;
-            text-align: center;
-        }
-
-            .#{$pagination-namespace}pagination .#{$pagination-namespace}pagination__image img {
-                width: 100%;
-            }
-
-
-            .#{$pagination-namespace}pagination .#{$pagination-namespace}pagination__image-link,
-            .#{$pagination-namespace}pagination .#{$pagination-namespace}pagination__image-link:hover {
-                border-bottom: 0;
-            }
-
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        /*.#{$pagination-namespace}pagination .#{$pagination-namespace}pagination__main {
-            color: $pagination-body--text-color;
-            background: $pagination-body--background-color;
-
-            margin-left: $pagination-body--margin-left;
-            margin-right: $pagination-body--margin-right;
-            margin-top: $pagination-body--margin-top;
-            margin-bottom: $pagination-body--margin-bottom;
-            padding: $pagination-body--padding;
-
-            -webkit-flex: 1 0 auto;
-                -ms-flex: 1 0 auto;
-                    flex: 1 0 auto;
-
-
-            display: -webkit-flex;
-            display: -ms-flexbox;
-            display: flex;
-
-            -webkit-flex-direction: row;
-                -ms-flex-direction: row;
-                    flex-direction: row;
-
-            -webkit-flex-wrap: wrap;
-                -ms-flex-wrap: wrap;
-                    flex-wrap: wrap;
-
-            -webkit-align-items: flex-end;
-                 -ms-flex-align: end;
-                    align-items: flex-end;
-
-            -webkit-align-content: space-between;
-               -ms-flex-line-pack: justify;
-                    align-content: space-between;
-
-            -webkit-justify-content: flex-end;
-                      -ms-flex-pack: end;
-                    justify-content: flex-end;
-
-
-            position: relative;
-        }*/
-
-
-            /*.#{$pagination-namespace}pagination .#{$pagination-namespace}pagination__body {
-                -webkit-flex: 1 0 auto;
-                    -ms-flex: 1 0 auto;
-                        flex: 1 0 auto;
-
-                position: relative;
-
-                width: 100%;
-                //max-width: 100%;
-            }*/
-
-            /*.#{$pagination-namespace}pagination .#{$pagination-namespace}pagination__image + .#{$pagination-namespace}pagination__body--pull-over {
-                position: relative;
-                z-index: 1;
-                margin-top: $pagination-body--pull-over;
-            }*/
-
-
                 .#{$pagination-namespace}pagination .#{$pagination-namespace}pagination__title {
                     font-size: $pagination-title--font-size;
                 }
-
-
-                /*
-                @if $pagination--link-color != false {
-                    .#{$pagination-namespace}pagination .#{$pagination-namespace}pagination__body a {
-                        color: $pagination--link-color;
-                        @if $pagination--link-has-border-bottom != false {
-                            border-bottom: $pagination--link-border-bottom;
-                        }
-                    }
-
-                    .#{$pagination-namespace}pagination .#{$pagination-namespace}pagination__body a:hover,
-                    .#{$pagination-namespace}pagination .#{$pagination-namespace}pagination__body a:active,
-                    .#{$pagination-namespace}pagination .#{$pagination-namespace}pagination__body a:focus {
-                        color: $pagination--link-color--alt;
-                        @if $pagination--link-has-border-bottom != false {
-                            border-bottom: $pagination--link-border-bottom--alt;
-                        }
-                    }
-                }
-                */
-
-
-
-            /*.#{$pagination-namespace}pagination .#{$pagination-namespace}pagination__footer {
-                margin-left: $pagination-body--margin-left;
-                margin-right: $pagination-body--margin-right;
-                margin-top: 0;
-                margin-bottom: 0;
-                padding-top: $pagination-body--padding;
-                width: 100%;
-            }*/
-
-
-                /*.#{$pagination-namespace}pagination .#{$pagination-namespace}pagination__footer > * {
-                    margin: 0;
-                }*/
-
-
-                /*.#{$pagination-namespace}pagination .#{$pagination-namespace}pagination__info {
-                    font-size: 0.875em;
-
-                    margin-bottom: -($pagination-body--padding / 2);
-                    margin-top: -($pagination-body--padding / 2);
-                    border-top: 1px solid #999;
-                    padding-top: calc((#{$pagination-body--padding / 2} - 1px);
-                }*/
-
-
-
-        /*.#{$pagination-namespace}pagination--allow-wide .#{$pagination-namespace}pagination__body {
-            width: 70%;
-        }*/
-
-        /*.#{$pagination-namespace}pagination--allow-wide .#{$pagination-namespace}pagination__footer {
-            width: auto;
-            padding-left: $pagination-body--padding;
-        }*/
-
-
-
-/*
-
-        .#{$pagination-namespace}pagination--themed-content .#{$pagination-namespace}pagination__body > * {
-            padding-left: 1rem;
-        }
-
-        // Note that this themed bar should a visual representation of the category or group to
-        // to which this pagination belongs. If you're using this themed bar, make sure you also include
-        // the category/group information somewhere (e.g. in the footer info or as a kicker),
-        // Otherwise this information isn't accessible.
-        .#{$pagination-namespace}pagination--themed-content .#{$pagination-namespace}pagination__body::before {
-            display: block;
-            content: "";
-            width: 0.5rem;
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: -1rem;
-            background-color: #999;
-        }
-*/

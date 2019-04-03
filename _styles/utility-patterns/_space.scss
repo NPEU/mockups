@@ -52,19 +52,19 @@ $space-namespace: u- !default;
     margin-top: 0 !important;
 }
 
-.#{$space-namespace}margin--bottom--none {
+.#{$space-namespace}space--bottom--none {
     margin-bottom: 0 !important;
 }    
 
-.#{$space-namespace}margin--left--none {
+.#{$space-namespace}space--left--none {
     margin-left: 0 !important;
 }
 
-.#{$space-namespace}margin--right--none {
+.#{$space-namespace}space--right--none {
     margin-right: 0 !important;
 }
 
-.#{$space-namespace}margin--none {
+.#{$space-namespace}space--none {
     margin: 0 !important;
 }
 

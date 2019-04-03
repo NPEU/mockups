@@ -491,9 +491,12 @@ $patterns: (
 }
 
 .c-card.t-prumnhc .c-card__main {
-  position: relative;
   color: #fff;
   background: #614776;
+}
+
+.c-card.t-prumnhc {
+  border-color: #2d2136;
 }
 
 .c-featurette.t-prumnhc,

@@ -83,7 +83,7 @@ $theme-only: false !default;
                     }
 
                     .#{$glimpse-namespace}glimpse__image {
-                        outline: 2px solid;
+                        box-shadow: 0 0 0 2px currentColor;
                     }
                 }
             }
@@ -104,6 +104,11 @@ $theme-only: false !default;
                 vertical-align: middle;
                 max-width: 100%;
             }
+        }
+        
+        #{&}__image--rounded {
+            border-radius: 99999px;
+            overflow: hidden;
         }
 
         #{&}__content {

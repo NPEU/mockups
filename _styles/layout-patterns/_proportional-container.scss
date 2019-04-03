@@ -16,6 +16,8 @@ $proportions: (
     "16-9": 56.25%
 ) !default;
 
+$proportional-container--wide: 45em !default;
+
 .#{$proportional-container-namespace}proportional-container {
 
     &#{&} {
@@ -107,7 +109,7 @@ $proportions: (
     }
 }
 
-@media (min-width: 45em) {
+@media (min-width: $proportional-container--wide) {
     @each $ratio, $percent in $proportions {
         .#{$proportional-container-namespace}proportional-container--#{$ratio}--wide::before {
             padding-top: $percent;

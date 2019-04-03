@@ -134,7 +134,6 @@ $ff-min-widths: (
 
 @import "../bower_components/NPEU-layout-patterns/dev/scss/_ff-widths.scss";
 
-
 @import "../bower_components/NPEU-layout-patterns/dev/scss/_scl--pushed-apart.scss";
 
 @import "../bower_components/NPEU-layout-patterns/dev/scss/_scl--n-up.scss";
@@ -181,7 +180,6 @@ $content-area-pull-out-side-space: 0 $content-area-spacing-unit;
 @import "layout-patterns/_distribute.scss";
 
 @import "layout-patterns/_proportional-container.scss";
-
 .proportional-container--1-1_4::before {
     padding-top: 140%;
 }
@@ -197,15 +195,17 @@ $content-area-pull-out-side-space: 0 $content-area-spacing-unit;
 $breadcrumbs-font-size: 1em;
 @import "navigation-patterns/_breadcrumbs.scss";
 
-/*
+
 $pagination-spacing-unit: $fallback--base-rem-space-unit;
-$pagination--link-color--alt: #ccc;
+$pagination--link-background-color--alt: lighten(map-get($neutral-theme, background-color), 25%);
 $pagination--background-color: #fff;
+$pagination--active-background-color: lighten(map-get($neutral-theme, background-color), 40%);
 @import "navigation-patterns/_pagination.scss";
-*/
+
 $section-menu-spacing-unit: $fallback--base-rem-space-unit;
-$section-menu--link-color--alt: #ccc;
+$section-menu--link-background-color--alt: lighten(map-get($neutral-theme, background-color), 25%);
 $section-menu--background-color: #fff;
+$section-menu--active-background-color: lighten(map-get($neutral-theme, background-color), 40%);
 $section-menu--padding: 0;
 $section-menu--border-width: 0;
 $section-menu--link-margin: 0;

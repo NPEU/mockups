@@ -5176,7 +5176,8 @@ $button-focus-outline-offset: -($ui-focus-outline-offset + $button-border-width)
 }
 
 .c-badge.c-badge {
-  display: block;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .c-badge img {
@@ -5367,12 +5368,12 @@ $card-button--border-color: darken($card--base-color, 20%) !default;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  /*-webkit-flex-wrap: wrap;
+                -ms-flex-wrap: wrap;
+                    flex-wrap: wrap;*/
   /*-webkit-align-items: flex-end;
                  -ms-flex-align: end;
                     align-items: flex-end;
@@ -5380,28 +5381,24 @@ $card-button--border-color: darken($card--base-color, 20%) !default;
             -webkit-align-content: space-between;
                -ms-flex-line-pack: justify;
                     align-content: space-between;
-
-            -webkit-justify-content: flex-end;
-                      -ms-flex-pack: end;
-                    justify-content: flex-end;*/
-  -webkit-align-content: space-between;
-  -ms-flex-line-pack: justify;
-  align-content: space-between;
+            */
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-align-content: flex-start;
+  -ms-flex-line-pack: start;
+  align-content: flex-start;
   position: relative;
 }
 
-.c-card .c-card__body {
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
-  flex: 1 0 auto;
-  width: 100%;
-}
-
 .c-card .c-card__title {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
   font-size: 2rem;
   line-height: 1.2;
   width: 100%;
-  margin: 0;
+  margin-bottom: 2.4rem;
 }
 
 .c-card .c-card__title a {
@@ -5419,13 +5416,35 @@ $card-button--border-color: darken($card--base-color, 20%) !default;
   line-height: 1;
 }
 
+.c-card .c-card__body {
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+  width: 100%;
+}
+
+.c-card .c-card__body > :last-child {
+  margin-bottom: 0;
+}
+
+.c-card .c-card__cta {
+  float: right;
+}
+
 .c-card .c-card__footer {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
   margin-left: 0;
   margin-right: 0;
   margin-top: 0;
   margin-bottom: 0;
   padding-top: 1.2rem;
   width: 100%;
+}
+
+.c-card .c-card__body + .c-card__footer {
+  margin-top: 1.2rem;
 }
 
 .c-card .c-card__footer > * {
@@ -5438,15 +5457,6 @@ $card-button--border-color: darken($card--base-color, 20%) !default;
   margin-top: -1.2rem;
   border-top: 1px solid #999;
   padding-top: calc((1.2rem - 1px));
-}
-
-.c-card.c-card--allow-wide .c-card__body {
-  width: 70%;
-}
-
-.c-card.c-card--allow-wide .c-card__footer {
-  width: auto;
-  padding-left: 2.4rem;
 }
 
 .c-card.c-card--themed-content .c-card__main > * {
@@ -5790,7 +5800,7 @@ $glimpse--link-border-bottom--hover: false !default;*/
 }
 
 .c-glimpse .c-glimpse__heading a:hover .c-glimpse__image {
-  outline: 2px solid;
+  box-shadow: 0 0 0 2px currentColor;
 }
 
 .c-glimpse .c-glimpse__image {
@@ -5806,6 +5816,11 @@ $glimpse--link-border-bottom--hover: false !default;*/
 .c-glimpse .c-glimpse__image img {
   vertical-align: middle;
   max-width: 100%;
+}
+
+.c-glimpse .c-glimpse__image--rounded {
+  border-radius: 99999px;
+  overflow: hidden;
 }
 
 .c-glimpse .c-glimpse__content {
@@ -6353,6 +6368,25 @@ $glimpse--link-border-bottom--hover: false !default;*/
   list-style-type: none;
 }
 
+.l-col-to-row .l-col-to-row__item {
+  margin: 0;
+  padding: 0;
+  /*
+                1. IE10 needs this to calculate widths properly.
+            */
+  display: inline-block;
+  /* [1] */
+  -webkit-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+}
+
 .l-col-to-row.l-col-to-row--reversed {
   -webkit-flex-direction: row-reverse;
   -ms-flex-direction: row-reverse;
@@ -6420,23 +6454,6 @@ $glimpse--link-border-bottom--hover: false !default;*/
   margin: -4.8rem;
 }
 
-.l-col-to-row__item {
-  /*
-                    1. IE10 needs this to calculate widths properly.
-                */
-  display: inline-block;
-  /* [1] */
-  -webkit-flex: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-basis: auto;
-  -ms-flex-preferred-size: auto;
-  flex-basis: auto;
-}
-
 /*
 
 */
@@ -6494,6 +6511,9 @@ $glimpse--link-border-bottom--hover: false !default;*/
 
 /*    Distribute items inside a container.*/
 .l-distribute.l-distribute {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -6506,16 +6526,15 @@ $glimpse--link-border-bottom--hover: false !default;*/
   -webkit-justify-content: space-around;
   -ms-flex-pack: distribute;
   justify-content: space-around;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
+  /*-webkit-align-items: center;             -ms-flex-align: center;                align-items: center;*/
 }
 
 .l-distribute > * {
   -webkit-flex: 1 1 12em;
   -ms-flex: 1 1 12em;
   flex: 1 1 12em;
-  margin: 0.6rem;
+  margin: 0;
+  padding: 0;
 }
 
 .l-distribute.l-distribute--start {
@@ -6528,6 +6547,67 @@ $glimpse--link-border-bottom--hover: false !default;*/
   -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
   justify-content: flex-end;
+}
+
+.l-distribute.l-distribute--gutter--small {
+  padding-top: 1.2rem;
+}
+
+.l-distribute.l-distribute--gutter--small,
+.l-distribute.l-distribute--gutter--small > * {
+  padding-left: 0.6rem;
+  padding-right: 0.6rem;
+}
+
+.l-distribute.l-distribute--gutter--small > * {
+  padding-bottom: 1.2rem;
+}
+
+.l-distribute.l-distribute--gutter, .l-distribute.l-distribute--gutter--medium {
+  padding-top: 2.4rem;
+}
+
+.l-distribute.l-distribute--gutter,
+.l-distribute.l-distribute--gutter > *, .l-distribute.l-distribute--gutter--medium,
+.l-distribute.l-distribute--gutter--medium > * {
+  padding-left: 1.2rem;
+  padding-right: 1.2rem;
+}
+
+.l-distribute.l-distribute--gutter > *,
+.l-distribute.l-distribute--gutter--medium > * {
+  padding-bottom: 2.4rem;
+}
+
+.l-distribute.l-distribute--gutter--large {
+  padding-top: 4.8rem;
+}
+
+.l-distribute.l-distribute--gutter--large,
+.l-distribute.l-distribute--gutter--large > * {
+  padding-left: 2.4rem;
+  padding-right: 2.4rem;
+}
+
+.l-distribute.l-distribute--gutter--large > * {
+  padding-bottom: 4.8rem;
+}
+
+.l-distribute--flush-edge-gutters {
+  overflow: hidden;
+}
+
+.l-distribute--flush-edge-gutters .l-distribute.l-distribute--gutter--small {
+  margin: -1.2rem;
+}
+
+.l-distribute--flush-edge-gutters .l-distribute.l-distribute--gutter,
+.l-distribute--flush-edge-gutters .l-distribute.l-distribute--gutter--medium {
+  margin: -2.4rem;
+}
+
+.l-distribute--flush-edge-gutters .l-distribute.l-distribute--gutter--large {
+  margin: -4.8rem;
 }
 
 /*@supports (justify-content:space-evenly) {    .l-distribute {        & {            justify-content: space-evenly;        }    }}*/
@@ -6681,7 +6761,7 @@ $glimpse--link-border-bottom--hover: false !default;*/
 }
 
 .l-center.l-center > * {
-  webkit-flex: 0 1 auto;
+  -webkit-flex: 0 1 auto;
   -ms-flex: 0 1 auto;
   flex: 0 1 auto;
 }
@@ -6771,11 +6851,143 @@ $glimpse--link-border-bottom--hover: false !default;*/
 }
 
 /*
-$pagination-spacing-unit: $fallback--base-rem-space-unit;
-$pagination--link-color--alt: #ccc;
-$pagination--background-color: #fff;
-@import "navigation-patterns/_pagination.scss";
+    The `height: 100%;` in the `.pagination` class below allows the pagination to fill it's container (if inside,
+    say, a list-grid). However, it doesn't work in Safari OSX/iOS.
+    Applying a `pagination-wrap` class to a list item to make those items flex-containers seems to work
+    OK, but perhaps this would be better abstracted as a `fill-height` class or something?
 */
+/*
+$pagination-body--text-color: $pagination--text-color !default;
+$pagination-body--background-color: $pagination--background-color !default;
+
+$pagination-title--text-color: $pagination--text-color !default;
+$pagination-title--background-color: $pagination--background-color !default;
+
+*/
+/*
+$pagination-cta--border-width: 1px !default;
+$pagination-cta--border-style: solid !default;
+$pagination-cta--border-radius: 3px !default;
+*/
+/*
+$pagination-button--text-color: #fff !default;
+$pagination-button--background-color: $pagination--base-color !default;
+$pagination-button--background-color-alt: lighten($pagination--base-color, 20%) !default;
+$pagination-button--border-color: darken($pagination--base-color, 20%) !default;
+*/
+/*
+.n-pagination-wrap {
+
+
+}
+
+    .n-pagination-wrap .n-pagination {
+
+        //width: 100%;
+    }
+*/
+.n-pagination.n-pagination {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  /*-webkit-flex-direction: row;
+            -ms-flex-direction: row;
+                flex-direction: row;
+
+            -webkit-flex-wrap: wrap;
+                -ms-flex-wrap: wrap;
+                    flex-wrap: wrap;*/
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  /*
+        -webkit-align-items: flex-end;
+             -ms-flex-align: end;
+                align-items: flex-end;
+*/
+  color: #333;
+  background: #fff;
+  padding: 0;
+  /*max-width: 20em;*/
+  /*margin-top: 0 auto;
+        margin-bottom: 1.5rem;
+        margin-left: auto;
+        margin-right: auto;*/
+  /*
+            If the 'pull' is > module body content height, it'll protrude below the container,
+            so hide it:
+        */
+  overflow: hidden;
+}
+
+/*.n-pagination > * {
+            -webkit-flex: 0 1 auto;
+                -ms-flex: 0 1 auto;
+                    flex: 0 1 auto;
+
+            width: 100%;
+        }*/
+/*.n-pagination .n-pagination__title {
+            border-bottom: 1px solid #999;
+        }*/
+.n-pagination .n-pagination__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.n-pagination .n-pagination__item {
+  padding: 0;
+  margin: 0;
+}
+
+.n-pagination .n-pagination__item:not(:last-child) {
+  border-right-color: #e6e6e6;
+  border-right-style: solid;
+  border-right-width: 1px;
+}
+
+.n-pagination .n-pagination__item--active {
+  background: #ebe9e8;
+}
+
+.n-pagination .n-pagination__link {
+  padding: 0.6rem 1.2rem;
+  margin: 0;
+  border: 0;
+  display: block;
+  /*display: -webkit-flex;
+                    display: -ms-flexbox;
+                    display: flex;
+
+                    -webkit-justify-content: center;
+                              -ms-flex-pack: center;
+                            justify-content: center;
+
+                    -webkit-align-items: center;
+                         -ms-flex-align: center;
+                            align-items: center;*/
+}
+
+.n-pagination a.n-pagination__link:hover {
+  border: 0;
+  background: #c8c3be;
+}
+
+.n-pagination span.n-pagination__link {
+  color: gray;
+}
+
+.n-pagination .n-pagination__title {
+  font-size: 3rem;
+}
+
 /*
     The `height: 100%;` in the `.section-menu` class below allows the section-menu to fill it's container (if inside,
     say, a list-grid). However, it doesn't work in Safari OSX/iOS.
@@ -6812,7 +7024,7 @@ $pagination--background-color: #fff;
 }
 
 .n-section-menu .n-section-menu__item--active .n-section-menu__link {
-  background: #e6e6e6;
+  background: #ebe9e8;
 }
 
 .n-section-menu .n-section-menu__item--active span {
@@ -6827,7 +7039,7 @@ $pagination--background-color: #fff;
 }
 
 .n-section-menu .n-section-menu__link[href]:hover {
-  background: #ccc;
+  background: #c8c3be;
 }
 
 .n-section-menu__item > ul {
@@ -7265,19 +7477,19 @@ $pagination--background-color: #fff;
   margin-top: 0 !important;
 }
 
-.u-margin--bottom--none {
+.u-space--bottom--none {
   margin-bottom: 0 !important;
 }
 
-.u-margin--left--none {
+.u-space--left--none {
   margin-left: 0 !important;
 }
 
-.u-margin--right--none {
+.u-space--right--none {
   margin-right: 0 !important;
 }
 
-.u-margin--none {
+.u-space--none {
   margin: 0 !important;
 }
 
@@ -7492,9 +7704,12 @@ $patterns: (
 }
 
 .c-card.t-white .c-card__main {
-  position: relative;
   color: #fff;
   background: #ffffff;
+}
+
+.c-card.t-white {
+  border-color: #cccccc;
 }
 
 .c-featurette.t-white,
@@ -7828,9 +8043,12 @@ $patterns: (
 }
 
 .c-card.t-neutral .c-card__main {
-  position: relative;
   color: #fff;
   background: #8e8279;
+}
+
+.c-card.t-neutral {
+  border-color: #57504a;
 }
 
 .c-featurette.t-neutral,
@@ -8520,223 +8738,8 @@ html.wireframe {
   box-shadow: 0 0 0 0.6rem #fff, 0 0 0 1.2rem rgba(0, 0, 0, 0.2);
 }
 
-/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#3e7692+0,3e7692+25,3e7692+25,7b9db2+25,7b9db2+50,c5c0d2+50,c5c0d2+75,6f6992+75,6f6992+100 /
-background: #3e7692; /* Old browsers /
-background: -moz-linear-gradient(top, #3e7692 0%, #3e7692 25%, #3e7692 25%, #7b9db2 25%, #7b9db2 50%, #c5c0d2 50%, #c5c0d2 75%, #6f6992 75%, #6f6992 100%); /* FF3.6-15 /
-background: -webkit-linear-gradient(top, #3e7692 0%,#3e7692 25%,#3e7692 25%,#7b9db2 25%,#7b9db2 50%,#c5c0d2 50%,#c5c0d2 75%,#6f6992 75%,#6f6992 100%); /* Chrome10-25,Safari5.1-6 /
-background: linear-gradient(to bottom, #3e7692 0%,#3e7692 25%,#3e7692 25%,#7b9db2 25%,#7b9db2 50%,#c5c0d2 50%,#c5c0d2 75%,#6f6992 75%,#6f6992 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ /
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e7692', endColorstr='#6f6992',GradientType=0 ); /* IE6-9 */
-/* Footer logos */
-/*
-.footer-logos {
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-
-        -ms-flex-wrap: wrap;
-    -webkit-flex-wrap: wrap;
-            flex-wrap: wrap;
-
-              -ms-flex-pack: justify;
-    -webkit-justify-content: space-between;
-            justify-content: space-between;
-	margin-bottom: $fallback--base-rem-space-unit;
-    padding: 0 $fallback--base-rem-space-unit;
-}
-
-.footer-logos > * {
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-
-        -ms-flex-wrap: wrap;
-    -webkit-flex-wrap: wrap;
-            flex-wrap: wrap;
-
-    -webkit-justify-content: center;
-              -ms-flex-pack: center;
-            justify-content: center;
-
-    -webkit-box-align: center;
-       -ms-flex-align: center;
-          align-items: center;
-}
-
-.footer-logos--start .svg {
-    //margin-top: $fallback--base-rem-space-unit;
-}
-.footer-logos--end .svg {
-    //margin-top: $fallback--base-rem-space-unit;
-    //max-width: 17em;
-}
-
-.footer-logos img {
-    margin: 0 $fallback--base-rem-space-unit;
-}
-
-
-
-.footer-logos .svg__link:hover,
-.footer-logos .svg__link:active,
-.footer-logos .svg__link:focus {
-	box-shadow: 0 0 0 ($hover-effect-width * 2) #fff, 0 0 0 ($hover-effect-width * 3) rgba(0,0,0,$hover-effect-opacity);
-}
-*/
-/*
-.footer-logos--start {
-	margin-right: $fallback--base-rem-space-unit / 2;
-}
-
-@media only screen and (min-width: 459px) {
-
-    .footer-logos {
-        padding: 0;
-    }
-
-    .footer-logos--start .svg {
-        margin-left: $fallback--base-rem-space-unit;
-    }
-    .footer-logos--end .svg {
-        margin-right: $fallback--base-rem-space-unit;
-    }
-
-
-    .footer-logos--start {
-        -webkit-justify-content: flex-start;
-                  -ms-flex-pack: start;
-                justify-content: flex-start;
-    }
-
-    .footer-logos--end {
-                  -ms-flex-pack: end;
-        -webkit-justify-content: flex-end;
-                justify-content: flex-end;
-
-        margin-left: $fallback--base-rem-space-unit / 2;
-    }
-}
-*/
 .svg a[href]::after {
   display: none;
-}
-
-/*
-.responsive-push-right::before {
-    content: "";
-    display: block;
-}
-
-*/
-/*
-.header .gallery-grid {
-        -ms-flex-pack: justify;
-    -webkit-flex-grow: space-between;
-      justify-content: space-between;
-
-}
-
-.header .gallery-grid__item {
-      -ms-flex-negative: 1;
-    -webkit-flex-shrink: 1;
-            flex-shrink: 1;
-
-
-    -ms-flex-positive: 0;
-    -webkit-flex-grow: 0;
-            flex-grow: 0;
-}
-*/
-/*.header .gallery-grid__item {
-    max-width: 38rem;
-}*/
-/*
-.header .gallery-grid::after {
-    content: "";
-    width: 100%;
-    display: inline-block;
-}
-
-.header .gallery-grid__item {
-    display: inline-block;
-}
-
-.header .gallery-grid .gallery-grid__item--pushout {
-    flex-grow: 2;
-    padding: 0;
-
-}*/
-/*
-.header .gallery-grid__item {
-    flex-grow: 1;
-    flex-basis: 16em;
-    max-width: 25em;
-}
-
-*/
-/*
-.header .gallery-grid::before,
-.header .gallery-grid::after {
-    //content: "";
-    //flex-grow: 0;
-}
-
-
-.header .gallery-grid::before {
-    content: "";
-}
-
-.header .gallery-grid::after {
-    //margin-left: -25%;
-}
-
-.header .gallery-grid__item {
-    flex-grow: 0;
-}
-*/
-/*
-.header .responsive-push-right {
-    flex-grow: 99999;
-}
-
-.header .responsive-push-right {
-
-}
-*/
-/*
-.header .responsive-push-right::before {
-    content: "";
-    background: #f00;
-    width: 1em;
-    min-height: 10px;
-    height: calc((119px - 100%) * -1000);
-    max-height: 50px;
-
-}
-*/
-/*
-.space-bottom {
-	margin-bottom: $fallback--base-rem-space-unit;
-}
-
-.text--center {
-	text-align: center;
-}
-*/
-.card .card__image img {
-  transition: all 0.5s ease;
-}
-
-.card > a:hover .card__image img {
-  transform: scale(1.2);
-}
-
-.card__image {
-  margin: -2rem;
-}
-
-.card__body h3 {
-  margin: 0;
-  padding: 1rem 2rem 0;
 }
 
 .gallery {

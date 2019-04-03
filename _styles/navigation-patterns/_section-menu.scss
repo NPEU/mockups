@@ -54,22 +54,24 @@ $section-menu-title--font-size: 3rem !default;
 
 $section-menu--link-padding: ($section-menu-spacing-unit / 4) !default;
 $section-menu--link-margin: 0 -#{$section-menu-spacing-unit / 4} !default;
-$section-menu--link-color: false !default;
-$section-menu--link-color--alt: false !default;
+$section-menu--link-background-color: false !default;
+$section-menu--link-background-color--alt: false !default;
 $section-menu--link-has-border-bottom: false !default;
 $section-menu--link-border-bottom: false !default;
 $section-menu--link-border-bottom--alt: false !default;
 
+$section-menu--active-background-color: false !default;
+
 // If we've specified a link color for the section-menu, but not an alt state (e.g. hover)
 // then generate one
-@if $section-menu--link-color != false and $section-menu--link-color--alt == false {
-    $section-menu--link-color--alt: darken($section-menu--link-color, 10%) !default;;
+@if $section-menu--link-background-color != false and $section-menu--link-background-color--alt == false {
+    $section-menu--link-background-color--alt: darken($section-menu--link-background-color, 10%) !default;;
 }
 
 // If we've specified a link color for the section-menu, and we want bottom borders, generate the borders:
-@if $section-menu--link-color != false and $section-menu--link-has-border-bottom != false {
-    $section-menu--link-border-bottom: 1px solid lighten($section-menu--link-color, 20%) !default;
-    $section-menu--link-border-bottom--alt: 2px solid lighten($section-menu--link-color--alt, 30%) !default;
+@if $section-menu--link-background-color != false and $section-menu--link-has-border-bottom != false {
+    $section-menu--link-border-bottom: 1px solid lighten($section-menu--link-background-color, 20%) !default;
+    $section-menu--link-border-bottom--alt: 2px solid lighten($section-menu--link-background-color--alt, 30%) !default;
 }
 
 
@@ -120,9 +122,10 @@ $section-menu--link-border-bottom--alt: false !default;
                 }
             }
             
-            // @TODO - make this configurable
             .#{$section-menu-namespace}section-menu .#{$section-menu-namespace}section-menu__item--active .#{$section-menu-namespace}section-menu__link {
-                background: lighten($section-menu--link-color--alt, 10%);
+                @if $section-menu--active-background-color != false {
+                    background: $section-menu--active-background-color;
+                }
             }
             
             // @TODO - make this configurable
@@ -135,13 +138,17 @@ $section-menu--link-border-bottom--alt: false !default;
                     margin: $section-menu--link-margin;
   
                     border: 0;
+                    
+                    @if $section-menu--link-background-color != false {
+                        background: $section-menu--link-background-color;
+                    }
 
                     display: block;
 
                     &:hover {
                         //border: 0;
-                        @if $section-menu--link-color--alt != false {
-                            background: $section-menu--link-color--alt;
+                        @if $section-menu--link-background-color--alt != false {
+                            background: $section-menu--link-background-color--alt;
                         }
                     }
                 }
