@@ -59,8 +59,8 @@ project_base_url: patterns
                 <p>
                     Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque tincidunt lorem sit amet enim.
                 </p>
-                <p>
-                    <a href="#" class="cta  c-card__cta">More <svg display="none" class="icon  feather"><use xlink:href="#icon-chevron-right"></use></svg></a>
+                <p class="c-card__cta">
+                    <a href="#" class="cta">More <svg display="none" class="icon  feather"><use xlink:href="#icon-chevron-right"></use></svg></a>
                 </p>
             </div>
             <div class="c-card__footer">
@@ -70,6 +70,44 @@ project_base_url: patterns
                 </p>
             </div>
         </div>
+    </div>
+</div>
+
+<h3 class="u-padding--sides">Card - full link</h3>
+
+<p class="u-padding--sides">
+Note that this pattern does not allow for a nested CTA (nested <code>&lt;a&gt;</code> are not allowed).
+Here a span is used instead, to help avoid any confusio (whole thing is a link, not just CTA).
+</p>
+
+<div class="u-padding--sides  u-space--below">
+    <div class="c-card">
+        <a href="#" class="c-card__full-link  u-fill-height--column">
+            <div class="c-card__image">
+                <div class="l-proportional-container  l-proportional-container--3-1">
+                    <div class="l-proportional-container__content">
+                        <img src="/img/patterns/placeholder-1.jpg" alt="" class="l-proportional-container__image-cover" width="200">
+                    </div>
+                </div>
+            </div>
+            <div class="c-card__main">
+                <h2 class="c-card__title">Card Title</h2>
+                <div class="c-card__body">
+                    <p>
+                        Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque tincidunt lorem sit amet enim.
+                    </p>
+                    <p class="c-card__cta">
+                        <span>More <svg display="none" class="icon  feather"><use xlink:href="#icon-chevron-right"></use></svg></span>
+                    </p>
+                </div>
+                <div class="c-card__footer">
+                    <p class="c-card__info  u-text-group  u-text-group--wide-space">
+                        <span class="u-text-group"><span>Published on: </span><span>18 June 2018 10:11</span></span>
+                        <span class="u-text-group"><span>Published in: </span><span>Quite a long category name category name to test wrapping</span></span>
+                    </p>
+                </div>
+            </div>
+        </a>
     </div>
 </div>
 
@@ -112,8 +150,8 @@ project_base_url: patterns
                 <p>
                     Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque tincidunt lorem sit amet enim.
                 </p>
-                <p>
-                    <a href="#" class="cta  c-card__cta">A longer CTA to test what happens  <svg display="none" class="icon  feather"><use xlink:href="#icon-chevron-right"></use></svg></a>
+                <p class="c-card__cta">
+                    <a href="#" class="cta">A longer CTA to test what happens  <svg display="none" class="icon  feather"><use xlink:href="#icon-chevron-right"></use></svg></a>
                 </p>
             </div>
         </div>
@@ -124,27 +162,29 @@ project_base_url: patterns
 
 <div class="u-padding--sides  u-space--below">
     <div class="c-card  c-card--themed-content  t-neoclear">
-        <div class="c-card__image">
-            <div class="l-proportional-container  l-proportional-container--3-1">
-                <div class="l-proportional-container__content">
-                    <img src="/img/patterns/placeholder-3.jpg" alt="" class="l-proportional-container__image-cover" width="200">
+        <a href="#" class="c-card__full-link  u-fill-height--column">
+            <div class="c-card__image">
+                <div class="l-proportional-container  l-proportional-container--3-1">
+                    <div class="l-proportional-container__content">
+                        <img src="/img/patterns/placeholder-3.jpg" alt="" class="l-proportional-container__image-cover" width="200">
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="c-card__main">
-            <h2 class="c-card__title">Card Title</h2>
-            <div class="c-card__body">
-                <p>
-                    Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque tincidunt lorem sit amet enim.
-                </p>
+            <div class="c-card__main">
+                <h2 class="c-card__title">Card Title</h2>
+                <div class="c-card__body">
+                    <p>
+                        Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque tincidunt lorem sit amet enim.
+                    </p>
+                </div>
+                <div class="c-card__footer">
+                    <p class="c-card__info  u-text-group  u-text-group--wide-space">
+                        <span class="u-text-group"><span>Published on: </span><span>18 June 2018 10:11</span></span>
+                        <span class="u-text-group"><span>Published in: </span><span>Quite a long category name category name to test wrapping</span></span>
+                    </p>
+                </div>
             </div>
-            <div class="c-card__footer">
-                <p class="c-card__info  u-text-group  u-text-group--wide-space">
-                    <span class="u-text-group"><span>Published on: </span><span>18 June 2018 10:11</span></span>
-                    <span class="u-text-group"><span>Published in: </span><span>Quite a long category name category name to test wrapping</span></span>
-                </p>
-            </div>
-        </div>
+        </a>
     </div>
 </div>
 
@@ -152,15 +192,17 @@ project_base_url: patterns
 
 <div class="u-padding--sides  u-space--below">
     <div class="c-card  c-card--themed-content  t-neoclear">
-        <div class="c-card__main">
-            <h2 class="c-card__title">Card Title</h2>
-            <div class="c-card__footer">
-                <p class="c-card__info  u-text-group  u-text-group--wide-space">
-                    <span class="u-text-group"><span>Published on: </span><span>18 June 2018 10:11</span></span>
-                    <span class="u-text-group"><span>Published in: </span><span>Quite a long category name category name to test wrapping</span></span>
-                </p>
+        <a href="#" class="c-card__full-link  u-fill-height--column">
+            <div class="c-card__main">
+                <h2 class="c-card__title">Card Title</h2>
+                <div class="c-card__footer">
+                    <p class="c-card__info  u-text-group  u-text-group--wide-space">
+                        <span class="u-text-group"><span>Published on: </span><span>18 June 2018 10:11</span></span>
+                        <span class="u-text-group"><span>Published in: </span><span>Quite a long category name category name to test wrapping</span></span>
+                    </p>
+                </div>
             </div>
-        </div>
+        </a>
     </div>
 </div>
 
@@ -251,14 +293,14 @@ project_base_url: patterns
 <h3 class="u-padding--sides">Featurette (Dark - e.g. Power Quote)</h3>
 
 <div class="u-padding--sides  u-space--below">
-    <div class="c-featurette  c-featurette  t-featurette--dark">
+    <div class="c-featurette    c-featurette--pull-image  t-featurette--dark">
         <div class="c-featurette__body  c-featurette__body--80">
             <blockquote>
                 "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque tincidunt lorem sit amet enim congue, non molestie arcu aliquam. Vestibulum sagittis feugiat vulputate. Sed pharetra aliquam diam, eu euismod quam ullamcorper in. Sed a tempor tellus. Suspendisse in tellus hendrerit, aliquam ipsum nec, faucibus neque. Fusce a neque urna. Fusce faucibus massa eget laoreet posuere."
             </blockquote>
             <cite>&mdash; Person name</cite>
         </div>
-        <div class="c-featurette__image  c-featurette__image--round  c-featurette__image--pull-up  d-bands">
+        <div class="c-featurette__image  c-featurette__image--round  d-bands">
             <div class="l-proportional-container  l-proportional-container--1-1">
                 <img src="/img/patterns/placeholder-person.jpg" alt="" class="l-proportional-container__image-cover" width="200">
             </div>

@@ -5381,13 +5381,15 @@ $card-button--border-color: darken($card--base-color, 20%) !default;
             -webkit-align-content: space-between;
                -ms-flex-line-pack: justify;
                     align-content: space-between;
+            
+            -webkit-justify-content: flex-end;
+                      -ms-flex-pack: end;
+                    justify-content: flex-end;
+                    
+            -webkit-align-content: flex-start;
+               -ms-flex-line-pack: start;
+                    align-content: flex-start;
             */
-  -webkit-justify-content: flex-end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
-  -webkit-align-content: flex-start;
-  -ms-flex-line-pack: start;
-  align-content: flex-start;
   position: relative;
 }
 
@@ -5437,13 +5439,27 @@ $card-button--border-color: darken($card--base-color, 20%) !default;
 
 .c-card .c-card__body > :last-child {
   margin-bottom: 0;
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
-  flex: 1 0 auto;
 }
 
 .c-card .c-card__cta {
-  float: right;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-align-content: flex-start;
+  -ms-flex-line-pack: start;
+  align-content: flex-start;
+}
+
+.c-card .c-card__cta > * {
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
 }
 
 .c-card .c-card__footer {
@@ -5703,6 +5719,14 @@ $featurette-button--border-color: darken($featurette--base-color, 20%) !default;
   padding: 0;
 }
 
+.c-featurette.c-featurette--pull-image {
+  margin-top: 4.8rem;
+}
+
+.c-featurette.c-featurette--pull-image .c-featurette__image {
+  margin-top: -2.4rem;
+}
+
 .c-featurette > * {
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
@@ -5728,11 +5752,6 @@ $featurette-button--border-color: darken($featurette--base-color, 20%) !default;
 .c-featurette .c-featurette__image--round {
   border-radius: 9999px;
   overflow: hidden;
-}
-
-.c-featurette .c-featurette__image--pull-up {
-  margin-top: -3.6rem;
-  margin-bottom: -2.4rem;
 }
 
 .c-featurette .c-featurette__body {

@@ -132,7 +132,7 @@ $theme-only: false !default;
             -webkit-align-items: center;
                  -ms-flex-align: center;
                     align-items: center;
-                    
+
             -webkit-justify-content: center;
                       -ms-flex-pack: center;
                     justify-content: center;
@@ -157,6 +157,14 @@ $theme-only: false !default;
             }
         }
 
+        &#{&}--pull-image {
+            margin-top: $featurette-spacing-unit * 2;
+        }
+
+        &#{&}--pull-image #{&}__image {
+            margin-top: -$featurette-spacing-unit;
+        }
+
         & > * {
             -webkit-flex: 1 0 auto;
                 -ms-flex: 1 0 auto;
@@ -171,12 +179,11 @@ $theme-only: false !default;
             text-align: center;
             max-width: 13em;
             order: -1;
-            
+
 
             & img {
                 width: 100%;
             }
-
 
             &-link,
             &-link:hover {
@@ -184,21 +191,17 @@ $theme-only: false !default;
             }
 
         }
-        
+
         #{&}__image--round {
             border-radius: 9999px;
             overflow: hidden;
         }
-        
-        #{&}__image--pull-up {
-            margin-top: -$featurette-spacing-unit * 1.5;
-            margin-bottom: -$featurette-spacing-unit;
-        }
+
 
         #{&}__body {
             padding: $featurette-body--padding;
-        
-        
+
+
             // Featurettes are designed for Power Quotes, so putting these styles here, though they do
             // seem a little out of place:
             & > blockquote {
@@ -206,6 +209,7 @@ $theme-only: false !default;
             }
         }
     }
+
 
     @media (min-width: #{$featurette-breakpoint}) {
         .#{$featurette-namespace}featurette {
@@ -218,33 +222,33 @@ $theme-only: false !default;
                     width: auto;
                     max-width: none;
                 }
-                
+
                 #{&}__body,
                 #{&}__body--50 {
                     max-width: 50%;
                 }
-                
+
                 #{&}__body--60 {
                     max-width: 60%;
                 }
-                
+
                 #{&}__body--70 {
                     max-width: 70%;
                 }
-                
+
                 #{&}__body--80 {
                     max-width: 80%;
                 }
-                
+
                 #{&}__body--90 {
                     max-width: 90%;
                 }
-                
+
                 #{&}__body--fill {
                     max-width: none;
                     width: 100%;
                 }
             }
-        
+
     }
 }
