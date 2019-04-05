@@ -6564,9 +6564,9 @@ $glimpse--link-border-bottom--hover: false !default;*/
 }
 
 .l-distribute > * {
-  -webkit-flex: 1 1 12em;
-  -ms-flex: 1 1 12em;
-  flex: 1 1 12em;
+  -webkit-flex: 1 1 15em;
+  -ms-flex: 1 1 15em;
+  flex: 1 1 15em;
   margin: 0;
   padding: 0;
 }
