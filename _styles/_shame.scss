@@ -215,17 +215,6 @@ $enough-room-at: $fallback--base-rem-space-unit + $measure + $fallback--base-rem
 }
 
 
-/*
-.s-updates.c-panel .c-card__image::before {
-    content: "";
-    position: absolute;
-    left: calc(-1 * (50vw - 23.7rem));
-    top: 0;
-    right: calc(-1 * (50vw - 23.7rem));
-    bottom: 0;
-    background-color: #ccc;
-}
-*/
 /*---------------------*/
 
 

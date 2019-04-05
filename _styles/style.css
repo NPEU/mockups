@@ -3257,7 +3257,6 @@ _:-o-prefocus, :root .icon {
 
 .nav-bar .subnav__items--stacked .subnav__item {
   float: none;
-  margin-left: 1.125em;
 }
 
 .nav-bar .subnav__item::before {
@@ -3459,7 +3458,7 @@ _:-o-prefocus, body:last-child .nav-bar .subnav__heading {
     border-left-width: 0;
     border-right-width: 1px;
   }
-  .js-nav-bar .nav-bar__link[href] + .subnav__control {
+  .js.nav-bar .nav-bar__link[href] + .subnav__control {
     border-style: dashed;
     border-color: rgba(255, 255, 255, 0.3);
     border-top-width: 0;
@@ -3473,7 +3472,7 @@ _:-o-prefocus, body:last-child .nav-bar .subnav__heading {
         */
   .js-nav-bar .nav-bar__title,
   .js-nav-bar .nav-bar__item,
-  .js-nav-bar .nav-bar__link[href],
+  .js.nav-bar .nav-bar__link[href],
   .js-nav-bar .subnav__link[href],
   .js-nav-bar .subnav__heading {
     white-space: nowrap;
@@ -3539,9 +3538,6 @@ _:-o-prefocus, body:last-child .nav-bar .subnav__heading {
   }
   .js-nav-bar .subnav__items {
     float: left;
-  }
-  .js-nav-bar .nav-bar .subnav__items--stacked .subnav__item {
-    margin-left: 0;
   }
   /*
             1. The 9999 hack forces this element to take up as much room as it can.
@@ -8893,17 +8889,6 @@ html.wireframe {
   margin: 0 auto;
 }
 
-/*
-.s-updates.c-panel .c-card__image::before {
-    content: "";
-    position: absolute;
-    left: calc(-1 * (50vw - 23.7rem));
-    top: 0;
-    right: calc(-1 * (50vw - 23.7rem));
-    bottom: 0;
-    background-color: #ccc;
-}
-*/
 /*---------------------*/
 /*---------------------*/
 .over-panel {
