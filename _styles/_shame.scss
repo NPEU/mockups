@@ -64,7 +64,7 @@ $enough-room-at: $fallback--base-rem-space-unit + $measure + $fallback--base-rem
 
 
 
-
+/*
 .gallery {
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -90,9 +90,9 @@ $enough-room-at: $fallback--base-rem-space-unit + $measure + $fallback--base-rem
     margin: 0 1rem 2rem 1rem;
     max-width: 20em;
 }
-
+*/
 /*------*/
-
+/*
 .gallery-grid.c-signpost .gallery-grid__item {
     max-width: none;
 }
@@ -103,7 +103,7 @@ $enough-room-at: $fallback--base-rem-space-unit + $measure + $fallback--base-rem
          -webkit-flex-basis: 13.5em;
     -ms-flex-preferred-size: 13.5em;
                  flex-basis: 13.5em;
-}
+}*/
 /*
 @supports (display: grid) {
     .gallery-grid.c-signpost {
@@ -150,15 +150,15 @@ $enough-room-at: $fallback--base-rem-space-unit + $measure + $fallback--base-rem
 /*----------------*/
 
 
-
+/*
 .c-recruitment__current {
     font-size: 2em;
 }
 
 
-
+*/
 /*---------------------*/
-
+/*
 
 .l-blockrow {
 
@@ -170,7 +170,7 @@ $enough-room-at: $fallback--base-rem-space-unit + $measure + $fallback--base-rem
 }
 
 
-
+*/
 /*-----------*/
 
 // Note Safari 10- doesn't factor in min/max width/height when deciding how many items can fit on 

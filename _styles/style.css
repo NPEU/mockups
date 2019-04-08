@@ -8776,38 +8776,46 @@ html.wireframe {
   display: none;
 }
 
+/*
 .gallery {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  margin: 0 -1rem;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+
+    -webkit-justify-content: center;
+              -ms-flex-pack: center;
+            justify-content: center;
+
+    margin: 0 -1rem;
 }
 
 .gallery.gallery > * {
-  -webkit-flex: 1 1 20em;
-  -ms-flex: 1 1 20em;
-  flex: 1 1 20em;
-  margin: 0 1rem 2rem 1rem;
-  max-width: 20em;
-}
 
+    -webkit-flex: 1 1 20em;
+        -ms-flex: 1 1 20em;
+            flex: 1 1 20em;
+
+    margin: 0 1rem 2rem 1rem;
+    max-width: 20em;
+}
+*/
 /*------*/
+/*
 .gallery-grid.c-signpost .gallery-grid__item {
-  max-width: none;
+    max-width: none;
 }
 
-.gallery-grid.c-signpost .gallery-grid__item {
-  -webkit-flex-basis: 13.5em;
-  -ms-flex-preferred-size: 13.5em;
-  flex-basis: 13.5em;
-}
 
+
+.gallery-grid.c-signpost .gallery-grid__item {
+         -webkit-flex-basis: 13.5em;
+    -ms-flex-preferred-size: 13.5em;
+                 flex-basis: 13.5em;
+}*/
 /*
 @supports (display: grid) {
     .gallery-grid.c-signpost {
@@ -8845,16 +8853,27 @@ html.wireframe {
 }
 
 /*----------------*/
+/*
 .c-recruitment__current {
-  font-size: 2em;
+    font-size: 2em;
 }
 
+
+*/
 /*---------------------*/
-.l-blockrow__limit-width {
-  max-width: 130rem;
-  margin: 0 auto;
+/*
+
+.l-blockrow {
+
 }
 
+.l-blockrow__limit-width {
+    max-width: 130rem;
+    margin: 0 auto;
+}
+
+
+*/
 /*-----------*/
 .dl-2-col {
   display: -ms-flexbox;
