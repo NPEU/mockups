@@ -18,6 +18,10 @@ $theme-only: false !default;
             vertical-align: middle;
         }
 
+            svg {
+                max-width: 100%;
+            }
+
             img {
                 /*
                     1. This is to provide positioning context for the ::after pseudo-element.

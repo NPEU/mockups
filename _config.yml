@@ -21,6 +21,9 @@ defaults:
       display_support: true
       is_home: false
       headline_image: true
+      hero_image: false
+      hero_message: false
+      hero_message_reversed: false
       landing_brochure: false
       landing_display_cta: true
       landing_display_info: true
@@ -29,6 +32,7 @@ defaults:
       landing_display_updates: true
       landing_display_video: true
       layout_name: "default"
+      load_highlighter: false
       npeu_unit: false
       project: false
       project_base_url: false

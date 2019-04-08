@@ -4,6 +4,7 @@ title: NeoCLEAR Home
 project: neoclear
 hero_image: "/img/neoclear/hero-image-1.jpg"
 hero_message: "NeoCLEAR: Understanding the best technique for lumbar puncture in newborn babies"
+hero_message_reversed: true
 is_home: true
 npeu_unit: ctu
 

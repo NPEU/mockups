@@ -9,7 +9,7 @@ layout: structure
             <div class="u-padding--bottom--s">
                 <div class="l-col-to-row">
                     <div class="l-col-to-row__item  ff-width-100--40--50  u-text-align--left  c-page-header__first  u-padding--top--s  u-padding--sides--s">
-                        <a href="/{{ page.project }}" class="c-badge  c-page-header__primary-logo">
+                        <a href="/{{ page.project }}" class="c-badge  c-badge--primary-logo">
                             {{ project_data.logo_svg }}
                         </a>
                     </div>
@@ -33,7 +33,7 @@ layout: structure
         
         
         {% if page.display_hero and page.hero_image %}
-        <div id="hero" class="c-hero  d-bands--bottom  t-{{ page.project }}">
+        <div id="hero" class="c-hero{% if page.hero_message_reversed %}  c-hero--reversed{% endif %}  d-bands--bottom  t-{{ page.project }}">
             <div class="c-hero__image">
                 <div class="l-proportional-container  l-proportional-container--5-1">
                     <div class="l-proportional-container__content">
@@ -61,7 +61,7 @@ layout: structure
 
         <footer class="sticky-footer  t-{{ page.project }}  d-bands--top" role="contentinfo">
             <div class="Xd-background  Xt-white">
-                <div class="l-distribute  l-distribute--gutter--small">
+                <div class="l-distribute  l-distribute--gutter--small  l-distribute--limit-15">
 
                     <div class="u-padding--s  l-center">
                         

@@ -11,16 +11,16 @@ npeu_unit: ctu
 If you would like more information about the NeoCLEAR trial please contact the NeoCLEAR Coordinating Centre:
 
 <div>
-    <img src="/img/avatars/rachel-williams-889-avatar.jpg?s=200" alt="" class="c-contact-avatar  u-bands  t-neoclear">
+    <img src="/img/avatars/rachel-williams-889-avatar.jpg?s=200" alt="" class="c-contact-avatar  d-bands  t-neoclear">
 </div>
 
 <dl class="c-contact-list" itemscope="" itemtype="http://schema.org/Person">
 	<dt>Name</dt>
-	<dd class="Xicon  Xicon-person"><a href="/people/rachel-williams-889" itemprop="name">Mrs Rachel Williams</a></dd>
+	<dd class="name"><svg display="none" class="icon  feather" aria-hidden="true"><use xlink:href="#icon-person"></use></svg><a href="/people/rachel-williams-889" itemprop="name">Mrs Rachel Williams</a></dd>
 	<dt>Role</dt>
-	<dd class="Xicon  Xicon-id" itemprop="jobTitle">NeoCLEAR Trial Coordinator</dd>
+	<dd itemprop="jobTitle">NeoCLEAR Trial Coordinator</dd>
 	<dt>Address</dt>
-	<dd itemscope="" itemtype="http://schema.org/PostalAddress"><span itemprop="streetAddress">NPEU Clinical Trials Unit<br>
+	<dd itemscope="" itemtype="http://schema.org/PostalAddress"><svg display="none" class="icon  feather" aria-hidden="true"><use xlink:href="#icon-building"></use></svg><span itemprop="streetAddress">NPEU Clinical Trials Unit<br>
 	National Perinatal Epidemiology Unit (NPEU)<br>
 	Nuffield Department of Population Health<br>
 	University of Oxford<br>
@@ -28,9 +28,9 @@ If you would like more information about the NeoCLEAR trial please contact the N
 	<span itemprop="addressLocality">Oxford</span><br>
 	<span itemprop="postalCode">OX3 7LF</span></dd>
 	<dt>Email</dt>
-	<dd class="Xicon  Xicon-email"><a href="mailto: neoclear@npeu.ox.ac.uk" itemprop="email">neoclear@npeu.ox.ac.uk</a></dd>
+	<dd itemprop="email" class=""><svg display="none" class="icon  feather" aria-hidden="true"><use xlink:href="#icon-email"></use></svg><a href="mailto: neoclear@npeu.ox.ac.uk" itemprop="email">neoclear@npeu.ox.ac.uk</a></dd>
 	<dt>Tel</dt>
-	<dd class="Xicon  Xicon-phone" itemprop="telephone">01865 289278</dd>
+	<dd itemprop="telephone" class=""><svg display="none" class="icon  feather" aria-hidden="true"><use xlink:href="#icon-phone"></use></svg>01865 289278</dd>
 </dl>
 
 ## Out-of-hours
@@ -47,25 +47,25 @@ If you require clinical information about the trial, please contact Dr Alex Scri
 
 <dl class="c-contact-list" itemscope="itemscope" itemtype="http://schema.org/Person">
 	<dt>Name</dt>
-	<dd class="Xicon  Xicon-person"><b><span itemprop="honorificPrefix">Dr.</span> <span itemprop="name">Alexandra Scrivens</span></b></dd>
+	<dd class="name"><svg display="none" class="icon  feather" aria-hidden="true"><use xlink:href="#icon-person"></use></svg><b><span itemprop="honorificPrefix">Dr.</span> <span itemprop="name">Alexandra Scrivens</span></b></dd>
 	<dt>Tel</dt>
-	<dd class="Xicon  Xicon-phone" itemprop="telephone">01865 617928</dd>
+	<dd itemprop="telephone" class=""><svg display="none" class="icon  feather" aria-hidden="true"><use xlink:href="#icon-phone"></use></svg>01865 617928</dd>
 	<dt>Email</dt>
-	<dd class="Xicon  Xicon-email" itemprop="email"><a href="mailto:alexandra.scrivens@npeu.ox.ac.uk" itemprop="email">alexandra.scrivens@npeu.ox.ac.uk</a></dd>
+	<dd itemprop="email" class=""><svg display="none" class="icon  feather" aria-hidden="true"><use xlink:href="#icon-email"></use></svg><a href="mailto:alexandra.scrivens@npeu.ox.ac.uk" itemprop="email">alexandra.scrivens@npeu.ox.ac.uk</a></dd>
 </dl>
 
 <dl class="c-contact-list" itemscope="itemscope" itemtype="http://schema.org/Person">
 	<dt>Name</dt>
-	<dd class="Xicon  Xicon-person"><b><span itemprop="honorificPrefix">Dr.</span> <span itemprop="name">Andrew Marshall </span></b></dd>
+	<dd class="name"><svg display="none" class="icon  feather" aria-hidden="true"><use xlink:href="#icon-person"></use></svg><b><span itemprop="honorificPrefix">Dr.</span> <span itemprop="name">Andrew Marshall </span></b></dd>
 	<dt>Email</dt>
-	<dd class="Xicon  Xicon-email" itemprop="email"><a href="mailto:a.marshall@doctors.org.uk" itemprop="email">a.marshall@doctors.org.uk</a></dd>
+	<dd itemprop="email" class=""><svg display="none" class="icon  feather" aria-hidden="true"><use xlink:href="#icon-email"></use></svg><a href="mailto:a.marshall@doctors.org.uk" itemprop="email">a.marshall@doctors.org.uk</a></dd>
 </dl>
 
 <dl class="c-contact-list" itemscope="itemscope" itemtype="http://schema.org/Person">
 	<dt>Name</dt>
-	<dd class="Xicon  Xicon-person"><b><span itemprop="honorificPrefix">Associate Professor</span> <span itemprop="name">Charles Roehr</span></b></dd>
+	<dd class="name"><svg display="none" class="icon  feather" aria-hidden="true"><use xlink:href="#icon-person"></use></svg><b><span itemprop="honorificPrefix">Associate Professor</span> <span itemprop="name">Charles Roehr</span></b></dd>
 	<dt>Tel</dt>
-	<dd class="Xicon  Xicon-phone" itemprop="telephone">01865 221355</dd>
+	<dd itemprop="telephone" class=""><svg display="none" class="icon  feather" aria-hidden="true"><use xlink:href="#icon-phone"></use></svg>01865 221355</dd>
 	<dt>Email</dt>
-	<dd class="Xicon  Xicon-email" itemprop="email"><a href="mailto:charles.roehr@ouh.nhs.uk" itemprop="email">charles.roehr@ouh.nhs.uk</a></dd>
+	<dd itemprop="email" class=""><svg display="none" class="icon  feather" aria-hidden="true"><use xlink:href="#icon-email"></use></svg><a href="mailto:charles.roehr@ouh.nhs.uk" itemprop="email">charles.roehr@ouh.nhs.uk</a></dd>
 </dl>
