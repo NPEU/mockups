@@ -227,7 +227,7 @@ $theme-only: false !default;
 
                 position: relative;
                 display: block;
-                height: 100%;
+                //height: 100%;
             }
 
             #{&}__full-link:hover::before,

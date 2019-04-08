@@ -172,6 +172,10 @@ $enough-room-at: $fallback--base-rem-space-unit + $measure + $fallback--base-rem
 
 
 /*-----------*/
+
+// Note Safari 10- doesn't factor in min/max width/height when deciding how many items can fit on 
+// a multi-line flex container.
+// This means that the usual fab-four technique doesn't work as expected.
 .dl-2-col {
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -185,23 +189,24 @@ $enough-room-at: $fallback--base-rem-space-unit + $measure + $fallback--base-rem
 }
 
 .dl-2-col dt {
-    -webkit-flex: 1 0 auto;
-        -ms-flex: 1 0 auto;
-            flex: 1 0 auto;
-    min-width: 34%;
-    width: calc((20em - 100%) * 1000);
-    max-width: 100%;
-    padding-right: 1em;
+    -webkit-flex: 1 0 8em;
+        -ms-flex: 1 0 8em;
+            flex: 1 0 8em;
+            
+    margin: 0;
 }
 
 .dl-2-col dd {
-    -webkit-flex: 1 0 auto;
-        -ms-flex: 1 0 auto;
-            flex: 1 0 auto;
-    min-width: 66%;
-    width: calc((20em - 100%) * 1000);
-    max-width: 100%;
+    -webkit-flex: 1 0 66%;
+        -ms-flex: 1 0 66%;
+            flex: 1 0 66%;
+            
+     -webkit-align-self: flex-end;
+    -ms-flex-item-align: end;
+             align-self: flex-end;
+            
     margin: 0;
+    padding-left: 1em;
 }
 
 /*------------*/
@@ -450,4 +455,24 @@ $flex-grid-spacing-unit--large: ($flex-grid-spacing-unit * 2) !default;
     .l-content-area__pull-out .c-panel {
         padding-top: 0 !important;
     }
+}
+
+
+
+/******************************/
+// Keep icons on same line as last word:
+a[href].cta--has-icon {
+    position: relative;
+}
+
+a[href].cta--has-icon::after {
+    content: "";
+    display: inline;
+    padding-left: 1.25em;
+}
+
+a[href].cta--has-icon .icon {
+    position: absolute;
+    bottom: 0;
+    transform: translateY(-25%);
 }

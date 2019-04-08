@@ -3257,6 +3257,7 @@ _:-o-prefocus, :root .icon {
 
 .nav-bar .subnav__items--stacked .subnav__item {
   float: none;
+  margin-left: 1.125em;
 }
 
 .nav-bar .subnav__item::before {
@@ -3458,7 +3459,7 @@ _:-o-prefocus, body:last-child .nav-bar .subnav__heading {
     border-left-width: 0;
     border-right-width: 1px;
   }
-  .js.nav-bar .nav-bar__link[href] + .subnav__control {
+  .js-nav-bar .nav-bar__link[href] + .subnav__control {
     border-style: dashed;
     border-color: rgba(255, 255, 255, 0.3);
     border-top-width: 0;
@@ -3472,7 +3473,7 @@ _:-o-prefocus, body:last-child .nav-bar .subnav__heading {
         */
   .js-nav-bar .nav-bar__title,
   .js-nav-bar .nav-bar__item,
-  .js.nav-bar .nav-bar__link[href],
+  .js-nav-bar .nav-bar__link[href],
   .js-nav-bar .subnav__link[href],
   .js-nav-bar .subnav__heading {
     white-space: nowrap;
@@ -3538,6 +3539,9 @@ _:-o-prefocus, body:last-child .nav-bar .subnav__heading {
   }
   .js-nav-bar .subnav__items {
     float: left;
+  }
+  .js-nav-bar .nav-bar .subnav__items--stacked .subnav__item {
+    margin-left: 0;
   }
   /*
             1. The 9999 hack forces this element to take up as much room as it can.
@@ -5330,7 +5334,6 @@ $card-button--border-color: darken($card--base-color, 20%) !default;
   background: #ebe9e8;
   position: relative;
   display: block;
-  height: 100%;
 }
 
 .c-card .c-card__full-link:hover::before,
@@ -8863,23 +8866,21 @@ html.wireframe {
 }
 
 .dl-2-col dt {
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
-  flex: 1 0 auto;
-  min-width: 34%;
-  width: calc((20em - 100%) * 1000);
-  max-width: 100%;
-  padding-right: 1em;
+  -webkit-flex: 1 0 8em;
+  -ms-flex: 1 0 8em;
+  flex: 1 0 8em;
+  margin: 0;
 }
 
 .dl-2-col dd {
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
-  flex: 1 0 auto;
-  min-width: 66%;
-  width: calc((20em - 100%) * 1000);
-  max-width: 100%;
+  -webkit-flex: 1 0 66%;
+  -ms-flex: 1 0 66%;
+  flex: 1 0 66%;
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
   margin: 0;
+  padding-left: 1em;
 }
 
 /*------------*/
@@ -9068,6 +9069,23 @@ html.wireframe {
   .l-content-area__pull-out .c-panel {
     padding-top: 0 !important;
   }
+}
+
+/******************************/
+a[href].cta--has-icon {
+  position: relative;
+}
+
+a[href].cta--has-icon::after {
+  content: "";
+  display: inline;
+  padding-left: 1.25em;
+}
+
+a[href].cta--has-icon .icon {
+  position: absolute;
+  bottom: 0;
+  transform: translateY(-25%);
 }
 
 /* ---------------------------------------------------------------------------------------------- */
