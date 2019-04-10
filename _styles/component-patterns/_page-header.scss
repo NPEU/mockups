@@ -25,10 +25,10 @@ $theme-only: false !default;
 	}
 	//@debug $theme-class;
 
-	.#{$page-header-namespace}page-header#{$theme-class} {
+	/*.#{$page-header-namespace}page-header#{$theme-class} {
 		color: map-get($theme, text-color);
 		background-color: map-get($theme, page-header-color);
-	}
+	}*/
 }
 
 // We don't need this if we're only themeing the pattern:
@@ -36,10 +36,10 @@ $theme-only: false !default;
 
     .#{$page-header-namespace}page-header {
     
-        &#{&} {
+        /*&#{&} {
             background-color: #fff;
             margin-bottom: 0;
-        }
+        }*/
     }
 
     @include page-header-theme(

@@ -76,9 +76,12 @@ $glimpse-spacing-unit: $fallback--base-rem-space-unit;
 
 @import "component-patterns/_page-footer.scss";
 
-$meter--text-color: #fff;
+//$meter--text-color: #fff;
+$meter-spacing-unit: $fallback--base-rem-space-unit;
 @import "component-patterns/_meter.scss";
 
+
+@import "component-patterns/_map.scss";
 
 $panel--padding: $fallback--base-rem-space-unit;
 @import "component-patterns/_panel.scss";

@@ -8,7 +8,7 @@
 
     {% if page.project != false %}
         {% assign project_base_url = page.project | prepend: '/' %}
-    {% else if page.project_base_url != false %}
+    {% elsif page.project_base_url != false %}
         {% assign project_base_url = page.project_base_url | prepend: '/' %}
     {% else %}
         {% assign project_base_url = '' %}
@@ -176,7 +176,7 @@
     {{ content }}
 
     {% if page.load_highlighter != false %}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>#
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
     {% endif %}
 

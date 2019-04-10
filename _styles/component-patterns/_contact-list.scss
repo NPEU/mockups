@@ -27,13 +27,15 @@ $theme-only: false !default;
     }
 
     .#{$contact-list-namespace}contact-avatar {
-        float: left;
-        margin: 0.5em;
-        width: 35%;
-        min-width: 8em;
-        max-width: 16em;
-        border-radius: 99999px;
-        overflow: hidden;
+        &#{&} {
+            float: left;
+            margin: 0.5em;
+            width: 35%;
+            min-width: 8em;
+            max-width: 16em;
+            border-radius: 99999px;
+            overflow: hidden;
+        }
     }
 
 }

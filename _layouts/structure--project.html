@@ -18,7 +18,7 @@ layout: structure
                     <div class="l-col-to-row__item  ff-width-100--40--50  l-center  u-padding--top--s  u-padding--sides--s">
                         
                         <span>
-                            <a href="/{{ project_data.randomisation_url }}" class="c-primary-cta  t-{{ page.project }}">Randomise to {{ project_data.name }}</a>
+                            <a href="{{ project_data.randomisation_url }}" class="c-primary-cta  t-{{ page.project }}">Randomise to {{ project_data.name }}</a>
                         </span>
                     </div>
                     {% endif %}
@@ -96,7 +96,7 @@ layout: structure
 
                 </div>
 
-                <p class="c-page-footer  l-center">
+                <p class="c-page-footer">
                     &copy; NPEU {{ site.time | date: '%Y'}}
                 </p>
             </div>

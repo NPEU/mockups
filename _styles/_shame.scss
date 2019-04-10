@@ -124,7 +124,7 @@ $enough-room-at: $fallback--base-rem-space-unit + $measure + $fallback--base-rem
     z-index: -1;
 }*/
 
-
+/*
 @media only screen and (max-width: $fallback--breakpoint--enhanced) {
     .js-over-panel-control.over-panel-control {
         margin-right: auto;
@@ -138,7 +138,7 @@ $enough-room-at: $fallback--base-rem-space-unit + $measure + $fallback--base-rem
         margin-top: $sz-s;
     }
 }
-
+*/
 
 @media only screen and (min-width: $fallback--breakpoint--enhanced) {
     .nav-bar.d-bands--bottom {
@@ -241,7 +241,7 @@ $enough-room-at: $fallback--base-rem-space-unit + $measure + $fallback--base-rem
     border: 0 !important;
 }
 /*-----------------*/
-
+/*
 
 $flex-grid-spacing-unit: $fallback--base-rem-space-unit;
 
@@ -298,9 +298,9 @@ $flex-grid-spacing-unit--large: ($flex-grid-spacing-unit * 2) !default;
                          flex-basis: auto;
         }
 
-    /* MODIFIERS */
+    // MODIFIERS
 
-    /* Widths */
+    // Widths
 
     &.flex-grid--basis-20 .flex-grid__item {
              -webkit-flex-basis: 20em;
@@ -322,10 +322,10 @@ $flex-grid-spacing-unit--large: ($flex-grid-spacing-unit * 2) !default;
                      flex-basis: 10em;
         max-width: 10em;
     }
-    /* @TODO make breakpoint a variable */
+    // @TODO make breakpoint a variable
 
-
-    /* Gutters */
+    
+    // Gutters
 
     &.flex-grid--gutter--small {
         margin-left: -($flex-grid-spacing-unit--small / 2);
@@ -356,7 +356,7 @@ $flex-grid-spacing-unit--large: ($flex-grid-spacing-unit * 2) !default;
     }
 
 
-    /* Alignment */
+    // Alignment
 
     &.flex-grid--align-center {
                       -ms-flex-pack: center;
@@ -366,10 +366,10 @@ $flex-grid-spacing-unit--large: ($flex-grid-spacing-unit * 2) !default;
 
 
 }
+*/
 
 
-
-
+/*
 .c-map {
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -411,7 +411,7 @@ $flex-grid-spacing-unit--large: ($flex-grid-spacing-unit * 2) !default;
         }
     }
 
-
+*/
 
 
 

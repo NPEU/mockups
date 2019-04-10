@@ -1,0 +1,56 @@
+/*
+*/
+$map-namespace: c- !default;
+//$theme-namespace: t- !default;
+
+$theme-only: false !default;
+
+// Note - no theme yet!
+
+// We don't need this if we're only themeing the pattern:
+@if $theme-only == false {
+
+    .#{$map-namespace}map {
+
+        &#{&} {
+
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+    }
+    
+    & > * {
+        width: 100%;
+        height: 100%;
+        min-height: 300px;
+    }
+    
+    // Fix map links inheriting styles:
+
+    &#{&}#{&} .leaflet-container a[href] {
+        background-color: transparent;
+        margin-bottom: 0;
+        border-bottom: 0;
+        color: #0078A8;
+
+        &:hover,
+        &:active,
+        &:focus {
+            color: #002b41;
+        }
+    }
+
+    &#{&}#{&} .leaflet-container .leaflet-bar a[href] {
+        background-color: #fff;
+        color: #000;
+
+        &:hover,
+        &:active,
+        &:focus {
+            background-color: #f4f4f4;
+        }
+    }
+}

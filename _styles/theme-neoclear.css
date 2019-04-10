@@ -505,18 +505,10 @@ $patterns: (
   color: #333;
 }
 
-/*@if $border-color == null {
-		$border-color: darken($background-color, 10%);
-    }*/
-.c-meter.t-neoclear {
-  color: #fff;
-}
-
-.c-page-header.t-neoclear {
-  color: #333;
-  background-color: #ffffff;
-}
-
+/*.c-page-header.t-neoclear {
+		color: map-get($theme, text-color);
+		background-color: map-get($theme, page-header-color);
+	}*/
 .c-panel.c-panel.t-neoclear {
   color: #333;
   background: #009590;

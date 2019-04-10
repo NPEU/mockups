@@ -129,7 +129,7 @@ function do_svgmin(cb) {
         gulp.src(img_src + '**/*.svg'),
         svgmin({
             plugins: [{
-                removeDimensions: true
+                removeViewBox: false
             }]
         }),
         gulp.dest(img_dest)

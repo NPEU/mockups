@@ -505,18 +505,10 @@ $patterns: (
   color: #333;
 }
 
-/*@if $border-color == null {
-		$border-color: darken($background-color, 10%);
-    }*/
-.c-meter.t-prumnhc {
-  color: #fff;
-}
-
-.c-page-header.t-prumnhc {
-  color: #333;
-  background-color: #ffffff;
-}
-
+/*.c-page-header.t-prumnhc {
+		color: map-get($theme, text-color);
+		background-color: map-get($theme, page-header-color);
+	}*/
 .c-panel.c-panel.t-prumnhc {
   color: #333;
   background: #614776;

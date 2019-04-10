@@ -40,8 +40,9 @@ $theme-only: false !default;
 
         &#{&} {
             background-color: #fff;
-            padding: 0 $sz-m $sz-m $sz-m;
+            padding: #{$sz-m / 2} $sz-m;
             margin: 0;
+            text-align: center;
         }
     }
 }

@@ -46,6 +46,8 @@ $col-to-row-spacing-unit--large: ($col-to-row-spacing-unit * 2) !default;
 
         -ms-flex-preferred-size: 100%; /* [1] */
 
+        min-width: 100%;
+        
         margin: 0;
         padding: 0;
         list-style-type: none;

@@ -178,7 +178,10 @@ $theme-only: false !default;
             position: relative;
             text-align: center;
             max-width: 13em;
-            order: -1;
+             -webkit-order: -1;
+            -ms-flex-order: -1;
+                     order: -1;
+            
 
 
             & img {
