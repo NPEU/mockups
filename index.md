@@ -7,4 +7,4 @@ title: NPEU Mockups
 * [NeoCLEAR](neoclear)
 * [PRU-MNHC](prumnhc)
 
-* [Patterns](patterns)
+* [Styleguide](styleguide)

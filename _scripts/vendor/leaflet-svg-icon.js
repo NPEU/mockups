@@ -197,4 +197,4 @@ L.Marker.SVGMarker = L.Marker.extend({
 
 L.marker.svgMarker = function(latlng, options) {
     return new L.Marker.SVGMarker(latlng, options)
-}
+};

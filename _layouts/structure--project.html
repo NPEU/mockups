@@ -2,7 +2,7 @@
 layout: structure
 ---
     {% assign project_data = site.data.projects[page.project] %}
-    <div class="sticky-footer-wrap  limit-page-width">
+    <div class="sticky-footer-wrap  c-page-wrap">
 
         <header class="c-page-header  t-{{ page.project }}  d-bands--bottomX">
             
@@ -54,7 +54,7 @@ layout: structure
         {% endif %}
         
         <div class="sticky-footer-expand  Xt-white  Xd-background">
-            <main role="main" class="main-container  Xd-background--very-dark  Xt-{{ page.project }}  Xu-fill-area">
+            <main role="main">
                 {{ content }}
             </main>
         </div>

@@ -1,21 +1,12 @@
 // Hmmm. THere's way too much in here already. Needs sorting.
 
-.limit-page-width {
-    max-width: 1600px;
-    margin: 0 auto;
-}
-
-
-
-
-
 
 $enough-room-at: $fallback--base-rem-space-unit + $measure + $fallback--base-rem-space-unit + $fallback--base-rem-space-unit + ($measure / 2) + $fallback--base-rem-space-unit;
 
 //@debug $enough-room-at;
 
 
-
+/*
 .tb-baseline {
     background: transparent url(http://lab.gridlight-design.co.uk/fallback-v1/line-grid-12px.gif) repeat;
 }
@@ -26,16 +17,16 @@ $enough-room-at: $fallback--base-rem-space-unit + $measure + $fallback--base-rem
     background: rgba(0,0,0,0.05);
     outline: 1px dashed rgba(0,0,0,0.2);
 }
-
+*/
 
 
 .sticky-footer-wrap {
-    background-color: #fff;
+    
     min-height: 100%;
     height: auto;
 }
 
-
+/*
 .feather {
     fill: none;
     stroke: currentColor;
@@ -46,7 +37,7 @@ $enough-room-at: $fallback--base-rem-space-unit + $measure + $fallback--base-rem
     width: 1.25em;
     height: 1.25em;
 }
-
+*/
 .svg__link:hover,
 .svg__link:active,
 .svg__link:focus {
@@ -58,8 +49,6 @@ $enough-room-at: $fallback--base-rem-space-unit + $measure + $fallback--base-rem
 .svg a[href]::after {
 	display: none;
 }
-
-
 
 
 
@@ -147,33 +136,9 @@ $enough-room-at: $fallback--base-rem-space-unit + $measure + $fallback--base-rem
 }
 
 
-/*----------------*/
-
-
-/*
-.c-recruitment__current {
-    font-size: 2em;
-}
-
-
-*/
-/*---------------------*/
-/*
-
-.l-blockrow {
-
-}
-
-.l-blockrow__limit-width {
-    max-width: 130rem;
-    margin: 0 auto;
-}
-
-
-*/
 /*-----------*/
 
-// Note Safari 10- doesn't factor in min/max width/height when deciding how many items can fit on 
+// Note Safari 10- doesn't factor in min/max width/height when deciding how many items can fit on
 // a multi-line flex container.
 // This means that the usual fab-four technique doesn't work as expected.
 .dl-2-col {
@@ -192,7 +157,7 @@ $enough-room-at: $fallback--base-rem-space-unit + $measure + $fallback--base-rem
     -webkit-flex: 1 0 8em;
         -ms-flex: 1 0 8em;
             flex: 1 0 8em;
-            
+
     margin: 0;
 }
 
@@ -200,11 +165,11 @@ $enough-room-at: $fallback--base-rem-space-unit + $measure + $fallback--base-rem
     -webkit-flex: 1 0 66%;
         -ms-flex: 1 0 66%;
             flex: 1 0 66%;
-            
+
      -webkit-align-self: flex-end;
     -ms-flex-item-align: end;
              align-self: flex-end;
-            
+
     margin: 0;
     padding-left: 1em;
 }
@@ -324,7 +289,7 @@ $flex-grid-spacing-unit--large: ($flex-grid-spacing-unit * 2) !default;
     }
     // @TODO make breakpoint a variable
 
-    
+
     // Gutters
 
     &.flex-grid--gutter--small {
@@ -416,10 +381,6 @@ $flex-grid-spacing-unit--large: ($flex-grid-spacing-unit * 2) !default;
 
 
 
-
-
-
-
 /***************************/
 // Navbar tweaks;
 
@@ -447,6 +408,10 @@ $flex-grid-spacing-unit--large: ($flex-grid-spacing-unit * 2) !default;
 }
 
 
+
+
+/***************************/
+
 @media only screen and (max-width: $content-area-breakpoint) {
     .l-content-area__pull-out.u-space--above {
         margin-top: 0 !important;
@@ -455,24 +420,4 @@ $flex-grid-spacing-unit--large: ($flex-grid-spacing-unit * 2) !default;
     .l-content-area__pull-out .c-panel {
         padding-top: 0 !important;
     }
-}
-
-
-
-/******************************/
-// Keep icons on same line as last word:
-a[href].cta--has-icon {
-    position: relative;
-}
-
-a[href].cta--has-icon::after {
-    content: "";
-    display: inline;
-    padding-left: 1.25em;
-}
-
-a[href].cta--has-icon .icon {
-    position: absolute;
-    bottom: 0;
-    transform: translateY(-25%);
 }

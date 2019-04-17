@@ -35,7 +35,7 @@ function empty_css_output(cb) {
 // Compile SCSS in expanded mode so it's easier to inspect the result.
 function do_sass(cb) {
     console.log('Running sass...');
-    
+
     pump([
         gulp.src(css_src + '**/*.scss'),
         sass({outputStyle: 'expanded'}),
@@ -50,7 +50,7 @@ function do_sass(cb) {
 // Then create a minified version in the output folder.
 function do_cssmin(cb) {
     console.log('Running cssmin...');
-    
+
     pump([
         gulp.src(css_src + '**/*.css'),
         cssmin(),
@@ -97,7 +97,7 @@ const svgmin   = require('gulp-svgmin');
 // the width and height attributes which causes problems for the PNG generation.
 function do_svg2png(cb) {
     console.log('Running svg2png...');
-    
+
     pump([
         gulp.src(img_src + '**/*.svg'),
         svg2png(),
@@ -112,7 +112,7 @@ function do_svg2png(cb) {
 // putting them in the output folder.
 function do_imagemin(cb) {
     console.log('Running imagemin...');
-    
+
     pump([
         gulp.src(img_src + '**/*.{png,jpg,gif}'),
         imagemin(),
@@ -124,7 +124,7 @@ function do_imagemin(cb) {
 // Finally, we're optimising the SVG's and putting them in the output folder.
 function do_svgmin(cb) {
     console.log('Running svgmin...');
-    
+
     pump([
         gulp.src(img_src + '**/*.svg'),
         svgmin({
@@ -149,9 +149,10 @@ exports.img = series(do_svg2png, do_imagemin, do_svgmin);
 /*------------------------------------------------------------------------------------------------*\
     JS
 \*------------------------------------------------------------------------------------------------*/
-const js_src      = './_scripts/';
-const js_dest     = './js/';
-const js_filename = 'script.js';
+const js_src          = './_scripts/';
+const js_dest         = './js/';
+const js_filename     = 'script.js';
+const js_map_filename = 'map.js';
 
 const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
@@ -160,10 +161,11 @@ const uglify = require('gulp-uglify');
 // Concat all JS files.
 function do_concat_js(cb) {
     console.log('Running concat_js...');
-    
+
+    // Common script:
     gulp.src([
-        './_scripts/cookie-notice-settings.js',
-        './_scripts/layout-adjustments.js',
+        './_scripts/js/cookie-notice-settings.js',
+        './_scripts/js/layout-adjustments.js',
         './bower_components/Fall-Back-Cookie-Notice/cookie-notice.js',
         './bower_components/Fall-Back-Nav-Bar/nav-bar.js',
         './bower_components/Fall-Back-Over-Panel/over-panel.js',
@@ -171,15 +173,29 @@ function do_concat_js(cb) {
     ])
     .pipe(concat(js_filename))
     .pipe(gulp.dest(js_src));
+
+    // Separate map script:
+    gulp.src([
+        './_scripts/vendor/leaflet-svg-icon.js',
+        './_scripts/vendor/leaflet-fullscreen.js',
+        './_scripts/js/leaflet-map.js'
+    ])
+    .pipe(concat(js_map_filename))
+    .pipe(gulp.dest(js_src));
+
+    // Callback:
     cb();
 }
 
 // And minifiy them.
 function do_uglify(cb) {
     console.log('Running uglify...');
-    
+
     pump([
-        gulp.src(js_src + js_filename),
+        gulp.src([
+            js_src + js_filename,
+            js_src + js_map_filename
+        ]),
         uglify(),
         rename({extname: '.min.js'}),
         gulp.dest(js_dest)
@@ -200,7 +216,7 @@ exports.js = series(do_concat_js, do_uglify);
 \*------------------------------------------------------------------------------------------------*/
 
 // Watch CSS:
-function do_watch_css(cb) {    
+function do_watch_css(cb) {
     watch(css_src + '**/*.scss', exports.css);
 }
 exports.watch_css = do_watch_css;
@@ -208,7 +224,7 @@ exports.watch_css = do_watch_css;
 
 // Watch JS:
 function do_watch_js(cb) {
-    watch(js_src + '**/!(script)*.js', exports.js);
+    watch(js_src + '**/!(script|map)*.js', exports.js);
 }
 exports.watch_js = do_watch_js;
 
@@ -216,6 +232,6 @@ exports.watch_js = do_watch_js;
 // Watch all of the above:
 function do_watch_all(cb) {
     watch(css_src + '**/*.scss', exports.css);
-    watch(js_src + '**/!(script)*.js', exports.js);
+    watch(js_src + '**/!(script|map)*.js', exports.js);
 }
 exports.watch_all = do_watch_all;

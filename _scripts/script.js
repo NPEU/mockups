@@ -20,7 +20,6 @@ var cookie_html                   =
 '<span class="cookie_notice__action"><button id="' + cookie_button_id + '" class="' + cookie_button_class + '">Dismiss</button></span>' + "\n" +
 '</div>';
 
-
 /*
     Can't be totally sure what this is for, now...
     It'll come back to me...

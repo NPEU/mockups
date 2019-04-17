@@ -15,9 +15,9 @@
 $experimental_checkradios: true;
 @import "../bower_components/Fall-Back-Start-CSS/dist/scss/_start.scss";
 @import "../bower_components/Fall-Back-Start-CSS/dist/scss/_start-classes.scss";
+@import "../bower_components/Fall-Back-Start-CSS/dist/scss/_start-icons.scss";
 @import "../bower_components/Fall-Back-Start-CSS/dist/scss/_start-experimental.scss";
 
-@import "../bower_components/Fall-Back-Base/_icons.scss";
 
 @import "_sizes";
 
@@ -227,6 +227,7 @@ $section-menu--link-margin: 0;
 @import "utility-patterns/_text-align.scss";
 @import "utility-patterns/_text-groups.scss";
 @import "utility-patterns/_word-wrap.scss";
+
 
 /*
 

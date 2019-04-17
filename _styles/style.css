@@ -388,16 +388,17 @@ a[href]:focus {
 }
 
 a[href][rel="external"]::after {
-  display: inline-block;
+  display: inline;
   content: "";
-  width: 0;
-  height: 0;
-  margin-right: 0.2em;
-  margin-left: 0.2em;
-  border-width: 0 0.4em 0.4em 0;
-  border-style: solid;
-  border-color: transparent  currentColor;
+  padding-left: 1.25em;
+  background: linear-gradient(45deg, transparent 50%, currentColor 50%);
+  font-size: 0.4em;
+  line-height: 0;
   vertical-align: super;
+}
+
+a[href][rel="external"]:hover::after {
+  background: linear-gradient(45deg, transparent 50%, currentColor 50%);
 }
 
 /*
@@ -613,6 +614,14 @@ dl {
 
 dt {
   font-weight: bold;
+}
+
+/*
+    1. De-italicize nested ems
+*/
+em em {
+  font-style: normal;
+  /* 1 */
 }
 
 /*
@@ -1955,6 +1964,26 @@ a[href].cta:focus {
   background-color: #ebe6f0;
 }
 
+a[href].button--has-icon,
+a[href].cta--has-icon {
+  position: relative;
+}
+
+a[href].button--has-icon::after,
+a[href].cta--has-icon::after {
+  content: "";
+  display: inline;
+  padding-left: 1.25em;
+  line-height: 0;
+}
+
+a[href].button--has-icon .icon,
+a[href].cta--has-icon .icon {
+  position: absolute;
+  bottom: 0;
+  transform: translateY(-15%);
+}
+
 .button[data-text][aria-hidden="true"] {
   display: inline-block;
   /* AK. IE9 needs this. Hmmm, for what exactly?*/
@@ -2108,16 +2137,20 @@ p.subtitle {
   /* 1 */
   vertical-align: middle;
   /* 2 */
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 /*
     1. Prevent extra height being added.
 */
 .composite > * {
-  /*display: flex; /* 1 */
   vertical-align: top;
   /* 1 */
-  flex: 1 1 auto;
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
 }
 
 /*
@@ -2297,6 +2330,124 @@ p.subtitle {
   background: #fff;
   overflow: auto;
   margin-bottom: 2.4rem;
+}
+
+/*-------------------------------------------------------------------------------------------------|
+    Fall-Back Icons v1.0.0
+
+    Designed for use with the basic [CSS Mustard Cut](https://github.com/Fall-Back/CSS-Mustard-Cut)
+    IE 9+, FF 8+, Opera 12, [Chrome 29+, Android ~4.4+]
+    Chrome 29+, Opera 16+, Safari 6.1+, iOS 7+, Android ~4.4+
+
+|-------------------------------------------------------------------------------------------------*/
+/*
+
+    This default icon set used Feather Icons (https://feathericons.com/)
+    If you want to use a different icon set, omit the @import declaration for this file and replace
+    it with a custom one.
+
+    <!-- At the top of each page: -->
+    <svg xmlns="http://www.w3.org/2000/svg" display="none">
+        <symbol id="icon-building" viewBox="0 0 24 24">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+        </symbol>
+        <symbol id="icon-calendar" viewBox="0 0 24 24">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+        </symbol>
+        <symbol id="icon-chevron-down" viewBox="0 0 24 24">
+            <polyline points="6 9 12 15 18 9"></polyline>
+        </symbol>
+        <symbol id="icon-chevron-up" viewBox="0 0 24 24">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </symbol>
+        <symbol id="icon-chevron-left" viewBox="0 0 24 24">
+            <polyline points="15 18 9 12 15 6"></polyline>
+        </symbol>
+        <symbol id="icon-chevron-right" viewBox="0 0 24 24">
+            <polyline points="9 18 15 12 9 6"></polyline>
+        </symbol>
+        <symbol id="icon-cross" viewBox="0 0 24 24">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+			<line x1="6" y1="6" x2="18" y2="18"></line>
+        </symbol>
+        <symbol id="icon-email" viewBox="0 0 24 24">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+        </symbol>
+        <symbol id="icon-facebook" viewBox="0 0 24 24">
+            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+        </symbol>
+        <symbol id="icon-fax" viewBox="0 0 24 24">
+            <path class="st0" d="M6,18H4c-1.1,0-2-0.7-2-1.6v-4c0-0.9,0.9-1.6,2-1.6h16c1.1,0,2,0.7,2,1.6v4c0,0.9-0.9,1.6-2,1.6h-2"/>
+            <rect x="6" y="14" class="st0" width="12" height="8"/>
+            <path class="st0" d="M6,7.4L4.8,6.2C4.4,5.7,4.4,5,4.8,4.6c0,0,0.1,0,0.1-0.1c1.4-1.1,3-1.9,4.7-2.2c1.6-0.4,3.2-0.4,4.8,0 c1.7,0.4,3.3,1.1,4.7,2.2c0.5,0.4,0.5,1.1,0.1,1.6c0,0,0,0.1-0.1,0.1L18,7.4c-0.4,0.4-1,0.5-1.5,0.1c-0.4-0.3-0.9-0.6-1.4-0.8 c-0.4-0.2-0.7-0.6-0.7-1v-1c-1.6-0.4-3.2-0.4-4.8,0v1c0,0.4-0.3,0.8-0.7,1C8.4,6.9,8,7.2,7.5,7.5C7.1,7.8,6.4,7.8,6,7.4z"/>
+        </symbol>
+        <symbol id="icon-file" viewBox="0 0 24 24">
+            <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
+            <polyline points="13 2 13 9 20 9"></polyline>
+        </symbol>
+        <symbol id="icon-linkedin" viewBox="0 0 24 24">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+            <rect x="2" y="9" width="4" height="12">
+            </rect><circle cx="4" cy="4" r="2"></circle>
+        </symbol>
+        <symbol id="icon-menu" viewBox="0 0 24 24">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+			<line x1="3" y1="6" x2="21" y2="6"></line>
+			<line x1="3" y1="18" x2="21" y2="18"></line>
+        </symbol>
+        <symbol id="icon-person" viewBox="0 0 24 24">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+        </symbol>
+        <symbol id="icon-phone" viewBox="0 0 24 24">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+        </symbol>
+        <symbol id="icon-twitter" viewBox="0 0 24 24">
+            <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+        </symbol>
+     </svg>
+
+
+
+    <!-- Where it's needed: -->
+    <svg display="none" class="icon" aria-label="Spoken label"><use xlink:href="#icon-triangle-down"></use></svg>
+    <!-- Note the aria-label can be removed if equivelent text is already present or the icon is visual only -->
+
+*/
+/*
+        1. Override display attribute.
+    */
+.icon {
+  display: inline;
+  /* [1] */
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  width: 1.25em;
+  height: 1.25em;
+}
+
+_:-o-prefocus, :root .icon {
+  vertical-align: middle;
+}
+
+.icon-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 /*! Start CSS Experimental. See SCSS file for documentation. */
@@ -2605,97 +2756,6 @@ _:-webkit-full-screen, _::-webkit-full-page-media, _:future, :root select[size="
 .ucbrowser input[type="radio"] {
   min-height: 0;
   -webkit-appearance: radio;
-}
-
-/*------------------------------------------------------------------------------------------------*\
-    Fall-Back Icons v1.0.0
-    
-    Designed for use with the basic [CSS Mustard Cut](https://github.com/Fall-Back/CSS-Mustard-Cut)
-    IE 9+, FF 8+, Opera 12, [Chrome 29+, Android ~4.4+]
-    Chrome 29+, Opera 16+, Safari 6.1+, iOS 7+, Android ~4.4+
-    
-\*------------------------------------------------------------------------------------------------*/
-/*
-
-
-    <!-- At the top of each page: -->
-    <svg xmlns="http://www.w3.org/2000/svg" display="none">
-        <symbol id="icon-triangle-down" viewBox="0 0 12 16">
-            <path d="M1,6h10l-5,5L1,6z"></path>
-        </symbol>
-        <symbol id="icon-cross" viewBox="0 0 16 16">
-            <path d="M15.5,2L14,0.5l-6,6l-6-6L0.5,2l6,6l-6,6L2,15.5l6-6l6,6l1.5-1.5l-6-6L15.5,2z"></path>
-        </symbol>
-        <symbol id="icon-menu" viewBox="0 0 16 16">
-            <rect x="0" width="16" height="3"/>
-            <rect x="0" y="6" width="16" height="3"/>
-            <rect y="12" width="16" height="3"/>
-        </symbol>
-        <!-- Other <symbol>s... -->
-    </svg>
-    
-    
-    <!-- Where it's needed: -->
-    <svg width="0" height="0" class="icon  icon--narrow" aria-label="About Us Submenu"><use xlink:href="#icon-triangle-down"></use></svg>
-    <!-- Note the aria-label can be removed if equivelent text is already present or the icon is visual only -->
-
-*/
-/*
-    1. Override display attribute.
-*/
-.icon {
-  display: inline;
-  /* [1] */
-  fill: currentColor;
-  width: 1.14285714286em;
-  height: 1.14285714286em;
-  /*width: 1.71428571429em;
-    height: 1.71428571429em;*/
-  /* No idea why, exactly, but this seems to be the best position, we long as we ... */
-  /* ... prevent the icon affecting line-height: */
-  /*
-    -webkit-transform: scale(0.666);
-    -moz-transform: scale(0.666);
-    -ms-transform: scale(0.666);
-    transform: scale(0.666);*/
-}
-
-.icon--narrow {
-  /*margin: -0.5em -0.25em;*/
-  width: 0.85714285714em;
-}
-
-_:-o-prefocus, :root .icon {
-  vertical-align: middle;
-}
-
-/*
-.icon symbol {
-    width: 1.14285714286em;
-    height: 1.14285714286em;
-}*/
-/*
-    No transform support for Opera Mini, so hack it back to 16px with ems.
-    Note, since Opera Mini doesn't support line-height, it will be vertically centered anyway.
-    1. Hack also affects Opera 12 which is supported by the Original Mustard Cut, so turning off
-       transform for this. Slight difference in position acceptable (lower).
-*/
-/*
-_:-o-prefocus, :root .icon {
-    width: 1.14285714286em;
-    height: 1.14285714286em;
-    transform: none; /* [1] *
-}*/
-.icon-wrap {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
 }
 
 /*
@@ -5987,6 +6047,14 @@ $glimpse--link-border-bottom--hover: false !default;*/
 
 /*
 */
+.c-page-wrap.c-page-wrap {
+  max-width: 1600px;
+  margin: 0 auto;
+  background-color: #fff;
+}
+
+/*
+*/
 .c-meter {
   /*& meter {
                 //display: block;
@@ -6082,6 +6150,50 @@ $glimpse--link-border-bottom--hover: false !default;*/
     }*/
 .c-meter {
   color: currentColor;
+}
+
+/*
+*/
+.c-map img {
+  max-height: 300px;
+}
+
+.js-map .c-map {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.js-map .c-map > * {
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+}
+
+.js-map .c-map .leaflet-container a[href] {
+  background-color: transparent;
+  margin-bottom: 0;
+  border-bottom: 0;
+  color: #0078A8;
+}
+
+.js-map .c-map .leaflet-container a[href]:hover, .js-map .c-map .leaflet-container a[href]:active, .js-map .c-map .leaflet-container a[href]:focus {
+  color: #002b41;
+}
+
+.js-map .c-map .leaflet-container .leaflet-bar a[href] {
+  background-color: #fff;
+  color: #000;
+}
+
+.js-map .c-map .leaflet-container .leaflet-bar a[href]:hover, .js-map .c-map .leaflet-container .leaflet-bar a[href]:active, .js-map .c-map .leaflet-container .leaflet-bar a[href]:focus {
+  background-color: #f4f4f4;
+}
+
+.js-map .c-map .leaflet-control-zoom.leaflet-bar.leaflet-control {
+  padding-bottom: 2px;
 }
 
 .c-panel.c-panel {
@@ -8812,38 +8924,35 @@ html.wireframe {
 
 /* ---------------------------------------------------------------------------------------------- */
 /* --| SHAME |----------------------------------------------------------------------------------- */
-.limit-page-width {
-  max-width: 1600px;
-  margin: 0 auto;
-}
-
+/*
 .tb-baseline {
-  background: transparent url(http://lab.gridlight-design.co.uk/fallback-v1/line-grid-12px.gif) repeat;
+    background: transparent url(http://lab.gridlight-design.co.uk/fallback-v1/line-grid-12px.gif) repeat;
 }
 
 .tb-outlines h1, .tb-outlines h2, .tb-outlines h3, .tb-outlines h4, .tb-outlines h5, .tb-outlines h6,
 .tb-outlines p, .tb-outlines li,
 .tb-outlines figcaption {
-  background: rgba(0, 0, 0, 0.05);
-  outline: 1px dashed rgba(0, 0, 0, 0.2);
+    background: rgba(0,0,0,0.05);
+    outline: 1px dashed rgba(0,0,0,0.2);
 }
-
+*/
 .sticky-footer-wrap {
-  background-color: #fff;
   min-height: 100%;
   height: auto;
 }
 
+/*
 .feather {
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  width: 1.25em;
-  height: 1.25em;
-}
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
 
+    width: 1.25em;
+    height: 1.25em;
+}
+*/
 .svg__link:hover,
 .svg__link:active,
 .svg__link:focus {
@@ -8933,28 +9042,6 @@ html.wireframe {
   }
 }
 
-/*----------------*/
-/*
-.c-recruitment__current {
-    font-size: 2em;
-}
-
-
-*/
-/*---------------------*/
-/*
-
-.l-blockrow {
-
-}
-
-.l-blockrow__limit-width {
-    max-width: 130rem;
-    margin: 0 auto;
-}
-
-
-*/
 /*-----------*/
 .dl-2-col {
   display: -ms-flexbox;
@@ -9090,7 +9177,7 @@ $flex-grid-spacing-unit--large: ($flex-grid-spacing-unit * 2) !default;
     }
     // @TODO make breakpoint a variable
 
-    
+
     // Gutters
 
     &.flex-grid--gutter--small {
@@ -9133,40 +9220,49 @@ $flex-grid-spacing-unit--large: ($flex-grid-spacing-unit * 2) !default;
 
 }
 */
+/*
 .c-map {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  height: 100%;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    height: 100%
 }
 
-.c-map > * {
-  width: 100%;
-  height: 100%;
-  min-height: 300px;
-}
+    .c-map > * {
+        width: 100%;
+        height: 100%;
+        min-height: 300px;
+    }
 
-.c-map.c-map.c-map .leaflet-container a[href] {
-  background-color: transparent;
-  margin-bottom: 0;
-  border-bottom: 0;
-  color: #0078A8;
-}
 
-.c-map.c-map.c-map .leaflet-container a[href]:hover, .c-map.c-map.c-map .leaflet-container a[href]:active, .c-map.c-map.c-map .leaflet-container a[href]:focus {
-  color: #002b41;
-}
+    // Fix map links inheriting styles:
 
-.c-map.c-map.c-map .leaflet-container .leaflet-bar a[href] {
-  background-color: #fff;
-  color: #000;
-}
+    .c-map.c-map.c-map .leaflet-container a[href] {
+        background-color: transparent;
+        margin-bottom: 0;
+        border-bottom: 0;
+        color: #0078A8;
 
-.c-map.c-map.c-map .leaflet-container .leaflet-bar a[href]:hover, .c-map.c-map.c-map .leaflet-container .leaflet-bar a[href]:active, .c-map.c-map.c-map .leaflet-container .leaflet-bar a[href]:focus {
-  background-color: #f4f4f4;
-}
+        &:hover,
+        &:active,
+        &:focus {
+            color: #002b41;
+        }
+    }
 
+    .c-map.c-map.c-map .leaflet-container .leaflet-bar a[href] {
+        background-color: #fff;
+        color: #000;
+
+        &:hover,
+        &:active,
+        &:focus {
+            background-color: #f4f4f4;
+        }
+    }
+
+*/
 /***************************/
 .nav-bar::before,
 .nav-bar::after {
@@ -9190,6 +9286,7 @@ $flex-grid-spacing-unit--large: ($flex-grid-spacing-unit * 2) !default;
   top: 3.3rem;
 }
 
+/***************************/
 @media only screen and (max-width: 60em) {
   .l-content-area__pull-out.u-space--above {
     margin-top: 0 !important;
@@ -9197,23 +9294,6 @@ $flex-grid-spacing-unit--large: ($flex-grid-spacing-unit * 2) !default;
   .l-content-area__pull-out .c-panel {
     padding-top: 0 !important;
   }
-}
-
-/******************************/
-a[href].cta--has-icon {
-  position: relative;
-}
-
-a[href].cta--has-icon::after {
-  content: "";
-  display: inline;
-  padding-left: 1.25em;
-}
-
-a[href].cta--has-icon .icon {
-  position: absolute;
-  bottom: 0;
-  transform: translateY(-25%);
 }
 
 /* ---------------------------------------------------------------------------------------------- */
