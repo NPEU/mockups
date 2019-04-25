@@ -13,17 +13,20 @@
 
 
 $experimental_checkradios: true;
-@import "../bower_components/Fall-Back-Start-CSS/dist/scss/_start.scss";
-@import "../bower_components/Fall-Back-Start-CSS/dist/scss/_start-classes.scss";
-@import "../bower_components/Fall-Back-Start-CSS/dist/scss/_start-icons.scss";
-@import "../bower_components/Fall-Back-Start-CSS/dist/scss/_start-experimental.scss";
+
+@import '../bower_components/Fall-Back-Start-CSS/scss/_start.scss';
+@import '../bower_components/Fall-Back-Start-CSS/scss/_start-classes.scss';
+@import '../bower_components/Fall-Back-Start-CSS/scss/_start-accessibility.scss';
+@import '../bower_components/Fall-Back-Start-CSS/scss/_start-utilities.scss';
+@import '../bower_components/Fall-Back-Start-CSS/scss/_start-icons.scss';
+@import '../bower_components/Fall-Back-Start-CSS/scss/_start-experimental.scss';
 
 
 @import "_sizes";
 
 
 $hover-effect-opacity: 0.2;
-$hover-effect-width: $fallback--base-rem-space-unit / 4;
+$hover-effect-width: $f__base-rem-space-unit / 4;
 
 
 /* ---------------------------------------------------------------------------------------------- */
@@ -37,54 +40,54 @@ $hover-effect-width: $fallback--base-rem-space-unit / 4;
 /* --| BASE |------------------------------------------------------------------------------------ */
 
 //$max-main-line-length: 0;
-//@import "../bower_components/Fall-Back-Start-CSS/dist/scss/_start";
+//@import "../bower_components/Fall-Back-Start-CSS/scss/_start";
 
 /* ---------------------------------------------------------------------------------------------- */
 /* --| FALL-BACK PATTERNS |---------------------------------------------------------------------- */
 
-$fallback--over-panel__contents--offset-top: 3px;
-$fallback--over-panel__contents--padding: 0;
-$fallback--over-panel__overlay--background-color: #000;
-@import "../bower_components/Fall-Back-Over-Panel/_over-panel";
+$f__over-panel__contents--offset-top: 3px;
+$f__over-panel__contents--padding: 0;
+$f__over-panel__overlay--background-color: #000;
+@import "../bower_components/Fall-Back-Patterns/Over Panel/scss/_over-panel";
 
 
 
 
-$fallback--nav-bar--background-color:             transparent;//#fff;
-$fallback--nav-bar__link--color:                  #fff;//#333;
-$fallback--nav-bar__link--background-color:       $fallback--nav-bar--background-color;
-$fallback--nav-bar__link--background-color--alt:  rgba(0,0,0,0.3);
-$fallback--nav-bar__link--background-color--alt2: rgba(0,0,0,0.3);
+$f__nav-bar--background-color:             transparent;//#fff;
+$f__nav-bar__link--color:                  #fff;//#333;
+$f__nav-bar__link--background-color:       $f__nav-bar--background-color;
+$f__nav-bar__link--background-color--alt:  rgba(0,0,0,0.3);
+$f__nav-bar__link--background-color--alt2: rgba(0,0,0,0.3);
 
-$fallback--sub-nav--background-color:             $fallback--nav-bar--background-color;
-$fallback--sub-nav__link--color:                  $fallback--nav-bar__link--color;
-$fallback--sub-nav__link--background-color:       $fallback--nav-bar--background-color;
-//$fallback--sub-nav__link--background-color--alt: darken($fallback--nav-bar--background-color, 14%);
-$fallback--sub-nav__link--background-color--alt:  rgba(0,0,0,0.3);
-
-
-@import "../bower_components/Fall-Back-Nav-Bar/_nav-bar";
+$f__sub-nav--background-color:             $f__nav-bar--background-color;
+$f__sub-nav__link--color:                  $f__nav-bar__link--color;
+$f__sub-nav__link--background-color:       $f__nav-bar--background-color;
+//$f__sub-nav__link--background-color--alt: darken($f__nav-bar--background-color, 14%);
+$f__sub-nav__link--background-color--alt:  rgba(0,0,0,0.3);
 
 
-
-
-$fallback--dropdown--background-color:              $fallback--nav-bar--background-color;
-$fallback--dropdown--text-color:                    $fallback--nav-bar__link--color;
-$fallback--dropdown__button--color:                 $fallback--nav-bar__link--color;
-$fallback--dropdown__button--background-color:      $fallback--nav-bar__link--background-color;
-$fallback--dropdown__button--background-color--alt: $fallback--nav-bar__link--background-color--alt;
-
-@import "../bower_components/Fall-Back-Dropdown/_dropdown";
-
-
-
-//$fallback--search-form--breakpoint--enhanced: 50em;
-@import "../bower_components/Fall-Back-Search-Form/_search-form";
+@import "../bower_components/Fall-Back-Patterns/Nav Bar/scss/_nav-bar";
 
 
 
 
-@import "../bower_components/Fall-Back-Sticky-Footer/_sticky-footer";
+$f__dropdown--background-color:              $f__nav-bar--background-color;
+$f__dropdown--text-color:                    $f__nav-bar__link--color;
+$f__dropdown__button--color:                 $f__nav-bar__link--color;
+$f__dropdown__button--background-color:      $f__nav-bar__link--background-color;
+$f__dropdown__button--background-color--alt: $f__nav-bar__link--background-color--alt;
+
+@import "../bower_components/Fall-Back-Patterns/Dropdown/scss/_dropdown";
+
+
+
+//$f__search-form--breakpoint--enhanced: 50em;
+@import "../bower_components/Fall-Back-Patterns/Search Form/scss/_search-form";
+
+
+
+
+@import "../bower_components/Fall-Back-Patterns/Sticky Footer/scss/_sticky-footer";
 /*
 $fallback-svg--fixed-height:      80px;
 $fallback-svg--padding:           calc-px-from-rem($sz-xs);
@@ -97,7 +100,7 @@ $fallback-svg--link-bg-color-alt: #fff;
 @include svg--fixed-height(120px, 'svg--fixed-height--logo--large', 0, 0);
 @include svg--fixed-height(80px, 'svg--fixed-height--logo', 0, 0);
 @include svg--fixed-height(60px, 'svg--fixed-height--parent-logo', 0, 0);
-@include svg--fixed-height(($fallback--base-rem-space-unit * 4), 'svg--fixed-height--funder-logo', ($fallback--base-rem-space-unit / 2), 0);
+@include svg--fixed-height(($f__base-rem-space-unit * 4), 'svg--fixed-height--funder-logo', ($f__base-rem-space-unit / 2), 0);
 */
 
 @import "../bower_components/Fall-Back-Cookie-Notice/_cookie-notice";
@@ -139,7 +142,7 @@ $ff-min-widths: (
 @import "../bower_components/NPEU-layout-patterns/dev/scss/_scl--n-up.scss";
 
 
-$gallery-grid-spacing-unit: $fallback--base-rem-space-unit;
+$gallery-grid-spacing-unit: $f__base-rem-space-unit;
 @import "../bower_components/NPEU-layout-patterns/dev/scss/_gallery-grid.scss";
 
 /* --| Themeable Patterns |---------------------------------------------------------------------- */
@@ -168,11 +171,11 @@ $neutral-theme: map-get($themes, neutral);
 
 /* --| Layout Patterns |------------------------------------------------------------------------- */
 
-$col-to-row-spacing-unit: $fallback--base-rem-space-unit;
+$col-to-row-spacing-unit: $f__base-rem-space-unit;
 @import "layout-patterns/_col-to-row.scss";
 
 //$content-area-max-width: 42em;
-$content-area-spacing-unit: $fallback--base-rem-space-unit;
+$content-area-spacing-unit: $f__base-rem-space-unit;
 $content-area-pull-out-side: right;
 $content-area-pull-out-side-space: 0 $content-area-spacing-unit;
 @import "layout-patterns/_content-area.scss";
@@ -196,13 +199,13 @@ $breadcrumbs-font-size: 1em;
 @import "navigation-patterns/_breadcrumbs.scss";
 
 
-$pagination-spacing-unit: $fallback--base-rem-space-unit;
+$pagination-spacing-unit: $f__base-rem-space-unit;
 $pagination--link-background-color--alt: lighten(map-get($neutral-theme, background-color), 25%);
 $pagination--background-color: #fff;
 $pagination--active-background-color: lighten(map-get($neutral-theme, background-color), 40%);
 @import "navigation-patterns/_pagination.scss";
 
-$section-menu-spacing-unit: $fallback--base-rem-space-unit;
+$section-menu-spacing-unit: $f__base-rem-space-unit;
 $section-menu--link-background-color--alt: lighten(map-get($neutral-theme, background-color), 25%);
 $section-menu--background-color: #fff;
 $section-menu--active-background-color: lighten(map-get($neutral-theme, background-color), 40%);

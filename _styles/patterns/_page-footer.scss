@@ -1,6 +1,6 @@
 .page-footer {
-    background-color: $fallback--base-ui-color;
-    padding: ($fallback--base-em-ratio * 1.5em) / 3;
+    background-color: $f__base-ui-color;
+    padding: ($f__base-em-ratio * 1.5em) / 3;
     font-size: 0.875em;
     text-align: center;
     color: #fff;
@@ -8,11 +8,11 @@
 }
 
     .page-footer a[href] {
-        color: lighten($fallback--base-ui-color, 40%);
+        color: lighten($f__base-ui-color, 40%);
     }
     
     .page-footer a[href]:hover,
     .page-footer a[href]:active,
     .page-footer a[href]:focus {
-        color: lighten($fallback--base-ui-color, 20%);
+        color: lighten($f__base-ui-color, 20%);
     }

@@ -1,7 +1,7 @@
 // Hmmm. THere's way too much in here already. Needs sorting.
 
 
-$enough-room-at: $fallback--base-rem-space-unit + $measure + $fallback--base-rem-space-unit + $fallback--base-rem-space-unit + ($measure / 2) + $fallback--base-rem-space-unit;
+$enough-room-at: $f__base-rem-space-unit + $measure + $f__base-rem-space-unit + $f__base-rem-space-unit + ($measure / 2) + $f__base-rem-space-unit;
 
 //@debug $enough-room-at;
 
@@ -114,7 +114,7 @@ $enough-room-at: $fallback--base-rem-space-unit + $measure + $fallback--base-rem
 }*/
 
 /*
-@media only screen and (max-width: $fallback--breakpoint--enhanced) {
+@media only screen and (max-width: $f__breakpoint--enhanced) {
     .js-over-panel-control.over-panel-control {
         margin-right: auto;
     }
@@ -129,7 +129,7 @@ $enough-room-at: $fallback--base-rem-space-unit + $measure + $fallback--base-rem
 }
 */
 
-@media only screen and (min-width: $fallback--breakpoint--enhanced) {
+@media only screen and (min-width: $f__breakpoint--enhanced) {
     .nav-bar.d-bands--bottom {
         border: 0;
     }
@@ -208,7 +208,7 @@ $enough-room-at: $fallback--base-rem-space-unit + $measure + $fallback--base-rem
 /*-----------------*/
 /*
 
-$flex-grid-spacing-unit: $fallback--base-rem-space-unit;
+$flex-grid-spacing-unit: $f__base-rem-space-unit;
 
 //////
 

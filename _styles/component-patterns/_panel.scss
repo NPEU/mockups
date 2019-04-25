@@ -97,11 +97,11 @@ $theme-only: false !default;
         
         &--module {
             margin-bottom:0;
-            //margin-bottom: $fallback--base-rem-space-unit / 2;
+            //margin-bottom: $f__base-rem-space-unit / 2;
             
             h2 {
-                font-size: 24px / $fallback--base-font-size * 1em;
-                //margin-bottom: $fallback--base-rem-space-unit / 2;
+                font-size: 24px / $f__base-font-size * 1em;
+                //margin-bottom: $f__base-rem-space-unit / 2;
                 margin-bottom: 0;
             }
         }

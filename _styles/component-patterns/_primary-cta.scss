@@ -3,7 +3,7 @@ $primary-cta-namespace: c- !default;
 $theme-namespace: t- !default;
 
 $primary-cta--text-color            : #fff !default;
-$primary-cta--background-color      : $fallback--base-ui-color !default;
+$primary-cta--background-color      : $f__base-ui-color !default;
 $primary-cta--background-color--alt : -10 !default;
 
 // Note: border color gets darkened by default later, but declaring here to allow specific override:
@@ -12,7 +12,7 @@ $primary-cta--background-color--alt : -10 !default;
 //$primary-cta--border-width: 1px !default;
 //$primary-cta--border-style: solid !default;
 
-$primary-cta--padding: $fallback--base-rem-space-unit / 2 !default;
+$primary-cta--padding: $f__base-rem-space-unit / 2 !default;
 
 $theme-only: false !default;
 
@@ -38,14 +38,14 @@ $theme-only: false !default;
             //box-shadow: 0 0 0 $hover-effect-width rgba(map-get($theme, background-color), $hover-effect-opacity);
             color: map-get($theme, cta-text-color);
 
-            /*@if is-int($button-background-color--alt) {
-                @if $button-background-color--alt > 0 {
-                    $button-background-color--alt_percent: $button-background-color--alt * 1%;
-                    background-color: lighten(map-get($theme, cta-background-color), $button-background-color--alt_percent);
+            /*@if is-int($f__button-background-color--alt) {
+                @if $f__button-background-color--alt > 0 {
+                    $f__button-background-color--alt_percent: $f__button-background-color--alt * 1%;
+                    background-color: lighten(map-get($theme, cta-background-color), $f__button-background-color--alt_percent);
                 }
-                @if $button-background-color--alt < 0 {
-                    $button-background-color--alt_percent: $button-background-color--alt * -1%;
-                    background-color: darken(map-get($theme, cta-background-color), $button-background-color--alt_percent);
+                @if $f__button-background-color--alt < 0 {
+                    $f__button-background-color--alt_percent: $f__button-background-color--alt * -1%;
+                    background-color: darken(map-get($theme, cta-background-color), $f__button-background-color--alt_percent);
                 }
             }
             */
@@ -78,7 +78,7 @@ $theme-only: false !default;
 
             text-align: center;
             margin-bottom: 0;
-            margin-left: $fallback--base-rem-space-unit / 2 ;
+            margin-left: $f__base-rem-space-unit / 2 ;
 
                 &:hover,
                 &:active,

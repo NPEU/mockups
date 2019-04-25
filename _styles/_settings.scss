@@ -2,26 +2,25 @@
 
 */
 
+$f__base-font-family: 'Lato', sans-serif;
 
-$fallback--base-font-family: 'Lato', sans-serif;
+$f__root-font-size: 10px;
 
-$fallback--root-font-size: 10px;
+$f__base-ui-color: #614776;
+$f__breakpoint--enhanced: 42.5625em;
 
-$fallback--base-ui-color: #614776;
-$fallback--breakpoint--enhanced: 42.5625em;
-
-@import '../bower_components/Fall-Back-Start-CSS/dist/scss/_start__settings.scss';
+@import '../bower_components/Fall-Back-Start-CSS/scss/_start_settings.scss';
 
 
 $max-main-line-length: 0;
 $measure: 68rem;
 $not-too-small: 18em;
 
-$h1-font-size: 40px / $fallback--base-font-size * 1em !default;
-$h2-font-size: 32px / $fallback--base-font-size * 1em !default;
-$h3-font-size: 26px / $fallback--base-font-size * 1em !default;
+$h1-font-size: 40px / $f__base-font-size * 1em !default;
+$h2-font-size: 32px / $f__base-font-size * 1em !default;
+$h3-font-size: 26px / $f__base-font-size * 1em !default;
 $hover-effect-opacity: 0.2;
-$hover-effect-width: $fallback--base-rem-space-unit / 4;
+$hover-effect-width: $f__base-rem-space-unit / 4;
 
 /* --| FUNCTIONS AND MIXINS |-------------------------------------------------------------------- */
 
@@ -33,7 +32,7 @@ $hover-effect-width: $fallback--base-rem-space-unit / 4;
 		content: "";
 		display: block;
 		height: 1px;
-        margin-top: calc(#{$fallback--base-rem-space-unit} - 1px);
+        margin-top: calc(#{$f__base-rem-space-unit} - 1px);
 	}
 
 }

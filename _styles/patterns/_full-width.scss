@@ -6,6 +6,6 @@ main > :not(.full-width) {
 
 // Negate main margin:
 .full-width {
-    margin-left: -$fallback--base-rem-space-unit;
-    margin-right: -$fallback--base-rem-space-unit;
+    margin-left: -$f__base-rem-space-unit;
+    margin-right: -$f__base-rem-space-unit;
 }

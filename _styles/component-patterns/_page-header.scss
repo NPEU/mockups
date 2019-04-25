@@ -3,9 +3,9 @@ $page-header-namespace: c- !default;
 $theme-namespace: t- !default;
 
 $page-header--text-color       : #fff !default;
-$page-header--background-color : $fallback--base-ui-color !default;
+$page-header--background-color : $f__base-ui-color !default;
 
-$page-header--band-color       : $fallback--base-ui-color !default;
+$page-header--band-color       : $f__base-ui-color !default;
 
 // Note: border color gets darkened by default later, but declaring here to allow specific override:
 //$panel--border-color: darken($panel--background-color, 10%) !default;
@@ -13,7 +13,7 @@ $page-header--band-color       : $fallback--base-ui-color !default;
 //$page-header--border-width: 1px !default;
 //$page-header--border-style: solid !default;
 
-$page-header--padding: $fallback--base-rem-space-unit / 2 !default;
+$page-header--padding: $f__base-rem-space-unit / 2 !default;
 
 $theme-only: false !default;
 

@@ -103,14 +103,14 @@ $patterns: (
         &:hover,
         &:active,
         &:focus {
-            @if is-int($button-background-color--alt) {
-                @if $button-background-color--alt > 0 {
-                    $button-background-color--alt_percent: $button-background-color--alt * 1%;
-                    background-color: lighten(map-get($theme, background-color), $button-background-color--alt_percent);
+            @if is-int($f__button-background-color--alt) {
+                @if $f__button-background-color--alt > 0 {
+                    $f__button-background-color--alt_percent: $f__button-background-color--alt * 1%;
+                    background-color: lighten(map-get($theme, background-color), $f__button-background-color--alt_percent);
                 }
-                @if $button-background-color--alt < 0 {
-                    $button-background-color--alt_percent: $button-background-color--alt * -1%;
-                    background-color: darken(map-get($theme, background-color), $button-background-color--alt_percent);
+                @if $f__button-background-color--alt < 0 {
+                    $f__button-background-color--alt_percent: $f__button-background-color--alt * -1%;
+                    background-color: darken(map-get($theme, background-color), $f__button-background-color--alt_percent);
                 }
             }
         }
