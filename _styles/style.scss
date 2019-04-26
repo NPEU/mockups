@@ -14,6 +14,9 @@
 
 $experimental_checkradios: true;
 
+$f__main-max-line-length: 0;
+$f__main-padding: 0;
+
 @import '../bower_components/Fall-Back-Start-CSS/scss/_start.scss';
 @import '../bower_components/Fall-Back-Start-CSS/scss/_start-classes.scss';
 @import '../bower_components/Fall-Back-Start-CSS/scss/_start-accessibility.scss';
@@ -37,15 +40,10 @@ $hover-effect-width: $f__base-rem-space-unit / 4;
 
 
 /* ---------------------------------------------------------------------------------------------- */
-/* --| BASE |------------------------------------------------------------------------------------ */
 
-//$max-main-line-length: 0;
-//@import "../bower_components/Fall-Back-Start-CSS/scss/_start";
-
-/* ---------------------------------------------------------------------------------------------- */
 /* --| FALL-BACK PATTERNS |---------------------------------------------------------------------- */
 
-$f__over-panel__contents--offset-top: 3px;
+//$f__over-panel__contents--offset-top: 3px;
 $f__over-panel__contents--padding: 0;
 $f__over-panel__overlay--background-color: #000;
 @import "../bower_components/Fall-Back-Patterns/Over Panel/scss/_over-panel";

@@ -10,8 +10,8 @@
 @import "_sizes";
 
 
-$suppress_styles: true;
-@import "../bower_components/Fall-Back-Start-CSS/scss/_start.scss";
+//$suppress_styles: true;
+//@import "../bower_components/Fall-Back-Start-CSS/scss/_start.scss";
 
 /* --| Component Patterns |---------------------------------------------------------------------- */
 
@@ -103,4 +103,3 @@ $panel--padding: $f__base-rem-space-unit;
 // These patterns are themeable and so are included via '_themeable_patterns.scss'.
 @import "decoration-patterns/_background.scss";
 @import "decoration-patterns/_bands.scss";
-

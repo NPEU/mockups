@@ -6,6 +6,27 @@
 
 $space-namespace: u- !default;
 
+.#{$space-namespace}space--left--auto {
+    margin-left: auto !important;
+}
+
+.#{$space-namespace}space--right--auto {
+    margin-right: auto !important;
+}
+
+
+.#{$space-namespace}space--right--s {
+    margin-right: $sz-s !important;
+}
+
+.#{$space-namespace}space--above--s {
+    margin-top: $sz-s !important;
+}
+
+.#{$space-namespace}space--below--s {
+    margin-bottom: $sz-s !important;
+}
+
 .#{$space-namespace}space--left--s {
     margin-left: $sz-s !important;
 }

@@ -79,17 +79,18 @@ $theme: map-merge(
 }*/
 
 
-.#{$theme-namespace}#{$name} button,
+/*.#{$theme-namespace}#{$name} button,
 .#{$theme-namespace}#{$name} button.over-panel-control,
-.#{$theme-namespace}#{$name} button.over-panel-control[aria-expanded=true] {
-
+.#{$theme-namespace}#{$name} button.over-panel-control[aria-expanded=true] {*/
+.#{$theme-namespace}#{$name} button:not(.over-panel__overlay):not(.dropdown__button),
+.#{$theme-namespace}#{$name} button:not(.over-panel__overlay)[aria-expanded=true] {
     border-color: map-get($theme, border-color);
     color: map-get($theme, cta-text-color);
     background-color: map-get($theme, background-color);
 
     &:hover,
     &:active,
-    &:focus, {
+    &:focus {
         @if is-int($f__button-background-color--alt) {
             @if $f__button-background-color--alt > 0 {
                 $f__button-background-color--alt_percent: $f__button-background-color--alt * 1%;
@@ -106,7 +107,27 @@ $theme: map-merge(
     }
 }
 
-/* - Don't do this, it's too generic and results in equal specifivity that's resolved in source 
+// Search button:
+.#{$theme-namespace}#{$name}.search-form .search-form__submit {
+    background-color: map-get($theme, background-color);
+
+    &:hover,
+    &:active,
+    &:focus {
+        @if is-int($f__button-background-color--alt) {
+            @if $f__button-background-color--alt > 0 {
+                $f__button-background-color--alt_percent: $f__button-background-color--alt * 1%;
+                background-color: lighten(map-get($theme, background-color), $f__button-background-color--alt_percent);
+            }
+            @if $f__button-background-color--alt < 0 {
+                $f__button-background-color--alt_percent: $f__button-background-color--alt * -1%;
+                background-color: darken(map-get($theme, background-color), $f__button-background-color--alt_percent);
+            }
+        }
+    }
+}
+
+/* - Don't do this, it's too generic and results in equal specifivity that's resolved in source
     order, thus later themes win out, causing problems.
 .#{$theme-namespace}#{$name} a[href] {
 
@@ -138,7 +159,7 @@ $theme: map-merge(
         } @else {
             background-color: rgba(255,255,255,0.2);
         }
-     
+
 
         //background-color: lighten(map-get($theme, border-color), 65%);
     }
