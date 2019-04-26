@@ -4,7 +4,7 @@ title: NPEU Mockups
 project_base_url: styleguide
 ---
 
-* [Patterns](Patterns)
+* [Patterns](patterns)
 
 
 Notes
