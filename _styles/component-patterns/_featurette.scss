@@ -96,11 +96,11 @@ $featurette-button--border-color: darken($featurette--base-color, 20%) !default;
 $theme-only: false !default;
 
 // Themes mixin:
-@mixin featurette-theme ($name: "", $theme: ()) {
+@mixin featurette-theme ($theme-name: "", $theme: ()) {
     // Set up theme name:
     $theme-class: "";
-    @if $name != "" {
-        $theme-class: unquote('.')#{$theme-namespace}#{$name};
+    @if $theme-name != "" {
+        $theme-class: unquote('.')#{$theme-namespace}#{$theme-name};
     }
 
     .#{$featurette-namespace}featurette#{$theme-class},

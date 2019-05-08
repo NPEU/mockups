@@ -8,11 +8,11 @@ $meter-spacing-unit: 2rem !default;
 
 $theme-only: false !default;
 
-@mixin meter-theme ($name: "", $theme: ()) {
+@mixin meter-theme ($theme-name: "", $theme: ()) {
 	// Set up theme name:
 	$theme-class: "";
-	@if $name != "" {
-		$theme-class: unquote('.')#{$theme-namespace}#{$name};
+	@if $theme-name != "" {
+		$theme-class: unquote('.')#{$theme-namespace}#{$theme-name};
 	}
 	//@debug $theme-class;
 
@@ -33,8 +33,8 @@ $theme-only: false !default;
 	// "Error: Base-level rules cannot contain the parent-selector-referencing character '&'."
 	// There's no '&' being used, so not sure what's going on.
 	// Using nested option as a workaround.
-	//.#{$meter-namespace}meter.#{$theme-prefix}#{$name} {
-	// + meter + . + #{$theme-prefix} + #{$name}
+	//.#{$meter-namespace}meter.#{$theme-prefix}#{$theme-name} {
+	// + meter + . + #{$theme-prefix} + #{$theme-name}
 	.#{$meter-namespace}meter#{$theme-class} {
 
 		color: $text-color;

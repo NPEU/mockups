@@ -99,13 +99,13 @@ $event-button--border-color: darken($event--base-color, 20%) !default;
 */
     // Themes mixin:
     //@mixin event--themer (
-    //    $name: "",
+    //    $theme-name: "",
     //    $background-color: $event--base-color
     //) {
     //    // Set up theme name:
     //    $theme-class: "";
-    //    @if $name != "" {
-    //        $theme-class: unquote('.')#{$theme-namespace}#{$name};
+    //    @if $theme-name != "" {
+    //        $theme-class: unquote('.')#{$theme-namespace}#{$theme-name};
     //    }
     //
     //    .#{$event-namespace}event--themed-content#{$theme-class} .#{$event-namespace}event__body::before {

@@ -16,11 +16,11 @@ $panel--padding: 2rem !default;
 $theme-only: false !default;
 
 
-@mixin panel-theme ($name: "", $theme: ()) {
+@mixin panel-theme ($theme-name: "", $theme: (), $pattern-varient: "") {
 	// Set up theme name:
 	$theme-class: "";
-	@if $name != "" {
-		$theme-class: unquote('.')#{$theme-namespace}#{$name};
+	@if $theme-name != "" {
+		$theme-class: unquote('.')#{$theme-namespace}#{$theme-name};
 	}
 	//@debug $theme-class;
 	
@@ -43,9 +43,9 @@ $theme-only: false !default;
 	// "Error: Base-level rules cannot contain the parent-selector-referencing character '&'."
 	// There's no '&' being used, so not sure what's going on.
 	// Using nested option as a workaround.
-	//.#{$panel-namespace}panel.#{$theme-prefix}#{$name} {
-	// + panel + . + #{$theme-prefix} + #{$name}
-	.#{$panel-namespace}panel.#{$panel-namespace}panel#{$theme-class} {
+	//.#{$panel-namespace}#{$panel-namespace}#{$pattern-varient}panel.#{$theme-prefix}#{$theme-name} {
+	// + panel + . + #{$theme-prefix} + #{$theme-name}
+	.#{$panel-namespace}panel.#{$panel-namespace}panel#{$pattern-varient}#{$theme-class} {
 		color: $text-color;
 		background: $background-color;
 

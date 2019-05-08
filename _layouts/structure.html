@@ -5,16 +5,15 @@
     <title>{{ page.title }} | NPEU Mockups</title>
     <meta name="description" content="{{ site.description }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    {% if page.project != false %}
+    
+    {% assign project_data = site.data.projects[page.project] %}
+    
+    {% if page.project != false %}    
         {% assign project_base_url = page.project | prepend: '/' %}
-        {% assign theme_class = page.project | prepend: '  t-' %}
     {% elsif page.project_base_url != false %}
         {% assign project_base_url = page.project_base_url | prepend: '/' %}
-        {% assign theme_class = '' %}
     {% else %}
         {% assign project_base_url = '' %}
-        {% assign theme_class = '' %}
     {% endif %}
 
     <!-- Built with Jekyll and Fall-Back patterns -->
@@ -45,15 +44,8 @@
         only all and (pointer: fine), only all and (pointer: coarse), only all and (pointer: none),
         only all and (min--moz-device-pixel-ratio:0) and (display-mode:browser), (min--moz-device-pixel-ratio:0) and (display-mode:fullscreen)
     ">
-    
-    <link rel="stylesheet" href="/css/theme-all-basic.min.{{ site.data.cache_bust_css.date }}.css" media="
-        only print, screen and (min-width: 1vm),
-        only all and (-ms-high-contrast: none), only all and (-ms-high-contrast: active),
-        only all and (pointer: fine), only all and (pointer: coarse), only all and (pointer: none),
-        only all and (min--moz-device-pixel-ratio:0) and (display-mode:browser), (min--moz-device-pixel-ratio:0) and (display-mode:fullscreen)
-    ">
 
-    {% if page.project != false %}
+    {% if project_data.theme %}
         <link rel="stylesheet" href="/css/theme-{{ page.project }}.min.{{ site.data.cache_bust_css.date }}.css" media="
             only print, screen and (min-width: 1vm),
             only all and (-ms-high-contrast: none), only all and (-ms-high-contrast: active),
@@ -98,7 +90,7 @@
         <script src="/js/map.min.js"></script>
     {% endif %}
 </head>
-<body role="document" class="{{ theme_class }}" data-layout="{{ page.layout_name }}">
+<body role="document" class="{{ project_data.theme_class }}" data-layout="{{ page.layout_name }}">
 
     <svg xmlns="http://www.w3.org/2000/svg" display="none">
         <symbol id="icon-building" viewBox="0 0 24 24">

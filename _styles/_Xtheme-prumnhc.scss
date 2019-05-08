@@ -9,8 +9,8 @@ $theme-only: true;
 @import "_themeable-patterns.scss";
 
 
-$name: prumnhc;
-$theme: map_get($themes, $name);
+$theme-name: prumnhc;
+$theme: map_get($themes, $theme-name);
 
 
 @import "_theme";

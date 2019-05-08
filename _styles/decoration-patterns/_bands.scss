@@ -6,11 +6,11 @@ $bands--band-color : $f__base-ui-color !default;
 
 $theme-only: false !default;
 
-@mixin bands-theme ($name: "", $theme: ()) {
+@mixin bands-theme ($theme-name: "", $theme: ()) {
 	// Set up theme name:
 	$theme-class: "";
-	@if $name != "" {
-		$theme-class: unquote('.')#{$theme-namespace}#{$name};
+	@if $theme-name != "" {
+		$theme-class: unquote('.')#{$theme-namespace}#{$theme-name};
 	}
 	//@debug $theme-class;
 
@@ -22,7 +22,7 @@ $theme-only: false !default;
     .#{$bands-namespace}bands--above#{$theme-class},
     .#{$bands-namespace}bands--bottom#{$theme-class},
     .#{$bands-namespace}bands--below#{$theme-class} {
-		border-color: map-get($theme, band-color);
+		border-color: map-get($theme, band-color) !important;
 	}
 }
 
@@ -32,36 +32,36 @@ $theme-only: false !default;
 
     .#{$bands-namespace}bands--left,
     .#{$bands-namespace}bands--sides {
-        border-left-style: solid;
-        border-left-width: 3px;
+        border-left-style: solid !important;
+        border-left-width: 3px !important;
     }
 
     .#{$bands-namespace}bands--right,
     .#{$bands-namespace}bands--sides {
-        border-right-style: solid;
-        border-right-width: 3px;
+        border-right-style: solid !important;
+        border-right-width: 3px !important;
     }
 
     .#{$bands-namespace}bands--top,
     .#{$bands-namespace}bands--above {
-        border-top-style: solid;
-        border-top-width: 3px;
+        border-top-style: solid !important;
+        border-top-width: 3px !important;
     }
 
     .#{$bands-namespace}bands--bottom,
     .#{$bands-namespace}bands--below {
-        border-bottom-style: solid;
-        border-bottom-width: 3px;
+        border-bottom-style: solid !important;
+        border-bottom-width: 3px !important;
     }
 
     .#{$bands-namespace}bands {
-        border-style: solid;
-        border-width: 3px;
+        border-style: solid !important;
+        border-width: 3px !important;
     }
 
-    @each $name, $size in $sizes {
-        .#{$bands-namespace}bands--#{$name} {
-            border-width: $size;
+    @each $theme-name, $size in $sizes {
+        .#{$bands-namespace}bands--#{$theme-name} {
+            border-width: $size !important;
         }
     }
 

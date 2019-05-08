@@ -79,11 +79,11 @@
     https://coolors.co/50514f-f25f5c-ffe066-247ba0-70c1b3
 
 |-------------------------------------------------------------------------------------------------*/
-/*-------------------------------------------------------------------------------------------------|
+/*------------------------------------------------------------------------------------------------*\
 
     FUNCTIONS AND MIXINS
 
-|-------------------------------------------------------------------------------------------------*/
+\*------------------------------------------------------------------------------------------------*/
 /*-------------------------------------------------------------------------------------------------|
     Fall-Back Start-CSS Functions
 |-------------------------------------------------------------------------------------------------*/
@@ -155,11 +155,11 @@
     FF8 - ? doesn't like `line-height: -moz-calc()` and ignores
     Need to make sure height is governed by line-height in case of breaks within buttons.
 */
-/*-------------------------------------------------------------------------------------------------|
+/*------------------------------------------------------------------------------------------------*\
 
     SETTINGS
 
-|-------------------------------------------------------------------------------------------------*/
+\*------------------------------------------------------------------------------------------------*/
 /* Output class for reference (tmp): */
 /*.ref {
     flbk--base-rem-space-unit: $f__base-rem-space-unit;
@@ -167,11 +167,11 @@
     flbk--root-font-size: $f__root-font-size;
     flbk--root-font-size-percent: $f__root-font-size-percent;
 }*/
-/*-------------------------------------------------------------------------------------------------|
+/*------------------------------------------------------------------------------------------------*\
 
     ROOT STYLES
 
-|-------------------------------------------------------------------------------------------------*/
+\*------------------------------------------------------------------------------------------------*/
 /*
     https://timkadlec.com/2012/10/ie10-snap-mode-and-responsive-design/
     https://css-tricks.com/snippets/javascript/fix-ie-10-on-windows-phone-8-viewport/
@@ -189,6 +189,10 @@
 
     https://timkadlec.com/2013/01/windows-phone-8-and-device-width/
 */
+:root {
+  quotes: '\201c' '\201d' '\2018' '\2019';
+}
+
 /*
     1. Change the default box-sizing (-moz prefix for FF8-28).
 
@@ -335,11 +339,11 @@ body {
   }
 }
 
-/*-------------------------------------------------------------------------------------------------|
+/*------------------------------------------------------------------------------------------------*\
 
     ALL ELEMENTS
 
-|-------------------------------------------------------------------------------------------------*/
+\*------------------------------------------------------------------------------------------------*/
 /*-------------------------------------------------------------------------------------------------|
     Fall-Back Start-CSS Element: a
 |-------------------------------------------------------------------------------------------------*/
@@ -354,7 +358,7 @@ a[href] {
   margin-bottom: -2px;
   padding-bottom: 2px;
   border-bottom: 2px solid;
-  color: #614776;
+  color: #333;
   background-color: transparent;
   /* 1 */
   text-decoration: none;
@@ -368,12 +372,11 @@ a[href] {
 
 a[href]:hover, a[href]:active {
   border-bottom: 2px dashed;
-  color: #473456;
 }
 
 a[href]:focus {
   outline: 0;
-  box-shadow: 0 0 0 3px rgba(97, 71, 118, 0.5);
+  box-shadow: 0 0 0 3px rgba(51, 51, 51, 0.5);
 }
 
 a[href][rel="external"]::after {
@@ -1899,6 +1902,11 @@ video {
 
 /*! End Start-CSS */
 /*! Start CSS Classes. See SCSS file for documentation. */
+/*------------------------------------------------------------------------------------------------*\
+
+    Classes
+
+\*------------------------------------------------------------------------------------------------*/
 /*
     Resources:
     *
@@ -2343,19 +2351,11 @@ p.subtitle {
 }
 
 /*! Start CSS Accessibility. See SCSS file for documentation. */
-/*
-
-    Notes:
-
-    I'm debating moving separating this from the core file.
-    I'm not sure which approach I prefer.
-    Will probably go down the route of only having optional stuff in separate files - not sure.
-*/
-/*-------------------------------------------------------------------------------------------------|
+/*------------------------------------------------------------------------------------------------*\
 
     ACCESSIBILITY / ARIA
 
-|-------------------------------------------------------------------------------------------------*/
+\*------------------------------------------------------------------------------------------------*/
 [aria-busy="true"] {
   cursor: progress;
 }
@@ -2408,19 +2408,11 @@ a[hidden][aria-hidden="false"]:active {
 }
 
 /*! Start CSS Utilities. See SCSS file for documentation. */
-/*
-
-    Notes:
-
-    I'm debating moving separating this from the core file.
-    I'm not sure which approach I prefer.
-    Will probably go down the route of only having optional stuff in separate files - not sure.
-*/
-/*-------------------------------------------------------------------------------------------------|
+/*------------------------------------------------------------------------------------------------*\
 
     UTILITIES
 
--|------------------------------------------------------------------------------------------------*/
+\*------------------------------------------------------------------------------------------------*/
 /*
     Clearfix: contain floats for modern browsers
 
@@ -2449,14 +2441,12 @@ a[hidden][aria-hidden="false"]:active {
   display: none;
 }
 
-/*-------------------------------------------------------------------------------------------------|
-    Fall-Back Icons v1.0.0
+/*! Start CSS Icons. See SCSS file for documentation. */
+/*------------------------------------------------------------------------------------------------*\
 
-    Designed for use with the basic [CSS Mustard Cut](https://github.com/Fall-Back/CSS-Mustard-Cut)
-    IE 9+, FF 8+, Opera 12, [Chrome 29+, Android ~4.4+]
-    Chrome 29+, Opera 16+, Safari 6.1+, iOS 7+, Android ~4.4+
+    Icons
 
-|-------------------------------------------------------------------------------------------------*/
+\*------------------------------------------------------------------------------------------------*/
 /*
 
     This default icon set used Feather Icons (https://feathericons.com/)
@@ -2573,12 +2563,26 @@ _:-o-prefocus, :root .icon {
 }
 
 /*! Start CSS Experimental. See SCSS file for documentation. */
+/*------------------------------------------------------------------------------------------------*\
+
+    Experimental
+
+\*------------------------------------------------------------------------------------------------*/
 /*
-
-    Notes:
-
-    I moved this from Start core - I don't yet know if this was a good idea.
+    From https://github.com/mozdevs/cssremedy/blob/master/remedy.css
+    Immediately jump any animation to the end point if the user has set their device to "prefers 
+    reduced motion".
+    This could create bad, unintended consequences. Remove as needed, and write your own appropriate
+    code for prefers-reduced-motion.
+    
 */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001s !important;
+    transition-duration: 0.001s !important;
+  }
+}
+
 /*
     MS pseudo-elements.
 
@@ -5080,10 +5084,10 @@ $card-button--border-color: darken($card--base-color, 20%) !default;
   flex-direction: column;
   height: 100%;
   margin: 0;
-  color: #333;
-  background: #ebe9e8;
+  color: inherit;
+  background: #614776;
   padding: 0;
-  border-color: #8e8279;
+  border-color: #2d2136;
   border-style: solid;
   border-width: 1px;
   border-radius: 0;
@@ -5121,7 +5125,7 @@ $card-button--border-color: darken($card--base-color, 20%) !default;
   border-bottom: 0;
   margin-bottom: 0;
   padding-bottom: 0;
-  background: #ebe9e8;
+  background: #614776;
   position: relative;
   display: block;
   min-height: 100%;
@@ -5145,8 +5149,8 @@ $card-button--border-color: darken($card--base-color, 20%) !default;
 
 .c-card .c-card__main {
   position: relative;
-  color: #333;
-  background: #ebe9e8;
+  color: inherit;
+  background: #614776;
   margin-left: 0;
   margin-right: 0;
   margin-top: 0;
@@ -6142,86 +6146,86 @@ $glimpse--link-border-bottom--hover: false !default;*/
 /* ---------------------------------------------------------------------------------------------- */
 /* --| Decoration Patterns |--------------------------------------------------------------------- */
 .d-background--very-light {
-  background-color: #f8f6f9;
+  background-color: #f8f6f9 !important;
 }
 
 .d-background--light {
-  background-color: #baa6c9;
+  background-color: #baa6c9 !important;
 }
 
 .d-background {
-  background-color: #614776;
+  background-color: #614776 !important;
 }
 
 .d-background--dark {
-  background-color: #473456;
+  background-color: #473456 !important;
 }
 
 .d-background--very-dark {
-  background-color: #2d2136;
+  background-color: #2d2136 !important;
 }
 
 .d-background--sloped {
-  background: -moz-linear-gradient(45deg, #543d66 0%, #573f69 50%, #5c4370 50%, #59416c 100%);
-  background: -webkit-linear-gradient(45deg, #543d66 0%, #573f69 50%, #5c4370 50%, #59416c 100%);
-  background: linear-gradient(45deg, #543d66 0%, #573f69 50%, #5c4370 50%, #59416c 100%);
+  background: -moz-linear-gradient(45deg, #543d66 0%, #573f69 50%, #5c4370 50%, #59416c 100%) !important;
+  background: -webkit-linear-gradient(45deg, #543d66 0%, #573f69 50%, #5c4370 50%, #59416c 100%) !important;
+  background: linear-gradient(45deg, #543d66 0%, #573f69 50%, #5c4370 50%, #59416c 100%) !important;
 }
 
 .d-bands--left,
 .d-bands--sides {
-  border-left-style: solid;
-  border-left-width: 3px;
+  border-left-style: solid !important;
+  border-left-width: 3px !important;
 }
 
 .d-bands--right,
 .d-bands--sides {
-  border-right-style: solid;
-  border-right-width: 3px;
+  border-right-style: solid !important;
+  border-right-width: 3px !important;
 }
 
 .d-bands--top,
 .d-bands--above {
-  border-top-style: solid;
-  border-top-width: 3px;
+  border-top-style: solid !important;
+  border-top-width: 3px !important;
 }
 
 .d-bands--bottom,
 .d-bands--below {
-  border-bottom-style: solid;
-  border-bottom-width: 3px;
+  border-bottom-style: solid !important;
+  border-bottom-width: 3px !important;
 }
 
 .d-bands {
-  border-style: solid;
-  border-width: 3px;
+  border-style: solid !important;
+  border-width: 3px !important;
 }
 
 .d-bands--sz-xxs {
-  border-width: 0.3rem;
+  border-width: 0.3rem !important;
 }
 
 .d-bands--sz-xs {
-  border-width: 0.6rem;
+  border-width: 0.6rem !important;
 }
 
 .d-bands--sz-s {
-  border-width: 1.2rem;
+  border-width: 1.2rem !important;
 }
 
 .d-bands--sz-m {
-  border-width: 2.4rem;
+  border-width: 2.4rem !important;
 }
 
 .d-bands--sz-l {
-  border-width: 4.8rem;
+  border-width: 4.8rem !important;
 }
 
 .d-bands--sz-xl {
-  border-width: 9.6rem;
+  border-width: 9.6rem !important;
 }
 
 .d-bands--sz-xxl {
-  border-width: 19.2rem;
+  border-width: 19.2rem !important;
 }
 
 .d-bands,
@@ -6232,36 +6236,36 @@ $glimpse--link-border-bottom--hover: false !default;*/
 .d-bands--above,
 .d-bands--bottom,
 .d-bands--below {
-  border-color: #614776;
+  border-color: #614776 !important;
 }
 
 /* --| Component Patterns |---------------------------------------------------------------------- */
 /* ---------------------------------------------------------------------------------------------- */
 /* --| Decoration Patterns |--------------------------------------------------------------------- */
 .d-background--very-light.t-neutral {
-  background-color: white;
+  background-color: white !important;
 }
 
 .d-background--light.t-neutral {
-  background-color: #e0dcda;
+  background-color: #e0dcda !important;
 }
 
 .d-background.t-neutral {
-  background-color: #8e8279;
+  background-color: #8e8279 !important;
 }
 
 .d-background--dark.t-neutral {
-  background-color: #736961;
+  background-color: #736961 !important;
 }
 
 .d-background--very-dark.t-neutral {
-  background-color: #57504a;
+  background-color: #57504a !important;
 }
 
 .d-background--sloped.t-neutral {
-  background: -moz-linear-gradient(45deg, #81756d 0%, #84786f 50%, #897d74 50%, #867a71 100%);
-  background: -webkit-linear-gradient(45deg, #81756d 0%, #84786f 50%, #897d74 50%, #867a71 100%);
-  background: linear-gradient(45deg, #81756d 0%, #84786f 50%, #897d74 50%, #867a71 100%);
+  background: -moz-linear-gradient(45deg, #81756d 0%, #84786f 50%, #897d74 50%, #867a71 100%) !important;
+  background: -webkit-linear-gradient(45deg, #81756d 0%, #84786f 50%, #897d74 50%, #867a71 100%) !important;
+  background: linear-gradient(45deg, #81756d 0%, #84786f 50%, #897d74 50%, #867a71 100%) !important;
 }
 
 /* ---------------------------------------------------------------------------------------------- */
@@ -7648,29 +7652,29 @@ $patterns: (
 }
 */
 .d-background--very-light.t-white {
-  background-color: white;
+  background-color: white !important;
 }
 
 .d-background--light.t-white {
-  background-color: white;
+  background-color: white !important;
 }
 
 .d-background.t-white {
-  background-color: #ffffff;
+  background-color: #ffffff !important;
 }
 
 .d-background--dark.t-white {
-  background-color: #e6e6e6;
+  background-color: #e6e6e6 !important;
 }
 
 .d-background--very-dark.t-white {
-  background-color: #cccccc;
+  background-color: #cccccc !important;
 }
 
 .d-background--sloped.t-white {
-  background: -moz-linear-gradient(45deg, #f2f2f2 0%, whitesmoke 50%, #fafafa 50%, #f7f7f7 100%);
-  background: -webkit-linear-gradient(45deg, #f2f2f2 0%, whitesmoke 50%, #fafafa 50%, #f7f7f7 100%);
-  background: linear-gradient(45deg, #f2f2f2 0%, whitesmoke 50%, #fafafa 50%, #f7f7f7 100%);
+  background: -moz-linear-gradient(45deg, #f2f2f2 0%, whitesmoke 50%, #fafafa 50%, #f7f7f7 100%) !important;
+  background: -webkit-linear-gradient(45deg, #f2f2f2 0%, whitesmoke 50%, #fafafa 50%, #f7f7f7 100%) !important;
+  background: linear-gradient(45deg, #f2f2f2 0%, whitesmoke 50%, #fafafa 50%, #f7f7f7 100%) !important;
 }
 
 .d-bands.t-white,
@@ -7681,7 +7685,7 @@ $patterns: (
 .d-bands--above.t-white,
 .d-bands--bottom.t-white,
 .d-bands--below.t-white {
-  border-color: #ffffff;
+  border-color: #ffffff !important;
 }
 
 .c-card.t-white,
@@ -7761,24 +7765,21 @@ $patterns: (
 /*.t-white.t-color {
     color: map-get($theme, text-color);
 }*/
-/*.t-white button,
+/*
+.t-white button,
 .t-white button.over-panel-control,
-.t-white button.over-panel-control[aria-expanded=true] {*/
+.t-white button.over-panel-control[aria-expanded=true] {*
 .t-white button:not(.over-panel__overlay):not(.dropdown__button),
 .t-white button:not(.over-panel__overlay)[aria-expanded=true] {
+*/
+button.t-white[aria-expanded] {
   border-color: #ffffff;
   color: #333;
   background-color: #ffffff;
 }
 
-.t-white button:not(.over-panel__overlay):not(.dropdown__button):hover, .t-white button:not(.over-panel__overlay):not(.dropdown__button):active, .t-white button:not(.over-panel__overlay):not(.dropdown__button):focus,
-.t-white button:not(.over-panel__overlay)[aria-expanded=true]:hover,
-.t-white button:not(.over-panel__overlay)[aria-expanded=true]:active,
-.t-white button:not(.over-panel__overlay)[aria-expanded=true]:focus {
+button.t-white[aria-expanded]:hover, button.t-white[aria-expanded]:active, button.t-white[aria-expanded]:focus {
   background-color: #e6e6e6;
-  /*@else {
-            background-color: map-get($theme, background-color);
-        }*/
 }
 
 .t-white.search-form .search-form__submit {
@@ -7842,7 +7843,7 @@ $patterns: (
     background: linear-gradient(to right, #ffffff 0%,#ffffff 50%,map-get($theme, background-color) 50%,map-get($theme, background-color) 100%);
 }
 */
-.c-panel.c-panel.t-white--very-light {
+.c-panel.c-panel--very-light.t-white {
   color: #333;
   background: white;
   /*
@@ -7854,24 +7855,24 @@ $patterns: (
         }*/
 }
 
-.c-panel.c-panel.t-white--very-light a[href] {
+.c-panel.c-panel--very-light.t-white a[href] {
   color: #333;
   background-color: white;
 }
 
-.c-panel.c-panel.t-white--very-light a[href].cta {
+.c-panel.c-panel--very-light.t-white a[href].cta {
   border-color: #333;
   color: #333;
   background-color: transparent;
 }
 
-.c-panel.c-panel.t-white--very-light a[href].cta:hover,
-.c-panel.c-panel.t-white--very-light a[href].cta:active,
-.c-panel.c-panel.t-white--very-light a[href].cta:focus {
+.c-panel.c-panel--very-light.t-white a[href].cta:hover,
+.c-panel.c-panel--very-light.t-white a[href].cta:active,
+.c-panel.c-panel--very-light.t-white a[href].cta:focus {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-.c-panel.c-panel.t-white--light {
+.c-panel.c-panel--light.t-white {
   color: #333;
   background: white;
   /*
@@ -7883,24 +7884,24 @@ $patterns: (
         }*/
 }
 
-.c-panel.c-panel.t-white--light a[href] {
+.c-panel.c-panel--light.t-white a[href] {
   color: #333;
   background-color: white;
 }
 
-.c-panel.c-panel.t-white--light a[href].cta {
+.c-panel.c-panel--light.t-white a[href].cta {
   border-color: #333;
   color: #333;
   background-color: transparent;
 }
 
-.c-panel.c-panel.t-white--light a[href].cta:hover,
-.c-panel.c-panel.t-white--light a[href].cta:active,
-.c-panel.c-panel.t-white--light a[href].cta:focus {
+.c-panel.c-panel--light.t-white a[href].cta:hover,
+.c-panel.c-panel--light.t-white a[href].cta:active,
+.c-panel.c-panel--light.t-white a[href].cta:focus {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-.c-panel.c-panel.t-white--dark {
+.c-panel.c-panel--dark.t-white {
   color: #fff;
   background: #e6e6e6;
   /*
@@ -7912,24 +7913,24 @@ $patterns: (
         }*/
 }
 
-.c-panel.c-panel.t-white--dark a[href] {
+.c-panel.c-panel--dark.t-white a[href] {
   color: #fff;
   background-color: #e6e6e6;
 }
 
-.c-panel.c-panel.t-white--dark a[href].cta {
+.c-panel.c-panel--dark.t-white a[href].cta {
   border-color: #fff;
   color: #fff;
   background-color: transparent;
 }
 
-.c-panel.c-panel.t-white--dark a[href].cta:hover,
-.c-panel.c-panel.t-white--dark a[href].cta:active,
-.c-panel.c-panel.t-white--dark a[href].cta:focus {
+.c-panel.c-panel--dark.t-white a[href].cta:hover,
+.c-panel.c-panel--dark.t-white a[href].cta:active,
+.c-panel.c-panel--dark.t-white a[href].cta:focus {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-.c-panel.c-panel.t-white--very-dark {
+.c-panel.c-panel--very-dark.t-white {
   color: #fff;
   background: #cccccc;
   /*
@@ -7941,20 +7942,20 @@ $patterns: (
         }*/
 }
 
-.c-panel.c-panel.t-white--very-dark a[href] {
+.c-panel.c-panel--very-dark.t-white a[href] {
   color: #fff;
   background-color: #cccccc;
 }
 
-.c-panel.c-panel.t-white--very-dark a[href].cta {
+.c-panel.c-panel--very-dark.t-white a[href].cta {
   border-color: #fff;
   color: #fff;
   background-color: transparent;
 }
 
-.c-panel.c-panel.t-white--very-dark a[href].cta:hover,
-.c-panel.c-panel.t-white--very-dark a[href].cta:active,
-.c-panel.c-panel.t-white--very-dark a[href].cta:focus {
+.c-panel.c-panel--very-dark.t-white a[href].cta:hover,
+.c-panel.c-panel--very-dark.t-white a[href].cta:active,
+.c-panel.c-panel--very-dark.t-white a[href].cta:focus {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
@@ -7986,29 +7987,29 @@ $patterns: (
 }
 */
 .d-background--very-light.t-neutral {
-  background-color: white;
+  background-color: white !important;
 }
 
 .d-background--light.t-neutral {
-  background-color: #e0dcda;
+  background-color: #e0dcda !important;
 }
 
 .d-background.t-neutral {
-  background-color: #8e8279;
+  background-color: #8e8279 !important;
 }
 
 .d-background--dark.t-neutral {
-  background-color: #736961;
+  background-color: #736961 !important;
 }
 
 .d-background--very-dark.t-neutral {
-  background-color: #57504a;
+  background-color: #57504a !important;
 }
 
 .d-background--sloped.t-neutral {
-  background: -moz-linear-gradient(45deg, #81756d 0%, #84786f 50%, #897d74 50%, #867a71 100%);
-  background: -webkit-linear-gradient(45deg, #81756d 0%, #84786f 50%, #897d74 50%, #867a71 100%);
-  background: linear-gradient(45deg, #81756d 0%, #84786f 50%, #897d74 50%, #867a71 100%);
+  background: -moz-linear-gradient(45deg, #81756d 0%, #84786f 50%, #897d74 50%, #867a71 100%) !important;
+  background: -webkit-linear-gradient(45deg, #81756d 0%, #84786f 50%, #897d74 50%, #867a71 100%) !important;
+  background: linear-gradient(45deg, #81756d 0%, #84786f 50%, #897d74 50%, #867a71 100%) !important;
 }
 
 .d-bands.t-neutral,
@@ -8019,7 +8020,7 @@ $patterns: (
 .d-bands--above.t-neutral,
 .d-bands--bottom.t-neutral,
 .d-bands--below.t-neutral {
-  border-color: #8e8279;
+  border-color: #8e8279 !important;
 }
 
 .c-card.t-neutral,
@@ -8099,24 +8100,21 @@ $patterns: (
 /*.t-neutral.t-color {
     color: map-get($theme, text-color);
 }*/
-/*.t-neutral button,
+/*
+.t-neutral button,
 .t-neutral button.over-panel-control,
-.t-neutral button.over-panel-control[aria-expanded=true] {*/
+.t-neutral button.over-panel-control[aria-expanded=true] {*
 .t-neutral button:not(.over-panel__overlay):not(.dropdown__button),
 .t-neutral button:not(.over-panel__overlay)[aria-expanded=true] {
+*/
+button.t-neutral[aria-expanded] {
   border-color: #8e8279;
   color: #333;
   background-color: #8e8279;
 }
 
-.t-neutral button:not(.over-panel__overlay):not(.dropdown__button):hover, .t-neutral button:not(.over-panel__overlay):not(.dropdown__button):active, .t-neutral button:not(.over-panel__overlay):not(.dropdown__button):focus,
-.t-neutral button:not(.over-panel__overlay)[aria-expanded=true]:hover,
-.t-neutral button:not(.over-panel__overlay)[aria-expanded=true]:active,
-.t-neutral button:not(.over-panel__overlay)[aria-expanded=true]:focus {
+button.t-neutral[aria-expanded]:hover, button.t-neutral[aria-expanded]:active, button.t-neutral[aria-expanded]:focus {
   background-color: #736961;
-  /*@else {
-            background-color: map-get($theme, background-color);
-        }*/
 }
 
 .t-neutral.search-form .search-form__submit {
@@ -8180,7 +8178,7 @@ $patterns: (
     background: linear-gradient(to right, #ffffff 0%,#ffffff 50%,map-get($theme, background-color) 50%,map-get($theme, background-color) 100%);
 }
 */
-.c-panel.c-panel.t-neutral--very-light {
+.c-panel.c-panel--very-light.t-neutral {
   color: #333;
   background: white;
   /*
@@ -8192,24 +8190,24 @@ $patterns: (
         }*/
 }
 
-.c-panel.c-panel.t-neutral--very-light a[href] {
+.c-panel.c-panel--very-light.t-neutral a[href] {
   color: #333;
   background-color: white;
 }
 
-.c-panel.c-panel.t-neutral--very-light a[href].cta {
+.c-panel.c-panel--very-light.t-neutral a[href].cta {
   border-color: #333;
   color: #333;
   background-color: transparent;
 }
 
-.c-panel.c-panel.t-neutral--very-light a[href].cta:hover,
-.c-panel.c-panel.t-neutral--very-light a[href].cta:active,
-.c-panel.c-panel.t-neutral--very-light a[href].cta:focus {
+.c-panel.c-panel--very-light.t-neutral a[href].cta:hover,
+.c-panel.c-panel--very-light.t-neutral a[href].cta:active,
+.c-panel.c-panel--very-light.t-neutral a[href].cta:focus {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-.c-panel.c-panel.t-neutral--light {
+.c-panel.c-panel--light.t-neutral {
   color: #333;
   background: #e0dcda;
   /*
@@ -8221,24 +8219,24 @@ $patterns: (
         }*/
 }
 
-.c-panel.c-panel.t-neutral--light a[href] {
+.c-panel.c-panel--light.t-neutral a[href] {
   color: #333;
   background-color: #e0dcda;
 }
 
-.c-panel.c-panel.t-neutral--light a[href].cta {
+.c-panel.c-panel--light.t-neutral a[href].cta {
   border-color: #333;
   color: #333;
   background-color: transparent;
 }
 
-.c-panel.c-panel.t-neutral--light a[href].cta:hover,
-.c-panel.c-panel.t-neutral--light a[href].cta:active,
-.c-panel.c-panel.t-neutral--light a[href].cta:focus {
+.c-panel.c-panel--light.t-neutral a[href].cta:hover,
+.c-panel.c-panel--light.t-neutral a[href].cta:active,
+.c-panel.c-panel--light.t-neutral a[href].cta:focus {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-.c-panel.c-panel.t-neutral--dark {
+.c-panel.c-panel--dark.t-neutral {
   color: #fff;
   background: #736961;
   /*
@@ -8250,24 +8248,24 @@ $patterns: (
         }*/
 }
 
-.c-panel.c-panel.t-neutral--dark a[href] {
+.c-panel.c-panel--dark.t-neutral a[href] {
   color: #fff;
   background-color: #736961;
 }
 
-.c-panel.c-panel.t-neutral--dark a[href].cta {
+.c-panel.c-panel--dark.t-neutral a[href].cta {
   border-color: #fff;
   color: #fff;
   background-color: transparent;
 }
 
-.c-panel.c-panel.t-neutral--dark a[href].cta:hover,
-.c-panel.c-panel.t-neutral--dark a[href].cta:active,
-.c-panel.c-panel.t-neutral--dark a[href].cta:focus {
+.c-panel.c-panel--dark.t-neutral a[href].cta:hover,
+.c-panel.c-panel--dark.t-neutral a[href].cta:active,
+.c-panel.c-panel--dark.t-neutral a[href].cta:focus {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-.c-panel.c-panel.t-neutral--very-dark {
+.c-panel.c-panel--very-dark.t-neutral {
   color: #fff;
   background: #57504a;
   /*
@@ -8279,20 +8277,162 @@ $patterns: (
         }*/
 }
 
-.c-panel.c-panel.t-neutral--very-dark a[href] {
+.c-panel.c-panel--very-dark.t-neutral a[href] {
   color: #fff;
   background-color: #57504a;
 }
 
-.c-panel.c-panel.t-neutral--very-dark a[href].cta {
+.c-panel.c-panel--very-dark.t-neutral a[href].cta {
   border-color: #fff;
   color: #fff;
   background-color: transparent;
 }
 
-.c-panel.c-panel.t-neutral--very-dark a[href].cta:hover,
-.c-panel.c-panel.t-neutral--very-dark a[href].cta:active,
-.c-panel.c-panel.t-neutral--very-dark a[href].cta:focus {
+.c-panel.c-panel--very-dark.t-neutral a[href].cta:hover,
+.c-panel.c-panel--very-dark.t-neutral a[href].cta:active,
+.c-panel.c-panel--very-dark.t-neutral a[href].cta:focus {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.d-background--very-light.t-npeu--alt {
+  background-color: white !important;
+}
+
+.d-background--light.t-npeu--alt {
+  background-color: #f0e7da !important;
+}
+
+.d-background.t-npeu--alt {
+  background-color: #be945a !important;
+}
+
+.d-background--dark.t-npeu--alt {
+  background-color: #a47a41 !important;
+}
+
+.d-background--very-dark.t-npeu--alt {
+  background-color: #805f32 !important;
+}
+
+.d-background--sloped.t-npeu--alt {
+  background: -moz-linear-gradient(45deg, #b78848 0%, #b88b4b 50%, #bb8f53 50%, #ba8d4f 100%) !important;
+  background: -webkit-linear-gradient(45deg, #b78848 0%, #b88b4b 50%, #bb8f53 50%, #ba8d4f 100%) !important;
+  background: linear-gradient(45deg, #b78848 0%, #b88b4b 50%, #bb8f53 50%, #ba8d4f 100%) !important;
+}
+
+.c-panel.c-panel--very-light {
+  color: #333;
+  background: #f8f6f9;
+  /*
+        a[href]:hover,
+        a[href]:active,
+        a[href]:focus {
+            color: $text-color;
+            background: $background-color;
+        }*/
+}
+
+.c-panel.c-panel--very-light a[href] {
+  color: #333;
+  background-color: #f8f6f9;
+}
+
+.c-panel.c-panel--very-light a[href].cta {
+  border-color: #333;
+  color: #333;
+  background-color: transparent;
+}
+
+.c-panel.c-panel--very-light a[href].cta:hover,
+.c-panel.c-panel--very-light a[href].cta:active,
+.c-panel.c-panel--very-light a[href].cta:focus {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.c-panel.c-panel--light {
+  color: #333;
+  background: #baa6c9;
+  /*
+        a[href]:hover,
+        a[href]:active,
+        a[href]:focus {
+            color: $text-color;
+            background: $background-color;
+        }*/
+}
+
+.c-panel.c-panel--light a[href] {
+  color: #333;
+  background-color: #baa6c9;
+}
+
+.c-panel.c-panel--light a[href].cta {
+  border-color: #333;
+  color: #333;
+  background-color: transparent;
+}
+
+.c-panel.c-panel--light a[href].cta:hover,
+.c-panel.c-panel--light a[href].cta:active,
+.c-panel.c-panel--light a[href].cta:focus {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.c-panel.c-panel--dark {
+  color: #fff;
+  background: #473456;
+  /*
+        a[href]:hover,
+        a[href]:active,
+        a[href]:focus {
+            color: $text-color;
+            background: $background-color;
+        }*/
+}
+
+.c-panel.c-panel--dark a[href] {
+  color: #fff;
+  background-color: #473456;
+}
+
+.c-panel.c-panel--dark a[href].cta {
+  border-color: #fff;
+  color: #fff;
+  background-color: transparent;
+}
+
+.c-panel.c-panel--dark a[href].cta:hover,
+.c-panel.c-panel--dark a[href].cta:active,
+.c-panel.c-panel--dark a[href].cta:focus {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.c-panel.c-panel--very-dark {
+  color: #fff;
+  background: #2d2136;
+  /*
+        a[href]:hover,
+        a[href]:active,
+        a[href]:focus {
+            color: $text-color;
+            background: $background-color;
+        }*/
+}
+
+.c-panel.c-panel--very-dark a[href] {
+  color: #fff;
+  background-color: #2d2136;
+}
+
+.c-panel.c-panel--very-dark a[href].cta {
+  border-color: #fff;
+  color: #fff;
+  background-color: transparent;
+}
+
+.c-panel.c-panel--very-dark a[href].cta:hover,
+.c-panel.c-panel--very-dark a[href].cta:active,
+.c-panel.c-panel--very-dark a[href].cta:focus {
   background-color: rgba(255, 255, 255, 0.1);
 }
 

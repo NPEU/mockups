@@ -109,11 +109,11 @@ $theme-only: false !default;
     }
 */
 // Themes mixin:
-@mixin card-theme ($name: "", $theme: ()) {
+@mixin card-theme ($theme-name: "", $theme: ()) {
     // Set up theme name:
     $theme-class: "";
-    @if $name != "" {
-        $theme-class: unquote('.')#{$theme-namespace}#{$name};
+    @if $theme-name != "" {
+        $theme-class: unquote('.')#{$theme-namespace}#{$theme-name};
     }
 
     .#{$card-namespace}card#{$theme-class},
@@ -135,11 +135,11 @@ $theme-only: false !default;
 
 
 // Themed content mixin:
-@mixin card-themed-content ($name: "", $theme: ()) {
+@mixin card-themed-content ($theme-name: "", $theme: ()) {
     // Set up theme name:
     $theme-class: "";
-    @if $name != "" {
-        $theme-class: unquote('.')#{$theme-namespace}#{$name};
+    @if $theme-name != "" {
+        $theme-class: unquote('.')#{$theme-namespace}#{$theme-name};
     }
 
     .#{$card-namespace}card--themed-content#{$theme-class} .#{$card-namespace}card__main::before {

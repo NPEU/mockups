@@ -54,7 +54,7 @@ $theme: map-merge(
 @each $pattern in $patterns {
     @include $pattern (
         (
-            name  : #{$name},
+            name  : #{$theme-name},
             theme : $theme
         )
     );
@@ -62,28 +62,31 @@ $theme: map-merge(
 */
 //@debug $theme;
 
-@include background-theme($name, $theme);
-@include bands-theme($name, $theme);
-@include card-theme($name, $theme);
-@include featurette-theme($name, $theme);
-//@include meter-theme($name, $theme);
-@include page-header-theme($name, $theme);
-@include panel-theme($name, $theme);
-@include primary-cta-theme($name, $theme);
+@include background-theme($theme-name, $theme);
+@include bands-theme($theme-name, $theme);
+@include card-theme($theme-name, $theme);
+@include featurette-theme($theme-name, $theme);
+//@include meter-theme($theme-name, $theme);
+@include page-header-theme($theme-name, $theme);
+@include panel-theme($theme-name, $theme);
+@include primary-cta-theme($theme-name, $theme);
 
 
 // Override StartCSS values.
 // Note this almost certainly isn't the best place for this but will do for now.
-/*.#{$theme-namespace}#{$name}.t-color {
+/*.#{$theme-namespace}#{$theme-name}.t-color {
     color: map-get($theme, text-color);
 }*/
 
 
-/*.#{$theme-namespace}#{$name} button,
-.#{$theme-namespace}#{$name} button.over-panel-control,
-.#{$theme-namespace}#{$name} button.over-panel-control[aria-expanded=true] {*/
-.#{$theme-namespace}#{$name} button:not(.over-panel__overlay):not(.dropdown__button),
-.#{$theme-namespace}#{$name} button:not(.over-panel__overlay)[aria-expanded=true] {
+/*
+.#{$theme-namespace}#{$theme-name} button,
+.#{$theme-namespace}#{$theme-name} button.over-panel-control,
+.#{$theme-namespace}#{$theme-name} button.over-panel-control[aria-expanded=true] {*
+.#{$theme-namespace}#{$theme-name} button:not(.over-panel__overlay):not(.dropdown__button),
+.#{$theme-namespace}#{$theme-name} button:not(.over-panel__overlay)[aria-expanded=true] {
+*/
+button.#{$theme-namespace}#{$theme-name}[aria-expanded] {
     border-color: map-get($theme, border-color);
     color: map-get($theme, cta-text-color);
     background-color: map-get($theme, background-color);
@@ -101,14 +104,12 @@ $theme: map-merge(
                 background-color: darken(map-get($theme, background-color), $f__button-background-color--alt_percent);
             }
         }
-        /*@else {
-            background-color: map-get($theme, background-color);
-        }*/
     }
 }
 
+
 // Search button:
-.#{$theme-namespace}#{$name}.search-form .search-form__submit {
+.#{$theme-namespace}#{$theme-name}.search-form .search-form__submit {
     background-color: map-get($theme, background-color);
 
     &:hover,
@@ -129,7 +130,7 @@ $theme: map-merge(
 
 /* - Don't do this, it's too generic and results in equal specifivity that's resolved in source
     order, thus later themes win out, causing problems.
-.#{$theme-namespace}#{$name} a[href] {
+.#{$theme-namespace}#{$theme-name} a[href] {
 
     border-color: map-get($theme, border-color);
     color: map-get($theme, text-color);
@@ -143,13 +144,13 @@ $theme: map-merge(
 }
 */
 /*
-:not(.overpanel) .#{$theme-namespace}#{$name} a[href].cta {
+:not(.overpanel) .#{$theme-namespace}#{$theme-name} a[href].cta {
 
     border-color: map-get($theme, border-color);
     color: map-get($theme, text-color);
     background-color: transparent;
     //background-color: map-get($theme, background-color);
-    content: "#{$name}";
+    content: "#{$theme-name}";
 
     &:hover,
     &:active,
@@ -166,14 +167,14 @@ $theme: map-merge(
 }
 */
 /*
-.#{$theme-namespace}#{$name}.d-50-50-background {
+.#{$theme-namespace}#{$theme-name}.d-50-50-background {
     background: #FFFFFF;
     background: -moz-linear-gradient(left, map-get($theme, background-color) 0%, map-get($theme, background-color) 50%, #ffffff 50%, #ffffff 100%);
     background: -webkit-linear-gradient(left, map-get($theme, background-color) 0%,map-get($theme, background-color) 50%,#ffffff 50%,#ffffff 100%);
     background: linear-gradient(to right, map-get($theme, background-color) 0%,map-get($theme, background-color) 50%,#ffffff 50%,#ffffff 100%);
 }
 
-.#{$theme-namespace}#{$name}.d-50-50-background--flipped {
+.#{$theme-namespace}#{$theme-name}.d-50-50-background--flipped {
     background: #FFFFFF;
     background: -moz-linear-gradient(left, #ffffff 0%, #ffffff 50%, map-get($theme, background-color) 50%, map-get($theme, background-color) 100%);
     background: -webkit-linear-gradient(left, #ffffff 0%,#ffffff 50%,map-get($theme, background-color) 50%,map-get($theme, background-color) 100%);
@@ -192,7 +193,7 @@ $theme: map-merge(
         )
     );
 
-    @include background-theme("#{$name}--alt", $theme);
+    @include background-theme(#{$theme-name}--alt, $theme);
 }
 
 
@@ -208,7 +209,8 @@ $theme: map-merge(
     )
 );
 
-@include panel-theme(#{$name}--very-light, $theme);
+@include panel-theme($theme-name, $theme, --very-light);
+
 
 // Light theme:
 
@@ -222,7 +224,7 @@ $theme: map-merge(
     )
 );
 
-@include panel-theme(#{$name}--light, $theme);
+@include panel-theme($theme-name, $theme, --light);
 
 
 // Dark theme:
@@ -237,7 +239,7 @@ $theme: map-merge(
     )
 );
 
-@include panel-theme(#{$name}--dark, $theme);
+@include panel-theme($theme-name, $theme, --dark);
 
 
 // Very dark theme:
@@ -251,5 +253,5 @@ $theme: map-merge(
     )
 );
 
-@include panel-theme(#{$name}--very-dark, $theme);
+@include panel-theme($theme-name, $theme, --very-dark);
 

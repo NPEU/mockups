@@ -251,29 +251,29 @@ $patterns: (
 }
 */
 .d-background--very-light.t-neoclear {
-  background-color: #c8fffd;
+  background-color: #c8fffd !important;
 }
 
 .d-background--light.t-neoclear {
-  background-color: #49fff9;
+  background-color: #49fff9 !important;
 }
 
 .d-background.t-neoclear {
-  background-color: #009590;
+  background-color: #009590 !important;
 }
 
 .d-background--dark.t-neoclear {
-  background-color: #00625f;
+  background-color: #00625f !important;
 }
 
 .d-background--very-dark.t-neoclear {
-  background-color: #002f2d;
+  background-color: #002f2d !important;
 }
 
 .d-background--sloped.t-neoclear {
-  background: -moz-linear-gradient(45deg, #007c77 0%, #00817c 50%, #008b86 50%, #008681 100%);
-  background: -webkit-linear-gradient(45deg, #007c77 0%, #00817c 50%, #008b86 50%, #008681 100%);
-  background: linear-gradient(45deg, #007c77 0%, #00817c 50%, #008b86 50%, #008681 100%);
+  background: -moz-linear-gradient(45deg, #007c77 0%, #00817c 50%, #008b86 50%, #008681 100%) !important;
+  background: -webkit-linear-gradient(45deg, #007c77 0%, #00817c 50%, #008b86 50%, #008681 100%) !important;
+  background: linear-gradient(45deg, #007c77 0%, #00817c 50%, #008b86 50%, #008681 100%) !important;
 }
 
 .d-bands.t-neoclear,
@@ -284,7 +284,7 @@ $patterns: (
 .d-bands--above.t-neoclear,
 .d-bands--bottom.t-neoclear,
 .d-bands--below.t-neoclear {
-  border-color: #009590;
+  border-color: #009590 !important;
 }
 
 .c-card.t-neoclear,
@@ -364,24 +364,21 @@ $patterns: (
 /*.t-neoclear.t-color {
     color: map-get($theme, text-color);
 }*/
-/*.t-neoclear button,
+/*
+.t-neoclear button,
 .t-neoclear button.over-panel-control,
-.t-neoclear button.over-panel-control[aria-expanded=true] {*/
+.t-neoclear button.over-panel-control[aria-expanded=true] {*
 .t-neoclear button:not(.over-panel__overlay):not(.dropdown__button),
 .t-neoclear button:not(.over-panel__overlay)[aria-expanded=true] {
+*/
+button.t-neoclear[aria-expanded] {
   border-color: #009590;
   color: #ffffff;
   background-color: #009590;
 }
 
-.t-neoclear button:not(.over-panel__overlay):not(.dropdown__button):hover, .t-neoclear button:not(.over-panel__overlay):not(.dropdown__button):active, .t-neoclear button:not(.over-panel__overlay):not(.dropdown__button):focus,
-.t-neoclear button:not(.over-panel__overlay)[aria-expanded=true]:hover,
-.t-neoclear button:not(.over-panel__overlay)[aria-expanded=true]:active,
-.t-neoclear button:not(.over-panel__overlay)[aria-expanded=true]:focus {
+button.t-neoclear[aria-expanded]:hover, button.t-neoclear[aria-expanded]:active, button.t-neoclear[aria-expanded]:focus {
   background-color: #00625f;
-  /*@else {
-            background-color: map-get($theme, background-color);
-        }*/
 }
 
 .t-neoclear.search-form .search-form__submit {
@@ -446,32 +443,32 @@ $patterns: (
 }
 */
 .d-background--very-light.t-neoclear--alt {
-  background-color: white;
+  background-color: white !important;
 }
 
 .d-background--light.t-neoclear--alt {
-  background-color: #ef92d1;
+  background-color: #ef92d1 !important;
 }
 
 .d-background.t-neoclear--alt {
-  background-color: #B51A82;
+  background-color: #B51A82 !important;
 }
 
 .d-background--dark.t-neoclear--alt {
-  background-color: #881462;
+  background-color: #881462 !important;
 }
 
 .d-background--very-dark.t-neoclear--alt {
-  background-color: #5c0d42;
+  background-color: #5c0d42 !important;
 }
 
 .d-background--sloped.t-neoclear--alt {
-  background: -moz-linear-gradient(45deg, #9f1772 0%, #a31775 50%, #ac197c 50%, #a81878 100%);
-  background: -webkit-linear-gradient(45deg, #9f1772 0%, #a31775 50%, #ac197c 50%, #a81878 100%);
-  background: linear-gradient(45deg, #9f1772 0%, #a31775 50%, #ac197c 50%, #a81878 100%);
+  background: -moz-linear-gradient(45deg, #9f1772 0%, #a31775 50%, #ac197c 50%, #a81878 100%) !important;
+  background: -webkit-linear-gradient(45deg, #9f1772 0%, #a31775 50%, #ac197c 50%, #a81878 100%) !important;
+  background: linear-gradient(45deg, #9f1772 0%, #a31775 50%, #ac197c 50%, #a81878 100%) !important;
 }
 
-.c-panel.c-panel.t-neoclear--very-light {
+.c-panel.c-panel--very-light.t-neoclear {
   color: #333;
   background: #c8fffd;
   /*
@@ -483,24 +480,24 @@ $patterns: (
         }*/
 }
 
-.c-panel.c-panel.t-neoclear--very-light a[href] {
+.c-panel.c-panel--very-light.t-neoclear a[href] {
   color: #333;
   background-color: #c8fffd;
 }
 
-.c-panel.c-panel.t-neoclear--very-light a[href].cta {
+.c-panel.c-panel--very-light.t-neoclear a[href].cta {
   border-color: #333;
   color: #333;
   background-color: transparent;
 }
 
-.c-panel.c-panel.t-neoclear--very-light a[href].cta:hover,
-.c-panel.c-panel.t-neoclear--very-light a[href].cta:active,
-.c-panel.c-panel.t-neoclear--very-light a[href].cta:focus {
+.c-panel.c-panel--very-light.t-neoclear a[href].cta:hover,
+.c-panel.c-panel--very-light.t-neoclear a[href].cta:active,
+.c-panel.c-panel--very-light.t-neoclear a[href].cta:focus {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-.c-panel.c-panel.t-neoclear--light {
+.c-panel.c-panel--light.t-neoclear {
   color: #333;
   background: #49fff9;
   /*
@@ -512,24 +509,24 @@ $patterns: (
         }*/
 }
 
-.c-panel.c-panel.t-neoclear--light a[href] {
+.c-panel.c-panel--light.t-neoclear a[href] {
   color: #333;
   background-color: #49fff9;
 }
 
-.c-panel.c-panel.t-neoclear--light a[href].cta {
+.c-panel.c-panel--light.t-neoclear a[href].cta {
   border-color: #333;
   color: #333;
   background-color: transparent;
 }
 
-.c-panel.c-panel.t-neoclear--light a[href].cta:hover,
-.c-panel.c-panel.t-neoclear--light a[href].cta:active,
-.c-panel.c-panel.t-neoclear--light a[href].cta:focus {
+.c-panel.c-panel--light.t-neoclear a[href].cta:hover,
+.c-panel.c-panel--light.t-neoclear a[href].cta:active,
+.c-panel.c-panel--light.t-neoclear a[href].cta:focus {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-.c-panel.c-panel.t-neoclear--dark {
+.c-panel.c-panel--dark.t-neoclear {
   color: #fff;
   background: #00625f;
   /*
@@ -541,24 +538,24 @@ $patterns: (
         }*/
 }
 
-.c-panel.c-panel.t-neoclear--dark a[href] {
+.c-panel.c-panel--dark.t-neoclear a[href] {
   color: #fff;
   background-color: #00625f;
 }
 
-.c-panel.c-panel.t-neoclear--dark a[href].cta {
+.c-panel.c-panel--dark.t-neoclear a[href].cta {
   border-color: #fff;
   color: #fff;
   background-color: transparent;
 }
 
-.c-panel.c-panel.t-neoclear--dark a[href].cta:hover,
-.c-panel.c-panel.t-neoclear--dark a[href].cta:active,
-.c-panel.c-panel.t-neoclear--dark a[href].cta:focus {
+.c-panel.c-panel--dark.t-neoclear a[href].cta:hover,
+.c-panel.c-panel--dark.t-neoclear a[href].cta:active,
+.c-panel.c-panel--dark.t-neoclear a[href].cta:focus {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-.c-panel.c-panel.t-neoclear--very-dark {
+.c-panel.c-panel--very-dark.t-neoclear {
   color: #fff;
   background: #002f2d;
   /*
@@ -570,20 +567,20 @@ $patterns: (
         }*/
 }
 
-.c-panel.c-panel.t-neoclear--very-dark a[href] {
+.c-panel.c-panel--very-dark.t-neoclear a[href] {
   color: #fff;
   background-color: #002f2d;
 }
 
-.c-panel.c-panel.t-neoclear--very-dark a[href].cta {
+.c-panel.c-panel--very-dark.t-neoclear a[href].cta {
   border-color: #fff;
   color: #fff;
   background-color: transparent;
 }
 
-.c-panel.c-panel.t-neoclear--very-dark a[href].cta:hover,
-.c-panel.c-panel.t-neoclear--very-dark a[href].cta:active,
-.c-panel.c-panel.t-neoclear--very-dark a[href].cta:focus {
+.c-panel.c-panel--very-dark.t-neoclear a[href].cta:hover,
+.c-panel.c-panel--very-dark.t-neoclear a[href].cta:active,
+.c-panel.c-panel--very-dark.t-neoclear a[href].cta:focus {
   background-color: rgba(255, 255, 255, 0.1);
 }
 

@@ -34,7 +34,7 @@ defaults:
       layout_name: "default"
       load_highlighter: false
       npeu_unit: false
-      project: false
+      project: "default"
       project_base_url: false
       section_menu: false
       toc: false

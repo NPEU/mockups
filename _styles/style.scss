@@ -18,6 +18,14 @@ $f__body-padding: 0;
 $f__main-max-line-length: 0;
 $f__main-padding: 0;
 
+$f__anchor-text-color: #333;
+
+// I shouldn't have to set this as the !default should allow a cascade.
+// Investigate why this is happeneing. I don't think it's a SASS problem as it seems to work in a 
+// reduced test-case (though to be fair this isn't using @import...)
+// https://codepen.io/akirk/pen/RmWKgy
+$f__anchor-text-color--alt: #333;
+
 @import '../bower_components/Fall-Back-Start-CSS/scss/_start.scss';
 @import '../bower_components/Fall-Back-Start-CSS/scss/_start-classes.scss';
 @import '../bower_components/Fall-Back-Start-CSS/scss/_start-accessibility.scss';
@@ -145,7 +153,7 @@ $gallery-grid-spacing-unit: $f__base-rem-space-unit;
 @import "../bower_components/NPEU-layout-patterns/dev/scss/_gallery-grid.scss";
 
 /* --| Themeable Patterns |---------------------------------------------------------------------- */
-@import "_themes-config.scss";
+@import "_core_themes.scss";
 @import "_themeable-patterns.scss";
 
 
@@ -245,23 +253,117 @@ $section-menu--link-margin: 0;
 
 /* --| THEMES |---------------------------------------------------------------------------------- */
 
+// Not happy with this - needs a re-think.
+// Neutral is OK, but there's really no point in having --light / --dark etc. white themes.
+// Makes no sense.
+
+
 //@import "_themes-config";
 //@import "_themes";
 
 // Some themes DO need to be available in the core stylesheet. E.g. white theme, so it's possible to
 // be explicit.
 
-$name: white;
-$theme: map_get($themes, $name);
+
+
+
+
+$theme-name: white;
+$theme: map_get($themes, $theme-name);
 
 
 @import "_theme";
 
 
-$name: neutral;
-$theme: map_get($themes, $name);
+$theme-name: neutral;
+$theme: map_get($themes, $theme-name);
 
 @import "_theme";
+
+
+
+// Also, this is a duplicate of part the _themes.scss so needs a re-think too.
+// The problem is that really there should un-themed defaults for eveything, so the basic stylesheet
+// works as intended, but a one-to-one override of the theme is possible.
+// Maybe incude these in the panel file itself, but need to this about it properly first.
+// ALSO NOTE that classnames SHOULD NOT (NEED TO) CHANGE. That way we can just reorganise this SCSS
+// without messing up the final output design.
+
+$theme-name: npeu;
+$theme: map_get($themes, $theme-name);
+
+// Alternate colours:
+@if map-has-key($theme, "secondary-color") {
+    //@debug map-get($theme, secondary-color);
+    $theme: map-merge(
+        $theme,
+        (
+            background-color : map-get($theme, secondary-color)
+        )
+    );
+
+    @include background-theme(#{$theme-name}--alt, $theme);
+}
+
+
+// Very light theme:
+$theme: map-merge(
+    $theme,
+    (
+        background-color      : lighten(map-get($theme, primary-color), 60%),
+        cta-text-color        : #333,
+        cta-background-color  : lighten(map-get($theme, primary-color), 60%),
+        text-color            : #333
+    )
+);
+
+@include panel-theme("", $theme, --very-light);
+
+
+// Light theme:
+
+$theme: map-merge(
+    $theme,
+    (
+        background-color      : lighten(map-get($theme, primary-color), 35%),
+        cta-text-color        : #333,
+        cta-background-color  : lighten(map-get($theme, primary-color), 35%),
+        text-color            : #333
+    )
+);
+
+@include panel-theme("", $theme, --light);
+
+
+// Dark theme:
+
+$theme: map-merge(
+    $theme,
+    (
+        background-color      : darken(map-get($theme, primary-color), 10%),
+        cta-text-color        : #fff,
+        cta-background-color  : darken(map-get($theme, primary-color), 10%),
+        text-color            : #fff
+    )
+);
+
+@include panel-theme("", $theme, --dark);
+
+
+// Very dark theme:
+$theme: map-merge(
+    $theme,
+    (
+        background-color      : darken(map-get($theme, primary-color), 20%),
+        cta-text-color        : #fff,
+        cta-background-color  : darken(map-get($theme, primary-color), 20%),
+        text-color            : #fff
+    )
+);
+
+@include panel-theme("", $theme, --very-dark);
+
+
 
 
 /* ---------------------------------------------------------------------------------------------- */

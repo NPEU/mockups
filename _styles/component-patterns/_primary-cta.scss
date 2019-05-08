@@ -16,11 +16,11 @@ $primary-cta--padding: $f__base-rem-space-unit / 2 !default;
 
 $theme-only: false !default;
 
-@mixin primary-cta-theme ($name: "", $theme: ()) {
+@mixin primary-cta-theme ($theme-name: "", $theme: ()) {
 	// Set up theme name:
 	$theme-class: "";
-	@if $name != "" {
-		$theme-class: unquote('.')#{$theme-namespace}#{$name};
+	@if $theme-name != "" {
+		$theme-class: unquote('.')#{$theme-namespace}#{$theme-name};
 	}
 	//@debug $theme-class;
 

@@ -13,6 +13,9 @@
 //$suppress_styles: true;
 //@import "../bower_components/Fall-Back-Start-CSS/scss/_start.scss";
 
+//$neutral-theme: map-get($themes, neutral);
+
+
 /* --| Component Patterns |---------------------------------------------------------------------- */
 
 @import "component-patterns/_badge.scss";
@@ -21,22 +24,23 @@
 $brochure--border-or-outline: false;
 @import "component-patterns/_brochure.scss";*/
 
-$neutral-theme: map-get($themes, neutral);
+
 
 // Probably need card variants, esp max-widths.
 //$card--base-color: darken($f__base-ui-color, 20%);
-$card--base-color: map-get($neutral-theme, primary-color);
-//$card--text-color: #fff !default;
+$card--base-color: $f__base-ui-color;
+//$card--base-color: map-get($neutral-theme, primary-color);
+$card--text-color: inherit;
 
 $card--hover-effect-opacity: $hover-effect-opacity;
 
 $card-title--font-size: 2rem;
 //$card-title--line-height: $f__base-rem-space-unit * 1.25;
 $card-spacing-unit: $f__base-rem-space-unit;
-$card--border-color: $card--base-color;
+$card--border-color: darken($card--base-color, 20%);
 $card--border-or-outline: 'border';
 //$card--border-width: 2px;
-$card--background-color: lighten(map-get($neutral-theme, background-color), 40%);
+//$card--background-color: lighten(map-get($neutral-theme, background-color), 40%);
 
 @import "component-patterns/_card.scss";
 /*@include card-theme("card", (
