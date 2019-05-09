@@ -220,7 +220,7 @@ html {
   overflow-y: scroll;
   /* 3 */
   color: #333;
-  background-color: #fff;
+  background-color: #57504a;
   font-size: 62.5%;
   /* 4 */
   font-family: "Lato", sans-serif;
@@ -3147,7 +3147,7 @@ _:-webkit-full-screen, _::-webkit-full-page-media, _:future, :root select[size="
         1. Helps to position above subsequent elements so subnavs sit on top.
     */
 .nav-bar.nav-bar {
-  background-color: transparent;
+  background-color: #614776;
   position: relative;
   z-index: 9999;
   /* [1] */
@@ -3182,7 +3182,7 @@ _:-webkit-full-screen, _::-webkit-full-page-media, _:future, :root select[size="
 
 .nav-bar .subnav__items {
   margin-left: 1.125em;
-  background-color: transparent;
+  background-color: #614776;
 }
 
 .nav-bar .nav-bar__item {
@@ -3418,6 +3418,10 @@ _:-webkit-full-screen, _::-webkit-full-page-media, _:future, :root select[size="
     border-left-width: 0;
     border-right-width: 1px;
   }
+  .js-nav-bar .nav-bar__title:first-child,
+  .js-nav-bar .nav-bar__item:first-child {
+    border-left-width: 1px;
+  }
   .js-nav-bar .nav-bar__link[href] + * {
     border-style: dashed;
     border-color: rgba(255, 255, 255, 0.3);
@@ -3504,7 +3508,7 @@ _:-webkit-full-screen, _::-webkit-full-page-media, _:future, :root select[size="
     top: 0;
     bottom: 0;
     z-index: -1;
-    background-color: transparent;
+    background-color: #614776;
   }
   /* -- Behaviour: -------------------------------------------------------------------------*/
   .js-nav-bar .subnav__heading {
@@ -3558,6 +3562,10 @@ _:-webkit-full-screen, _::-webkit-full-page-media, _:future, :root select[size="
 }
 
 /* -----------------------------------------------------------------------------------------------*/
+.js-nav-bar .nav-bar::before {
+  background: transparent;
+}
+
 /*------------------------------------------------------------------------------------------------*\
 
     Designed for use with the basic [CSS Mustard Cut](https://github.com/Fall-Back/CSS-Mustard-Cut)
@@ -3787,7 +3795,7 @@ _:-o-prefocus, body:last-child .dropdown .dropdown__button {
         1. Prevent extra bottom space when form is inside a container.
     */
 .search-form.search-form {
-  background: #614776;
+  background: transparent;
   display: -moz-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3885,7 +3893,7 @@ _:-o-prefocus, body:last-child .dropdown .dropdown__button {
   z-index: 1;
   border-radius: 0;
   border: 0;
-  background: #dfd6e6;
+  background: #543d66;
   color: #333;
   height: 1.875em;
   line-height: 0;
@@ -3900,7 +3908,7 @@ _:-o-prefocus, body:last-child .dropdown .dropdown__button {
 
 .search-form .search-form__submit:hover,
 .search-form .search-form__submit:focus {
-  background-color: #ad96c0;
+  background-color: #3a2a46;
 }
 
 /* -------------------------------------------------------------------------------------------*/
@@ -5084,8 +5092,8 @@ $card-button--border-color: darken($card--base-color, 20%) !default;
   flex-direction: column;
   height: 100%;
   margin: 0;
-  color: inherit;
-  background: #614776;
+  color: #fff;
+  background: #4f3a60;
   padding: 0;
   border-color: #2d2136;
   border-style: solid;
@@ -5149,7 +5157,7 @@ $card-button--border-color: darken($card--base-color, 20%) !default;
 
 .c-card .c-card__main {
   position: relative;
-  color: inherit;
+  color: #fff;
   background: #614776;
   margin-left: 0;
   margin-right: 0;
@@ -5884,8 +5892,12 @@ $glimpse--link-border-bottom--hover: false !default;*/
 
 /*
 */
-.c-map img {
-  max-height: 300px;
+.c-map__static {
+  min-height: 300px;
+}
+
+.c-map__static {
+  min-height: 500px;
 }
 
 .js-map .c-map {
@@ -5899,7 +5911,14 @@ $glimpse--link-border-bottom--hover: false !default;*/
 .js-map .c-map > * {
   width: 100%;
   height: 100%;
+}
+
+.js-map .c-map--300 > * {
   min-height: 300px;
+}
+
+.js-map .c-map--500 > * {
+  min-height: 500px;
 }
 
 .js-map .c-map .leaflet-container a[href] {
@@ -5973,7 +5992,7 @@ $glimpse--link-border-bottom--hover: false !default;*/
 .c-panel.c-panel a[href].cta:hover,
 .c-panel.c-panel a[href].cta:active,
 .c-panel.c-panel a[href].cta:focus {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .c-primary-cta[href] {
@@ -6024,6 +6043,10 @@ $glimpse--link-border-bottom--hover: false !default;*/
       grid-column: 1/-1;
     }
   }
+}
+
+.c-sign.c-sign {
+  background-color: #666;
 }
 
 .c-sign a[href].c-sign__link {
@@ -6403,24 +6426,13 @@ $glimpse--link-border-bottom--hover: false !default;*/
 /*
 
 */
-/*
-@mixin content-area-size ($width, $breakpoint) {
-
-    .content-area
-}
-*/
 .l-content-area.l-content-area {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
   margin: 0;
-  padding: 0 2.4rem;
 }
 
-.l-content-area .l-content-area__main {
+.l-content-area .l-content-area__header,
+.l-content-area .l-content-area__main,
+.l-content-area .l-content-area__pull-out {
   width: 100%;
   max-width: 42em;
   margin-left: auto;
@@ -6428,30 +6440,28 @@ $glimpse--link-border-bottom--hover: false !default;*/
 }
 
 @media only screen and (min-width: 60em) {
-  .l-content-area {
-    /* Position all children: */
-    /* Pull out: */
+  .l-content-area.l-content-area {
+    padding: 0 2.4rem;
+  }
+  .l-content-area.l-content-area--has-pull-outs {
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+    grid-template-columns: 2fr 1fr;
+  }
+  .l-content-area.l-content-area--has-pull-outs .l-content-area__header {
+    grid-column: 1;
+    grid-row: 1;
   }
   .l-content-area.l-content-area--has-pull-outs .l-content-area__main {
-    /* For Block formatting context (contain float): */
-    display: table;
-    display: flow-root;
-    max-width: calc(42em + 21em + 12rem);
+    grid-column: 1;
+    grid-row: 2 / 4;
+    padding-right: 2.4rem;
   }
-  .l-content-area.l-content-area--has-pull-outs .l-content-area__main > * {
-    width: 66.666%;
-    float: left;
-    padding: 0 2.4rem;
+  .l-content-area.l-content-area--has-pull-outs .l-content-area__pull-out--top {
+    grid-row: 2;
   }
-  .l-content-area.l-content-area--has-pull-outs .l-content-area__main > .l-content-area__pull-out {
-    width: 33.333%;
-    float: right;
-    padding: 0 2.4rem;
-    margin: 0;
-    clear: right;
-  }
-  .l-content-area.l-content-area--has-pull-outs .l-content-area__main__headline_image {
-    padding: 0;
+  .l-content-area.l-content-area--has-pull-outs .l-content-area__pull-out--bottom {
+    grid-row: 3;
   }
 }
 
@@ -7690,7 +7700,7 @@ $patterns: (
 
 .c-card.t-white,
 .c-card.t-white .c-card__main {
-  background-color: #ffffff;
+  background-color: #ededed;
 }
 
 .c-card.t-white .c-card__main {
@@ -7738,7 +7748,7 @@ $patterns: (
 .c-panel.c-panel.t-white a[href].cta:hover,
 .c-panel.c-panel.t-white a[href].cta:active,
 .c-panel.c-panel.t-white a[href].cta:focus {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .c-primary-cta.t-white[href] {
@@ -7762,6 +7772,12 @@ $patterns: (
   background-color: #e6e6e6;
 }
 
+.c-sign.t-white {
+  background: -moz-linear-gradient(45deg, #f2f2f2 0%, whitesmoke 50%, #fafafa 50%, #f7f7f7 100%) !important;
+  background: -webkit-linear-gradient(45deg, #f2f2f2 0%, whitesmoke 50%, #fafafa 50%, #f7f7f7 100%) !important;
+  background: linear-gradient(45deg, #f2f2f2 0%, whitesmoke 50%, #fafafa 50%, #f7f7f7 100%) !important;
+}
+
 /*.t-white.t-color {
     color: map-get($theme, text-color);
 }*/
@@ -7772,22 +7788,57 @@ $patterns: (
 .t-white button:not(.over-panel__overlay):not(.dropdown__button),
 .t-white button:not(.over-panel__overlay)[aria-expanded=true] {
 */
-button.t-white[aria-expanded] {
-  border-color: #ffffff;
-  color: #333;
+button.t-white:not(.over-panel__overlay):not(.dropdown__button) {
+  border-color: #ffffff !important;
+  color: #333 !important;
+  background-color: #ffffff !important;
+}
+
+button.t-white:not(.over-panel__overlay):not(.dropdown__button):hover, button.t-white:not(.over-panel__overlay):not(.dropdown__button):active, button.t-white:not(.over-panel__overlay):not(.dropdown__button):focus {
+  background-color: #e6e6e6 !important;
+}
+
+.t-white.nav-bar {
+  background: -moz-linear-gradient(45deg, #f2f2f2 0%, whitesmoke 50%, #fafafa 50%, #f7f7f7 100%) !important;
+  background: -webkit-linear-gradient(45deg, #f2f2f2 0%, whitesmoke 50%, #fafafa 50%, #f7f7f7 100%) !important;
+  background: linear-gradient(45deg, #f2f2f2 0%, whitesmoke 50%, #fafafa 50%, #f7f7f7 100%) !important;
+}
+
+.t-white.subnav__items {
   background-color: #ffffff;
 }
 
-button.t-white[aria-expanded]:hover, button.t-white[aria-expanded]:active, button.t-white[aria-expanded]:focus {
-  background-color: #e6e6e6;
+.t-white.over-panel__contents {
+  background: -moz-linear-gradient(45deg, #f2f2f2 0%, whitesmoke 50%, #fafafa 50%, #f7f7f7 100%) !important;
+  background: -webkit-linear-gradient(45deg, #f2f2f2 0%, whitesmoke 50%, #fafafa 50%, #f7f7f7 100%) !important;
+  background: linear-gradient(45deg, #f2f2f2 0%, whitesmoke 50%, #fafafa 50%, #f7f7f7 100%) !important;
 }
 
+/*
+.t-white.search-form {
+    background-color: map-get($theme, background-color);
+}
+*/
 .t-white.search-form .search-form__submit {
-  background-color: #ffffff;
+  background-color: #f2f2f2;
+  /*&:hover,
+    &:active,
+    &:focus {
+        @if is-int($f__button-background-color--alt) {
+            @if $f__button-background-color--alt > 0 {
+                $f__button-background-color--alt_percent: $f__button-background-color--alt * 1%;
+                background-color: lighten(map-get($theme, background-color), $f__button-background-color--alt_percent);
+            }
+            @if $f__button-background-color--alt < 0 {
+                $f__button-background-color--alt_percent: $f__button-background-color--alt * -1%;
+                background-color: darken(map-get($theme, background-color), $f__button-background-color--alt_percent);
+            }
+        }
+    }*/
 }
 
-.t-white.search-form .search-form__submit:hover, .t-white.search-form .search-form__submit:active, .t-white.search-form .search-form__submit:focus {
-  background-color: #e6e6e6;
+.t-white.search-form .search-form__submit:hover, .t-white.search-form .search-form__submit:focus {
+  background-color: #d9d9d9;
 }
 
 /* - Don't do this, it's too generic and results in equal specifivity that's resolved in source
@@ -7869,7 +7920,7 @@ button.t-white[aria-expanded]:hover, button.t-white[aria-expanded]:active, butto
 .c-panel.c-panel--very-light.t-white a[href].cta:hover,
 .c-panel.c-panel--very-light.t-white a[href].cta:active,
 .c-panel.c-panel--very-light.t-white a[href].cta:focus {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .c-panel.c-panel--light.t-white {
@@ -7898,7 +7949,7 @@ button.t-white[aria-expanded]:hover, button.t-white[aria-expanded]:active, butto
 .c-panel.c-panel--light.t-white a[href].cta:hover,
 .c-panel.c-panel--light.t-white a[href].cta:active,
 .c-panel.c-panel--light.t-white a[href].cta:focus {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .c-panel.c-panel--dark.t-white {
@@ -7927,7 +7978,7 @@ button.t-white[aria-expanded]:hover, button.t-white[aria-expanded]:active, butto
 .c-panel.c-panel--dark.t-white a[href].cta:hover,
 .c-panel.c-panel--dark.t-white a[href].cta:active,
 .c-panel.c-panel--dark.t-white a[href].cta:focus {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .c-panel.c-panel--very-dark.t-white {
@@ -7956,7 +8007,7 @@ button.t-white[aria-expanded]:hover, button.t-white[aria-expanded]:active, butto
 .c-panel.c-panel--very-dark.t-white a[href].cta:hover,
 .c-panel.c-panel--very-dark.t-white a[href].cta:active,
 .c-panel.c-panel--very-dark.t-white a[href].cta:focus {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 /*
@@ -8025,7 +8076,7 @@ $patterns: (
 
 .c-card.t-neutral,
 .c-card.t-neutral .c-card__main {
-  background-color: #8e8279;
+  background-color: #7b7068;
 }
 
 .c-card.t-neutral .c-card__main {
@@ -8073,7 +8124,7 @@ $patterns: (
 .c-panel.c-panel.t-neutral a[href].cta:hover,
 .c-panel.c-panel.t-neutral a[href].cta:active,
 .c-panel.c-panel.t-neutral a[href].cta:focus {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .c-primary-cta.t-neutral[href] {
@@ -8097,6 +8148,12 @@ $patterns: (
   background-color: #736961;
 }
 
+.c-sign.t-neutral {
+  background: -moz-linear-gradient(45deg, #81756d 0%, #84786f 50%, #897d74 50%, #867a71 100%) !important;
+  background: -webkit-linear-gradient(45deg, #81756d 0%, #84786f 50%, #897d74 50%, #867a71 100%) !important;
+  background: linear-gradient(45deg, #81756d 0%, #84786f 50%, #897d74 50%, #867a71 100%) !important;
+}
+
 /*.t-neutral.t-color {
     color: map-get($theme, text-color);
 }*/
@@ -8107,22 +8164,57 @@ $patterns: (
 .t-neutral button:not(.over-panel__overlay):not(.dropdown__button),
 .t-neutral button:not(.over-panel__overlay)[aria-expanded=true] {
 */
-button.t-neutral[aria-expanded] {
-  border-color: #8e8279;
-  color: #333;
+button.t-neutral:not(.over-panel__overlay):not(.dropdown__button) {
+  border-color: #8e8279 !important;
+  color: #333 !important;
+  background-color: #8e8279 !important;
+}
+
+button.t-neutral:not(.over-panel__overlay):not(.dropdown__button):hover, button.t-neutral:not(.over-panel__overlay):not(.dropdown__button):active, button.t-neutral:not(.over-panel__overlay):not(.dropdown__button):focus {
+  background-color: #736961 !important;
+}
+
+.t-neutral.nav-bar {
+  background: -moz-linear-gradient(45deg, #81756d 0%, #84786f 50%, #897d74 50%, #867a71 100%) !important;
+  background: -webkit-linear-gradient(45deg, #81756d 0%, #84786f 50%, #897d74 50%, #867a71 100%) !important;
+  background: linear-gradient(45deg, #81756d 0%, #84786f 50%, #897d74 50%, #867a71 100%) !important;
+}
+
+.t-neutral.subnav__items {
   background-color: #8e8279;
 }
 
-button.t-neutral[aria-expanded]:hover, button.t-neutral[aria-expanded]:active, button.t-neutral[aria-expanded]:focus {
-  background-color: #736961;
+.t-neutral.over-panel__contents {
+  background: -moz-linear-gradient(45deg, #81756d 0%, #84786f 50%, #897d74 50%, #867a71 100%) !important;
+  background: -webkit-linear-gradient(45deg, #81756d 0%, #84786f 50%, #897d74 50%, #867a71 100%) !important;
+  background: linear-gradient(45deg, #81756d 0%, #84786f 50%, #897d74 50%, #867a71 100%) !important;
 }
 
+/*
+.t-neutral.search-form {
+    background-color: map-get($theme, background-color);
+}
+*/
 .t-neutral.search-form .search-form__submit {
-  background-color: #8e8279;
+  background-color: #81756d;
+  /*&:hover,
+    &:active,
+    &:focus {
+        @if is-int($f__button-background-color--alt) {
+            @if $f__button-background-color--alt > 0 {
+                $f__button-background-color--alt_percent: $f__button-background-color--alt * 1%;
+                background-color: lighten(map-get($theme, background-color), $f__button-background-color--alt_percent);
+            }
+            @if $f__button-background-color--alt < 0 {
+                $f__button-background-color--alt_percent: $f__button-background-color--alt * -1%;
+                background-color: darken(map-get($theme, background-color), $f__button-background-color--alt_percent);
+            }
+        }
+    }*/
 }
 
-.t-neutral.search-form .search-form__submit:hover, .t-neutral.search-form .search-form__submit:active, .t-neutral.search-form .search-form__submit:focus {
-  background-color: #736961;
+.t-neutral.search-form .search-form__submit:hover, .t-neutral.search-form .search-form__submit:focus {
+  background-color: #655c55;
 }
 
 /* - Don't do this, it's too generic and results in equal specifivity that's resolved in source
@@ -8204,7 +8296,7 @@ button.t-neutral[aria-expanded]:hover, button.t-neutral[aria-expanded]:active, b
 .c-panel.c-panel--very-light.t-neutral a[href].cta:hover,
 .c-panel.c-panel--very-light.t-neutral a[href].cta:active,
 .c-panel.c-panel--very-light.t-neutral a[href].cta:focus {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .c-panel.c-panel--light.t-neutral {
@@ -8233,7 +8325,7 @@ button.t-neutral[aria-expanded]:hover, button.t-neutral[aria-expanded]:active, b
 .c-panel.c-panel--light.t-neutral a[href].cta:hover,
 .c-panel.c-panel--light.t-neutral a[href].cta:active,
 .c-panel.c-panel--light.t-neutral a[href].cta:focus {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .c-panel.c-panel--dark.t-neutral {
@@ -8294,6 +8386,18 @@ button.t-neutral[aria-expanded]:hover, button.t-neutral[aria-expanded]:active, b
   background-color: rgba(255, 255, 255, 0.1);
 }
 
+.nav-bar {
+  background: -moz-linear-gradient(45deg, #543d66 0%, #573f69 50%, #5c4370 50%, #59416c 100%) !important;
+  background: -webkit-linear-gradient(45deg, #543d66 0%, #573f69 50%, #5c4370 50%, #59416c 100%) !important;
+  background: linear-gradient(45deg, #543d66 0%, #573f69 50%, #5c4370 50%, #59416c 100%) !important;
+}
+
+.over-panel__contents {
+  background: -moz-linear-gradient(45deg, #543d66 0%, #573f69 50%, #5c4370 50%, #59416c 100%) !important;
+  background: -webkit-linear-gradient(45deg, #543d66 0%, #573f69 50%, #5c4370 50%, #59416c 100%) !important;
+  background: linear-gradient(45deg, #543d66 0%, #573f69 50%, #5c4370 50%, #59416c 100%) !important;
+}
+
 .d-background--very-light.t-npeu--alt {
   background-color: white !important;
 }
@@ -8346,7 +8450,7 @@ button.t-neutral[aria-expanded]:hover, button.t-neutral[aria-expanded]:active, b
 .c-panel.c-panel--very-light a[href].cta:hover,
 .c-panel.c-panel--very-light a[href].cta:active,
 .c-panel.c-panel--very-light a[href].cta:focus {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .c-panel.c-panel--light {
@@ -8375,7 +8479,7 @@ button.t-neutral[aria-expanded]:hover, button.t-neutral[aria-expanded]:active, b
 .c-panel.c-panel--light a[href].cta:hover,
 .c-panel.c-panel--light a[href].cta:active,
 .c-panel.c-panel--light a[href].cta:focus {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .c-panel.c-panel--dark {

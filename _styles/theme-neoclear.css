@@ -289,7 +289,7 @@ $patterns: (
 
 .c-card.t-neoclear,
 .c-card.t-neoclear .c-card__main {
-  background-color: #009590;
+  background-color: #00716d;
 }
 
 .c-card.t-neoclear .c-card__main {
@@ -361,6 +361,12 @@ $patterns: (
   background-color: #881462;
 }
 
+.c-sign.t-neoclear {
+  background: -moz-linear-gradient(45deg, #007c77 0%, #00817c 50%, #008b86 50%, #008681 100%) !important;
+  background: -webkit-linear-gradient(45deg, #007c77 0%, #00817c 50%, #008b86 50%, #008681 100%) !important;
+  background: linear-gradient(45deg, #007c77 0%, #00817c 50%, #008b86 50%, #008681 100%) !important;
+}
+
 /*.t-neoclear.t-color {
     color: map-get($theme, text-color);
 }*/
@@ -371,22 +377,57 @@ $patterns: (
 .t-neoclear button:not(.over-panel__overlay):not(.dropdown__button),
 .t-neoclear button:not(.over-panel__overlay)[aria-expanded=true] {
 */
-button.t-neoclear[aria-expanded] {
-  border-color: #009590;
-  color: #ffffff;
+button.t-neoclear:not(.over-panel__overlay):not(.dropdown__button) {
+  border-color: #009590 !important;
+  color: #ffffff !important;
+  background-color: #009590 !important;
+}
+
+button.t-neoclear:not(.over-panel__overlay):not(.dropdown__button):hover, button.t-neoclear:not(.over-panel__overlay):not(.dropdown__button):active, button.t-neoclear:not(.over-panel__overlay):not(.dropdown__button):focus {
+  background-color: #00625f !important;
+}
+
+.t-neoclear.nav-bar {
+  background: -moz-linear-gradient(45deg, #007c77 0%, #00817c 50%, #008b86 50%, #008681 100%) !important;
+  background: -webkit-linear-gradient(45deg, #007c77 0%, #00817c 50%, #008b86 50%, #008681 100%) !important;
+  background: linear-gradient(45deg, #007c77 0%, #00817c 50%, #008b86 50%, #008681 100%) !important;
+}
+
+.t-neoclear.subnav__items {
   background-color: #009590;
 }
 
-button.t-neoclear[aria-expanded]:hover, button.t-neoclear[aria-expanded]:active, button.t-neoclear[aria-expanded]:focus {
-  background-color: #00625f;
+.t-neoclear.over-panel__contents {
+  background: -moz-linear-gradient(45deg, #007c77 0%, #00817c 50%, #008b86 50%, #008681 100%) !important;
+  background: -webkit-linear-gradient(45deg, #007c77 0%, #00817c 50%, #008b86 50%, #008681 100%) !important;
+  background: linear-gradient(45deg, #007c77 0%, #00817c 50%, #008b86 50%, #008681 100%) !important;
 }
 
+/*
+.t-neoclear.search-form {
+    background-color: map-get($theme, background-color);
+}
+*/
 .t-neoclear.search-form .search-form__submit {
-  background-color: #009590;
+  background-color: #007c77;
+  /*&:hover,
+    &:active,
+    &:focus {
+        @if is-int($f__button-background-color--alt) {
+            @if $f__button-background-color--alt > 0 {
+                $f__button-background-color--alt_percent: $f__button-background-color--alt * 1%;
+                background-color: lighten(map-get($theme, background-color), $f__button-background-color--alt_percent);
+            }
+            @if $f__button-background-color--alt < 0 {
+                $f__button-background-color--alt_percent: $f__button-background-color--alt * -1%;
+                background-color: darken(map-get($theme, background-color), $f__button-background-color--alt_percent);
+            }
+        }
+    }*/
 }
 
-.t-neoclear.search-form .search-form__submit:hover, .t-neoclear.search-form .search-form__submit:active, .t-neoclear.search-form .search-form__submit:focus {
-  background-color: #00625f;
+.t-neoclear.search-form .search-form__submit:hover, .t-neoclear.search-form .search-form__submit:focus {
+  background-color: #004946;
 }
 
 /* - Don't do this, it's too generic and results in equal specifivity that's resolved in source
@@ -463,6 +504,12 @@ button.t-neoclear[aria-expanded]:hover, button.t-neoclear[aria-expanded]:active,
 }
 
 .d-background--sloped.t-neoclear--alt {
+  background: -moz-linear-gradient(45deg, #9f1772 0%, #a31775 50%, #ac197c 50%, #a81878 100%) !important;
+  background: -webkit-linear-gradient(45deg, #9f1772 0%, #a31775 50%, #ac197c 50%, #a81878 100%) !important;
+  background: linear-gradient(45deg, #9f1772 0%, #a31775 50%, #ac197c 50%, #a81878 100%) !important;
+}
+
+.c-sign.t-neoclear--alt {
   background: -moz-linear-gradient(45deg, #9f1772 0%, #a31775 50%, #ac197c 50%, #a81878 100%) !important;
   background: -webkit-linear-gradient(45deg, #9f1772 0%, #a31775 50%, #ac197c 50%, #a81878 100%) !important;
   background: linear-gradient(45deg, #9f1772 0%, #a31775 50%, #ac197c 50%, #a81878 100%) !important;

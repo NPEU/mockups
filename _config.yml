@@ -38,8 +38,9 @@ defaults:
       project_base_url: false
       section_menu: false
       toc: false
+      main_top_modules: false
       has_pull_outs: false
-      had_map: false
+      has_map: false
 
 # Build settings
 markdown: kramdown

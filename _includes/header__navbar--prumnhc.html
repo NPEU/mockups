@@ -1,19 +1,19 @@
-            <div class="nav-bar  u-padding--sides--s  t-{{ page.project }}  d-bands--bottomX  d-background--sloped">
+            <div class="nav-bar  u-padding--sides--s  {{ project_data.theme_class }}">
 
                 <div class="nav-bar__start">
                     <div class="nav-bar__item">
-                        <button class="over-panel-control" hidden aria-controls="menu-panel-5" aria-label="Main menu" aria-expanded="false" data-js="overpanel__control"><svg display="none" class="icon  icon--is-closed"><use xlink:href="#icon-menu"></use></svg><svg display="none" class="icon  icon--is-open"><use xlink:href="#icon-cross"></use></svg></button>
+                        <button class="over-panel-control  {{ project_data.theme_class }}" hidden aria-controls="menu-panel" aria-label="Main menu" aria-expanded="false" data-js="overpanel__control"><svg display="none" class="icon  icon--is-closed"><use xlink:href="#icon-menu"></use></svg><svg display="none" class="icon  icon--is-open"><use xlink:href="#icon-cross"></use></svg></button>
                     </div>
                     <div class="nav-bar__item">
-                        <button class="over-panel-control" hidden aria-controls="search-panel" aria-label="Search" aria-expanded="false" data-js="overpanel__control"><svg display="none" class="icon  icon--is-closed"><use xlink:href="#icon-search"></use></svg><svg display="none" class="icon  icon--is-open"><use xlink:href="#icon-cross"></use></svg></button>
+                        <button class="over-panel-control  {{ project_data.theme_class }}" hidden aria-controls="search-panel" aria-label="Search" aria-expanded="false" data-js="overpanel__control"><svg display="none" class="icon  icon--is-closed"><use xlink:href="#icon-search"></use></svg><svg display="none" class="icon  icon--is-open"><use xlink:href="#icon-cross"></use></svg></button>
                     </div>
                 </div>
 
                 <nav class="nav-bar__main">
 
-                    <div class="over-panel  over-panel--fade" id="menu-panel-5" data-js="over-panel">
-                        <button class="over-panel__overlay" hidden aria-hidden="true" tabindex="-1" data-js="over-panel__overlay"></button>
-                        <div class="over-panel__contents  d-background--sloped  t-{{ page.project }}" data-js="over-panel__contents">
+                    <div class="over-panel  over-panel--fade" id="menu-panel" data-js="over-panel">
+                        <button class="over-panel__overlay  {{ project_data.theme_class }}" hidden aria-hidden="true" tabindex="-1" data-js="over-panel__overlay"></button>
+                        <div class="over-panel__contents  {{ project_data.theme_class }}" data-js="over-panel__contents">
 
 
                             <ul class="nav-bar__items">
@@ -22,10 +22,10 @@
                                     <a href="/{{ page.project }}#main" class="nav-bar__link">Themes</a>
 
                                     <div class="dropdown  dropdown--only-wide">
-                                        <button id="themes-sub-menu" class="dropdown__button" data-js="dropdown__button" hidden aria-label="Themes sub-menu" aria-expanded="false"><svg display="none" class="icon  icon--is-closed"><use xlink:href="#icon-chevron-down"></use></svg><svg display="none" class="icon  icon--is-open"><use xlink:href="#icon-chevron-up"></use></svg></button>
+                                        <button id="themes-sub-menu" class="dropdown__button  {{ project_data.theme_class }}" data-js="dropdown__button" hidden aria-label="Themes sub-menu" aria-expanded="false"><svg display="none" class="icon  icon--is-closed"><use xlink:href="#icon-chevron-down"></use></svg><svg display="none" class="icon  icon--is-open"><use xlink:href="#icon-chevron-up"></use></svg></button>
 
                                         <div class="dropdown__area" id="themes-sub-menu--target">
-                                            <ul class="subnav__items  subnav__items--stacked--only-wide  d-background  t-{{ page.project }}">
+                                            <ul class="subnav__items  subnav__items--stacked--only-wide  t-{{ page.project }}">
                                                 <li class="subnav__item"><a href="#main" class="subnav__link" data-js="dropdown__focus-start">Theme 1: Pre-conception health and prevention across the maternity pathway</a></li>
                                                 <li class="subnav__item"><a href="#main" class="subnav__link">Theme 2: Pregnancy loss and perinatal morbidity and mortality</a></li>
                                                 <li class="subnav__item"><a href="#main" class="subnav__link">Theme 3: Maternal health outcomes and experience of care</a></li>
@@ -50,9 +50,9 @@
 
                 <div class="nav-bar__end">
                     <div class="over-panel  over-panel--fade" id="search-panel" data-js="over-panel">
-                        <button class="over-panel__overlay" hidden aria-hidden="true" tabindex="-1" data-js="over-panel__overlay"></button>
-                        <div class="over-panel__contents  d-background--sloped  t-{{ page.project }}" data-js="over-panel__contents">
-                            <form action="#search" id="searchform" class="search-form  search-form---restrict-width  d-background--sloped  t-{{ page.project }}  u-space--left--auto" method="GET">
+                        <button class="over-panel__overlay  {{ project_data.theme_class }}" hidden aria-hidden="true" tabindex="-1" data-js="over-panel__overlay"></button>
+                        <div class="over-panel__contents  {{ project_data.theme_class }}" data-js="over-panel__contents">
+                            <form action="#search" id="searchform" class="search-form  search-form---restrict-width  {{ project_data.theme_class }}  u-space--left--auto" method="GET">
                                 <input type="search" class="search-form__field" id="search" placeholder="Search" name="s" value="" aria-label="Search" />
                                 <button class="search-form__submit" type="submit">
                                     <span>

@@ -30,10 +30,12 @@ $card-breakpoint: 30em !default;
 $card-pull: 5rem !default;
 
 
-// Card body:
+// Card main:
 
-$card-body--text-color: $card--text-color !default;
-$card-body--background-color: $card--background-color !default;
+$card-main--text-color: $card--text-color !default;
+$card-main--background-color: $card--background-color !default;
+
+// Card title:
 
 $card-title--text-color: $card--text-color !default;
 $card-title--background-color: $card--background-color !default;
@@ -41,7 +43,7 @@ $card-title--background-color: $card--background-color !default;
 
 $card--padding: 0 !default;
 
-
+// Card body:
 /*
 $card-cta--border-width: 1px !default;
 $card-cta--border-style: solid !default;
@@ -123,7 +125,7 @@ $theme-only: false !default;
 
     .#{$card-namespace}card#{$theme-class} .#{$card-namespace}card__main {
         color: map-get($theme, card-text-color);
-        background: map-get($theme, card-background-color);
+        background: map-get($theme, card-main-background-color);
     }
 
     @if map-has-key($theme, card-border-color) {
@@ -223,7 +225,7 @@ $theme-only: false !default;
                 margin-bottom: 0;
                 padding-bottom: 0;
 
-                background: $card-body--background-color;
+                background: $card-main--background-color;
 
                 position: relative;
                 display: block;
@@ -252,8 +254,8 @@ $theme-only: false !default;
             // Positioning context for themed bar and extended actionable area:
             position: relative;
 
-            color: $card-body--text-color;
-            background: $card-body--background-color;
+            color: $card-main--text-color;
+            background: $card-main--background-color;
 
             margin-left: $card-body--margin-left;
             margin-right: $card-body--margin-right;

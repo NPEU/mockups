@@ -26,21 +26,22 @@ $brochure--border-or-outline: false;
 
 
 
-// Probably need card variants, esp max-widths.
-//$card--base-color: darken($f__base-ui-color, 20%);
+$card-spacing-unit: $f__base-rem-space-unit;
+
 $card--base-color: $f__base-ui-color;
-//$card--base-color: map-get($neutral-theme, primary-color);
-$card--text-color: inherit;
+
+$card--text-color: #fff;
 
 $card--hover-effect-opacity: $hover-effect-opacity;
 
 $card-title--font-size: 2rem;
-//$card-title--line-height: $f__base-rem-space-unit * 1.25;
-$card-spacing-unit: $f__base-rem-space-unit;
+
+$card--background-color: darken($card--base-color, 7%);
+$card-main--background-color: $card--base-color;
+
 $card--border-color: darken($card--base-color, 20%);
 $card--border-or-outline: 'border';
-//$card--border-width: 2px;
-//$card--background-color: lighten(map-get($neutral-theme, background-color), 40%);
+
 
 @import "component-patterns/_card.scss";
 /*@include card-theme("card", (

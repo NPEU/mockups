@@ -37,3 +37,14 @@ $hover-effect-width: $f__base-rem-space-unit / 4;
 	}
 
 }
+
+@mixin sloped-background ($color) {
+    background: -moz-linear-gradient(45deg, darken($color, 5%) 0%, darken($color, 4%) 50%, darken($color, 2%) 50%,darken($color, 3%) 100%) !important;
+    background: -webkit-linear-gradient(45deg, darken($color, 5%) 0%,darken($color, 4%) 50%,darken($color, 2%) 50%,darken($color, 3%) 100%) !important;
+    background: linear-gradient(45deg, darken($color, 5%) 0%,darken($color, 4%) 50%,darken($color, 2%) 50%,darken($color, 3%) 100%) !important;
+
+}
+
+@mixin signs-theme-background ($color) {
+    @include sloped-background($color);
+}

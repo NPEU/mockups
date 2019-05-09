@@ -14,6 +14,8 @@
 
 $experimental_checkradios: true;
 
+$f__html-background-color: #57504a;
+
 $f__body-padding: 0;
 $f__main-max-line-length: 0;
 $f__main-padding: 0;
@@ -21,7 +23,7 @@ $f__main-padding: 0;
 $f__anchor-text-color: #333;
 
 // I shouldn't have to set this as the !default should allow a cascade.
-// Investigate why this is happeneing. I don't think it's a SASS problem as it seems to work in a 
+// Investigate why this is happeneing. I don't think it's a SASS problem as it seems to work in a
 // reduced test-case (though to be fair this isn't using @import...)
 // https://codepen.io/akirk/pen/RmWKgy
 $f__anchor-text-color--alt: #333;
@@ -59,26 +61,33 @@ $f__over-panel__overlay--background-color: #000;
 
 
 
-
-$f__nav-bar--background-color:             transparent;//#fff;
+$f__nav-bar--background-color:             $f__base-ui-color;
 $f__nav-bar__link--color:                  #fff;//#333;
-$f__nav-bar__link--background-color:       $f__nav-bar--background-color;
+$f__nav-bar__link--background-color:       transparent;
 $f__nav-bar__link--background-color--alt:  rgba(0,0,0,0.3);
 $f__nav-bar__link--background-color--alt2: rgba(0,0,0,0.3);
 
-$f__sub-nav--background-color:             $f__nav-bar--background-color;
+$f__sub-nav--background-color:             $f__base-ui-color;
 $f__sub-nav__link--color:                  $f__nav-bar__link--color;
-$f__sub-nav__link--background-color:       $f__nav-bar--background-color;
-//$f__sub-nav__link--background-color--alt: darken($f__nav-bar--background-color, 14%);
+$f__sub-nav__link--background-color:       transparent;
 $f__sub-nav__link--background-color--alt:  rgba(0,0,0,0.3);
 
+$f__nav-bar-divider-first-item:            true;
 
 @import "../bower_components/Fall-Back-Patterns/Nav Bar/scss/_nav-bar";
+// Not sure about this. It allows the sloped background set up in the theme to show through, but
+// if it's ok that this is transparent, why is it needed in the first place? May be missing
+// something here? Either it should be configurable or removed, really, or the sloped bakground
+// applied to the ::before instead.
+
+.js-nav-bar .nav-bar::before {
+    background: transparent
+}
 
 
 
 
-$f__dropdown--background-color:              $f__nav-bar--background-color;
+$f__dropdown--background-color:              transparent;
 $f__dropdown--text-color:                    $f__nav-bar__link--color;
 $f__dropdown__button--color:                 $f__nav-bar__link--color;
 $f__dropdown__button--background-color:      $f__nav-bar__link--background-color;
@@ -87,8 +96,9 @@ $f__dropdown__button--background-color--alt: $f__nav-bar__link--background-color
 @import "../bower_components/Fall-Back-Patterns/Dropdown/scss/_dropdown";
 
 
-
-//$f__search-form--breakpoint--enhanced: 50em;
+$f__search-form--background-color:              transparent;
+$f__search-form__submit--background-color:      darken($f__base-ui-color, 5%);
+$f__search-form__submit--background-color--alt: darken($f__base-ui-color, 15%);
 @import "../bower_components/Fall-Back-Patterns/Search Form/scss/_search-form";
 
 
@@ -291,6 +301,17 @@ $theme: map_get($themes, $theme-name);
 
 $theme-name: npeu;
 $theme: map_get($themes, $theme-name);
+
+// Navbar:
+.nav-bar {
+    @include sloped-background(map-get($theme, primary-color));
+}
+
+
+// Overpanel:
+.over-panel__contents {
+    @include sloped-background(map-get($theme, primary-color));
+}
 
 // Alternate colours:
 @if map-has-key($theme, "secondary-color") {

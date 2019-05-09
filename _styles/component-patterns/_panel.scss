@@ -72,7 +72,7 @@ $theme-only: false !default;
         a[href].cta:hover,
         a[href].cta:active,
         a[href].cta:focus {
-            @if color_light_or_dark(map-get($theme, background-color)) == 'light' {
+            @if f__color_light_or_dark(map-get($theme, background-color)) == 'light' {
                 background-color: rgba(0,0,0,0.1);
             } @else {
                 background-color: rgba(255,255,255,0.1);

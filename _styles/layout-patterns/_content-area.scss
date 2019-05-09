@@ -23,28 +23,15 @@ $content-area-pull-out-side-space: 0 $content-area-spacing-unit 0 0 !default;
     $content-area-main-side: left;
 }
 
-/*
-@mixin content-area-size ($width, $breakpoint) {
-
-    .content-area
-}
-*/
 .#{$content-area-namespace}content-area {
 
     &#{&} {
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex;
-
-        -webkit-flex-wrap: wrap;
-            -ms-flex-wrap: wrap;
-                flex-wrap: wrap;
-
         margin: 0;
-        padding: 0 $content-area-spacing-unit;
     }
 
-    #{&}__main {
+    #{&}__header,
+    #{&}__main,
+    #{&}__pull-out {
         width: 100%;
         max-width: $content-area-max-width;
         margin-left: auto;
@@ -56,36 +43,45 @@ $content-area-pull-out-side-space: 0 $content-area-spacing-unit 0 0 !default;
 @media only screen and (min-width: $content-area-breakpoint) {
 
     .#{$content-area-namespace}content-area {
-
-        &#{&}--has-pull-outs #{&}__main {
-            /* For Block formatting context (contain float): */
-            display: table;
-            display: flow-root;
-
-            //max-width: calc(#{$content-area-max-width + ($content-area-max-width / 3)} + #{$content-area-spacing-unit * 4};
-            max-width: calc(#{$content-area-max-width} + #{$content-area-max-width / 2} + #{$content-area-spacing-unit * 5});
-        }
-
-        /* Position all children: */
-        &#{&}--has-pull-outs #{&}__main > * {
-            width: 66.666%;
-            float: $content-area-main-side;
+    
+         &#{&} {
             padding: 0 $content-area-spacing-unit;
         }
-
-        /* Pull out: */
-        &#{&}--has-pull-outs #{&}__main > #{&}__pull-out {
-            width: 33.333%;
-            float: $content-area-pull-out-side;
-            padding: $content-area-pull-out-side-space;
-            margin: 0;
-            clear: right;
-        }
         
-        &#{&}--has-pull-outs #{&}__main__headline_image {
-            padding: 0;
+        &#{&}--has-pull-outs {
+            //display: -ms-grid;
+            display: grid;
+                 //-ms-grid-rows: auto auto 1fr;
+            grid-template-rows: auto auto 1fr;
+                 //-ms-grid-columns: 2fr 1fr;
+            grid-template-columns: 2fr 1fr;
+            
+            .#{$content-area-namespace}content-area__header {
+                //ms-grid-column: 1;
+                    grid-column: 1;
+                //-ms-grid-row: 1;
+                    grid-row: 1;
+            }
+            
+            .#{$content-area-namespace}content-area__main {
+                //-ms-grid-column: 1;
+                    grid-column: 1;
+                     //-ms-grid-row: 2;
+                //-ms-grid-row-span: 2;
+                         grid-row: 2 / 4;
+                padding-right: $content-area-spacing-unit;
+            }
+            
+            .#{$content-area-namespace}content-area__pull-out--top {
+                //-ms-grid-row: 2;
+                grid-row: 2;
+            }
+            
+            .#{$content-area-namespace}content-area__pull-out--bottom {
+                //-ms-grid-row: 3;
+                grid-row: 3;
+            }
         }
-
     }
 
 }

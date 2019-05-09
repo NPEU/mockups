@@ -6,12 +6,49 @@ layout: structure--project
 
         <div class="l-content-area  d-bands--bottom  t-{{ page.project }}{% if page.has_pull_outs or page.section_menu or page.toc %}  l-content-area--has-pull-outs{% endif %}">
 
-            <div class="l-content-area__main  d-background--light  t-neutral">
-
+            <div class="l-content-area__header">
             
                 {% include module__breadcrumbs.html %}
-            
                 
+                <div class="c-panel  c-longform-content">
+                    <h1>{{ page.title }}</h1>
+                </div>
+            </div>
+            
+            <div class="l-content-area__pull-out  l-content-area__pull-out--top  d-background--light  t-neutral">
+                {% assign total_h2 = content | split: '<h2' | size | minus: 1 %}
+                {% if total_h2 > 2 %}
+                <div class="c-panel">
+
+                    {% include module__toc.html %}
+
+                </div>
+                {% endif %}
+
+                {% if page.main_top_modules != false %}
+                {% for module_name in page.main_top_modules %}
+                <div class="c-panel">
+                
+                    {% capture module_file %}module__main-top--{{ page.project }}--{{ module_name }}.html{% endcapture %}
+                    {% include {{ module_file }} %}
+
+                </div>
+                {% endfor %}
+                {% endif %}
+                
+                {% if page.section_menu %}
+                <div class="c-panel">
+
+                    {% capture section_menu_module %}module__section-menu--{{ page.project }}--{{ page.section_menu }}.html{% endcapture %}
+                    {% include {{ section_menu_module }} %}
+
+                </div>
+                {% endif %}
+            </div> 
+
+            <div class="l-content-area__main">
+
+
                 {% comment %}<!-- keep for now
                 {% if page.headline_image %}
                 <div id="headline_image" class="l-content-area__main__headline_image">
@@ -23,70 +60,33 @@ layout: structure--project
                 </div>
                 {% endif %}
                 -->{% endcomment %}
-                <div class="c-panel  Xu-padding--above  Xu-space--below  c-longform-content">                   
-                    <h1>{{ page.title }}</h1>
-                {% if page.toc %}
-                </div>
-                <div class="l-content-area__pull-out">
-                    <div class="c-panel">
-                        
-                        {% include module__toc.html %}
-                        
-                    </div>
-                </div>
-                <div class="c-panel  Xu-padding--above  Xu-space--below  c-longform-content">   
-                {% endif %}
-                
+
+
+                <div class="c-panel  c-longform-content">
+
                     {{ content }}
 
                 </div>
-                
-                {% if page.section_menu %}
-                <div class="l-content-area__pull-out  u-space--above">
-                    <div class="c-panel">
-                    
-                        {% capture section_menu_module %}module__section-menu--{{ page.project }}--{{ page.section_menu }}.html{% endcapture %}
-                        {% include {{ section_menu_module }} %}
-                    
-                    </div>
-                </div>
-                {% endif %}
-                
-                <!--<div class="l-content-area__pull-out  u-space--below">
-                    <div wf-area="white+outline+medium-padding">
-                        <h2>Side bar - mid section</h2>
-                        
-                         <p>
-                            Suspendisse pellentesque, elit et laoreet gravida, nunc arcu eleifend sem, luctus pellentesque diam lorem quis justo.
-                        </p>
-                    </div>
-                </div>-->
-                    
-                <!--<div class="u-space--below">   
-                    <h2>Main - bottom section</h2>
-                    <p>
-                        Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque tincidunt lorem sit amet enim congue, non molestie arcu aliquam. Vestibulum sagittis feugiat vulputate. Sed pharetra aliquam diam, eu euismod quam ullamcorper in. Sed a tempor tellus. Suspendisse in tellus hendrerit, aliquam ipsum nec, faucibus neque. Fusce a neque urna.
-                    </p>
-
-                    <p>
-                        Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque tincidunt lorem sit amet enim congue, non molestie arcu aliquam. Vestibulum sagittis feugiat vulputate. Sed pharetra aliquam diam, eu euismod quam ullamcorper in. Sed a tempor tellus. Suspendisse in tellus hendrerit, aliquam ipsum nec, faucibus neque. Fusce a neque urna.
-                    </p>
-
-                    <p>
-                        Maecenas vehicula, felis a tincidunt ultrices, ante velit aliquet lectus, sed sollicitudin libero tellus at elit. Fusce eget quam et tortor gravida hendrerit. In urna libero, vulputate sit amet mauris eget, efficitur luctus tortor.
-                    </p>
-                   
-                </div>-->
-                
-                
             </div>
             
+            <div class="l-content-area__pull-out  l-content-area__pull-out--bottom">
+                <div class="c-panel">
+                    <section class="c-panel--module">
+                    
+                        <h2>Contact Us</h2>
+                        <p><a href="">Contact details</a></p>
+
+                    </section>
+                </div>
+            </div>            
+
         </div>
+        
         {% if page.display_funder %}
         <div class="l-blockrow">
             <div class="l-blockrow__limit-widthX  d-bands--bottom  t-{{ page.project }}">
-                <div class="l-col-to-row">            
-                    
+                <div class="l-col-to-row">
+
                     <div class="l-col-to-row__item  ff-width-100--40--66-666">
                         <div class="u-image-cover">
                             <div class="u-image-cover__inner">
@@ -94,8 +94,8 @@ layout: structure--project
                             </div>
                         </div>
                     </div>
-                    
-                    
+
+
                     <div class="l-col-to-row__item  ff-width-100--40--33-333">
                         <div class="c-panel  u-fill-height">
                             {% capture funder_module %}module__funder--{{ page.project }}.html{% endcapture %}
@@ -109,7 +109,7 @@ layout: structure--project
         {% if page.display_social or page.display_support %}
         <div class="l-blockrow">
             <div class="l-blockrow__limit-widthX  d-bands--bottom  t-{{ page.project }} ">
-                <div class="l-col-to-row">            
+                <div class="l-col-to-row">
                     <div class="l-col-to-row__item  ff-width-100--45--33-333">
                         <div class="c-panel  t-white  u-fill-height">
                             {% if page.display_social %}
@@ -118,10 +118,10 @@ layout: structure--project
                             {% endif %}
                         </div>
                     </div>
-                    
+
                     <div class="l-col-to-row__item  ff-width-100--45--66-666">
                         <div class="c-panel  t-white  u-fill-height">
-                            
+
                             {% if page.display_support %}
                             {% capture support_module %}module__support--{{ page.project }}.html{% endcapture %}
                             {% include {{ support_module }} %}
@@ -131,7 +131,7 @@ layout: structure--project
                     <!--
                     <div class="l-col-to-row__item  ff-width-100--45--33-333">
                         <div class="c-panel  t-white  u-fill-height">
-                            
+
                         </div>
                     </div>
                     -->

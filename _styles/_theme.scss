@@ -32,16 +32,18 @@ $patterns: (
 // Set defaults:
 $theme: map-merge(
     (
-        background-color      : map-get($theme, primary-color),
-        band-color            : map-get($theme, primary-color),
-        border-color          : map-get($theme, primary-color),
-        card-background-color : map-get($theme, primary-color),
-        card-border-color     : darken(map-get($theme, primary-color), 20%),
-        card-text-color       : #fff,
-        cta-text-color        : #333,
-        cta-background-color  : map-get($theme, primary-color),
-        page-header-color     : map-get($theme, primary-color),
-        text-color            : #333
+        background-color           : map-get($theme, primary-color),
+        band-color                 : map-get($theme, primary-color),
+        border-color               : map-get($theme, primary-color),
+        card-background-color      : darken(map-get($theme, primary-color), 7%),
+        card-main-background-color : map-get($theme, primary-color),
+        card-border-color          : darken(map-get($theme, primary-color), 20%),
+        card-text-color            : #fff,
+        cta-text-color             : #333,
+        cta-background-color       : map-get($theme, primary-color),
+        page-header-color          : map-get($theme, primary-color),
+        signs-background-color     : map-get($theme, primary-color),
+        text-color                 : #333
     )
     , $theme
 );
@@ -70,7 +72,7 @@ $theme: map-merge(
 @include page-header-theme($theme-name, $theme);
 @include panel-theme($theme-name, $theme);
 @include primary-cta-theme($theme-name, $theme);
-
+@include signs-theme($theme-name, $theme);
 
 // Override StartCSS values.
 // Note this almost certainly isn't the best place for this but will do for now.
@@ -86,10 +88,10 @@ $theme: map-merge(
 .#{$theme-namespace}#{$theme-name} button:not(.over-panel__overlay):not(.dropdown__button),
 .#{$theme-namespace}#{$theme-name} button:not(.over-panel__overlay)[aria-expanded=true] {
 */
-button.#{$theme-namespace}#{$theme-name}[aria-expanded] {
-    border-color: map-get($theme, border-color);
-    color: map-get($theme, cta-text-color);
-    background-color: map-get($theme, background-color);
+button.#{$theme-namespace}#{$theme-name}:not(.over-panel__overlay):not(.dropdown__button) {
+    border-color: map-get($theme, border-color) !important;
+    color: map-get($theme, cta-text-color) !important;
+    background-color: map-get($theme, background-color) !important;
 
     &:hover,
     &:active,
@@ -97,22 +99,54 @@ button.#{$theme-namespace}#{$theme-name}[aria-expanded] {
         @if is-int($f__button-background-color--alt) {
             @if $f__button-background-color--alt > 0 {
                 $f__button-background-color--alt_percent: $f__button-background-color--alt * 1%;
-                background-color: lighten(map-get($theme, background-color), $f__button-background-color--alt_percent);
+                background-color: lighten(map-get($theme, background-color), $f__button-background-color--alt_percent) !important;
             }
             @if $f__button-background-color--alt < 0 {
                 $f__button-background-color--alt_percent: $f__button-background-color--alt * -1%;
-                background-color: darken(map-get($theme, background-color), $f__button-background-color--alt_percent);
+                background-color: darken(map-get($theme, background-color), $f__button-background-color--alt_percent) !important;
             }
         }
     }
 }
 
 
-// Search button:
+
+// Navbar:
+.#{$theme-namespace}#{$theme-name}.nav-bar {
+    @include sloped-background(map-get($theme, primary-color));
+}
+
+.#{$theme-namespace}#{$theme-name}.subnav__items {
+    background-color: map-get($theme, background-color);
+}  
+
+
+
+// Overpanel:
+.#{$theme-namespace}#{$theme-name}.over-panel__contents {
+    @include sloped-background(map-get($theme, primary-color));
+}
+
+
+
+// Search form
+/*
+.#{$theme-namespace}#{$theme-name}.search-form {
+    background-color: map-get($theme, background-color);
+}
+*/
+
+
+// Search form button:
 .#{$theme-namespace}#{$theme-name}.search-form .search-form__submit {
-    background-color: map-get($theme, background-color);
-
+    background-color: darken(map-get($theme, background-color), 5%);
+    
     &:hover,
+    &:focus {
+        background-color: darken(map-get($theme, background-color), 15%);
+    }
+
+    /*&:hover,
     &:active,
     &:focus {
         @if is-int($f__button-background-color--alt) {
@@ -125,8 +159,10 @@ button.#{$theme-namespace}#{$theme-name}[aria-expanded] {
                 background-color: darken(map-get($theme, background-color), $f__button-background-color--alt_percent);
             }
         }
-    }
+    }*/
 }
+
+
 
 /* - Don't do this, it's too generic and results in equal specifivity that's resolved in source
     order, thus later themes win out, causing problems.
@@ -189,11 +225,13 @@ button.#{$theme-namespace}#{$theme-name}[aria-expanded] {
     $theme: map-merge(
         $theme,
         (
-            background-color : map-get($theme, secondary-color)
+            background-color       : map-get($theme, secondary-color),
+            signs-background-color : map-get($theme, secondary-color)
         )
     );
 
     @include background-theme(#{$theme-name}--alt, $theme);
+    @include signs-theme(#{$theme-name}--alt, $theme);
 }
 
 

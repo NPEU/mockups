@@ -24,7 +24,7 @@ layout: structure--project
             <div class="l-col-to-row__item  ff-width-100--40--33-333">
                 <div class="c-signpost  u-fill-height">
                     {% if page.landing_display_signpost_top %}
-                    <div class="c-sign  c-sign--participants  d-background--sloped  t-{{ page.project }}">
+                    <div class="c-sign  c-sign--participants  t-{{ page.project }}">
                         <a href="/{{ page.project }}/{{ project_data.participants_url }}" class="c-sign__link">
                             <span class="c-sign__centered-content  u-padding--top--l  u-padding--bottom--l">
                                 {{ project_data.participants_svg }}
@@ -33,7 +33,7 @@ layout: structure--project
                         </a>
                     </div>
 
-                    <div class="c-sign  c-sign--clinicians  d-background--sloped  t-{{ page.project }}">
+                    <div class="c-sign  c-sign--clinicians  t-{{ page.project }}">
                         <a href="/{{ page.project }}/clinicians" class="c-sign__link">
                             <span class="c-sign__centered-content  u-padding--top--l  u-padding--bottom--l">
                                 {{ project_data.clinicians_svg }}
@@ -43,7 +43,7 @@ layout: structure--project
                     </div>
                     {% endif %}
                     {% comment %}<!--
-                    <div class="c-sign  c-sign--contact  d-background--sloped  t-{{ page.project }}">
+                    <div class="c-sign  c-sign--contact  t-{{ page.project }}">
                         <a href="/{{ page.project }}/contact" class="c-sign__link">
                             <span class="c-sign__centered-content">
                                 {{ project_data.contact_svg }}
@@ -52,7 +52,7 @@ layout: structure--project
                         </a>
                     </div>
 
-                    <div class="c-sign  c-sign--centres  d-background--sloped  t-{{ page.project }}">
+                    <div class="c-sign  c-sign--centres  t-{{ page.project }}">
                         <a href="/{{ page.project }}/centres" class="c-sign__link">
                             <span class="c-sign__centered-content">
                                 {{ project_data.centres_svg }}
