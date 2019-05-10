@@ -1,3 +1,3 @@
-start chrome http://localhost:4001/
+start chrome http://localhost:4002/
 
 bundle exec jekyll serve

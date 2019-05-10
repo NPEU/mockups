@@ -3,6 +3,9 @@
     say, a list-grid). However, it doesn't work in Safari OSX/iOS.
     Applying a `card-wrap` class to a list item to make those items flex-containers seems to work
     OK, but perhaps this would be better abstracted as a `fill-height` class or something?
+    
+    Note IE10-11 flexbox for card, main and body causes problems when in other flex contexts.
+    For IE10 I'm just leaving off the -ms prefixes - it's still usable without flex.
 */
 
 $card-namespace: c- !default;
@@ -158,11 +161,9 @@ $theme-only: false !default;
     .#{$card-namespace}card {
         &#{&} {
             display: -webkit-flex;
-            display: -ms-flexbox;
             display: flex;
 
             -webkit-flex-direction: column;
-                -ms-flex-direction: column;
                     flex-direction: column;
 
             height: 100%;
@@ -197,7 +198,6 @@ $theme-only: false !default;
 
         > * {
             -webkit-flex: 0 0 auto;
-                -ms-flex: 0 0 auto;
                     flex: 0 0 auto;
 
             width: 100%;
@@ -264,46 +264,20 @@ $theme-only: false !default;
             padding: $card-body--padding;
 
             -webkit-flex: 1 0 auto;
-                -ms-flex: 1 0 auto;
                     flex: 1 0 auto;
 
 
             display: -webkit-flex;
-            display: -ms-flexbox;
             display: flex;
 
             -webkit-flex-direction: column;
-                -ms-flex-direction: column;
                     flex-direction: column;
-
-            /*-webkit-flex-wrap: wrap;
-                -ms-flex-wrap: wrap;
-                    flex-wrap: wrap;*/
-
-            /*-webkit-align-items: flex-end;
-                 -ms-flex-align: end;
-                    align-items: flex-end;
-
-            -webkit-align-content: space-between;
-               -ms-flex-line-pack: justify;
-                    align-content: space-between;
-            
-            -webkit-justify-content: flex-end;
-                      -ms-flex-pack: end;
-                    justify-content: flex-end;
-                    
-            -webkit-align-content: flex-start;
-               -ms-flex-line-pack: start;
-                    align-content: flex-start;
-            */
-
 
             position: relative;
         }
 
             #{&}__title {
                 -webkit-flex: 0 0 auto;
-                    -ms-flex: 0 0 auto;
                         flex: 0 0 auto;
 
                 font-size:   $card-title--font-size;
@@ -335,22 +309,18 @@ $theme-only: false !default;
 
             #{&}__body {
                 -webkit-flex: 1 0 auto;
-                    -ms-flex: 1 0 auto;
                         flex: 1 0 auto;
                         
                 display: -webkit-flex;
-                display: -ms-flexbox;
                 display: flex;
 
                 -webkit-flex-direction: column;
-                    -ms-flex-direction: column;
                         flex-direction: column;
 
                 width: 100%;
                 
                 & > * {
                     -webkit-flex: 0 0 auto;
-                        -ms-flex: 0 0 auto;
                             flex: 0 0 auto;
                 }
 
@@ -361,7 +331,6 @@ $theme-only: false !default;
             
                 #{&}__cta {            
                     -webkit-flex: 1 0 auto;
-                        -ms-flex: 1 0 auto;
                             flex: 1 0 auto;
                             
                     display: -webkit-flex;

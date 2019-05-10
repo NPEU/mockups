@@ -307,19 +307,6 @@ _:-ms-lang(x), html {
 body {
   position: relative;
   /* 1 */
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -moz-box-orient: vertical;
-  -moz-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: center;
-  -moz-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   width: 100%;
   min-width: 250px;
   min-height: 100%;
@@ -1511,7 +1498,8 @@ _:-moz-tree-row(hover), select:not([multiple]) {
 /*
     Undo custom arrow indicator for IE9-11:
 */
-@media screen and (min-width: 0\0) and (min-resolution: 72dpi) {
+/* IE9-11 */
+@media screen and (min-width: 0\0) and (min-resolution: +72dpi) {
   select:not([multiple]) {
     background-image: none\0;
     padding-right: 0\0;
@@ -2750,7 +2738,8 @@ _:-webkit-full-screen, _::-webkit-full-page-media, _:future, :root select[size="
 /*
     Similar problem with IE9-11:
 */
-@media screen and (min-width: 0\0) and (min-resolution: 72dpi) {
+/* IE9-11 */
+@media screen and (min-width: 0\0) and (min-resolution: +72dpi) {
   select[size="2"] {
     margin-bottom: calc(2.4rem - 1.1em - 2px);
   }
@@ -4069,6 +4058,7 @@ $fallback-svg--link-bg-color-alt: #fff;
 .cookie_notice {
   position: fixed;
   width: 100%;
+  left: 0;
   bottom: 0;
   z-index: 2000;
   padding: 0.75em;
@@ -5041,6 +5031,9 @@ $brochure--border-or-outline: false;
     say, a list-grid). However, it doesn't work in Safari OSX/iOS.
     Applying a `card-wrap` class to a list item to make those items flex-containers seems to work
     OK, but perhaps this would be better abstracted as a `fill-height` class or something?
+    
+    Note IE10-11 flexbox for card, main and body causes problems when in other flex contexts.
+    For IE10 I'm just leaving off the -ms prefixes - it's still usable without flex.
 */
 /*
 $card-cta--border-width: 1px !default;
@@ -5085,10 +5078,8 @@ $card-button--border-color: darken($card--base-color, 20%) !default;
 */
 .c-card.c-card {
   display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   height: 100%;
   margin: 0;
@@ -5108,7 +5099,6 @@ $card-button--border-color: darken($card--base-color, 20%) !default;
 
 .c-card > * {
   -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 100%;
 }
@@ -5165,39 +5155,16 @@ $card-button--border-color: darken($card--base-color, 20%) !default;
   margin-bottom: 0;
   padding: 2.4rem;
   -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
   flex: 1 0 auto;
   display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  /*-webkit-flex-wrap: wrap;
-                -ms-flex-wrap: wrap;
-                    flex-wrap: wrap;*/
-  /*-webkit-align-items: flex-end;
-                 -ms-flex-align: end;
-                    align-items: flex-end;
-
-            -webkit-align-content: space-between;
-               -ms-flex-line-pack: justify;
-                    align-content: space-between;
-            
-            -webkit-justify-content: flex-end;
-                      -ms-flex-pack: end;
-                    justify-content: flex-end;
-                    
-            -webkit-align-content: flex-start;
-               -ms-flex-line-pack: start;
-                    align-content: flex-start;
-            */
   position: relative;
 }
 
 .c-card .c-card__title {
   -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   font-size: 2rem;
   line-height: 1.2;
@@ -5222,20 +5189,16 @@ $card-button--border-color: darken($card--base-color, 20%) !default;
 
 .c-card .c-card__body {
   -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
   flex: 1 0 auto;
   display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   width: 100%;
 }
 
 .c-card .c-card__body > * {
   -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
@@ -5245,7 +5208,6 @@ $card-button--border-color: darken($card--base-color, 20%) !default;
 
 .c-card .c-card__cta {
   -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
   flex: 1 0 auto;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -6045,6 +6007,12 @@ $glimpse--link-border-bottom--hover: false !default;*/
   }
 }
 
+.c-sign {
+  /*
+            1. IE10
+        */
+}
+
 .c-sign.c-sign {
   background-color: #666;
 }
@@ -6100,29 +6068,18 @@ $glimpse--link-border-bottom--hover: false !default;*/
   outline: 1px solid #fff;
   position: relative;
   height: 100%;
-  display: -ms-flexbox;
+  display: block;
+  /* [1]  */
   display: -webkit-flex;
   display: flex;
-  -ms-flex-align: center;
   -webkit-align-items: center;
   align-items: center;
   -webkit-align-content: center;
-  -ms-flex-line-pack: center;
   align-content: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
   justify-content: center;
   -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-}
-
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .c-sign .c-sign__centered-content {
-    /*
-                    1. IE 11 needs this to size things properly in the case of nested flex ff-widths.
-                */
-  }
 }
 
 .c-sign .c-sign__centered-content svg {
@@ -6324,41 +6281,30 @@ $glimpse--link-border-bottom--hover: false !default;*/
             1. IE11 needs this to calculate widths properly.
         */
   display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  -ms-flex-preferred-size: 100%;
-  /* [1] */
   min-width: 100%;
   margin: 0;
   padding: 0;
   list-style-type: none;
+  position: relative;
+  /* [1] */
 }
 
 .l-col-to-row .l-col-to-row__item {
   margin: 0;
   padding: 0;
-  /*
-                1. IE10 needs this to calculate widths properly.
-            */
-  display: inline-block;
-  /* [1] */
   -webkit-flex: 1;
-  -ms-flex-positive: 1;
   flex-grow: 1;
   -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
   flex-shrink: 1;
   -webkit-flex-basis: auto;
-  -ms-flex-preferred-size: auto;
   flex-basis: auto;
 }
 
 .l-col-to-row.l-col-to-row--reversed {
   -webkit-flex-direction: row-reverse;
-  -ms-flex-direction: row-reverse;
   flex-direction: row-reverse;
 }
 
@@ -6423,16 +6369,33 @@ $glimpse--link-border-bottom--hover: false !default;*/
   margin: -4.8rem;
 }
 
+/* IE9-11 */
+@media screen and (min-width: 0\0) and (min-resolution: +72dpi) {
+  .l-col-to-row.l-col-to-row {
+    clear: both;
+    display: block;
+  }
+  .l-col-to-row::after {
+    display: table;
+    content: "";
+    clear: both;
+  }
+  .l-col-to-row__item {
+    float: left;
+    max-width: 100%;
+  }
+}
+
 /*
 
 */
-.l-content-area.l-content-area {
+.l-primary-content.l-primary-content {
   margin: 0;
 }
 
-.l-content-area .l-content-area__header,
-.l-content-area .l-content-area__main,
-.l-content-area .l-content-area__pull-out {
+.l-primary-content .l-primary-content__header,
+.l-primary-content .l-primary-content__main,
+.l-primary-content .l-primary-content__pull-out {
   width: 100%;
   max-width: 42em;
   margin-left: auto;
@@ -6440,27 +6403,41 @@ $glimpse--link-border-bottom--hover: false !default;*/
 }
 
 @media only screen and (min-width: 60em) {
-  .l-content-area.l-content-area {
+  .l-primary-content.l-primary-content {
     padding: 0 2.4rem;
   }
-  .l-content-area.l-content-area--has-pull-outs {
+  .l-primary-content.l-primary-content--has-pull-outs {
+    display: -ms-grid;
     display: grid;
+    -ms-grid-rows: auto auto 1fr;
     grid-template-rows: auto auto 1fr;
+    -ms-grid-columns: 2fr 1fr;
     grid-template-columns: 2fr 1fr;
   }
-  .l-content-area.l-content-area--has-pull-outs .l-content-area__header {
+  .l-primary-content.l-primary-content--has-pull-outs .l-primary-content__header {
+    -ms-grid-column: 1;
     grid-column: 1;
+    -ms-grid-row: 1;
     grid-row: 1;
   }
-  .l-content-area.l-content-area--has-pull-outs .l-content-area__main {
+  .l-primary-content.l-primary-content--has-pull-outs .l-primary-content__main {
+    -ms-grid-column: 1;
     grid-column: 1;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 2;
     grid-row: 2 / 4;
     padding-right: 2.4rem;
   }
-  .l-content-area.l-content-area--has-pull-outs .l-content-area__pull-out--top {
+  .l-primary-content.l-primary-content--has-pull-outs .l-primary-content__pull-out--top {
+    -ms-grid-column: 2;
+    grid-column: 2;
+    -ms-grid-row: 2;
     grid-row: 2;
   }
-  .l-content-area.l-content-area--has-pull-outs .l-content-area__pull-out--bottom {
+  .l-primary-content.l-primary-content--has-pull-outs .l-primary-content__pull-out--bottom {
+    -ms-grid-column: 2;
+    grid-column: 2;
+    -ms-grid-row: 3;
     grid-row: 3;
   }
 }
@@ -6471,23 +6448,19 @@ $glimpse--link-border-bottom--hover: false !default;*/
   padding: 0;
   list-style-type: none;
   display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
   webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   -webkit-justify-content: space-around;
-  -ms-flex-pack: distribute;
   justify-content: space-around;
-  /*-webkit-align-items: center;             -ms-flex-align: center;                align-items: center;*/
 }
 
 .l-distribute > * {
+  display: inline-block;
+  /* [1] */
   -webkit-flex: 1 1 auto;
-  -ms-flex: 1 1 auto;
   flex: 1 1 auto;
   margin: 0;
   padding: 0;
@@ -6495,19 +6468,16 @@ $glimpse--link-border-bottom--hover: false !default;*/
 
 .l-distribute.l-distribute--start {
   -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
   justify-content: flex-start;
 }
 
 .l-distribute.l-distribute--end {
   -webkit-justify-content: flex-end;
-  -ms-flex-pack: end;
   justify-content: flex-end;
 }
 
 .l-distribute.l-distribute--limit-10 > * {
   -webkit-flex-basis: 10em;
-  -ms-flex-preferred-size: 10em;
   flex-basis: 10em;
 }
 
@@ -6519,13 +6489,11 @@ $glimpse--link-border-bottom--hover: false !default;*/
 
 .l-distribute.l-distribute--limit-20 > * {
   -webkit-flex-basis: 20em;
-  -ms-flex-preferred-size: 20em;
   flex-basis: 20em;
 }
 
 .l-distribute.l-distribute--limit-25 > * {
   -webkit-flex-basis: 25em;
-  -ms-flex-preferred-size: 25em;
   flex-basis: 25em;
 }
 
@@ -6729,20 +6697,16 @@ $glimpse--link-border-bottom--hover: false !default;*/
 
 */
 .l-center.l-center {
-  display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  -ms-flex-align: center;
   -webkit-align-items: center;
   align-items: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
   justify-content: center;
 }
 
 .l-center.l-center > * {
   -webkit-flex: 0 1 auto;
-  -ms-flex: 0 1 auto;
   flex: 0 1 auto;
 }
 
@@ -7059,23 +7023,19 @@ $pagination-button--border-color: darken($pagination--base-color, 20%) !default;
 }
 
 .u-fill-height--column {
-  display: -ms-flexbox !important;
   display: -webkit-flex !important;
   display: flex !important;
   -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .u-fill-height--column > * {
   -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
 .u-fill-height--column > .u-fill-height--column__expand {
   -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
   flex: 1 0 auto;
 }
 
@@ -7087,7 +7047,7 @@ $pagination-button--border-color: darken($pagination--base-color, 20%) !default;
 
 /*
     Text alignment.
-    
+
     @To Do: allow for responsive variations.
 */
 /*
@@ -7136,9 +7096,9 @@ $pagination-button--border-color: darken($pagination--base-color, 20%) !default;
   }
 }
 
-/* 
+/*
     IE10-11
-    
+
     ! NOTE: test this in all non-object-fit-supporting browsers as it may be a fix for those too.
 */
 @media only all and (-ms-high-contrast: none), only all and (-ms-high-contrast: active) {
@@ -7147,8 +7107,10 @@ $pagination-button--border-color: darken($pagination--base-color, 20%) !default;
     min-height: 12.8rem;
   }
   .u-image-cover__inner {
+    display: block;
     position: relative;
     overflow: hidden;
+    width: 100%;
     height: 100%;
   }
   .u-image-cover__image {
@@ -7578,6 +7540,7 @@ $pagination-button--border-color: darken($pagination--base-color, 20%) !default;
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
+  max-width: 100%;
 }
 
 .u-text-group--push-apart {
@@ -7586,8 +7549,13 @@ $pagination-button--border-color: darken($pagination--base-color, 20%) !default;
   justify-content: space-between;
 }
 
+/*
+    1. IE10 needs this to calculate widths properly.
+*/
 .u-text-group > * {
   margin: 0;
+  display: inline-block;
+  /* [1] */
   -webkit-flex: 0 1 auto !important;
   -ms-flex: 0 1 auto !important;
   flex: 0 1 auto !important;
@@ -8928,6 +8896,13 @@ html.wireframe {
 
 /* ---------------------------------------------------------------------------------------------- */
 /* --| SHAME |----------------------------------------------------------------------------------- */
+/* IE9-11 */
+@media screen and (min-width: 0\0) and (min-resolution: +72dpi) {
+  details > pre {
+    width: calc(100vw - 67px);
+  }
+}
+
 .svg__link:hover,
 .svg__link:active,
 .svg__link:focus {
@@ -8973,7 +8948,7 @@ html.wireframe {
   padding-left: 1em;
 }
 
-/*------------*/
+/*------------------*/
 /*------------------*/
 .s-updates.c-panel .c-card__full-link {
   max-width: 41rem;
@@ -8987,13 +8962,15 @@ html.wireframe {
 
 /*-----------------*/
 /***************************/
-@media only screen and (max-width: 60em) {
-  .l-content-area__pull-out.u-space--above {
-    margin-top: 0 !important;
-  }
-  .l-content-area__pull-out .c-panel {
-    padding-top: 0 !important;
-  }
-}
+/*
+@media only screen and (max-width: $primary-content-breakpoint) {
+    .l-primary-content__pull-out.u-space--above {
+        margin-top: 0 !important;
+    }
 
+    .l-primary-content__pull-out .c-panel {
+        padding-top: 0 !important;
+    }
+}
+*/
 /* ---------------------------------------------------------------------------------------------- */

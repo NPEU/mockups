@@ -191,11 +191,11 @@ $neutral-theme: map-get($themes, neutral);
 $col-to-row-spacing-unit: $f__base-rem-space-unit;
 @import "layout-patterns/_col-to-row.scss";
 
-//$content-area-max-width: 42em;
-$content-area-spacing-unit: $f__base-rem-space-unit;
-$content-area-pull-out-side: right;
-$content-area-pull-out-side-space: 0 $content-area-spacing-unit;
-@import "layout-patterns/_content-area.scss";
+//$primary-content-max-width: 42em;
+$primary-content-spacing-unit: $f__base-rem-space-unit;
+$primary-content-pull-out-side: right;
+$primary-content-pull-out-side-space: 0 $primary-content-spacing-unit;
+@import "layout-patterns/_primary-content.scss";
 
 @import "layout-patterns/_distribute.scss";
 

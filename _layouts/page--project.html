@@ -4,9 +4,9 @@ layout: structure--project
 <div class="l-blockrow">
     <div class="l-blockrow__limit-widthX">
 
-        <div class="l-content-area  d-bands--bottom  t-{{ page.project }}{% if page.has_pull_outs or page.section_menu or page.toc %}  l-content-area--has-pull-outs{% endif %}">
+        <div class="l-primary-content  d-bands--bottom  t-{{ page.project }}{% if page.has_pull_outs or page.section_menu or page.toc %}  l-primary-content--has-pull-outs{% endif %}">
 
-            <div class="l-content-area__header">
+            <div class="l-primary-content__header">
             
                 {% include module__breadcrumbs.html %}
                 
@@ -15,7 +15,7 @@ layout: structure--project
                 </div>
             </div>
             
-            <div class="l-content-area__pull-out  l-content-area__pull-out--top  d-background--light  t-neutral">
+            <div class="l-primary-content__pull-out  l-primary-content__pull-out--top  d-background--light  t-neutral">
                 {% assign total_h2 = content | split: '<h2' | size | minus: 1 %}
                 {% if total_h2 > 2 %}
                 <div class="c-panel">
@@ -46,12 +46,12 @@ layout: structure--project
                 {% endif %}
             </div> 
 
-            <div class="l-content-area__main">
+            <div class="l-primary-content__main">
 
 
                 {% comment %}<!-- keep for now
                 {% if page.headline_image %}
-                <div id="headline_image" class="l-content-area__main__headline_image">
+                <div id="headline_image" class="l-primary-content__main__headline_image">
                     <div class="l-proportional-container  l-proportional-container--3-1  d-bands--bottom  t-{{ page.project }}">
                         <div class="l-proportional-container__content">
                             <img class="l-proportional-container__image-cover" src="{{ page.headline_image }}" width="600" alt="">
@@ -69,7 +69,7 @@ layout: structure--project
                 </div>
             </div>
             
-            <div class="l-content-area__pull-out  l-content-area__pull-out--bottom">
+            <div class="l-primary-content__pull-out  l-primary-content__pull-out--bottom">
                 <div class="c-panel">
                     <section class="c-panel--module">
                     

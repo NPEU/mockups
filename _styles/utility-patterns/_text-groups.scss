@@ -23,6 +23,8 @@ $text-group-namespace: u- !default;
     -webkit-align-items: center;
          -ms-flex-align: center;
             align-items: center;
+            
+    max-width: 100%;
 }
 
 .#{$text-group-namespace}text-group--push-apart {
@@ -31,8 +33,13 @@ $text-group-namespace: u- !default;
             justify-content: space-between;
 }
 
+/*
+    1. IE10 needs this to calculate widths properly.
+*/
 .#{$text-group-namespace}text-group > * {
     margin: 0;
+
+    display: inline-block; /* [1] */
 
     -webkit-flex: 0 1 auto !important;
         -ms-flex: 0 1 auto !important;

@@ -1,5 +1,19 @@
 // Hmmm. THere's way too much in here already. Needs sorting.
 
+// This is for the styleguide:
+
+/* IE9-11 */
+@media #{$f__ie9-11} {
+
+    details > pre {
+    
+        width: calc(100vw - 67px);
+    }
+
+}
+
+
+
 
 $enough-room-at: $f__base-rem-space-unit + $measure + $f__base-rem-space-unit + $f__base-rem-space-unit + ($measure / 2) + $f__base-rem-space-unit;
 
@@ -61,7 +75,7 @@ $enough-room-at: $f__base-rem-space-unit + $measure + $f__base-rem-space-unit + 
     padding-left: 1em;
 }
 
-/*------------*/
+/*------------------*/
 
 
 /*------------------*/
@@ -76,20 +90,20 @@ $enough-room-at: $f__base-rem-space-unit + $measure + $f__base-rem-space-unit + 
 
 
 
-
 .l-blockrow:last-child > .d-bands--bottom {
     border: 0 !important;
 }
 /*-----------------*/
 
 /***************************/
-
-@media only screen and (max-width: $content-area-breakpoint) {
-    .l-content-area__pull-out.u-space--above {
+/*
+@media only screen and (max-width: $primary-content-breakpoint) {
+    .l-primary-content__pull-out.u-space--above {
         margin-top: 0 !important;
     }
 
-    .l-content-area__pull-out .c-panel {
+    .l-primary-content__pull-out .c-panel {
         padding-top: 0 !important;
     }
 }
+*/
