@@ -16,6 +16,9 @@
     * Above content breakpoint, there's a single row. Each item needs to be of adequate width.
 
     * [Optional: gutter and bottom spacing]
+    
+    After much messing around with IE, the solution is to have an extra wrapper with `display: flex`
+    and `flex-basis: 100%` on the inner wrapper.
 
 */
 $col-to-row-namespace: l- !default;
@@ -30,6 +33,19 @@ $col-to-row-spacing-unit--large: ($col-to-row-spacing-unit * 2) !default;
     .col-to-row
 }
 */
+
+/*
+    IE11 needs this wrapper to behave properly.
+    If you're not supporting IE11, you don't this this CSS or the HTML that goes with it.
+*/
+.#{$col-to-row-namespace}col-to-row-wrap {
+    display: flex;
+    
+    & > .#{$col-to-row-namespace}col-to-row {
+        flex-basis: 100%;
+    }
+}
+
 .#{$col-to-row-namespace}col-to-row {
 
     &#{&} {
@@ -42,7 +58,7 @@ $col-to-row-spacing-unit--large: ($col-to-row-spacing-unit * 2) !default;
         -webkit-flex-wrap: wrap;
                 flex-wrap: wrap;
 
-        min-width: 100%;
+        width: 100%;
 
         margin: 0;
         padding: 0;
@@ -148,23 +164,25 @@ $col-to-row-spacing-unit--large: ($col-to-row-spacing-unit * 2) !default;
 
 
 /* IE9-11 */
-@media #{$f__ie9-11} {
+//@media #{$f__ie9-11} {
 
-    .#{$col-to-row-namespace}col-to-row {
-        &#{&} {
-            clear: both;
-            display: block;
-        }
+// IE10
+
+_:-ms-lang(x), .#{$col-to-row-namespace}col-to-row.#{$col-to-row-namespace}col-to-row {
+        //&#{&} {
+            clear: both\9;
+            display: block\9;
+        //}
     }
 
-    .#{$col-to-row-namespace}col-to-row::after {
-        display: table;
-        content: "";
-        clear: both;
+_:-ms-lang(x), .#{$col-to-row-namespace}col-to-row::after {
+        display: table\9;
+        content: ""\9;
+        clear: both\9;
     }
 
-    .#{$col-to-row-namespace}col-to-row__item  {
-        float: left;
-        max-width: 100%;
+_:-ms-lang(x), .#{$col-to-row-namespace}col-to-row__item  {
+        float: left\9;
+        max-width: 100%\9;
     }
-}
+//}

@@ -82,16 +82,19 @@ $featurette-button--background-color: $featurette--base-color !default;
 $featurette-button--background-color-alt: lighten($featurette--base-color, 20%) !default;
 $featurette-button--border-color: darken($featurette--base-color, 20%) !default;
 */
-/*.#{$featurette-namespace}featurette-wrap {
 
-
-}
-
-    .#{$featurette-namespace}featurette-wrap .#{$featurette-namespace}featurette {
-
-        //width: 100%;
-    }
+/*
+    IE11 needs this wrapper to behave properly.
+    If you're not supporting IE11, you don't this this CSS or the HTML that goes with it.
 */
+.#{$featurette-namespace}featurette-wrap {
+    display: flex;
+    height: 100%;
+    
+    & > .#{$featurette-namespace}featurette {
+        flex-basis: 100%;
+    }
+}
 
 $theme-only: false !default;
 

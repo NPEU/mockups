@@ -65,8 +65,11 @@ $image-cover-namespace: u- !default;
     IE10-11
 
     ! NOTE: test this in all non-object-fit-supporting browsers as it may be a fix for those too.
+    
+    This only works for landscape images. If it's portrait it breaks unless the width and translate
+    are inverted, and that can't be detected if size changes.
 */
-
+/*
 @media only all and (-ms-high-contrast: none), only all and (-ms-high-contrast: active) {
 
     .#{$image-cover-namespace}image-cover {
@@ -88,3 +91,4 @@ $image-cover-namespace: u- !default;
                 transform: translateY(-25%);
             }
 }
+*/

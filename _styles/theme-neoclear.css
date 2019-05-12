@@ -84,11 +84,19 @@ $card-button--background-color-alt: lighten($card--base-color, 20%) !default;
 $card-button--border-color: darken($card--base-color, 20%) !default;
 */
 /*
+    IE11 needs this wrapper to behave properly.
+    If you're not supporting IE11, you don't this this CSS or the HTML that goes with it.
+*/
 .c-card-wrap {
-
-
+  display: flex;
+  height: 100%;
 }
 
+.c-card-wrap > .c-card {
+  flex-basis: 100%;
+}
+
+/*
     .c-card-wrap .c-card {
 
         //width: 100%;
@@ -138,16 +146,18 @@ $event-button--background-color-alt: lighten($event--base-color, 20%) !default;
 $event-button--border-color: darken($event--base-color, 20%) !default;
 */
 /*
+    IE11 needs this wrapper to behave properly.
+    If you're not supporting IE11, you don't this this CSS or the HTML that goes with it.
+*/
 .c-event-wrap {
-
-
+  display: flex;
+  height: 100%;
 }
 
-    .c-event-wrap .c-event {
+.c-event-wrap > .c-event {
+  flex-basis: 100%;
+}
 
-        //width: 100%;
-    }
-*/
 /*
     Note featurettes should only appear in the main body and fill the width, so media queries are
     ok here - we don't need to worry about other contexts and container-queries.
@@ -182,16 +192,19 @@ $featurette-button--background-color: $featurette--base-color !default;
 $featurette-button--background-color-alt: lighten($featurette--base-color, 20%) !default;
 $featurette-button--border-color: darken($featurette--base-color, 20%) !default;
 */
-/*.c-featurette-wrap {
-
-
+/*
+    IE11 needs this wrapper to behave properly.
+    If you're not supporting IE11, you don't this this CSS or the HTML that goes with it.
+*/
+.c-featurette-wrap {
+  display: flex;
+  height: 100%;
 }
 
-    .c-featurette-wrap .c-featurette {
+.c-featurette-wrap > .c-featurette {
+  flex-basis: 100%;
+}
 
-        //width: 100%;
-    }
-*/
 .c-featurette.t-featurette--dark,
 .c-featurette.t-featurette--dark a {
   background-color: #2d2136;

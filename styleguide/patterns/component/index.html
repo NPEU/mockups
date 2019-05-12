@@ -35,7 +35,7 @@ has_map: true
 
 <h3 class="u-padding--sides">Badge - primary logo</h3>
 
-<p class="u-padding--sides">A badge that represents the main brand of a page should use this folowing markup instead.</p>
+<p class="u-padding--sides">A badge that represents the main brand of a page should use this following markup instead.</p>
 
 <div class="u-space--below  u-padding--s  l-center">
     <a href="/neoclear" class="c-badge  c-badge--primary-logo">
@@ -54,6 +54,7 @@ has_map: true
         </svg>
     </a>
 </div>
+
 
 <div class="u-padding--s">
     <details class="u-padding--s  d-background--light">
@@ -80,14 +81,15 @@ has_map: true
 <p class="u-padding--sides">The fallback PNG is still external, but there is only a very very small chance of a non-SVG-supporting browser also failing to load the fallback image.</p>
 <p class="u-padding--sides">This pattern should ideally only be used once per page due to the extra markup weight, but if necessary, it can be used more than once.</p>
 
+
 <hr>
 <h2 class="u-padding--sides" id="brochure">Brochure</h2>
 
 <p class="u-padding--sides">Note that this pattern does not introduce any new classes, it's built entirely from existing ones.</p>
 
-<div class="u-space--below">
+<div class="l-col-to-row-wrap  u-space--below">
     <section class="l-col-to-row  d-bands--bottom  d-bands--top">
-        <div class="l-col-to-row__item  ff-width-100--60--50">
+        <div class="l-col-to-row__item  ff-width-100--50--50">
             <div class="c-panel  u-padding--sides--l">
                 <div class="u-max-measure">
                     <h2>
@@ -103,7 +105,7 @@ has_map: true
                 </div>
             </div>
         </div>
-        <div class="l-col-to-row__item  ff-width-100--60--50">
+        <div class="l-col-to-row__item  ff-width-100--50--50">
             <div class="u-image-cover  u-image-cover--min-20">
                 <div class="u-image-cover__inner">
                     <img src="/img/patterns/placeholder-1.jpg" alt="" class="u-image-cover__image" width="200">
@@ -113,63 +115,113 @@ has_map: true
     </section>
 </div>
 
+<p class="u-padding--sides">Oooh, happy accident. I really like this. Keep for reference for now.</p>
+
+<div class="l-col-to-row-wrap  u-space--below">
+    <section class="l-col-to-row  d-bands--bottom  d-bands--top">
+        <div class="l-col-to-row__item  ff-width-100--50--33-333">
+            <div class="c-panel  u-padding--sides--l">
+                <div class="u-max-measure">
+                    <h2>
+                        This is a Heading
+                    </h2>
+
+                    <p>
+                        Nunc eget diam lorem. Vestibulum eu luctus velit, imperdiet imperdiet nibh. Aliquam condimentum ut nunc non iaculis. Pellentesque vel tincidunt tortor. Praesent vel leo non neque molestie cursus. Morbi non rutrum leo, quis malesuada augue. Duis dapibus, eros sit amet condimentum venenatis, nisi enim sollicitudin eros, ut semper lorem purus eget tellus.
+                    </p>
+                    <p>
+                        Vivamus aliquet turpis at magna finibus mollis. Vivamus pretium augue neque, ac ornare felis eleifend et. Pellentesque convallis, ex eget egestas fringilla, diam ex vulputate diam, eu condimentum nisi sapien in neque.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="l-col-to-row__item  ff-width-100--50--33-333">
+            <div class="u-image-cover  u-image-cover--min-20">
+                <div class="u-image-cover__inner">
+                    <img src="/img/patterns/placeholder-1.jpg" alt="" class="u-image-cover__image" width="200">
+                </div>
+            </div>
+        </div>
+        <div class="l-col-to-row__item  ff-width-100--50--33-333">
+            <div class="c-panel  u-padding--sides--l">
+                <div class="u-max-measure">
+                    <h2>
+                        This is a Heading
+                    </h2>
+
+                    <p>
+                        Nunc eget diam lorem. Vestibulum eu luctus velit, imperdiet imperdiet nibh. Aliquam condimentum ut nunc non iaculis. Pellentesque vel tincidunt tortor. Praesent vel leo non neque molestie cursus. Morbi non rutrum leo, quis malesuada augue. Duis dapibus, eros sit amet condimentum venenatis, nisi enim sollicitudin eros, ut semper lorem purus eget tellus.
+                    </p>
+                    <p>
+                        Vivamus aliquet turpis at magna finibus mollis. Vivamus pretium augue neque, ac ornare felis eleifend et. Pellentesque convallis, ex eget egestas fringilla, diam ex vulputate diam, eu condimentum nisi sapien in neque.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
 <div class="u-padding--s">
     <details class="u-padding--s  d-background--light">
         <summary>Show code:</summary>
-        <pre><code class="html">&lt;section class=&quot;l-col-to-row  d-bands--bottom  d-bands--top&quot;&gt;
-    &lt;div class=&quot;l-col-to-row__item  ff-width-100--60--50&quot;&gt;
-        &lt;div class=&quot;c-panel  u-padding--sides--l&quot;&gt;
-            &lt;div class=&quot;u-max-measure&quot;&gt;
-                &lt;h2&gt;
-                    This is a Heading
-                &lt;/h2&gt;
+        <pre><code class="html">&lt;div class=&quot;l-col-to-row-wrap&quot;&gt;
+    &lt;section class=&quot;l-col-to-row  d-bands--bottom  d-bands--top&quot;&gt;
+        &lt;div class=&quot;l-col-to-row__item  ff-width-100--50--50&quot;&gt;
+            &lt;div class=&quot;c-panel  u-padding--sides--l&quot;&gt;
+                &lt;div class=&quot;u-max-measure&quot;&gt;
+                    &lt;h2&gt;
+                        This is a Heading
+                    &lt;/h2&gt;
 
-                &lt;p&gt;
-                    Nunc eget diam lorem. Vestibulum eu luctus velit, imperdiet imperdiet nibh. Aliquam condimentum ut nunc non iaculis. Pellentesque vel tincidunt tortor. Praesent vel leo non neque molestie cursus. Morbi non rutrum leo, quis malesuada augue. Duis dapibus, eros sit amet condimentum venenatis, nisi enim sollicitudin eros, ut semper lorem purus eget tellus.
-                &lt;/p&gt;
-                &lt;p&gt;
-                    Vivamus aliquet turpis at magna finibus mollis. Vivamus pretium augue neque, ac ornare felis eleifend et. Pellentesque convallis, ex eget egestas fringilla, diam ex vulputate diam, eu condimentum nisi sapien in neque.
-                &lt;/p&gt;
+                    &lt;p&gt;
+                        Nunc eget diam lorem. Vestibulum eu luctus velit, imperdiet imperdiet nibh. Aliquam condimentum ut nunc non iaculis. Pellentesque vel tincidunt tortor. Praesent vel leo non neque molestie cursus. Morbi non rutrum leo, quis malesuada augue. Duis dapibus, eros sit amet condimentum venenatis, nisi enim sollicitudin eros, ut semper lorem purus eget tellus.
+                    &lt;/p&gt;
+                    &lt;p&gt;
+                        Vivamus aliquet turpis at magna finibus mollis. Vivamus pretium augue neque, ac ornare felis eleifend et. Pellentesque convallis, ex eget egestas fringilla, diam ex vulputate diam, eu condimentum nisi sapien in neque.
+                    &lt;/p&gt;
+                &lt;/div&gt;
             &lt;/div&gt;
         &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;l-col-to-row__item  ff-width-100--60--50&quot;&gt;
-        &lt;div class=&quot;u-image-cover  u-image-cover--min-20&quot;&gt;
-            &lt;div class=&quot;u-image-cover__inner&quot;&gt;
-                &lt;img src=&quot;/img/patterns/placeholder-1.jpg&quot; alt=&quot;&quot; class=&quot;u-image-cover__image&quot; width=&quot;200&quot;&gt;
+        &lt;div class=&quot;l-col-to-row__item  ff-width-100--50--50&quot;&gt;
+            &lt;div class=&quot;u-image-cover  u-image-cover--min-20&quot;&gt;
+                &lt;div class=&quot;u-image-cover__inner&quot;&gt;
+                    &lt;img src=&quot;/img/patterns/placeholder-1.jpg&quot; alt=&quot;&quot; class=&quot;u-image-cover__image&quot; width=&quot;200&quot;&gt;
+                &lt;/div&gt;
             &lt;/div&gt;
         &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/section&gt;
+    &lt;/section&gt;
+&lt;/div&gt;
 </code></pre>
     </details>
 </div>
 
 <h3 class="u-padding--sides">Brochure - reversed</h3>
 
-<div class="u-space--below">
-    <section class="l-col-to-row  l-col-to-row--reversed  d-bands--bottom  d-bands--top">
-        <div class="l-col-to-row__item  ff-width-100--60--50">
-            <div class="c-panel  u-padding--sides--l">
-                <div class="u-max-measure">
-                    <h2>
-                        Another Heading
-                    </h2>
+<div class="l-col-to-row-wrap  u-space--below">
+    <div class="l-col-to-row">
+        <section class="l-col-to-row  l-col-to-row--reversed  d-bands--bottom  d-bands--top">
+            <div class="l-col-to-row__item  ff-width-100--60--50">
+                <div class="c-panel  u-padding--sides--l">
+                    <div class="u-max-measure">
+                        <h2>
+                            Another Heading
+                        </h2>
 
-                    <p>
-                        Nunc eget diam lorem. Vestibulum eu luctus velit, imperdiet imperdiet nibh. Aliquam condimentum ut nunc non iaculis. Pellentesque vel tincidunt tortor. Praesent vel leo non neque molestie cursus. Morbi non rutrum leo, quis malesuada augue. Duis dapibus, eros sit amet condimentum venenatis, nisi enim sollicitudin eros, ut semper lorem purus eget tellus.
-                    </p>
+                        <p>
+                            Nunc eget diam lorem. Vestibulum eu luctus velit, imperdiet imperdiet nibh. Aliquam condimentum ut nunc non iaculis. Pellentesque vel tincidunt tortor. Praesent vel leo non neque molestie cursus. Morbi non rutrum leo, quis malesuada augue. Duis dapibus, eros sit amet condimentum venenatis, nisi enim sollicitudin eros, ut semper lorem purus eget tellus.
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="l-col-to-row__item  ff-width-100--60--50">
-            <div class="u-image-cover  u-image-cover--min-20">
-                <div class="u-image-cover__inner">
-                    <img src="/img/patterns/placeholder-2.jpg" alt="" class="u-image-cover__image" width="200">
+            <div class="l-col-to-row__item  ff-width-100--60--50">
+                <div class="u-image-cover  u-image-cover--min-20">
+                    <div class="u-image-cover__inner">
+                        <img src="/img/patterns/placeholder-2.jpg" alt="" class="u-image-cover__image" width="200">
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
 </div>
 
 <div class="u-padding--s">
@@ -181,33 +233,36 @@ has_map: true
 </div>
 
 
+
 <hr>
 <h2 class="u-padding--sides" id="card">Card</h2>
 
 <div class="u-padding--sides  u-space--below">
-    <div class="c-card">
-        <div class="c-card__image">
-            <div class="l-proportional-container  l-proportional-container--3-1">
-                <div class="l-proportional-container__content">
-                    <img src="/img/patterns/placeholder-1.jpg" alt="" class="l-proportional-container__image-cover" width="200">
+    <div class="c-card-wrap">
+        <div class="c-card">
+            <div class="c-card__image">
+                <div class="l-proportional-container  l-proportional-container--3-1">
+                    <div class="l-proportional-container__content">
+                        <img src="/img/patterns/placeholder-1.jpg" alt="" class="l-proportional-container__image-cover" width="200">
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="c-card__main">
-            <h2 class="c-card__title">Card Title</h2>
-            <div class="c-card__body">
-                <p>
-                    Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque tincidunt lorem sit amet enim.
-                </p>
-                <p class="c-card__cta">
-                    <a href="#" class="cta  cta--has-icon">More<svg display="none" class="icon" aria-hidden="true"><use xlink:href="#icon-chevron-right"></use></svg></a>
-                </p>
-            </div>
-            <div class="c-card__footer">
-                <p class="c-card__info  u-text-group  u-text-group--wide-space">
-                    <span class="u-text-group"><span>Published on: </span><span>18 June 2018 10:11</span></span>
-                    <span class="u-text-group"><span>Published in: </span><span>Quite a long category name category name to test wrapping</span></span>
-                </p>
+            <div class="c-card__main">
+                <h2 class="c-card__title">Card Title</h2>
+                <div class="c-card__body">
+                    <p>
+                        Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque tincidunt lorem sit amet enim.
+                    </p>
+                    <p class="c-card__cta">
+                        <a href="#" class="cta  cta--has-icon">More<svg display="none" class="icon" aria-hidden="true"><use xlink:href="#icon-chevron-right"></use></svg></a>
+                    </p>
+                </div>
+                <div class="c-card__footer">
+                    <p class="c-card__info  u-text-group  u-text-group--wide-space">
+                        <span class="u-text-group"><span>Published on: </span><span>18 June 2018 10:11</span></span>
+                        <span class="u-text-group"><span>Published in: </span><span>Quite a long category name category name to test wrapping</span></span>
+                    </p>
+                </div>
             </div>
         </div>
     </div>
@@ -216,29 +271,31 @@ has_map: true
 <div class="u-padding--s">
     <details class="u-padding--s  d-background--light">
         <summary>Show code:</summary>
-<pre><code class="html">&lt;div class=&quot;c-card&quot;&gt;
-    &lt;div class=&quot;c-card__image&quot;&gt;
-        &lt;div class=&quot;l-proportional-container  l-proportional-container--3-1&quot;&gt;
-            &lt;div class=&quot;l-proportional-container__content&quot;&gt;
-                &lt;img src=&quot;/img/patterns/placeholder-1.jpg&quot; alt=&quot;&quot; class=&quot;l-proportional-container__image-cover&quot; width=&quot;200&quot;&gt;
+<pre><code class="html">&lt;div class=&quot;c-card-wrap&quot;&gt;
+    &lt;div class=&quot;c-card&quot;&gt;
+        &lt;div class=&quot;c-card__image&quot;&gt;
+            &lt;div class=&quot;l-proportional-container  l-proportional-container--3-1&quot;&gt;
+                &lt;div class=&quot;l-proportional-container__content&quot;&gt;
+                    &lt;img src=&quot;/img/patterns/placeholder-1.jpg&quot; alt=&quot;&quot; class=&quot;l-proportional-container__image-cover&quot; width=&quot;200&quot;&gt;
+                &lt;/div&gt;
             &lt;/div&gt;
         &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;c-card__main&quot;&gt;
-        &lt;h2 class=&quot;c-card__title&quot;&gt;Card Title&lt;/h2&gt;
-        &lt;div class=&quot;c-card__body&quot;&gt;
-            &lt;p&gt;
-                Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque tincidunt lorem sit amet enim.
-            &lt;/p&gt;
-            &lt;p class=&quot;c-card__cta&quot;&gt;
-                &lt;a href=&quot;#&quot; class=&quot;cta  cta--has-icon&quot;&gt;More&lt;svg display=&quot;none&quot; class=&quot;icon&quot; aria-hidden=&quot;true&quot;&gt;&lt;use xlink:href=&quot;#icon-chevron-right&quot;&gt;&lt;/use&gt;&lt;/svg&gt;&lt;/a&gt;
-            &lt;/p&gt;
-        &lt;/div&gt;
-        &lt;div class=&quot;c-card__footer&quot;&gt;
-            &lt;p class=&quot;c-card__info  u-text-group  u-text-group--wide-space&quot;&gt;
-                &lt;span class=&quot;u-text-group&quot;&gt;&lt;span&gt;Published on: &lt;/span&gt;&lt;span&gt;18 June 2018 10:11&lt;/span&gt;&lt;/span&gt;
-                &lt;span class=&quot;u-text-group&quot;&gt;&lt;span&gt;Published in: &lt;/span&gt;&lt;span&gt;Quite a long category name category name to test wrapping&lt;/span&gt;&lt;/span&gt;
-            &lt;/p&gt;
+        &lt;div class=&quot;c-card__main&quot;&gt;
+            &lt;h2 class=&quot;c-card__title&quot;&gt;Card Title&lt;/h2&gt;
+            &lt;div class=&quot;c-card__body&quot;&gt;
+                &lt;p&gt;
+                    Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque tincidunt lorem sit amet enim.
+                &lt;/p&gt;
+                &lt;p class=&quot;c-card__cta&quot;&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;cta  cta--has-icon&quot;&gt;More&lt;svg display=&quot;none&quot; class=&quot;icon&quot; aria-hidden=&quot;true&quot;&gt;&lt;use xlink:href=&quot;#icon-chevron-right&quot;&gt;&lt;/use&gt;&lt;/svg&gt;&lt;/a&gt;
+                &lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;c-card__footer&quot;&gt;
+                &lt;p class=&quot;c-card__info  u-text-group  u-text-group--wide-space&quot;&gt;
+                    &lt;span class=&quot;u-text-group&quot;&gt;&lt;span&gt;Published on: &lt;/span&gt;&lt;span&gt;18 June 2018 10:11&lt;/span&gt;&lt;/span&gt;
+                    &lt;span class=&quot;u-text-group&quot;&gt;&lt;span&gt;Published in: &lt;/span&gt;&lt;span&gt;Quite a long category name category name to test wrapping&lt;/span&gt;&lt;/span&gt;
+                &lt;/p&gt;
+            &lt;/div&gt;
         &lt;/div&gt;
     &lt;/div&gt;
 &lt;/div&gt;</code></pre>
@@ -254,65 +311,69 @@ Here a span is used instead, to help avoid any confusio (whole thing is a link, 
 </p>
 
 <div class="u-padding--sides  u-space--below">
-    <div class="c-card">
-        <a href="#" class="c-card__full-link  u-fill-height--column">
-            <div class="c-card__image">
-                <div class="l-proportional-container  l-proportional-container--3-1">
-                    <div class="l-proportional-container__content">
-                        <img src="/img/patterns/placeholder-1.jpg" alt="" class="l-proportional-container__image-cover" width="200">
+    <div class="c-card-wrap">
+        <div class="c-card">
+            <a href="#" class="c-card__full-link  u-fill-height--column">
+                <div class="c-card__image">
+                    <div class="l-proportional-container  l-proportional-container--3-1">
+                        <div class="l-proportional-container__content">
+                            <img src="/img/patterns/placeholder-1.jpg" alt="" class="l-proportional-container__image-cover" width="200">
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="c-card__main">
-                <h2 class="c-card__title">Card Title</h2>
-                <div class="c-card__body">
-                    <p>
-                        Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque tincidunt lorem sit amet enim.
-                    </p>
-                    <p class="c-card__cta">
-                        <span>More<svg display="none" class="icon" aria-hidden="true"><use xlink:href="#icon-chevron-right"></use></svg></span>
-                    </p>
+                <div class="c-card__main">
+                    <h2 class="c-card__title">Card Title</h2>
+                    <div class="c-card__body">
+                        <p>
+                            Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque tincidunt lorem sit amet enim.
+                        </p>
+                        <p class="c-card__cta">
+                            <span>More<svg display="none" class="icon" aria-hidden="true"><use xlink:href="#icon-chevron-right"></use></svg></span>
+                        </p>
+                    </div>
+                    <div class="c-card__footer">
+                        <p class="c-card__info  u-text-group  u-text-group--wide-space">
+                            <span class="u-text-group"><span>Published on: </span><span>18 June 2018 10:11</span></span>
+                            <span class="u-text-group"><span>Published in: </span><span>Quite a long category name category name to test wrapping</span></span>
+                        </p>
+                    </div>
                 </div>
-                <div class="c-card__footer">
-                    <p class="c-card__info  u-text-group  u-text-group--wide-space">
-                        <span class="u-text-group"><span>Published on: </span><span>18 June 2018 10:11</span></span>
-                        <span class="u-text-group"><span>Published in: </span><span>Quite a long category name category name to test wrapping</span></span>
-                    </p>
-                </div>
-            </div>
-        </a>
+            </a>
+        </div>
     </div>
 </div>
 
 <div class="u-padding--s">
     <details class="u-padding--s  d-background--light">
         <summary>Show code:</summary>
-<pre><code class="html">&lt;div class=&quot;c-card&quot;&gt;
-    &lt;a href=&quot;#&quot; class=&quot;c-card__full-link  u-fill-height--column&quot;&gt;
-        &lt;div class=&quot;c-card__image&quot;&gt;
-            &lt;div class=&quot;l-proportional-container  l-proportional-container--3-1&quot;&gt;
-                &lt;div class=&quot;l-proportional-container__content&quot;&gt;
-                    &lt;img src=&quot;/img/patterns/placeholder-1.jpg&quot; alt=&quot;&quot; class=&quot;l-proportional-container__image-cover&quot; width=&quot;200&quot;&gt;
+<pre><code class="html">&lt;div class=&quot;c-card-wrap&quot;&gt;
+    &lt;div class=&quot;c-card&quot;&gt;
+        &lt;a href=&quot;#&quot; class=&quot;c-card__full-link  u-fill-height--column&quot;&gt;
+            &lt;div class=&quot;c-card__image&quot;&gt;
+                &lt;div class=&quot;l-proportional-container  l-proportional-container--3-1&quot;&gt;
+                    &lt;div class=&quot;l-proportional-container__content&quot;&gt;
+                        &lt;img src=&quot;/img/patterns/placeholder-1.jpg&quot; alt=&quot;&quot; class=&quot;l-proportional-container__image-cover&quot; width=&quot;200&quot;&gt;
+                    &lt;/div&gt;
                 &lt;/div&gt;
             &lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div class=&quot;c-card__main&quot;&gt;
-            &lt;h2 class=&quot;c-card__title&quot;&gt;Card Title&lt;/h2&gt;
-            &lt;div class=&quot;c-card__body&quot;&gt;
-                &lt;p&gt;
-                    Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque tincidunt lorem sit amet enim.
-                &lt;/p&gt;
-                &lt;p class=&quot;c-card__cta&quot;&gt;
-                    &lt;span&gt;More&lt;svg display=&quot;none&quot; class=&quot;icon&quot; aria-hidden=&quot;true&quot;&gt;&lt;use xlink:href=&quot;#icon-chevron-right&quot;&gt;&lt;/use&gt;&lt;/svg&gt;&lt;/span&gt;
-                &lt;/p&gt;
+            &lt;div class=&quot;c-card__main&quot;&gt;
+                &lt;h2 class=&quot;c-card__title&quot;&gt;Card Title&lt;/h2&gt;
+                &lt;div class=&quot;c-card__body&quot;&gt;
+                    &lt;p&gt;
+                        Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque tincidunt lorem sit amet enim.
+                    &lt;/p&gt;
+                    &lt;p class=&quot;c-card__cta&quot;&gt;
+                        &lt;span&gt;More&lt;svg display=&quot;none&quot; class=&quot;icon&quot; aria-hidden=&quot;true&quot;&gt;&lt;use xlink:href=&quot;#icon-chevron-right&quot;&gt;&lt;/use&gt;&lt;/svg&gt;&lt;/span&gt;
+                    &lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;c-card__footer&quot;&gt;
+                    &lt;p class=&quot;c-card__info  u-text-group  u-text-group--wide-space&quot;&gt;
+                        &lt;span class=&quot;u-text-group&quot;&gt;&lt;span&gt;Published on: &lt;/span&gt;&lt;span&gt;18 June 2018 10:11&lt;/span&gt;&lt;/span&gt;
+                        &lt;span class=&quot;u-text-group&quot;&gt;&lt;span&gt;Published in: &lt;/span&gt;&lt;span&gt;Quite a long category name category name to test wrapping&lt;/span&gt;&lt;/span&gt;
+                    &lt;/p&gt;
+                &lt;/div&gt;
             &lt;/div&gt;
-            &lt;div class=&quot;c-card__footer&quot;&gt;
-                &lt;p class=&quot;c-card__info  u-text-group  u-text-group--wide-space&quot;&gt;
-                    &lt;span class=&quot;u-text-group&quot;&gt;&lt;span&gt;Published on: &lt;/span&gt;&lt;span&gt;18 June 2018 10:11&lt;/span&gt;&lt;/span&gt;
-                    &lt;span class=&quot;u-text-group&quot;&gt;&lt;span&gt;Published in: &lt;/span&gt;&lt;span&gt;Quite a long category name category name to test wrapping&lt;/span&gt;&lt;/span&gt;
-                &lt;/p&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
+        &lt;/a&gt;
     &lt;/a&gt;
 &lt;/div&gt;</code></pre>
     </details>
@@ -321,20 +382,22 @@ Here a span is used instead, to help avoid any confusio (whole thing is a link, 
 <h3 class="u-padding--sides">Card - no image</h3>
 
 <div class="u-padding--sides  u-space--below">
-    <div class="c-card">
-        <div class="c-card__main">
-            <h2 class="c-card__title">Card Title</h2>
-            <div class="c-card__body">
-                <p>
-                    Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque tincidunt lorem sit amet enim.
-                </p>
+    <div class="c-card-wrap">
+        <div class="c-card">
+            <div class="c-card__main">
+                <h2 class="c-card__title">Card Title</h2>
+                <div class="c-card__body">
+                    <p>
+                        Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque tincidunt lorem sit amet enim.
+                    </p>
 
-            </div>
-            <div class="c-card__footer">
-                <p class="c-card__info  u-text-group  u-text-group--wide-space">
-                    <span class="u-text-group"><span>Published on: </span><span>18 June 2018 10:11</span></span>
-                    <span class="u-text-group"><span>Published in: </span><span>Quite a long category name category name to test wrapping</span></span>
-                </p>
+                </div>
+                <div class="c-card__footer">
+                    <p class="c-card__info  u-text-group  u-text-group--wide-space">
+                        <span class="u-text-group"><span>Published on: </span><span>18 June 2018 10:11</span></span>
+                        <span class="u-text-group"><span>Published in: </span><span>Quite a long category name category name to test wrapping</span></span>
+                    </p>
+                </div>
             </div>
         </div>
     </div>
@@ -345,23 +408,25 @@ Here a span is used instead, to help avoid any confusio (whole thing is a link, 
 <h3 class="u-padding--sides">Card - no footer - longer CTA</h3>
 
 <div class="u-padding--sides  u-space--below">
-    <div class="c-card">
-        <div class="c-card__image">
-            <div class="l-proportional-container  l-proportional-container--3-1">
-                <div class="l-proportional-container__content">
-                    <img src="/img/patterns/placeholder-2.jpg" alt="" class="l-proportional-container__image-cover" width="200">
+    <div class="c-card-wrap">
+        <div class="c-card">
+            <div class="c-card__image">
+                <div class="l-proportional-container  l-proportional-container--3-1">
+                    <div class="l-proportional-container__content">
+                        <img src="/img/patterns/placeholder-2.jpg" alt="" class="l-proportional-container__image-cover" width="200">
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="c-card__main">
-            <h2 class="c-card__title">Card Title</h2>
-            <div class="c-card__body">
-                <p>
-                    Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque tincidunt lorem sit amet enim.
-                </p>
-                <p class="c-card__cta">
-                    <a href="#" class="cta  cta--has-icon">A longer CTA to test what happens<svg display="none" class="icon" aria-hidden="true"><use xlink:href="#icon-chevron-right"></use></svg></a>
-                </p>
+            <div class="c-card__main">
+                <h2 class="c-card__title">Card Title</h2>
+                <div class="c-card__body">
+                    <p>
+                        Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque tincidunt lorem sit amet enim.
+                    </p>
+                    <p class="c-card__cta">
+                        <a href="#" class="cta  cta--has-icon">A longer CTA to test what happens<svg display="none" class="icon" aria-hidden="true"><use xlink:href="#icon-chevron-right"></use></svg></a>
+                    </p>
+                </div>
             </div>
         </div>
     </div>
@@ -372,30 +437,32 @@ Here a span is used instead, to help avoid any confusio (whole thing is a link, 
 <h3 class="u-padding--sides">Card - themed content - (Featured news)</h3>
 
 <div class="u-padding--sides  u-space--below">
-    <div class="c-card  c-card--themed-content  t-neoclear">
-        <a href="#" class="c-card__full-link  u-fill-height--column">
-            <div class="c-card__image">
-                <div class="l-proportional-container  l-proportional-container--3-1">
-                    <div class="l-proportional-container__content">
-                        <img src="/img/patterns/placeholder-3.jpg" alt="" class="l-proportional-container__image-cover" width="200">
+    <div class="c-card-wrap">
+        <div class="c-card  c-card--themed-content  t-neoclear">
+            <a href="#" class="c-card__full-link  u-fill-height--column">
+                <div class="c-card__image">
+                    <div class="l-proportional-container  l-proportional-container--3-1">
+                        <div class="l-proportional-container__content">
+                            <img src="/img/patterns/placeholder-3.jpg" alt="" class="l-proportional-container__image-cover" width="200">
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="c-card__main">
-                <h2 class="c-card__title">Card Title</h2>
-                <div class="c-card__body">
-                    <p>
-                        Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque tincidunt lorem sit amet enim.
-                    </p>
+                <div class="c-card__main">
+                    <h2 class="c-card__title">Card Title</h2>
+                    <div class="c-card__body">
+                        <p>
+                            Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque tincidunt lorem sit amet enim.
+                        </p>
+                    </div>
+                    <div class="c-card__footer">
+                        <p class="c-card__info  u-text-group  u-text-group--wide-space">
+                            <span class="u-text-group"><span>Published on: </span><span>18 June 2018 10:11</span></span>
+                            <span class="u-text-group"><span>Published in: </span><span>Quite a long category name category name to test wrapping</span></span>
+                        </p>
+                    </div>
                 </div>
-                <div class="c-card__footer">
-                    <p class="c-card__info  u-text-group  u-text-group--wide-space">
-                        <span class="u-text-group"><span>Published on: </span><span>18 June 2018 10:11</span></span>
-                        <span class="u-text-group"><span>Published in: </span><span>Quite a long category name category name to test wrapping</span></span>
-                    </p>
-                </div>
-            </div>
-        </a>
+            </a>
+        </div>
     </div>
 </div>
 
@@ -410,18 +477,21 @@ Here a span is used instead, to help avoid any confusio (whole thing is a link, 
 <h3 class="u-padding--sides">Card - themed content (News stub)</h3>
 
 <div class="u-padding--sides  u-space--below">
-    <div class="c-card  c-card--themed-content  t-neoclear">
-        <a href="#" class="c-card__full-link  u-fill-height--column">
-            <div class="c-card__main">
-                <h2 class="c-card__title">Card Title</h2>
-                <div class="c-card__footer">
-                    <p class="c-card__info  u-text-group  u-text-group--wide-space">
-                        <span class="u-text-group"><span>Published on: </span><span>18 June 2018 10:11</span></span>
-                        <span class="u-text-group"><span>Published in: </span><span>Quite a long category name category name to test wrapping</span></span>
-                    </p>
+
+    <div class="c-card-wrap">
+        <div class="c-card  c-card--themed-content  t-neoclear">
+            <a href="#" class="c-card__full-link  u-fill-height--column">
+                <div class="c-card__main">
+                    <h2 class="c-card__title">Card Title</h2>
+                    <div class="c-card__footer">
+                        <p class="c-card__info  u-text-group  u-text-group--wide-space">
+                            <span class="u-text-group"><span>Published on: </span><span>18 June 2018 10:11</span></span>
+                            <span class="u-text-group"><span>Published in: </span><span>Quite a long category name category name to test wrapping</span></span>
+                        </p>
+                    </div>
                 </div>
-            </div>
-        </a>
+            </a>
+        </div>
     </div>
 </div>
 
@@ -520,36 +590,40 @@ Here a span is used instead, to help avoid any confusio (whole thing is a link, 
 <h2 class="u-padding--sides" id="event">Event</h2>
 
 <div class="u-padding--sides  u-space--below">
-    <div class="c-event">
-        <h3 class="c-event__title">Using qualitative research to shape, inform, and implement global guidelines in maternity care</h3>
-        <p class="c-event__speaker">
-            Professor Soo Downe
-        </p>
-        <p class="c-event__speaker-role">
-            Professor of Midwifery Studies, University of Central Lancaster
-        </p>
-        <p class="c-event__datetime">
-            February: Tue 26<sup>th</sup> 14:30 &ndash; 15:30
-        </p>
-        <a href="#" class="c-event__action  cta">+ Add to Calendar</a>
+    <div class="c-event-wrap">
+        <div class="c-event">
+            <h3 class="c-event__title">Using qualitative research to shape, inform, and implement global guidelines in maternity care</h3>
+            <p class="c-event__speaker">
+                Professor Soo Downe
+            </p>
+            <p class="c-event__speaker-role">
+                Professor of Midwifery Studies, University of Central Lancaster
+            </p>
+            <p class="c-event__datetime">
+                February: Tue 26<sup>th</sup> 14:30 &ndash; 15:30
+            </p>
+            <a href="#" class="c-event__action  cta">+ Add to Calendar</a>
+        </div>
     </div>
 </div>
 
 <div class="u-padding--s">
     <details class="u-padding--s  d-background--light">
         <summary>Show code:</summary>
-        <pre><code class="html">&lt;div class=&quot;c-event&quot;&gt;
-    &lt;h3 class=&quot;c-event__title&quot;&gt;Using qualitative research to shape, inform, and implement global guidelines in maternity care&lt;/h3&gt;
-    &lt;p class=&quot;c-event__speaker&quot;&gt;
-        Professor Soo Downe
-    &lt;/p&gt;
-    &lt;p class=&quot;c-event__speaker-role&quot;&gt;
-        Professor of Midwifery Studies, University of Central Lancaster
-    &lt;/p&gt;
-    &lt;p class=&quot;c-event__datetime&quot;&gt;
-        February: Tue 26&lt;sup&gt;th&lt;/sup&gt; 14:30 &amp;ndash; 15:30
-    &lt;/p&gt;
-    &lt;a href=&quot;#&quot; class=&quot;c-event__action  cta&quot;&gt;+ Add to Calendar&lt;/a&gt;
+        <pre><code class="html">&lt;div class=&quot;c-event-wrap&quot;&gt;
+    &lt;div class=&quot;c-event&quot;&gt;
+        &lt;h3 class=&quot;c-event__title&quot;&gt;Using qualitative research to shape, inform, and implement global guidelines in maternity care&lt;/h3&gt;
+        &lt;p class=&quot;c-event__speaker&quot;&gt;
+            Professor Soo Downe
+        &lt;/p&gt;
+        &lt;p class=&quot;c-event__speaker-role&quot;&gt;
+            Professor of Midwifery Studies, University of Central Lancaster
+        &lt;/p&gt;
+        &lt;p class=&quot;c-event__datetime&quot;&gt;
+            February: Tue 26&lt;sup&gt;th&lt;/sup&gt; 14:30 &amp;ndash; 15:30
+        &lt;/p&gt;
+        &lt;a href=&quot;#&quot; class=&quot;c-event__action  cta&quot;&gt;+ Add to Calendar&lt;/a&gt;
+    &lt;/div&gt;
 &lt;/div&gt;</code></pre>
     </details>
 </div>
@@ -559,63 +633,69 @@ Here a span is used instead, to help avoid any confusio (whole thing is a link, 
 <h2 class="u-padding--sides" id="featurette">Featurette</h2>
 
 <div class="u-padding--sides  u-space--below">
-    <section class="c-featurette  c-featurette">
-        <div class="c-featurette__body  c-featurette__body--80">
-            <h2>
-                Featurette Title
-            </h2>
+    <div class="c-featurette-wrap">
+        <section class="c-featurette">
+            <div class="c-featurette__body  c-featurette__body--80">
+                <h2>
+                    Featurette Title
+                </h2>
 
-            <p>
-                Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque tincidunt lorem sit amet enim congue, non molestie arcu aliquam. Vestibulum sagittis feugiat vulputate. Sed pharetra aliquam diam, eu euismod quam ullamcorper in. Sed a tempor tellus. Suspendisse in tellus hendrerit, aliquam ipsum nec, faucibus neque. Fusce a neque urna. Fusce faucibus massa eget laoreet posuere.
-            </p>
-        </div>
-        <div class="c-featurette__image  d-bands">
-            <div class="l-proportional-container  l-proportional-container--1-1">
-                <div class="l-proportional-container__content">
-                    <img src="/img/patterns/placeholder-3.jpg" alt="" class="l-proportional-container__image-cover" width="200">
+                <p>
+                    Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque tincidunt lorem sit amet enim congue, non molestie arcu aliquam. Vestibulum sagittis feugiat vulputate. Sed pharetra aliquam diam, eu euismod quam ullamcorper in. Sed a tempor tellus. Suspendisse in tellus hendrerit, aliquam ipsum nec, faucibus neque. Fusce a neque urna. Fusce faucibus massa eget laoreet posuere.
+                </p>
+            </div>
+            <div class="c-featurette__image  d-bands">
+                <div class="l-proportional-container  l-proportional-container--1-1">
+                    <div class="l-proportional-container__content">
+                        <img src="/img/patterns/placeholder-3.jpg" alt="" class="l-proportional-container__image-cover" width="200">
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
 </div>
 
 <div class="u-padding--s">
     <details class="u-padding--s  d-background--light">
         <summary>Show code:</summary>
-        <pre><code class="html">&lt;section class=&quot;c-featurette  c-featurette&quot;&gt;
-    &lt;div class=&quot;c-featurette__body  c-featurette__body--80&quot;&gt;
-        &lt;h2&gt;
-            Featurette Title
-        &lt;/h2&gt;
+        <pre><code class="html">&lt;div class=&quot;c-featurette-wrap&quot;&gt;
+    &lt;section class=&quot;c-featurette&quot;&gt;
+        &lt;div class=&quot;c-featurette__body  c-featurette__body--80&quot;&gt;
+            &lt;h2&gt;
+                Featurette Title
+            &lt;/h2&gt;
 
-        &lt;p&gt;
-            Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque tincidunt lorem sit amet enim congue, non molestie arcu aliquam. Vestibulum sagittis feugiat vulputate. Sed pharetra aliquam diam, eu euismod quam ullamcorper in. Sed a tempor tellus. Suspendisse in tellus hendrerit, aliquam ipsum nec, faucibus neque. Fusce a neque urna. Fusce faucibus massa eget laoreet posuere.
-        &lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;c-featurette__image  d-bands&quot;&gt;
-        &lt;div class=&quot;l-proportional-container  l-proportional-container--1-1&quot;&gt;
-            &lt;div class=&quot;l-proportional-container__content&quot;&gt;
-                &lt;img src=&quot;/img/patterns/placeholder-3.jpg&quot; alt=&quot;&quot; class=&quot;l-proportional-container__image-cover&quot; width=&quot;200&quot;&gt;
+            &lt;p&gt;
+                Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque tincidunt lorem sit amet enim congue, non molestie arcu aliquam. Vestibulum sagittis feugiat vulputate. Sed pharetra aliquam diam, eu euismod quam ullamcorper in. Sed a tempor tellus. Suspendisse in tellus hendrerit, aliquam ipsum nec, faucibus neque. Fusce a neque urna. Fusce faucibus massa eget laoreet posuere.
+            &lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;c-featurette__image  d-bands&quot;&gt;
+            &lt;div class=&quot;l-proportional-container  l-proportional-container--1-1&quot;&gt;
+                &lt;div class=&quot;l-proportional-container__content&quot;&gt;
+                    &lt;img src=&quot;/img/patterns/placeholder-3.jpg&quot; alt=&quot;&quot; class=&quot;l-proportional-container__image-cover&quot; width=&quot;200&quot;&gt;
+                &lt;/div&gt;
             &lt;/div&gt;
         &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/section&gt;</code></pre>
+    &lt;/section&gt;
+&lt;/div&gt;</code></pre>
     </details>
 </div>
 
 <h3 class="u-padding--sides">Featurette (Dark - e.g. Power Quote)</h3>
 
 <div class="u-padding--sides  u-space--below">
-    <div class="c-featurette  c-featurette--pull-image  t-featurette--dark">
-        <div class="c-featurette__body  c-featurette__body--80">
-            <blockquote>
-                "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque tincidunt lorem sit amet enim congue, non molestie arcu aliquam. Vestibulum sagittis feugiat vulputate. Sed pharetra aliquam diam, eu euismod quam ullamcorper in. Sed a tempor tellus. Suspendisse in tellus hendrerit, aliquam ipsum nec, faucibus neque. Fusce a neque urna. Fusce faucibus massa eget laoreet posuere."
-            </blockquote>
-            <cite>&mdash; Person name</cite>
-        </div>
-        <div class="c-featurette__image  c-featurette__image--round  d-bands">
-            <div class="l-proportional-container  l-proportional-container--1-1">
-                <img src="/img/patterns/placeholder-person.jpg" alt="" class="l-proportional-container__image-cover" width="200">
+    <div class="c-featurette-wrap">
+        <div class="c-featurette  c-featurette--pull-image  t-featurette--dark">
+            <div class="c-featurette__body  c-featurette__body--80">
+                <blockquote>
+                    "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque tincidunt lorem sit amet enim congue, non molestie arcu aliquam. Vestibulum sagittis feugiat vulputate. Sed pharetra aliquam diam, eu euismod quam ullamcorper in. Sed a tempor tellus. Suspendisse in tellus hendrerit, aliquam ipsum nec, faucibus neque. Fusce a neque urna. Fusce faucibus massa eget laoreet posuere."
+                </blockquote>
+                <cite>&mdash; Person name</cite>
+            </div>
+            <div class="c-featurette__image  c-featurette__image--round  d-bands">
+                <div class="l-proportional-container  l-proportional-container--1-1">
+                    <img src="/img/patterns/placeholder-person.jpg" alt="" class="l-proportional-container__image-cover" width="200">
+                </div>
             </div>
         </div>
     </div>
@@ -624,16 +704,18 @@ Here a span is used instead, to help avoid any confusio (whole thing is a link, 
 <div class="u-padding--s">
     <details class="u-padding--s  d-background--light">
         <summary>Show code:</summary>
-        <pre><code class="html">&lt;div class=&quot;c-featurette  c-featurette--pull-image  t-featurette--dark&quot;&gt;
-    &lt;div class=&quot;c-featurette__body  c-featurette__body--80&quot;&gt;
-        &lt;blockquote&gt;
-            &quot;Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque tincidunt lorem sit amet enim congue, non molestie arcu aliquam. Vestibulum sagittis feugiat vulputate. Sed pharetra aliquam diam, eu euismod quam ullamcorper in. Sed a tempor tellus. Suspendisse in tellus hendrerit, aliquam ipsum nec, faucibus neque. Fusce a neque urna. Fusce faucibus massa eget laoreet posuere.&quot;
-        &lt;/blockquote&gt;
-        &lt;cite&gt;&amp;mdash; Person name&lt;/cite&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;c-featurette__image  c-featurette__image--round  d-bands&quot;&gt;
-        &lt;div class=&quot;l-proportional-container  l-proportional-container--1-1&quot;&gt;
-            &lt;img src=&quot;/img/patterns/placeholder-person.jpg&quot; alt=&quot;&quot; class=&quot;l-proportional-container__image-cover&quot; width=&quot;200&quot;&gt;
+        <pre><code class="html">&lt;div class=&quot;c-featurette-wrap&quot;&gt;
+    &lt;div class=&quot;c-featurette  c-featurette--pull-image  t-featurette--dark&quot;&gt;
+        &lt;div class=&quot;c-featurette__body  c-featurette__body--80&quot;&gt;
+            &lt;blockquote&gt;
+                &quot;Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque tincidunt lorem sit amet enim congue, non molestie arcu aliquam. Vestibulum sagittis feugiat vulputate. Sed pharetra aliquam diam, eu euismod quam ullamcorper in. Sed a tempor tellus. Suspendisse in tellus hendrerit, aliquam ipsum nec, faucibus neque. Fusce a neque urna. Fusce faucibus massa eget laoreet posuere.&quot;
+            &lt;/blockquote&gt;
+            &lt;cite&gt;&amp;mdash; Person name&lt;/cite&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;c-featurette__image  c-featurette__image--round  d-bands&quot;&gt;
+            &lt;div class=&quot;l-proportional-container  l-proportional-container--1-1&quot;&gt;
+                &lt;img src=&quot;/img/patterns/placeholder-person.jpg&quot; alt=&quot;&quot; class=&quot;l-proportional-container__image-cover&quot; width=&quot;200&quot;&gt;
+            &lt;/div&gt;
         &lt;/div&gt;
     &lt;/div&gt;
 &lt;/div&gt;</code></pre>
@@ -643,33 +725,37 @@ Here a span is used instead, to help avoid any confusio (whole thing is a link, 
 <h3 class="u-padding--sides">Featurette (Dark - e.g. Notice)</h3>
 
 <div class="u-padding--sides  u-space--below">
-    <section class="c-featurette  c-featurette  t-featurette--dark  u-text-align--center">
-        <div class="text-content  c-featurette__body  c-featurette__body--fill">
-            <h2>
-                Featurette Title
-            </h2>
+    <div class="c-featurette-wrap">
+        <section class="c-featurette  t-featurette--dark  u-text-align--center">
+            <div class="text-content  c-featurette__body  c-featurette__body--fill">
+                <h2>
+                    Featurette Title
+                </h2>
 
-            <p>
-                <a href="#">Read the notice</a>
-            </p>
-        </div>
-    </section>
+                <p>
+                    <a href="#">Read the notice</a>
+                </p>
+            </div>
+        </section>
+    </div>
 </div>
 
 <div class="u-padding--s">
     <details class="u-padding--s  d-background--light">
         <summary>Show code:</summary>
-        <pre><code class="html">&lt;section class=&quot;c-featurette  c-featurette  t-featurette--dark  u-text-align--center&quot;&gt;
-    &lt;div class=&quot;text-content  c-featurette__body  c-featurette__body--fill&quot;&gt;
-        &lt;h2&gt;
-            Featurette Title
-        &lt;/h2&gt;
+        <pre><code class="html">&lt;div class=&quot;c-featurette-wrap&quot;&gt;
+    &lt;section class=&quot;c-featurette  t-featurette--dark  u-text-align--center&quot;&gt;
+        &lt;div class=&quot;text-content  c-featurette__body  c-featurette__body--fill&quot;&gt;
+            &lt;h2&gt;
+                Featurette Title
+            &lt;/h2&gt;
 
-        &lt;p&gt;
-            &lt;a href=&quot;#&quot;&gt;Read the notice&lt;/a&gt;
-        &lt;/p&gt;
-    &lt;/div&gt;
-&lt;/section&gt;</code></pre>
+            &lt;p&gt;
+                &lt;a href=&quot;#&quot;&gt;Read the notice&lt;/a&gt;
+            &lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+&lt;/div&gt;</code></pre>
     </details>
 </div>
 
@@ -1070,7 +1156,7 @@ leafletMapInitialize(&#x27;test_map&#x27;, {&#x22;lat&#x22;:51.75161383900000089
         
     </div>
 </div>
-
+<!--
 <div class="u-padding--s">
     <details class="u-padding--s  d-background--light">
         <summary>Show code:</summary>
@@ -1147,7 +1233,7 @@ leafletMapInitialize(&#x27;test_map&#x27;, {&#x22;lat&#x22;:51.75161383900000089
     </details>
 </div>
 
-
+-->
 
 <hr>
 <hr>

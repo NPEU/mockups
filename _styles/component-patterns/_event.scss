@@ -86,17 +86,20 @@ $event-button--background-color: $event--base-color !default;
 $event-button--background-color-alt: lighten($event--base-color, 20%) !default;
 $event-button--border-color: darken($event--base-color, 20%) !default;
 */
+
 /*
+    IE11 needs this wrapper to behave properly.
+    If you're not supporting IE11, you don't this this CSS or the HTML that goes with it.
+*/
 .#{$event-namespace}event-wrap {
-
-
+    display: flex;
+    height: 100%;
+    
+    & > .#{$event-namespace}event {
+        flex-basis: 100%;
+    }
 }
 
-    .#{$event-namespace}event-wrap .#{$event-namespace}event {
-
-        //width: 100%;
-    }
-*/
     // Themes mixin:
     //@mixin event--themer (
     //    $theme-name: "",

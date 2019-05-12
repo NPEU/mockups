@@ -102,12 +102,22 @@ $card-info--font-size: 1.4rem;
 
 $theme-only: false !default;
 
+
 /*
+    IE11 needs this wrapper to behave properly.
+    If you're not supporting IE11, you don't this this CSS or the HTML that goes with it.
+*/
 .#{$card-namespace}card-wrap {
-
-
+    display: flex;
+    height: 100%;
+    
+    & > .#{$card-namespace}card {
+        flex-basis: 100%;
+    }
 }
 
+
+/*
     .#{$card-namespace}card-wrap .#{$card-namespace}card {
 
         //width: 100%;
