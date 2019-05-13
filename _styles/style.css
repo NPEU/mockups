@@ -5066,10 +5066,16 @@ $card-button--background-color-alt: lighten($card--base-color, 20%) !default;
 $card-button--border-color: darken($card--base-color, 20%) !default;
 */
 /*
-    IE11 needs this wrapper to behave properly.
-    If you're not supporting IE11, you don't this this CSS or the HTML that goes with it.
+    .c-card-wrap .c-card {
+
+        //width: 100%;
+    }
 */
-.c-card-wrap {
+/*
+        IE11 needs this wrapper to behave properly.
+        If you're not supporting IE11, you don't this this CSS or the HTML that goes with it.
+    */
+.c-card-wrap.c-card-wrap {
   display: flex;
   height: 100%;
 }
@@ -5078,12 +5084,6 @@ $card-button--border-color: darken($card--base-color, 20%) !default;
   flex-basis: 100%;
 }
 
-/*
-    .c-card-wrap .c-card {
-
-        //width: 100%;
-    }
-*/
 .c-card.c-card {
   display: -webkit-flex;
   display: flex;
@@ -6008,6 +6008,25 @@ $glimpse--link-border-bottom--hover: false !default;*/
 
 /*
 */
+/*
+        IE11 needs this wrapper to behave properly.
+        If you're not supporting IE11, you don't this this CSS or the HTML that goes with it.
+    */
+.c-signpost-wrap {
+  display: flex;
+}
+
+.c-signpost-wrap > .c-event {
+  flex-basis: 100%;
+}
+
+.c-signpost {
+  flex-basis: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
 @media only screen and (min-width: 18em) {
   @supports (display: grid) {
     .c-signpost {
@@ -6028,6 +6047,11 @@ $glimpse--link-border-bottom--hover: false !default;*/
 
 .c-sign.c-sign {
   background-color: #666;
+  flex: 1 0 15em;
+}
+
+.c-sign.c-sign--span-all {
+  flex-basis: 100%;
 }
 
 .c-sign a[href].c-sign__link {
@@ -6298,6 +6322,7 @@ $glimpse--link-border-bottom--hover: false !default;*/
 */
 .l-col-to-row-wrap {
   display: flex;
+  width: 100%;
 }
 
 .l-col-to-row-wrap > .l-col-to-row {
@@ -6382,6 +6407,10 @@ $glimpse--link-border-bottom--hover: false !default;*/
 
 .l-col-to-row--flush-edge-gutters {
   overflow: hidden;
+}
+
+.l-col-to-row--flush-edge-gutters > .l-col-to-row {
+  width: auto;
 }
 
 .l-col-to-row--flush-edge-gutters .l-col-to-row.l-col-to-row--gutter--small {
@@ -6471,6 +6500,16 @@ _:-ms-lang(x), .l-col-to-row__item {
 }
 
 /*    Distribute items inside a container.*/
+/*    IE11 needs this wrapper to behave properly.    If you're not supporting IE11, you don't this this CSS or the HTML that goes with it.*/
+.l-distribute-wrap {
+  display: flex;
+  width: 100%;
+}
+
+.l-distribute-wrap > .l-distribute {
+  flex-basis: 100%;
+}
+
 .l-distribute.l-distribute {
   margin: 0;
   padding: 0;
@@ -6505,24 +6544,23 @@ _:-ms-lang(x), .l-col-to-row__item {
 }
 
 .l-distribute.l-distribute--limit-10 > * {
-  -webkit-flex-basis: 10em;
   flex-basis: 10em;
+  max-width: 10em;
 }
 
 .l-distribute.l-distribute--limit-15 > * {
-  -webkit-flex-basis: 15em;
-  -ms-flex-preferred-size: 15em;
   flex-basis: 15em;
+  max-width: 15em;
 }
 
 .l-distribute.l-distribute--limit-20 > * {
-  -webkit-flex-basis: 20em;
   flex-basis: 20em;
+  max-width: 20em;
 }
 
 .l-distribute.l-distribute--limit-25 > * {
-  -webkit-flex-basis: 25em;
   flex-basis: 25em;
+  max-width: 25em;
 }
 
 .l-distribute.l-distribute--gutter--small {

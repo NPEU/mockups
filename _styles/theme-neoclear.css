@@ -84,19 +84,6 @@ $card-button--background-color-alt: lighten($card--base-color, 20%) !default;
 $card-button--border-color: darken($card--base-color, 20%) !default;
 */
 /*
-    IE11 needs this wrapper to behave properly.
-    If you're not supporting IE11, you don't this this CSS or the HTML that goes with it.
-*/
-.c-card-wrap {
-  display: flex;
-  height: 100%;
-}
-
-.c-card-wrap > .c-card {
-  flex-basis: 100%;
-}
-
-/*
     .c-card-wrap .c-card {
 
         //width: 100%;

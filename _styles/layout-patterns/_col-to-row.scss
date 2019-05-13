@@ -40,6 +40,7 @@ $col-to-row-spacing-unit--large: ($col-to-row-spacing-unit * 2) !default;
 */
 .#{$col-to-row-namespace}col-to-row-wrap {
     display: flex;
+    width: 100%;
     
     & > .#{$col-to-row-namespace}col-to-row {
         flex-basis: 100%;
@@ -139,23 +140,27 @@ $col-to-row-spacing-unit--large: ($col-to-row-spacing-unit * 2) !default;
         padding-bottom: $col-to-row-spacing-unit--large;
     }
 
-    // Add these classes to a wrapper if you want to flush the edge gutters:
+    // Add this class to a wrapper if you want to flush the edge gutters:
     @at-root {
         #{&}--flush-edge-gutters {
             overflow: hidden;
+            
+            & > .#{$col-to-row-namespace}col-to-row {
+                width: auto;
+            }
         }
 
             #{&}--flush-edge-gutters &#{&}--gutter--small {
-                margin: -$col-to-row-spacing-unit--small;
+                margin: 0 -$col-to-row-spacing-unit--small;
             }
 
             #{&}--flush-edge-gutters &#{&}--gutter,
             #{&}--flush-edge-gutters &#{&}--gutter--medium {
-                margin: -$col-to-row-spacing-unit;
+                margin: 0 -$col-to-row-spacing-unit;
             }
 
             #{&}--flush-edge-gutters &#{&}--gutter--large {
-                margin: -$col-to-row-spacing-unit--large;
+                margin: 0 -$col-to-row-spacing-unit--large;
             }
     }
 }

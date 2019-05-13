@@ -7,6 +7,7 @@ $theme-namespace: t- !default;
 $signs--base-color: #666 !default;
 $signs--background-color: $signs--base-color;
 
+
 $theme-only: false !default;
 
 // This theme allows you to define a mixin for more complex backgrounds. It must be in the form of:
@@ -34,15 +35,36 @@ $theme-only: false !default;
 // We don't need this if we're only themeing the pattern:
 @if $theme-only == false {
 
+    /*
+        IE11 needs this wrapper to behave properly.
+        If you're not supporting IE11, you don't this this CSS or the HTML that goes with it.
+    */
+    .#{$signs-namespace}signpost-wrap {
+        display: flex;
+        
+        & > .#{$signs-namespace}event {
+            flex-basis: 100%;
+        }
+    }
+
+
+    .#{$signs-namespace}signpost {
+        flex-basis: 100%;
+        
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
     @media only screen and (min-width: $not-too-small) {
+
         @supports (display: grid) {
 
             .#{$signs-namespace}signpost {
                 display: grid;
                 grid-template-columns:repeat(auto-fit,minmax(calc(20% + 6em),1fr));
+              
             }
-
-
 
             .#{$signs-namespace}sign {
                 &#{&}--span-all {
@@ -56,7 +78,13 @@ $theme-only: false !default;
 
         &#{&} {
             background-color: $signs--background-color;
+            flex: 1 0 15em;
         }
+        
+        &#{&}--span-all {
+            flex-basis: 100%;
+        }
+        
 
         a[href]#{&}__link {
             padding: $sz-xs;

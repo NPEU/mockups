@@ -22,56 +22,58 @@ layout: structure--project
          --></div>
             {% if page.landing_display_signpost_bottom or page.landing_display_signpost_top %}
             <div class="l-col-to-row__item  ff-width-100--40--33-333">
-                <div class="c-signpost  u-fill-height">
-                    {% if page.landing_display_signpost_top %}
-                    <div class="c-sign  c-sign--participants  t-{{ page.project }}">
-                        <a href="/{{ page.project }}/{{ project_data.participants_url }}" class="c-sign__link">
-                            <span class="c-sign__centered-content  u-padding--top--l  u-padding--bottom--l">
-                                {{ project_data.participants_svg }}
-                                <span class="c-sign__text  c-sign__text--large">{{ project_data.participants_label }}</span>
-                            </span>
-                        </a>
-                    </div>
+                <div class="c-signpost-wrap  u-fill-height">
+                    <div class="c-signpost  u-fill-height">
+                        {% if page.landing_display_signpost_top %}
+                        <div class="c-sign  c-sign--participants  t-{{ page.project }}">
+                            <a href="/{{ page.project }}/{{ project_data.participants_url }}" class="c-sign__link">
+                                <span class="c-sign__centered-content  u-padding--top--l  u-padding--bottom--l">
+                                    {{ project_data.participants_svg }}
+                                    <span class="c-sign__text  c-sign__text--large">{{ project_data.participants_label }}</span>
+                                </span>
+                            </a>
+                        </div>
 
-                    <div class="c-sign  c-sign--clinicians  t-{{ page.project }}">
-                        <a href="/{{ page.project }}/clinicians" class="c-sign__link">
-                            <span class="c-sign__centered-content  u-padding--top--l  u-padding--bottom--l">
-                                {{ project_data.clinicians_svg }}
-                                <span class="c-sign__text  c-sign__text--large">Clinicians</span>
-                            </span>
-                        </a>
-                    </div>
-                    {% endif %}
-                    {% comment %}<!--
-                    <div class="c-sign  c-sign--contact  t-{{ page.project }}">
-                        <a href="/{{ page.project }}/contact" class="c-sign__link">
-                            <span class="c-sign__centered-content">
-                                {{ project_data.contact_svg }}
-                                <span class="c-sign__text  c-sign__text--large">Contact</span>
-                            </span>
-                        </a>
-                    </div>
+                        <div class="c-sign  c-sign--clinicians  t-{{ page.project }}">
+                            <a href="/{{ page.project }}/clinicians" class="c-sign__link">
+                                <span class="c-sign__centered-content  u-padding--top--l  u-padding--bottom--l">
+                                    {{ project_data.clinicians_svg }}
+                                    <span class="c-sign__text  c-sign__text--large">Clinicians</span>
+                                </span>
+                            </a>
+                        </div>
+                        {% endif %}
+                        {% comment %}<!--
+                        <div class="c-sign  c-sign--contact  t-{{ page.project }}">
+                            <a href="/{{ page.project }}/contact" class="c-sign__link">
+                                <span class="c-sign__centered-content">
+                                    {{ project_data.contact_svg }}
+                                    <span class="c-sign__text  c-sign__text--large">Contact</span>
+                                </span>
+                            </a>
+                        </div>
 
-                    <div class="c-sign  c-sign--centres  t-{{ page.project }}">
-                        <a href="/{{ page.project }}/centres" class="c-sign__link">
-                            <span class="c-sign__centered-content">
-                                {{ project_data.centres_svg }}
-                                <span class="c-sign__text  c-sign__text--large">Centres</span>
-                            </span>
-                        </a>
+                        <div class="c-sign  c-sign--centres  t-{{ page.project }}">
+                            <a href="/{{ page.project }}/centres" class="c-sign__link">
+                                <span class="c-sign__centered-content">
+                                    {{ project_data.centres_svg }}
+                                    <span class="c-sign__text  c-sign__text--large">Centres</span>
+                                </span>
+                            </a>
+                        </div>
+                        -->{% endcomment %}
+                        {% comment %}<!--
+                        
+                            Add a marker to the meter with the number.
+                            ALSO: it's possible that a trial might not have a target, if that's the 
+                            case then skip the (Target: XX) and the meter completely.
+                        
+                        -->{% endcomment %}
+                        {% if page.landing_display_signpost_bottom %}
+                            {% capture signpost-bottom_module %}module__signpost-bottom--{{ page.project }}.html{% endcapture %}
+                            {% include {{ signpost-bottom_module }} %}
+                        {% endif %}
                     </div>
-                    -->{% endcomment %}
-                    {% comment %}<!--
-                    
-                        Add a marker to the meter with the number.
-                        ALSO: it's possible that a trial might not have a target, if that's the 
-                        case then skip the (Target: XX) and the meter completely.
-                    
-                    -->{% endcomment %}
-                    {% if page.landing_display_signpost_bottom %}
-                        {% capture signpost-bottom_module %}module__signpost-bottom--{{ page.project }}.html{% endcapture %}
-                        {% include {{ signpost-bottom_module }} %}
-                    {% endif %}
                 </div>
             </div>
             {% endif %}

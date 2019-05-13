@@ -104,20 +104,6 @@ $theme-only: false !default;
 
 
 /*
-    IE11 needs this wrapper to behave properly.
-    If you're not supporting IE11, you don't this this CSS or the HTML that goes with it.
-*/
-.#{$card-namespace}card-wrap {
-    display: flex;
-    height: 100%;
-    
-    & > .#{$card-namespace}card {
-        flex-basis: 100%;
-    }
-}
-
-
-/*
     .#{$card-namespace}card-wrap .#{$card-namespace}card {
 
         //width: 100%;
@@ -163,10 +149,24 @@ $theme-only: false !default;
 }
 
 
-// Note - no theme yet!
 
 // We don't need this if we're only themeing the pattern:
 @if $theme-only == false {
+
+    /*
+        IE11 needs this wrapper to behave properly.
+        If you're not supporting IE11, you don't this this CSS or the HTML that goes with it.
+    */
+    .#{$card-namespace}card-wrap {
+        &#{&} {
+            display: flex;
+            height: 100%;
+        }
+        
+        & > .#{$card-namespace}card {
+            flex-basis: 100%;
+        }
+    }
 
     .#{$card-namespace}card {
         &#{&} {
