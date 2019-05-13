@@ -89,6 +89,11 @@ $card-button--border-color: darken($card--base-color, 20%) !default;
         //width: 100%;
     }
 */
+_:-ms-lang(x), .c-card.c-card {
+  margin-right: -2px\9;
+  margin-left: -2px\9;
+}
+
 /*@include card-theme("card", (
     background-color: darken($f__base-ui-color, 20%),
     text-color: #fff
@@ -138,11 +143,27 @@ $event-button--border-color: darken($event--base-color, 20%) !default;
 */
 .c-event-wrap {
   display: flex;
+  display: -ms-flexbox;
   height: 100%;
 }
 
 .c-event-wrap > .c-event {
   flex-basis: 100%;
+  -ms-flex-preferred-size: 100%;
+}
+
+_:-ms-lang(x), .c-event.c-event {
+  padding-left: 0\9;
+  padding-right: 0\9;
+}
+
+_:-ms-lang(x), .c-event.c-event > * {
+  margin-left: 2.4rem\9;
+  margin-right: 2.4rem\9;
+}
+
+_:-ms-lang(x), .c-event.c-event .c-event__action {
+  margin-right: 2.4rem\9;
 }
 
 /*

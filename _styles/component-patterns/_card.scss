@@ -160,20 +160,24 @@ $theme-only: false !default;
     .#{$card-namespace}card-wrap {
         &#{&} {
             display: flex;
+            display: -ms-flexbox;
             height: 100%;
         }
         
         & > .#{$card-namespace}card {
             flex-basis: 100%;
+            -ms-flex-preferred-size: 100%;
         }
     }
 
     .#{$card-namespace}card {
         &#{&} {
             display: -webkit-flex;
+            display: -ms-flexbox;
             display: flex;
 
             -webkit-flex-direction: column;
+                -ms-flex-direction: column;
                     flex-direction: column;
 
             height: 100%;
@@ -208,6 +212,7 @@ $theme-only: false !default;
 
         > * {
             -webkit-flex: 0 0 auto;
+                -ms-flex: 0 0 auto;
                     flex: 0 0 auto;
 
             width: 100%;
@@ -274,13 +279,16 @@ $theme-only: false !default;
             padding: $card-body--padding;
 
             -webkit-flex: 1 0 auto;
+                -ms-flex: 1 0 auto;
                     flex: 1 0 auto;
 
 
             display: -webkit-flex;
+            display: -ms-flexbox;
             display: flex;
 
             -webkit-flex-direction: column;
+                -ms-flex-direction: column;
                     flex-direction: column;
 
             position: relative;
@@ -288,6 +296,7 @@ $theme-only: false !default;
 
             #{&}__title {
                 -webkit-flex: 0 0 auto;
+                    -ms-flex: 0 0 auto;
                         flex: 0 0 auto;
 
                 font-size:   $card-title--font-size;
@@ -319,18 +328,22 @@ $theme-only: false !default;
 
             #{&}__body {
                 -webkit-flex: 1 0 auto;
+                    -ms-flex: 1 0 auto;
                         flex: 1 0 auto;
                         
                 display: -webkit-flex;
+                display: -ms-flexbox;
                 display: flex;
 
                 -webkit-flex-direction: column;
+                    -ms-flex-direction: column;
                         flex-direction: column;
 
                 width: 100%;
                 
                 & > * {
                     -webkit-flex: 0 0 auto;
+                        -ms-flex: 0 0 auto;
                             flex: 0 0 auto;
                 }
 
@@ -341,6 +354,7 @@ $theme-only: false !default;
             
                 #{&}__cta {            
                     -webkit-flex: 1 0 auto;
+                        -ms-flex: 1 0 auto;
                             flex: 1 0 auto;
                             
                     display: -webkit-flex;
@@ -425,4 +439,14 @@ $theme-only: false !default;
         )
     );
     */
+}
+
+// IE10
+@if $card--border-or-outline == 'border' {
+    _:-ms-lang(x), .#{$card-namespace}card.#{$card-namespace}card {
+
+        margin-right: -#{$card--border-width + 1px}\9;
+        margin-left: -#{$card--border-width + 1px}\9;
+
+    }
 }

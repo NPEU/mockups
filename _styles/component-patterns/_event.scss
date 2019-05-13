@@ -93,10 +93,12 @@ $event-button--border-color: darken($event--base-color, 20%) !default;
 */
 .#{$event-namespace}event-wrap {
     display: flex;
+    display: -ms-flexbox;
     height: 100%;
     
     & > .#{$event-namespace}event {
         flex-basis: 100%;
+        -ms-flex-preferred-size: 100%;
     }
 }
 
@@ -230,4 +232,23 @@ $theme-only: false !default;
                 font-size: $event-title--font-size;
             }
     }
+}
+
+
+// IE10
+// Padding causes size problems for flex, so trying margin on children instead.
+_:-ms-lang(x), .#{$event-namespace}event.#{$event-namespace}event {
+    padding-left: 0\9;
+    padding-right: 0\9;
+}
+
+_:-ms-lang(x), .#{$event-namespace}event.#{$event-namespace}event > * {
+
+    margin-left: #{$event--padding}\9;
+    margin-right: #{$event--padding}\9;
+
+}
+
+_:-ms-lang(x), .#{$event-namespace}event.#{$event-namespace}event .#{$event-namespace}event__action {
+    margin-right: #{$event--padding}\9;
 }
