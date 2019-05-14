@@ -53,6 +53,32 @@ var cookie_html                   =
     window.onresize = adjustJustifyContent.run;
 })();
 
+(function() {
+    var polyfill = function() {
+
+        if('objectFit' in document.documentElement.style === false) {
+            document.querySelector('.js-image-cover').forEach(function () {
+                var $container = this,
+                    imgUrl = $container.querySelector('img').getAttribute('src');
+                if (imgUrl) {
+                    $container
+                        .style.backgroundImage('url(' + imgUrl + ')');
+                }
+            });
+        }
+        
+    }
+    
+    var ready = function(fn) {
+        if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+            fn();
+        } else {
+            document.addEventListener('DOMContentLoaded', fn);
+        }
+    }
+    
+    ready(polyfill);
+}
 /*!
     Fall-Back Cookie Notice v1.1.0
     https://github.com/Fall-Back/Cookie-Notice
@@ -236,12 +262,12 @@ var cookie_html                   =
     
     if (css_is_loaded) {
         // Add the JS class name ...
-        var hmtl_el = document.querySelector('html');
+        var html_el = document.querySelector('html');
         
-        if (hmtl_el.classList) {
-            hmtl_el.classList.add(nav_bar_js_classname);
+        if (html_el.classList) {
+            html_el.classList.add(nav_bar_js_classname);
         } else {
-            hmtl_el.className += ' ' + nav_bar_js_classname;
+            html_el.className += ' ' + nav_bar_js_classname;
         }
     }
 
@@ -331,12 +357,12 @@ var cookie_html                   =
             if (css_is_loaded) {
                 // Add the JS class name ...
                 /*
-                var hmtl_el = document.querySelector('html');
+                var html_el = document.querySelector('html');
 
-                if (hmtl_el.classList) {
-                    hmtl_el.classList.add(over_panel_js_classname);
+                if (html_el.classList) {
+                    html_el.classList.add(over_panel_js_classname);
                 } else {
-                    hmtl_el.className += ' ' + over_panel_js_classname;
+                    html_el.className += ' ' + over_panel_js_classname;
                 }
                 */
 
@@ -470,12 +496,12 @@ var cookie_html                   =
     
     if (css_is_loaded) {
         // Add the JS class name ...
-        var hmtl_el = document.querySelector('html');
+        var html_el = document.querySelector('html');
         
-        if (hmtl_el.classList) {
-            hmtl_el.classList.add(over_panel_js_classname);
+        if (html_el.classList) {
+            html_el.classList.add(over_panel_js_classname);
         } else {
-            hmtl_el.className += ' ' + over_panel_js_classname;
+            html_el.className += ' ' + over_panel_js_classname;
         }
     }
 
@@ -558,37 +584,39 @@ var cookie_html                   =
                     } else {
                         dropdown.className += ' ' + dropdown_js_classname;
                     }
-                    // ... and button actions:
-                    var buttons = document.querySelectorAll('[data-js="dropdown__button"]');
-                    Array.prototype.forEach.call(buttons, function(button, i) {
-                        var button_id = button.getAttribute('id');
+                });
+                
+                // ... and button actions:
+                var buttons = document.querySelectorAll('[data-js="dropdown__button"]');
+                Array.prototype.forEach.call(buttons, function(button, i) {
+                    var button_id = button.getAttribute('id');
 
-                        button.setAttribute('aria-expanded', 'false');
+                    button.setAttribute('aria-expanded', 'false');
 
-                        // Main button:
-                        button.addEventListener('click', function() {
-                            // Switch the `aria-expanded` attribute:
-                            var expanded = this.getAttribute('aria-expanded') === 'true' || false;
+                    // Main button:
+                    button.addEventListener('click', function() {
+                        // Switch the `aria-expanded` attribute:
+                        var expanded = this.getAttribute('aria-expanded') === 'true' || false;
 
-                            // Close any open dropdown:
-                            var expanded_buttons = document.querySelectorAll('[data-js="dropdown__button"][aria-expanded="true"]');
-                            Array.prototype.forEach.call(expanded_buttons, function(expanded_button, i) {
-                                expanded_button.setAttribute('aria-expanded', 'false');
-                            });
-
-                            // Set the attribute:
-                            this.setAttribute('aria-expanded', !expanded);
-
-                            // Set the focus to the first link if submenu newly opened:
-                            if (!expanded) {
-                                var first_link = document.querySelector('#' + button_id + '--target [data-js="dropdown__focus-start"]');
-                                if (first_link) {
-                                    first_link.focus();
-                                }
-                            }
+                        // Close any open dropdown:
+                        var expanded_buttons = document.querySelectorAll('[data-js="dropdown__button"][aria-expanded="true"]');
+                        Array.prototype.forEach.call(expanded_buttons, function(expanded_button, i) {
+                            expanded_button.setAttribute('aria-expanded', 'false');
                         });
+                        
+                        // Set the attribute:
+                        this.setAttribute('aria-expanded', !expanded);
+
+                        // Set the focus to the first link if submenu newly opened:
+                        if (!expanded) {
+                            var first_link = document.querySelector('#' + button_id + '--target [data-js="dropdown__focus-start"]');
+                            if (first_link) {
+                                first_link.focus();
+                            }
+                        }
                     });
                 });
+                
             }
         }
 	}
@@ -598,12 +626,12 @@ var cookie_html                   =
 
     if (css_is_loaded) {
         // Add the JS class name ...
-        var hmtl_el = document.querySelector('html');
+        var html_el = document.querySelector('html');
 
-        if (hmtl_el.classList) {
-            hmtl_el.classList.add(dropdown_js_classname);
+        if (html_el.classList) {
+            html_el.classList.add(dropdown_js_classname);
         } else {
-            hmtl_el.className += ' ' + dropdown_js_classname;
+            html_el.className += ' ' + dropdown_js_classname;
         }
     }
 

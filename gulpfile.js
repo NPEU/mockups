@@ -166,10 +166,11 @@ function do_concat_js(cb) {
     gulp.src([
         './_scripts/js/cookie-notice-settings.js',
         './_scripts/js/layout-adjustments.js',
+        './_scripts/js/image-cover.js',
         './bower_components/Fall-Back-Cookie-Notice/cookie-notice.js',
-        './bower_components/Fall-Back-Nav-Bar/nav-bar.js',
-        './bower_components/Fall-Back-Over-Panel/over-panel.js',
-        './bower_components/Fall-Back-Dropdown/dropdown.js',
+        './bower_components/Fall-Back-Patterns/Nav Bar/js/nav-bar.js',
+        './bower_components/Fall-Back-Patterns/Over Panel/js/over-panel.js',
+        './bower_components/Fall-Back-Patterns/Dropdown/js/dropdown.js',
     ])
     .pipe(concat(js_filename))
     .pipe(gulp.dest(js_src));
