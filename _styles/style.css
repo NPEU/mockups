@@ -5700,14 +5700,6 @@ $glimpse--link-border-bottom--hover: false !default;*/
   margin: 0;
 }
 
-@supports (object-fit: cover) {
-  .c-glimpse__image img {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-  }
-}
-
 /*
 */
 .c-hero.c-hero {
@@ -6698,6 +6690,8 @@ _:-ms-lang(x), .l-col-to-row__item  {
 
 .l-distribute--flush-edge-gutters {
   overflow: hidden;
+  -ms-flex-preferred-size: 100%;
+  flex-basis: 100%;
 }
 
 .l-distribute--flush-edge-gutters .l-distribute.l-distribute--gutter--small {

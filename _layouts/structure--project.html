@@ -7,21 +7,23 @@ layout: structure
         <header class="c-page-header  {{ project_data.theme_class }}">
             
             <div class="u-padding--bottom--s">
-                <div class="l-col-to-row">
-                    <div class="l-col-to-row__item  ff-width-100--40--50  u-text-align--left  c-page-header__first  u-padding--top--s  u-padding--sides--s">
-                        <a href="/{{ page.project }}" class="c-badge  c-badge--primary-logo">
-                            {{ project_data.logo_svg }}
-                        </a>
-                    </div>
+                <div class="l-col-to-row-wrap">
+                    <div class="l-col-to-row">
+                        <div class="l-col-to-row__item  ff-width-100--40--50  u-text-align--left  c-page-header__first  u-padding--top--s  u-padding--sides--s">
+                            <a href="/{{ page.project }}" class="c-badge  c-badge--primary-logo">
+                                {{ project_data.logo_svg }}
+                            </a>
+                        </div>
 
-                    {% if page.display_cta %}
-                    <div class="l-col-to-row__item  ff-width-100--40--50  l-center  u-padding--top--s  u-padding--sides--s">
-                        
-                        <span>
-                            <a href="{{ project_data.randomisation_url }}" class="c-primary-cta  {{ project_data.theme_class }}">Randomise to {{ project_data.name }}</a>
-                        </span>
+                        {% if page.display_cta %}
+                        <div class="l-col-to-row__item  ff-width-100--40--50  l-center  u-padding--top--s  u-padding--sides--s">
+                            
+                            <span>
+                                <a href="{{ project_data.randomisation_url }}" class="c-primary-cta  {{ project_data.theme_class }}">Randomise to {{ project_data.name }}</a>
+                            </span>
+                        </div>
+                        {% endif %}
                     </div>
-                    {% endif %}
                 </div>
             </div>
             
@@ -35,7 +37,7 @@ layout: structure
         {% if page.display_hero and page.hero_image %}
         <div id="hero" class="c-hero{% if page.hero_message_reversed %}  c-hero--reversed{% endif %}  d-bands--bottom  {{ project_data.theme_class }}">
             <div class="c-hero__image">
-                <div class="l-proportional-container  l-proportional-container--5-1">
+                <div class="l-proportional-container  l-proportional-container--4-1">
                     <div class="l-proportional-container__content">
                         <div class="u-image-cover  js-image-cover">
                             <div class="u-image-cover__inner">
@@ -64,7 +66,7 @@ layout: structure
         </div>
 
         <footer class="sticky-footer  {{ project_data.theme_class }}  d-bands--top" role="contentinfo">
-            <div class="">
+            <div class="l-distribute-wrap">
                 <div class="l-distribute  l-distribute--gutter--small  l-distribute--limit-15">
 
                     <div class="u-padding--s  l-center">
@@ -99,11 +101,12 @@ layout: structure
                     </div>
 
                 </div>
-
-                <p class="c-page-footer">
-                    &copy; NPEU {{ site.time | date: '%Y'}}
-                </p>
             </div>
+            
+            <p class="c-page-footer">
+                &copy; NPEU {{ site.time | date: '%Y'}}
+            </p>
+            
         </footer>
 
     </div>

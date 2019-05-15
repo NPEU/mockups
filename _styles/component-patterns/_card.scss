@@ -245,8 +245,11 @@ $theme-only: false !default;
 
                 position: relative;
                 display: block;
+                // IE10
+                //display: -ms-flexbox;
                 min-height: 100%;
             }
+
 
             #{&}__full-link:hover::before,
             #{&}__full-link:active::before,
