@@ -52,6 +52,9 @@ kramdown:
 
 exclude: [
     "_archive",
+    "_images",
+    "_scripts",
+    "_styles",
     "bower.json",
     "bower_components",
     "Gemfile",

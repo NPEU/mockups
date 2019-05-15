@@ -5031,7 +5031,7 @@ $brochure--border-or-outline: false;
     say, a list-grid). However, it doesn't work in Safari OSX/iOS.
     Applying a `card-wrap` class to a list item to make those items flex-containers seems to work
     OK, but perhaps this would be better abstracted as a `fill-height` class or something?
-    
+
     Note IE10-11 flexbox for card, main and body causes problems when in other flex contexts.
     For IE10 I'm just leaving off the -ms prefixes - it's still usable without flex.
 */
@@ -5076,14 +5076,14 @@ $card-button--border-color: darken($card--base-color, 20%) !default;
         If you're not supporting IE11, you don't this this CSS or the HTML that goes with it.
     */
 .c-card-wrap.c-card-wrap {
-  display: flex;
   display: -ms-flexbox;
+  display: flex;
   height: 100%;
 }
 
 .c-card-wrap > .c-card {
-  flex-basis: 100%;
   -ms-flex-preferred-size: 100%;
+  flex-basis: 100%;
 }
 
 .c-card.c-card {
@@ -5372,14 +5372,14 @@ $event-button--border-color: darken($event--base-color, 20%) !default;
     If you're not supporting IE11, you don't this this CSS or the HTML that goes with it.
 */
 .c-event-wrap {
-  display: flex;
   display: -ms-flexbox;
+  display: flex;
   height: 100%;
 }
 
 .c-event-wrap > .c-event {
-  flex-basis: 100%;
   -ms-flex-preferred-size: 100%;
+  flex-basis: 100%;
 }
 
 .c-event.c-event {
@@ -5507,12 +5507,29 @@ $featurette-button--border-color: darken($featurette--base-color, 20%) !default;
     If you're not supporting IE11, you don't this this CSS or the HTML that goes with it.
 */
 .c-featurette-wrap {
+  display: -ms-flexbox;
   display: flex;
   height: 100%;
 }
 
 .c-featurette-wrap > .c-featurette {
+  -ms-flex-preferred-size: 100%;
   flex-basis: 100%;
+}
+
+/*
+        IE11 needs this wrapper to behave properly.
+        If you're not supporting IE11, you don't this this CSS or the HTML that goes with it.
+    */
+.c-featurette-wrap.c-featurette-wrap {
+  display: flex;
+  display: -ms-flexbox;
+  width: 100%;
+}
+
+.c-featurette-wrap > .c-featurette {
+  flex-basis: 100%;
+  -ms-flex-preferred-size: 100%;
 }
 
 .c-featurette.c-featurette {
@@ -5582,6 +5599,9 @@ $featurette-button--border-color: darken($featurette--base-color, 20%) !default;
 }
 
 @media (min-width: 45em) {
+  _:-ms-lang(x), .c-featurette.c-featurette {
+    -ms-flex-preferred-size: 84%;
+  }
   .c-featurette.c-featurette {
     padding-left: 8%;
     padding-right: 8%;
@@ -5635,25 +5655,25 @@ $glimpse--link-border-bottom--hover: false !default;*/
   min-height: 7.2rem;
 }
 
-.c-glimpse .c-glimpse__heading {
-  font-size: 1.8rem;
-  margin: 0;
-}
-
-.c-glimpse .c-glimpse__heading a {
+.c-glimpse .c-glimpse__header a {
   border-bottom: 0;
 }
 
-.c-glimpse .c-glimpse__heading a:hover {
+.c-glimpse .c-glimpse__header a:hover {
   border-bottom: 0;
 }
 
-.c-glimpse .c-glimpse__heading a:hover span {
+.c-glimpse .c-glimpse__header a:hover span {
   border-bottom: 1px solid;
 }
 
-.c-glimpse .c-glimpse__heading a:hover .c-glimpse__image {
+.c-glimpse .c-glimpse__header a:hover .c-glimpse__image {
   box-shadow: 0 0 0 2px currentColor;
+}
+
+.c-glimpse .c-glimpse__heading {
+  font-size: 1.8rem;
+  margin: 0;
 }
 
 .c-glimpse .c-glimpse__image {
@@ -5664,11 +5684,6 @@ $glimpse--link-border-bottom--hover: false !default;*/
   left: 0;
   top: 0;
   border: 1px solid currentColor;
-}
-
-.c-glimpse .c-glimpse__image img {
-  vertical-align: middle;
-  max-width: 100%;
 }
 
 .c-glimpse .c-glimpse__image--rounded {
@@ -6048,16 +6063,25 @@ $glimpse--link-border-bottom--hover: false !default;*/
         If you're not supporting IE11, you don't this this CSS or the HTML that goes with it.
     */
 .c-signpost-wrap {
+  display: -ms-flexbox;
   display: flex;
 }
 
-.c-signpost-wrap > .c-event {
+.c-signpost-wrap > .c-signpost {
+  -ms-flex-preferred-size: 100%;
   flex-basis: 100%;
 }
 
 .c-signpost {
   flex-basis: 100%;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   width: 100%;
 }
@@ -6082,11 +6106,15 @@ $glimpse--link-border-bottom--hover: false !default;*/
 
 .c-sign.c-sign {
   background-color: #666;
+  -webkit-flex: 1 0 15em;
+  -ms-flex: 1 0 15em;
   flex: 1 0 15em;
 }
 
 .c-sign.c-sign--span-all {
+  -webkit-flex-basis: 100%;
   flex-basis: 100%;
+  -ms-flex-preferred-size: 100%;
 }
 
 .c-sign a[href].c-sign__link {
@@ -6356,14 +6384,14 @@ $glimpse--link-border-bottom--hover: false !default;*/
     If you're not supporting IE11, you don't this this CSS or the HTML that goes with it.
 */
 .l-col-to-row-wrap {
-  display: flex;
   display: -ms-flexbox;
+  display: flex;
   width: 100%;
 }
 
 .l-col-to-row-wrap > .l-col-to-row {
-  flex-basis: 100%;
   -ms-flex-preferred-size: 100%;
+  flex-basis: 100%;
 }
 
 .l-col-to-row.l-col-to-row {
@@ -6550,11 +6578,13 @@ _:-ms-lang(x), .l-col-to-row__item  {
 /*    Distribute items inside a container.*/
 /*    IE11 needs this wrapper to behave properly.    If you're not supporting IE11, you don't this this CSS or the HTML that goes with it.*/
 .l-distribute-wrap {
+  display: -ms-flexbox;
   display: flex;
   width: 100%;
 }
 
 .l-distribute-wrap > .l-distribute {
+  -ms-flex-preferred-size: 100%;
   flex-basis: 100%;
 }
 
@@ -6563,12 +6593,16 @@ _:-ms-lang(x), .l-col-to-row__item  {
   padding: 0;
   list-style-type: none;
   display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
-  webkit-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   -webkit-justify-content: space-around;
+  -ms-flex-pack: distribute;
   justify-content: space-around;
 }
 
@@ -6576,6 +6610,7 @@ _:-ms-lang(x), .l-col-to-row__item  {
   display: inline-block;
   /* [1] */
   -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
   flex: 1 1 auto;
   margin: 0;
   padding: 0;
@@ -6583,18 +6618,20 @@ _:-ms-lang(x), .l-col-to-row__item  {
 
 .l-distribute.l-distribute--start {
   -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
   justify-content: flex-start;
 }
 
 .l-distribute.l-distribute--end {
   -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
   justify-content: flex-end;
 }
 
 .l-distribute.l-distribute--limit-10 > * {
   -webkit-flex-basis: 10em;
-  vvvflex-basis: 7.5em;
-  vvvvvvvvmax-width: 10em;
+  flex-basis: 7.5em;
+  max-width: 10em;
 }
 
 .l-distribute.l-distribute--limit-15 > * {
@@ -6676,38 +6713,38 @@ _:-ms-lang(x), .l-col-to-row__item  {
   margin: -4.8rem;
 }
 
-/*@supports (justify-content:space-evenly) {    .l-distribute {        & {            justify-content: space-evenly;        }    }}*/
 /* IE10-11 */
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .l-distribute.l-distribute--limit-10 > * {
     width: 10em;
+    -ms-flex-preferred-size: auto;
     flex-basis: auto;
   }
   .l-distribute.l-distribute--limit-15 > * {
     width: 15em;
+    -ms-flex-preferred-size: auto;
     flex-basis: auto;
   }
   .l-distribute.l-distribute--limit-20 > * {
     width: 20em;
+    -ms-flex-preferred-size: auto;
     flex-basis: auto;
   }
   .l-distribute.l-distribute--limit-25 > * {
     width: 25em;
+    -ms-flex-preferred-size: auto;
     flex-basis: auto;
   }
+}
+
+_:-ms-lang(x), .l-distribute.l-distribute {
+  max-width: 100%\9;
 }
 
 /*
     Help from http://www.mademyday.de/css-height-equals-width-with-pure-css.html
     and https://css-tricks.com/snippets/sass/maintain-aspect-ratio-mixin/
 */
-.l-proportional-container {
-  /* Make the image fill the width and be vertically centered: */
-  /* (in portrait images this will leave gaps at the sides) */
-  /* If `object-fit` is supported, use that and override vertical centering: */
-  /* If `object-fit` is supported, use that and override vertical centering: */
-}
-
 .l-proportional-container.l-proportional-container {
   position: relative;
   overflow: hidden;
@@ -6736,43 +6773,9 @@ _:-ms-lang(x), .l-col-to-row__item  {
   align-items: center;
 }
 
-.l-proportional-container .l-proportional-container__image-cover {
-  /*
-                1. For IE to fill container.
-            */
-  position: absolute;
-  left: 0;
-  /* [1] */
-  right: 0;
-  /* [1] */
-  width: 100%;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
 .l-proportional-container .l-proportional-container__content svg {
   width: 100%;
   height: 100%;
-}
-
-@supports (object-fit: cover) {
-  .l-proportional-container .l-proportional-container__image-cover {
-    height: 100%;
-    object-fit: cover;
-    top: 0;
-    left: 0;
-    transform: none;
-  }
-}
-
-@supports (object-fit: contain) {
-  .l-proportional-container .l-proportional-container__image-contain {
-    height: 100%;
-    object-fit: contain;
-    top: 0;
-    left: 0;
-    transform: none;
-  }
 }
 
 .l-proportional-container--1-1::before {
@@ -7184,11 +7187,6 @@ $pagination-button--border-color: darken($pagination--base-color, 20%) !default;
 }
 
 /*
-    Text alignment.
-
-    @To Do: allow for responsive variations.
-*/
-/*
     Fill and area with an image.
 */
 .u- {
@@ -7204,15 +7202,18 @@ $pagination-button--border-color: darken($pagination--base-color, 20%) !default;
 }*/
 /*
     ! NOTE: test this in all non-object-fit-supporting browsers as it may be a fix for those too.
-    
-    This only works for landscape images. If it's portrait it breaks unless the width and translate
-    are inverted, and that can't be detected if size changes.
-    Will be replying on JS to check for change to portrait and apply portrait class. 
+
+    This only works for landscape containers. If it's portrait it breaks unless the width and
+    // translate are inverted, and that can't be detected if size changes.
+    Will be replying on JS to check for change to portrait and apply portrait class.
 */
-.u-image-cover {
+.u-image-cover.u-image-cover {
   position: relative;
   height: 100%;
   width: 100%;
+}
+
+.u-image-cover.u-image-cover--min-10 {
   min-height: 10vmin;
 }
 
@@ -7232,7 +7233,7 @@ $pagination-button--border-color: darken($pagination--base-color, 20%) !default;
   min-height: 50vmin;
 }
 
-.u-image-cover__inner {
+.u-image-cover .u-image-cover__inner {
   display: block;
   position: relative;
   width: 100%;
@@ -7240,13 +7241,15 @@ $pagination-button--border-color: darken($pagination--base-color, 20%) !default;
   overflow: hidden;
 }
 
-.u-image-cover__image {
+.u-image-cover .u-image-cover__image {
   position: absolute;
   left: 50%;
   top: 50%;
   width: 100%;
   height: auto;
   transform: translate(-50%, -50%);
+  max-width: none;
+  max-height: none;
 }
 
 /* If `object-fit` is supported, use that and override vertical centering: */
@@ -7265,53 +7268,6 @@ $pagination-button--border-color: darken($pagination--base-color, 20%) !default;
     height: 100%;
     width: 100%;
   }
-}
-
-/*
-    IE10-11
-
-    ! NOTE: test this in all non-object-fit-supporting browsers as it may be a fix for those too.
-    
-    This only works for landscape images. If it's portrait it breaks unless the width and translate
-    are inverted, and that can't be detected if size changes.
-    Will be replying on JS to check for change to portrait and apply portrait class. 
-*/
-/*
-@media screen and (-ms-high-contrast:active), (-ms-high-contrast:none) {
-
-    .u-image-cover {
-        height: 100%;
-        //min-height: 12.8rem; // Magic number alert!
-    }
-
-        .u-image-cover__inner {
-            display: block;
-            position: relative;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-        }
-        
-            
-            .u-image-cover__image {
-                position: absolute;
-                left: 50%;
-                top: 50%;
-                //width: 100%;
-                display: flex;
-                width: auto;
-                height: auto;
-                min-width: 100%;
-                min-height: 100%;
-                //max-width: 100%;
-                //max-height: 100%;
-                transform: translate(-50%, -50%);
-            }
-}
-*/
-.js-image-cover.is-portrait .u-image-cover__image {
-  width: auto;
-  height: 100%;
 }
 
 /*

@@ -40,9 +40,11 @@ $theme-only: false !default;
         If you're not supporting IE11, you don't this this CSS or the HTML that goes with it.
     */
     .#{$signs-namespace}signpost-wrap {
-        display: flex;
+        display: -ms-flexbox;
+        display: flex; 
         
-        & > .#{$signs-namespace}event {
+        & > .#{$signs-namespace}signpost {
+            -ms-flex-preferred-size: 100%;
             flex-basis: 100%;
         }
     }
@@ -51,8 +53,18 @@ $theme-only: false !default;
     .#{$signs-namespace}signpost {
         flex-basis: 100%;
         
+        display: -webkit-flex;
+        display: -ms-flexbox;
         display: flex;
-        flex-wrap: wrap;
+        
+        -webkit-flex-direction: row;
+            -ms-flex-direction: row;
+                flex-direction: row;
+
+            -webkit-flex-wrap: wrap;
+                -ms-flex-wrap: wrap;
+                    flex-wrap: wrap;
+                    
         width: 100%;
     }
 
@@ -78,11 +90,16 @@ $theme-only: false !default;
 
         &#{&} {
             background-color: $signs--background-color;
-            flex: 1 0 15em;
+            
+            -webkit-flex: 1 0 15em;
+                -ms-flex: 1 0 15em;
+                    flex: 1 0 15em;
         }
         
         &#{&}--span-all {
-            flex-basis: 100%;
+                 -webkit-flex-basis: 100%;
+                         flex-basis: 100%;
+            -ms-flex-preferred-size: 100%;
         }
         
 

@@ -3,7 +3,7 @@
     say, a list-grid). However, it doesn't work in Safari OSX/iOS.
     Applying a `card-wrap` class to a list item to make those items flex-containers seems to work
     OK, but perhaps this would be better abstracted as a `fill-height` class or something?
-    
+
     Note IE10-11 flexbox for card, main and body causes problems when in other flex contexts.
     For IE10 I'm just leaving off the -ms prefixes - it's still usable without flex.
 */
@@ -159,14 +159,15 @@ $theme-only: false !default;
     */
     .#{$card-namespace}card-wrap {
         &#{&} {
-            display: flex;
             display: -ms-flexbox;
+            display: flex;
+
             height: 100%;
         }
-        
+
         & > .#{$card-namespace}card {
-            flex-basis: 100%;
             -ms-flex-preferred-size: 100%;
+            flex-basis: 100%;
         }
     }
 
@@ -330,7 +331,7 @@ $theme-only: false !default;
                 -webkit-flex: 1 0 auto;
                     -ms-flex: 1 0 auto;
                         flex: 1 0 auto;
-                        
+
                 display: -webkit-flex;
                 display: -ms-flexbox;
                 display: flex;
@@ -340,7 +341,7 @@ $theme-only: false !default;
                         flex-direction: column;
 
                 width: 100%;
-                
+
                 & > * {
                     -webkit-flex: 0 0 auto;
                         -ms-flex: 0 0 auto;
@@ -351,24 +352,24 @@ $theme-only: false !default;
                     margin-bottom: 0;
                 }
             }
-            
-                #{&}__cta {            
+
+                #{&}__cta {
                     -webkit-flex: 1 0 auto;
                         -ms-flex: 1 0 auto;
                             flex: 1 0 auto;
-                            
+
                     display: -webkit-flex;
                     display: -ms-flexbox;
                     display: flex;
-                    
+
                     -webkit-justify-content: flex-end;
                               -ms-flex-pack: end;
                             justify-content: flex-end;
-                            
+
                     -webkit-align-content: flex-start;
                        -ms-flex-line-pack: start;
                             align-content: flex-start;
-                
+
                      & > * {
                         -webkit-align-self: flex-end;
                        -ms-flex-item-align: end;
@@ -389,7 +390,7 @@ $theme-only: false !default;
                 padding-top: $card-body--padding / 2;
                 width: 100%;
             }
-            
+
             #{&}__body + #{&}__footer {
                 margin-top: $card-spacing-unit / 2;
             }

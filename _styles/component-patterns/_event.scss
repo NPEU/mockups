@@ -92,13 +92,14 @@ $event-button--border-color: darken($event--base-color, 20%) !default;
     If you're not supporting IE11, you don't this this CSS or the HTML that goes with it.
 */
 .#{$event-namespace}event-wrap {
-    display: flex;
     display: -ms-flexbox;
+    display: flex;
+
     height: 100%;
     
     & > .#{$event-namespace}event {
-        flex-basis: 100%;
         -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
     }
 }
 

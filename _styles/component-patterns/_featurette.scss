@@ -88,10 +88,13 @@ $featurette-button--border-color: darken($featurette--base-color, 20%) !default;
     If you're not supporting IE11, you don't this this CSS or the HTML that goes with it.
 */
 .#{$featurette-namespace}featurette-wrap {
+    display: -ms-flexbox;
     display: flex;
-    height: 100%;
     
+    height: 100%;
+
     & > .#{$featurette-namespace}featurette {
+        -ms-flex-preferred-size: 100%;
         flex-basis: 100%;
     }
 }
@@ -115,6 +118,24 @@ $theme-only: false !default;
 
 // We don't need this if we're only themeing the pattern:
 @if $theme-only == false {
+
+    /*
+        IE11 needs this wrapper to behave properly.
+        If you're not supporting IE11, you don't this this CSS or the HTML that goes with it.
+    */
+    .#{$featurette-namespace}featurette-wrap {
+        &#{&} {
+            display: flex;
+            display: -ms-flexbox;
+
+            width: 100%;
+        }
+
+        & > .#{$featurette-namespace}featurette {
+            flex-basis: 100%;
+            -ms-flex-preferred-size: 100%;
+        }
+    }
 
     .#{$featurette-namespace}featurette {
 
@@ -184,7 +205,7 @@ $theme-only: false !default;
              -webkit-order: -1;
             -ms-flex-order: -1;
                      order: -1;
-            
+
 
 
             & img {
@@ -218,6 +239,14 @@ $theme-only: false !default;
 
 
     @media (min-width: #{$featurette-breakpoint}) {
+
+        // IE10 - doesn't take padding into account (in this case 5% each side), so reducing the
+        // flex basis here by 16% fixes the problem).
+        _:-ms-lang(x), .#{$featurette-namespace}featurette.#{$featurette-namespace}featurette {
+            -ms-flex-preferred-size: 84%;
+        }
+
+
         .#{$featurette-namespace}featurette {
             &#{&} {
                 padding-left: 8%;

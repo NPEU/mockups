@@ -8,9 +8,6 @@ const fs          = require('fs');
 const del         = require('del');
 
 
-const now = Date.now();
-
-
 require('make-promises-safe');
 
 
@@ -50,6 +47,8 @@ function do_sass(cb) {
 // Then create a minified version in the output folder.
 function do_cssmin(cb) {
     console.log('Running cssmin...');
+    
+    var now = Date.now();
 
     pump([
         gulp.src(css_src + '**/*.css'),

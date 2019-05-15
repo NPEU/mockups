@@ -39,14 +39,14 @@ $col-to-row-spacing-unit--large: ($col-to-row-spacing-unit * 2) !default;
     If you're not supporting IE11, you don't this this CSS or the HTML that goes with it.
 */
 .#{$col-to-row-namespace}col-to-row-wrap {
-    display: flex;
     display: -ms-flexbox;
+    display: flex; 
     
     width: 100%;
     
     & > .#{$col-to-row-namespace}col-to-row {
-        flex-basis: 100%;
         -ms-flex-preferred-size: 100%;
+        flex-basis: 100%; 
     }
 }
 

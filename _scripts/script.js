@@ -53,12 +53,13 @@ var cookie_html                   =
     window.onresize = adjustJustifyContent.run;
 })();
 
-
-
+/*
+    Object-git polyfill.
+*/
 (function() {
-    /*if('objectFit' in document.documentElement.style !== false) {
+    if('objectFit' in document.documentElement.style !== false) {
         return;
-    }*/
+    }
 
     // https://davidwalsh.name/javascript-debounce-function
     // Returns a function, that, as long as it continues to be invoked, will not
@@ -80,36 +81,43 @@ var cookie_html                   =
         };
     };
 
-    var is_portrait = function() {
+    var compare_heights = function() {
+        // Get all elements we want to apply this to:
         var elements = document.querySelectorAll('.js-image-cover');
+
         Array.prototype.forEach.call(elements, function(el, i) {
-            var className = 'is-portrait';
-            var rect = el.getBoundingClientRect();
-            console.log(rect);
-            if (rect.width < rect.height) {
-                if (el.classList) {
-                    el.classList.add(className);
-                } else {
-                    el.className += ' ' + className;
-                }
-            } else {
-                if (el.classList) {
-                    el.classList.remove(className);
-                } else {
-                    el.className = el.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
-                }
+
+            var img = el.querySelector('img');
+
+            // Get the container dimensions:
+            var container_rect = el.getBoundingClientRect();
+
+            // Get the image dimesions:
+            var image_rect = img.getBoundingClientRect();
+            console.log(container_rect.height, image_rect.height, img.height < container_rect.height);
+
+            // Remove the style. Not the behaviour here isn't ideal, but it's better than the image
+            // gettinf stuck at a small size which can happen otherwise.
+            img.removeAttribute('style');
+
+            // If the image is not tall enough to fill the container, swap width/height styles:
+            if (img.height <= container_rect.height) {
+
+                img.style.width  = 'auto';
+                img.style.height = '100%';
             }
         });
     };
 
     var polyfill = function() {
-
-        is_portrait();
+        // Run on page load...
+        compare_heights();
 
         var checkresize = debounce(function() {
-            is_portrait();
+            compare_heights();
         }, 250);
 
+        // .. and whenever the window resizes:
         window.addEventListener('resize', checkresize);
     };
 
