@@ -5072,8 +5072,8 @@ $card-button--border-color: darken($card--base-color, 20%) !default;
     }
 */
 /*
-        IE11 needs this wrapper to behave properly.
-        If you're not supporting IE11, you don't this this CSS or the HTML that goes with it.
+        IE10-11 needs this wrapper to behave properly.
+        If you're not supporting IE11, you don't this this CSS or the HTML that goes with it.   
     */
 .c-card-wrap.c-card-wrap {
   display: -ms-flexbox;
@@ -5084,6 +5084,20 @@ $card-button--border-color: darken($card--base-color, 20%) !default;
 .c-card-wrap > .c-card {
   -ms-flex-preferred-size: 100%;
   flex-basis: 100%;
+}
+
+/*
+        Older webkit browsers also need special treatment.
+        
+        1. Chrome 39-50, Opera 26-37, Safari/iOS 9-10. Using prefixed property as flex-direction
+           breaks IE11 otherwise, so may as well use for all.
+    */
+_:-webkit-any-link, :root .c-card-wrap.c-card-wrap {
+  height: auto;
+  flex: 1 0 auto;
+  /* [1] */
+  flex-direction: column;
+  /* [1] */
 }
 
 .c-card.c-card {
@@ -5129,6 +5143,12 @@ $card-button--border-color: darken($card--base-color, 20%) !default;
 .c-card .c-card__image-link:hover {
   border-bottom: 0;
   margin-bottom: 0;
+}
+
+.c-card .c-card__full-link {
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
 }
 
 .c-card .c-card__full-link,
@@ -5289,6 +5309,18 @@ $card-button--border-color: darken($card--base-color, 20%) !default;
   bottom: 1rem;
   left: 1rem;
   background-color: #999;
+}
+
+/*
+        Chrome 39-50, Opera 26-37, Safari/iOS 9-10:
+        1. iOS 9-10 collapses box if using height, so using min-height instead.
+    */
+_:-webkit-any-link, :root .c-card.c-card {
+  flex: 1 0 auto;
+  height: auto;
+  /* [1] */
+  min-height: 100%;
+  /* [1] */
 }
 
 /*
@@ -6078,29 +6110,66 @@ $glimpse--link-border-bottom--hover: false !default;*/
   width: 100%;
 }
 
-@media only screen and (min-width: 18em) {
-  @supports (display: grid) {
-    .c-signpost {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(calc(20% + 6em), 1fr));
-    }
-    .c-sign.c-sign--span-all {
-      grid-column: 1/-1;
-    }
-  }
-}
+/*@media only screen and (min-width: $not-too-small) {
 
+        @supports (display: grid) {
+
+            .c-signpost {
+                display: grid;
+                grid-template-columns:repeat(auto-fit,minmax(calc(20% + 6em),1fr));
+
+                // Safari 10 needs this:
+                grid-auto-rows: minmax(min-content, 1fr);
+
+            }
+
+            .c-sign {
+                &--span-all {
+                    grid-column: 1/-1;
+                }
+            }
+        }
+    }*/
 .c-sign {
   /*
             1. IE10
         */
+  /*
+        .c-sign__centered-content > svg {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+            //height: $f__base-rem-space-unit * 2;
+            //margin-bottom: $f__base-rem-space-unit / 2;
+
+            height: 100%;
+            //max-height: 90%;
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0.3;
+
+            // IE10-11 don't behave properly, so hacking the position:
+            -ms-transform: translateY(25%);
+        }*/
 }
 
 .c-sign.c-sign {
   background-color: #666;
-  -webkit-flex: 1 0 15em;
-  -ms-flex: 1 0 15em;
-  flex: 1 0 15em;
+  /*-webkit-flex: 1 0 15em;
+                -ms-flex: 1 0 15em;
+                    flex: 1 0 15em;*/
+  -webkit-flex: 1 0 50%;
+  -ms-flex: 1 0 50%;
+  flex: 1 0 50%;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 .c-sign.c-sign--span-all {
@@ -6111,11 +6180,18 @@ $glimpse--link-border-bottom--hover: false !default;*/
 
 .c-sign a[href].c-sign__link {
   padding: 0.6rem;
-  display: block;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   border: 0;
   position: relative;
   margin-bottom: 0;
-  height: 100%;
   color: #fff;
   background-color: transparent;
 }
@@ -6159,11 +6235,13 @@ $glimpse--link-border-bottom--hover: false !default;*/
   padding: 1.2rem;
   outline: 1px solid #fff;
   position: relative;
-  height: 100%;
   display: block;
   /* [1]  */
   display: -webkit-flex;
   display: flex;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
   -webkit-align-items: center;
   align-items: center;
   -webkit-align-content: center;
@@ -6172,19 +6250,39 @@ $glimpse--link-border-bottom--hover: false !default;*/
   justify-content: center;
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
+  overflow: hidden;
+  /*position: relative;
+            height: 0;
+            width: 100%;
+            padding: 0;
+            padding-bottom: 100%;*/
 }
 
-.c-sign .c-sign__centered-content svg {
+.c-sign .c-sign__svg {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-  height: 90%;
   position: absolute;
+  width: 100%;
+  height: 100%;
   left: 0;
   right: 0;
   bottom: 0;
   opacity: 0.3;
+}
+
+.c-sign .c-sign__svg > svg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .c-sign .c-sign__svg {
+    height: 0;
+    padding: 0 0 100% 0;
+  }
 }
 
 /*
@@ -6386,6 +6484,15 @@ $glimpse--link-border-bottom--hover: false !default;*/
   flex-basis: 100%;
 }
 
+.l-col-to-row {
+  /*
+            Older webkit browsers also need special treatment.
+            
+            1. Chrome 39-50, Opera 26-37, Safari/iOS 9-10. Using prefixed property as flex-direction
+               breaks IE11 otherwise, so may as well use for all.
+        */
+}
+
 .l-col-to-row.l-col-to-row {
   /*
             1. IE11 needs this to calculate widths properly.
@@ -6417,6 +6524,12 @@ $glimpse--link-border-bottom--hover: false !default;*/
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
   display: inline-block;
+}
+
+_:-webkit-any-link, :root .l-col-to-row__item.l-col-to-row__item {
+  display: flex;
+  /* [1] */
+  flex-direction: column;
 }
 
 .l-col-to-row.l-col-to-row--reversed {
@@ -6512,7 +6625,8 @@ _:-ms-lang(x), .l-col-to-row__item  {
 //}
 */
 /*
-
+    Note that as Safari 9 doesn't support grid, things jsut appear in a single column.
+    This is fine for such an old browser. Don't attempt to fix this.
 */
 .l-primary-content.l-primary-content {
   margin: 0;
@@ -6733,6 +6847,13 @@ _:-ms-lang(x), .l-col-to-row__item  {
 
 _:-ms-lang(x), .l-distribute.l-distribute {
   max-width: 100%\9;
+}
+
+/*    Older webkit browsers also need special treatment.        1. Chrome 39-50, Opera 26-37, Safari/iOS 9-10. Using prefixed property as flex-direction       breaks IE11 otherwise, so may as well use for all.*/
+_:-webkit-any-link, :root .l-distribute.l-distribute > * {
+  display: flex;
+  /* [1] */
+  flex-direction: column;
 }
 
 /*
@@ -7153,8 +7274,19 @@ $pagination-button--border-color: darken($pagination--base-color, 20%) !default;
 
 /*
 */
+/*
+    height: 100% is needed for IE10-11, but breaks Safari 9-10.
+    Adding to IE via hack, but could switch to overriding for Safari if need be.
+*/
 .u-fill-height {
-  height: 100%;
+  -webkit-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .u-fill-height {
+    height: 100%;
+  }
 }
 
 .u-fill-height--column {
@@ -7205,6 +7337,7 @@ $pagination-button--border-color: darken($pagination--base-color, 20%) !default;
   position: relative;
   height: 100%;
   width: 100%;
+  flex: 1 0 auto;
 }
 
 .u-image-cover.u-image-cover--min-10 {

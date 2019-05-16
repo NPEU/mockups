@@ -10,6 +10,7 @@ layout: structure--project
                     <div class="c-panel  u-fill-height  u-padding--sides--l">
                         <div class="u-max-measure">
                             {{ content }}
+
                             {% if page.landing_display_cta %}
                             <p>
                                 <a href="/{{ page.project }}/parents" class="cta  cta--has-icon">Find out more<svg display="none" class="icon" aria-hidden="true"><use xlink:href="#icon-chevron-right"></use></svg></a>
@@ -29,7 +30,9 @@ layout: structure--project
                             <div class="c-sign  c-sign--participants  t-{{ page.project }}">
                                 <a href="/{{ page.project }}/{{ project_data.participants_url }}" class="c-sign__link">
                                     <span class="c-sign__centered-content  u-padding--top--l  u-padding--bottom--l">
-                                        {{ project_data.participants_svg }}
+                                        <span class="c-sign__svg">
+                                            {{ project_data.participants_svg }}
+                                        </span>
                                         <span class="c-sign__text  c-sign__text--large">{{ project_data.participants_label }}</span>
                                     </span>
                                 </a>
@@ -38,7 +41,9 @@ layout: structure--project
                             <div class="c-sign  c-sign--clinicians  t-{{ page.project }}">
                                 <a href="/{{ page.project }}/clinicians" class="c-sign__link">
                                     <span class="c-sign__centered-content  u-padding--top--l  u-padding--bottom--l">
-                                        {{ project_data.clinicians_svg }}
+                                        <span class="c-sign__svg">
+                                            {{ project_data.clinicians_svg }}
+                                        </span>
                                         <span class="c-sign__text  c-sign__text--large">Clinicians</span>
                                     </span>
                                 </a>

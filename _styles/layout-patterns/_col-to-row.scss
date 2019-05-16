@@ -91,6 +91,18 @@ $col-to-row-spacing-unit--large: ($col-to-row-spacing-unit * 2) !default;
                     
             display: inline-block;
         }
+        
+         /*
+            Older webkit browsers also need special treatment.
+            
+            1. Chrome 39-50, Opera 26-37, Safari/iOS 9-10. Using prefixed property as flex-direction
+               breaks IE11 otherwise, so may as well use for all.
+        */
+        @at-root _:-webkit-any-link, :root .#{$col-to-row-namespace}col-to-row__item.#{$col-to-row-namespace}col-to-row__item {
+            display: flex; /* [1] */
+            flex-direction: column /* [1] */;
+            
+        }
 
     // Reverse order - USE WITH CAUTION:
     &#{&}--reversed {

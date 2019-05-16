@@ -154,8 +154,8 @@ $theme-only: false !default;
 @if $theme-only == false {
 
     /*
-        IE11 needs this wrapper to behave properly.
-        If you're not supporting IE11, you don't this this CSS or the HTML that goes with it.
+        IE10-11 needs this wrapper to behave properly.
+        If you're not supporting IE11, you don't this this CSS or the HTML that goes with it.   
     */
     .#{$card-namespace}card-wrap {
         &#{&} {
@@ -170,6 +170,20 @@ $theme-only: false !default;
             flex-basis: 100%;
         }
     }
+    
+    /*
+        Older webkit browsers also need special treatment.
+        
+        1. Chrome 39-50, Opera 26-37, Safari/iOS 9-10. Using prefixed property as flex-direction
+           breaks IE11 otherwise, so may as well use for all.
+    */
+    _:-webkit-any-link, :root .#{$card-namespace}card-wrap.#{$card-namespace}card-wrap {
+        
+        height: auto;
+        flex: 1 0 auto; /* [1] */
+        flex-direction: column; /* [1] */
+    }
+    
 
     .#{$card-namespace}card {
         &#{&} {
@@ -182,7 +196,6 @@ $theme-only: false !default;
                     flex-direction: column;
 
             height: 100%;
-            //width: 100%;
 
             margin: 0;
 
@@ -233,6 +246,12 @@ $theme-only: false !default;
             #{&}__image-link:hover {
                 border-bottom: 0;
                 margin-bottom: 0;
+            }
+
+            #{&}__full-link {
+                -webkit-flex: 1 0 auto;
+                    -ms-flex: 1 0 auto;
+                        flex: 1 0 auto;
             }
 
             #{&}__full-link,
@@ -432,6 +451,16 @@ $theme-only: false !default;
             left: 1rem;
             background-color: #999;
         }
+    }
+    
+    /*
+        Chrome 39-50, Opera 26-37, Safari/iOS 9-10:
+        1. iOS 9-10 collapses box if using height, so using min-height instead.
+    */
+    _:-webkit-any-link, :root .#{$card-namespace}card.#{$card-namespace}card {
+        flex: 1 0 auto;
+        height: auto; /* [1] */
+        min-height: 100%; /* [1] */
     }
 
     /*

@@ -3,10 +3,20 @@
 
 $fill-height-namespace: u- !default;
 
+/*
+    height: 100% is needed for IE10-11, but breaks Safari 9-10.
+    Adding to IE via hack, but could switch to overriding for Safari if need be.
+*/
 .#{$fill-height-namespace}fill-height {
-    height: 100%;
+    -webkit-flex: 1 0 auto;
+            flex: 1 0 auto;
 }
 
+@media #{$f__ie10-11} {
+    .#{$fill-height-namespace}fill-height {
+        height: 100%;
+    }
+}
 
 
 .#{$fill-height-namespace}fill-height--column {

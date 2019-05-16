@@ -35,6 +35,8 @@ $image-cover-namespace: u- !default;
         position: relative;
         height: 100%;
         width: 100%;
+        // Safari:
+        flex: 1 0 auto;
     }
 
         &#{&}--min-10 {

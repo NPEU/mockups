@@ -245,6 +245,13 @@ $glimpse--link-border-bottom--hover: false !default;*/
 */
 /*
 */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .c-sign .c-sign__svg {
+    height: 0;
+    padding: 0 0 100% 0;
+  }
+}
+
 /*
 */
 /* ---------------------------------------------------------------------------------------------- */
