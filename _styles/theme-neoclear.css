@@ -245,13 +245,6 @@ $glimpse--link-border-bottom--hover: false !default;*/
 */
 /*
 */
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .c-sign .c-sign__svg {
-    height: 0;
-    padding: 0 0 100% 0;
-  }
-}
-
 /*
 */
 /* ---------------------------------------------------------------------------------------------- */
@@ -418,6 +411,15 @@ button.t-neoclear:not(.over-panel__overlay):not(.dropdown__button) {
 
 button.t-neoclear:not(.over-panel__overlay):not(.dropdown__button):hover, button.t-neoclear:not(.over-panel__overlay):not(.dropdown__button):active, button.t-neoclear:not(.over-panel__overlay):not(.dropdown__button):focus {
   background-color: #00625f !important;
+}
+
+table.t-neoclear th {
+  background-color: #e2fffe;
+}
+
+table.t-neoclear td,
+table.t-neoclear th {
+  border: 1px solid #009590;
 }
 
 .t-neoclear.nav-bar {

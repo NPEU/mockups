@@ -5,8 +5,8 @@ layout: structure--project
 <div class="l-blockrow  u-fill-area">
     <div class="l-blockrow__limit-widthX  d-bands--bottom  t-{{ page.project }}  u-fill-area">
         <div class="l-col-to-row-wrap">
-            <div class="l-col-to-row  u-fill-area">
-                <div class="l-col-to-row__item  ff-width-100--40--66-666">
+            <div class="l-col-to-row">
+                <div class="l-col-to-row__item  ff-width-100--50--66-666">
                     <div class="c-panel  u-fill-height  u-padding--sides--l">
                         <div class="u-max-measure">
                             {{ content }}
@@ -23,16 +23,14 @@ layout: structure--project
                     </div>
              --></div>
                 {% if page.landing_display_signpost_bottom or page.landing_display_signpost_top %}
-                <div class="l-col-to-row__item  ff-width-100--40--33-333">
+                <div class="l-col-to-row__item  ff-width-100--50--33-333">
                     <div class="c-signpost-wrap  u-fill-height">
                         <div class="c-signpost  u-fill-height">
                             {% if page.landing_display_signpost_top %}
                             <div class="c-sign  c-sign--participants  t-{{ page.project }}">
                                 <a href="/{{ page.project }}/{{ project_data.participants_url }}" class="c-sign__link">
                                     <span class="c-sign__centered-content  u-padding--top--l  u-padding--bottom--l">
-                                        <span class="c-sign__svg">
-                                            {{ project_data.participants_svg }}
-                                        </span>
+                                        <span class="c-sign__svg" style="background-image: url('data:image/svg+xml;base64,{{ project_data.participants_svg_encoded }}');"></span>
                                         <span class="c-sign__text  c-sign__text--large">{{ project_data.participants_label }}</span>
                                     </span>
                                 </a>
@@ -41,9 +39,7 @@ layout: structure--project
                             <div class="c-sign  c-sign--clinicians  t-{{ page.project }}">
                                 <a href="/{{ page.project }}/clinicians" class="c-sign__link">
                                     <span class="c-sign__centered-content  u-padding--top--l  u-padding--bottom--l">
-                                        <span class="c-sign__svg">
-                                            {{ project_data.clinicians_svg }}
-                                        </span>
+                                        <span class="c-sign__svg" style="background-image: url('data:image/svg+xml;base64,{{ project_data.clinicians_svg_encoded }}');"></span>
                                         <span class="c-sign__text  c-sign__text--large">Clinicians</span>
                                     </span>
                                 </a>
@@ -76,8 +72,8 @@ layout: structure--project
                             
                             -->{% endcomment %}
                             {% if page.landing_display_signpost_bottom %}
-                                {% capture signpost-bottom_module %}module__signpost-bottom--{{ page.project }}.html{% endcapture %}
-                                {% include {{ signpost-bottom_module }} %}
+                            {% capture signpost-bottom_module %}module__signpost-bottom--{{ page.project }}.html{% endcapture %}
+                            {% include {{ signpost-bottom_module }} %}
                             {% endif %}
                         </div>
                     </div>

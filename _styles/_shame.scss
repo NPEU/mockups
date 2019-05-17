@@ -110,3 +110,16 @@ $enough-room-at: $f__base-rem-space-unit + $measure + $f__base-rem-space-unit + 
     }
 }
 */
+
+table {
+    font-size: calc(11px + (16 - 11) * ((100vw - 300px) / (1600 - 300)));
+    line-height: 1.2;
+}
+
+th:first-child {
+    text-align: left;
+}
+
+tfoot {
+    font-weight: bold;
+}

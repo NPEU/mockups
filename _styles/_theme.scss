@@ -110,6 +110,16 @@ button.#{$theme-namespace}#{$theme-name}:not(.over-panel__overlay):not(.dropdown
 }
 
 
+// Table:
+
+table.#{$theme-namespace}#{$theme-name} th {
+    background-color: lighten(map-get($theme, background-color), 65);
+}
+
+table.#{$theme-namespace}#{$theme-name} td,
+table.#{$theme-namespace}#{$theme-name} th {
+    border: 1px solid map-get($theme, background-color);
+}
 
 // Navbar:
 .#{$theme-namespace}#{$theme-name}.nav-bar {

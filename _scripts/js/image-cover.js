@@ -2,7 +2,7 @@
     Object-git polyfill.
 */
 (function() {
-    if('objectFit' in document.documentElement.style !== false) {
+    if(('objectFit' in document.documentElement.style !== false) || !(navigator.userAgent.indexOf('UCBrowser') > -1)) {
         return;
     }
 
@@ -41,8 +41,8 @@
             var image_rect = img.getBoundingClientRect();
             console.log(container_rect.height, image_rect.height, img.height < container_rect.height);
 
-            // Remove the style. Not the behaviour here isn't ideal, but it's better than the image
-            // gettinf stuck at a small size which can happen otherwise.
+            // Remove the style. Not the behavior here isn't ideal, but it's better than the image
+            // getting stuck at a small size which can happen otherwise.
             img.removeAttribute('style');
 
             // If the image is not tall enough to fill the container, swap width/height styles:
