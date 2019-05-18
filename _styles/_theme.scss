@@ -112,14 +112,31 @@ button.#{$theme-namespace}#{$theme-name}:not(.over-panel__overlay):not(.dropdown
 
 // Table:
 
-table.#{$theme-namespace}#{$theme-name} th {
-    background-color: lighten(map-get($theme, background-color), 65);
+table.#{$theme-namespace}#{$theme-name} caption,
+.#{$theme-namespace}#{$theme-name} + .highcharts-data-table caption {
+    background-color: map-get($theme, background-color);
+}
+
+table.#{$theme-namespace}#{$theme-name} th,
+.#{$theme-namespace}#{$theme-name} + .highcharts-data-table th {
+    background-color: lighten(map-get($theme, background-color), 69);
 }
 
 table.#{$theme-namespace}#{$theme-name} td,
-table.#{$theme-namespace}#{$theme-name} th {
+.#{$theme-namespace}#{$theme-name} + .highcharts-data-table td,
+table.#{$theme-namespace}#{$theme-name} th,
+.#{$theme-namespace}#{$theme-name} + .highcharts-data-table th {
     border: 1px solid map-get($theme, background-color);
 }
+
+
+table.#{$theme-namespace}#{$theme-name} tr:nth-child(odd) > td,
+.#{$theme-namespace}#{$theme-name} + .highcharts-data-table tr:nth-child(odd) > td,
+table.#{$theme-namespace}#{$theme-name} tr:nth-child(odd) > th,
+.#{$theme-namespace}#{$theme-name} + .highcharts-data-table tr:nth-child(odd) > th {
+    background-color: lighten(map-get($theme, background-color), 65);
+}
+
 
 // Navbar:
 .#{$theme-namespace}#{$theme-name}.nav-bar {

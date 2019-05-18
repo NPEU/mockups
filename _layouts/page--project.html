@@ -72,7 +72,7 @@ layout: structure--project
 
                 </div>
             </div>
-            
+            {% if page.is_contact == false %}
             <div class="l-primary-content__pull-out  l-primary-content__pull-out--bottom">
                 <div class="c-panel">
                     <section class="c-panel--module">
@@ -83,7 +83,7 @@ layout: structure--project
                     </section>
                 </div>
             </div>            
-
+            {% endif %}
         </div>
         
         {% if page.display_funder %}

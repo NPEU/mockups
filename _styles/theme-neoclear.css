@@ -413,13 +413,28 @@ button.t-neoclear:not(.over-panel__overlay):not(.dropdown__button):hover, button
   background-color: #00625f !important;
 }
 
-table.t-neoclear th {
-  background-color: #e2fffe;
+table.t-neoclear caption,
+.t-neoclear + .highcharts-data-table caption {
+  background-color: #009590;
+}
+
+table.t-neoclear th,
+.t-neoclear + .highcharts-data-table th {
+  background-color: #f6ffff;
 }
 
 table.t-neoclear td,
-table.t-neoclear th {
+.t-neoclear + .highcharts-data-table td,
+table.t-neoclear th,
+.t-neoclear + .highcharts-data-table th {
   border: 1px solid #009590;
+}
+
+table.t-neoclear tr:nth-child(odd) > td,
+.t-neoclear + .highcharts-data-table tr:nth-child(odd) > td,
+table.t-neoclear tr:nth-child(odd) > th,
+.t-neoclear + .highcharts-data-table tr:nth-child(odd) > th {
+  background-color: #e2fffe;
 }
 
 .t-neoclear.nav-bar {

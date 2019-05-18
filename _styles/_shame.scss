@@ -111,8 +111,9 @@ $enough-room-at: $f__base-rem-space-unit + $measure + $f__base-rem-space-unit + 
 }
 */
 
+
 table {
-    font-size: calc(11px + (16 - 11) * ((100vw - 300px) / (1600 - 300)));
+    @include fluid-type(250px, 672px, 10px, 14px);
     line-height: 1.2;
 }
 
@@ -122,4 +123,11 @@ th:first-child {
 
 tfoot {
     font-weight: bold;
+}
+
+td, th {
+    padding-top: 0.6rem;
+    padding-right: 0.6rem;
+    padding-bottom: calc(0.6rem - 1px);
+    padding-left: 0.6rem;
 }

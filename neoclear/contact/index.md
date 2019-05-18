@@ -4,6 +4,7 @@ title: Contact Details
 project: neoclear
 toc: true
 npeu_unit: ctu
+is_contact: true
 ---
 
 ## During office hours

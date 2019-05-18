@@ -20,6 +20,7 @@ defaults:
       display_social: true
       display_support: true
       is_home: false
+      is_contact: false
       headline_image: true
       hero_image: false
       hero_message: false

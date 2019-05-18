@@ -8004,13 +8004,28 @@ button.t-white:not(.over-panel__overlay):not(.dropdown__button):hover, button.t-
   background-color: #e6e6e6 !important;
 }
 
-table.t-white th {
+table.t-white caption,
+.t-white + .highcharts-data-table caption {
+  background-color: #ffffff;
+}
+
+table.t-white th,
+.t-white + .highcharts-data-table th {
   background-color: white;
 }
 
 table.t-white td,
-table.t-white th {
+.t-white + .highcharts-data-table td,
+table.t-white th,
+.t-white + .highcharts-data-table th {
   border: 1px solid #ffffff;
+}
+
+table.t-white tr:nth-child(odd) > td,
+.t-white + .highcharts-data-table tr:nth-child(odd) > td,
+table.t-white tr:nth-child(odd) > th,
+.t-white + .highcharts-data-table tr:nth-child(odd) > th {
+  background-color: white;
 }
 
 .t-white.nav-bar {
@@ -8389,13 +8404,28 @@ button.t-neutral:not(.over-panel__overlay):not(.dropdown__button):hover, button.
   background-color: #736961 !important;
 }
 
-table.t-neutral th {
+table.t-neutral caption,
+.t-neutral + .highcharts-data-table caption {
+  background-color: #8e8279;
+}
+
+table.t-neutral th,
+.t-neutral + .highcharts-data-table th {
   background-color: white;
 }
 
 table.t-neutral td,
-table.t-neutral th {
+.t-neutral + .highcharts-data-table td,
+table.t-neutral th,
+.t-neutral + .highcharts-data-table th {
   border: 1px solid #8e8279;
+}
+
+table.t-neutral tr:nth-child(odd) > td,
+.t-neutral + .highcharts-data-table tr:nth-child(odd) > td,
+table.t-neutral tr:nth-child(odd) > th,
+.t-neutral + .highcharts-data-table tr:nth-child(odd) > th {
+  background-color: white;
 }
 
 .t-neutral.nav-bar {
@@ -9230,8 +9260,23 @@ html.wireframe {
 }
 */
 table {
-  font-size: calc(11px + (16 - 11) * ((100vw - 300px) / (1600 - 300)));
   line-height: 1.2;
+}
+
+table {
+  font-size: 10px;
+}
+
+@media screen and (min-width: 250px) {
+  table {
+    font-size: calc(10px + 4 * ((100vw - 250px) / 422));
+  }
+}
+
+@media screen and (min-width: 672px) {
+  table {
+    font-size: 14px;
+  }
 }
 
 th:first-child {
@@ -9240,6 +9285,13 @@ th:first-child {
 
 tfoot {
   font-weight: bold;
+}
+
+td, th {
+  padding-top: 0.6rem;
+  padding-right: 0.6rem;
+  padding-bottom: calc(0.6rem - 1px);
+  padding-left: 0.6rem;
 }
 
 /* ---------------------------------------------------------------------------------------------- */
