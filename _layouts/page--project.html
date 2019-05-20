@@ -63,6 +63,12 @@ layout: structure--project
             </div>
             {% if page.has_pull_outs %}
             <div class="l-primary-content__pull-out  l-primary-content__pull-out--bottom">
+                {% if page.main_bottom_modules != false %}
+                    {% for module_name in page.main_bottom_modules %}
+                        {% capture module_file %}module__main-bottom--{{ page.project }}--{{ module_name }}.html{% endcapture %}
+                        {% include {{ module_file }} %}
+                    {% endfor %}
+                {% endif %}
                 {% if page.is_contact == false %}
                 <div class="c-panel  c-panel--very-light  t-neutral  u-space--below  u-space--above">
                     {% capture contact_module %}module__contact--{{ page.project }}.html{% endcapture %}

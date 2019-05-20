@@ -1,0 +1,122 @@
+---
+layout: page--project
+title: Recruitment
+project: frosttie
+npeu_unit: ctu
+has_highcharts: true
+has_pull_outs: false
+hero_image: "/img/frosttie/218582881.jpg"
+---
+
+<h2>Recruitment Chart</h2>
+
+<div id="recruitment-chart" class="t-frosttie" style="min-width: 310px; max-width: 100%; height: 500px; margin: 0 auto"></div>
+
+<script>
+Highcharts.chart('recruitment-chart', {
+    chart: {
+        type: 'bar',
+        style: {
+            fontFamily: 'Lato,sans-serif',
+            fontWeight: '700'
+        }
+    },
+    title: {
+        text: 'Total Recruitment 9'
+    },
+    colors: ['#2b3383', '#613392'],
+    xAxis: {
+        categories: [
+            "Norfolk and Norwich University Hospital",
+            "Royal Cornwall Hospital, Truro",
+            "Royal Victoria Infirmary, Newcastle",
+            "George Eliot Hospital, Nuneaton",
+            "Queen Alexandra Hospital, Portsmouth",
+            "Royal Albert and Edward Infirmary, Wigan"
+        ],
+        title: {
+            text: null
+        }
+    },
+    yAxis: {
+        visible: false
+    },
+    plotOptions: {
+        bar: {
+            dataLabels: {
+                enabled: true
+            }
+        }
+    },
+    legend: {
+        verticalAlign: 'top',
+        backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF')
+    },
+    credits: {
+        enabled: false
+    },
+    "series": [
+        {
+            "name": "Monthly recruitment rate",
+            "data": [
+                2.95,
+                1.35,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        {
+            "name": "Total recruits",
+            "data": [
+                7,
+                2,
+                0,
+                0,
+                0,
+                0
+            ]
+        }
+    ]
+});
+
+</script>
+
+<h2>Recruitment Summary</h2>
+<table class="t-frosttie">
+	<thead>
+		<tr>
+			<th>Recruiting centre</th>
+			<th>Total</th>
+						<th>May 19</th>
+						<th>Apr 19</th>
+						<th>Mar 19</th>
+					</tr>
+	</thead>
+	<tfoot>
+		<tr>
+			<td>&nbsp;</td>
+			<td>9</td>
+						<td>1</td>
+						<td>4</td>
+						<td>4</td>
+					</tr>
+	</tfoot>
+	<tbody>
+			<tr>
+			<th>Norfolk and Norwich University Hospital</th>
+			<td>7</td>
+						<td>1</td>
+						<td>2</td>
+						<td>4</td>
+					</tr>
+				<tr>
+			<th>Royal Cornwall Hospital</th>
+			<td>2</td>
+						<td>0</td>
+						<td>2</td>
+						<td>0</td>
+					</tr>
+			</tbody>
+</table>

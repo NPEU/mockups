@@ -3,7 +3,7 @@ layout: structure--basic
 title: NPEU Mockups
 ---
 
-* [Minidex](minidex)
+* [FROSTTIE](frosttie)
 * [NeoCLEAR](neoclear)
 * [PRU-MNHC](prumnhc)
 

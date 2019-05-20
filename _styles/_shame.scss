@@ -156,3 +156,19 @@ td, th {
     padding-bottom: calc(0.6rem - 1px);
     padding-left: 0.6rem;
 }
+
+
+
+
+details {
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #eee;
+    padding: .5rem 0 .5rem 1.5rem;
+}
+
+summary {
+    cursor: pointer;
+    margin-bottom: 1rem;
+    margin-left: -1.5rem;
+    font-weight: 700;
+}
