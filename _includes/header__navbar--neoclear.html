@@ -17,15 +17,21 @@
 
 
                             <ul class="nav-bar__items">
-                                <li class="nav-bar__item">
-                                
-                                    <a href="/{{ page.project }}/{{ project_data.participants_url }}" class="nav-bar__link">{{ project_data.participants_label }}</a>
-                                
-                                </li>
+                                {% capture url %}/{{ page.project }}/{{ project_data.participants_url }}/{% endcapture %}
+                                {% if page.url == url %}
+                                <li class="nav-bar__item  nav-bar__item--current"><a href="#main" class="nav-bar__link">{{ project_data.participants_label }}</a></li>
+                                {% else %}
+                                <li class="nav-bar__item"><a href="{{ url }}" class="nav-bar__link">{{ project_data.participants_label }}</a></li>
+                                {% endif %}
 
+                                {% capture url %}/{{ page.project }}/clinicians/{% endcapture %}
+                                {% if page.url == url %}
+                                <li class="nav-bar__item  nav-bar__item--current">
+                                    <a href="#main" class="nav-bar__link">Clinicians</a>
+                                {% else %}
                                 <li class="nav-bar__item">
-
-                                    <a href="/{{ page.project }}/clinicians" class="nav-bar__link">Clinicians</a>
+                                    <a href="{{ url }}" class="nav-bar__link">Clinicians</a>
+                                {% endif %}
 
                                     <div class="dropdown  dropdown--only-wide">
                                         <button id="clinicians-sub-menu" class="dropdown__button  {{ project_data.theme_class }}" data-js="dropdown__button" hidden aria-label="Clinicians sub-menu" aria-expanded="false"><svg display="none" class="icon  icon--is-closed"><use xlink:href="#icon-chevron-down"></use></svg><svg display="none" class="icon  icon--is-open"><use xlink:href="#icon-chevron-up"></use></svg></button>
@@ -42,14 +48,33 @@
 
                                 </li>
 
-                                <li class="nav-bar__item"><a href="/{{ page.project }}/sites" class="nav-bar__link">Sites</a></li>
+                                {% capture url %}/{{ page.project }}/sites/{% endcapture %}
+                                {% if page.url == url %}
+                                <li class="nav-bar__item  nav-bar__item--current"><a href="#main" class="nav-bar__link">Sites</a></li>
+                                {% else %}
+                                <li class="nav-bar__item"><a href="{{ url }}" class="nav-bar__link">Sites</a></li>
+                                {% endif %}
 
-                                <li class="nav-bar__item"><a href="/{{ page.project }}/recruitment" class="nav-bar__link">Recruitment</a></li>
+                                {% capture url %}/{{ page.project }}/recruitment/{% endcapture %}
+                                {% if page.url == url %}
+                                <li class="nav-bar__item  nav-bar__item--current"><a href="#main" class="nav-bar__link">Recruitment</a></li>
+                                {% else %}
+                                <li class="nav-bar__item"><a href="{{ url }}" class="nav-bar__link">Recruitment</a></li>
+                                {% endif %}
 
-                                <li class="nav-bar__item"><a href="/{{ page.project }}/updates" class="nav-bar__link">Updates</a></li>
+                                {% capture url %}/{{ page.project }}/updates/{% endcapture %}
+                                {% if page.url == url %}
+                                <li class="nav-bar__item  nav-bar__item--current"><a href="#main" class="nav-bar__link">Updates</a></li>
+                                {% else %}
+                                <li class="nav-bar__item"><a href="{{ url }}" class="nav-bar__link">Updates</a></li>
+                                {% endif %}
                                 
-                                <li class="nav-bar__item"><a href="/{{ page.project }}/contact" class="nav-bar__link">Contact</a></li>
-
+                                {% capture url %}/{{ page.project }}/contact/{% endcapture %}
+                                {% if page.url == url %}
+                                <li class="nav-bar__item  nav-bar__item--current"><a href="#main" class="nav-bar__link">Contact</a></li>
+                                {% else %}
+                                <li class="nav-bar__item"><a href="{{ url }}" class="nav-bar__link">Contact</a></li>
+                                {% endif %}
                             </ul>
 
                         </div>

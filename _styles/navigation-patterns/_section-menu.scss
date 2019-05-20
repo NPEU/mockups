@@ -21,13 +21,13 @@ $section-menu--border-or-outline: 'outline' !default;
 $section-menu--border-width:  1px !default;
 $section-menu--border-style:  solid  !default;
 $section-menu--border-radius: 0  !default;
-$section-menu--border-color:  darken($section-menu--background-color, 10%) !default;
+$section-menu--border-color:  darken($section-menu--base-color, 10%) !default;
 
 
 
 $section-menu--separator-width:  1px !default;
 $section-menu--separator-style:  solid  !default;
-$section-menu--separator-color:  darken($section-menu--background-color, 10%) !default;
+$section-menu--separator-color:  darken($section-menu--base-color, 10%) !default;
 
 //$section-menu-breakpoint: 30em !default;
 

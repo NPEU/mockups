@@ -267,9 +267,9 @@ table.#{$theme-namespace}#{$theme-name} tr:nth-child(odd) > th,
 $theme: map-merge(
     $theme,
     (
-        background-color      : lighten(map-get($theme, primary-color), 60%),
+        background-color      : lighten(map-get($theme, primary-color), 45%),
         cta-text-color        : #333,
-        cta-background-color  : lighten(map-get($theme, primary-color), 60%),
+        cta-background-color  : lighten(map-get($theme, primary-color), 45%),
         text-color            : #333
     )
 );

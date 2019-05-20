@@ -567,7 +567,7 @@ table.t-neoclear tr:nth-child(odd) > th,
 
 .c-panel.c-panel--very-light.t-neoclear {
   color: #333;
-  background: #c8fffd;
+  background: #7cfffb;
   /*
         a[href]:hover,
         a[href]:active,
@@ -579,7 +579,7 @@ table.t-neoclear tr:nth-child(odd) > th,
 
 .c-panel.c-panel--very-light.t-neoclear a[href] {
   color: #333;
-  background-color: #c8fffd;
+  background-color: #7cfffb;
 }
 
 .c-panel.c-panel--very-light.t-neoclear a[href].cta {

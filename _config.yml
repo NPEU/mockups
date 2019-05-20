@@ -21,6 +21,7 @@ defaults:
       display_support: true
       is_home: false
       is_contact: false
+      is_updates: false
       headline_image: true
       hero_image: false
       hero_message: false
@@ -40,7 +41,7 @@ defaults:
       section_menu: false
       toc: false
       main_top_modules: false
-      has_pull_outs: false
+      has_pull_outs: true
       has_map: false
       highcharts: false
 

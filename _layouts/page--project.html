@@ -15,10 +15,10 @@ layout: structure--project
                 </div>
             </div>
             
-            <div class="l-primary-content__pull-out  l-primary-content__pull-out--top  d-background--light  t-neutral">
+            <div class="l-primary-content__pull-out  l-primary-content__pull-out--top  u-space--below">
                 {% assign total_h2 = content | split: '<h2' | size | minus: 1 %}
                 {% if total_h2 > 2 %}
-                <div class="c-panel">
+                <div class="c-panel  c-panel--very-light  t-neutral">
 
                     {% include module__toc.html %}
 
@@ -27,7 +27,7 @@ layout: structure--project
 
                 {% if page.main_top_modules != false %}
                 {% for module_name in page.main_top_modules %}
-                <div class="c-panel">
+                <div class="c-panel  c-panel--very-light  t-neutral  u-space--above">
                 
                     {% capture module_file %}module__main-top--{{ page.project }}--{{ module_name }}.html{% endcapture %}
                     {% include {{ module_file }} %}
@@ -36,14 +36,7 @@ layout: structure--project
                 {% endfor %}
                 {% endif %}
                 
-                {% if page.section_menu %}
-                <div class="c-panel">
-
-                    {% capture section_menu_module %}module__section-menu--{{ page.project }}--{{ page.section_menu }}.html{% endcapture %}
-                    {% include {{ section_menu_module }} %}
-
-                </div>
-                {% endif %}
+                
             </div> 
 
             <div class="l-primary-content__main">
@@ -72,16 +65,28 @@ layout: structure--project
 
                 </div>
             </div>
-            {% if page.is_contact == false %}
+            {% if page.has_pull_outs %}
             <div class="l-primary-content__pull-out  l-primary-content__pull-out--bottom">
-                <div class="c-panel">
-                    <section class="c-panel--module">
-                    
-                        <h2>Contact Us</h2>
-                        <p><a href="">Contact details</a></p>
-
-                    </section>
+                {% if page.is_contact == false %}
+                <div class="c-panel  c-panel--very-light  t-neutral  u-space--below">
+                    {% capture contact_module %}module__contact--{{ page.project }}.html{% endcapture %}
+                    {% include {{ contact_module }} %}
                 </div>
+                {% endif %}
+                {% if page.is_updates == false %}
+                <div class="c-panel  c-panel--very-light  t-neutral">
+                    {% capture updates_module %}module__latest-news--{{ page.project }}.html{% endcapture %}
+                    {% include {{ updates_module }} %}
+                </div>
+                {% endif %}
+                {% if page.section_menu %}
+                <div class="c-panel  c-panel--very-light  t-neutral">
+
+                    {% capture section_menu_module %}module__section-menu--{{ page.project }}--{{ page.section_menu }}.html{% endcapture %}
+                    {% include {{ section_menu_module }} %}
+
+                </div>
+                {% endif %}
             </div>            
             {% endif %}
         </div>

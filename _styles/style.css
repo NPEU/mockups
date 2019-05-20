@@ -7156,10 +7156,10 @@ $pagination-button--border-color: darken($pagination--base-color, 20%) !default;
     OK, but perhaps this would be better abstracted as a `fill-height` class or something?
 */
 .n-section-menu.n-section-menu {
-  color: #333;
-  background: #fff;
+  color: inherit;
+  background: inherit;
   padding: 0;
-  outline: 0 solid #e6e6e6;
+  outline: 0 solid #d5d5d5;
   /*
             If the 'pull' is > module body content height, it'll protrude below the container,
             so hide it:
@@ -7179,7 +7179,7 @@ $pagination-button--border-color: darken($pagination--base-color, 20%) !default;
 }
 
 .n-section-menu .n-section-menu__item:not(:last-child) .n-section-menu__link {
-  border-bottom-color: #e6e6e6;
+  border-bottom-color: #d5d5d5;
   border-bottom-style: solid;
   border-bottom-width: 1px;
 }
@@ -8526,7 +8526,7 @@ table.t-neutral tr:nth-child(odd) > th,
 */
 .c-panel.c-panel--very-light.t-neutral {
   color: #333;
-  background: white;
+  background: #f7f6f6;
   /*
         a[href]:hover,
         a[href]:active,
@@ -8538,7 +8538,7 @@ table.t-neutral tr:nth-child(odd) > th,
 
 .c-panel.c-panel--very-light.t-neutral a[href] {
   color: #333;
-  background-color: white;
+  background-color: #f7f6f6;
 }
 
 .c-panel.c-panel--very-light.t-neutral a[href].cta {
@@ -9203,6 +9203,26 @@ html.wireframe {
   .nav-bar.d-bands--bottom {
     border: 0;
   }
+}
+
+.dropdown,
+.nav-bar__item,
+.nav-bar__link {
+  position: relative;
+}
+
+.nav-bar__item--current::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: 0.4;
 }
 
 /*-----------*/

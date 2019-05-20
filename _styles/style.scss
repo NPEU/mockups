@@ -222,9 +222,12 @@ $pagination--background-color: #fff;
 $pagination--active-background-color: lighten(map-get($neutral-theme, background-color), 40%);
 @import "navigation-patterns/_pagination.scss";
 
+
+
 $section-menu-spacing-unit: $f__base-rem-space-unit;
+$section-menu--text-color: inherit;
+$section-menu--background-color: inherit;
 $section-menu--link-background-color--alt: lighten(map-get($neutral-theme, background-color), 25%);
-$section-menu--background-color: #fff;
 $section-menu--active-background-color: lighten(map-get($neutral-theme, background-color), 40%);
 $section-menu--padding: 0;
 $section-menu--border-width: 0;
