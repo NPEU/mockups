@@ -34,9 +34,9 @@ $primary-content-pull-out-side-space: 0 $primary-content-spacing-unit 0 0 !defau
     #{&}__main,
     #{&}__pull-out {
         width: 100%;
-        max-width: $primary-content-max-width;
-        margin-left: auto;
-        margin-right: auto;
+        //max-width: $primary-content-max-width;
+        //margin-left: auto;
+        //margin-right: auto;
     }
     
 }
@@ -50,18 +50,26 @@ $primary-content-pull-out-side-space: 0 $primary-content-spacing-unit 0 0 !defau
         }
         
         &#{&}--has-pull-outs {
-            display: -ms-grid;
-            display: grid;
+            //display: -ms-grid;
+            //display: grid;
                  -ms-grid-rows: auto auto 1fr;
             grid-template-rows: auto auto 1fr;
                  -ms-grid-columns: 2fr 1fr;
             grid-template-columns: 2fr 1fr;
+            
+            display: flow-root;
             
             .#{$primary-content-namespace}primary-content__header {
                 -ms-grid-column: 1;
                     grid-column: 1;
                 -ms-grid-row: 1;
                     grid-row: 1;
+                    
+                /*width: 66%;
+                float: left;
+                clear: left;*/
+                
+                width: 100%;
             }
             
             .#{$primary-content-namespace}primary-content__main {
@@ -71,6 +79,10 @@ $primary-content-pull-out-side-space: 0 $primary-content-spacing-unit 0 0 !defau
                 -ms-grid-row-span: 2;
                          grid-row: 2 / 4;
                 padding-right: $primary-content-spacing-unit;
+                
+                width: 66%;
+                float: left;
+                clear: left;
             }
             
             .#{$primary-content-namespace}primary-content__pull-out--top {
@@ -78,6 +90,12 @@ $primary-content-pull-out-side-space: 0 $primary-content-spacing-unit 0 0 !defau
                     grid-column: 2;
                 -ms-grid-row: 2;
                 grid-row: 2;
+
+                width: 34%;
+                float: right;
+                
+                
+                padding: 0 $primary-content-spacing-unit;
             }
             
             .#{$primary-content-namespace}primary-content__pull-out--bottom {
@@ -85,6 +103,12 @@ $primary-content-pull-out-side-space: 0 $primary-content-spacing-unit 0 0 !defau
                     grid-column: 2;
                 -ms-grid-row: 3;
                 grid-row: 3;
+                
+                width: 34%;
+                float: right;
+                
+                
+                padding: 0 $primary-content-spacing-unit;
             }
         }
     }

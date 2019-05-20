@@ -59,6 +59,12 @@ $enough-room-at: $f__base-rem-space-unit + $measure + $f__base-rem-space-unit + 
     opacity: 0.4;
 }
 
+
+
+.search-form .search-form__field.search-form__field {
+    border-radius: 50px 0 0 50px;
+    padding-left: 0.5em;
+}
 /*-----------*/
 
 // Note Safari 10- doesn't factor in min/max width/height when deciding how many items can fit on

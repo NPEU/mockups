@@ -10,15 +10,15 @@ layout: structure--project
             
                 {% include module__breadcrumbs.html %}
                 
-                <div class="c-panel  c-longform-content">
+                <div class="c-panel  c-longform-contentX">
                     <h1>{{ page.title }}</h1>
                 </div>
             </div>
-            
-            <div class="l-primary-content__pull-out  l-primary-content__pull-out--top  u-space--below">
+            {% if page.has_pull_outs or page.section_menu or page.toc %}
+            <div class="l-primary-content__pull-out  l-primary-content__pull-out--top">
                 {% assign total_h2 = content | split: '<h2' | size | minus: 1 %}
-                {% if total_h2 > 2 %}
-                <div class="c-panel  c-panel--very-light  t-neutral">
+                {% if page.display_toc and total_h2 > 2 %}
+                <div class="c-panel  c-panel--very-light  t-neutral  u-space--above  u-space--above">
 
                     {% include module__toc.html %}
 
@@ -26,19 +26,15 @@ layout: structure--project
                 {% endif %}
 
                 {% if page.main_top_modules != false %}
-                {% for module_name in page.main_top_modules %}
-                <div class="c-panel  c-panel--very-light  t-neutral  u-space--above">
-                
-                    {% capture module_file %}module__main-top--{{ page.project }}--{{ module_name }}.html{% endcapture %}
-                    {% include {{ module_file }} %}
-
-                </div>
-                {% endfor %}
+                    {% for module_name in page.main_top_modules %}
+                        {% capture module_file %}module__main-top--{{ page.project }}--{{ module_name }}.html{% endcapture %}
+                        {% include {{ module_file }} %}
+                    {% endfor %}
                 {% endif %}
                 
                 
             </div> 
-
+            {% endif %}
             <div class="l-primary-content__main">
 
 
@@ -59,7 +55,7 @@ layout: structure--project
                 -->{% endcomment %}
 
 
-                <div class="c-panel  c-longform-content">
+                <div class="c-panel  c-longform-contentX">
 
                     {{ content }}
 
@@ -68,19 +64,19 @@ layout: structure--project
             {% if page.has_pull_outs %}
             <div class="l-primary-content__pull-out  l-primary-content__pull-out--bottom">
                 {% if page.is_contact == false %}
-                <div class="c-panel  c-panel--very-light  t-neutral  u-space--below">
+                <div class="c-panel  c-panel--very-light  t-neutral  u-space--below  u-space--above">
                     {% capture contact_module %}module__contact--{{ page.project }}.html{% endcapture %}
                     {% include {{ contact_module }} %}
                 </div>
                 {% endif %}
                 {% if page.is_updates == false %}
-                <div class="c-panel  c-panel--very-light  t-neutral">
+                <div class="c-panel  c-panel--very-light  t-neutral  u-space--below  u-space--above">
                     {% capture updates_module %}module__latest-news--{{ page.project }}.html{% endcapture %}
                     {% include {{ updates_module }} %}
                 </div>
                 {% endif %}
                 {% if page.section_menu %}
-                <div class="c-panel  c-panel--very-light  t-neutral">
+                <div class="c-panel  c-panel--very-light  t-neutral  u-space--below  u-space--above">
 
                     {% capture section_menu_module %}module__section-menu--{{ page.project }}--{{ page.section_menu }}.html{% endcapture %}
                     {% include {{ section_menu_module }} %}

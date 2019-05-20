@@ -2,7 +2,7 @@
 
 
 //@import url('https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i|Nunito:400,700');
-@import url("https://fonts.googleapis.com/css?family=Lato:300,700,900");
+//@import url("https://fonts.googleapis.com/css?family=Lato:300,700,900");
 //@import url('https://fonts.googleapis.com/css?family=Lato:300,300i|Nunito:400,700');
 //font-family: 'Lato', sans-serif;
 //font-family: 'Nunito', sans-serif;
@@ -87,11 +87,12 @@ $f__nav-bar-divider-first-item:            true;
 
 
 
-$f__dropdown--background-color:              transparent;
-$f__dropdown--text-color:                    $f__nav-bar__link--color;
-$f__dropdown__button--color:                 $f__nav-bar__link--color;
-$f__dropdown__button--background-color:      $f__nav-bar__link--background-color;
-$f__dropdown__button--background-color--alt: $f__nav-bar__link--background-color--alt;
+$f__dropdown--background-color:               transparent;
+$f__dropdown--text-color:                     $f__nav-bar__link--color;
+$f__dropdown__button--color:                  $f__nav-bar__link--color;
+$f__dropdown__button--background-color:       $f__nav-bar__link--background-color;
+$f__dropdown__button--background-color--alt:  $f__nav-bar__link--background-color--alt;
+$f__dropdown__button--background-color--alt2: $f__nav-bar__link--background-color--alt;
 
 @import "../bower_components/Fall-Back-Patterns/Dropdown/scss/_dropdown";
 
@@ -227,7 +228,7 @@ $pagination--active-background-color: lighten(map-get($neutral-theme, background
 $section-menu-spacing-unit: $f__base-rem-space-unit;
 $section-menu--text-color: inherit;
 $section-menu--background-color: inherit;
-$section-menu--link-background-color--alt: lighten(map-get($neutral-theme, background-color), 25%);
+$section-menu--link-background-color--alt: rgba(0,0,0,0.2);
 $section-menu--active-background-color: lighten(map-get($neutral-theme, background-color), 40%);
 $section-menu--padding: 0;
 $section-menu--border-width: 0;

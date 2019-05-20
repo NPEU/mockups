@@ -4,16 +4,21 @@ title: Recruitment
 project: neoclear
 npeu_unit: ctu
 has_highcharts: true
+has_pull_outs: false
 ---
 
 <h2>Recruitment Chart</h2>
 
-<div id="recruitment-chart" class="t-neoclear" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto"></div>
+<div id="recruitment-chart" class="t-neoclear" style="min-width: 310px; max-width: 100%; height: 500px; margin: 0 auto"></div>
 
 <script>
 Highcharts.chart('recruitment-chart', {
     chart: {
-        type: 'bar'
+        type: 'bar',
+        style: {
+            fontFamily: 'Lato,sans-serif',
+            fontWeight: '700'
+        }
     },
     title: {
         text: 'Total Recruitment 323'

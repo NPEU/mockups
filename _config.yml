@@ -19,6 +19,7 @@ defaults:
       display_navbar: true
       display_social: true
       display_support: true
+      display_toc: true
       is_home: false
       is_contact: false
       is_updates: false

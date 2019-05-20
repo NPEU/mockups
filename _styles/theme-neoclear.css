@@ -313,6 +313,11 @@ $patterns: (
   border-color: #009590 !important;
 }
 
+.c-card .c-card__full-link.t-neoclear,
+.c-card .c-card__full-link.t-neoclear:hover {
+  background: #00716d;
+}
+
 .c-card.t-neoclear,
 .c-card.t-neoclear .c-card__main {
   background-color: #00716d;
@@ -330,7 +335,7 @@ $patterns: (
 .c-featurette.t-neoclear,
 .c-featurette.t-neoclear a {
   background-color: #009590;
-  color: #333;
+  color: #fff;
 }
 
 /*.c-page-header.t-neoclear {
@@ -340,18 +345,16 @@ $patterns: (
 .c-panel.c-panel.t-neoclear {
   color: #333;
   background: #009590;
-  /*
-        a[href]:hover,
-        a[href]:active,
-        a[href]:focus {
-            color: $text-color;
-            background: $background-color;
-        }*/
 }
 
 .c-panel.c-panel.t-neoclear a[href] {
   color: #333;
-  background-color: #009590;
+}
+
+.c-panel.c-panel.t-neoclear a[href]:hover,
+.c-panel.c-panel.t-neoclear a[href]:active,
+.c-panel.c-panel.t-neoclear a[href]:focus {
+  color: #333;
 }
 
 .c-panel.c-panel.t-neoclear a[href].cta {
@@ -568,18 +571,16 @@ table.t-neoclear tr:nth-child(odd) > th,
 .c-panel.c-panel--very-light.t-neoclear {
   color: #333;
   background: #7cfffb;
-  /*
-        a[href]:hover,
-        a[href]:active,
-        a[href]:focus {
-            color: $text-color;
-            background: $background-color;
-        }*/
 }
 
 .c-panel.c-panel--very-light.t-neoclear a[href] {
   color: #333;
-  background-color: #7cfffb;
+}
+
+.c-panel.c-panel--very-light.t-neoclear a[href]:hover,
+.c-panel.c-panel--very-light.t-neoclear a[href]:active,
+.c-panel.c-panel--very-light.t-neoclear a[href]:focus {
+  color: #333;
 }
 
 .c-panel.c-panel--very-light.t-neoclear a[href].cta {
@@ -597,18 +598,16 @@ table.t-neoclear tr:nth-child(odd) > th,
 .c-panel.c-panel--light.t-neoclear {
   color: #333;
   background: #49fff9;
-  /*
-        a[href]:hover,
-        a[href]:active,
-        a[href]:focus {
-            color: $text-color;
-            background: $background-color;
-        }*/
 }
 
 .c-panel.c-panel--light.t-neoclear a[href] {
   color: #333;
-  background-color: #49fff9;
+}
+
+.c-panel.c-panel--light.t-neoclear a[href]:hover,
+.c-panel.c-panel--light.t-neoclear a[href]:active,
+.c-panel.c-panel--light.t-neoclear a[href]:focus {
+  color: #333;
 }
 
 .c-panel.c-panel--light.t-neoclear a[href].cta {
@@ -626,18 +625,16 @@ table.t-neoclear tr:nth-child(odd) > th,
 .c-panel.c-panel--dark.t-neoclear {
   color: #fff;
   background: #00625f;
-  /*
-        a[href]:hover,
-        a[href]:active,
-        a[href]:focus {
-            color: $text-color;
-            background: $background-color;
-        }*/
 }
 
 .c-panel.c-panel--dark.t-neoclear a[href] {
   color: #fff;
-  background-color: #00625f;
+}
+
+.c-panel.c-panel--dark.t-neoclear a[href]:hover,
+.c-panel.c-panel--dark.t-neoclear a[href]:active,
+.c-panel.c-panel--dark.t-neoclear a[href]:focus {
+  color: #fff;
 }
 
 .c-panel.c-panel--dark.t-neoclear a[href].cta {
@@ -655,18 +652,16 @@ table.t-neoclear tr:nth-child(odd) > th,
 .c-panel.c-panel--very-dark.t-neoclear {
   color: #fff;
   background: #002f2d;
-  /*
-        a[href]:hover,
-        a[href]:active,
-        a[href]:focus {
-            color: $text-color;
-            background: $background-color;
-        }*/
 }
 
 .c-panel.c-panel--very-dark.t-neoclear a[href] {
   color: #fff;
-  background-color: #002f2d;
+}
+
+.c-panel.c-panel--very-dark.t-neoclear a[href]:hover,
+.c-panel.c-panel--very-dark.t-neoclear a[href]:active,
+.c-panel.c-panel--very-dark.t-neoclear a[href]:focus {
+  color: #fff;
 }
 
 .c-panel.c-panel--very-dark.t-neoclear a[href].cta {
