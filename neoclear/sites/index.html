@@ -6,13 +6,19 @@ npeu_unit: ctu
 has_map: true
 hero_image: "/img/neoclear/hero-image-jr.jpg"
 ---
-<div class="c-map  c-map--500  u-space--below" id="sites-map">
-    <p class="u-text-align--center">
-        <img class="c-map__static" src="https://api.mapbox.com/styles/v1/mapbox/streets-v10/static/-2,53.5,6,0,0/600x600?access_token=pk.eyJ1IjoiYW5keWtraXJrIiwiYSI6ImNqbGh3a3FnbzA1aDMza204eDJnMmVhMmMifQ.I7diR0BZvQWzn2okKy6qIQ" alt="">
-    </p>
-    <p class="u-text-align--center">No javascript available, can't display an interactive map.</p>
-</div>
-
+<figure>
+    <div class="c-map  c-map--500  u-space--below" id="sites-map">
+        <p class="u-text-align--center">
+            <img class="c-map__static" src="https://api.mapbox.com/styles/v1/mapbox/streets-v10/static/pin-s+FD7567(-1.217606,51.763051),pin-s+FD7567(-1.82997,52.48022),pin-s+FD7567(-0.88661,52.237229),pin-s+FD7567(-1.331119,51.060495),pin-s+FD7567(-1.434935,50.935252),pin-s+FD7567(-2.590499,51.495281),pin-s+FD7567(-1.135465,52.628261),pin-s+FD7567(-0.958653,51.451504),pin-s+FD7567(-0.526844,51.377158),pin-s+FD7567(-1.796112,53.806935),pin-s+FD7567(0.898902,51.90998),pin-s+FD7567(-1.72674,51.538524),pin-s+FD7567(0.541576,51.379792),pin-s+FD7567(1.220473,52.61729),pin-s+FD7567(-4.115701,50.415988),pin-s+FD7567(-2.122233,53.553588)/-2,53.5,5/600x600?access_token=pk.eyJ1IjoiYW5keWtraXJrIiwiYSI6ImNqbGh3a3FnbzA1aDMza204eDJnMmVhMmMifQ.I7diR0BZvQWzn2okKy6qIQ" alt="">
+        </p>
+        <p class="u-text-align--center">No javascript available, can't display an interactive map.</p>
+    </div>
+    <figcaption>
+        <span class="u-text-group  u-text-group--center  u-text-group--wide-space">
+            <span><img alt="Red marker" class="icon--marker" height="32" src="https://www.npeu.ox.ac.uk/img/icons/red-marker.svg" width="21"> - Recruiting site</span>
+        </span>
+    </figcaption>
+</figure>
 <script>
 leafletMapInitialize('sites-map', {"lat":53.5,"lng":-2,"zoom":6,"token":"pk.eyJ1IjoiYW5keWtraXJrIiwiYSI6ImNqbGh3a3FnbzA1aDMza204eDJnMmVhMmMifQ.I7diR0BZvQWzn2okKy6qIQ"}, [{"lat":51.763051,"lng":-1.217606,"color":"red","popup":'<p><b>John Radcliffe Hospital, Oxford</b></p><p><a href="#oxford">More details</a></p>'},{"lat":52.48022,"lng":-1.82997,"color":"red","popup":'<p><b>Birmingham Heartlands Hospital, Birmingham</b></p><p><a href="#birmingham-heartlands">More details</a></p>'},{"lat":52.237229,"lng":-0.88661,"color":"red","popup":'<p><b>Northampton General Hospital</b></p><p><a href="#northampton">More details</a></p>'},{"lat":51.060495,"lng":-1.331119,"color":"red","popup":'<p><b>Royal Hampshire County Hospital</b></p><p><a href="#hampshire">More details</a></p>'},{"lat":50.935252,"lng":-1.434935,"color":"red","popup":'<p><b>Princess Anne Hospital</b></p><p><a href="#southampton">More details</a></p>'},{"lat":51.495281,"lng":-2.590499,"color":"red","popup":'<p><b>Southmead Hospital</b></p><p><a href="#southmead-bristol">More details</a></p>'},{"lat":52.628261,"lng":-1.135465,"color":"red","popup":'<p><b>Leicester Royal Infirmary</b></p><p><a href="#leicester">More details</a></p>'},{"lat":51.451504,"lng":-0.958653,"color":"red","popup":'<p><b>Royal Berkshire Hospital</b></p><p><a href="#royal-berkshire">More details</a></p>'},{"lat":51.377158,"lng":-0.526844,"color":"red","popup":'<p><b>St. Peter\'s Hospital, Chertsey</b></p><p><a href="#st-peters-chertsey">More details</a></p>'},{"lat":53.806935,"lng":-1.796112,"color":"red","popup":'<p><b>Bradford Royal Infirmary</b></p><p><a href="#bradford">More details</a></p>'},{"lat":51.90998,"lng":0.898902,"color":"red","popup":'<p><b>Colchester General Hospital</b></p><p><a href="#colchester">More details</a></p>'},{"lat":51.538524,"lng":-1.72674,"color":"red","popup":'<p><b>Great Western Hospital</b></p><p><a href="#swindon">More details</a></p>'},{"lat":51.379792,"lng":0.541576,"color":"red","popup":'<p><b>Medway Maritime Hospital</b></p><p><a href="#medway">More details</a></p>'},{"lat":52.61729,"lng":1.220473,"color":"red","popup":'<p><b>Norfolk and Norwich University Hospital</b></p><p><a href="#norwich">More details</a></p>'},{"lat":50.415988,"lng":-4.115701,"color":"red","popup":'<p><b>Derriford Hospital, Plymouth</b></p><p><a href="#plymouth">More details</a></p>'},{"lat":53.553588,"lng":-2.122233,"color":"red","popup":'<p><b>Royal Oldham Hospital, Manchester</b></p><p><a href="#oldham">More details</a></p>'}]);
 </script>

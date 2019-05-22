@@ -5945,14 +5945,6 @@ $glimpse--link-border-bottom--hover: false !default;*/
 
 /*
 */
-.c-map__static {
-  min-height: 300px;
-}
-
-.c-map__static {
-  min-height: 500px;
-}
-
 .js-map .c-map {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -7823,6 +7815,12 @@ $pagination-button--border-color: darken($pagination--base-color, 20%) !default;
   -ms-flex-align: center;
   align-items: center;
   max-width: 100%;
+}
+
+.u-text-group--center {
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .u-text-group--push-apart {

@@ -16,11 +16,13 @@ $map-heights: (
 // We don't need this if we're only themeing the pattern:
 @if $theme-only == false {
 
-    @each $height in $map-heights {
-        .#{$map-namespace}map__static {
-            min-height: #{$height}px;
-        }
-    }
+    
+    //@each $height in $map-heights {
+    //    .#{$map-namespace}map__static {
+    //        min-height: #{$height}px;
+    //    }
+    //}
+    
 
     .#{$js-map-namespace}map {
 

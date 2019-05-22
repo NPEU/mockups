@@ -27,6 +27,13 @@ $text-group-namespace: u- !default;
     max-width: 100%;
 }
 
+.#{$text-group-namespace}text-group--center {
+    -webkit-justify-content: center;
+              -ms-flex-pack: center;
+            justify-content: center;
+}
+
+
 .#{$text-group-namespace}text-group--push-apart {
     -webkit-justify-content: space-between;
               -ms-flex-pack: justify;
