@@ -38,17 +38,17 @@ $primary-content-pull-out-side-space: 0 $primary-content-spacing-unit 0 0 !defau
         //margin-left: auto;
         //margin-right: auto;
     }
-    
+
 }
 
 @media only screen and (min-width: $primary-content-breakpoint) {
 
     .#{$primary-content-namespace}primary-content {
-    
+
          &#{&} {
             padding: 0 $primary-content-spacing-unit;
         }
-        
+
         &#{&}--has-pull-outs {
             /*display: -ms-grid;
             display: grid;
@@ -56,33 +56,33 @@ $primary-content-pull-out-side-space: 0 $primary-content-spacing-unit 0 0 !defau
             grid-template-rows: auto auto 1fr;
                  -ms-grid-columns: 2fr 1fr;
             grid-template-columns: 2fr 1fr;*/
-            
+
             display: flow-root;
             clear: both;
-            
+
             &:before,
             &:after {
               content: "";
               display: table;
-            } 
-            
+            }
+
             &:after {
               clear: both;
             }
-            
+
             .#{$primary-content-namespace}primary-content__header {
                 /*-ms-grid-column: 1;
                     grid-column: 1;
                 -ms-grid-row: 1;
                     grid-row: 1;*/
-                    
+
                 /*width: 66%;
                 float: left;
                 clear: left;*/
-                
+
                 width: 100%;
             }
-            
+
             .#{$primary-content-namespace}primary-content__main {
                /* -ms-grid-column: 1;
                     grid-column: 1;
@@ -90,12 +90,12 @@ $primary-content-pull-out-side-space: 0 $primary-content-spacing-unit 0 0 !defau
                 -ms-grid-row-span: 2;
                          grid-row: 2 / 4;*/
                 padding-right: $primary-content-spacing-unit;
-                
+
                 width: 66%;
                 float: left;
                 clear: left;
             }
-            
+
             .#{$primary-content-namespace}primary-content__pull-out--top {
                 /*-ms-grid-column: 2;
                     grid-column: 2;
@@ -104,21 +104,22 @@ $primary-content-pull-out-side-space: 0 $primary-content-spacing-unit 0 0 !defau
 
                 width: 34%;
                 float: right;
-                
-                
+
+
                 padding: 0 $primary-content-spacing-unit;
             }
-            
+
             .#{$primary-content-namespace}primary-content__pull-out--bottom {
                 /*-ms-grid-column: 2;
                     grid-column: 2;
                 -ms-grid-row: 3;
                 grid-row: 3;*/
-                
+
                 width: 34%;
                 float: right;
-                
-                
+                clear: right;
+
+
                 padding: 0 $primary-content-spacing-unit;
             }
         }
