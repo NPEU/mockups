@@ -6,10 +6,13 @@ $fill-height-namespace: u- !default;
 /*
     height: 100% is needed for IE10-11, but breaks Safari 9-10.
     Adding to IE via hack, but could switch to overriding for Safari if need be.
+    min-height seems to be safe for Safari though, and is needed for Edge.
 */
 .#{$fill-height-namespace}fill-height {
     -webkit-flex: 1 0 auto;
             flex: 1 0 auto;
+            
+    min-height: 100%;
 }
 
 @media #{$f__ie10-11} {

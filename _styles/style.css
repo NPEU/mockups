@@ -5751,6 +5751,10 @@ $glimpse--link-border-bottom--hover: false !default;*/
   /* [1] */
 }
 
+.c-hero .c-hero__message > * > b {
+  font-weight: bold;
+}
+
 .c-hero .c-hero__message * {
   margin: 0;
 }
@@ -7274,10 +7278,12 @@ $pagination-button--border-color: darken($pagination--base-color, 20%) !default;
 /*
     height: 100% is needed for IE10-11, but breaks Safari 9-10.
     Adding to IE via hack, but could switch to overriding for Safari if need be.
+    min-height seems to be safe for Safari though, and is needed for Edge.
 */
 .u-fill-height {
   -webkit-flex: 1 0 auto;
   flex: 1 0 auto;
+  min-height: 100%;
 }
 
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
@@ -7330,31 +7336,35 @@ $pagination-button--border-color: darken($pagination--base-color, 20%) !default;
     // translate are inverted, and that can't be detected if size changes.
     Will be replying on JS to check for change to portrait and apply portrait class.
 */
+.u-image-cover {
+  /*
+        &.u-image-cover--min-10 {
+           min-height: 10vmin;
+        }
+
+        &.u-image-cover--min-20 {
+            min-height: 20vmin;
+        }
+
+        &.u-image-cover--min-30 {
+            min-height: 30vmin;
+        }
+
+        &.u-image-cover--min-40 {
+            min-height: 40vmin;
+        }
+
+        &.u-image-cover--min-50 {
+            min-height: 50vmin;
+        }
+        */
+}
+
 .u-image-cover.u-image-cover {
   position: relative;
   height: 100%;
   width: 100%;
   flex: 1 0 auto;
-}
-
-.u-image-cover.u-image-cover--min-10 {
-  min-height: 10vmin;
-}
-
-.u-image-cover.u-image-cover--min-20 {
-  min-height: 20vmin;
-}
-
-.u-image-cover.u-image-cover--min-30 {
-  min-height: 30vmin;
-}
-
-.u-image-cover.u-image-cover--min-40 {
-  min-height: 40vmin;
-}
-
-.u-image-cover.u-image-cover--min-50 {
-  min-height: 50vmin;
 }
 
 .u-image-cover .u-image-cover__inner {
@@ -7391,6 +7401,24 @@ $pagination-button--border-color: darken($pagination--base-color, 20%) !default;
     object-fit: cover;
     height: 100%;
     width: 100%;
+  }
+}
+
+@media (max-width: 51.875em) {
+  .u-image-cover.u-image-cover--min-10 {
+    min-height: 10vmin;
+  }
+  .u-image-cover.u-image-cover--min-20 {
+    min-height: 20vmin;
+  }
+  .u-image-cover.u-image-cover--min-30 {
+    min-height: 30vmin;
+  }
+  .u-image-cover.u-image-cover--min-40 {
+    min-height: 40vmin;
+  }
+  .u-image-cover.u-image-cover--min-50 {
+    min-height: 50vmin;
   }
 }
 

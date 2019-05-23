@@ -39,6 +39,7 @@ $image-cover-namespace: u- !default;
         flex: 1 0 auto;
     }
 
+        /*
         &#{&}--min-10 {
            min-height: 10vmin;
         }
@@ -58,7 +59,7 @@ $image-cover-namespace: u- !default;
         &#{&}--min-50 {
             min-height: 50vmin;
         }
-        
+        */
 
     .#{$image-cover-namespace}image-cover__inner {
         display: block;
@@ -103,5 +104,32 @@ $image-cover-namespace: u- !default;
                 height: 100%;
                 width: 100%;
             }
+    }
+}
+
+// Note this isn't great but it's easier to have this apply only at smaller sizes.
+// May need to change it causes problems, but current concern is NIHR funding baby image.
+@media (max-width: $f__breakpoint--enhanced) {
+    .#{$image-cover-namespace}image-cover {
+       
+        &#{&}--min-10 {
+           min-height: 10vmin;
+        }
+
+        &#{&}--min-20 {
+            min-height: 20vmin;
+        }
+
+        &#{&}--min-30 {
+            min-height: 30vmin;
+        }
+
+        &#{&}--min-40 {
+            min-height: 40vmin;
+        }
+
+        &#{&}--min-50 {
+            min-height: 50vmin;
+        }
     }
 }

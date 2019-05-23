@@ -29,6 +29,10 @@ $theme-only: false !default;
             font-weight: bold;
             margin: 0;
             max-width: 100%; /* [1] */
+            
+            > b {
+                font-weight: bold;
+            }
         }
 
         #{&}__message * {
