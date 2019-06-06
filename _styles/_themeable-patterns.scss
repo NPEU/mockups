@@ -75,6 +75,7 @@ $glimpse-spacing-unit: $f__base-rem-space-unit;
 
 @import "component-patterns/_hero.scss";
 
+$longform-content-max-width: $f__measure;
 @import "component-patterns/_longform-content.scss";
 
 @import "component-patterns/_page-header.scss";

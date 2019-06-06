@@ -7497,7 +7497,7 @@ $pagination-button--border-color: darken($pagination--base-color, 20%) !default;
 /*
 */
 .u-max-measure {
-  max-width: 40em;
+  max-width: 42em;
   margin: 0 auto;
 }
 

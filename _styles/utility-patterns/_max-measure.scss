@@ -2,7 +2,7 @@
 */
 
 $max-measure-namespace: u- !default;
-$max-measure-limit: 40em !default;
+$max-measure-limit: 42em !default;
 
 .#{$max-measure-namespace}max-measure {
     max-width: $max-measure-limit;
