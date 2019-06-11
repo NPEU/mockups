@@ -197,9 +197,10 @@ function do_concat_js(cb) {
     gulp.src([
         './_scripts/vendor/leaflet/leaflet-src.js',
         './_scripts/vendor/leaflet-svgicon/leaflet-svg-icon.js',
-        './_scripts/vendor/leaflet-fullscreen/Control.FullScreen.js',
-        './_scripts/js/leaflet-map.js'
+        './_scripts/js/leaflet-map.js',
+        './_scripts/vendor/leaflet-fullscreen/Control.FullScreen.js'
     ])
+
     .pipe(concat(js_map_filename))
     .pipe(gulp.dest(js_src));
 
