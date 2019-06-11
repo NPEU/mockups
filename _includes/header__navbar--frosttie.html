@@ -19,18 +19,18 @@
                             <ul class="nav-bar__items">
                                 {% capture url %}/{{ page.project }}/{{ project_data.participants_url }}/{% endcapture %}
                                 {% if page.url == url %}
-                                <li class="nav-bar__item  nav-bar__item--current"><a href="#main" class="nav-bar__link">{{ project_data.participants_label }}</a></li>
+                                <li class="nav-bar__item  nav-bar__item--current"><a href="#main" class="nav-bar__link"><span>{{ project_data.participants_label }}</span></a></li>
                                 {% else %}
-                                <li class="nav-bar__item"><a href="{{ url }}" class="nav-bar__link">{{ project_data.participants_label }}</a></li>
+                                <li class="nav-bar__item"><a href="{{ url }}" class="nav-bar__link"><span>{{ project_data.participants_label }}</span></a></li>
                                 {% endif %}
 
                                 {% capture url %}/{{ page.project }}/clinicians/{% endcapture %}
                                 {% if page.url == url %}
                                 <li class="nav-bar__item  nav-bar__item--current">
-                                    <a href="#main" class="nav-bar__link">Clinicians</a>
+                                    <a href="#main" class="nav-bar__link"><span>Clinicians</span></a>
                                 {% else %}
                                 <li class="nav-bar__item">
-                                    <a href="{{ url }}" class="nav-bar__link">Clinicians</a>
+                                    <a href="{{ url }}" class="nav-bar__link"><span>Clinicians</span></a>
                                 {% endif %}
 
                                     <div class="dropdown  dropdown--only-wide">
@@ -38,10 +38,10 @@
 
                                         <div class="dropdown__area" id="clinicians-sub-menu--target">
                                             <ul class="subnav__items  subnav__items--stacked--only-wide  {{ project_data.theme_class }}">
-                                                <li class="subnav__item"><a href="/frosttie/clinicians/training" class="subnav__link" data-js="dropdown__focus-start">Training</a></li>
-                                                <li class="subnav__item"><a href="/frosttie/clinicians/guidance-sheets" class="subnav__link">Guidance Sheets</a></li>
-                                                <li class="subnav__item"><a href="/frosttie/clinicians/data-collection-forms" class="subnav__link">Data Collection Forms</a></li>
-                                                <li class="subnav__item"><a href="/frosttie/clinicians/faqs" class="subnav__link">FAQ's</a></li>
+                                                <li class="subnav__item"><a href="/frosttie/clinicians/training" class="subnav__link" data-js="dropdown__focus-start"><span>Training</span></a></li>
+                                                <li class="subnav__item"><a href="/frosttie/clinicians/guidance-sheets" class="subnav__link"><span>Guidance Sheets</span></a></li>
+                                                <li class="subnav__item"><a href="/frosttie/clinicians/data-collection-forms" class="subnav__link"><span>Data Collection Forms</span></a></li>
+                                                <li class="subnav__item"><a href="/frosttie/clinicians/faqs" class="subnav__link"><span>FAQ's</span></a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -50,30 +50,30 @@
 
                                 {% capture url %}/{{ page.project }}/sites/{% endcapture %}
                                 {% if page.url == url %}
-                                <li class="nav-bar__item  nav-bar__item--current"><a href="#main" class="nav-bar__link">Sites</a></li>
+                                <li class="nav-bar__item  nav-bar__item--current"><a href="#main" class="nav-bar__link"><span>Sites</span></a></li>
                                 {% else %}
-                                <li class="nav-bar__item"><a href="{{ url }}" class="nav-bar__link">Sites</a></li>
+                                <li class="nav-bar__item"><a href="{{ url }}" class="nav-bar__link"><span>Sites</span></a></li>
                                 {% endif %}
 
                                 {% capture url %}/{{ page.project }}/recruitment/{% endcapture %}
                                 {% if page.url == url %}
-                                <li class="nav-bar__item  nav-bar__item--current"><a href="#main" class="nav-bar__link">Recruitment</a></li>
+                                <li class="nav-bar__item  nav-bar__item--current"><a href="#main" class="nav-bar__link"><span>Recruitment</span></a></li>
                                 {% else %}
-                                <li class="nav-bar__item"><a href="{{ url }}" class="nav-bar__link">Recruitment</a></li>
+                                <li class="nav-bar__item"><a href="{{ url }}" class="nav-bar__link"><span>Recruitment</span></a></li>
                                 {% endif %}
 
                                 {% capture url %}/{{ page.project }}/updates/{% endcapture %}
                                 {% if page.url == url %}
-                                <li class="nav-bar__item  nav-bar__item--current"><a href="#main" class="nav-bar__link">Updates</a></li>
+                                <li class="nav-bar__item  nav-bar__item--current"><a href="#main" class="nav-bar__link"><span>Updates</span></a></li>
                                 {% else %}
-                                <li class="nav-bar__item"><a href="{{ url }}" class="nav-bar__link">Updates</a></li>
+                                <li class="nav-bar__item"><a href="{{ url }}" class="nav-bar__link"><span>Updates</span></a></li>
                                 {% endif %}
                                 
                                 {% capture url %}/{{ page.project }}/contact/{% endcapture %}
                                 {% if page.url == url %}
-                                <li class="nav-bar__item  nav-bar__item--current"><a href="#main" class="nav-bar__link">Contact</a></li>
+                                <li class="nav-bar__item  nav-bar__item--current"><a href="#main" class="nav-bar__link"><span>Contact</span></a></li>
                                 {% else %}
-                                <li class="nav-bar__item"><a href="{{ url }}" class="nav-bar__link">Contact</a></li>
+                                <li class="nav-bar__item"><a href="{{ url }}" class="nav-bar__link"><span>Contact</span></a></li>
                                 {% endif %}
                             </ul>
 
