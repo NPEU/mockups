@@ -16,6 +16,7 @@ require('make-promises-safe');
 \*------------------------------------------------------------------------------------------------*/
 const css_src  = './_styles/';
 const css_dest = './css/';
+const css_map_filename = 'map.css';
 
 const sass   = require('gulp-sass');
 const cssmin = require('gulp-cssmin');
@@ -42,6 +43,24 @@ function do_sass(cb) {
     ],
     cb);
 }
+
+// Compile combine other CSS files (e.g. 3rd party).
+function do_concat_css(cb) {
+    console.log('Running concat_css...');
+
+    // Separate map CSS:
+    gulp.src([
+        './_scripts/vendor/leaflet/leaflet.css',
+        './_scripts/vendor/leaflet-fullscreen/Control.FullScreen.css',
+    ])
+    .pipe(concat(css_map_filename))
+    .pipe(gulp.dest(css_src));
+
+    // Callback:
+    cb();
+}
+
+
 
 
 // Then create a minified version in the output folder.
@@ -74,7 +93,7 @@ exports.sass   = do_sass;
 exports.cssmin = do_cssmin;
 
 // This combined task makes it convenient to run all the steps together.
-exports.css = series(empty_css_output, do_sass, do_cssmin);
+exports.css = series(empty_css_output, do_concat_css, do_sass, do_cssmin);
 
 
 
@@ -176,8 +195,9 @@ function do_concat_js(cb) {
 
     // Separate map script:
     gulp.src([
-        './_scripts/vendor/leaflet-svg-icon.js',
-        './_scripts/vendor/leaflet-fullscreen.js',
+        './_scripts/vendor/leaflet/leaflet-src.js',
+        './_scripts/vendor/leaflet-svgicon/leaflet-svg-icon.js',
+        './_scripts/vendor/leaflet-fullscreen/Control.FullScreen.js',
         './_scripts/js/leaflet-map.js'
     ])
     .pipe(concat(js_map_filename))
