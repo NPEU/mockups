@@ -7894,7 +7894,7 @@ $pagination-button--border-color: darken($pagination--base-color, 20%) !default;
     Attempts to improve where text wraps.
 
 */
-.u-word-wrap,
+.u-word-wrap, h1,
 .u-word-wrap--inside * {
   /* These are technically the same, but use both */
   overflow-wrap: break-word;
@@ -9347,6 +9347,22 @@ html.wireframe {
     }
 }
 */
+h1 {
+  font-size: 24px;
+}
+
+@media screen and (min-width: 250px) {
+  h1 {
+    font-size: calc(24px + 28 * ((100vw - 250px) / 422));
+  }
+}
+
+@media screen and (min-width: 672px) {
+  h1 {
+    font-size: 52px;
+  }
+}
+
 table {
   line-height: 1.2;
 }

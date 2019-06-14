@@ -135,7 +135,13 @@
     }
 }
 */
-
+// ($min-vw, $max-vw, $min-font-size, $max-font-size)
+h1 {
+    @extend .u-word-wrap;
+    
+    //@include fluid-type(250px, 672px, 16px, (strip-unit($f__h1-height) * 16px));
+    @include fluid-type(250px, 672px, 24px, 52px);
+}
 
 table {
     @include fluid-type(250px, 672px, 10px, 14px);
