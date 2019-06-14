@@ -3,6 +3,25 @@ layout: structure--pattern
 title: NPEU Navigation Patterns
 project_base_url: styleguide
 ---
+<h2 class="u-padding--sides">Breadcrubmbs</h2>
+
+<div class="u-padding--sides  u-space--below">
+    <nav aria-label="breadcrumbs" class="u-padding--sides  u-padding--top  d-background  t-white">
+        <dl class="n-breadcrumbs" itemscope="" itemtype="https://schema.org/BreadcrumbList">
+            <dt class="n-breadcrumbs__title">You are here: </dt>
+            <dd class="n-breadcrumbs__item" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
+                <a class="n-breadcrumbs__link" itemprop="item" href="/neoclear?view=bespoke"><span itemprop="name">NeoCLEAR</span></a>
+                <meta itemprop="position" content="1">
+            </dd>
+            <dd class="n-breadcrumbs__item" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
+                <a class="n-breadcrumbs__link" itemprop="name"><span>Clinicians</span></a>
+                <meta itemprop="position" content="2">
+            </dd>
+        </dl>
+    </nav>
+</div>
+
+<hr>
 <h2 class="u-padding--sides">Links list</h2>
 
 <p class="u-padding--sides">
@@ -25,6 +44,42 @@ project_base_url: styleguide
 </div>
 
 <hr>
+<h2 class="u-padding--sides">Pagination</h2>
+
+<div class="u-padding--sides  u-space--below">
+    <div class="n-pagination">
+        <ul class="n-pagination__list">
+            <li class="n-pagination__item"><span class="n-pagination__link"><span>First</span></span></li>
+            <li class="n-pagination__item"><span class="n-pagination__link"><span>Prev</span></span></li>
+            <li class="n-pagination__item  n-pagination__item--active"><span class="n-pagination__link"><span>1</span></span></li>
+            <li class="n-pagination__item"><a href="#" class="n-pagination__link"><span>2</span></a></li>
+            <li class="n-pagination__item"><a href="#" class="n-pagination__link"><span>3</span></a></li>
+            <li class="n-pagination__item"><a href="#" class="n-pagination__link"><span>Next</span></a></li>
+            <li class="n-pagination__item"><a href="#" class="n-pagination__link"><span>Last</span></a></li>
+        </ul>
+    </div>
+</div>
+
+<h3 class="u-padding--sides">Article Navigation</h3>
+
+<div class="u-padding--sides  u-space--below">
+    <div class="n-pagination">
+        <ul class="n-pagination__list  n-pagination__list--push-apart">
+            <li class="n-pagination__item">
+                <a class="n-pagination__link" aria-label="Newer article: Bradford start recruiting" href="/neoclear/updates/1681-bradford-start-recruiting" rel="prev">
+                    <span aria-hidden="true"><svg display="none" class="icon" aria-hidden="true"><use xlink:href="#icon-chevron-left"></use></svg>Newer article</span>
+                </a>
+            </li>
+            <li class="n-pagination__item">
+                <a class="n-pagination__link" aria-label="Older article: Congratulations to St. Peter's Hospital, Chertsey" href="/neoclear/updates/1672-congratulations-to-st-peter-s-hospital-chertsey" rel="next">
+                    <span aria-hidden="true">Older article<svg display="none" class="icon" aria-hidden="true"><use xlink:href="#icon-chevron-right"></use></svg></span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<hr>
 <h2 class="u-padding--sides">Section Menu</h2>
 
 <div class="u-padding--sides  u-space--below" style="max-width: 100%; width: calc((40em - 100%) * 1000); min-width: 33%;">
@@ -38,23 +93,6 @@ project_base_url: styleguide
             <li class="n-section-menu__item  n-section-menu__item--active"><a href="#main" class="n-section-menu__link"><span>Praesent in hendrerit lectus</span></a></li>
             <li class="n-section-menu__item"><a href="#" class="n-section-menu__link"><span>Maecenas consequat imperdiet massa egestas commodo</span></a></li>
             <li class="n-section-menu__item"><a href="#" class="n-section-menu__link"><span>Sed facilisis, risus sed accumsan tristique, nisi velit porttitor nibh, nec bibendum ex sapien eu lorem</span></a></li>
-        </ul>
-    </div>
-</div>
-
-<hr>
-<h2 class="u-padding--sides">Pagination</h2>
-
-<div class="u-padding--sides  u-space--below">
-    <div class="n-pagination">
-        <ul class="n-pagination__list">
-            <li class="n-pagination__item"><span class="n-pagination__link"><span>First</span></span></li>
-            <li class="n-pagination__item"><span class="n-pagination__link"><span>Prev</span></span></li>
-            <li class="n-pagination__item  n-pagination__item--active"><span class="n-pagination__link"><span>1</span></span></li>
-            <li class="n-pagination__item"><a href="#" class="n-pagination__link"><span>2</span></a></li>
-            <li class="n-pagination__item"><a href="#" class="n-pagination__link"><span>3</span></a></li>
-            <li class="n-pagination__item"><a href="#" class="n-pagination__link"><span>Next</span></a></li>
-            <li class="n-pagination__item"><a href="#" class="n-pagination__link"><span>Last</span></a></li>
         </ul>
     </div>
 </div>

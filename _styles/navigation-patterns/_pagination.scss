@@ -206,14 +206,27 @@ $pagination-button--border-color: darken($pagination--base-color, 20%) !default;
                 -ms-flex-direction: row;
                     flex-direction: row
         }
+        
+        .#{$pagination-namespace}pagination .#{$pagination-namespace}pagination__list--push-apart {
+            width: 100%;
+            
+            -webkit-justify-content: space-between;
+                      -ms-flex-pack: justify;
+                    justify-content: space-between;
+        
+        }
 
             .#{$pagination-namespace}pagination .#{$pagination-namespace}pagination__item {
+                -webkit-flex: 0 0 auto;
+                    -ms-flex: 0 0 auto;
+                        flex: 0 0 auto;
+                
                 padding: 0;
                 margin: 0;
             }
 
             @if $pagination--separator-width != false {
-                .#{$pagination-namespace}pagination .#{$pagination-namespace}pagination__item:not(:last-child) {
+                .#{$pagination-namespace}pagination__list:not(.#{$pagination-namespace}pagination__list--push-apart) .#{$pagination-namespace}pagination__item:not(:last-child) {
                     border-right-color:  $pagination--border-color;
                     border-right-style:  $pagination--border-style;
                     border-right-width:  $pagination--border-width;
