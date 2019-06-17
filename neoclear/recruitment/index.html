@@ -10,8 +10,6 @@ hero_message: "NeoCLEAR: Understanding the best technique for lumbar puncture in
 hero_message_reversed: true
 ---
 
-<h2>Recruitment Chart</h2>
-
 <div id="recruitment-chart" class="t-neoclear" style="min-width: 310px; max-width: 100%; height: 500px; margin: 0 auto"></div>
 
 <script>
@@ -113,13 +111,20 @@ Highcharts.chart('recruitment-chart', {
                 0
             ]
         }
-    ]
+    ],
+    exporting: {
+        "chartOptions": {
+            "chart": {
+                "width": 1500
+            }
+        }
+    }
 });
 
 </script>
 
-<h2>Recruitment Summary</h2>
 <table class="t-neoclear" border="1" data-contains="numbers">
+    <caption>Recruitment Summary</caption>
 	<thead>
 		<tr>
 			<th>Recruiting centre</th>
