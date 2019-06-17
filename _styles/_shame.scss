@@ -163,6 +163,15 @@ td, th {
     padding-left: 0.6rem;
 }
 
+table[data-contains="numbers"] {
+    
+    thead th:not(:first-child),
+    td {
+        text-align: right;
+    }
+
+}
+
 
 
 

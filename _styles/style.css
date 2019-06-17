@@ -9398,6 +9398,11 @@ td, th {
   padding-left: 0.6rem;
 }
 
+table[data-contains="numbers"] thead th:not(:first-child),
+table[data-contains="numbers"] td {
+  text-align: right;
+}
+
 details {
   margin-bottom: 2rem;
   border-bottom: 1px solid #eee;
