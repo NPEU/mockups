@@ -5343,11 +5343,18 @@ _:-ms-lang(x), .c-card.c-card {
 );*/
 /*
 */
-.c-contact-list.c-contact-list dt {
+.c-contact-list.c-contact-list dt,
+[data-contains="contact-details"] dt {
   display: none;
 }
 
-.c-contact-list .icon {
+.c-contact-list.c-contact-list dd,
+[data-contains="contact-details"] dd {
+  margin-bottom: 0.6rem;
+}
+
+.c-contact-list.c-contact-list .icon,
+[data-contains="contact-details"] .icon {
   margin-left: -1.75em;
   margin-right: 0.5em;
 }

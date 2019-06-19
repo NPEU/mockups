@@ -10,13 +10,16 @@ $theme-only: false !default;
 // We don't need this if we're only themeing the pattern:
 @if $theme-only == false {
 
-    .#{$contact-list-namespace}contact-list {
+    // Second selector is for user editor area.
+    .#{$contact-list-namespace}contact-list.#{$contact-list-namespace}contact-list,
+    [data-contains="contact-details"] {
 
-        &#{&} {
-
-            dt {
-                display: none;
-            }
+        dt {
+            display: none;
+        }
+        
+        dd {
+            margin-bottom: $sz-xs;
         }
         
         // @TODO - this is a bit "magic number-y":
