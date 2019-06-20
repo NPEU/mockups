@@ -235,6 +235,9 @@ $section-menu--border-width: 0;
 $section-menu--link-margin: 0;
 @import "navigation-patterns/_section-menu.scss";
 
+$search-results-spacing-unit: $f__base-rem-space-unit;
+$search-results-heading-font-size: $f__h4-font-size;
+@import "navigation-patterns/_search-results.scss";
 /* ---------------------------------------------------------------------------------------------- */
 
 

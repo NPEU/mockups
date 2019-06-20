@@ -7268,6 +7268,23 @@ $pagination-button--border-color: darken($pagination--base-color, 20%) !default;
   margin-bottom: 0;
 }
 
+/*
+    The `height: 100%;` in the `.search-results` class below allows the search-results to fill it's container (if inside,
+    say, a list-grid). However, it doesn't work in Safari OSX/iOS.
+    Applying a `search-results-wrap` class to a list item to make those items flex-containers seems to work
+    OK, but perhaps this would be better abstracted as a `fill-height` class or something?
+*/
+.n-search-results.n-search-results {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.n-search-results .n-search-results__heading {
+  font-size: 2rem;
+  margin-bottom: 0;
+}
+
 /* ---------------------------------------------------------------------------------------------- */
 /* --| Utility Patterns |------------------------------------------------------------------------ */
 /*
