@@ -536,6 +536,11 @@ table.t-neoclear tr:nth-child(odd) > th,
     background: linear-gradient(to right, #ffffff 0%,#ffffff 50%,map-get($theme, background-color) 50%,map-get($theme, background-color) 100%);
 }
 */
+.t-neoclear
+img[src*="/img/avatars/"] {
+  border-color: #009590 !important;
+}
+
 .d-background--very-light.t-neoclear--alt {
   background-color: white !important;
 }

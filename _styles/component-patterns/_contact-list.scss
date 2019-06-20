@@ -11,15 +11,15 @@ $theme-only: false !default;
 @if $theme-only == false {
 
     // Second selector is for user editor area.
-    .#{$contact-list-namespace}contact-list.#{$contact-list-namespace}contact-list,
-    [data-contains="contact-details"] {
-
-        dt {
-            display: none;
-        }
-        
-        dd {
-            margin-bottom: $sz-xs;
+    .#{$contact-list-namespace}contact-list {
+        &#{&} {
+            dt {
+                display: none;
+            }
+            
+            dd {
+                margin-bottom: $sz-xs;
+            }
         }
         
         // @TODO - this is a bit "magic number-y":

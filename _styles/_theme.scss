@@ -245,6 +245,13 @@ table.#{$theme-namespace}#{$theme-name} tr:nth-child(odd) > th,
 }
 */
 
+// User Content:
+.#{$theme-namespace}#{$theme-name}
+img[src*="/img/avatars/"] {
+    border-color: map-get($theme, primary-color) !important;
+}
+
+
 
 // Alternate colours:
 @if map-has-key($theme, "secondary-color") {

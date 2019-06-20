@@ -5343,23 +5343,20 @@ _:-ms-lang(x), .c-card.c-card {
 );*/
 /*
 */
-.c-contact-list.c-contact-list dt,
-[data-contains="contact-details"] dt {
+.c-contact-list.c-contact-list dt, [data-contains="contact-details"] dt {
   display: none;
 }
 
-.c-contact-list.c-contact-list dd,
-[data-contains="contact-details"] dd {
+.c-contact-list.c-contact-list dd, [data-contains="contact-details"] dd {
   margin-bottom: 0.6rem;
 }
 
-.c-contact-list.c-contact-list .icon,
-[data-contains="contact-details"] .icon {
+.c-contact-list .icon, [data-contains="contact-details"] .icon {
   margin-left: -1.75em;
   margin-right: 0.5em;
 }
 
-.c-contact-avatar.c-contact-avatar {
+.c-contact-avatar.c-contact-avatar, img[src*="/img/avatars/"] {
   float: left;
   margin: 0.5em;
   width: 35%;
@@ -6336,7 +6333,7 @@ $glimpse--link-border-bottom--hover: false !default;*/
   border-bottom-width: 3px !important;
 }
 
-.d-bands {
+.d-bands, img[src*="/img/avatars/"] {
   border-style: solid !important;
   border-width: 3px !important;
 }
@@ -6369,7 +6366,7 @@ $glimpse--link-border-bottom--hover: false !default;*/
   border-width: 19.2rem !important;
 }
 
-.d-bands,
+.d-bands, img[src*="/img/avatars/"],
 .d-bands--left,
 .d-bands--right,
 .d-bands--sides,
@@ -7981,7 +7978,7 @@ $patterns: (
   background: linear-gradient(45deg, #f2f2f2 0%, whitesmoke 50%, #fafafa 50%, #f7f7f7 100%) !important;
 }
 
-.d-bands.t-white,
+.d-bands.t-white, img.t-white[src*="/img/avatars/"],
 .d-bands--left.t-white,
 .d-bands--right.t-white,
 .d-bands--sides.t-white,
@@ -8215,6 +8212,10 @@ table.t-white tr:nth-child(odd) > th,
     background: linear-gradient(to right, #ffffff 0%,#ffffff 50%,map-get($theme, background-color) 50%,map-get($theme, background-color) 100%);
 }
 */
+.t-white img[src*="/img/avatars/"] {
+  border-color: #ffffff !important;
+}
+
 .c-panel.c-panel--very-light.t-white {
   color: #333;
   background: white;
@@ -8376,7 +8377,7 @@ $patterns: (
   background: linear-gradient(45deg, #81756d 0%, #84786f 50%, #897d74 50%, #867a71 100%) !important;
 }
 
-.d-bands.t-neutral,
+.d-bands.t-neutral, img.t-neutral[src*="/img/avatars/"],
 .d-bands--left.t-neutral,
 .d-bands--right.t-neutral,
 .d-bands--sides.t-neutral,
@@ -8610,6 +8611,10 @@ table.t-neutral tr:nth-child(odd) > th,
     background: linear-gradient(to right, #ffffff 0%,#ffffff 50%,map-get($theme, background-color) 50%,map-get($theme, background-color) 100%);
 }
 */
+.t-neutral img[src*="/img/avatars/"] {
+  border-color: #8e8279 !important;
+}
+
 .c-panel.c-panel--very-light.t-neutral {
   color: #333;
   background: #f7f6f6;
@@ -9250,6 +9255,8 @@ html.wireframe {
   vertical-align: text-top;
 }
 
+/* ---------------------------------------------------------------------------------------------- */
+/* --| USER CONTENT |---------------------------------------------------------------------------- */
 /* ---------------------------------------------------------------------------------------------- */
 /* --| SHAME |----------------------------------------------------------------------------------- */
 /* IE9-11 */
