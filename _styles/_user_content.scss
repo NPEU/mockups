@@ -8,3 +8,22 @@ img[src*="/img/avatars/"] {
 }
 
 // For theme-specific settings, see _themes.scss 
+
+[data-display-as="blocks"] {
+    @extend .l-distribute-wrap;
+}
+
+[data-display-as="blocks"] > * {
+    @extend .l-distribute;
+}
+
+[data-display-as="blocks"] > * > * {
+    @extend .u-space--below;
+    @extend .u-text-align--center;
+    @extend .u-padding--sides--s;
+}
+
+[data-contains="thumbnails"] a:first-of-type {
+    @extend .c-thumbnail;
+    @extend .u-space--below;
+}

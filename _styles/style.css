@@ -6259,21 +6259,21 @@ $glimpse--link-border-bottom--hover: false !default;*/
 
 /*
 */
-.c-thumbnail.c-thumbnail[href] {
+.c-thumbnail.c-thumbnail[href], [data-contains="thumbnails"] a[href]:first-of-type {
   display: inline-block;
   border-width: 0;
   padding: 0;
   margin: 0;
 }
 
-.c-thumbnail.c-thumbnail[href]:hover, .c-thumbnail.c-thumbnail[href]:active, .c-thumbnail.c-thumbnail[href]:focus {
+.c-thumbnail.c-thumbnail[href]:hover, [data-contains="thumbnails"] a[href]:hover:first-of-type, .c-thumbnail.c-thumbnail[href]:active, [data-contains="thumbnails"] a[href]:active:first-of-type, .c-thumbnail.c-thumbnail[href]:focus, [data-contains="thumbnails"] a[href]:focus:first-of-type {
   box-shadow: 0 0 0 1.2rem rgba(255, 255, 255, 0.8), 0 0 0 1.8rem rgba(0, 0, 0, 0.2);
   border-width: 0;
   padding: 0;
   margin: 0;
 }
 
-.c-thumbnail img {
+.c-thumbnail img, [data-contains="thumbnails"] a:first-of-type img {
   margin: 0;
   border: 1px solid #ccc;
 }
@@ -6281,7 +6281,7 @@ $glimpse--link-border-bottom--hover: false !default;*/
 /*@if $border-color == null {
 		$border-color: darken($background-color, 10%);
     }*/
-.c-thumbnail {
+.c-thumbnail, [data-contains="thumbnails"] a:first-of-type {
   color: #333;
 }
 
@@ -6675,18 +6675,18 @@ _:-ms-lang(x), .l-col-to-row__item  {
 
 /*    Distribute items inside a container.*/
 /*    IE11 needs this wrapper to behave properly.    If you're not supporting IE11, you don't this this CSS or the HTML that goes with it.*/
-.l-distribute-wrap {
+.l-distribute-wrap, [data-display-as="blocks"] {
   display: -ms-flexbox;
   display: flex;
   width: 100%;
 }
 
-.l-distribute-wrap > .l-distribute {
+.l-distribute-wrap > .l-distribute, [data-display-as="blocks"] > .l-distribute, [data-display-as="blocks"] > * {
   -ms-flex-preferred-size: 100%;
   flex-basis: 100%;
 }
 
-.l-distribute.l-distribute {
+.l-distribute.l-distribute, [data-display-as="blocks"] > * {
   margin: 0;
   padding: 0;
   list-style-type: none;
@@ -6704,7 +6704,7 @@ _:-ms-lang(x), .l-col-to-row__item  {
   justify-content: space-around;
 }
 
-.l-distribute > * {
+.l-distribute > *, [data-display-as="blocks"] > * > * {
   display: inline-block;
   /* [1] */
   -webkit-flex: 1 1 auto;
@@ -6714,101 +6714,112 @@ _:-ms-lang(x), .l-col-to-row__item  {
   padding: 0;
 }
 
-.l-distribute.l-distribute--start {
+.l-distribute.l-distribute--start, [data-display-as="blocks"] > .l-distribute--start {
   -webkit-justify-content: flex-start;
   -ms-flex-pack: start;
   justify-content: flex-start;
 }
 
-.l-distribute.l-distribute--end {
+.l-distribute.l-distribute--end, [data-display-as="blocks"] > .l-distribute--end {
   -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
   justify-content: flex-end;
 }
 
-.l-distribute.l-distribute--limit-10 > * {
+.l-distribute.l-distribute--limit-10 > *, [data-display-as="blocks"] > .l-distribute--limit-10 > * {
   -webkit-flex-basis: 10em;
   flex-basis: 7.5em;
   max-width: 10em;
 }
 
-.l-distribute.l-distribute--limit-15 > * {
+.l-distribute.l-distribute--limit-15 > *, [data-display-as="blocks"] > .l-distribute--limit-15 > * {
   -webkit-flex-basis: 15em;
   flex-basis: 11.25em;
   max-width: 15em;
 }
 
-.l-distribute.l-distribute--limit-20 > * {
+.l-distribute.l-distribute--limit-20 > *, [data-display-as="blocks"] > .l-distribute--limit-20 > * {
   -webkit-flex-basis: 20em;
   flex-basis: 15em;
   max-width: 20em;
 }
 
-.l-distribute.l-distribute--limit-25 > * {
+.l-distribute.l-distribute--limit-25 > *, [data-display-as="blocks"] > .l-distribute--limit-25 > * {
   -webkit-flex-basis: 25em;
   flex-basis: 18.75em;
   max-width: 25em;
 }
 
-.l-distribute.l-distribute--limit-30 > * {
+.l-distribute.l-distribute--limit-30 > *, [data-display-as="blocks"] > .l-distribute--limit-30 > * {
   -webkit-flex-basis: 30em;
   flex-basis: 22.5em;
   max-width: 30em;
 }
 
-.l-distribute.l-distribute--limit-35 > * {
+.l-distribute.l-distribute--limit-35 > *, [data-display-as="blocks"] > .l-distribute--limit-35 > * {
   -webkit-flex-basis: 35em;
   flex-basis: 26.25em;
   max-width: 35em;
 }
 
-.l-distribute.l-distribute--limit-40 > * {
+.l-distribute.l-distribute--limit-40 > *, [data-display-as="blocks"] > .l-distribute--limit-40 > * {
   -webkit-flex-basis: 40em;
   flex-basis: 30em;
   max-width: 40em;
 }
 
-.l-distribute.l-distribute--gutter--small {
+.l-distribute.l-distribute--gutter--small, [data-display-as="blocks"] > .l-distribute--gutter--small {
   padding-top: 1.2rem;
 }
 
-.l-distribute.l-distribute--gutter--small,
-.l-distribute.l-distribute--gutter--small > * {
+.l-distribute.l-distribute--gutter--small, [data-display-as="blocks"] > .l-distribute--gutter--small,
+.l-distribute.l-distribute--gutter--small > *,
+[data-display-as="blocks"] > .l-distribute--gutter--small > * {
   padding-left: 0.6rem;
   padding-right: 0.6rem;
 }
 
-.l-distribute.l-distribute--gutter--small > * {
+
+.l-distribute.l-distribute--gutter--small > *,
+[data-display-as="blocks"] > .l-distribute--gutter--small > * {
   padding-bottom: 1.2rem;
 }
 
-.l-distribute.l-distribute--gutter, .l-distribute.l-distribute--gutter--medium {
+.l-distribute.l-distribute--gutter, [data-display-as="blocks"] > .l-distribute--gutter, .l-distribute.l-distribute--gutter--medium, [data-display-as="blocks"] > .l-distribute--gutter--medium {
   padding-top: 2.4rem;
 }
 
-.l-distribute.l-distribute--gutter,
-.l-distribute.l-distribute--gutter > *, .l-distribute.l-distribute--gutter--medium,
-.l-distribute.l-distribute--gutter--medium > * {
+.l-distribute.l-distribute--gutter, [data-display-as="blocks"] > .l-distribute--gutter,
+.l-distribute.l-distribute--gutter > *,
+[data-display-as="blocks"] > .l-distribute--gutter > *, .l-distribute.l-distribute--gutter--medium, [data-display-as="blocks"] > .l-distribute--gutter--medium,
+.l-distribute.l-distribute--gutter--medium > *,
+[data-display-as="blocks"] > .l-distribute--gutter--medium > * {
   padding-left: 1.2rem;
   padding-right: 1.2rem;
 }
 
+
 .l-distribute.l-distribute--gutter > *,
-.l-distribute.l-distribute--gutter--medium > * {
+[data-display-as="blocks"] > .l-distribute--gutter > *,
+.l-distribute.l-distribute--gutter--medium > *,
+[data-display-as="blocks"] > .l-distribute--gutter--medium > * {
   padding-bottom: 2.4rem;
 }
 
-.l-distribute.l-distribute--gutter--large {
+.l-distribute.l-distribute--gutter--large, [data-display-as="blocks"] > .l-distribute--gutter--large {
   padding-top: 4.8rem;
 }
 
-.l-distribute.l-distribute--gutter--large,
-.l-distribute.l-distribute--gutter--large > * {
+.l-distribute.l-distribute--gutter--large, [data-display-as="blocks"] > .l-distribute--gutter--large,
+.l-distribute.l-distribute--gutter--large > *,
+[data-display-as="blocks"] > .l-distribute--gutter--large > * {
   padding-left: 2.4rem;
   padding-right: 2.4rem;
 }
 
-.l-distribute.l-distribute--gutter--large > * {
+
+.l-distribute.l-distribute--gutter--large > *,
+[data-display-as="blocks"] > .l-distribute--gutter--large > * {
   padding-bottom: 4.8rem;
 }
 
@@ -6818,49 +6829,50 @@ _:-ms-lang(x), .l-col-to-row__item  {
   flex-basis: 100%;
 }
 
-.l-distribute--flush-edge-gutters .l-distribute.l-distribute--gutter--small {
+.l-distribute--flush-edge-gutters .l-distribute.l-distribute--gutter--small, .l-distribute--flush-edge-gutters [data-display-as="blocks"] > .l-distribute--gutter--small {
   margin: -1.2rem;
 }
 
-.l-distribute--flush-edge-gutters .l-distribute.l-distribute--gutter,
-.l-distribute--flush-edge-gutters .l-distribute.l-distribute--gutter--medium {
+.l-distribute--flush-edge-gutters .l-distribute.l-distribute--gutter, .l-distribute--flush-edge-gutters [data-display-as="blocks"] > .l-distribute--gutter,
+.l-distribute--flush-edge-gutters .l-distribute.l-distribute--gutter--medium,
+.l-distribute--flush-edge-gutters [data-display-as="blocks"] > .l-distribute--gutter--medium {
   margin: -2.4rem;
 }
 
-.l-distribute--flush-edge-gutters .l-distribute.l-distribute--gutter--large {
+.l-distribute--flush-edge-gutters .l-distribute.l-distribute--gutter--large, .l-distribute--flush-edge-gutters [data-display-as="blocks"] > .l-distribute--gutter--large {
   margin: -4.8rem;
 }
 
 /* IE10-11 */
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .l-distribute.l-distribute--limit-10 > * {
+  .l-distribute.l-distribute--limit-10 > *, [data-display-as="blocks"] > .l-distribute--limit-10 > * {
     width: 10em;
     -ms-flex-preferred-size: auto;
     flex-basis: auto;
   }
-  .l-distribute.l-distribute--limit-15 > * {
+  .l-distribute.l-distribute--limit-15 > *, [data-display-as="blocks"] > .l-distribute--limit-15 > * {
     width: 15em;
     -ms-flex-preferred-size: auto;
     flex-basis: auto;
   }
-  .l-distribute.l-distribute--limit-20 > * {
+  .l-distribute.l-distribute--limit-20 > *, [data-display-as="blocks"] > .l-distribute--limit-20 > * {
     width: 20em;
     -ms-flex-preferred-size: auto;
     flex-basis: auto;
   }
-  .l-distribute.l-distribute--limit-25 > * {
+  .l-distribute.l-distribute--limit-25 > *, [data-display-as="blocks"] > .l-distribute--limit-25 > * {
     width: 25em;
     -ms-flex-preferred-size: auto;
     flex-basis: auto;
   }
 }
 
-_:-ms-lang(x), .l-distribute.l-distribute {
+_:-ms-lang(x), .l-distribute.l-distribute, [data-display-as="blocks"] > * {
   max-width: 100%\9;
 }
 
 /*    Older webkit browsers also need special treatment.        1. Chrome 39-50, Opera 26-37, Safari/iOS 9-10. Using prefixed property as flex-direction       breaks IE11 otherwise, so may as well use for all.*/
-_:-webkit-any-link, :root .l-distribute.l-distribute > * {
+_:-webkit-any-link, :root .l-distribute.l-distribute > *, :root [data-display-as="blocks"] > * > * {
   display: flex;
   /* [1] */
   flex-direction: column;
@@ -7564,12 +7576,14 @@ $pagination-button--border-color: darken($pagination--base-color, 20%) !default;
 }
 
 .u-padding--left--s,
-.u-padding--sides--s {
+.u-padding--sides--s,
+[data-display-as="blocks"] > * > * {
   padding-left: 1.2rem !important;
 }
 
 .u-padding--right--s,
-.u-padding--sides--s {
+.u-padding--sides--s,
+[data-display-as="blocks"] > * > * {
   padding-right: 1.2rem !important;
 }
 
@@ -7765,7 +7779,7 @@ $pagination-button--border-color: darken($pagination--base-color, 20%) !default;
   margin-top: 2.4rem !important;
 }
 
-.u-space--below {
+.u-space--below, [data-display-as="blocks"] > * > *, [data-contains="thumbnails"] a:first-of-type {
   margin-bottom: 2.4rem !important;
 }
 
@@ -7845,7 +7859,7 @@ $pagination-button--border-color: darken($pagination--base-color, 20%) !default;
   justify-content: flex-start;
 }
 
-.u-text-align--center {
+.u-text-align--center, [data-display-as="blocks"] > * > * {
   text-align: center !important;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
