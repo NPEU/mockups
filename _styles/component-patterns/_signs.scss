@@ -115,6 +115,12 @@ $theme-only: false !default;
                          flex-basis: 100%;
             -ms-flex-preferred-size: 100%;
         }
+        
+        // FF and Chrome handle span breaks differently.
+        // Can't get FF to be like Chrome so making them like FF:
+        br {
+            display: none;
+        }
 
 
         a[href]#{&}__link {

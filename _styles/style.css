@@ -6165,6 +6165,10 @@ $glimpse--link-border-bottom--hover: false !default;*/
   -ms-flex-preferred-size: 100%;
 }
 
+.c-sign br {
+  display: none;
+}
+
 .c-sign a[href].c-sign__link {
   padding: 0.6rem;
   -webkit-flex: 1 0 auto;
