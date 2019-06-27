@@ -6285,10 +6285,72 @@ $glimpse--link-border-bottom--hover: false !default;*/
   color: #333;
 }
 
+/*
+    Utilitarian text and links. E.g. footer, login info, skiplinks
+*/
+.c-utilitext.c-utilitext {
+  font-size: 0.875em;
+  margin: 0;
+  padding: 0;
+}
+
+.c-utilitext.c-utilitext a[href] {
+  border-width: 1px;
+}
+
+ul.c-utilitext, ol.c-utilitext {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+ul.c-utilitext li, ol.c-utilitext li {
+  margin: 0;
+}
+
+ul.c-utilitext li + li, ol.c-utilitext li + li {
+  margin-left: 1em;
+}
+
+.c-utilitext.c-utilitext--skiplinks li {
+  margin-left: 0;
+  position: relative;
+}
+
+.c-utilitext.c-utilitext--skiplinks a[href] {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: auto;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
+}
+
+.c-utilitext.c-utilitext--skiplinks a[href]:active, .c-utilitext.c-utilitext--skiplinks a[href]:focus {
+  clip: auto;
+  height: auto;
+  overflow: visible;
+  position: initial;
+  white-space: inherit;
+  width: auto;
+}
+
 /* ---------------------------------------------------------------------------------------------- */
 /* --| Decoration Patterns |--------------------------------------------------------------------- */
 .d-background--very-light {
-  background-color: #f8f6f9 !important;
+  background-color: #d2c6dd !important;
 }
 
 .d-background--light {
@@ -6385,7 +6447,7 @@ $glimpse--link-border-bottom--hover: false !default;*/
 /* ---------------------------------------------------------------------------------------------- */
 /* --| Decoration Patterns |--------------------------------------------------------------------- */
 .d-background--very-light.t-neutral {
-  background-color: white !important;
+  background-color: #f7f6f6 !important;
 }
 
 .d-background--light.t-neutral {
@@ -8387,7 +8449,7 @@ $patterns: (
 }
 */
 .d-background--very-light.t-neutral {
-  background-color: white !important;
+  background-color: #f7f6f6 !important;
 }
 
 .d-background--light.t-neutral {

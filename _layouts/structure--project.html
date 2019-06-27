@@ -5,6 +5,16 @@ layout: structure
     <div class="sticky-footer-wrap  c-page-wrap">
 
         <header class="c-page-header  {{ project_data.theme_class }}">
+            <div class="u-text-group  u-text-group--push-apart  u-padding--sides--s">
+                <ul class="c-utilitext  c-utilitext--skiplinks">
+                    <li><a href="#main">Skip to content</a></li>
+                    <li><a href="#primary-nav">Skip to navigation</a></li>
+                    <li><a href="#page-footer">Skip to footer</a></li>
+                </ul>
+                <p class="c-utilitext">
+                    <a href="/user-profile">Logged in as stargazer (view profile)</a> | <a href="/logout">Logout</a> | <a href="/administrator">Admin</a>                        | <a href="https://intranet.npeu.ox.ac.uk">Staff Area</a>
+                </p>
+            </div>
             
             <div class="u-padding--bottom--s">
                 <div class="l-col-to-row-wrap">
@@ -65,7 +75,7 @@ layout: structure
             </main>
         </div>
 
-        <footer class="sticky-footer  {{ project_data.theme_class }}  d-bands--top" role="contentinfo">
+        <footer class="sticky-footer  {{ project_data.theme_class }}  d-bands--top" role="contentinfo" id="page-footer">
             <div class="l-distribute-wrap">
                 <div class="l-distribute  l-distribute--gutter--small  l-distribute--limit-15">
 

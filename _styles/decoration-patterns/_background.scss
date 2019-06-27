@@ -15,7 +15,7 @@ $theme-only: false !default;
 	//@debug $theme-class;
 
     .#{$backgrounds-namespace}background--very-light#{$theme-class} {
-		background-color: lighten(map-get($theme, background-color), 60%) !important;
+		background-color: lighten(map-get($theme, background-color), 45%) !important;
 	}
     
     .#{$backgrounds-namespace}background--light#{$theme-class} {

@@ -1,0 +1,81 @@
+/*
+    Utilitarian text and links. E.g. footer, login info, skiplinks
+*/
+
+$utilitext-namespace: c- !default;
+
+.#{$utilitext-namespace}utilitext {
+
+    &#{&} {
+        font-size: 0.875em;
+        margin: 0;
+        padding: 0;
+        
+            
+        a[href] {
+            border-width: 1px;
+        }
+    }
+    
+    
+    @at-root {
+
+    
+        ul#{&} , ol#{&} {
+
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            
+            -webkit-flex-wrap: wrap;
+                -ms-flex-wrap: wrap;
+                    flex-wrap: wrap;
+
+            -webkit-flex-direction: row;
+                -ms-flex-direction: row;
+                    flex-direction: row;        
+
+            li {
+                margin: 0;
+            }
+            
+            li + li {
+                margin-left: 1em;
+            }
+        }
+        
+        
+        #{&}#{&}--skiplinks li{
+            margin-left: 0;
+            position: relative;    
+        }
+        
+        #{&}#{&}--skiplinks a[href] {
+            border: 0;
+            clip: rect(0 0 0 0);
+            height: auto;
+            margin: 0;
+            overflow: hidden;
+            padding: 0;
+            position: absolute;
+            width: 1px;
+            white-space: nowrap;
+            
+            &:active, &:focus {
+                clip: auto;
+                height: auto;
+                overflow: visible;
+                position: initial;
+                white-space: inherit;
+                width: auto;
+            }
+        }
+    }
+
+    
+}
+
