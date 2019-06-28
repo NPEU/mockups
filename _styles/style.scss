@@ -10,7 +10,7 @@
 
 
 @import "_settings.scss";
-
+@import "_core_themes.scss";
 
 $experimental_checkradios: true;
 
@@ -27,6 +27,9 @@ $f__anchor-text-color: #333;
 // reduced test-case (though to be fair this isn't using @import...)
 // https://codepen.io/akirk/pen/RmWKgy
 $f__anchor-text-color--alt: #333;
+
+
+$f__selection-background-color: lighten(map-get(map-get($themes, neutral), primary-color), 10%) !default;
 
 @import '../bower_components/Fall-Back-Start-CSS/scss/_start.scss';
 @import '../bower_components/Fall-Back-Start-CSS/scss/_start-classes.scss';
@@ -164,7 +167,7 @@ $gallery-grid-spacing-unit: $f__base-rem-space-unit;
 @import "../bower_components/NPEU-layout-patterns/dev/scss/_gallery-grid.scss";
 
 /* --| Themeable Patterns |---------------------------------------------------------------------- */
-@import "_core_themes.scss";
+
 @import "_themeable-patterns.scss";
 
 
