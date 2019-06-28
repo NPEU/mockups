@@ -74,6 +74,22 @@ $utilitext-namespace: c- !default;
                 width: auto;
             }
         }
+        
+        
+        #{&}#{&}--pale,
+        #{&}#{&}--pale a[href] {
+            color: lighten($f__base-text-color, 20%);            
+        }
+        
+        #{&}#{&}--pale a[href] {
+            &:hover, &:active, &:focus {
+                color: $f__base-text-color;      
+            }
+        }
+        
+        #{&}#{&}--smaller {
+            font-size: 0.8125em;
+        }
     }
 
     

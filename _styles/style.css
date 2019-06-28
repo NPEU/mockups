@@ -6347,6 +6347,19 @@ ul.c-utilitext li + li, ol.c-utilitext li + li {
   width: auto;
 }
 
+.c-utilitext.c-utilitext--pale,
+.c-utilitext.c-utilitext--pale a[href] {
+  color: #666666;
+}
+
+.c-utilitext.c-utilitext--pale a[href]:hover, .c-utilitext.c-utilitext--pale a[href]:active, .c-utilitext.c-utilitext--pale a[href]:focus {
+  color: #333;
+}
+
+.c-utilitext.c-utilitext--smaller {
+  font-size: 0.8125em;
+}
+
 /* ---------------------------------------------------------------------------------------------- */
 /* --| Decoration Patterns |--------------------------------------------------------------------- */
 .d-background--very-light {
@@ -8179,13 +8192,17 @@ $patterns: (
 .t-white button:not(.over-panel__overlay):not(.dropdown__button),
 .t-white button:not(.over-panel__overlay)[aria-expanded=true] {
 */
-button.t-white:not(.over-panel__overlay):not(.dropdown__button) {
+button.t-white:not(.over-panel__overlay):not(.dropdown__button),
+.cookie_notice__action button {
   border-color: #ffffff !important;
   color: #333 !important;
   background-color: #ffffff !important;
 }
 
-button.t-white:not(.over-panel__overlay):not(.dropdown__button):hover, button.t-white:not(.over-panel__overlay):not(.dropdown__button):active, button.t-white:not(.over-panel__overlay):not(.dropdown__button):focus {
+button.t-white:not(.over-panel__overlay):not(.dropdown__button):hover, button.t-white:not(.over-panel__overlay):not(.dropdown__button):active, button.t-white:not(.over-panel__overlay):not(.dropdown__button):focus,
+.cookie_notice__action button:hover,
+.cookie_notice__action button:active,
+.cookie_notice__action button:focus {
   background-color: #e6e6e6 !important;
 }
 
@@ -8254,6 +8271,55 @@ table.t-white tr:nth-child(odd) > th,
 
 .t-white.search-form .search-form__submit:hover, .t-white.search-form .search-form__submit:focus {
   background-color: #d9d9d9;
+}
+
+.t-white.search-form .search-form__field {
+  /*&:hover,
+    &:active,
+    &:focus {
+        @if is-int($f__button-background-color--alt) {
+            @if $f__button-background-color--alt > 0 {
+                $f__button-background-color--alt_percent: $f__button-background-color--alt * 1%;
+                background-color: lighten(map-get($theme, background-color), $f__button-background-color--alt_percent);
+            }
+            @if $f__button-background-color--alt < 0 {
+                $f__button-background-color--alt_percent: $f__button-background-color--alt * -1%;
+                background-color: darken(map-get($theme, background-color), $f__button-background-color--alt_percent);
+            }
+        }
+    }*/
+}
+
+.t-white.search-form .search-form__field:hover, .t-white.search-form .search-form__field:focus {
+  background-color: #f7f6f6;
+}
+
+input:not([type]):focus,
+[type="color"]:focus,
+[type="date"]:focus,
+[type="datetime"]:focus,
+[type="datetime-local"]:focus,
+[type="file"]:focus,
+[type="month"]:focus,
+[type="number"]:focus,
+[type="password"]:focus,
+[type="search"]:focus,
+[type="range"]:focus,
+[type="tel"]:focus,
+[type="text"]:focus,
+[type="time"]:focus,
+[type="url"]:focus,
+[type="week"]:focus {
+  box-shadow: 0 0 0 3px white;
+}
+
+/*
+        Without custom styling (appearance: none), Safari doesn't apply the shadow, so breaks
+        accessibility ...
+    */
+[type="checkbox"]:focus,
+[type="radio"]:focus {
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5);
 }
 
 /* - Don't do this, it's too generic and results in equal specifivity that's resolved in source
@@ -8578,13 +8644,17 @@ $patterns: (
 .t-neutral button:not(.over-panel__overlay):not(.dropdown__button),
 .t-neutral button:not(.over-panel__overlay)[aria-expanded=true] {
 */
-button.t-neutral:not(.over-panel__overlay):not(.dropdown__button) {
+button.t-neutral:not(.over-panel__overlay):not(.dropdown__button),
+.cookie_notice__action button {
   border-color: #8e8279 !important;
   color: #333 !important;
   background-color: #8e8279 !important;
 }
 
-button.t-neutral:not(.over-panel__overlay):not(.dropdown__button):hover, button.t-neutral:not(.over-panel__overlay):not(.dropdown__button):active, button.t-neutral:not(.over-panel__overlay):not(.dropdown__button):focus {
+button.t-neutral:not(.over-panel__overlay):not(.dropdown__button):hover, button.t-neutral:not(.over-panel__overlay):not(.dropdown__button):active, button.t-neutral:not(.over-panel__overlay):not(.dropdown__button):focus,
+.cookie_notice__action button:hover,
+.cookie_notice__action button:active,
+.cookie_notice__action button:focus {
   background-color: #736961 !important;
 }
 
@@ -8653,6 +8723,55 @@ table.t-neutral tr:nth-child(odd) > th,
 
 .t-neutral.search-form .search-form__submit:hover, .t-neutral.search-form .search-form__submit:focus {
   background-color: #655c55;
+}
+
+.t-neutral.search-form .search-form__field {
+  /*&:hover,
+    &:active,
+    &:focus {
+        @if is-int($f__button-background-color--alt) {
+            @if $f__button-background-color--alt > 0 {
+                $f__button-background-color--alt_percent: $f__button-background-color--alt * 1%;
+                background-color: lighten(map-get($theme, background-color), $f__button-background-color--alt_percent);
+            }
+            @if $f__button-background-color--alt < 0 {
+                $f__button-background-color--alt_percent: $f__button-background-color--alt * -1%;
+                background-color: darken(map-get($theme, background-color), $f__button-background-color--alt_percent);
+            }
+        }
+    }*/
+}
+
+.t-neutral.search-form .search-form__field:hover, .t-neutral.search-form .search-form__field:focus {
+  background-color: #f7f6f6;
+}
+
+input:not([type]):focus,
+[type="color"]:focus,
+[type="date"]:focus,
+[type="datetime"]:focus,
+[type="datetime-local"]:focus,
+[type="file"]:focus,
+[type="month"]:focus,
+[type="number"]:focus,
+[type="password"]:focus,
+[type="search"]:focus,
+[type="range"]:focus,
+[type="tel"]:focus,
+[type="text"]:focus,
+[type="time"]:focus,
+[type="url"]:focus,
+[type="week"]:focus {
+  box-shadow: 0 0 0 3px #958a81;
+}
+
+/*
+        Without custom styling (appearance: none), Safari doesn't apply the shadow, so breaks
+        accessibility ...
+    */
+[type="checkbox"]:focus,
+[type="radio"]:focus {
+  box-shadow: 0 0 0 3px rgba(142, 130, 121, 0.5);
 }
 
 /* - Don't do this, it's too generic and results in equal specifivity that's resolved in source

@@ -309,6 +309,19 @@ ul.c-utilitext li + li, ol.c-utilitext li + li {
   width: auto;
 }
 
+.c-utilitext.c-utilitext--pale,
+.c-utilitext.c-utilitext--pale a[href] {
+  color: #666666;
+}
+
+.c-utilitext.c-utilitext--pale a[href]:hover, .c-utilitext.c-utilitext--pale a[href]:active, .c-utilitext.c-utilitext--pale a[href]:focus {
+  color: #333;
+}
+
+.c-utilitext.c-utilitext--smaller {
+  font-size: 0.8125em;
+}
+
 /* ---------------------------------------------------------------------------------------------- */
 /* --| Decoration Patterns |--------------------------------------------------------------------- */
 /*
@@ -468,13 +481,17 @@ $patterns: (
 .t-neoclear button:not(.over-panel__overlay):not(.dropdown__button),
 .t-neoclear button:not(.over-panel__overlay)[aria-expanded=true] {
 */
-button.t-neoclear:not(.over-panel__overlay):not(.dropdown__button) {
+button.t-neoclear:not(.over-panel__overlay):not(.dropdown__button),
+.cookie_notice__action button {
   border-color: #009590 !important;
   color: #ffffff !important;
   background-color: #009590 !important;
 }
 
-button.t-neoclear:not(.over-panel__overlay):not(.dropdown__button):hover, button.t-neoclear:not(.over-panel__overlay):not(.dropdown__button):active, button.t-neoclear:not(.over-panel__overlay):not(.dropdown__button):focus {
+button.t-neoclear:not(.over-panel__overlay):not(.dropdown__button):hover, button.t-neoclear:not(.over-panel__overlay):not(.dropdown__button):active, button.t-neoclear:not(.over-panel__overlay):not(.dropdown__button):focus,
+.cookie_notice__action button:hover,
+.cookie_notice__action button:active,
+.cookie_notice__action button:focus {
   background-color: #00625f !important;
 }
 
@@ -543,6 +560,55 @@ table.t-neoclear tr:nth-child(odd) > th,
 
 .t-neoclear.search-form .search-form__submit:hover, .t-neoclear.search-form .search-form__submit:focus {
   background-color: #004946;
+}
+
+.t-neoclear.search-form .search-form__field {
+  /*&:hover,
+    &:active,
+    &:focus {
+        @if is-int($f__button-background-color--alt) {
+            @if $f__button-background-color--alt > 0 {
+                $f__button-background-color--alt_percent: $f__button-background-color--alt * 1%;
+                background-color: lighten(map-get($theme, background-color), $f__button-background-color--alt_percent);
+            }
+            @if $f__button-background-color--alt < 0 {
+                $f__button-background-color--alt_percent: $f__button-background-color--alt * -1%;
+                background-color: darken(map-get($theme, background-color), $f__button-background-color--alt_percent);
+            }
+        }
+    }*/
+}
+
+.t-neoclear.search-form .search-form__field:hover, .t-neoclear.search-form .search-form__field:focus {
+  background-color: #f7f6f6;
+}
+
+input:not([type]):focus,
+[type="color"]:focus,
+[type="date"]:focus,
+[type="datetime"]:focus,
+[type="datetime-local"]:focus,
+[type="file"]:focus,
+[type="month"]:focus,
+[type="number"]:focus,
+[type="password"]:focus,
+[type="search"]:focus,
+[type="range"]:focus,
+[type="tel"]:focus,
+[type="text"]:focus,
+[type="time"]:focus,
+[type="url"]:focus,
+[type="week"]:focus {
+  box-shadow: 0 0 0 3px #00a49f;
+}
+
+/*
+        Without custom styling (appearance: none), Safari doesn't apply the shadow, so breaks
+        accessibility ...
+    */
+[type="checkbox"]:focus,
+[type="radio"]:focus {
+  box-shadow: 0 0 0 3px rgba(0, 149, 144, 0.5);
 }
 
 /* - Don't do this, it's too generic and results in equal specifivity that's resolved in source
