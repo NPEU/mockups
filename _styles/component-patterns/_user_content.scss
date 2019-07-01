@@ -1,0 +1,78 @@
+/*
+
+*/
+
+$user-content-namespace: c- !default;
+
+$theme-namespace: t- !default;
+
+$theme-only: false !default;
+
+// Note - no theme yet!
+
+// We don't need this if we're only themeing the pattern:
+@if $theme-only == false {
+    .#{$user-content-namespace}user-content {
+
+        // Contact list:
+        [data-contains~="contact-details"] {
+            @extend .c-contact-list;
+        }
+
+
+        // For theme-specific settings, see _themes.scss
+
+
+        // Layouts:
+
+        [data-display-as~="blocks"] {
+            @extend .l-distribute-wrap;
+        }
+
+        [data-display-as~="blocks"] > * {
+            @extend .l-distribute;
+        }
+
+        [data-display-as~="blocks"] > * > * {
+            @extend .u-space--below;
+            @extend .u-text-align--center;
+            @extend .u-padding--sides--s;
+        }
+
+
+
+        [data-contains~="thumbnail"] {
+            @extend .c-thumbnail;
+        }
+
+
+        [data-contains~="thumbnails"] a:first-of-type {
+            @extend .c-thumbnail;
+            @extend .u-space--below;
+        }
+
+
+
+        // Images:
+        img {
+            background: #fff;
+        }
+
+        b > img,
+        b > i > img {
+            border: 1px solid lighten(map-get(map-get($themes, neutral), primary-color), 10%);
+        }
+
+        b > i > img {
+            padding: $sz-s;
+        }
+
+
+        // Avatar / portrait:
+        img[src*="/img/avatars/"] {
+            @extend .c-contact-avatar;
+            @extend .d-bands;
+        }
+
+    }
+}

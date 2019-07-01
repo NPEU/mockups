@@ -15,6 +15,41 @@ $space-namespace: u- !default;
 }
 
 
+
+.#{$space-namespace}space--right--xs {
+    margin-right: $sz-xs !important;
+}
+
+.#{$space-namespace}space--above--xs {
+    margin-top: $sz-xs !important;
+}
+
+.#{$space-namespace}space--below--xs {
+    margin-bottom: $sz-xs !important;
+}
+
+.#{$space-namespace}space--left--xs {
+    margin-left: $sz-xs !important;
+}
+
+.#{$space-namespace}space--right--xs {
+    margin-right: $sz-xs !important;
+}
+
+.#{$space-namespace}space--above--xs {
+    margin-top: $sz-xs !important;
+}
+
+.#{$space-namespace}space--below--xs {
+    margin-bottom: $sz-xs !important;
+}
+
+.#{$space-namespace}space--xs {
+    margin: $sz-xs !important;
+}
+
+
+
 .#{$space-namespace}space--right--s {
     margin-right: $sz-s !important;
 }

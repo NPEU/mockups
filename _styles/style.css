@@ -5342,21 +5342,22 @@ _:-ms-lang(x), .c-card.c-card {
     )
 );*/
 /*
+
 */
-.c-contact-list.c-contact-list dt, [data-contains="contact-details"] dt {
+.c-contact-list.c-contact-list dt, .c-user-content [data-contains~="contact-details"] dt {
   display: none;
 }
 
-.c-contact-list.c-contact-list dd, [data-contains="contact-details"] dd {
+.c-contact-list.c-contact-list dd, .c-user-content [data-contains~="contact-details"] dd {
   margin-bottom: 0.6rem;
 }
 
-.c-contact-list .icon, [data-contains="contact-details"] .icon {
+.c-contact-list .icon, .c-user-content [data-contains~="contact-details"] .icon {
   margin-left: -1.75em;
   margin-right: 0.5em;
 }
 
-.c-contact-avatar.c-contact-avatar, img[src*="/img/avatars/"] {
+.c-contact-avatar.c-contact-avatar, .c-user-content img[src*="/img/avatars/"] {
   float: left;
   margin: 0.5em;
   width: 35%;
@@ -6259,34 +6260,39 @@ $glimpse--link-border-bottom--hover: false !default;*/
 
 /*
 */
-.c-thumbnail.c-thumbnail[href], [data-contains="thumbnails"] a[href]:first-of-type {
+.c-thumbnail.c-thumbnail[href], .c-user-content [href][data-contains~="thumbnail"], .c-user-content [data-contains~="thumbnails"] a[href]:first-of-type {
   display: inline-block;
   border-width: 0;
   padding: 0;
   margin: 0;
 }
 
-.c-thumbnail.c-thumbnail[href]:hover, [data-contains="thumbnails"] a[href]:hover:first-of-type, .c-thumbnail.c-thumbnail[href]:active, [data-contains="thumbnails"] a[href]:active:first-of-type, .c-thumbnail.c-thumbnail[href]:focus, [data-contains="thumbnails"] a[href]:focus:first-of-type {
+.c-thumbnail.c-thumbnail[href]:hover, .c-user-content [href]:hover[data-contains~="thumbnail"], .c-user-content [data-contains~="thumbnails"] a[href]:hover:first-of-type, .c-thumbnail.c-thumbnail[href]:active, .c-user-content [href]:active[data-contains~="thumbnail"], .c-user-content [data-contains~="thumbnails"] a[href]:active:first-of-type, .c-thumbnail.c-thumbnail[href]:focus, .c-user-content [href]:focus[data-contains~="thumbnail"], .c-user-content [data-contains~="thumbnails"] a[href]:focus:first-of-type {
   box-shadow: 0 0 0 1.2rem rgba(255, 255, 255, 0.8), 0 0 0 1.8rem rgba(0, 0, 0, 0.2);
   border-width: 0;
   padding: 0;
   margin: 0;
 }
 
-.c-thumbnail img, [data-contains="thumbnails"] a:first-of-type img {
+.c-thumbnail img, .c-user-content [data-contains~="thumbnail"] img, .c-user-content [data-contains~="thumbnails"] a:first-of-type img {
   margin: 0;
-  border: 1px solid #ccc;
+  border: 1px solid #a59c95;
 }
 
 /*@if $border-color == null {
 		$border-color: darken($background-color, 10%);
     }*/
-.c-thumbnail, [data-contains="thumbnails"] a:first-of-type {
+.c-thumbnail, .c-user-content [data-contains~="thumbnail"], .c-user-content [data-contains~="thumbnails"] a:first-of-type {
   color: #333;
 }
 
 /*
     Utilitarian text and links. E.g. footer, login info, skiplinks
+    
+    Utilitext links are prime candidates to have icons as part of the links text.
+    However, the underline border doesn't work well with icons, so an additional span is used to
+    wrap the link text (not the icon) regardless of whether or not there is an icon, since we can't 
+    look inside elements with CSS.
 */
 .c-utilitext.c-utilitext {
   font-size: 0.875em;
@@ -6295,7 +6301,20 @@ $glimpse--link-border-bottom--hover: false !default;*/
 }
 
 .c-utilitext.c-utilitext a[href] {
-  border-width: 1px;
+  border-width: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.c-utilitext.c-utilitext a[href] span {
+  border-width: 0 0 1px 0;
+  border-style: solid;
+  margin-bottom: -1px;
+  padding-bottom: 2px;
+}
+
+.c-utilitext.c-utilitext a[href]:hover span, .c-utilitext.c-utilitext a[href]:active span, .c-utilitext.c-utilitext a[href]:focus span {
+  border-style: dashed;
 }
 
 ul.c-utilitext, ol.c-utilitext {
@@ -6352,7 +6371,7 @@ ul.c-utilitext li + li, ol.c-utilitext li + li {
   color: #666666;
 }
 
-.c-utilitext.c-utilitext--pale a[href]:hover, .c-utilitext.c-utilitext--pale a[href]:active, .c-utilitext.c-utilitext--pale a[href]:focus {
+.c-utilitext.c-utilitext--pale a[href]:hover span, .c-utilitext.c-utilitext--pale a[href]:active span, .c-utilitext.c-utilitext--pale a[href]:focus span {
   color: #333;
 }
 
@@ -6412,7 +6431,7 @@ ul.c-utilitext li + li, ol.c-utilitext li + li {
   border-bottom-width: 3px !important;
 }
 
-.d-bands, img[src*="/img/avatars/"] {
+.d-bands, .c-user-content img[src*="/img/avatars/"] {
   border-style: solid !important;
   border-width: 3px !important;
 }
@@ -6445,7 +6464,7 @@ ul.c-utilitext li + li, ol.c-utilitext li + li {
   border-width: 19.2rem !important;
 }
 
-.d-bands, img[src*="/img/avatars/"],
+.d-bands, .c-user-content img[src*="/img/avatars/"],
 .d-bands--left,
 .d-bands--right,
 .d-bands--sides,
@@ -6750,18 +6769,18 @@ _:-ms-lang(x), .l-col-to-row__item  {
 
 /*    Distribute items inside a container.*/
 /*    IE11 needs this wrapper to behave properly.    If you're not supporting IE11, you don't this this CSS or the HTML that goes with it.*/
-.l-distribute-wrap, [data-display-as="blocks"] {
+.l-distribute-wrap, .c-user-content [data-display-as~="blocks"] {
   display: -ms-flexbox;
   display: flex;
   width: 100%;
 }
 
-.l-distribute-wrap > .l-distribute, [data-display-as="blocks"] > .l-distribute, [data-display-as="blocks"] > * {
+.l-distribute-wrap > .l-distribute, .c-user-content [data-display-as~="blocks"] > .l-distribute, .c-user-content [data-display-as~="blocks"] > * {
   -ms-flex-preferred-size: 100%;
   flex-basis: 100%;
 }
 
-.l-distribute.l-distribute, [data-display-as="blocks"] > * {
+.l-distribute.l-distribute, .c-user-content [data-display-as~="blocks"] > * {
   margin: 0;
   padding: 0;
   list-style-type: none;
@@ -6779,7 +6798,7 @@ _:-ms-lang(x), .l-col-to-row__item  {
   justify-content: space-around;
 }
 
-.l-distribute > *, [data-display-as="blocks"] > * > * {
+.l-distribute > *, .c-user-content [data-display-as~="blocks"] > * > * {
   display: inline-block;
   /* [1] */
   -webkit-flex: 1 1 auto;
@@ -6789,112 +6808,112 @@ _:-ms-lang(x), .l-col-to-row__item  {
   padding: 0;
 }
 
-.l-distribute.l-distribute--start, [data-display-as="blocks"] > .l-distribute--start {
+.l-distribute.l-distribute--start, .c-user-content [data-display-as~="blocks"] > .l-distribute--start {
   -webkit-justify-content: flex-start;
   -ms-flex-pack: start;
   justify-content: flex-start;
 }
 
-.l-distribute.l-distribute--end, [data-display-as="blocks"] > .l-distribute--end {
+.l-distribute.l-distribute--end, .c-user-content [data-display-as~="blocks"] > .l-distribute--end {
   -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
   justify-content: flex-end;
 }
 
-.l-distribute.l-distribute--limit-10 > *, [data-display-as="blocks"] > .l-distribute--limit-10 > * {
+.l-distribute.l-distribute--limit-10 > *, .c-user-content [data-display-as~="blocks"] > .l-distribute--limit-10 > * {
   -webkit-flex-basis: 10em;
   flex-basis: 7.5em;
   max-width: 10em;
 }
 
-.l-distribute.l-distribute--limit-15 > *, [data-display-as="blocks"] > .l-distribute--limit-15 > * {
+.l-distribute.l-distribute--limit-15 > *, .c-user-content [data-display-as~="blocks"] > .l-distribute--limit-15 > * {
   -webkit-flex-basis: 15em;
   flex-basis: 11.25em;
   max-width: 15em;
 }
 
-.l-distribute.l-distribute--limit-20 > *, [data-display-as="blocks"] > .l-distribute--limit-20 > * {
+.l-distribute.l-distribute--limit-20 > *, .c-user-content [data-display-as~="blocks"] > .l-distribute--limit-20 > * {
   -webkit-flex-basis: 20em;
   flex-basis: 15em;
   max-width: 20em;
 }
 
-.l-distribute.l-distribute--limit-25 > *, [data-display-as="blocks"] > .l-distribute--limit-25 > * {
+.l-distribute.l-distribute--limit-25 > *, .c-user-content [data-display-as~="blocks"] > .l-distribute--limit-25 > * {
   -webkit-flex-basis: 25em;
   flex-basis: 18.75em;
   max-width: 25em;
 }
 
-.l-distribute.l-distribute--limit-30 > *, [data-display-as="blocks"] > .l-distribute--limit-30 > * {
+.l-distribute.l-distribute--limit-30 > *, .c-user-content [data-display-as~="blocks"] > .l-distribute--limit-30 > * {
   -webkit-flex-basis: 30em;
   flex-basis: 22.5em;
   max-width: 30em;
 }
 
-.l-distribute.l-distribute--limit-35 > *, [data-display-as="blocks"] > .l-distribute--limit-35 > * {
+.l-distribute.l-distribute--limit-35 > *, .c-user-content [data-display-as~="blocks"] > .l-distribute--limit-35 > * {
   -webkit-flex-basis: 35em;
   flex-basis: 26.25em;
   max-width: 35em;
 }
 
-.l-distribute.l-distribute--limit-40 > *, [data-display-as="blocks"] > .l-distribute--limit-40 > * {
+.l-distribute.l-distribute--limit-40 > *, .c-user-content [data-display-as~="blocks"] > .l-distribute--limit-40 > * {
   -webkit-flex-basis: 40em;
   flex-basis: 30em;
   max-width: 40em;
 }
 
-.l-distribute.l-distribute--gutter--small, [data-display-as="blocks"] > .l-distribute--gutter--small {
+.l-distribute.l-distribute--gutter--small, .c-user-content [data-display-as~="blocks"] > .l-distribute--gutter--small {
   padding-top: 1.2rem;
 }
 
-.l-distribute.l-distribute--gutter--small, [data-display-as="blocks"] > .l-distribute--gutter--small,
+.l-distribute.l-distribute--gutter--small, .c-user-content [data-display-as~="blocks"] > .l-distribute--gutter--small,
 .l-distribute.l-distribute--gutter--small > *,
-[data-display-as="blocks"] > .l-distribute--gutter--small > * {
+.c-user-content [data-display-as~="blocks"] > .l-distribute--gutter--small > * {
   padding-left: 0.6rem;
   padding-right: 0.6rem;
 }
 
 
 .l-distribute.l-distribute--gutter--small > *,
-[data-display-as="blocks"] > .l-distribute--gutter--small > * {
+.c-user-content [data-display-as~="blocks"] > .l-distribute--gutter--small > * {
   padding-bottom: 1.2rem;
 }
 
-.l-distribute.l-distribute--gutter, [data-display-as="blocks"] > .l-distribute--gutter, .l-distribute.l-distribute--gutter--medium, [data-display-as="blocks"] > .l-distribute--gutter--medium {
+.l-distribute.l-distribute--gutter, .c-user-content [data-display-as~="blocks"] > .l-distribute--gutter, .l-distribute.l-distribute--gutter--medium, .c-user-content [data-display-as~="blocks"] > .l-distribute--gutter--medium {
   padding-top: 2.4rem;
 }
 
-.l-distribute.l-distribute--gutter, [data-display-as="blocks"] > .l-distribute--gutter,
+.l-distribute.l-distribute--gutter, .c-user-content [data-display-as~="blocks"] > .l-distribute--gutter,
 .l-distribute.l-distribute--gutter > *,
-[data-display-as="blocks"] > .l-distribute--gutter > *, .l-distribute.l-distribute--gutter--medium, [data-display-as="blocks"] > .l-distribute--gutter--medium,
+.c-user-content [data-display-as~="blocks"] > .l-distribute--gutter > *, .l-distribute.l-distribute--gutter--medium, .c-user-content [data-display-as~="blocks"] > .l-distribute--gutter--medium,
 .l-distribute.l-distribute--gutter--medium > *,
-[data-display-as="blocks"] > .l-distribute--gutter--medium > * {
+.c-user-content [data-display-as~="blocks"] > .l-distribute--gutter--medium > * {
   padding-left: 1.2rem;
   padding-right: 1.2rem;
 }
 
 
 .l-distribute.l-distribute--gutter > *,
-[data-display-as="blocks"] > .l-distribute--gutter > *,
+.c-user-content [data-display-as~="blocks"] > .l-distribute--gutter > *,
 .l-distribute.l-distribute--gutter--medium > *,
-[data-display-as="blocks"] > .l-distribute--gutter--medium > * {
+.c-user-content [data-display-as~="blocks"] > .l-distribute--gutter--medium > * {
   padding-bottom: 2.4rem;
 }
 
-.l-distribute.l-distribute--gutter--large, [data-display-as="blocks"] > .l-distribute--gutter--large {
+.l-distribute.l-distribute--gutter--large, .c-user-content [data-display-as~="blocks"] > .l-distribute--gutter--large {
   padding-top: 4.8rem;
 }
 
-.l-distribute.l-distribute--gutter--large, [data-display-as="blocks"] > .l-distribute--gutter--large,
+.l-distribute.l-distribute--gutter--large, .c-user-content [data-display-as~="blocks"] > .l-distribute--gutter--large,
 .l-distribute.l-distribute--gutter--large > *,
-[data-display-as="blocks"] > .l-distribute--gutter--large > * {
+.c-user-content [data-display-as~="blocks"] > .l-distribute--gutter--large > * {
   padding-left: 2.4rem;
   padding-right: 2.4rem;
 }
 
 
 .l-distribute.l-distribute--gutter--large > *,
-[data-display-as="blocks"] > .l-distribute--gutter--large > * {
+.c-user-content [data-display-as~="blocks"] > .l-distribute--gutter--large > * {
   padding-bottom: 4.8rem;
 }
 
@@ -6904,50 +6923,51 @@ _:-ms-lang(x), .l-col-to-row__item  {
   flex-basis: 100%;
 }
 
-.l-distribute--flush-edge-gutters .l-distribute.l-distribute--gutter--small, .l-distribute--flush-edge-gutters [data-display-as="blocks"] > .l-distribute--gutter--small {
+.l-distribute--flush-edge-gutters .l-distribute.l-distribute--gutter--small, .l-distribute--flush-edge-gutters .c-user-content [data-display-as~="blocks"] > .l-distribute--gutter--small, .c-user-content .l-distribute--flush-edge-gutters [data-display-as~="blocks"] > .l-distribute--gutter--small {
   margin: -1.2rem;
 }
 
-.l-distribute--flush-edge-gutters .l-distribute.l-distribute--gutter, .l-distribute--flush-edge-gutters [data-display-as="blocks"] > .l-distribute--gutter,
+.l-distribute--flush-edge-gutters .l-distribute.l-distribute--gutter, .l-distribute--flush-edge-gutters .c-user-content [data-display-as~="blocks"] > .l-distribute--gutter, .c-user-content .l-distribute--flush-edge-gutters [data-display-as~="blocks"] > .l-distribute--gutter,
 .l-distribute--flush-edge-gutters .l-distribute.l-distribute--gutter--medium,
-.l-distribute--flush-edge-gutters [data-display-as="blocks"] > .l-distribute--gutter--medium {
+.l-distribute--flush-edge-gutters .c-user-content [data-display-as~="blocks"] > .l-distribute--gutter--medium,
+.c-user-content .l-distribute--flush-edge-gutters [data-display-as~="blocks"] > .l-distribute--gutter--medium {
   margin: -2.4rem;
 }
 
-.l-distribute--flush-edge-gutters .l-distribute.l-distribute--gutter--large, .l-distribute--flush-edge-gutters [data-display-as="blocks"] > .l-distribute--gutter--large {
+.l-distribute--flush-edge-gutters .l-distribute.l-distribute--gutter--large, .l-distribute--flush-edge-gutters .c-user-content [data-display-as~="blocks"] > .l-distribute--gutter--large, .c-user-content .l-distribute--flush-edge-gutters [data-display-as~="blocks"] > .l-distribute--gutter--large {
   margin: -4.8rem;
 }
 
 /* IE10-11 */
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .l-distribute.l-distribute--limit-10 > *, [data-display-as="blocks"] > .l-distribute--limit-10 > * {
+  .l-distribute.l-distribute--limit-10 > *, .c-user-content [data-display-as~="blocks"] > .l-distribute--limit-10 > * {
     width: 10em;
     -ms-flex-preferred-size: auto;
     flex-basis: auto;
   }
-  .l-distribute.l-distribute--limit-15 > *, [data-display-as="blocks"] > .l-distribute--limit-15 > * {
+  .l-distribute.l-distribute--limit-15 > *, .c-user-content [data-display-as~="blocks"] > .l-distribute--limit-15 > * {
     width: 15em;
     -ms-flex-preferred-size: auto;
     flex-basis: auto;
   }
-  .l-distribute.l-distribute--limit-20 > *, [data-display-as="blocks"] > .l-distribute--limit-20 > * {
+  .l-distribute.l-distribute--limit-20 > *, .c-user-content [data-display-as~="blocks"] > .l-distribute--limit-20 > * {
     width: 20em;
     -ms-flex-preferred-size: auto;
     flex-basis: auto;
   }
-  .l-distribute.l-distribute--limit-25 > *, [data-display-as="blocks"] > .l-distribute--limit-25 > * {
+  .l-distribute.l-distribute--limit-25 > *, .c-user-content [data-display-as~="blocks"] > .l-distribute--limit-25 > * {
     width: 25em;
     -ms-flex-preferred-size: auto;
     flex-basis: auto;
   }
 }
 
-_:-ms-lang(x), .l-distribute.l-distribute, [data-display-as="blocks"] > * {
+_:-ms-lang(x), .l-distribute.l-distribute, .c-user-content [data-display-as~="blocks"] > * {
   max-width: 100%\9;
 }
 
 /*    Older webkit browsers also need special treatment.        1. Chrome 39-50, Opera 26-37, Safari/iOS 9-10. Using prefixed property as flex-direction       breaks IE11 otherwise, so may as well use for all.*/
-_:-webkit-any-link, :root .l-distribute.l-distribute > *, :root [data-display-as="blocks"] > * > * {
+_:-webkit-any-link, :root .l-distribute.l-distribute > *, :root .c-user-content [data-display-as~="blocks"] > * > *, .c-user-content :root [data-display-as~="blocks"] > * > * {
   display: flex;
   /* [1] */
   flex-direction: column;
@@ -7652,13 +7672,13 @@ $pagination-button--border-color: darken($pagination--base-color, 20%) !default;
 
 .u-padding--left--s,
 .u-padding--sides--s,
-[data-display-as="blocks"] > * > * {
+.c-user-content [data-display-as~="blocks"] > * > * {
   padding-left: 1.2rem !important;
 }
 
 .u-padding--right--s,
 .u-padding--sides--s,
-[data-display-as="blocks"] > * > * {
+.c-user-content [data-display-as~="blocks"] > * > * {
   padding-right: 1.2rem !important;
 }
 
@@ -7810,6 +7830,38 @@ $pagination-button--border-color: darken($pagination--base-color, 20%) !default;
   margin-right: auto !important;
 }
 
+.u-space--right--xs {
+  margin-right: 0.6rem !important;
+}
+
+.u-space--above--xs {
+  margin-top: 0.6rem !important;
+}
+
+.u-space--below--xs {
+  margin-bottom: 0.6rem !important;
+}
+
+.u-space--left--xs {
+  margin-left: 0.6rem !important;
+}
+
+.u-space--right--xs {
+  margin-right: 0.6rem !important;
+}
+
+.u-space--above--xs {
+  margin-top: 0.6rem !important;
+}
+
+.u-space--below--xs {
+  margin-bottom: 0.6rem !important;
+}
+
+.u-space--xs {
+  margin: 0.6rem !important;
+}
+
 .u-space--right--s {
   margin-right: 1.2rem !important;
 }
@@ -7854,7 +7906,7 @@ $pagination-button--border-color: darken($pagination--base-color, 20%) !default;
   margin-top: 2.4rem !important;
 }
 
-.u-space--below, [data-display-as="blocks"] > * > *, [data-contains="thumbnails"] a:first-of-type {
+.u-space--below, .c-user-content [data-display-as~="blocks"] > * > *, .c-user-content [data-contains~="thumbnails"] a:first-of-type {
   margin-bottom: 2.4rem !important;
 }
 
@@ -7934,7 +7986,7 @@ $pagination-button--border-color: darken($pagination--base-color, 20%) !default;
   justify-content: flex-start;
 }
 
-.u-text-align--center, [data-display-as="blocks"] > * > * {
+.u-text-align--center, .c-user-content [data-display-as~="blocks"] > * > * {
   text-align: center !important;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -8088,7 +8140,7 @@ $patterns: (
   background: linear-gradient(45deg, #f2f2f2 0%, whitesmoke 50%, #fafafa 50%, #f7f7f7 100%) !important;
 }
 
-.d-bands.t-white, img.t-white[src*="/img/avatars/"],
+.d-bands.t-white, .c-user-content img.t-white[src*="/img/avatars/"],
 .d-bands--left.t-white,
 .d-bands--right.t-white,
 .d-bands--sides.t-white,
@@ -8540,7 +8592,7 @@ $patterns: (
   background: linear-gradient(45deg, #81756d 0%, #84786f 50%, #897d74 50%, #867a71 100%) !important;
 }
 
-.d-bands.t-neutral, img.t-neutral[src*="/img/avatars/"],
+.d-bands.t-neutral, .c-user-content img.t-neutral[src*="/img/avatars/"],
 .d-bands--left.t-neutral,
 .d-bands--right.t-neutral,
 .d-bands--sides.t-neutral,
@@ -9473,6 +9525,22 @@ html.wireframe {
 
 /* ---------------------------------------------------------------------------------------------- */
 /* --| USER CONTENT |---------------------------------------------------------------------------- */
+/*
+
+*/
+.c-user-content img {
+  background: #fff;
+}
+
+.c-user-content b > img,
+.c-user-content b > i > img {
+  border: 1px solid #a59c95;
+}
+
+.c-user-content b > i > img {
+  padding: 1.2rem;
+}
+
 /* ---------------------------------------------------------------------------------------------- */
 /* --| JOOMLA |---------------------------------------------------------------------------------- */
 .highlight {

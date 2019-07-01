@@ -100,6 +100,7 @@ _:-ms-lang(x), .c-card.c-card {
     )
 );*/
 /*
+
 */
 /*
     The `height: 100%;` in the `.event` class below allows the event to fill it's container (if inside,
@@ -249,6 +250,11 @@ $glimpse--link-border-bottom--hover: false !default;*/
 */
 /*
     Utilitarian text and links. E.g. footer, login info, skiplinks
+    
+    Utilitext links are prime candidates to have icons as part of the links text.
+    However, the underline border doesn't work well with icons, so an additional span is used to
+    wrap the link text (not the icon) regardless of whether or not there is an icon, since we can't 
+    look inside elements with CSS.
 */
 .c-utilitext.c-utilitext {
   font-size: 0.875em;
@@ -257,7 +263,20 @@ $glimpse--link-border-bottom--hover: false !default;*/
 }
 
 .c-utilitext.c-utilitext a[href] {
-  border-width: 1px;
+  border-width: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.c-utilitext.c-utilitext a[href] span {
+  border-width: 0 0 1px 0;
+  border-style: solid;
+  margin-bottom: -1px;
+  padding-bottom: 2px;
+}
+
+.c-utilitext.c-utilitext a[href]:hover span, .c-utilitext.c-utilitext a[href]:active span, .c-utilitext.c-utilitext a[href]:focus span {
+  border-style: dashed;
 }
 
 ul.c-utilitext, ol.c-utilitext {
@@ -314,7 +333,7 @@ ul.c-utilitext li + li, ol.c-utilitext li + li {
   color: #666666;
 }
 
-.c-utilitext.c-utilitext--pale a[href]:hover, .c-utilitext.c-utilitext--pale a[href]:active, .c-utilitext.c-utilitext--pale a[href]:focus {
+.c-utilitext.c-utilitext--pale a[href]:hover span, .c-utilitext.c-utilitext--pale a[href]:active span, .c-utilitext.c-utilitext--pale a[href]:focus span {
   color: #333;
 }
 

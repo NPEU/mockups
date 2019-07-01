@@ -167,7 +167,7 @@ $gallery-grid-spacing-unit: $f__base-rem-space-unit;
 @import "../bower_components/NPEU-layout-patterns/dev/scss/_gallery-grid.scss";
 
 /* --| Themeable Patterns |---------------------------------------------------------------------- */
-
+$thumbnail--border-color: lighten(map-get(map-get($themes, neutral), primary-color), 10%);
 @import "_themeable-patterns.scss";
 
 
@@ -412,7 +412,7 @@ $theme: map-merge(
 
 /* --| USER CONTENT |---------------------------------------------------------------------------- */
 
-@import "_user_content";
+@import "component-patterns/_user_content";
 
 /* ---------------------------------------------------------------------------------------------- */
 
