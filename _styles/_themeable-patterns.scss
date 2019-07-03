@@ -73,6 +73,7 @@ $featurette-spacing-unit: $f__base-rem-space-unit;
 $glimpse-spacing-unit: $f__base-rem-space-unit;
 @import "component-patterns/_glimpse.scss";
 
+$hero-max-message-breakpoint: 100rem;
 @import "component-patterns/_hero.scss";
 
 $longform-content-max-width: $f__measure;
