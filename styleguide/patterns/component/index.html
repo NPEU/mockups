@@ -932,6 +932,8 @@ Here a span is used instead, to help avoid any confusio (whole thing is a link, 
     </div>
 </div>
 
+<p class="u-padding--sides">Use a <code>&lt;p&gt;</code> tag instead of <code>&lt;h1&gt;</code> if the message isn't also the main page heading.</p>
+
 <div class="u-padding--s">
     <details class="u-padding--s  d-background--light">
         <summary>Show code:</summary>
@@ -1162,6 +1164,45 @@ leafletMapInitialize(&apos;test_map&apos;, {&quot;lat&quot;:51.75161383900000089
 <pre><code class="html">&lt;a href=&quot;https://rct.npeu.ox.ac.uk/trialname&quot; class=&quot;c-primary-cta&quot;&gt;Randomise to A Trial&lt;/a&gt;</code></pre>
     </details>
 </div>
+
+
+<hr>
+<h2 class="u-padding--sides" id="search-form">Search Form</h2>
+
+<div class="u-padding--s  u-space--below">
+    <div id="search-form">
+        <form id="finder-search" action="/neoclear/search?q=lumbar" method="get" class="form-inline">
+            <fieldset class="t-neoclear  d-bands">
+                <label for="q">Search Terms:</label>
+                <span class="composite">
+                    <input type="text" name="q" id="q" size="30" value="">
+                    <button name="Search" type="submit" class="t-neoclear">
+                    <span class="icon-search icon-white"></span>Search</button>
+                </span>
+            </fieldset>
+        </form>
+    </div>
+</div>
+
+<div class="u-padding--s">
+    <details class="u-padding--s  d-background--light">
+        <summary>Show code:</summary>
+<pre><code class="html"></code>&lt;div id=&quot;search-form&quot;&gt;
+    &lt;form id=&quot;finder-search&quot; action=&quot;/neoclear/search?q=lumbar&quot; method=&quot;get&quot; class=&quot;form-inline&quot;&gt;
+        &lt;fieldset class=&quot;t-neoclear  d-bands&quot;&gt;
+            &lt;label for=&quot;q&quot;&gt;Search Terms:&lt;/label&gt;
+            &lt;span class=&quot;composite&quot;&gt;
+                &lt;input type=&quot;text&quot; name=&quot;q&quot; id=&quot;q&quot; size=&quot;30&quot; value=&quot;&quot;&gt;
+                &lt;button name=&quot;Search&quot; type=&quot;submit&quot; class=&quot;t-neoclear&quot;&gt;
+                &lt;span class=&quot;icon-search icon-white&quot;&gt;&lt;/span&gt;Search&lt;/button&gt;
+            &lt;/span&gt;
+        &lt;/fieldset&gt;
+    &lt;/form&gt;
+&lt;/div&gt;</code></pre>
+    </details>
+</div>
+
+
 
 
 <hr>

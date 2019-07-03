@@ -5776,6 +5776,9 @@ $glimpse--link-border-bottom--hover: false !default;*/
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
     -ms-flex-align: center;
     -webkit-align-items: center;
     align-items: center;

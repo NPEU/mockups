@@ -1,8 +1,28 @@
 ---
-layout: structure--basic
+layout: structure--404
 title: 404 Page not found
 project_base_url: styleguide
 ---
 
 <p>Sorry, that page couldn't be found.</p>
 <p>You could try searching:</p>
+<div id="search-form">
+    <form id="finder-search" action="/neoclear/search?q=lumbar" method="get" class="form-inline">
+        <fieldset class="t-neoclear  d-bands">
+            <label for="q">Search Terms:</label>
+            <span class="composite">
+                <input type="text" name="q" id="q" size="30" value="">
+                <button name="Search" type="submit" class="t-neoclear">
+                <span class="icon-search icon-white"></span>Search</button>
+            </span>
+        </fieldset>
+    </form>
+</div>
+<p>Or one of these links:</p>
+<ul>
+    <li><a href="https://www.npeu.ox.ac.uk"><span>Home</span></a></li>
+    <li><a href="https://www.npeu.ox.ac.uk/ctu/trials"><span>CTU Trials Portfolio</span></a></li>
+    <li><a href="https://www.npeu.ox.ac.uk/sheer"><span>SHEER Portfolio</span></a></li>
+    <li><a href="https://www.npeu.ox.ac.uk/prumnhc"><span>PRU-MNHC</span></a></li>
+    <li><a href="https://www.npeu.ox.ac.uk/about"><span>About the NPEU</span></a></li>
+</ul>
