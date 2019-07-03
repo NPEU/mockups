@@ -1170,35 +1170,50 @@ leafletMapInitialize(&apos;test_map&apos;, {&quot;lat&quot;:51.75161383900000089
 <h2 class="u-padding--sides" id="search-form">Search Form</h2>
 
 <div class="u-padding--s  u-space--below">
-    <div id="search-form">
-        <form id="finder-search" action="/neoclear/search?q=lumbar" method="get" class="form-inline">
-            <fieldset class="t-neoclear  d-bands">
-                <label for="q">Search Terms:</label>
-                <span class="composite">
-                    <input type="text" name="q" id="q" size="30" value="">
-                    <button name="Search" type="submit" class="t-neoclear">
-                    <span class="icon-search icon-white"></span>Search</button>
-                </span>
-            </fieldset>
-        </form>
-    </div>
+    <form action="/neoclear/search" id="searchform" method="GET">
+        <input type="hidden" value="&amp;t[]=4463" name="Search">
+        <span class="composite">
+            <input type="search" class="search-form__field" id="search" placeholder="Search" name="q" value="" size="40 aria-label="Search">
+            <button class="search-form__submit" type="submit">
+                <span>Search</span>
+            </button>
+        </span>
+    </form>
 </div>
 
 <div class="u-padding--s">
     <details class="u-padding--s  d-background--light">
         <summary>Show code:</summary>
-<pre><code class="html"></code>&lt;div id=&quot;search-form&quot;&gt;
-    &lt;form id=&quot;finder-search&quot; action=&quot;/neoclear/search?q=lumbar&quot; method=&quot;get&quot; class=&quot;form-inline&quot;&gt;
-        &lt;fieldset class=&quot;t-neoclear  d-bands&quot;&gt;
-            &lt;label for=&quot;q&quot;&gt;Search Terms:&lt;/label&gt;
-            &lt;span class=&quot;composite&quot;&gt;
-                &lt;input type=&quot;text&quot; name=&quot;q&quot; id=&quot;q&quot; size=&quot;30&quot; value=&quot;&quot;&gt;
-                &lt;button name=&quot;Search&quot; type=&quot;submit&quot; class=&quot;t-neoclear&quot;&gt;
-                &lt;span class=&quot;icon-search icon-white&quot;&gt;&lt;/span&gt;Search&lt;/button&gt;
-            &lt;/span&gt;
-        &lt;/fieldset&gt;
-    &lt;/form&gt;
-&lt;/div&gt;</code></pre>
+<pre><code class="html"></code>&lt;form action=&quot;/neoclear/search&quot; id=&quot;searchform&quot; method=&quot;GET&quot;&gt;
+    &lt;input type=&quot;hidden&quot; value=&quot;&amp;amp;t[]=4463&quot; name=&quot;Search&quot;&gt;
+    &lt;span class=&quot;composite&quot;&gt;
+        &lt;input type=&quot;search&quot; class=&quot;search-form__field&quot; id=&quot;search&quot; placeholder=&quot;Search&quot; name=&quot;q&quot; value=&quot;&quot; size=&quot;40 aria-label=&quot;Search&quot;&gt;
+        &lt;button class=&quot;search-form__submit&quot; type=&quot;submit&quot;&gt;
+            &lt;span&gt;Search&lt;/span&gt;
+        &lt;/button&gt;
+    &lt;/span&gt;
+&lt;/form&gt;</code></pre>
+    </details>
+</div>
+
+<h3 class="u-padding--sides">Boxed form:</h3>
+
+<div class="u-padding--s  u-space--below">
+    <form action="/neoclear/search" id="searchform" class="c-panel  t-neoclear  d-bands" method="GET">
+        <input type="hidden" value="&amp;t[]=4463" name="Search">
+        <span class="composite">
+            <input type="search" class="search-form__field" id="search" placeholder="Search" name="q" value="" size="40 aria-label="Search">
+            <button class="search-form__submit" type="submit">
+                <span>Search</span>
+            </button>
+        </span>
+    </form>
+</div>
+
+<div class="u-padding--s">
+    <details class="u-padding--s  d-background--light">
+        <summary>Show code:</summary>
+<pre><code class="html"></code>&lt;form action=&quot;/neoclear/search&quot; id=&quot;searchform&quot; <b>class=&quot;c-panel  t-neoclear  d-bands&quot;</b> method=&quot;GET&quot;&gt;</code></pre>
     </details>
 </div>
 
