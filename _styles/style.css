@@ -627,12 +627,35 @@ dfn {
     1. Either of these will make lists behave properly next to floated items.
        (https://paulbakaus.com/tutorials/css/block-formatting-contexts-and-lists)
        a. This causes problems with some decoration. E.g. if the last element in the list is a link,
-           bottom borders get cropped, so using b instead.
+          bottom borders get cropped, so using b instead.
+       b. `flow-root` is the better option but support is low, so using table and flex fallbacks
+          instead (Edge breaks if flow-root is applied, even though it's meant to be ignored).
+       Hmmm -moz-box / flex is causing numbering to mess up (always 0) on FF8-50.
+    2. This is the only thing that works in early FF. However, width is content-width, not available
+       width so any 'boxy' decoration on the list might look weird.
+    3. This does a pretty good job of extending coverage:
+       Chrome 29+, Edge 14+ (unable to test earlier), FF48+
 */
 dl {
   margin-bottom: 2.4rem;
   display: table;
-  /* 1b */
+  /* 1b, 2 */
+  display: -webkit-box;
+  /* 1b, 3 */
+  -webkit-box-orient: vertical;
+  /* 1b, 3 */
+}
+
+/*
+    Extend support to IE10-11
+*/
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  ol {
+    display: -ms-flexbox;
+    /* 1b */
+    -ms-flex-direction: column;
+    /* 1b */
+  }
 }
 
 /*-------------------------------------------------------------------------------------------------|
@@ -1248,14 +1271,13 @@ object {
        (https://paulbakaus.com/tutorials/css/block-formatting-contexts-and-lists)
        a. This causes problems with some decoration. E.g. if the last element in the list is a link,
           bottom borders get cropped, so using b instead.
-       b. `flow-root` is the better option but support is low, so using table and flex flbks
-          as well.
+       b. `flow-root` is the better option but support is low, so using table and flex fallbacks
+          instead (Edge breaks if flow-root is applied, even though it's meant to be ignored).
        Hmmm -moz-box / flex is causing numbering to mess up (always 0) on FF8-50.
     2. This is the only thing that works in early FF. However, width is content-width, not available
        width so any 'boxy' decoration on the list might look weird.
     3. This does a pretty good job of extending coverage:
-       Chrome 29+, Edge 14+ (unable to test earlier)
-    4. Extend support to IE10-11
+       Chrome 29+, Edge 14+ (unable to test earlier), FF48+
 */
 ol {
   margin-bottom: 2.4rem;
@@ -1265,12 +1287,18 @@ ol {
   /* 1b, 3 */
   -webkit-box-orient: vertical;
   /* 1b, 3 */
-  display: -ms-flexbox;
-  /* 1b, 4 */
-  -ms-flex-direction: column;
-  /* 1b, 4 */
-  display: flow-root;
-  /* 1b */
+}
+
+/*
+    Extend support to IE10-11
+*/
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  ol {
+    display: -ms-flexbox;
+    /* 1b */
+    -ms-flex-direction: column;
+    /* 1b */
+  }
 }
 
 /*-------------------------------------------------------------------------------------------------|
@@ -1792,14 +1820,34 @@ th {
        (https://paulbakaus.com/tutorials/css/block-formatting-contexts-and-lists)
        a. This causes problems with some decoration. E.g. if the last element in the list is a link,
           bottom borders get cropped, so using b instead.
-       b. `flow-root` is the better option but support is low, so using table-cell as well.
+       b. `flow-root` is the better option but support is low, so using table and flex fallbacks
+          instead (Edge breaks if flow-root is applied, even though it's meant to be ignored).
+       Hmmm -moz-box / flex is causing numbering to mess up (always 0) on FF8-50.
+    2. This is the only thing that works in early FF. However, width is content-width, not available
+       width so any 'boxy' decoration on the list might look weird.
+    3. This does a pretty good job of extending coverage:
+       Chrome 29+, Edge 14+ (unable to test earlier), FF48+
 */
 ul {
   margin-bottom: 2.4rem;
-  display: table-cell;
-  /* 1b */
-  display: flow-root;
-  /* 1b */
+  display: table;
+  /* 1b, 2 */
+  display: -webkit-box;
+  /* 1b, 3 */
+  -webkit-box-orient: vertical;
+  /* 1b, 3 */
+}
+
+/*
+    Extend support to IE10-11
+*/
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  ol {
+    display: -ms-flexbox;
+    /* 1b */
+    -ms-flex-direction: column;
+    /* 1b */
+  }
 }
 
 /*
@@ -5344,6 +5392,10 @@ _:-ms-lang(x), .c-card.c-card {
 /*
 
 */
+.c-contact-list.c-contact-list, .c-user-content [data-contains~="contact-details"] {
+  min-width: 20em;
+}
+
 .c-contact-list.c-contact-list dt, .c-user-content [data-contains~="contact-details"] dt {
   display: none;
 }
@@ -5747,7 +5799,7 @@ $glimpse--link-border-bottom--hover: false !default;*/
   /*
                 1. For IE10 to wrap text.
             */
-  padding: 2.4rem;
+  padding: 0.6rem 2.4rem;
   line-height: 1.3;
   font-weight: bold;
   margin: 0;
@@ -5761,13 +5813,13 @@ $glimpse--link-border-bottom--hover: false !default;*/
 
 @media screen and (min-width: 640px) {
   .c-hero .c-hero__message > * {
-    font-size: calc(20px + 13 * ((100vw - 640px) / 960));
+    font-size: calc(20px + 12 * ((100vw - 640px) / 960));
   }
 }
 
 @media screen and (min-width: 1600px) {
   .c-hero .c-hero__message > * {
-    font-size: 33px;
+    font-size: 32px;
   }
 }
 
@@ -7433,6 +7485,14 @@ $pagination-button--border-color: darken($pagination--base-color, 20%) !default;
 /* --| Utility Patterns |------------------------------------------------------------------------ */
 /*
 */
+.u-expand-width {
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+/*
+*/
 .u-fill-area {
   /*display: -ms-flexbox !important;
     display: -webkit-flex !important;
@@ -8093,14 +8153,13 @@ $pagination-button--border-color: darken($pagination--base-color, 20%) !default;
     Attempts to improve where text wraps.
 
 */
-.u-word-wrap, h1,
+.u-word-wrap, .c-hero .c-hero__message, h1,
 .u-word-wrap--inside * {
   /* These are technically the same, but use both */
   overflow-wrap: break-word;
   word-wrap: break-word;
   -ms-word-break: break-all;
   /* This is the dangerous one in WebKit, as it breaks things wherever */
-  word-break: break-all;
   /* Instead use this non-standard one: */
   word-break: break-word;
   /* Adds a hyphen where the word breaks, if supported (No Blink) */

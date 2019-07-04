@@ -928,11 +928,9 @@ Here a span is used instead, to help avoid any confusio (whole thing is a link, 
     </div>
 
     <div class="c-hero__message">
-        <h1>Hero message or statement. Word count should be around 8-12 words.</h1>
+        <p>Hero message or statement. Word count should be around 8-12 words.</p>
     </div>
 </div>
-
-<p class="u-padding--sides">Use a <code>&lt;p&gt;</code> tag instead of <code>&lt;h1&gt;</code> if the message isn't also the main page heading.</p>
 
 <div class="u-padding--s">
     <details class="u-padding--s  d-background--light">
@@ -973,7 +971,7 @@ Here a span is used instead, to help avoid any confusio (whole thing is a link, 
     </div>
 
     <div class="c-hero__message">
-        <h1>Hero message or statement. Word count should be around 8-12 words.</h1>
+        <p>Long word for testing. Antidisestablishmentarianism.</p>
     </div>
 </div>
 
@@ -1173,7 +1171,7 @@ leafletMapInitialize(&apos;test_map&apos;, {&quot;lat&quot;:51.75161383900000089
     <form action="/neoclear/search" id="searchform" method="GET">
         <input type="hidden" value="&amp;t[]=4463" name="Search">
         <span class="composite">
-            <input type="search" class="search-form__field" id="search" placeholder="Search" name="q" value="" size="40 aria-label="Search">
+            <input type="search" class="search-form__field" id="search" placeholder="Search" name="q" value="" aria-label="Search">
             <button class="search-form__submit" type="submit">
                 <span>Search</span>
             </button>
@@ -1187,7 +1185,7 @@ leafletMapInitialize(&apos;test_map&apos;, {&quot;lat&quot;:51.75161383900000089
 <pre><code class="html"></code>&lt;form action=&quot;/neoclear/search&quot; id=&quot;searchform&quot; method=&quot;GET&quot;&gt;
     &lt;input type=&quot;hidden&quot; value=&quot;&amp;amp;t[]=4463&quot; name=&quot;Search&quot;&gt;
     &lt;span class=&quot;composite&quot;&gt;
-        &lt;input type=&quot;search&quot; class=&quot;search-form__field&quot; id=&quot;search&quot; placeholder=&quot;Search&quot; name=&quot;q&quot; value=&quot;&quot; size=&quot;40 aria-label=&quot;Search&quot;&gt;
+        &lt;input type=&quot;search&quot; class=&quot;search-form__field&quot; id=&quot;search&quot; placeholder=&quot;Search&quot; name=&quot;q&quot; value=&quot;&quot; aria-label=&quot;Search&quot;&gt;
         &lt;button class=&quot;search-form__submit&quot; type=&quot;submit&quot;&gt;
             &lt;span&gt;Search&lt;/span&gt;
         &lt;/button&gt;
@@ -1198,11 +1196,13 @@ leafletMapInitialize(&apos;test_map&apos;, {&quot;lat&quot;:51.75161383900000089
 
 <h3 class="u-padding--sides">Boxed form:</h3>
 
+<p class="u-padding--sides">Also illustrating expandable input.</p>
+
 <div class="u-padding--s  u-space--below">
     <form action="/neoclear/search" id="searchform" class="c-panel  t-neoclear  d-bands" method="GET">
         <input type="hidden" value="&amp;t[]=4463" name="Search">
-        <span class="composite">
-            <input type="search" class="search-form__field" id="search" placeholder="Search" name="q" value="" size="40 aria-label="Search">
+        <span class="composite  u-fill-width">
+            <input type="search" class="search-form__field  u-expand-width" id="search" placeholder="Search" name="q" value="" aria-label="Search">
             <button class="search-form__submit" type="submit">
                 <span>Search</span>
             </button>
@@ -1213,7 +1213,15 @@ leafletMapInitialize(&apos;test_map&apos;, {&quot;lat&quot;:51.75161383900000089
 <div class="u-padding--s">
     <details class="u-padding--s  d-background--light">
         <summary>Show code:</summary>
-<pre><code class="html"></code>&lt;form action=&quot;/neoclear/search&quot; id=&quot;searchform&quot; <b>class=&quot;c-panel  t-neoclear  d-bands&quot;</b> method=&quot;GET&quot;&gt;</code></pre>
+<pre><code class="html"></code>&lt;form action=&quot;/neoclear/search&quot; id=&quot;searchform&quot; <b>class=&quot;c-panel  t-neoclear  d-bands&quot;</b> method=&quot;GET&quot;&gt;
+    &lt;input type=&quot;hidden&quot; value=&quot;&amp;amp;t[]=4463&quot; name=&quot;Search&quot;&gt;
+    &lt;span class=&quot;composite  <b>u-fill-width</b>&quot;&gt;
+        &lt;input type=&quot;search&quot; class=&quot;search-form__field  <b>u-expand-width</b>&quot; id=&quot;search&quot; placeholder=&quot;Search&quot; name=&quot;q&quot; value=&quot;&quot; aria-label=&quot;Search&quot;&gt;
+        &lt;button class=&quot;search-form__submit&quot; type=&quot;submit&quot;&gt;
+            &lt;span&gt;Search&lt;/span&gt;
+        &lt;/button&gt;
+    &lt;/span&gt;
+&lt;/form&gt;</code></pre>
     </details>
 </div>
 

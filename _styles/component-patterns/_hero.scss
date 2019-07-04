@@ -22,11 +22,15 @@ $theme-only: false !default;
             background: #fff;
         }
 
+        #{&}__message {
+            @extend .u-word-wrap;
+        
+        }
         #{&}__message > * {
             /*
                 1. For IE10 to wrap text.
             */
-            padding: $sz-m;
+            padding: $sz-xs $sz-m;
             //font-size: 1.25em;
             @include fluid-type(strip-unit($hero-breakpoint) * 16px, strip-unit($hero-max-message-breakpoint) * 16px, $hero-min-message-size, $hero-max-message-size);
             //#{$hero-breakpoint}
