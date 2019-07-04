@@ -6978,6 +6978,21 @@ _:-ms-lang(x), .l-col-to-row__item  {
     -ms-flex-preferred-size: auto;
     flex-basis: auto;
   }
+  .l-distribute.l-distribute--limit-30 > *, .c-user-content [data-display-as~="blocks"] > .l-distribute--limit-30 > * {
+    width: 30em;
+    -ms-flex-preferred-size: auto;
+    flex-basis: auto;
+  }
+  .l-distribute.l-distribute--limit-35 > *, .c-user-content [data-display-as~="blocks"] > .l-distribute--limit-35 > * {
+    width: 35em;
+    -ms-flex-preferred-size: auto;
+    flex-basis: auto;
+  }
+  .l-distribute.l-distribute--limit-40 > *, .c-user-content [data-display-as~="blocks"] > .l-distribute--limit-40 > * {
+    width: 40em;
+    -ms-flex-preferred-size: auto;
+    flex-basis: auto;
+  }
 }
 
 _:-ms-lang(x), .l-distribute.l-distribute, .c-user-content [data-display-as~="blocks"] > * {
