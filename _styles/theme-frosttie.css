@@ -507,11 +507,16 @@ button.t-frosttie:not(.over-panel__overlay):not(.dropdown__button),
   background-color: #2b3383 !important;
 }
 
-button.t-frosttie:not(.over-panel__overlay):not(.dropdown__button):hover, button.t-frosttie:not(.over-panel__overlay):not(.dropdown__button):active, button.t-frosttie:not(.over-panel__overlay):not(.dropdown__button):focus,
+button.t-frosttie:not(.over-panel__overlay):not(.dropdown__button):hover, button.t-frosttie:not(.over-panel__overlay):not(.dropdown__button):active,
 .cookie_notice__action button:hover,
-.cookie_notice__action button:active,
-.cookie_notice__action button:focus {
+.cookie_notice__action button:active {
   background-color: #1e245d !important;
+}
+
+button.t-frosttie:not(.over-panel__overlay):not(.dropdown__button):focus,
+.cookie_notice__action button:focus {
+  outline: 0;
+  box-shadow: 0 0 0 3px rgba(43, 51, 131, 0.5);
 }
 
 table.t-frosttie caption,

@@ -95,8 +95,7 @@ button.#{$theme-namespace}#{$theme-name}:not(.over-panel__overlay):not(.dropdown
     background-color: map-get($theme, background-color) !important;
 
     &:hover,
-    &:active,
-    &:focus {
+    &:active {
         @if is-int($f__button-background-color--alt) {
             @if $f__button-background-color--alt > 0 {
                 $f__button-background-color--alt_percent: $f__button-background-color--alt * 1%;
@@ -106,8 +105,16 @@ button.#{$theme-namespace}#{$theme-name}:not(.over-panel__overlay):not(.dropdown
                 $f__button-background-color--alt_percent: $f__button-background-color--alt * -1%;
                 background-color: darken(map-get($theme, background-color), $f__button-background-color--alt_percent) !important;
             }
+        } @else {
+            background-color: $f__button-background-color--alt;
         }
     }
+
+    &:focus {
+        outline: 0;
+        box-shadow: 0 0 0 $f__button-focus-shadow-width rgba(map-get($theme, background-color), 0.5);
+    }
+
 }
 
 
@@ -146,7 +153,7 @@ table.#{$theme-namespace}#{$theme-name} tr:nth-child(odd) > th,
 
 .#{$theme-namespace}#{$theme-name}.subnav__items {
     background-color: map-get($theme, background-color);
-}  
+}
 
 
 
@@ -168,7 +175,7 @@ table.#{$theme-namespace}#{$theme-name} tr:nth-child(odd) > th,
 // Search form button:
 .#{$theme-namespace}#{$theme-name}.search-form .search-form__submit {
     background-color: darken(map-get($theme, background-color), 5%);
-    
+
     &:hover,
     &:focus {
         background-color: darken(map-get($theme, background-color), 15%);
@@ -192,7 +199,7 @@ table.#{$theme-namespace}#{$theme-name} tr:nth-child(odd) > th,
 
 // Search form input:
 .#{$theme-namespace}#{$theme-name}.search-form .search-form__field {
-    
+
     &:hover,
     &:focus {
         background-color: #f7f6f6;

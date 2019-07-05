@@ -507,11 +507,16 @@ button.t-neoclear:not(.over-panel__overlay):not(.dropdown__button),
   background-color: #009590 !important;
 }
 
-button.t-neoclear:not(.over-panel__overlay):not(.dropdown__button):hover, button.t-neoclear:not(.over-panel__overlay):not(.dropdown__button):active, button.t-neoclear:not(.over-panel__overlay):not(.dropdown__button):focus,
+button.t-neoclear:not(.over-panel__overlay):not(.dropdown__button):hover, button.t-neoclear:not(.over-panel__overlay):not(.dropdown__button):active,
 .cookie_notice__action button:hover,
-.cookie_notice__action button:active,
-.cookie_notice__action button:focus {
+.cookie_notice__action button:active {
   background-color: #00625f !important;
+}
+
+button.t-neoclear:not(.over-panel__overlay):not(.dropdown__button):focus,
+.cookie_notice__action button:focus {
+  outline: 0;
+  box-shadow: 0 0 0 3px rgba(0, 149, 144, 0.5);
 }
 
 table.t-neoclear caption,
