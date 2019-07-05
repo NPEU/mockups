@@ -167,7 +167,7 @@ $gallery-grid-spacing-unit: $f__base-rem-space-unit;
 @import "../bower_components/NPEU-layout-patterns/dev/scss/_gallery-grid.scss";
 
 /* --| Themeable Patterns |---------------------------------------------------------------------- */
-
+$thumbnail--border-color: lighten(map-get(map-get($themes, neutral), primary-color), 10%);
 @import "_themeable-patterns.scss";
 
 
@@ -246,6 +246,7 @@ $search-results-heading-font-size: $f__h4-font-size;
 
 /* --| Utility Patterns |------------------------------------------------------------------------ */
 //@import "utility-patterns/_full-width.scss";
+@import "utility-patterns/_expand-width.scss";
 @import "utility-patterns/_fill-area.scss";
 @import "utility-patterns/_fill-height.scss";
 @import "utility-patterns/_fill-width.scss";
@@ -412,7 +413,7 @@ $theme: map-merge(
 
 /* --| USER CONTENT |---------------------------------------------------------------------------- */
 
-@import "_user_content";
+@import "component-patterns/_user_content";
 
 /* ---------------------------------------------------------------------------------------------- */
 

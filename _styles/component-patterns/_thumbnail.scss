@@ -3,7 +3,8 @@
 $thumbnail-namespace: c- !default;
 $theme-namespace: t- !default;
 
-$thumbnail--text-color: #333;
+$thumbnail--text-color: #333 !default;
+$thumbnail--border-color: #ccc !default;
 
 $theme-only: false !default;
 
@@ -69,7 +70,7 @@ $theme-only: false !default;
         
         & img {
             margin: 0;
-            border: 1px solid #ccc;
+            border: 1px solid $thumbnail--border-color;
         }
     }
 

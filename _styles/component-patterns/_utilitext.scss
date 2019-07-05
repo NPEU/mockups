@@ -1,5 +1,10 @@
 /*
     Utilitarian text and links. E.g. footer, login info, skiplinks
+    
+    Utilitext links are prime candidates to have icons as part of the links text.
+    However, the underline border doesn't work well with icons, so an additional span is used to
+    wrap the link text (not the icon) regardless of whether or not there is an icon, since we can't 
+    look inside elements with CSS.
 */
 
 $utilitext-namespace: c- !default;
@@ -13,7 +18,20 @@ $utilitext-namespace: c- !default;
         
             
         a[href] {
-            border-width: 1px;
+            border-width: 0;
+            padding: 0;
+            margin: 0;
+            
+            span {
+                border-width: 0 0 1px 0;
+                border-style: solid;
+                margin-bottom: -1px;
+                padding-bottom: 2px;
+            }
+        
+            &:hover span, &:active span, &:focus span {
+                border-style: dashed;   
+            }
         }
     }
     
@@ -82,7 +100,7 @@ $utilitext-namespace: c- !default;
         }
         
         #{&}#{&}--pale a[href] {
-            &:hover, &:active, &:focus {
+            &:hover span, &:active span, &:focus span {
                 color: $f__base-text-color;      
             }
         }

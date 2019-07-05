@@ -928,7 +928,7 @@ Here a span is used instead, to help avoid any confusio (whole thing is a link, 
     </div>
 
     <div class="c-hero__message">
-        <h1>Hero message or statement. Word count should be around 8-12 words.</h1>
+        <p>Hero message or statement. Word count should be around 8-12 words.</p>
     </div>
 </div>
 
@@ -971,7 +971,7 @@ Here a span is used instead, to help avoid any confusio (whole thing is a link, 
     </div>
 
     <div class="c-hero__message">
-        <h1>Hero message or statement. Word count should be around 8-12 words.</h1>
+        <p>Long word for testing. Antidisestablishmentarianism.</p>
     </div>
 </div>
 
@@ -1165,6 +1165,70 @@ leafletMapInitialize(&apos;test_map&apos;, {&quot;lat&quot;:51.75161383900000089
 
 
 <hr>
+<h2 class="u-padding--sides" id="search-form">Search Form</h2>
+
+<div class="u-padding--s  u-space--below">
+    <form action="/neoclear/search" id="searchform" method="GET">
+        <input type="hidden" value="&amp;t[]=4463" name="Search">
+        <span class="composite">
+            <input type="search" class="search-form__field" id="search" placeholder="Search" name="q" value="" aria-label="Search">
+            <button class="search-form__submit" type="submit">
+                <span>Search</span>
+            </button>
+        </span>
+    </form>
+</div>
+
+<div class="u-padding--s">
+    <details class="u-padding--s  d-background--light">
+        <summary>Show code:</summary>
+<pre><code class="html"></code>&lt;form action=&quot;/neoclear/search&quot; id=&quot;searchform&quot; method=&quot;GET&quot;&gt;
+    &lt;input type=&quot;hidden&quot; value=&quot;&amp;amp;t[]=4463&quot; name=&quot;Search&quot;&gt;
+    &lt;span class=&quot;composite&quot;&gt;
+        &lt;input type=&quot;search&quot; class=&quot;search-form__field&quot; id=&quot;search&quot; placeholder=&quot;Search&quot; name=&quot;q&quot; value=&quot;&quot; aria-label=&quot;Search&quot;&gt;
+        &lt;button class=&quot;search-form__submit&quot; type=&quot;submit&quot;&gt;
+            &lt;span&gt;Search&lt;/span&gt;
+        &lt;/button&gt;
+    &lt;/span&gt;
+&lt;/form&gt;</code></pre>
+    </details>
+</div>
+
+<h3 class="u-padding--sides">Boxed form:</h3>
+
+<p class="u-padding--sides">Also illustrating expandable input.</p>
+
+<div class="u-padding--s  u-space--below">
+    <form action="/neoclear/search" id="searchform" class="c-panel  t-neoclear  d-bands" method="GET">
+        <input type="hidden" value="&amp;t[]=4463" name="Search">
+        <span class="composite  u-fill-width">
+            <input type="search" class="search-form__field  u-expand-width" id="search" placeholder="Search" name="q" value="" aria-label="Search">
+            <button class="search-form__submit" type="submit">
+                <span>Search</span>
+            </button>
+        </span>
+    </form>
+</div>
+
+<div class="u-padding--s">
+    <details class="u-padding--s  d-background--light">
+        <summary>Show code:</summary>
+<pre><code class="html"></code>&lt;form action=&quot;/neoclear/search&quot; id=&quot;searchform&quot; <b>class=&quot;c-panel  t-neoclear  d-bands&quot;</b> method=&quot;GET&quot;&gt;
+    &lt;input type=&quot;hidden&quot; value=&quot;&amp;amp;t[]=4463&quot; name=&quot;Search&quot;&gt;
+    &lt;span class=&quot;composite  <b>u-fill-width</b>&quot;&gt;
+        &lt;input type=&quot;search&quot; class=&quot;search-form__field  <b>u-expand-width</b>&quot; id=&quot;search&quot; placeholder=&quot;Search&quot; name=&quot;q&quot; value=&quot;&quot; aria-label=&quot;Search&quot;&gt;
+        &lt;button class=&quot;search-form__submit&quot; type=&quot;submit&quot;&gt;
+            &lt;span&gt;Search&lt;/span&gt;
+        &lt;/button&gt;
+    &lt;/span&gt;
+&lt;/form&gt;</code></pre>
+    </details>
+</div>
+
+
+
+
+<hr>
 <h2 class="u-padding--sides" id="signs">Signs</h2>
 
 <p class="u-padding--sides">This pattern is intended to be show on a landing. It should used sparingly, or it's impact will be lost.</p>
@@ -1305,7 +1369,7 @@ leafletMapInitialize(&apos;test_map&apos;, {&quot;lat&quot;:51.75161383900000089
 
 <div class="u-padding--sides  u-space--below">
     <p class="c-utilitext">
-        <a href="/user-profile">Logged in as stargazer (view profile)</a> | <a href="/logout">Logout</a> | <a href="/administrator">Admin</a> | <a href="https://intranet.npeu.ox.ac.uk">Staff Area</a>
+        <a href="/user-profile"><span>Logged in as stargazer (view profile)</span></a> | <a href="/logout"><span>Logout</span></a> | <a href="/administrator"><span>Admin</span></a> | <a href="https://intranet.npeu.ox.ac.uk"><span>Staff Area</span></a> | <a href="#" class="u-padding--right--s"><span>Edit page</span><svg display="none" class="icon  u-space--left--xs" aria-hidden="true"><use xlink:href="#icon-edit"></use></svg></a>
     </p>
 </div>
 
@@ -1313,9 +1377,9 @@ leafletMapInitialize(&apos;test_map&apos;, {&quot;lat&quot;:51.75161383900000089
 
 <div class="u-padding--sides  u-space--below">
     <ul class="c-utilitext">
-        <li><a href="/">Home</a></li>
-        <li><a href="/contact">Contact Us</a></li>
-        <li><a href="#top">Top</a></li>
+        <li><a href="/"><span>Home</span></a></li>
+        <li><a href="/contact"><span>Contact Us</span></a></li>
+        <li><a href="#top"><span>Top</span></a></li>
     </ul>
 </div>
 
@@ -1323,9 +1387,9 @@ leafletMapInitialize(&apos;test_map&apos;, {&quot;lat&quot;:51.75161383900000089
 
 <div class="u-padding--sides  u-space--below">
     <ul class="c-utilitext  c-utilitext--skiplinks">
-        <li><a href="#main">Skip to content</a></li>
-        <li><a href="#primary-nav">Skip to navigation</a></li>
-        <li><a href="#page-footer">Skip to footer</a></li>
+        <li><a href="#main"><span>Skip to content</span></a></li>
+        <li><a href="#primary-nav"><span>Skip to navigation</span></a></li>
+        <li><a href="#page-footer"><span>Skip to footer</span></a></li>
     </ul>
 </div>
 
@@ -1333,7 +1397,7 @@ leafletMapInitialize(&apos;test_map&apos;, {&quot;lat&quot;:51.75161383900000089
 
 <div class="u-padding--sides  u-space--below">
     <p class="c-utilitext  c-utilitext--pale">
-        <a href="/user-profile">Logged in as stargazer (view profile)</a> | <a href="/logout">Logout</a> | <a href="/administrator">Admin</a> | <a href="https://intranet.npeu.ox.ac.uk">Staff Area</a>
+        <a href="/user-profile"><span>Logged in as stargazer (view profile)</span></a> | <a href="/logout"><span>Logout</span></a> | <a href="/administrator"><span>Admin</span></a> | <a href="https://intranet.npeu.ox.ac.uk"><span>Staff Area</span></a> | <a href="#" class="u-padding--right--s"><span>Edit page</span><svg display="none" class="icon  u-space--left--xs" aria-hidden="true"><use xlink:href="#icon-edit"></use></svg></a>
     </p>
 </div>
 
@@ -1341,7 +1405,7 @@ leafletMapInitialize(&apos;test_map&apos;, {&quot;lat&quot;:51.75161383900000089
 
 <div class="u-padding--sides  u-space--below">
     <p class="c-utilitext  c-utilitext--smaller">
-        <a href="/user-profile">Logged in as stargazer (view profile)</a> | <a href="/logout">Logout</a> | <a href="/administrator">Admin</a> | <a href="https://intranet.npeu.ox.ac.uk">Staff Area</a>
+        <a href="/user-profile"><span>Logged in as stargazer (view profile)</span></a> | <a href="/logout"><span>Logout</span></a> | <a href="/administrator"><span>Admin</span></a> | <a href="https://intranet.npeu.ox.ac.uk"><span>Staff Area</span></a> | <a href="#" class="u-padding--right--s"><span>Edit page</span><svg display="none" class="icon  u-space--left--xs" aria-hidden="true"><use xlink:href="#icon-edit"></use></svg></a>
     </p>
 </div>
 

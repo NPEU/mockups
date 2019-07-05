@@ -1,0 +1,10 @@
+/*
+*/
+
+$expand-width-namespace: u- !default;
+
+.#{$expand-width-namespace}expand-width {
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+            flex-grow: 1;
+}

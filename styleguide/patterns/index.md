@@ -8,4 +8,5 @@ project_base_url: styleguide
 * [Decoration](decoration)
 * [Layout](layout)
 * [Navigation](navigation)
+* [User](user)
 * [Utility](utility)
