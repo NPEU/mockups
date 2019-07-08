@@ -77,7 +77,7 @@ $theme: map-merge(
 // Override StartCSS values.
 // Note this almost certainly isn't the best place for this but will do for now.
 /*.#{$theme-namespace}#{$theme-name}.t-color {
-    color: map-get($theme, text-color);
+    color: #fff;
 }*/
 
 
@@ -259,13 +259,13 @@ table.#{$theme-namespace}#{$theme-name} tr:nth-child(odd) > th,
 .#{$theme-namespace}#{$theme-name} a[href] {
 
     border-color: map-get($theme, border-color);
-    color: map-get($theme, text-color);
+    color: #fff;
     background-color: map-get($theme, background-color);
 
     &:hover,
     &:active,
     &:focus {
-        color: map-get($theme, text-color);
+        color: #fff;
     }
 }
 */
@@ -273,7 +273,7 @@ table.#{$theme-namespace}#{$theme-name} tr:nth-child(odd) > th,
 :not(.overpanel) .#{$theme-namespace}#{$theme-name} a[href].cta {
 
     border-color: map-get($theme, border-color);
-    color: map-get($theme, text-color);
+    color: #fff;
     background-color: transparent;
     //background-color: map-get($theme, background-color);
     content: "#{$theme-name}";
@@ -308,14 +308,6 @@ table.#{$theme-namespace}#{$theme-name} tr:nth-child(odd) > th,
 }
 */
 
-// User Content:
-.#{$theme-namespace}#{$theme-name}
-img[src*="/img/avatars/"] {
-    border-color: map-get($theme, primary-color) !important;
-}
-
-
-
 // Alternate colours:
 @if map-has-key($theme, "secondary-color") {
     //@debug map-get($theme, secondary-color);
@@ -331,7 +323,7 @@ img[src*="/img/avatars/"] {
     @include signs-theme(#{$theme-name}--alt, $theme);
 }
 
-
+$theme--normal: $theme;
 // Very light theme:
 
 $theme: map-merge(
@@ -343,7 +335,7 @@ $theme: map-merge(
         text-color            : #333
     )
 );
-
+$theme--very-light: $theme;
 @include panel-theme($theme-name, $theme, --very-light);
 
 
@@ -358,7 +350,7 @@ $theme: map-merge(
         text-color            : #333
     )
 );
-
+$theme--light: $theme;
 @include panel-theme($theme-name, $theme, --light);
 
 
@@ -373,7 +365,7 @@ $theme: map-merge(
         text-color            : #fff
     )
 );
-
+$theme--dark: $theme;
 @include panel-theme($theme-name, $theme, --dark);
 
 
@@ -387,6 +379,31 @@ $theme: map-merge(
         text-color            : #fff
     )
 );
-
+$theme--very-dark: $theme;
 @include panel-theme($theme-name, $theme, --very-dark);
 
+
+
+
+
+// User Content:
+.#{$theme-namespace}#{$theme-name} {
+
+    img[src*="/img/avatars/"] {
+        border-color: map-get($theme, primary-color) !important;
+    }
+
+    div[data-display-as="themed-box"] {
+		background: map-get($theme--normal, primary-color);
+       
+        a[href].cta:hover,
+        a[href].cta:active,
+        a[href].cta:focus {
+            @if f__color_light_or_dark(map-get($theme, primary-color)) == 'light' {
+                background-color: rgba(0,0,0,0.1);
+            } @else {
+                background-color: rgba(255,255,255,0.1);
+            }
+        }
+    }
+}
