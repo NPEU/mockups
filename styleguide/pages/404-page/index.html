@@ -4,26 +4,34 @@ title: 404 Page not found
 project_base_url: styleguide
 ---
 
-<p>Sorry, that page couldn't be found.</p>
-<p>You could try searching:</p>
+<div class="l-col-to-row-wrap  u-space--below">
+    <div class="l-col-to-row  l-col-to-row--gutter--large">
+        <div class="l-col-to-row__item  ff-width-100--40--50">
+        
+            <p>You could try searching:</p>
+            <form action="/neoclear/search" id="searchform" class="" method="GET">
+                <input type="hidden" value="&amp;t[]=4463" name="Search">
+                <span class="composite">
+                    <input type="search" class="search-form__field" id="search" placeholder="Search" name="q" value="" aria-label="Search">
+                    <button class="search-form__submit" type="submit">
+                        <span>Search</span>
+                    </button>
+                </span>
+            </form>
+            
+        </div>
+        <div class="l-col-to-row__item  ff-width-100--40--50">
 
-<form action="/neoclear/search" id="searchform" class="" method="GET">
-    <input type="hidden" value="&amp;t[]=4463" name="Search">
-    <span class="composite">
-        <input type="search" class="search-form__field" id="search" placeholder="Search" name="q" value="" size="40 aria-label="Search">
-        <button class="search-form__submit" type="submit">
-            <span>Search</span>
-        </button>
-    </span>
-</form>
+            <p>Or one of these links:</p>
+            <ul>
+                <li><a href="https://www.npeu.ox.ac.uk"><span>Home</span></a></li>
+                <li><a href="https://www.npeu.ox.ac.uk/ctu/trials"><span>CTU Trials Portfolio</span></a></li>
+                <li><a href="https://www.npeu.ox.ac.uk/sheer"><span>SHEER Portfolio</span></a></li>
+                <li><a href="https://www.npeu.ox.ac.uk/prumnhc"><span>PRU-MNHC</span></a></li>
+                <li><a href="https://www.npeu.ox.ac.uk/about"><span>About the NPEU</span></a></li>
+            </ul>
 
-<p>Or one of these links:</p>
-<ul>
-    <li><a href="https://www.npeu.ox.ac.uk"><span>Home</span></a></li>
-    <li><a href="https://www.npeu.ox.ac.uk/ctu/trials"><span>CTU Trials Portfolio</span></a></li>
-    <li><a href="https://www.npeu.ox.ac.uk/sheer"><span>SHEER Portfolio</span></a></li>
-    <li><a href="https://www.npeu.ox.ac.uk/prumnhc"><span>PRU-MNHC</span></a></li>
-    <li><a href="https://www.npeu.ox.ac.uk/about"><span>About the NPEU</span></a></li>
-</ul>
-
+        </div>
+    </div>
+</div>
 
