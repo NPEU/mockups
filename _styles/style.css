@@ -627,35 +627,12 @@ dfn {
     1. Either of these will make lists behave properly next to floated items.
        (https://paulbakaus.com/tutorials/css/block-formatting-contexts-and-lists)
        a. This causes problems with some decoration. E.g. if the last element in the list is a link,
-          bottom borders get cropped, so using b instead.
-       b. `flow-root` is the better option but support is low, so using table and flex fallbacks
-          instead (Edge breaks if flow-root is applied, even though it's meant to be ignored).
-       Hmmm -moz-box / flex is causing numbering to mess up (always 0) on FF8-50.
-    2. This is the only thing that works in early FF. However, width is content-width, not available
-       width so any 'boxy' decoration on the list might look weird.
-    3. This does a pretty good job of extending coverage:
-       Chrome 29+, Edge 14+ (unable to test earlier), FF48+
+           bottom borders get cropped, so using b instead.
 */
 dl {
   margin-bottom: 2.4rem;
   display: table;
-  /* 1b, 2 */
-  display: -webkit-box;
-  /* 1b, 3 */
-  -webkit-box-orient: vertical;
-  /* 1b, 3 */
-}
-
-/*
-    Extend support to IE10-11
-*/
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  ol {
-    display: -ms-flexbox;
-    /* 1b */
-    -ms-flex-direction: column;
-    /* 1b */
-  }
+  /* 1b */
 }
 
 /*-------------------------------------------------------------------------------------------------|
@@ -1271,13 +1248,14 @@ object {
        (https://paulbakaus.com/tutorials/css/block-formatting-contexts-and-lists)
        a. This causes problems with some decoration. E.g. if the last element in the list is a link,
           bottom borders get cropped, so using b instead.
-       b. `flow-root` is the better option but support is low, so using table and flex fallbacks
-          instead (Edge breaks if flow-root is applied, even though it's meant to be ignored).
+       b. `flow-root` is the better option but support is low, so using table and flex flbks
+          as well.
        Hmmm -moz-box / flex is causing numbering to mess up (always 0) on FF8-50.
     2. This is the only thing that works in early FF. However, width is content-width, not available
        width so any 'boxy' decoration on the list might look weird.
     3. This does a pretty good job of extending coverage:
-       Chrome 29+, Edge 14+ (unable to test earlier), FF48+
+       Chrome 29+, Edge 14+ (unable to test earlier)
+    4. Extend support to IE10-11
 */
 ol {
   margin-bottom: 2.4rem;
@@ -1287,18 +1265,12 @@ ol {
   /* 1b, 3 */
   -webkit-box-orient: vertical;
   /* 1b, 3 */
-}
-
-/*
-    Extend support to IE10-11
-*/
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  ol {
-    display: -ms-flexbox;
-    /* 1b */
-    -ms-flex-direction: column;
-    /* 1b */
-  }
+  display: -ms-flexbox;
+  /* 1b, 4 */
+  -ms-flex-direction: column;
+  /* 1b, 4 */
+  display: flow-root;
+  /* 1b */
 }
 
 /*-------------------------------------------------------------------------------------------------|
@@ -1820,34 +1792,14 @@ th {
        (https://paulbakaus.com/tutorials/css/block-formatting-contexts-and-lists)
        a. This causes problems with some decoration. E.g. if the last element in the list is a link,
           bottom borders get cropped, so using b instead.
-       b. `flow-root` is the better option but support is low, so using table and flex fallbacks
-          instead (Edge breaks if flow-root is applied, even though it's meant to be ignored).
-       Hmmm -moz-box / flex is causing numbering to mess up (always 0) on FF8-50.
-    2. This is the only thing that works in early FF. However, width is content-width, not available
-       width so any 'boxy' decoration on the list might look weird.
-    3. This does a pretty good job of extending coverage:
-       Chrome 29+, Edge 14+ (unable to test earlier), FF48+
+       b. `flow-root` is the better option but support is low, so using table-cell as well.
 */
 ul {
   margin-bottom: 2.4rem;
-  display: table;
-  /* 1b, 2 */
-  display: -webkit-box;
-  /* 1b, 3 */
-  -webkit-box-orient: vertical;
-  /* 1b, 3 */
-}
-
-/*
-    Extend support to IE10-11
-*/
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  ol {
-    display: -ms-flexbox;
-    /* 1b */
-    -ms-flex-direction: column;
-    /* 1b */
-  }
+  display: table-cell;
+  /* 1b */
+  display: flow-root;
+  /* 1b */
 }
 
 /*
@@ -2826,6 +2778,52 @@ _:-webkit-full-screen, _::-webkit-full-page-media, _:future, :root select[size="
     1. Safari 9.1 doesn't recognize 'auto' but I suspect others won't recognize 'initial', so
        keeping both for now.
 */
+blockquote {
+  border-top: 1px dotted #8e8279;
+  border-bottom: 1px dotted #8e8279;
+  background-color: #f4f3f2;
+  padding: 2.4rem 4.8rem;
+  padding-bottom: 0 !important;
+}
+
+blockquote::after {
+  content: "";
+  display: block;
+  height: 1px;
+  margin-top: calc(2.4rem - 1px);
+}
+
+blockquote p:before {
+  content: "“";
+  content: open-quote;
+}
+
+blockquote p:after {
+  content: "”";
+  content: close-quote;
+}
+
+blockquote p:after, blockquote p:before {
+  display: block;
+  font-family: times,serif;
+  font-size: 60px;
+  font-size: 6rem;
+  line-height: 0;
+  opacity: 0.7;
+}
+
+blockquote p:first-of-type:before {
+  float: left;
+  margin-left: -3.6rem;
+  margin-top: 2.2rem;
+}
+
+blockquote p:last-of-type:after {
+  display: inline-block;
+  position: relative;
+  top: 2.5rem;
+}
+
 /*
     Global sizes
 */
@@ -9654,6 +9652,7 @@ html.wireframe {
 .c-user-content [data-display-as~="themed-box"],
 .c-user-content [data-display-as~="notice-box"] {
   padding: 2.4rem;
+  margin-bottom: 2.4rem;
   padding-bottom: 0 !important;
   width: 100%;
 }

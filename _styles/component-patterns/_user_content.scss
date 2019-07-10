@@ -27,6 +27,8 @@ $theme-only: false !default;
         [data-display-as~="themed-box"],
         [data-display-as~="notice-box"] {
             padding: $panel--padding;
+            
+            margin-bottom: $sz-m;
         
             @include bottom-space-fix();
            
