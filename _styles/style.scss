@@ -45,11 +45,10 @@ blockquote {
     border-top: 1px dotted map-get(map-get($themes, neutral), primary-color);
     border-bottom: 1px dotted map-get(map-get($themes, neutral), primary-color);
     background-color: scale-color(map-get(map-get($themes, neutral), primary-color), $lightness: 90%);
-    
-    padding: $f__base-rem-space-unit $f__base-rem-space-unit * 2;
-        
-    @include bottom-space-fix();
 
+    padding: $f__base-rem-space-unit $f__base-rem-space-unit * 2;
+
+    @include bottom-space-fix();
 }
 
 blockquote p:before {
@@ -82,6 +81,8 @@ blockquote p:last-of-type:after {
     position: relative;
     top: 2.5rem;
 }
+
+
 
 @import "_sizes";
 
