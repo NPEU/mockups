@@ -1,6 +1,5 @@
 /* --| SETTINGS |-------------------------------------------------------------------------------- */
 
-
 //@import url('https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i|Nunito:400,700');
 //@import url("https://fonts.googleapis.com/css?family=Lato:300,700,900");
 //@import url('https://fonts.googleapis.com/css?family=Lato:300,300i|Nunito:400,700');
@@ -23,7 +22,7 @@ $f__main-padding: 0;
 $f__anchor-text-color: #333;
 
 // I shouldn't have to set this as the !default should allow a cascade.
-// Investigate why this is happeneing. I don't think it's a SASS problem as it seems to work in a
+// Investigate why this is happening. I don't think it's a SASS problem as it seems to work in a
 // reduced test-case (though to be fair this isn't using @import...)
 // https://codepen.io/akirk/pen/RmWKgy
 $f__anchor-text-color--alt: #333;
@@ -73,7 +72,7 @@ blockquote p:after, blockquote p:before {
 blockquote p:first-of-type:before {
     float: left;
     margin-left: -3.6rem;
-    margin-top: 2.2rem;
+    margin-top: 2.5rem;
 }
 
 blockquote p:last-of-type:after {

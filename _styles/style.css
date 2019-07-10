@@ -2863,7 +2863,7 @@ blockquote p:after, blockquote p:before {
 blockquote p:first-of-type:before {
   float: left;
   margin-left: -3.6rem;
-  margin-top: 2.2rem;
+  margin-top: 2.5rem;
 }
 
 blockquote p:last-of-type:after {
@@ -6912,6 +6912,9 @@ _:-ms-lang(x), .l-col-to-row__item  {
   -webkit-justify-content: space-around;
   -ms-flex-pack: distribute;
   justify-content: space-around;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
 }
 
 .l-distribute > *, .c-user-content [data-display-as~="blocks"] > * > * {
@@ -9754,6 +9757,12 @@ html.wireframe {
 .c-user-content [data-display-as~="notice-box"] a[href].cta:active,
 .c-user-content [data-display-as~="notice-box"] a[href].cta:focus {
   background-color: rgba(0, 0, 0, 0.1);
+}
+
+.c-user-content [data-display-as~="blocks"] > * > * {
+  -webkit-flex-basis: 15em;
+  flex-basis: 11.25em;
+  max-width: 15em;
 }
 
 .c-user-content img {

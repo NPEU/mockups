@@ -102,6 +102,10 @@ $theme-only: false !default;
             @extend .u-space--below;
             @extend .u-text-align--center;
             @extend .u-padding--sides--s;
+            
+            -webkit-flex-basis: 15em;
+                    flex-basis: 11.25em;
+                     max-width: 15em;
         }
 
 
