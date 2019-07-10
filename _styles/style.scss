@@ -308,6 +308,34 @@ $max-measure-limit: $f__measure;
         background-color : #8e8279
     ));
 */
+
+/*
+    Highlight :target-ed headings
+    Note I can't selected the whole section without it being wrapped in something, and I don't want
+    to mess around with that.
+*/
+main :target {
+       -moz-animation: target-fade 3s 1;
+    -webkit-animation: target-fade 3s 1;
+            animation: target-fade 3s 1;
+}
+
+$highlight-color: map-get(map-get($themes, neutral), primary-color);
+
+@-moz-keyframes target-fade {
+    0% { background-color: rgba($highlight-color,0.4); box-shadow: 0 0 0 1.2rem rgba($highlight-color,0.4); }
+    100% { background-color: rgba($highlight-color,0); box-shadow: 0 0 0 1.2rem rgba($highlight-color,0); }
+}
+
+@-webkit-keyframes target-fade {
+    0% { background-color: rgba($highlight-color,0.4); box-shadow: 0 0 0 1.2rem rgba($highlight-color,0.4); }
+    100% { background-color: rgba($highlight-color,0); box-shadow: 0 0 0 1.2rem rgba($highlight-color,0); }
+}
+
+@keyframes target-fade {
+    0% { background-color: rgba($highlight-color,0.4); box-shadow: 0 0 0 1.2rem rgba($highlight-color,0.4); }
+    100% { background-color: rgba($highlight-color,0); box-shadow: 0 0 0 1.2rem rgba($highlight-color,0); }
+}
 /* ---------------------------------------------------------------------------------------------- */
 
 
