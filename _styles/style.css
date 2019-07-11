@@ -2841,7 +2841,7 @@ blockquote::after {
   margin-top: calc(2.4rem - 1px);
 }
 
-blockquote :first-child:before, :last-child:after {
+blockquote :first-child:before, blockquote :last-child:after {
   display: block;
   font-family: times,serif;
   font-size: 60px;
