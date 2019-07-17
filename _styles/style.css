@@ -610,6 +610,10 @@ details {
   /* N: IE 10/11 */
 }
 
+details > * {
+  box-sizing: border-box;
+}
+
 /*-------------------------------------------------------------------------------------------------|
     Fall-Back Start-CSS Element: dfn
 |-------------------------------------------------------------------------------------------------*/
@@ -7955,7 +7959,7 @@ $pagination-button--border-color: darken($pagination--base-color, 20%) !default;
 
 /*
     Box spacing
-    
+
     @To Do: allow for responsive variations.
 */
 .u-space--left--auto {
@@ -8054,7 +8058,7 @@ $pagination-button--border-color: darken($pagination--base-color, 20%) !default;
   margin-top: 0 !important;
 }
 
-.u-space--bottom--none {
+.u-space--below--none {
   margin-bottom: 0 !important;
 }
 

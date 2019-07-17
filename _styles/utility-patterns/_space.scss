@@ -1,6 +1,6 @@
 /*
     Box spacing
-    
+
     @To Do: allow for responsive variations.
 */
 
@@ -108,9 +108,9 @@ $space-namespace: u- !default;
     margin-top: 0 !important;
 }
 
-.#{$space-namespace}space--bottom--none {
+.#{$space-namespace}space--below--none {
     margin-bottom: 0 !important;
-}    
+}
 
 .#{$space-namespace}space--left--none {
     margin-left: 0 !important;

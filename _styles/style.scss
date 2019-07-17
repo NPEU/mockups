@@ -10,7 +10,6 @@
 @import "_settings.scss";
 @import "_core_themes.scss";
 
-
 $experimental_checkradios: true;
 
 $f__html-background-color: darken(map-get(map-get($themes, neutral), primary-color), 20%);
