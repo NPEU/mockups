@@ -5436,10 +5436,6 @@ _:-ms-lang(x), .c-card.c-card {
 /*
 
 */
-.c-contact-list.c-contact-list, .c-user-content [data-contains~="contact-details"] {
-  min-width: 20em;
-}
-
 .c-contact-list.c-contact-list dt, .c-user-content [data-contains~="contact-details"] dt {
   display: none;
 }

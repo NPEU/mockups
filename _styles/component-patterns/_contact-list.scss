@@ -5,8 +5,6 @@
 $contact-list-namespace: c- !default;
 $theme-namespace: t- !default;
 
-$card-min-width: 20em !default;
-
 $theme-only: false !default;
 
 // Note - no theme yet!
@@ -17,8 +15,6 @@ $theme-only: false !default;
     // Second selector is for user editor area.
     .#{$contact-list-namespace}contact-list {
         &#{&} {
-            min-width: $card-min-width;
-        
             dt {
                 display: none;
             }
