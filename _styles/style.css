@@ -9995,7 +9995,7 @@ table[data-contains="numbers"] td {
   text-align: right;
 }
 
-details {
+.c-longform-content details {
   margin-bottom: 2rem;
   border-bottom: 1px solid #eee;
   padding: .5rem 0 .5rem 1.5rem;
