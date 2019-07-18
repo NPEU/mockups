@@ -14221,6 +14221,7 @@ L.marker.svgMarker = function(latlng, options) {
 
 function leafletMapInitialize(map_container_id, map_data, markers) {
     // @TODO: should check for SVG support before proceeding.
+
     markers = markers ? markers : null;
 
     var map_js_classname = 'js-map';
@@ -14300,6 +14301,7 @@ function leafletMapInitialize(map_container_id, map_data, markers) {
             if (typeof marker.popup == 'string') {
                 // Individual marker popup content;
                 svg_marker.bindPopup(marker.popup);
+
             }/* else if (typeof map_data.popuptemplate == 'string') {
                 // Global popup template present, check there's data:
                 if (typeof marker.popupdata == 'object') {
