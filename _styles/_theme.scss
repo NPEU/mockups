@@ -406,4 +406,12 @@ $theme--very-dark: $theme;
             }
         }
     }
+    
+    summary:focus {
+        @if f__color_light_or_dark(map-get($theme, primary-color)) == 'light' {
+            outline: 2px solid rgba(0,0,0,0.5);
+        } @else {
+            outline: 2px solid rgba(255,255,255,0.5);
+        }
+    }
 }

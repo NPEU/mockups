@@ -8733,6 +8733,10 @@ input:not([type]):focus,
   background-color: rgba(0, 0, 0, 0.1);
 }
 
+.t-white summary:focus {
+  outline: 2px solid rgba(0, 0, 0, 0.5);
+}
+
 /*
 Note - this won't work until SASS supports dynamic calling of mixins. It's close, but hasn't been
 merged yet. Hoping that will be done soon so I can change this.
@@ -9198,6 +9202,10 @@ input:not([type]):focus,
 .t-neutral div[data-display-as="themed-box"] a[href].cta:active,
 .t-neutral div[data-display-as="themed-box"] a[href].cta:focus {
   background-color: rgba(0, 0, 0, 0.1);
+}
+
+.t-neutral summary:focus {
+  outline: 2px solid rgba(0, 0, 0, 0.5);
 }
 
 .nav-bar {

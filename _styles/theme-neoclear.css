@@ -842,4 +842,8 @@ input:not([type]):focus,
   background-color: rgba(255, 255, 255, 0.1);
 }
 
+.t-neoclear summary:focus {
+  outline: 2px solid rgba(255, 255, 255, 0.5);
+}
+
 /* ---------------------------------------------------------------------------------------------- */
