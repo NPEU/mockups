@@ -185,6 +185,8 @@ table[data-contains="numbers"] {
     padding: .5rem 0 .5rem 1.5rem;
 }
 
+// Shouldn't this be in StartCSS?
+
 summary {
     cursor: pointer;
     margin-bottom: 1rem;
@@ -193,6 +195,8 @@ summary {
 }
 
 
+// This is for the details polyfill - I removed the styles there so adding esssential back here.
+// May move this to StartCSS
 
 details:not([open]) > *:not(summary) {
     display: none;
