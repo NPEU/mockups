@@ -24,5 +24,18 @@ $longform-content-max-width: 42em !default;
                 margin-bottom: calc(#{$f__base-rem-space-unit} - 1px);
             }*/
         }
+        
+        
+         details {
+            margin-bottom: $sz-m;
+            border-bottom: 1px solid #eee;
+            padding: $sz-xs 0 $sz-xs $sz-m;
+        }
+
+        summary {
+            margin-bottom: $sz-m;
+            font-weight: bold;
+        }
+
     }
 }

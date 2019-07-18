@@ -5911,6 +5911,17 @@ $glimpse--link-border-bottom--hover: false !default;*/
             }*/
 }
 
+.c-longform-content details {
+  margin-bottom: 2.4rem;
+  border-bottom: 1px solid #eee;
+  padding: 0.6rem 0 0.6rem 2.4rem;
+}
+
+.c-longform-content summary {
+  margin-bottom: 2.4rem;
+  font-weight: bold;
+}
+
 .c-page-header {
   /*&.c-page-header {
             background-color: #fff;
@@ -10003,17 +10014,8 @@ table[data-contains="numbers"] td {
   text-align: right;
 }
 
-.c-longform-content details {
-  margin-bottom: 2rem;
-  border-bottom: 1px solid #eee;
-  padding: .5rem 0 .5rem 1.5rem;
-}
-
-summary {
-  cursor: pointer;
-  margin-bottom: 1rem;
-  margin-left: -1.5rem;
-  font-weight: 700;
+summary + * {
+  margin-top: 2.4rem;
 }
 
 details:not([open]) > *:not(summary) {
