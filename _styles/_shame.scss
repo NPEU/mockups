@@ -191,3 +191,9 @@ summary {
     margin-left: -1.5rem;
     font-weight: 700;
 }
+
+
+
+details:not([open]) > *:not(summary) {
+    display: none;
+}
