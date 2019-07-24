@@ -141,10 +141,10 @@ $theme-only: false !default;
             &::after {
                 content: "";
                 display: block;
-                -webkit-flex: 1 0 auto;
-                    -ms-flex: 1 0 auto;
-                        flex: 1 0 auto;
-                @include ff-width(0, 30em, $sz-m);
+                -webkit-flex: 0 0 auto;
+                    -ms-flex: 0 0 auto;
+                        flex: 0 0 auto;
+                @include ff-width($sz-m, 40vw, 0);
             }
         }
         

@@ -9768,12 +9768,12 @@ html.wireframe {
 .c-user-content [data-display-is~="pulled-right"]::after {
   content: "";
   display: block;
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
-  flex: 1 0 auto;
-  max-width: 0;
-  width: calc((30em - 100%) * 1000);
-  min-width: 2.4rem;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  max-width: 2.4rem;
+  width: calc((40vw - 100%) * 1000);
+  min-width: 0;
 }
 
 .c-user-content [data-display-is~="pulled-left"] {
