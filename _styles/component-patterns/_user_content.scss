@@ -18,6 +18,22 @@ $theme-only: false !default;
         [data-contains~="contact-details"] {
             @extend .c-contact-list;
         }
+        
+        [data-display-is~="width-one-quarter"] + [data-contains~="contact-details"] {
+            @include ff-width(100%, 30em, 75%);
+        }
+        
+        [data-display-is~="width-one-third"] + [data-contains~="contact-details"] {
+            @include ff-width(100%, 30em, 67%);
+        }
+        
+        [data-display-is~="width-one-half"] + [data-contains~="contact-details"] {
+            @include ff-width(100%, 30em, 50%);
+        }
+        
+        [data-display-is~="width-two-thirds"] + [data-contains~="contact-details"] {
+            @include ff-width(100%, 30em, 33%);
+        }
 
 
         // For theme-specific settings, see _themes.scss
@@ -107,6 +123,62 @@ $theme-only: false !default;
                     flex-basis: 11.25em;
                      max-width: 15em;
         }
+        
+        
+        
+        [data-display-is~="pulled-left"],
+        [data-display-is~="pulled-right"] {
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-justify-content: center;
+                      -ms-flex-pack: center;
+                    justify-content: center;
+                    
+            // We want some space on the right, but not when narrow screens effectively tunr the 
+            // floting off:
+            &::before,
+            &::after {
+                content: "";
+                display: block;
+                -webkit-flex: 1 0 auto;
+                    -ms-flex: 1 0 auto;
+                        flex: 1 0 auto;
+                @include ff-width(0, 30em, $sz-m);
+            }
+        }
+        
+        [data-display-is~="pulled-left"] {
+            float: left;
+            
+            &::before {
+                display: none;
+            }
+        }
+        
+        [data-display-is~="pulled-right"] {
+            float: right;
+
+            &::after {
+                display: none;
+            }
+        }
+        
+        [data-display-is~="width-one-quarter"] {
+            @include ff-width(100%, 30em, 25%);
+        }
+        
+        [data-display-is~="width-one-third"] {
+            @include ff-width(100%, 30em, 33%);
+        }
+        
+        [data-display-is~="width-one-half"] {
+            @include ff-width(100%, 30em, 50%);
+        }
+        
+        [data-display-is~="width-two-thirds"] {
+            @include ff-width(100%, 30em, 67%);
+        }
 
 
 
@@ -129,7 +201,7 @@ $theme-only: false !default;
 
         b > img,
         b > i > img {
-            border: 1px solid lighten(map-get(map-get($themes, neutral), primary-color), 10%);
+            border: 3px solid lighten(map-get(map-get($themes, neutral), primary-color), 10%);
         }
 
         b > i > img {
@@ -139,8 +211,17 @@ $theme-only: false !default;
 
         // Avatar / portrait:
         img[src*="/img/avatars/"] {
-            @extend .c-contact-avatar;
-            @extend .d-bands;
+            display: block;
+            width: 100%;
+            max-width: 16em;
+            margin: 0 auto;
+            
+            border-radius: 99999px;
+            overflow: hidden;
+            
+            
+            //@extend .c-contact-avatar;
+            //@extend .d-bands;
         }
         
         // Text content:

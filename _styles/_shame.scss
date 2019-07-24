@@ -1,5 +1,16 @@
 // Hmmm. THere's way too much in here already. Needs sorting.
 
+// StartCSS turns off max-width for images with a width or height attribute.
+// I can sort of imagine why I did that, but I dont' have a test case for it, and inline with
+// FallBack guideance, all images SHOULD have a height or width to make them sensible in no-CSS
+// situtaions. So, I'm not sure what to do about that, so just reverting the StartCSS rule here for
+// now:
+img[width],
+img[height] {
+    max-width: 100%;
+}
+
+
 // This is for the styleguide:
 
 /* IE9-11 */

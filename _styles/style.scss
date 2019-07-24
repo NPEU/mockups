@@ -192,15 +192,15 @@ $ff-min-widths: (
     80%
 ) !default;
 
-@import "../bower_components/NPEU-layout-patterns/dev/scss/_ff-widths.scss";
+@import "../bower_components/NPEU-layout-patterns/dist/scss/_ff-widths.scss";
 
-@import "../bower_components/NPEU-layout-patterns/dev/scss/_scl--pushed-apart.scss";
+@import "../bower_components/NPEU-layout-patterns/dist/scss/_scl--pushed-apart.scss";
 
-@import "../bower_components/NPEU-layout-patterns/dev/scss/_scl--n-up.scss";
+@import "../bower_components/NPEU-layout-patterns/dist/scss/_scl--n-up.scss";
 
 
 $gallery-grid-spacing-unit: $f__base-rem-space-unit;
-@import "../bower_components/NPEU-layout-patterns/dev/scss/_gallery-grid.scss";
+@import "../bower_components/NPEU-layout-patterns/dist/scss/_gallery-grid.scss";
 
 /* --| Themeable Patterns |---------------------------------------------------------------------- */
 $thumbnail--border-color: lighten(map-get(map-get($themes, neutral), primary-color), 10%);
