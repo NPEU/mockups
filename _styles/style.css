@@ -6044,11 +6044,18 @@ $glimpse--link-border-bottom--hover: false !default;*/
   margin-bottom: calc(2.4rem - 1px);
 }
 
-.c-panel--module {
+.c-panel__banner {
+  margin-top: -2.4rem;
+  margin-right: -2.4rem;
+  margin-bottom: 2.4rem;
+  margin-left: -2.4rem;
+}
+
+.c-panel__module {
   margin-bottom: 0;
 }
 
-.c-panel--module h2 {
+.c-panel__module h2 {
   font-size: 1.5em;
   margin-bottom: 0;
 }
@@ -6824,9 +6831,10 @@ _:-ms-lang(x), .l-col-to-row__item  {
   -webkit-justify-content: space-around;
   -ms-flex-pack: distribute;
   justify-content: space-around;
-  -webkit-align-items: flex-start;
-  -ms-flex-align: start;
-  align-items: flex-start;
+  /*-webkit-align-items: flex-start;             -ms-flex-align: start;                align-items: flex-start;*/
+  -webkit-align-items: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
 }
 
 .l-distribute > *, .c-user-content [data-display-as~="blocks"] > * > * {

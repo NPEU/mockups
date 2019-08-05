@@ -58,13 +58,14 @@ layout: structure--project
                 <div class="c-panel  c-longform-contentX">
 
                     {{ content }}
-
+                    {% if page.display_page_footer %}
                     <footer class="t-neutral  d-background--very-light  u-space--above  u-max-measure  u-padding--s">
                         <p class="c-utilitext  u-text-group  u-text-group--push-apart">
                             <span>Updated: Thursday, 09 May 2019 13:2 (v12)</span>
                             <a href="#"><span>Edit content</span></a>
                         </p>
                     </footer>
+                    {% endif %}
                 </div>
             </div>
             {% if page.has_pull_outs %}

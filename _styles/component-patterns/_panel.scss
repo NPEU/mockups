@@ -98,8 +98,14 @@ $theme-only: false !default;
                 margin-bottom: calc(#{$f__base-rem-space-unit} - 1px);
             }
         
+        &__banner {
+            margin-top: -$panel--padding;
+            margin-right: -$panel--padding;
+            margin-bottom: $panel--padding;
+            margin-left: -$panel--padding;
+        }
         
-        &--module {
+        &__module {
             margin-bottom:0;
             //margin-bottom: $f__base-rem-space-unit / 2;
             

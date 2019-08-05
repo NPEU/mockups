@@ -1,0 +1,500 @@
+{
+    "bradford":{
+        "site":"Bradford Teaching Hospitals",
+        "trust":"Bradford Teaching Hospitals NHS Foundation Trust",
+        "short_name":"Bradford",
+        "pi_name":"Sam Oddie",
+        "pi_title":"",
+        "pi_position":"Consultant Neonatologist",
+        "tel":"01274 542200",
+        "email":"Sam.Oddie@bthft.nhs.uk",
+        "address":"Neonatal Unit\nBradford Teaching Hospitals NHS Foundation Trust",
+        "lat":"53.806833",
+        "long":"-1.795329",
+        "type":"Recruiting Site",
+        "status":"Set-up",
+        "address_parts":{
+            "postcode":"BD9 6RJ",
+            "locality":"Bradford",
+            "address":[
+                "Maternal and Child Research Team - Ward M2",
+                "Women's and Newborn Unit",
+                "Bradford Royal Infirmary",
+                "Smith Lane"
+            ]
+        },
+        "nurse_name":"Jenny Eedle",
+        "nurse_tel":"01274 364506",
+        "nurse_email":"Jenny.Eedle@bthft.nhs.uk"
+    },
+    "east-lancs":{
+        "site":"Burnley General Teaching Hospital",
+        "trust":"East Lancashire Hospitals NHS Trust",
+        "short_name":"East Lancs",
+        "pi_name":"Catherina Schram",
+        "pi_title":"",
+        "pi_position":"Consultant Obstetrician",
+        "tel":"01254 732845",
+        "email":"Catharina.Schram@elht.nhs.uk",
+        "address":"Trust Headquarters\nLevel 2\nRoyal Blackburn Hospital\nHaslingden Road\nBlackburn\nBB2 3HH",
+        "lat":"53.809950",
+        "long":"-2.227799",
+        "type":"Recruiting Site",
+        "status":"Recruiting",
+        "address_parts":{
+            "postcode":"BB10 2PQ",
+            "locality":"Burnley",
+            "address":[
+                "Women & Children's Health Research Team",
+                "East Lancashire Hospital NHS Trust",
+                "Phase 5 - Area 7 - Level 1 - Room AD 1.09"
+            ]
+        },
+        "nurse_name":"Bev Hammond",
+        "nurse_tel":"01282 803081 / 07921 273404",
+        "nurse_email":"Bev.Hammond@elht.nhs.uk"
+    },
+    "darlington":{
+        "site":"Darlington Memorial Hospital",
+        "trust":"County Durham and Darlington NHS Foundation Trust",
+        "short_name":"Darlington",
+        "pi_name":"Mehdi Garbash",
+        "pi_title":"",
+        "pi_position":"Consultant Paediatrician",
+        "tel":"0191 333 2316",
+        "email":"",
+        "address":"c/o Treetops Ward\nUniversity Hospital Of North Durham\nNorth Road\nDurham\nDH1 5TW",
+        "lat":"54.530499",
+        "long":"-1.563717",
+        "type":"Recruiting Site",
+        "status":"Set-up",
+        "address_parts":{
+            "postcode":"DL3 6HX",
+            "locality":"Darlington",
+            "address":[
+                "Research & Development Directorate",
+                "Centre for Clinical Research and Innovation",
+                "5th Floor",
+                "Darlington Memorial Hospital",
+                "Hollyhurst Road"
+            ]
+        },
+        "nurse_name":"Jacqui Jennings",
+        "nurse_tel":"07825 365511",
+        "nurse_email":"jacquijennings@nhs.net"
+    },
+    "george-eliot":{
+        "site":"George Eliot Hospital, Nuneaton",
+        "trust":"George Eliot Hospital NHS Trust",
+        "short_name":"George Eliot",
+        "pi_name":"Muyiwa Oso",
+        "pi_title":"",
+        "pi_position":"Consultant Paediatrian",
+        "tel":"07416 540084",
+        "email":"Olumuyiwa.Oso@geh.nhs.uk",
+        "address":"",
+        "lat":"52.512902",
+        "long":"-1.476192",
+        "type":"Recruiting Site",
+        "status":"Recruiting",
+        "address_parts":{
+            "postcode":"CV10 7DJ",
+            "locality":"Nuneaton",
+            "address":[
+                "George Eliot Hospital NHS Trust",
+                "Research & Development Department",
+                "Room 88/126a, College Street"
+            ]
+        },
+        "nurse_name":"Karen Shorthose",
+        "nurse_tel":"02476 865358 / 02476 153592",
+        "nurse_email":"karen.shorthose@geh.nhs.uk"
+    },
+    "swindon":{
+        "site":"Great Western Hospital, Swindon",
+        "trust":"Great Western Hospitals NHS Foundation Trust",
+        "short_name":"Swindon",
+        "pi_name":"Sarah Bates",
+        "pi_title":"",
+        "pi_position":"Consultant Paediatrician & Neonatologist",
+        "tel":"01793 604959",
+        "email":"",
+        "address":"Great Western Hospitals NHS Foundation Trust\nMarlborough Road\nSwindon\nSN3 6BB",
+        "lat":"51.538343",
+        "long":"-1.726962",
+        "type":"Recruiting Site",
+        "status":"Recruiting",
+        "address_parts":{
+            "postcode":"SN3 6BB",
+            "locality":"Swindon",
+            "address":[
+                "Great Western Hospitals NHS Foundation Trust",
+                "Great Western Hospital",
+                "Marlborough Road"
+            ]
+        },
+        "nurse_name":"Research Team",
+        "nurse_tel":"01793 607451",
+        "nurse_email":"laura.mccafferty2@nhs.net"
+    },
+    "homerton":{
+        "site":"Homerton University Hospital",
+        "trust":"Homerton University Hospital NHS Foundation Trust",
+        "short_name":"Homerton",
+        "pi_name":"Philippa Cox",
+        "pi_title":"",
+        "pi_position":"Consultant Midwife",
+        "tel":"020 8510 7046",
+        "email":"philippacox1@nhs.net",
+        "address":"Surgery, Women's and Sexual Health Services\nHomerton University Hospital NHS Foundation Trust\nYellow Corridor Roof Offices\nHomerton Row\nLondon\nE9 6SR",
+        "lat":"51.550458",
+        "long":"-0.046416",
+        "type":"Recruiting Site",
+        "status":"Recruiting",
+        "address_parts":{
+            "postcode":"E9 6SR",
+            "locality":"London",
+            "address":[
+                "Homerton University Hospital NHS Foundation Trust",
+                "Homerton Row"
+            ]
+        },
+        "nurse_name":"Research Midwives Office",
+        "nurse_tel":"0208 510 7119",
+        "nurse_email":"Huh-tr.researchmidwives@nhs.net"
+    },
+    "leeds":{
+        "site":"Leeds Teaching Hospitals NHS Trust",
+        "trust":"Leeds Teaching Hospitals NHS Trust",
+        "short_name":"Leeds",
+        "pi_name":"Kathryn Johnson",
+        "pi_title":"",
+        "pi_position":"Consultant In Neonatal Medicine",
+        "tel":"0113 392 8537",
+        "email":"kathrynjohnson1@nhs.net",
+        "address":"D Floor, Martin Wing\nLeeds General Infirmary\nGreat George Street\nLeeds\nLS1 3EX",
+        "lat":"53.802890",
+        "long":"-1.552130",
+        "type":"Recruiting Site",
+        "status":"Set-up",
+        "address_parts":{
+            "postcode":"LS1 3EX",
+            "locality":"Leeds",
+            "address":[
+                "D Floor, Martin Wing",
+                "Leeds General Infirmary",
+                "Great George Street"
+            ]
+        },
+        "nurse_name":"Lindsay Uryn",
+        "nurse_tel":"0113 392 3644",
+        "nurse_email":"lindsay.uryn@nhs.net"
+    },
+    "norfolk":{
+        "site":"Norfolk and Norwich University Hospital",
+        "trust":"Norfolk and Norwich University Hospitals NHS Foundation Trust",
+        "short_name":"Norfolk",
+        "pi_name":"Ashish Minocha",
+        "pi_title":"",
+        "pi_position":"Consultant Paediatric and Neonatal Surgeon",
+        "tel":"01603 286356",
+        "email":"ASHISH.MINOCHA@nnuh.nhs.uk",
+        "address":"West Block, Level 3\nNorfolk and Norwich University Hospital NHS Foundation Trust\nColney Lane\nNorwich\nNorfolk\nNR4 7UY",
+        "lat":"52.616968",
+        "long":"1.220528",
+        "type":"Recruiting Site",
+        "status":"Recruiting",
+        "address_parts":{
+            "postcode":"NR4 7UY",
+            "locality":"Norfolk",
+            "address":[
+                "Clinical Research and Trials Unit",
+                "Room 24.3.049, Level 3, Centre Block",
+                "Norfolk and Norwich University Hospital NHS Foundation Trust",
+                "Colney Lane",
+                "Norwich"
+            ]
+        },
+        "nurse_name":"Louise Coke",
+        "nurse_tel":"01603 288530",
+        "nurse_email":"LouiseJ.Coke@nnuh.nhs.uk"
+    },
+    "portsmouth":{
+        "site":"Queen Alexandra Hospital, Portsmouth",
+        "trust":"Portsmouth Hospitals NHS Trust",
+        "short_name":"Portsmouth",
+        "pi_name":"Zoe Garner",
+        "pi_title":"",
+        "pi_position":"Local Research Midwife",
+        "tel":"02392 286000 (Ex:4378)",
+        "email":"zoe.garner@porthosp.nhs.uk",
+        "address":"Queen Alexandra Hospital\nB8 Labour Ward\nSouthwick Hill Road\nCosham\nPortsmouth\nPO6 3LY",
+        "lat":"50.850132",
+        "long":"-1.069577",
+        "type":"Recruiting Site",
+        "status":"Recruiting",
+        "address_parts":{
+            "postcode":"PO6 3LY",
+            "locality":"Portsmouth",
+            "address":[
+                "Queen Alexandra Hospital",
+                "B8 Labour Ward",
+                "Southwick Hill Road",
+                "Cosham"
+            ]
+        },
+        "nurse_name":"Zoe Garner",
+        "nurse_tel":"02392 286000 (Ex:4378)",
+        "nurse_email":"zoe.garner@porthosp.nhs.uk"
+    },
+    "wigan":{
+        "site":"Royal Albert and Edward Infirmary, Wigan",
+        "trust":"Wrightington, Wigan and Leigh NHS Foundation Trust",
+        "short_name":"Wigan",
+        "pi_name":"Steve Izzat",
+        "pi_title":"",
+        "pi_position":"Consultant ENT Surgeon",
+        "tel":"01942 822546",
+        "email":"Steve.Izzat@wwl.nhs.uk",
+        "address":"Wrightington, Wigan and Leigh NHS Foundation Trust\nThe Christopher Holme Building\nRoyal Albert and Edward Infirmary\nWigan Lane\nWigan\nWN1 2NN",
+        "lat":"53.558206",
+        "long":"-2.629942",
+        "type":"Recruiting Site",
+        "status":"Recruiting",
+        "address_parts":{
+            "postcode":"WN1 2NN",
+            "locality":"Wigan",
+            "address":[
+                "Wrightington, Wigan and Leigh NHS Foundation Trust",
+                "Research Office, The Hawthorns",
+                "Royal Albert and Edward Infirmary",
+                "Wigan Lane"
+            ]
+        },
+        "nurse_name":"Nicola Pemberton",
+        "nurse_tel":"01942 822605",
+        "nurse_email":"Nicola.J.Pemberton@wwl.nhs.uk"
+    },
+    "reading":{
+        "site":"Royal Berkshire Hospital, Reading",
+        "trust":"Royal Berkshire NHS Foundation Trust",
+        "short_name":"Reading",
+        "pi_name":"Fidelma Lee",
+        "pi_title":"",
+        "pi_position":"Research Midwife",
+        "tel":"0118 322 8652",
+        "email":"Fidelma.Lee@royalberkshire.nhs.uk",
+        "address":"Research Office\nBuscot Ward\nL6 Maternity Block\nRoyal Berkshire Hospital\nLondon Road\nReading\nRG1 5AN",
+        "lat":"51.449261",
+        "long":"-0.957834",
+        "type":"Recruiting Site",
+        "status":"Set-up",
+        "address_parts":{
+            "postcode":"RG1 5AN",
+            "locality":"Reading",
+            "address":[
+                "Infant Feeding Office",
+                "L4 Maternity Block",
+                "Royal Berkshire NHS Foundation Trust",
+                "London Road"
+            ]
+        },
+        "nurse_name":"Claire Carter",
+        "nurse_tel":"0118 322 8314",
+        "nurse_email":"Claire.Carter@royalberkshire.nhs.uk"
+    },
+    "cornwall":{
+        "site":"Royal Cornwall Hospital, Truro",
+        "trust":"Royal Cornwall Hospitals NHS Trust",
+        "short_name":"Cornwall",
+        "pi_name":"Katherine Lane",
+        "pi_title":"",
+        "pi_position":"Research Midwife",
+        "tel":"01872 255139",
+        "email":"rch-tr.ResearchMidwives@nhs.net",
+        "address":"Room B18\nKnowledge Spa\nRCHT Treliske\nTruro\nTR1 3LQ",
+        "lat":"50.266427",
+        "long":"-5.093110",
+        "type":"Recruiting Site",
+        "status":"Recruiting",
+        "address_parts":{
+            "postcode":"TR1 3LQ",
+            "locality":"Truro",
+            "address":[
+                "Room B18",
+                "Knowledge Spa",
+                "RCHT Treliske"
+            ]
+        },
+        "nurse_name":"Barbara Bromage",
+        "nurse_tel":"01872 255139",
+        "nurse_email":"rch-tr.PaediatricResearch@nhs.net"
+    },
+    "bath":{
+        "site":"Royal United Hospital, Bath",
+        "trust":"Royal United Hospitals Bath NHS Foundation Trust",
+        "short_name":"Bath",
+        "pi_name":"Mel Rich",
+        "pi_title":"",
+        "pi_position":"Research Midwife",
+        "tel":"01225 826174",
+        "email":"melodyrich@nhs.net",
+        "address":"Royal United Hospitals Bath NHS Foundation Trust\nObstetric / Anaesthetic Research Office\nMaternity Services\nMary Ward - Dept D10\nCombe Park\nBath\nBA1 3NG",
+        "lat":"51.391994",
+        "long":"-2.390236",
+        "type":"Recruiting Site",
+        "status":"Recruiting",
+        "address_parts":{
+            "postcode":"BA1 3NG",
+            "locality":"Bath",
+            "address":[
+                "Royal United Hospitals Bath NHS Foundation Trust",
+                "Obstetric / Anaesthetic Research Office",
+                "Maternity Services",
+                "Mary Ward - Dept D10",
+                "Combe Park"
+            ]
+        },
+        "nurse_name":"Mel Rich",
+        "nurse_tel":"01225 826174",
+        "nurse_email":"melodyrich@nhs.net"
+    },
+    "newcastle":{
+        "site":"Royal Victoria Infirmary, Newcastle",
+        "trust":"Newcastle Upon Tyne NHS Foundation Trust",
+        "short_name":"Newcastle",
+        "pi_name":"Paul Ayuk",
+        "pi_title":"",
+        "pi_position":"Consultant Obstetrician",
+        "tel":"0191 282 5860",
+        "email":"Paul.Ayuk@nuth.nhs.uk",
+        "address":"Women's Services\nLeazes Wing\nRoyal Victoria Infirmary\nNewcastle\nNE1 4LP",
+        "lat":"54.980464",
+        "long":"-1.619783",
+        "type":"Recruiting Site",
+        "status":"Recruiting",
+        "address_parts":{
+            "postcode":"NE1 4LP",
+            "locality":"Newcastle",
+            "address":[
+                "CRF Reproductive Health and Neonates",
+                "Clinical Research Facility Directorate",
+                "Leazes Wing",
+                "Royal Victoria Infirmary"
+            ]
+        },
+        "nurse_name":"Andrea Fenn",
+        "nurse_tel":"0191 282 0362",
+        "nurse_email":"Andrea.Fenn@nuth.nhs.uk"
+    },
+    "sunderland":{
+        "site":"Sunderland Royal Hospital",
+        "trust":"South Tyneside and Sunderland NHS Foundation Trust",
+        "short_name":"Sunderland",
+        "pi_name":"Lesley Hewitt",
+        "pi_title":"",
+        "pi_position":"Research Midwife",
+        "tel":"0191 541 0051",
+        "email":"",
+        "address":"Research Midwives\nD Floor\nSunderland Royal Hospital\nKayll Road\nSunderland\nSR4 7TP",
+        "lat":"54.902720",
+        "long":"-1.408160",
+        "type":"Recruiting Site",
+        "status":"Set-up",
+        "address_parts":{
+            "postcode":"SR4 7TP",
+            "locality":"Sunderland",
+            "address":[
+                "D Floor",
+                "Sunderland Royal Hospital",
+                "Kayll Road"
+            ]
+        },
+        "nurse_name":"Research Midwives",
+        "nurse_tel":"0191 541 0051",
+        "nurse_email":"researchmidwives@chsft.nhs.uk"
+    },
+    "cumbria":{
+        "site":"The Cumberland Infirmary, Carlisle",
+        "trust":"North Cumbria University Hospitals NHS Trust",
+        "short_name":"Cumbria",
+        "pi_name":"John Elliott",
+        "pi_title":"",
+        "pi_position":"",
+        "tel":"01228 814226",
+        "email":"john.elliott@ncuh.nhs.uk",
+        "address":"Oral Surgery\nThe Cumberland Infirmary\nNewtown Road\nCarlisle\nCumbria\nCA2 7HY",
+        "lat":"54.897323",
+        "long":"-2.953275",
+        "type":"Recruiting Site",
+        "status":"Recruiting",
+        "address_parts":{
+            "postcode":"CA2 7HY",
+            "locality":"Cumbria",
+            "address":[
+                "RM/RN Research",
+                "EC124 James George Education Centre",
+                "The Cumberland Infirmary",
+                "Infirmary Street",
+                "Carlisle"
+            ]
+        },
+        "nurse_name":"Rachel Hardy",
+        "nurse_tel":"01228 814697",
+        "nurse_email":"rachel.hardy@ncuh.nhs.uk"
+    },
+    "durham":{
+        "site":"University Hospital of North Durham",
+        "trust":"County Durham and Darlington NHS Foundation Trust",
+        "short_name":"Durham",
+        "pi_name":"Mehdi Garbash",
+        "pi_title":"",
+        "pi_position":"Consultant Paediatrician",
+        "tel":"0191 333 2316",
+        "email":"",
+        "address":"c/o Treetops Ward\nUniversity Hospital Of North Durham\nNorth Road\nDurham\nDH1 5TW",
+        "lat":"54.788663",
+        "long":"-1.592539",
+        "type":"Recruiting Site",
+        "status":"Set-up",
+        "address_parts":{
+            "postcode":"DH1 5TW",
+            "locality":"Durham",
+            "address":[
+                "Research office in Old Trust HQ",
+                "University Hospital of North Durham",
+                "County Durham & Darlington Foundation Trust"
+            ]
+        },
+        "nurse_name":"Vicki Atkinson",
+        "nurse_tel":"07825 227599",
+        "nurse_email":"vickiatkinson@nhs.net"
+    },
+    "west-herts":{
+        "site":"West Hertfordshire Hospitals NHS Trust",
+        "trust":"West Hertfordshire Hospitals NHS Trust",
+        "short_name":"West Herts",
+        "pi_name":"Debra Abbas / Benedicta Agbagwara-Osuji",
+        "pi_title":"",
+        "pi_position":"Infant Feeding Lead Midwife / Consultant Midwife",
+        "tel":"07391 680178",
+        "email":"wherts-tr.westhertsinfantfeeding@nhs.net",
+        "address":"Katherine Ward Office\nWatford General Hospital\nVicarage Road\nWatford\nWD18 0HB",
+        "lat":"51.648635",
+        "long":"-0.403135",
+        "type":"Recruiting Site",
+        "status":"Set-up",
+        "address_parts":{
+            "postcode":"WD18 0HB",
+            "locality":"Watford",
+            "address":[
+                "Katherine Ward Office",
+                "Watford General Hospital",
+                "Vicarage Road"
+            ]
+        },
+        "nurse_name":"David Roberts",
+        "nurse_tel":"",
+        "nurse_email":"David.Roberts@whht.nhs.uk"
+    }
+}

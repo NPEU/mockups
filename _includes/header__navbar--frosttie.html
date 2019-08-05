@@ -40,7 +40,7 @@
                                             <ul class="subnav__items  subnav__items--stacked--only-wide  {{ project_data.theme_class }}">
                                                 <li class="subnav__item"><a href="/frosttie/clinicians/training" class="subnav__link" data-js="dropdown__focus-start"><span>Training</span></a></li>
                                                 <li class="subnav__item"><a href="/frosttie/clinicians/guidance-sheets" class="subnav__link"><span>Guidance Sheets</span></a></li>
-                                                <li class="subnav__item"><a href="/frosttie/clinicians/data-collection-forms" class="subnav__link"><span>Data Collection Forms</span></a></li>
+                                                <li class="subnav__item"><a href="/frosttie/clinicians/staff-newsletters" class="subnav__link"><span>Staff Newsletters</span></a></li>
                                                 <li class="subnav__item"><a href="/frosttie/clinicians/faqs" class="subnav__link"><span>FAQ's</span></a></li>
                                             </ul>
                                         </div>
@@ -64,9 +64,9 @@
 
                                 {% capture url %}/{{ page.project }}/updates/{% endcapture %}
                                 {% if page.url == url %}
-                                <li class="nav-bar__item  nav-bar__item--current"><a href="#main" class="nav-bar__link"><span>Updates</span></a></li>
+                                <li class="nav-bar__item  nav-bar__item--current"><a href="#main" class="nav-bar__link"><span>What's New</span></a></li>
                                 {% else %}
-                                <li class="nav-bar__item"><a href="{{ url }}" class="nav-bar__link"><span>Updates</span></a></li>
+                                <li class="nav-bar__item"><a href="{{ url }}" class="nav-bar__link"><span>What's New</span></a></li>
                                 {% endif %}
                                 
                                 {% capture url %}/{{ page.project }}/contact/{% endcapture %}
