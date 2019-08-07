@@ -78,6 +78,8 @@ $hero-max-message-breakpoint: 100rem;
 $hero-max-message-size: 32px !default;
 @import "component-patterns/_hero.scss";
 
+@import "component-patterns/_info-overlay.scss";
+
 $longform-content-max-width: $f__measure;
 @import "component-patterns/_longform-content.scss";
 

@@ -48,18 +48,23 @@ layout: structure
         <div id="hero" class="c-hero{% if page.hero_message_reversed %}  c-hero--reversed{% endif %}  d-bands--bottom  {{ project_data.theme_class }}">
             <div class="c-hero__image">
                 <div class="l-proportional-container  l-proportional-container--3-1  l-proportional-container--5-1--wide">
-                    <div class="l-proportional-container__content">
+                    <div class="l-proportional-container__content{% if page.hero_credit %}  c-info-overlay-wrap{% endif %}">
                         <div class="u-image-cover  js-image-cover">
                             <div class="u-image-cover__inner">
                                 <img class="u-image-cover__image" src="{{ page.hero_image }}" width="600" alt="">
                             </div>
                         </div>
                     </div>
+                    {% if page.hero_credit %}
+                    <div class="c-info-overlay  c-info-overlay--bl">
+                        <p>Credit: {{ page.hero_credit }}</p>
+                    </div>
+                    {% endif %}
                 </div>
             </div>
             {% if page.hero_message %}
             <div class="c-hero__message">
-                <p><b>{{ page.hero_message }}</b></h1>
+                <p><b>{{ page.hero_message }}</b></p>
             </div>
             {% endif %}
         </div>

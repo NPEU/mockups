@@ -16,13 +16,13 @@ $map-heights: (
 // We don't need this if we're only themeing the pattern:
 @if $theme-only == false {
 
-    
+
     //@each $height in $map-heights {
     //    .#{$map-namespace}map__static {
     //        min-height: #{$height}px;
     //    }
     //}
-    
+
 
     .#{$js-map-namespace}map {
 
@@ -40,7 +40,7 @@ $map-heights: (
                 width: 100%;
                 height: 100%;
             }
-            
+
             @each $height in $map-heights {
                 .#{$map-namespace}map--#{$height} > * {
                     min-height: #{$height}px;
@@ -72,9 +72,9 @@ $map-heights: (
                     background-color: #f4f4f4;
                 }
             }
-            
-            .#{$map-namespace}map .leaflet-control-zoom.leaflet-bar.leaflet-control {
+
+            /*.#{$map-namespace}map .leaflet-control-zoom.leaflet-bar.leaflet-control {
                 padding-bottom: 2px;
-            }
+            }*/
     }
 }

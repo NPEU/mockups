@@ -1,0 +1,61 @@
+/*
+*/
+$info-overlay-namespace: c- !default;
+$theme-namespace: t- !default;
+
+
+$info-overlay-breakpoint: 40rem !default;
+$info-overlay-max-message-breakpoint: 100rem !default;
+$info-overlay-min-message-size: 20px !default;
+$info-overlay-max-message-size: 52px !default;
+
+$theme-only: false !default;
+
+// Note - no theme yet!
+
+// We don't need this if we're only themeing the pattern:
+@if $theme-only == false {
+
+    .#{$info-overlay-namespace}info-overlay-wrap {
+        position: relative;
+    }
+
+    .#{$info-overlay-namespace}info-overlay {
+        &#{&} {
+            position: absolute;
+            font-size: 0.75em;
+            color: #fff;
+            background: rgba(0,0,0,0.6);
+            padding: 0 $sz-xs;
+            margin: 0;
+        }
+
+        * {
+            margin: 0;
+        }
+
+        &--full-width {
+            width: 100%;
+        }
+
+        &--tl {
+            top: 0;
+            left: 0;
+        }
+
+        &--tr {
+            top: 0;
+            right: 0;
+        }
+
+        &--bl {
+            bottom: 0;
+            left: 0;
+        }
+
+        &--br {
+            bottom: 0;
+            right: 0;
+        }
+    }
+}

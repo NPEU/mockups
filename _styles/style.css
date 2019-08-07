@@ -5808,6 +5808,49 @@ $glimpse--link-border-bottom--hover: false !default;*/
 
 /*
 */
+.c-info-overlay-wrap {
+  position: relative;
+}
+
+.c-info-overlay.c-info-overlay {
+  position: absolute;
+  font-size: 0.75em;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 0 0.6rem;
+  margin: 0;
+}
+
+.c-info-overlay * {
+  margin: 0;
+}
+
+.c-info-overlay--full-width {
+  width: 100%;
+}
+
+.c-info-overlay--tl {
+  top: 0;
+  left: 0;
+}
+
+.c-info-overlay--tr {
+  top: 0;
+  right: 0;
+}
+
+.c-info-overlay--bl {
+  bottom: 0;
+  left: 0;
+}
+
+.c-info-overlay--br {
+  bottom: 0;
+  right: 0;
+}
+
+/*
+*/
 .c-longform-content.c-longform-content {
   max-width: 42em;
   margin-left: auto;
@@ -5982,6 +6025,12 @@ $glimpse--link-border-bottom--hover: false !default;*/
 
 /*
 */
+.js-map {
+  /*.c-map .leaflet-control-zoom.leaflet-bar.leaflet-control {
+                padding-bottom: 2px;
+            }*/
+}
+
 .js-map .c-map {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -6021,10 +6070,6 @@ $glimpse--link-border-bottom--hover: false !default;*/
 
 .js-map .c-map .leaflet-container .leaflet-bar a[href]:hover, .js-map .c-map .leaflet-container .leaflet-bar a[href]:active, .js-map .c-map .leaflet-container .leaflet-bar a[href]:focus {
   background-color: #f4f4f4;
-}
-
-.js-map .c-map .leaflet-control-zoom.leaflet-bar.leaflet-control {
-  padding-bottom: 2px;
 }
 
 .c-panel.c-panel {

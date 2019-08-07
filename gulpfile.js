@@ -25,7 +25,7 @@ const rename = require('gulp-rename');
 
 // Empty the CSS folder.
 function empty_css_output(cb) {
-    del.sync([css_dest + '*.*']);
+    del.sync([css_dest + '*.css']);
     cb();
 }
 
