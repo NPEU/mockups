@@ -62,10 +62,9 @@ var cookie_html                   =
     }
 
     // https://davidwalsh.name/javascript-debounce-function
-    // Returns a function, that, as long as it continues to be invoked, will not
-    // be triggered. The function will be called after it stops being called for
-    // N milliseconds. If `immediate` is passed, trigger the function on the
-    // leading edge, instead of the trailing.
+    // Returns a function, that, as long as it continues to be invoked, will not be triggered. 
+    // The function will be called after it stops being called for N milliseconds. If `immediate` 
+    // is passed, trigger the function on the leading edge, instead of the trailing.
     var debounce = function(func, wait, immediate) {
         var timeout;
         return function() {
@@ -520,24 +519,27 @@ var cookie_html                   =
 					// http://heydonworks.com/practical_aria_examples/progressive-hamburger.html
                     var over_panel_contents = over_panel.querySelector('[data-js="over-panel__contents"]');
                     var focusables          = over_panel_contents.querySelectorAll('a, button, input, select, textarea');
-                    var first_focusable     = focusables[0];
-                    var last_focusable      = focusables[focusables.length - 1];
+                    
+                    if (focusables.length > 0) {
+                        var first_focusable     = focusables[0];
+                        var last_focusable      = focusables[focusables.length - 1];
 
-                    // At end of navigation block, return focus to navigation menu button
-                    last_focusable.addEventListener('keydown', function(e) {
-                        if (over_panel_control.getAttribute('aria-expanded') == 'true' && e.keyCode === 9 && !e.shiftKey) {
-							e.preventDefault();
-							over_panel_control.focus();
-                        }
-                    });
+                        // At end of navigation block, return focus to navigation menu button
+                        last_focusable.addEventListener('keydown', function(e) {
+                            if (over_panel_control.getAttribute('aria-expanded') == 'true' && e.keyCode === 9 && !e.shiftKey) {
+                                e.preventDefault();
+                                over_panel_control.focus();
+                            }
+                        });
 
-                    // At start of navigation block, refocus close button on SHIFT+TAB
-                    over_panel_control.addEventListener('keydown', function(e) {
-                        if (over_panel_control.getAttribute('aria-expanded') == 'true' && e.keyCode === 9 && e.shiftKey) {
-                            e.preventDefault();
-                            last_focusable.focus();
-                        }
-                    });
+                        // At start of navigation block, refocus close button on SHIFT+TAB
+                        over_panel_control.addEventListener('keydown', function(e) {
+                            if (over_panel_control.getAttribute('aria-expanded') == 'true' && e.keyCode === 9 && e.shiftKey) {
+                                e.preventDefault();
+                                last_focusable.focus();
+                            }
+                        });
+                    }
                 });
             }
         }
@@ -691,30 +693,21 @@ var cookie_html                   =
 })();
 
 /*
-Details Element Polyfill 2.3.1
+Details Element Polyfill 2.4.0
 Copyright © 2019 Javan Makhmali
  */
 (function() {
   "use strict";
   var element = document.createElement("details");
-  element.innerHTML = "<summary>a</summary>b";
-  element.setAttribute("style", "position: absolute; left: -9999px");
+  var elementIsNative = typeof HTMLDetailsElement != "undefined" && element instanceof HTMLDetailsElement;
   var support = {
-    open: "open" in element && elementExpands(),
+    open: "open" in element || elementIsNative,
     toggle: "ontoggle" in element
   };
-  function elementExpands() {
-    (document.body || document.documentElement).appendChild(element);
-    var closedHeight = element.offsetHeight;
-    element.open = true;
-    var openedHeight = element.offsetHeight;
-    element.parentNode.removeChild(element);
-    return closedHeight != openedHeight;
-  }
   var styles = '\ndetails, summary {\n  display: block;\n}\ndetails:not([open]) > *:not(summary) {\n  display: none;\n}\nsummary::before {\n  content: "►";\n  padding-right: 0.3rem;\n  font-size: 0.6rem;\n  cursor: default;\n}\n[open] > summary::before {\n  content: "▼";\n}\n';
   var _ref = [], forEach = _ref.forEach, slice = _ref.slice;
   if (!support.open) {
-    //polyfillStyles();
+    polyfillStyles();
     polyfillProperties();
     polyfillToggle();
     polyfillAccessibility();
