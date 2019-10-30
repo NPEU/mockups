@@ -1,0 +1,26 @@
+/*
+    NeoCLEAR Theme
+    Note this theme file needs to be loaded *in addition* to the base 'style' file.
+*/
+
+/* --| START THEME |----------------------------------------------------------------------------- */
+
+//@import "_themes-config.scss";
+$theme-name: prumnhc;
+$theme: (
+    cta-text-color       : #ffffff,
+    cta-background-color : #5d4777,
+    primary-color        : #5d4777,
+    secondary-color      : #b9975b,
+    page-header-color    : #ffffff
+);
+
+$theme-only: true;
+@import "_themeable-patterns.scss";
+
+
+//$theme: map_get($themes, $theme-name);
+
+@import "_theme";
+
+/* ---------------------------------------------------------------------------------------------- */

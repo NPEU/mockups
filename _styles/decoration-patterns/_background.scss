@@ -42,7 +42,7 @@ $theme-only: false !default;
     }
 }
 
-// We don't need this if we're only themeing the pattern:
+// We don't need this if we're only theming the pattern:
 @if $theme-only == false {
 
     @include background-theme(
