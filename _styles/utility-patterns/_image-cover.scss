@@ -107,9 +107,41 @@ $image-cover-namespace: u- !default;
     }
 }
 
-// Note this isn't great but it's easier to have this apply only at smaller sizes.
+// Where a 'cover' image is in a flexible box, and especially in a ff-width pair where the two parts
+// stack on small widths, there's a problem in that the image has no height when stacked.
+// This is obvious, because when side-by-side, the image container height is the same as the 'other'
+// height, but when it's stacked, that's no longer the case. The only way I can think of to solve
+// this is to force a minimum height. I can't use a ff-height 'switch' because I need to switch the
+// min-width between 'something' or 'off and it doesn't work like that, so this is the next best 
+// option, I think (not the --- comment below is what this WAS, but it caused problems in larger
+// contexts, and caused the image to disappear at certain ranges):
+.#{$image-cover-namespace}image-cover {
+    min-height: 100%;
+    
+    &#{&}--min-10 {
+       height: 10vh;
+    }
+
+    &#{&}--min-20 {
+        height: 20vh;
+    }
+
+    &#{&}--min-30 {
+        height: 30vh;
+    }
+
+    &#{&}--min-40 {
+        height: 40vh;
+    }
+
+    &#{&}--min-50 {
+        height: 50vh;
+    }
+}
+
+// ---Note this isn't great but it's easier to have this apply only at smaller sizes.
 // May need to change it causes problems, but current concern is NIHR funding baby image.
-@media (max-width: $f__breakpoint--enhanced) {
+/*@media (max-width: $f__breakpoint--enhanced) {
     .#{$image-cover-namespace}image-cover {
        
         &#{&}--min-10 {
@@ -132,4 +164,4 @@ $image-cover-namespace: u- !default;
             min-height: 50vmin;
         }
     }
-}
+}---*/

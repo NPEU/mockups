@@ -7654,24 +7654,54 @@ $pagination-button--border-color: darken($pagination--base-color, 20%) !default;
   }
 }
 
-@media (max-width: 51.875em) {
-  .u-image-cover.u-image-cover--min-10 {
-    min-height: 10vmin;
-  }
-  .u-image-cover.u-image-cover--min-20 {
-    min-height: 20vmin;
-  }
-  .u-image-cover.u-image-cover--min-30 {
-    min-height: 30vmin;
-  }
-  .u-image-cover.u-image-cover--min-40 {
-    min-height: 40vmin;
-  }
-  .u-image-cover.u-image-cover--min-50 {
-    min-height: 50vmin;
-  }
+.u-image-cover {
+  min-height: 100%;
 }
 
+.u-image-cover.u-image-cover--min-10 {
+  height: 10vh;
+}
+
+.u-image-cover.u-image-cover--min-20 {
+  height: 20vh;
+}
+
+.u-image-cover.u-image-cover--min-30 {
+  height: 30vh;
+}
+
+.u-image-cover.u-image-cover--min-40 {
+  height: 40vh;
+}
+
+.u-image-cover.u-image-cover--min-50 {
+  height: 50vh;
+}
+
+/*@media (max-width: $f__breakpoint--enhanced) {
+    .u-image-cover {
+       
+        &--min-10 {
+           min-height: 10vmin;
+        }
+
+        &--min-20 {
+            min-height: 20vmin;
+        }
+
+        &--min-30 {
+            min-height: 30vmin;
+        }
+
+        &--min-40 {
+            min-height: 40vmin;
+        }
+
+        &--min-50 {
+            min-height: 50vmin;
+        }
+    }
+}---*/
 /*
     Text alignment.
 
