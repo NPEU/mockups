@@ -4784,6 +4784,222 @@ $fallback-svg--link-bg-color-alt: #fff;
   min-width: 80%;
 }
 
+.ff-width-100--65--20 {
+  max-width: 100%;
+  width: calc((65em - 100%) * 1000);
+  min-width: 20%;
+}
+
+.ff-width-100--65--25 {
+  max-width: 100%;
+  width: calc((65em - 100%) * 1000);
+  min-width: 25%;
+}
+
+.ff-width-100--65--33-333 {
+  max-width: 100%;
+  width: calc((65em - 100%) * 1000);
+  min-width: 33.333%;
+}
+
+.ff-width-100--65--40 {
+  max-width: 100%;
+  width: calc((65em - 100%) * 1000);
+  min-width: 40%;
+}
+
+.ff-width-100--65--50 {
+  max-width: 100%;
+  width: calc((65em - 100%) * 1000);
+  min-width: 50%;
+}
+
+.ff-width-100--65--60 {
+  max-width: 100%;
+  width: calc((65em - 100%) * 1000);
+  min-width: 60%;
+}
+
+.ff-width-100--65--66-666 {
+  max-width: 100%;
+  width: calc((65em - 100%) * 1000);
+  min-width: 66.666%;
+}
+
+.ff-width-100--65--75 {
+  max-width: 100%;
+  width: calc((65em - 100%) * 1000);
+  min-width: 75%;
+}
+
+.ff-width-100--65--80 {
+  max-width: 100%;
+  width: calc((65em - 100%) * 1000);
+  min-width: 80%;
+}
+
+.ff-width-100--70--20 {
+  max-width: 100%;
+  width: calc((70em - 100%) * 1000);
+  min-width: 20%;
+}
+
+.ff-width-100--70--25 {
+  max-width: 100%;
+  width: calc((70em - 100%) * 1000);
+  min-width: 25%;
+}
+
+.ff-width-100--70--33-333 {
+  max-width: 100%;
+  width: calc((70em - 100%) * 1000);
+  min-width: 33.333%;
+}
+
+.ff-width-100--70--40 {
+  max-width: 100%;
+  width: calc((70em - 100%) * 1000);
+  min-width: 40%;
+}
+
+.ff-width-100--70--50 {
+  max-width: 100%;
+  width: calc((70em - 100%) * 1000);
+  min-width: 50%;
+}
+
+.ff-width-100--70--60 {
+  max-width: 100%;
+  width: calc((70em - 100%) * 1000);
+  min-width: 60%;
+}
+
+.ff-width-100--70--66-666 {
+  max-width: 100%;
+  width: calc((70em - 100%) * 1000);
+  min-width: 66.666%;
+}
+
+.ff-width-100--70--75 {
+  max-width: 100%;
+  width: calc((70em - 100%) * 1000);
+  min-width: 75%;
+}
+
+.ff-width-100--70--80 {
+  max-width: 100%;
+  width: calc((70em - 100%) * 1000);
+  min-width: 80%;
+}
+
+.ff-width-100--75--20 {
+  max-width: 100%;
+  width: calc((75em - 100%) * 1000);
+  min-width: 20%;
+}
+
+.ff-width-100--75--25 {
+  max-width: 100%;
+  width: calc((75em - 100%) * 1000);
+  min-width: 25%;
+}
+
+.ff-width-100--75--33-333 {
+  max-width: 100%;
+  width: calc((75em - 100%) * 1000);
+  min-width: 33.333%;
+}
+
+.ff-width-100--75--40 {
+  max-width: 100%;
+  width: calc((75em - 100%) * 1000);
+  min-width: 40%;
+}
+
+.ff-width-100--75--50 {
+  max-width: 100%;
+  width: calc((75em - 100%) * 1000);
+  min-width: 50%;
+}
+
+.ff-width-100--75--60 {
+  max-width: 100%;
+  width: calc((75em - 100%) * 1000);
+  min-width: 60%;
+}
+
+.ff-width-100--75--66-666 {
+  max-width: 100%;
+  width: calc((75em - 100%) * 1000);
+  min-width: 66.666%;
+}
+
+.ff-width-100--75--75 {
+  max-width: 100%;
+  width: calc((75em - 100%) * 1000);
+  min-width: 75%;
+}
+
+.ff-width-100--75--80 {
+  max-width: 100%;
+  width: calc((75em - 100%) * 1000);
+  min-width: 80%;
+}
+
+.ff-width-100--80--20 {
+  max-width: 100%;
+  width: calc((80em - 100%) * 1000);
+  min-width: 20%;
+}
+
+.ff-width-100--80--25 {
+  max-width: 100%;
+  width: calc((80em - 100%) * 1000);
+  min-width: 25%;
+}
+
+.ff-width-100--80--33-333 {
+  max-width: 100%;
+  width: calc((80em - 100%) * 1000);
+  min-width: 33.333%;
+}
+
+.ff-width-100--80--40 {
+  max-width: 100%;
+  width: calc((80em - 100%) * 1000);
+  min-width: 40%;
+}
+
+.ff-width-100--80--50 {
+  max-width: 100%;
+  width: calc((80em - 100%) * 1000);
+  min-width: 50%;
+}
+
+.ff-width-100--80--60 {
+  max-width: 100%;
+  width: calc((80em - 100%) * 1000);
+  min-width: 60%;
+}
+
+.ff-width-100--80--66-666 {
+  max-width: 100%;
+  width: calc((80em - 100%) * 1000);
+  min-width: 66.666%;
+}
+
+.ff-width-100--80--75 {
+  max-width: 100%;
+  width: calc((80em - 100%) * 1000);
+  min-width: 75%;
+}
+
+.ff-width-100--80--80 {
+  max-width: 100%;
+  width: calc((80em - 100%) * 1000);
+  min-width: 80%;
+}
+
 /*
     Can't remember what SCL stands for :-(
     Self-contained layout?
