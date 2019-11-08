@@ -10370,6 +10370,12 @@ h1 {
   }
 }
 
+@media screen and (max-width: 672px) {
+  h1 {
+    line-height: 1.15384615385;
+  }
+}
+
 table {
   line-height: 1.2;
 }
