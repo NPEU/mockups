@@ -110,7 +110,7 @@ $theme-only: false !default;
     }
 */
 // Themes mixin:
-@mixin card-theme ($theme-name: "", $theme: ()) {
+@mixin card-theme ($theme-name: "", $theme: (), $pattern-varient: "") {
     // Set up theme name:
     $theme-class: "";
     @if $theme-name != "" {
@@ -120,23 +120,23 @@ $theme-only: false !default;
 
 //.c-card .c-card__full-link,
 // .c-card .c-card__full-link:hover
-    .#{$card-namespace}card .#{$card-namespace}card__full-link#{$theme-class},
-    .#{$card-namespace}card .#{$card-namespace}card__full-link#{$theme-class}:hover {
+    .#{$card-namespace}card#{$pattern-varient} .#{$card-namespace}card__full-link#{$theme-class},
+    .#{$card-namespace}card#{$pattern-varient} .#{$card-namespace}card__full-link#{$theme-class}:hover {
         background: map-get($theme, card-background-color);
     }
     
-    .#{$card-namespace}card#{$theme-class},
-    .#{$card-namespace}card#{$theme-class} .#{$card-namespace}card__main {
+    .#{$card-namespace}card#{$pattern-varient}#{$theme-class},
+    .#{$card-namespace}card#{$pattern-varient}#{$theme-class} .#{$card-namespace}card__main {
 		background-color: map-get($theme, card-background-color);
 	}
 
-    .#{$card-namespace}card#{$theme-class} .#{$card-namespace}card__main {
+    .#{$card-namespace}card#{$pattern-varient}#{$theme-class} .#{$card-namespace}card__main {
         color: map-get($theme, card-text-color);
         background: map-get($theme, card-main-background-color);
     }
 
     @if map-has-key($theme, card-border-color) {
-        .#{$card-namespace}card#{$theme-class} {
+        .#{$card-namespace}card#{$pattern-varient}#{$theme-class} {
             border-color: map-get($theme, card-border-color);
         }
     }

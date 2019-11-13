@@ -419,7 +419,7 @@ $theme: map-merge(
 );
 
 @include panel-theme("", $theme, --very-light);
-
+@include card-theme($theme-name, $theme, --very-light);
 
 // Light theme:
 
@@ -434,7 +434,7 @@ $theme: map-merge(
 );
 
 @include panel-theme("", $theme, --light);
-
+@include card-theme($theme-name, $theme, --light);
 
 // Dark theme:
 

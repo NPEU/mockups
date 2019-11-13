@@ -637,7 +637,7 @@ input:not([type]):focus,
   box-shadow: 0 0 0 3px rgba(93, 71, 119, 0.5);
 }
 
-/* - Don't do this, it's too generic and results in equal specifivity that's resolved in source
+/* - Don't do this, it's too generic and results in equal specificity that's resolved in source
     order, thus later themes win out, causing problems.
 .t-pru-mnhc a[href] {
 
@@ -749,6 +749,25 @@ input:not([type]):focus,
   background-color: rgba(255, 255, 255, 0.1);
 }
 
+.c-card--very-light .c-card__full-link.t-pru-mnhc,
+.c-card--very-light .c-card__full-link.t-pru-mnhc:hover {
+  background: #4c3a61;
+}
+
+.c-card--very-light.t-pru-mnhc,
+.c-card--very-light.t-pru-mnhc .c-card__main {
+  background-color: #4c3a61;
+}
+
+.c-card--very-light.t-pru-mnhc .c-card__main {
+  color: #333;
+  background: #5d4777;
+}
+
+.c-card--very-light.t-pru-mnhc {
+  border-color: #2b2137;
+}
+
 .c-panel.c-panel--light.t-pru-mnhc {
   color: #333;
   background: #b7a6ca;
@@ -774,6 +793,25 @@ input:not([type]):focus,
 .c-panel.c-panel--light.t-pru-mnhc a[href].cta:active,
 .c-panel.c-panel--light.t-pru-mnhc a[href].cta:focus {
   background-color: rgba(255, 255, 255, 0.1);
+}
+
+.c-card--light .c-card__full-link.t-pru-mnhc,
+.c-card--light .c-card__full-link.t-pru-mnhc:hover {
+  background: #4c3a61;
+}
+
+.c-card--light.t-pru-mnhc,
+.c-card--light.t-pru-mnhc .c-card__main {
+  background-color: #4c3a61;
+}
+
+.c-card--light.t-pru-mnhc .c-card__main {
+  color: #333;
+  background: #5d4777;
+}
+
+.c-card--light.t-pru-mnhc {
+  border-color: #2b2137;
 }
 
 .c-panel.c-panel--dark.t-pru-mnhc {

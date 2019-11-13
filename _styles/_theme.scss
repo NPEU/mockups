@@ -254,7 +254,7 @@ table.#{$theme-namespace}#{$theme-name} tr:nth-child(odd) > th,
 
 
 
-/* - Don't do this, it's too generic and results in equal specifivity that's resolved in source
+/* - Don't do this, it's too generic and results in equal specificity that's resolved in source
     order, thus later themes win out, causing problems.
 .#{$theme-namespace}#{$theme-name} a[href] {
 
@@ -332,11 +332,13 @@ $theme: map-merge(
         background-color      : lighten(map-get($theme, primary-color), 45%),
         cta-text-color        : #333,
         cta-background-color  : lighten(map-get($theme, primary-color), 45%),
-        text-color            : #333
+        text-color            : #333,
+        card-text-color       : #333
     )
 );
 $theme--very-light: $theme;
 @include panel-theme($theme-name, $theme, --very-light);
+@include card-theme($theme-name, $theme, --very-light);
 
 
 // Light theme:
@@ -352,6 +354,7 @@ $theme: map-merge(
 );
 $theme--light: $theme;
 @include panel-theme($theme-name, $theme, --light);
+@include card-theme($theme-name, $theme, --light);
 
 
 // Dark theme:

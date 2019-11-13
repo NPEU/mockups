@@ -637,7 +637,7 @@ input:not([type]):focus,
   box-shadow: 0 0 0 3px rgba(43, 51, 131, 0.5);
 }
 
-/* - Don't do this, it's too generic and results in equal specifivity that's resolved in source
+/* - Don't do this, it's too generic and results in equal specificity that's resolved in source
     order, thus later themes win out, causing problems.
 .t-frosttie a[href] {
 
@@ -749,6 +749,25 @@ input:not([type]):focus,
   background-color: rgba(255, 255, 255, 0.1);
 }
 
+.c-card--very-light .c-card__full-link.t-frosttie,
+.c-card--very-light .c-card__full-link.t-frosttie:hover {
+  background: #222968;
+}
+
+.c-card--very-light.t-frosttie,
+.c-card--very-light.t-frosttie .c-card__main {
+  background-color: #222968;
+}
+
+.c-card--very-light.t-frosttie .c-card__main {
+  color: #333;
+  background: #2b3383;
+}
+
+.c-card--very-light.t-frosttie {
+  border-color: #121536;
+}
+
 .c-panel.c-panel--light.t-frosttie {
   color: #333;
   background: #8890d8;
@@ -774,6 +793,25 @@ input:not([type]):focus,
 .c-panel.c-panel--light.t-frosttie a[href].cta:active,
 .c-panel.c-panel--light.t-frosttie a[href].cta:focus {
   background-color: rgba(255, 255, 255, 0.1);
+}
+
+.c-card--light .c-card__full-link.t-frosttie,
+.c-card--light .c-card__full-link.t-frosttie:hover {
+  background: #222968;
+}
+
+.c-card--light.t-frosttie,
+.c-card--light.t-frosttie .c-card__main {
+  background-color: #222968;
+}
+
+.c-card--light.t-frosttie .c-card__main {
+  color: #333;
+  background: #2b3383;
+}
+
+.c-card--light.t-frosttie {
+  border-color: #121536;
 }
 
 .c-panel.c-panel--dark.t-frosttie {
