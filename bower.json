@@ -7,6 +7,7 @@
         "Fall-Back-Patterns":      "https://github.com/Fall-Back/Patterns.git",
         "Fall-Back-Cookie-Notice": "https://github.com/Fall-Back/Cookie-Notice.git",
         "Fall-Back-SVG":           "https://github.com/Fall-Back/SVG.git",
+        "Fall-Back-Filterability": "https://github.com/Fall-Back/Filterability.git",
         "NPEU-display-patterns":   "https://github.com/NPEU/display-patterns.git",
         "NPEU-layout-patterns":    "https://github.com/NPEU/layout-patterns.git",
         "Details-Polyfill":        "https://github.com/javan/details-element-polyfill.git"
