@@ -89,6 +89,8 @@ $theme: map-merge(
 .#{$theme-namespace}#{$theme-name} button:not(.over-panel__overlay)[aria-expanded=true] {
 */
 button.#{$theme-namespace}#{$theme-name}:not(.over-panel__overlay):not(.dropdown__button),
+a[href].button.#{$theme-namespace}#{$theme-name}:not(.over-panel__overlay):not(.dropdown__button),
+a[href].cta.#{$theme-namespace}#{$theme-name}:not(.over-panel__overlay):not(.dropdown__button),
 .cookie_notice__action button {
     border-color: map-get($theme, border-color) !important;
     color: map-get($theme, cta-text-color) !important;
