@@ -5958,36 +5958,8 @@ $glimpse--link-border-bottom--hover: false !default;*/
   background: #fff;
 }
 
-.c-hero .c-hero__message > * {
-  /*
-                1. For IE10 to wrap text.
-            */
+.c-hero .c-hero__message {
   padding: 0.6rem 2.4rem;
-  line-height: 1.3;
-  font-weight: bold;
-  margin: 0;
-  max-width: 100%;
-  /* [1] */
-}
-
-.c-hero .c-hero__message > * {
-  font-size: 20px;
-}
-
-@media screen and (min-width: 640px) {
-  .c-hero .c-hero__message > * {
-    font-size: calc(20px + 12 * ((100vw - 640px) / 960));
-  }
-}
-
-@media screen and (min-width: 1600px) {
-  .c-hero .c-hero__message > * {
-    font-size: 32px;
-  }
-}
-
-.c-hero .c-hero__message > * > b {
-  font-weight: bold;
 }
 
 .c-hero .c-hero__message * {
@@ -5995,7 +5967,39 @@ $glimpse--link-border-bottom--hover: false !default;*/
 }
 
 @media only screen and (min-width: 40rem) {
-  .c-hero .c-hero__message {
+  .c-hero .c-hero__message > .c-hero__message--fluid_text {
+    /*
+                    1. For IE10 to wrap text.
+                */
+    /*padding: $sz-xs $sz-m;*/
+    line-height: 1.3;
+    font-weight: bold;
+    margin: 0;
+    max-width: 100%;
+    /* [1] */
+  }
+  .c-hero .c-hero__message > .c-hero__message--fluid_text {
+    font-size: 20px;
+  }
+}
+
+@media only screen and (min-width: 40rem) and (min-width: 640px) {
+  .c-hero .c-hero__message > .c-hero__message--fluid_text {
+    font-size: calc(20px + 12 * ((100vw - 640px) / 960));
+  }
+}
+
+@media only screen and (min-width: 40rem) and (min-width: 1600px) {
+  .c-hero .c-hero__message > .c-hero__message--fluid_text {
+    font-size: 32px;
+  }
+}
+
+@media only screen and (min-width: 40rem) {
+  .c-hero .c-hero__message > .c-hero__message--fluid_text > b {
+    font-weight: bold;
+  }
+  .c-hero .c-hero__message:not(.c-hero__message--wide) {
     position: absolute;
     z-index: 1;
     bottom: 0;
@@ -6012,9 +6016,69 @@ $glimpse--link-border-bottom--hover: false !default;*/
     -ms-flex-align: center;
     -webkit-align-items: center;
     align-items: center;
-    -ms-flex-pack: center;
-    -webkit-justify-content: center;
-    justify-content: center;
+    -ms-flex-pack: start;
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start;
+  }
+  .c-hero--reversed .c-hero__message {
+    right: 0;
+    left: auto;
+  }
+}
+
+@media only screen and (min-width: 64rem) {
+  .c-hero .c-hero__message--wide > .c-hero__message--fluid_text {
+    /*
+                    1. For IE10 to wrap text.
+                */
+    /*padding: $sz-xs $sz-m;*/
+    line-height: 1.3;
+    font-weight: bold;
+    margin: 0;
+    max-width: 100%;
+    /* [1] */
+  }
+  .c-hero .c-hero__message--wide > .c-hero__message--fluid_text {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (min-width: 64rem) and (min-width: 1024px) {
+  .c-hero .c-hero__message--wide > .c-hero__message--fluid_text {
+    font-size: calc(16px + 14 * ((100vw - 1024px) / 576));
+  }
+}
+
+@media only screen and (min-width: 64rem) and (min-width: 1600px) {
+  .c-hero .c-hero__message--wide > .c-hero__message--fluid_text {
+    font-size: 30px;
+  }
+}
+
+@media only screen and (min-width: 64rem) {
+  .c-hero .c-hero__message--wide > .c-hero__message--fluid_text > b {
+    font-weight: bold;
+  }
+  .c-hero .c-hero__message--wide {
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    left: 0;
+    width: calc(20em + 20%);
+    top: 0;
+    background: rgba(255, 255, 255, 0.75);
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -ms-flex-pack: start;
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start;
   }
   .c-hero--reversed .c-hero__message {
     right: 0;
@@ -8325,6 +8389,22 @@ $pagination-button--border-color: darken($pagination--base-color, 20%) !default;
 
 .u-space--xl {
   margin: 9.6rem !important;
+}
+
+.u-space--left--auto {
+  margin-left: auto !important;
+}
+
+.u-space--right--auto {
+  margin-right: auto !important;
+}
+
+.u-space--above--auto {
+  margin-top: auto !important;
+}
+
+.u-space--below--auto {
+  margin-bottom: auto !important;
 }
 
 /*

@@ -167,3 +167,20 @@ $space-namespace: u- !default;
 .#{$space-namespace}space--xl {
     margin: $sz-xl !important;
 }
+
+
+.#{$space-namespace}space--left--auto {
+    margin-left: auto !important;
+}
+
+.#{$space-namespace}space--right--auto {
+    margin-right: auto !important;
+}
+
+.#{$space-namespace}space--above--auto {
+    margin-top: auto !important;
+}
+
+.#{$space-namespace}space--below--auto {
+    margin-bottom: auto !important;
+}
