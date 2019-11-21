@@ -74,8 +74,8 @@ $glimpse--max-width: none;
 $glimpse-spacing-unit: $f__base-rem-space-unit;
 @import "component-patterns/_glimpse.scss";
 
-$hero-max-message-breakpoint: 100rem;
-$hero-max-message-size: 32px !default;
+//$hero-max-message-breakpoint: 100rem;
+//$hero-max-message-size: 32px !default;
 @import "component-patterns/_hero.scss";
 
 @import "component-patterns/_info-overlay.scss";

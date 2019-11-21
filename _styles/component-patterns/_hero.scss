@@ -6,13 +6,13 @@ $theme-namespace: t- !default;
 
 $hero-breakpoint: 40rem !default;
 $hero-breakpoint-wide: $hero-breakpoint * 1.6 !default;
-$hero-max-message-breakpoint: 100rem !default;
-$hero-min-message-size: 20px !default;
-$hero-max-message-size: 52px !default;
 
-$hero-wide-max-message-breakpoint: 100rem !default;
-$hero-wide-min-message-size: 16px !default;
-$hero-wide-max-message-size: 30px !default;
+$hero-max-message-breakpoint: 100rem !default;
+
+$hero-min-message-size: 16px !default;
+$hero-max-message-size: 26px !default;
+$hero-min-heading-size: 24px !default;
+$hero-max-heading-size: 46px !default;
 
 $theme-only: false !default;
 
@@ -37,29 +37,30 @@ $theme-only: false !default;
         #{&}__message * {
             margin: 0;
         }
+        
+        #{&}__message > #{&}__message--fluid_text,
+        #{&}__message > #{&}__message--fluid_heading {
+            /*
+                1. For IE10 to wrap text.
+            */
+            
+            @include fluid-type(strip-unit($hero-breakpoint) * 16px, strip-unit($hero-max-message-breakpoint) * 16px, $hero-min-message-size, $hero-max-message-size);
+
+            line-height: 1.3;
+            font-weight: bold;
+            margin: 0;
+            max-width: 100%; /* [1] */
+        }
+        
+        #{&}__message > #{&}__message--fluid_heading {
+            @include fluid-type(strip-unit($hero-breakpoint) * 16px, strip-unit($hero-max-message-breakpoint) * 16px, $hero-min-heading-size, $hero-max-heading-size);
+        }
     }
 
     @media only screen and (min-width:#{$hero-breakpoint}) {
 
         .#{$hero-namespace}hero {
-            #{&}__message > #{&}__message--fluid_text {
-                /*
-                    1. For IE10 to wrap text.
-                */
-                /*padding: $sz-xs $sz-m;*/
-                //font-size: 1.25em;
-                @include fluid-type(strip-unit($hero-breakpoint) * 16px, strip-unit($hero-max-message-breakpoint) * 16px, $hero-min-message-size, $hero-max-message-size);
-                //#{$hero-breakpoint}
-                line-height: 1.3;
-                font-weight: bold;
-                margin: 0;
-                max-width: 100%; /* [1] */
-                
-                > b {
-                    font-weight: bold;
-                }
-            }
-
+        
             #{&}__message:not(#{&}__message--wide) {
                 position: absolute;
                 z-index: 1;
@@ -89,34 +90,17 @@ $theme-only: false !default;
             
         }
         
-        .#{$hero-namespace}hero--reversed .#{$hero-namespace}hero__message {
+        .#{$hero-namespace}hero--reversed .#{$hero-namespace}hero__message:not(.#{$hero-namespace}hero__message--wide) {
             right: 0;
             left: auto;
         }
 
     }
-    
-        @media only screen and (min-width:#{$hero-breakpoint-wide}) {
+
+    @media only screen and (min-width:#{$hero-breakpoint-wide}) {
 
         .#{$hero-namespace}hero {
-            #{&}__message--wide > #{&}__message--fluid_text {
-                /*
-                    1. For IE10 to wrap text.
-                */
-                /*padding: $sz-xs $sz-m;*/
-                //font-size: 1.25em;
-                @include fluid-type(strip-unit($hero-breakpoint-wide) * 16px, strip-unit($hero-wide-max-message-breakpoint) * 16px, $hero-wide-min-message-size, $hero-wide-max-message-size);
-                //#{$hero-breakpoint}
-                line-height: 1.3;
-                font-weight: bold;
-                margin: 0;
-                max-width: 100%; /* [1] */
-                
-                > b {
-                    font-weight: bold;
-                }
-            }
-
+        
             #{&}__message--wide {
                 position: absolute;
                 z-index: 1;
