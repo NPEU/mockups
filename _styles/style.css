@@ -7123,6 +7123,12 @@ _:-ms-lang(x), .l-col-to-row__item  {
   flex-basis: 100%;
 }
 
+.l-distribute, .c-user-content [data-display-as~="blocks"] > * {
+  /*&.l-distribute--gutter--small > * {        padding-bottom: $col-to-row-spacing-unit--small;    }*/
+  /*&.l-distribute--gutter > *,    &.l-distribute--gutter--medium > * {        padding-bottom: $col-to-row-spacing-unit;    }*/
+  /*&.l-distribute--gutter--large > * {        padding-bottom: $col-to-row-spacing-unit--large;    }*/
+}
+
 .l-distribute.l-distribute, .c-user-content [data-display-as~="blocks"] > * {
   margin: 0;
   padding: 0;
@@ -7210,24 +7216,17 @@ _:-ms-lang(x), .l-col-to-row__item  {
 }
 
 .l-distribute.l-distribute--gutter--small, .c-user-content [data-display-as~="blocks"] > .l-distribute--gutter--small {
-  padding-top: 1.2rem;
+  padding: 1.2rem;
 }
 
 .l-distribute.l-distribute--gutter--small, .c-user-content [data-display-as~="blocks"] > .l-distribute--gutter--small,
 .l-distribute.l-distribute--gutter--small > *,
 .c-user-content [data-display-as~="blocks"] > .l-distribute--gutter--small > * {
-  padding-left: 0.6rem;
-  padding-right: 0.6rem;
-}
-
-
-.l-distribute.l-distribute--gutter--small > *,
-.c-user-content [data-display-as~="blocks"] > .l-distribute--gutter--small > * {
-  padding-bottom: 1.2rem;
+  padding: 1.2rem;
 }
 
 .l-distribute.l-distribute--gutter, .c-user-content [data-display-as~="blocks"] > .l-distribute--gutter, .l-distribute.l-distribute--gutter--medium, .c-user-content [data-display-as~="blocks"] > .l-distribute--gutter--medium {
-  padding-top: 2.4rem;
+  padding: 2.4rem;
 }
 
 .l-distribute.l-distribute--gutter, .c-user-content [data-display-as~="blocks"] > .l-distribute--gutter,
@@ -7235,33 +7234,17 @@ _:-ms-lang(x), .l-col-to-row__item  {
 .c-user-content [data-display-as~="blocks"] > .l-distribute--gutter > *, .l-distribute.l-distribute--gutter--medium, .c-user-content [data-display-as~="blocks"] > .l-distribute--gutter--medium,
 .l-distribute.l-distribute--gutter--medium > *,
 .c-user-content [data-display-as~="blocks"] > .l-distribute--gutter--medium > * {
-  padding-left: 1.2rem;
-  padding-right: 1.2rem;
-}
-
-
-.l-distribute.l-distribute--gutter > *,
-.c-user-content [data-display-as~="blocks"] > .l-distribute--gutter > *,
-.l-distribute.l-distribute--gutter--medium > *,
-.c-user-content [data-display-as~="blocks"] > .l-distribute--gutter--medium > * {
-  padding-bottom: 2.4rem;
+  padding: 2.4rem;
 }
 
 .l-distribute.l-distribute--gutter--large, .c-user-content [data-display-as~="blocks"] > .l-distribute--gutter--large {
-  padding-top: 4.8rem;
+  padding: 4.8rem;
 }
 
 .l-distribute.l-distribute--gutter--large, .c-user-content [data-display-as~="blocks"] > .l-distribute--gutter--large,
 .l-distribute.l-distribute--gutter--large > *,
 .c-user-content [data-display-as~="blocks"] > .l-distribute--gutter--large > * {
-  padding-left: 2.4rem;
-  padding-right: 2.4rem;
-}
-
-
-.l-distribute.l-distribute--gutter--large > *,
-.c-user-content [data-display-as~="blocks"] > .l-distribute--gutter--large > * {
-  padding-bottom: 4.8rem;
+  padding: 4.8rem;
 }
 
 .l-distribute--flush-edge-gutters {
@@ -7271,18 +7254,18 @@ _:-ms-lang(x), .l-col-to-row__item  {
 }
 
 .l-distribute--flush-edge-gutters .l-distribute.l-distribute--gutter--small, .l-distribute--flush-edge-gutters .c-user-content [data-display-as~="blocks"] > .l-distribute--gutter--small, .c-user-content .l-distribute--flush-edge-gutters [data-display-as~="blocks"] > .l-distribute--gutter--small {
-  margin: -1.2rem;
+  margin: -2.4rem;
 }
 
 .l-distribute--flush-edge-gutters .l-distribute.l-distribute--gutter, .l-distribute--flush-edge-gutters .c-user-content [data-display-as~="blocks"] > .l-distribute--gutter, .c-user-content .l-distribute--flush-edge-gutters [data-display-as~="blocks"] > .l-distribute--gutter,
 .l-distribute--flush-edge-gutters .l-distribute.l-distribute--gutter--medium,
 .l-distribute--flush-edge-gutters .c-user-content [data-display-as~="blocks"] > .l-distribute--gutter--medium,
 .c-user-content .l-distribute--flush-edge-gutters [data-display-as~="blocks"] > .l-distribute--gutter--medium {
-  margin: -2.4rem;
+  margin: -4.8rem;
 }
 
 .l-distribute--flush-edge-gutters .l-distribute.l-distribute--gutter--large, .l-distribute--flush-edge-gutters .c-user-content [data-display-as~="blocks"] > .l-distribute--gutter--large, .c-user-content .l-distribute--flush-edge-gutters [data-display-as~="blocks"] > .l-distribute--gutter--large {
-  margin: -4.8rem;
+  margin: -9.6rem;
 }
 
 /* IE10-11 */
