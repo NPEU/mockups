@@ -167,7 +167,11 @@ h1 {
 
 table {
     @include fluid-type(250px, 672px, 10px, 14px);
-    line-height: 1.2;
+    line-height: 1.4;
+    
+    a {
+        padding-bottom: 1px;
+    }
 }
 
 th:first-child {

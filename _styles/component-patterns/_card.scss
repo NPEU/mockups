@@ -132,7 +132,19 @@ $theme-only: false !default;
 
     .#{$card-namespace}card#{$pattern-varient}#{$theme-class} .#{$card-namespace}card__main {
         color: map-get($theme, card-text-color);
-        background: map-get($theme, card-main-background-color);
+        background-color: map-get($theme, card-main-background-color);
+        
+        a[href] {
+            background-color: map-get($theme, card-main-background-color);
+            color: map-get($theme, card-text-color);
+
+            &:hover,
+            &:active,
+            &:focus {
+                background-color: map-get($theme, card-main-background-color);
+                color: map-get($theme, card-text-color);
+            }
+        }
     }
 
     @if map-has-key($theme, card-border-color) {
@@ -208,7 +220,7 @@ $theme-only: false !default;
             margin: 0;
 
             color: $card--text-color;
-            background: $card--background-color;
+            background-color: $card--background-color;
             padding: $card--padding;
 
 

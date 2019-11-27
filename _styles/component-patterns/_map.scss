@@ -32,7 +32,7 @@ $map-heights: (
             display: -ms-flexbox;
             display: flex;
             width: 100%;
-            height: 100%;
+            //height: 100%;
         }
 
 
@@ -53,23 +53,23 @@ $map-heights: (
                 background-color: transparent;
                 margin-bottom: 0;
                 border-bottom: 0;
-                color: #0078A8;
+                color: #0078A8 !important;
 
                 &:hover,
                 &:active,
                 &:focus {
-                    color: #002b41;
+                    color: #002b41 !important;
                 }
             }
 
             .#{$map-namespace}map .leaflet-container .leaflet-bar a[href] {
                 background-color: #fff;
-                color: #000;
+                color: #000 !important;
 
                 &:hover,
                 &:active,
                 &:focus {
-                    background-color: #f4f4f4;
+                    background-color: #f4f4f4 !important;
                 }
             }
 

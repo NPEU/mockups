@@ -13,6 +13,9 @@ $fill-height-namespace: u- !default;
             flex: 1 0 auto;
             
     min-height: 100%;
+    
+    display: -webkit-flex;
+    display: flex;
 }
 
 @media #{$f__ie10-11} {

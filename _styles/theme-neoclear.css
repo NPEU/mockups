@@ -421,7 +421,17 @@ $patterns: (
 
 .c-card.t-neoclear .c-card__main {
   color: #fff;
-  background: #009590;
+  background-color: #009590;
+}
+
+.c-card.t-neoclear .c-card__main a[href] {
+  background-color: #009590;
+  color: #fff;
+}
+
+.c-card.t-neoclear .c-card__main a[href]:hover, .c-card.t-neoclear .c-card__main a[href]:active, .c-card.t-neoclear .c-card__main a[href]:focus {
+  background-color: #009590;
+  color: #fff;
 }
 
 .c-card.t-neoclear {
@@ -769,7 +779,17 @@ input:not([type]):focus,
 
 .c-card--very-light.t-neoclear .c-card__main {
   color: #333;
-  background: #009590;
+  background-color: #009590;
+}
+
+.c-card--very-light.t-neoclear .c-card__main a[href] {
+  background-color: #009590;
+  color: #333;
+}
+
+.c-card--very-light.t-neoclear .c-card__main a[href]:hover, .c-card--very-light.t-neoclear .c-card__main a[href]:active, .c-card--very-light.t-neoclear .c-card__main a[href]:focus {
+  background-color: #009590;
+  color: #333;
 }
 
 .c-card--very-light.t-neoclear {
@@ -815,7 +835,17 @@ input:not([type]):focus,
 
 .c-card--light.t-neoclear .c-card__main {
   color: #333;
-  background: #009590;
+  background-color: #009590;
+}
+
+.c-card--light.t-neoclear .c-card__main a[href] {
+  background-color: #009590;
+  color: #333;
+}
+
+.c-card--light.t-neoclear .c-card__main a[href]:hover, .c-card--light.t-neoclear .c-card__main a[href]:active, .c-card--light.t-neoclear .c-card__main a[href]:focus {
+  background-color: #009590;
+  color: #333;
 }
 
 .c-card--light.t-neoclear {

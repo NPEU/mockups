@@ -421,7 +421,17 @@ $patterns: (
 
 .c-card.t-pru-mnhc .c-card__main {
   color: #fff;
-  background: #5d4777;
+  background-color: #5d4777;
+}
+
+.c-card.t-pru-mnhc .c-card__main a[href] {
+  background-color: #5d4777;
+  color: #fff;
+}
+
+.c-card.t-pru-mnhc .c-card__main a[href]:hover, .c-card.t-pru-mnhc .c-card__main a[href]:active, .c-card.t-pru-mnhc .c-card__main a[href]:focus {
+  background-color: #5d4777;
+  color: #fff;
 }
 
 .c-card.t-pru-mnhc {
@@ -769,7 +779,17 @@ input:not([type]):focus,
 
 .c-card--very-light.t-pru-mnhc .c-card__main {
   color: #333;
-  background: #5d4777;
+  background-color: #5d4777;
+}
+
+.c-card--very-light.t-pru-mnhc .c-card__main a[href] {
+  background-color: #5d4777;
+  color: #333;
+}
+
+.c-card--very-light.t-pru-mnhc .c-card__main a[href]:hover, .c-card--very-light.t-pru-mnhc .c-card__main a[href]:active, .c-card--very-light.t-pru-mnhc .c-card__main a[href]:focus {
+  background-color: #5d4777;
+  color: #333;
 }
 
 .c-card--very-light.t-pru-mnhc {
@@ -815,7 +835,17 @@ input:not([type]):focus,
 
 .c-card--light.t-pru-mnhc .c-card__main {
   color: #333;
-  background: #5d4777;
+  background-color: #5d4777;
+}
+
+.c-card--light.t-pru-mnhc .c-card__main a[href] {
+  background-color: #5d4777;
+  color: #333;
+}
+
+.c-card--light.t-pru-mnhc .c-card__main a[href]:hover, .c-card--light.t-pru-mnhc .c-card__main a[href]:active, .c-card--light.t-pru-mnhc .c-card__main a[href]:focus {
+  background-color: #5d4777;
+  color: #333;
 }
 
 .c-card--light.t-pru-mnhc {
