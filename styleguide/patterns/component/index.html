@@ -831,25 +831,23 @@ Here a span is used instead, to help avoid any confusio (whole thing is a link, 
 
 <div class="u-padding--sides  u-space--below">
     <div class="c-glimpse">
-        <div class="c-glimpse__header">
-            <a href="#">
-                <h3 class="c-glimpse__heading"><span>Headline</span></h3>
-                <div class="c-glimpse__image">
-                    <div class="l-proportional-container  l-proportional-container--1-1">
-                        <div class="l-proportional-container__content">
-                            <div class="u-image-cover  js-image-cover">
-                                <div class="u-image-cover__inner">
-                                    <img src="/img/patterns/placeholder-3--small.jpg" sizes="100vw" srcset="/img/patterns/placeholder-3--large.jpg 1600w, /img/patterns/placeholder-3--medium.jpg 900w, /img/patterns/placeholder-3--small.jpg 300w" alt="" class="u-image-cover__image" width="200">
-                                </div>
+        <a href="#" class="c-glimpse__link">
+            <div class="c-glimpse__image">
+                <div class="l-proportional-container  l-proportional-container--1-1">
+                    <div class="l-proportional-container__content">
+                        <div class="u-image-cover  js-image-cover">
+                            <div class="u-image-cover__inner">
+                                <img src="/img/patterns/placeholder-3--small.jpg" sizes="100vw" srcset="/img/patterns/placeholder-3--large.jpg 1600w, /img/patterns/placeholder-3--medium.jpg 900w, /img/patterns/placeholder-3--small.jpg 300w" alt="" class="u-image-cover__image" width="200">
                             </div>
                         </div>
                     </div>
                 </div>
-            </a>
-        </div>
-        <div class="c-glimpse__content">
-            <p>Just a glimpse at what's inside...</p>
-        </div>
+            </div>
+            <div class="c-glimpse__content">
+                <h3 class="c-glimpse__heading">Headline</h3>
+                <p>Just a glimpse at what's inside...</p>
+            </div>
+        </a>
     </div>
 </div>
 
@@ -859,7 +857,6 @@ Here a span is used instead, to help avoid any confusio (whole thing is a link, 
             <pre><code class="html">&lt;div class=&quot;c-glimpse&quot;&gt;
     &lt;div class=&quot;c-glimpse__header&quot;&gt;
         &lt;a href=&quot;#&quot;&gt;
-            &lt;h3 class=&quot;c-glimpse__heading&quot;&gt;&lt;span&gt;Headline&lt;/span&gt;&lt;/h3&gt;
             &lt;div class=&quot;c-glimpse__image&quot;&gt;
                 &lt;div class=&quot;l-proportional-container  l-proportional-container--1-1&quot;&gt;
                     &lt;div class=&quot;l-proportional-container__content&quot;&gt;
@@ -871,6 +868,7 @@ Here a span is used instead, to help avoid any confusio (whole thing is a link, 
                     &lt;/div&gt;
                 &lt;/div&gt;
             &lt;/div&gt;
+            &lt;h3 class=&quot;c-glimpse__heading&quot;&gt;&lt;span&gt;Headline&lt;/span&gt;&lt;/h3&gt;
         &lt;/a&gt;
     &lt;/div&gt;
     &lt;div class=&quot;c-glimpse__content&quot;&gt;
@@ -883,25 +881,23 @@ Here a span is used instead, to help avoid any confusio (whole thing is a link, 
 
 <div class="u-padding--sides  u-space--below">
     <div class="c-glimpse">
-        <div class="c-glimpse__header">
-            <a href="#">
-                <h3 class="c-glimpse__heading"><span>Person Name</span></h3>
-                <div class="c-glimpse__image  c-glimpse__image--rounded">
-                    <div class="l-proportional-container  l-proportional-container--1-1">
-                        <div class="l-proportional-container__content">
-                            <div class="u-image-cover  js-image-cover">
-                                <div class="u-image-cover__inner">
-                                    <img src="/img/patterns/placeholder-person.jpg" alt="" class="u-image-cover__image" width="200">
-                                </div>
+        <a href="#" class="c-glimpse__link">
+            <div class="c-glimpse__image  c-glimpse__image--rounded">
+                <div class="l-proportional-container  l-proportional-container--1-1">
+                    <div class="l-proportional-container__content">
+                        <div class="u-image-cover  js-image-cover">
+                            <div class="u-image-cover__inner">
+                                <img src="/img/patterns/placeholder-person.jpg" alt="" class="u-image-cover__image" width="200">
                             </div>
                         </div>
                     </div>
                 </div>
-            </a>
-        </div>
-        <div class="c-glimpse__content">
-            <p>Job title</p>
-        </div>
+            </div>
+            <div class="c-glimpse__content">
+                <h3 class="c-glimpse__heading">Person Name</h3>         
+                <p>Job title</p>
+            </div>
+        </a>
     </div>
 </div>
 
@@ -911,7 +907,6 @@ Here a span is used instead, to help avoid any confusio (whole thing is a link, 
             <pre><code class="html">&lt;div class=&quot;c-glimpse&quot;&gt;
     &lt;div class=&quot;c-glimpse__header&quot;&gt;
         &lt;a href=&quot;#&quot;&gt;
-            &lt;h3 class=&quot;c-glimpse__heading&quot;&gt;&lt;span&gt;Person Name&lt;/span&gt;&lt;/h3&gt;
             &lt;div class=&quot;c-glimpse__image  c-glimpse__image--rounded&quot;&gt;
                 &lt;div class=&quot;l-proportional-container  l-proportional-container--1-1&quot;&gt;
                     &lt;div class=&quot;l-proportional-container__content&quot;&gt;
@@ -923,12 +918,44 @@ Here a span is used instead, to help avoid any confusio (whole thing is a link, 
                     &lt;/div&gt;
                 &lt;/div&gt;
             &lt;/div&gt;
+            &lt;h3 class=&quot;c-glimpse__heading&quot;&gt;&lt;span&gt;Person Name&lt;/span&gt;&lt;/h3&gt;
         &lt;/a&gt;
     &lt;/div&gt;
     &lt;div class=&quot;c-glimpse__content&quot;&gt;
         &lt;p&gt;Job title&lt;/p&gt;
     &lt;/div&gt;
 &lt;/div&gt;</code></pre>
+    </details>
+</div>
+
+<p class="u-padding--sides">Large image</p>
+
+<div class="u-padding--sides  u-space--below">
+    <div class="c-glimpse  c-glimpse--large-image" style="background: #ddd;">
+        <a href="#" class="c-glimpse__link">
+            <div class="c-glimpse__image  c-glimpse__image--rounded">
+                <div class="l-proportional-container  l-proportional-container--1-1">
+                    <div class="l-proportional-container__content">
+                        <div class="u-image-cover  js-image-cover">
+                            <div class="u-image-cover__inner">
+                                <img src="/img/patterns/placeholder-person.jpg" alt="" class="u-image-cover__image" width="200">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="c-glimpse__content">
+                <h3 class="c-glimpse__heading">Person Name</h3>         
+                <p>Job title</p>
+            </div>
+        </a>
+    </div>
+</div>
+
+<div class="u-padding--s">
+    <details class="u-padding--s  d-background--light">
+        <summary>Show code:</summary>
+            <pre><code class="html">&lt;div class=&quot;c-glimpse  <strong>c-glimpse--large-image</strong>&quot;&gt;</code></pre>
     </details>
 </div>
 

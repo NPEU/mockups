@@ -15,6 +15,7 @@ $glimpse--background-color: lighten($glimpse--base-color, 60);
 $glimpse--spacing-unit: 2rem !default;
 $glimpse--max-width: 30em !default;
 $glimpse--image-size: 7.2rem !default;
+$glimpse--image-size-large: 17.2rem !default;
 
 $glimpse--base-color: #eee !default;
 $glimpse--text-color: #333 !default;
@@ -42,6 +43,8 @@ $theme-only: false !default;
 
     .#{$glimpse-namespace}glimpse {
         &#{&} {
+            //display: flow-root;
+        
             position: relative;
             max-width: $glimpse--max-width;
             //@if $glimpse--border-size != false {
@@ -53,7 +56,7 @@ $theme-only: false !default;
             //padding-top:    $glimpse--spacing-unit;
             //padding-right:  $glimpse--spacing-unit;
             //padding-bottom: $glimpse--spacing-unit;
-            padding-left:   $glimpse--image-size + $glimpse--spacing-unit;
+            //padding-left: $glimpse--image-size + $glimpse--spacing-unit;
 
             //color: $glimpse--text-color;
             //background-color: $glimpse--background-color;
@@ -62,9 +65,40 @@ $theme-only: false !default;
 
             //box-shadow: 0 0 9px inset;
         }
+       
+        
+        &#{&}--large-image {
+        
+        }
 
+        #{&}__link {
+            border-bottom: 0;
 
-        #{&}__header {
+            &:hover {
+                border-bottom: 0;
+
+                * {
+                    border-bottom: 1px solid;
+                }
+
+                .#{$glimpse-namespace}glimpse__image {
+                    box-shadow: 0 0 0 2px currentColor;
+                }
+            }
+            
+            &#{&}:before,
+            &#{&}:after {
+                content: " ";
+                display: table;
+            }
+
+            &#{&},
+            &#{&}:after {
+                clear: both;
+            }
+        }
+
+        /*#{&}__header {
 
             a {
                 border-bottom: 0;
@@ -81,12 +115,8 @@ $theme-only: false !default;
                     }
                 }
             }
-        }
+        }*/
         
-        #{&}__heading {
-            font-size: $glimpse-heading--font-size;
-            margin: 0;
-        }
 
         #{&}__image {
             width: $glimpse--image-size;
@@ -94,10 +124,13 @@ $theme-only: false !default;
 
             overflow: hidden;
 
-            position: absolute;
+            //position: absolute;
             left: 0;
             top: 0;
             border: 1px solid currentColor;
+            
+            float: left;
+            margin-right: $glimpse--spacing-unit;
 
         }
 
@@ -107,14 +140,35 @@ $theme-only: false !default;
         }
 
         #{&}__content {
-            font-size: $glimpse-footer--font-size;
 
             margin: 0;
+            
+            max-width: 100%;
+            width: calc((30rem - 100%) * 1000);
+            min-width: calc(100% - #{$glimpse--image-size + $glimpse--spacing-unit});
+            
+            float: right; 
         }
+        
+            #{&}__content #{&}__heading {
+                    font-size: $glimpse-heading--font-size;
+                    margin: 0;
+                }
 
             #{&}__content * {
+                font-size: $glimpse-footer--font-size;
                 margin: 0;
             }
+
+
+        &#{&}--large-image #{&}__content {
+            min-width: calc(100% - #{$glimpse--image-size-large + $glimpse--spacing-unit});
+        }
+        
+        &#{&}--large-image #{&}__image {
+            width: $glimpse--image-size-large;
+            height: $glimpse--image-size-large;
+        }
 
     }
 

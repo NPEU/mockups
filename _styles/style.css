@@ -5899,42 +5899,69 @@ $glimpse--link-color--alt: false !default;
 $glimpse--link-has-border-bottom: false !default;
 $glimpse--link-border-bottom: false !default;
 $glimpse--link-border-bottom--hover: false !default;*/
+.c-glimpse {
+  /*.c-glimpse__header {
+
+            a {
+                border-bottom: 0;
+
+                &:hover {
+                    border-bottom: 0;
+
+                    span {
+                        border-bottom: 1px solid;
+                    }
+
+                    .c-glimpse__image {
+                        box-shadow: 0 0 0 2px currentColor;
+                    }
+                }
+            }
+        }*/
+}
+
 .c-glimpse.c-glimpse {
   position: relative;
   max-width: none;
-  padding-left: 9.2rem;
   min-height: 7.2rem;
 }
 
-.c-glimpse .c-glimpse__header a {
+.c-glimpse .c-glimpse__link {
   border-bottom: 0;
 }
 
-.c-glimpse .c-glimpse__header a:hover {
+.c-glimpse .c-glimpse__link:hover {
   border-bottom: 0;
 }
 
-.c-glimpse .c-glimpse__header a:hover span {
+.c-glimpse .c-glimpse__link:hover * {
   border-bottom: 1px solid;
 }
 
-.c-glimpse .c-glimpse__header a:hover .c-glimpse__image {
+.c-glimpse .c-glimpse__link:hover .c-glimpse__image {
   box-shadow: 0 0 0 2px currentColor;
 }
 
-.c-glimpse .c-glimpse__heading {
-  font-size: 1.8rem;
-  margin: 0;
+.c-glimpse .c-glimpse__link.c-glimpse .c-glimpse__link:before,
+.c-glimpse .c-glimpse__link.c-glimpse .c-glimpse__link:after {
+  content: " ";
+  display: table;
+}
+
+.c-glimpse .c-glimpse__link.c-glimpse .c-glimpse__link,
+.c-glimpse .c-glimpse__link.c-glimpse .c-glimpse__link:after {
+  clear: both;
 }
 
 .c-glimpse .c-glimpse__image {
   width: 7.2rem;
   height: 7.2rem;
   overflow: hidden;
-  position: absolute;
   left: 0;
   top: 0;
   border: 1px solid currentColor;
+  float: left;
+  margin-right: 2rem;
 }
 
 .c-glimpse .c-glimpse__image--rounded {
@@ -5943,12 +5970,30 @@ $glimpse--link-border-bottom--hover: false !default;*/
 }
 
 .c-glimpse .c-glimpse__content {
-  font-size: 1.4rem;
+  margin: 0;
+  max-width: 100%;
+  width: calc((30rem - 100%) * 1000);
+  min-width: calc(100% - 9.2rem);
+  float: right;
+}
+
+.c-glimpse .c-glimpse__content .c-glimpse__heading {
+  font-size: 1.8rem;
   margin: 0;
 }
 
 .c-glimpse .c-glimpse__content * {
+  font-size: 1.4rem;
   margin: 0;
+}
+
+.c-glimpse.c-glimpse--large-image .c-glimpse__content {
+  min-width: calc(100% - 19.2rem);
+}
+
+.c-glimpse.c-glimpse--large-image .c-glimpse__image {
+  width: 17.2rem;
+  height: 17.2rem;
 }
 
 /*
