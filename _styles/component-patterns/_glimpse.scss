@@ -71,15 +71,25 @@ $theme-only: false !default;
         
         }
 
-        #{&}__link {
+        #{&}__link[href] {
+        
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            
+            -webkit-flex-wrap: wrap;
+                -ms-flex-wrap: wrap;
+                    flex-wrap: wrap;
+
+                -webkit-align-items: center;
+                     -ms-flex-align: center;
+                        align-items: center;
+        
             border-bottom: 0;
 
-            &:hover {
-                border-bottom: 0;
-
-                * {
-                    border-bottom: 1px solid;
-                }
+            &:hover,
+            &:active,
+            &:focus {
 
                 .#{$glimpse-namespace}glimpse__image {
                     box-shadow: 0 0 0 2px currentColor;
@@ -129,7 +139,6 @@ $theme-only: false !default;
             top: 0;
             border: 1px solid currentColor;
             
-            float: left;
             margin-right: $glimpse--spacing-unit;
 
         }
@@ -146,8 +155,6 @@ $theme-only: false !default;
             max-width: 100%;
             width: calc((30rem - 100%) * 1000);
             min-width: calc(100% - #{$glimpse--image-size + $glimpse--spacing-unit});
-            
-            float: right; 
         }
         
             #{&}__content #{&}__heading {
@@ -163,11 +170,19 @@ $theme-only: false !default;
 
         &#{&}--large-image #{&}__content {
             min-width: calc(100% - #{$glimpse--image-size-large + $glimpse--spacing-unit});
+            margin-left: $glimpse--spacing-unit;
+            margin-top: $glimpse--spacing-unit;
+            margin-bottom: $glimpse--spacing-unit;
         }
         
         &#{&}--large-image #{&}__image {
             width: $glimpse--image-size-large;
             height: $glimpse--image-size-large;
+            
+            margin-right: 0;
+            margin-top: -$glimpse--spacing-unit;
+            margin-bottom: -$glimpse--spacing-unit;
+            margin-left: -#{$glimpse--spacing-unit / 2};
         }
 
     }

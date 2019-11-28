@@ -110,7 +110,7 @@ $theme-only: false !default;
     }
 
     .#{$featurette-namespace}featurette#{$theme-class},
-    .#{$featurette-namespace}featurette#{$theme-class} a {
+    .#{$featurette-namespace}featurette#{$theme-class} * {
         background-color: map-get($theme, background-color);
         
         

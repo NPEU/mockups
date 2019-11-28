@@ -217,7 +217,7 @@ $featurette-button--border-color: darken($featurette--base-color, 20%) !default;
 }
 
 .c-featurette.t-featurette--dark,
-.c-featurette.t-featurette--dark a {
+.c-featurette.t-featurette--dark * {
   background-color: #2d2136;
   color: #fff;
 }
@@ -439,7 +439,7 @@ $patterns: (
 }
 
 .c-featurette.t-frosttie,
-.c-featurette.t-frosttie a {
+.c-featurette.t-frosttie * {
   background-color: #2b3383;
   color: #fff;
 }
