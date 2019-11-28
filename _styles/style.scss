@@ -27,6 +27,7 @@ $f__anchor-text-color--alt: #333;
 
 
 $f__selection-background-color: lighten(map-get(map-get($themes, neutral), primary-color), 10%) !default;
+$f__experimental_checkradios: true;
 
 @import '../bower_components/Fall-Back-Start-CSS/scss/_start.scss';
 @import '../bower_components/Fall-Back-Start-CSS/scss/_start-classes.scss';

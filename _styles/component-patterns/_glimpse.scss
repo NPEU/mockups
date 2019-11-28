@@ -17,6 +17,8 @@ $glimpse--max-width: 30em !default;
 $glimpse--image-size: 7.2rem !default;
 $glimpse--image-size-large: 17.2rem !default;
 
+$glimpse--content-breakpoint: 30em;
+
 $glimpse--base-color: #eee !default;
 $glimpse--text-color: #333 !default;
 $glimpse--background-color: #fff !default;
@@ -153,12 +155,13 @@ $theme-only: false !default;
             margin: 0;
             
             max-width: 100%;
-            width: calc((30rem - 100%) * 1000);
+            width: calc((#{$glimpse--content-breakpoint} - 100%) * 1000);
             min-width: calc(100% - #{$glimpse--image-size + $glimpse--spacing-unit});
         }
         
             #{&}__content #{&}__heading {
                     font-size: $glimpse-heading--font-size;
+                    line-height: $glimpse--spacing-unit * 1.5;
                     margin: 0;
                 }
 
