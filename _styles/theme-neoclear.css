@@ -374,22 +374,137 @@ $patterns: (
 */
 .d-background--very-light.t-neoclear {
   background-color: #7cfffb !important;
+  color: #fff !important;
+}
+
+.d-background--very-light.t-neoclear a[href] {
+  color: #fff !important;
+}
+
+.d-background--very-light.t-neoclear a[href]:hover,
+.d-background--very-light.t-neoclear a[href]:active,
+.d-background--very-light.t-neoclear a[href]:focus {
+  color: #fff !important;
+}
+
+.d-background--very-light.t-neoclear a[href].cta {
+  border-color: #fff !important;
+  color: #fff !important;
+  background-color: transparent !important;
+}
+
+.d-background--very-light.t-neoclear a[href].cta:hover,
+.d-background--very-light.t-neoclear a[href].cta:active,
+.d-background--very-light.t-neoclear a[href].cta:focus {
+  background-color: rgba(255, 255, 255, 0.1) !important;
 }
 
 .d-background--light.t-neoclear {
   background-color: #49fff9 !important;
+  color: #fff !important;
+}
+
+.d-background--light.t-neoclear a[href] {
+  color: #fff !important;
+}
+
+.d-background--light.t-neoclear a[href]:hover,
+.d-background--light.t-neoclear a[href]:active,
+.d-background--light.t-neoclear a[href]:focus {
+  color: #fff !important;
+}
+
+.d-background--light.t-neoclear a[href].cta {
+  border-color: #fff !important;
+  color: #fff !important;
+  background-color: transparent !important;
+}
+
+.d-background--light.t-neoclear a[href].cta:hover,
+.d-background--light.t-neoclear a[href].cta:active,
+.d-background--light.t-neoclear a[href].cta:focus {
+  background-color: rgba(255, 255, 255, 0.1) !important;
 }
 
 .d-background.t-neoclear {
   background-color: #009590 !important;
+  color: #fff !important;
+}
+
+.d-background.t-neoclear a[href] {
+  color: #fff !important;
+}
+
+.d-background.t-neoclear a[href]:hover,
+.d-background.t-neoclear a[href]:active,
+.d-background.t-neoclear a[href]:focus {
+  color: #fff !important;
+}
+
+.d-background.t-neoclear a[href].cta {
+  border-color: #fff !important;
+  color: #fff !important;
+  background-color: transparent !important;
+}
+
+.d-background.t-neoclear a[href].cta:hover,
+.d-background.t-neoclear a[href].cta:active,
+.d-background.t-neoclear a[href].cta:focus {
+  background-color: rgba(255, 255, 255, 0.1) !important;
 }
 
 .d-background--dark.t-neoclear {
   background-color: #00625f !important;
+  color: #fff !important;
+}
+
+.d-background--dark.t-neoclear a[href] {
+  color: #fff !important;
+}
+
+.d-background--dark.t-neoclear a[href]:hover,
+.d-background--dark.t-neoclear a[href]:active,
+.d-background--dark.t-neoclear a[href]:focus {
+  color: #fff !important;
+}
+
+.d-background--dark.t-neoclear a[href].cta {
+  border-color: #fff !important;
+  color: #fff !important;
+  background-color: transparent !important;
+}
+
+.d-background--dark.t-neoclear a[href].cta:hover,
+.d-background--dark.t-neoclear a[href].cta:active,
+.d-background--dark.t-neoclear a[href].cta:focus {
+  background-color: rgba(255, 255, 255, 0.1) !important;
 }
 
 .d-background--very-dark.t-neoclear {
   background-color: #002f2d !important;
+  color: #fff !important;
+}
+
+.d-background--very-dark.t-neoclear a[href] {
+  color: #fff !important;
+}
+
+.d-background--very-dark.t-neoclear a[href]:hover,
+.d-background--very-dark.t-neoclear a[href]:active,
+.d-background--very-dark.t-neoclear a[href]:focus {
+  color: #fff !important;
+}
+
+.d-background--very-dark.t-neoclear a[href].cta {
+  border-color: #fff !important;
+  color: #fff !important;
+  background-color: transparent !important;
+}
+
+.d-background--very-dark.t-neoclear a[href].cta:hover,
+.d-background--very-dark.t-neoclear a[href].cta:active,
+.d-background--very-dark.t-neoclear a[href].cta:focus {
+  background-color: rgba(255, 255, 255, 0.1) !important;
 }
 
 .d-background--sloped.t-neoclear {
@@ -710,22 +825,137 @@ input:not([type]):focus,
 */
 .d-background--very-light.t-neoclear--alt {
   background-color: #f6bfe4 !important;
+  color: #fff !important;
+}
+
+.d-background--very-light.t-neoclear--alt a[href] {
+  color: #fff !important;
+}
+
+.d-background--very-light.t-neoclear--alt a[href]:hover,
+.d-background--very-light.t-neoclear--alt a[href]:active,
+.d-background--very-light.t-neoclear--alt a[href]:focus {
+  color: #fff !important;
+}
+
+.d-background--very-light.t-neoclear--alt a[href].cta {
+  border-color: #fff !important;
+  color: #fff !important;
+  background-color: transparent !important;
+}
+
+.d-background--very-light.t-neoclear--alt a[href].cta:hover,
+.d-background--very-light.t-neoclear--alt a[href].cta:active,
+.d-background--very-light.t-neoclear--alt a[href].cta:focus {
+  background-color: rgba(255, 255, 255, 0.1) !important;
 }
 
 .d-background--light.t-neoclear--alt {
   background-color: #ef92d1 !important;
+  color: #fff !important;
+}
+
+.d-background--light.t-neoclear--alt a[href] {
+  color: #fff !important;
+}
+
+.d-background--light.t-neoclear--alt a[href]:hover,
+.d-background--light.t-neoclear--alt a[href]:active,
+.d-background--light.t-neoclear--alt a[href]:focus {
+  color: #fff !important;
+}
+
+.d-background--light.t-neoclear--alt a[href].cta {
+  border-color: #fff !important;
+  color: #fff !important;
+  background-color: transparent !important;
+}
+
+.d-background--light.t-neoclear--alt a[href].cta:hover,
+.d-background--light.t-neoclear--alt a[href].cta:active,
+.d-background--light.t-neoclear--alt a[href].cta:focus {
+  background-color: rgba(255, 255, 255, 0.1) !important;
 }
 
 .d-background.t-neoclear--alt {
   background-color: #B51A82 !important;
+  color: #fff !important;
+}
+
+.d-background.t-neoclear--alt a[href] {
+  color: #fff !important;
+}
+
+.d-background.t-neoclear--alt a[href]:hover,
+.d-background.t-neoclear--alt a[href]:active,
+.d-background.t-neoclear--alt a[href]:focus {
+  color: #fff !important;
+}
+
+.d-background.t-neoclear--alt a[href].cta {
+  border-color: #fff !important;
+  color: #fff !important;
+  background-color: transparent !important;
+}
+
+.d-background.t-neoclear--alt a[href].cta:hover,
+.d-background.t-neoclear--alt a[href].cta:active,
+.d-background.t-neoclear--alt a[href].cta:focus {
+  background-color: rgba(255, 255, 255, 0.1) !important;
 }
 
 .d-background--dark.t-neoclear--alt {
   background-color: #881462 !important;
+  color: #fff !important;
+}
+
+.d-background--dark.t-neoclear--alt a[href] {
+  color: #fff !important;
+}
+
+.d-background--dark.t-neoclear--alt a[href]:hover,
+.d-background--dark.t-neoclear--alt a[href]:active,
+.d-background--dark.t-neoclear--alt a[href]:focus {
+  color: #fff !important;
+}
+
+.d-background--dark.t-neoclear--alt a[href].cta {
+  border-color: #fff !important;
+  color: #fff !important;
+  background-color: transparent !important;
+}
+
+.d-background--dark.t-neoclear--alt a[href].cta:hover,
+.d-background--dark.t-neoclear--alt a[href].cta:active,
+.d-background--dark.t-neoclear--alt a[href].cta:focus {
+  background-color: rgba(255, 255, 255, 0.1) !important;
 }
 
 .d-background--very-dark.t-neoclear--alt {
   background-color: #5c0d42 !important;
+  color: #fff !important;
+}
+
+.d-background--very-dark.t-neoclear--alt a[href] {
+  color: #fff !important;
+}
+
+.d-background--very-dark.t-neoclear--alt a[href]:hover,
+.d-background--very-dark.t-neoclear--alt a[href]:active,
+.d-background--very-dark.t-neoclear--alt a[href]:focus {
+  color: #fff !important;
+}
+
+.d-background--very-dark.t-neoclear--alt a[href].cta {
+  border-color: #fff !important;
+  color: #fff !important;
+  background-color: transparent !important;
+}
+
+.d-background--very-dark.t-neoclear--alt a[href].cta:hover,
+.d-background--very-dark.t-neoclear--alt a[href].cta:active,
+.d-background--very-dark.t-neoclear--alt a[href].cta:focus {
+  background-color: rgba(255, 255, 255, 0.1) !important;
 }
 
 .d-background--sloped.t-neoclear--alt {

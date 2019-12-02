@@ -374,22 +374,137 @@ $patterns: (
 */
 .d-background--very-light.t-frosttie {
   background-color: #afb4e5 !important;
+  color: #fff !important;
+}
+
+.d-background--very-light.t-frosttie a[href] {
+  color: #fff !important;
+}
+
+.d-background--very-light.t-frosttie a[href]:hover,
+.d-background--very-light.t-frosttie a[href]:active,
+.d-background--very-light.t-frosttie a[href]:focus {
+  color: #fff !important;
+}
+
+.d-background--very-light.t-frosttie a[href].cta {
+  border-color: #fff !important;
+  color: #fff !important;
+  background-color: transparent !important;
+}
+
+.d-background--very-light.t-frosttie a[href].cta:hover,
+.d-background--very-light.t-frosttie a[href].cta:active,
+.d-background--very-light.t-frosttie a[href].cta:focus {
+  background-color: rgba(255, 255, 255, 0.1) !important;
 }
 
 .d-background--light.t-frosttie {
   background-color: #8890d8 !important;
+  color: #fff !important;
+}
+
+.d-background--light.t-frosttie a[href] {
+  color: #fff !important;
+}
+
+.d-background--light.t-frosttie a[href]:hover,
+.d-background--light.t-frosttie a[href]:active,
+.d-background--light.t-frosttie a[href]:focus {
+  color: #fff !important;
+}
+
+.d-background--light.t-frosttie a[href].cta {
+  border-color: #fff !important;
+  color: #fff !important;
+  background-color: transparent !important;
+}
+
+.d-background--light.t-frosttie a[href].cta:hover,
+.d-background--light.t-frosttie a[href].cta:active,
+.d-background--light.t-frosttie a[href].cta:focus {
+  background-color: rgba(255, 255, 255, 0.1) !important;
 }
 
 .d-background.t-frosttie {
   background-color: #2b3383 !important;
+  color: #fff !important;
+}
+
+.d-background.t-frosttie a[href] {
+  color: #fff !important;
+}
+
+.d-background.t-frosttie a[href]:hover,
+.d-background.t-frosttie a[href]:active,
+.d-background.t-frosttie a[href]:focus {
+  color: #fff !important;
+}
+
+.d-background.t-frosttie a[href].cta {
+  border-color: #fff !important;
+  color: #fff !important;
+  background-color: transparent !important;
+}
+
+.d-background.t-frosttie a[href].cta:hover,
+.d-background.t-frosttie a[href].cta:active,
+.d-background.t-frosttie a[href].cta:focus {
+  background-color: rgba(255, 255, 255, 0.1) !important;
 }
 
 .d-background--dark.t-frosttie {
   background-color: #1e245d !important;
+  color: #fff !important;
+}
+
+.d-background--dark.t-frosttie a[href] {
+  color: #fff !important;
+}
+
+.d-background--dark.t-frosttie a[href]:hover,
+.d-background--dark.t-frosttie a[href]:active,
+.d-background--dark.t-frosttie a[href]:focus {
+  color: #fff !important;
+}
+
+.d-background--dark.t-frosttie a[href].cta {
+  border-color: #fff !important;
+  color: #fff !important;
+  background-color: transparent !important;
+}
+
+.d-background--dark.t-frosttie a[href].cta:hover,
+.d-background--dark.t-frosttie a[href].cta:active,
+.d-background--dark.t-frosttie a[href].cta:focus {
+  background-color: rgba(255, 255, 255, 0.1) !important;
 }
 
 .d-background--very-dark.t-frosttie {
   background-color: #121536 !important;
+  color: #fff !important;
+}
+
+.d-background--very-dark.t-frosttie a[href] {
+  color: #fff !important;
+}
+
+.d-background--very-dark.t-frosttie a[href]:hover,
+.d-background--very-dark.t-frosttie a[href]:active,
+.d-background--very-dark.t-frosttie a[href]:focus {
+  color: #fff !important;
+}
+
+.d-background--very-dark.t-frosttie a[href].cta {
+  border-color: #fff !important;
+  color: #fff !important;
+  background-color: transparent !important;
+}
+
+.d-background--very-dark.t-frosttie a[href].cta:hover,
+.d-background--very-dark.t-frosttie a[href].cta:active,
+.d-background--very-dark.t-frosttie a[href].cta:focus {
+  background-color: rgba(255, 255, 255, 0.1) !important;
 }
 
 .d-background--sloped.t-frosttie {
@@ -710,22 +825,137 @@ input:not([type]):focus,
 */
 .d-background--very-light.t-frosttie--alt {
   background-color: #d5c1e9 !important;
+  color: #fff !important;
+}
+
+.d-background--very-light.t-frosttie--alt a[href] {
+  color: #fff !important;
+}
+
+.d-background--very-light.t-frosttie--alt a[href]:hover,
+.d-background--very-light.t-frosttie--alt a[href]:active,
+.d-background--very-light.t-frosttie--alt a[href]:focus {
+  color: #fff !important;
+}
+
+.d-background--very-light.t-frosttie--alt a[href].cta {
+  border-color: #fff !important;
+  color: #fff !important;
+  background-color: transparent !important;
+}
+
+.d-background--very-light.t-frosttie--alt a[href].cta:hover,
+.d-background--very-light.t-frosttie--alt a[href].cta:active,
+.d-background--very-light.t-frosttie--alt a[href].cta:focus {
+  background-color: rgba(255, 255, 255, 0.1) !important;
 }
 
 .d-background--light.t-frosttie--alt {
   background-color: #bb9bdc !important;
+  color: #fff !important;
+}
+
+.d-background--light.t-frosttie--alt a[href] {
+  color: #fff !important;
+}
+
+.d-background--light.t-frosttie--alt a[href]:hover,
+.d-background--light.t-frosttie--alt a[href]:active,
+.d-background--light.t-frosttie--alt a[href]:focus {
+  color: #fff !important;
+}
+
+.d-background--light.t-frosttie--alt a[href].cta {
+  border-color: #fff !important;
+  color: #fff !important;
+  background-color: transparent !important;
+}
+
+.d-background--light.t-frosttie--alt a[href].cta:hover,
+.d-background--light.t-frosttie--alt a[href].cta:active,
+.d-background--light.t-frosttie--alt a[href].cta:focus {
+  background-color: rgba(255, 255, 255, 0.1) !important;
 }
 
 .d-background.t-frosttie--alt {
   background-color: #613392 !important;
+  color: #fff !important;
+}
+
+.d-background.t-frosttie--alt a[href] {
+  color: #fff !important;
+}
+
+.d-background.t-frosttie--alt a[href]:hover,
+.d-background.t-frosttie--alt a[href]:active,
+.d-background.t-frosttie--alt a[href]:focus {
+  color: #fff !important;
+}
+
+.d-background.t-frosttie--alt a[href].cta {
+  border-color: #fff !important;
+  color: #fff !important;
+  background-color: transparent !important;
+}
+
+.d-background.t-frosttie--alt a[href].cta:hover,
+.d-background.t-frosttie--alt a[href].cta:active,
+.d-background.t-frosttie--alt a[href].cta:focus {
+  background-color: rgba(255, 255, 255, 0.1) !important;
 }
 
 .d-background--dark.t-frosttie--alt {
   background-color: #48266c !important;
+  color: #fff !important;
+}
+
+.d-background--dark.t-frosttie--alt a[href] {
+  color: #fff !important;
+}
+
+.d-background--dark.t-frosttie--alt a[href]:hover,
+.d-background--dark.t-frosttie--alt a[href]:active,
+.d-background--dark.t-frosttie--alt a[href]:focus {
+  color: #fff !important;
+}
+
+.d-background--dark.t-frosttie--alt a[href].cta {
+  border-color: #fff !important;
+  color: #fff !important;
+  background-color: transparent !important;
+}
+
+.d-background--dark.t-frosttie--alt a[href].cta:hover,
+.d-background--dark.t-frosttie--alt a[href].cta:active,
+.d-background--dark.t-frosttie--alt a[href].cta:focus {
+  background-color: rgba(255, 255, 255, 0.1) !important;
 }
 
 .d-background--very-dark.t-frosttie--alt {
   background-color: #2f1946 !important;
+  color: #fff !important;
+}
+
+.d-background--very-dark.t-frosttie--alt a[href] {
+  color: #fff !important;
+}
+
+.d-background--very-dark.t-frosttie--alt a[href]:hover,
+.d-background--very-dark.t-frosttie--alt a[href]:active,
+.d-background--very-dark.t-frosttie--alt a[href]:focus {
+  color: #fff !important;
+}
+
+.d-background--very-dark.t-frosttie--alt a[href].cta {
+  border-color: #fff !important;
+  color: #fff !important;
+  background-color: transparent !important;
+}
+
+.d-background--very-dark.t-frosttie--alt a[href].cta:hover,
+.d-background--very-dark.t-frosttie--alt a[href].cta:active,
+.d-background--very-dark.t-frosttie--alt a[href].cta:focus {
+  background-color: rgba(255, 255, 255, 0.1) !important;
 }
 
 .d-background--sloped.t-frosttie--alt {
