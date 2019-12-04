@@ -11222,4 +11222,21 @@ details:not([open]) > *:not(summary) {
   display: none;
 }
 
+/*
+    Really odd, but in normal Chrome (not canary, FF or Edge) .u-fill-height doesn't work properly in
+    bespoke context.
+    
+    E.g. https://www.npeu.ox.ac.uk/pru-mnhc
+    
+    I really can't figure out why the behaviour is different, but taking off min-height works as expected.
+    However, it's context-specific, I can't just remove that rule from everywhere.
+
+
+    - UPDATE - avoided adding the height class, but keep this as a note for now.
+*/
+/*
+.custom .u-fill-height {
+    min-height: 0;
+}
+*/
 /* ---------------------------------------------------------------------------------------------- */
