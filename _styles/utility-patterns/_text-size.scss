@@ -1,0 +1,15 @@
+/*
+    Text size.
+    
+    @To Do: allow for responsive variations.
+*/
+
+$text-size-namespace: u- !default;
+
+.#{$text-size-namespace}text-size--small {
+    font-size: 0.875em !important;
+}
+
+.#{$text-size-namespace}text-size--large {
+    font-size: 1.25em !important;
+}

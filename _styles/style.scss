@@ -37,6 +37,11 @@ $f__experimental_checkradios: true;
 @import '../bower_components/Fall-Back-Start-CSS/scss/_start-experimental.scss';
 
 
+// Reduce opacity of external link marker to make less overbearing.
+a[href][rel=external]::after {
+    opacity: 0.6;
+}
+
 // Note these styles will be moved to vars (above) when StartCSS Blockquote is finished.
 blockquote {
     border-top: 1px dotted map-get(map-get($themes, neutral), primary-color);
@@ -299,6 +304,7 @@ $max-measure-limit: $f__measure;
 @import "utility-patterns/_space.scss";
 @import "utility-patterns/_text-align.scss";
 @import "utility-patterns/_text-groups.scss";
+@import "utility-patterns/_text-size.scss";
 @import "utility-patterns/_word-wrap.scss";
 
 
@@ -382,6 +388,8 @@ $theme: map_get($themes, $theme-name);
 
 $theme-name: npeu;
 $theme: map_get($themes, $theme-name);
+
+@import "_theme";
 
 // Navbar:
 .nav-bar {

@@ -222,6 +222,12 @@ $featurette-button--border-color: darken($featurette--base-color, 20%) !default;
   color: #fff;
 }
 
+.c-featurette.t-featurette--light,
+.c-featurette.t-featurette--light * {
+  background-color: #ad96c0;
+  color: #fff;
+}
+
 /*
 
 

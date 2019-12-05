@@ -13,9 +13,13 @@ $theme-only: false !default;
 
     .#{$badge-namespace}badge {
 
+        /*
+            1. For positioned pseudo elements, e.g. External indicator.
+        */
         &#{&} {
             display: inline-block;
             vertical-align: middle;
+            position: relative; /* [1] */
         }
 
             svg {
@@ -78,6 +82,15 @@ $theme-only: false !default;
             border: 0;
             box-shadow: 0 0 0 0.6rem #fff, 0 0 0 1.2rem rgba(0,0,0,.2);
         }
+    }
+
+    a[href][rel=external].#{$badge-namespace}badge::after {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 1.25em;
+        height: 1.25em;
+        display: block;
     }
 
     /*

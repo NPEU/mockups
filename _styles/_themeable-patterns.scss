@@ -67,6 +67,13 @@ $featurette-spacing-unit: $f__base-rem-space-unit;
     )
 );
 
+@include featurette-theme("featurette--light", (
+    background-color: lighten($f__base-ui-color, 30%),
+    text-color: $f__base-ui-color
+    )
+);
+
+
 
 //@import "patterns/_funder-logo.scss";
 // Not sure why glimpse ever needs a max-wdith.

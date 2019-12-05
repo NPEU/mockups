@@ -8,6 +8,7 @@ $theme-namespace: t- !default;
 
 $theme-only: false !default;
 
+$uc-breakpoint: 35em !default;
 // Note - no theme yet!
 
 // We don't need this if we're only themeing the pattern:
@@ -18,21 +19,21 @@ $theme-only: false !default;
         [data-contains~="contact-details"] {
             @extend .c-contact-list;
         }
-        
+
         [data-display-is~="width-one-quarter"] + [data-contains~="contact-details"] {
-            @include ff-width(100%, 30em, 75%);
+            @include ff-width(100%, $uc-breakpoint, 75%);
         }
-        
+
         [data-display-is~="width-one-third"] + [data-contains~="contact-details"] {
-            @include ff-width(100%, 30em, 67%);
+            @include ff-width(100%, $uc-breakpoint, 67%);
         }
-        
+
         [data-display-is~="width-one-half"] + [data-contains~="contact-details"] {
-            @include ff-width(100%, 30em, 50%);
+            @include ff-width(100%, $uc-breakpoint, 50%);
         }
-        
+
         [data-display-is~="width-two-thirds"] + [data-contains~="contact-details"] {
-            @include ff-width(100%, 30em, 33%);
+            @include ff-width(100%, $uc-breakpoint, 33%);
         }
 
 
@@ -43,41 +44,41 @@ $theme-only: false !default;
         [data-display-as~="themed-box"],
         [data-display-as~="notice-box"] {
             padding: $panel--padding;
-            
+
             margin-bottom: $sz-m;
-        
+
             @include bottom-space-fix();
-           
+
             width: 100%;
         }
-        
+
         [data-display-as~="box"] {
             border: 1px solid map-get(map-get($themes, neutral), primary-color);
         }
-        
+
         [data-display-as~="themed-box"] {
             color: #fff;
             background: map-get(map-get($themes, npeu), primary-color);
 
             //outline: 1px solid $border-color;
-            
+
             a[href] {
                 color: #fff;
                 //background-color: $background-color;
             }
-            
+
             a[href]:hover,
             a[href]:active,
             a[href]:focus {
                 color: #fff;
             }
-            
+
             a[href].cta {
                 border-color: #fff;
                 color: #fff;
                 background-color: transparent;
             }
-            
+
             a[href].cta:hover,
             a[href].cta:active,
             a[href].cta:focus {
@@ -88,11 +89,11 @@ $theme-only: false !default;
                 }
             }
         }
-        
+
         [data-display-as~="notice-box"] {
             border: 6px solid map-get(map-get($themes, npeu), secondary-color);
             background: scale-color(map-get(map-get($themes, npeu), secondary-color), $lightness: 93%);
-            
+
             a[href].cta:hover,
             a[href].cta:active,
             a[href].cta:focus {
@@ -118,66 +119,78 @@ $theme-only: false !default;
             @extend .u-space--below;
             @extend .u-text-align--center;
             @extend .u-padding--sides--s;
-            
+
             -webkit-flex-basis: 15em;
                     flex-basis: 11.25em;
                      max-width: 15em;
         }
-        
-        
-        
+
+
+
         [data-display-is~="pulled-left"],
         [data-display-is~="pulled-right"] {
+            margin-bottom: $sz-m;
+        
             display: -webkit-flex;
             display: -ms-flexbox;
             display: flex;
             -webkit-justify-content: center;
                       -ms-flex-pack: center;
                     justify-content: center;
-                    
-            // We want some space on the right, but not when narrow screens effectively tunr the 
-            // floting off:
-            &::before,
+
+
+            // We want some space on the right, but not when narrow screens effectively turn the
+            // floating off:
+            /*&::before,
             &::after {
                 content: "";
                 display: block;
                 -webkit-flex: 0 0 auto;
                     -ms-flex: 0 0 auto;
                         flex: 0 0 auto;
-                @include ff-width($sz-m, 40vw, 0);
+                //@include ff-width($sz-m, $uc-breakpoint, 100%);
             }
+
+            // Because these pseudo elements are children, we need to calculate parent's parent:
+
+            &[data-display-is~="width-one-half"]::before,
+            &[data-display-is~="width-one-half"]::after {
+                @include ff-width($sz-m, ($uc-breakpoint / 2), 0);
+            }*/
         }
-        
+
         [data-display-is~="pulled-left"] {
             float: left;
-            
+            margin-right: $sz-m;
+
             &::before {
                 display: none;
             }
         }
-        
+
         [data-display-is~="pulled-right"] {
             float: right;
+            margin-left: $sz-m;
 
             &::after {
                 display: none;
             }
         }
-        
+
         [data-display-is~="width-one-quarter"] {
-            @include ff-width(100%, 30em, 25%);
+            @include ff-width(100%, $uc-breakpoint, 25%);
         }
-        
+
         [data-display-is~="width-one-third"] {
-            @include ff-width(100%, 30em, 33%);
+            @include ff-width(100%, $uc-breakpoint, 33%);
         }
-        
+
         [data-display-is~="width-one-half"] {
-            @include ff-width(100%, 30em, 50%);
+            @include ff-width(100%, $uc-breakpoint, 50%);
         }
-        
+
         [data-display-is~="width-two-thirds"] {
-            @include ff-width(100%, 30em, 67%);
+            @include ff-width(100%, $uc-breakpoint, 67%);
         }
 
 
@@ -215,20 +228,20 @@ $theme-only: false !default;
             width: 100%;
             max-width: 16em;
             margin: 0 auto;
-            
+
             border-radius: 99999px;
             overflow: hidden;
-            
-            
+
+
             //@extend .c-contact-avatar;
             //@extend .d-bands;
         }
-        
+
         // Text content:
         [data-display-as~="smallprint"] {
             font-size: 0.75em;
         }
-        
+
         [data-display-as~="strapline"] {
             font-size: 1.125em;
         }
