@@ -50,7 +50,7 @@ $theme-only: false !default;
 
             }
 
-        &#{&}--small{
+        &#{&}--small {
             height: 2em;
             width: 2em;
 
@@ -70,6 +70,42 @@ $theme-only: false !default;
             overflow: hidden;
         }
         */
+
+        &#{&}--decorated {
+
+            // Currently setting colour via inline style, so can't lighten it. Fake this by using a
+            // pseudo element for the background:
+            // Also href borders mess with these border settings, so use pseudo element for that 
+            // too.
+            position: relative;
+
+            &::before {
+                content: "";
+                display: block;
+                position: absolute;
+                left: -1em;
+                top: -1em;
+                right: -1em;
+                bottom: -1em;
+
+                opacity: 0.1;
+                background-color: currentColor;
+            }
+
+            &::after {
+                content: "";
+                display: block;
+                position: absolute;
+                left: -1em;
+                top: -1em;
+                right: -1em;
+                bottom: -1em;
+
+                border-width: 2px;
+                border-style: solid;
+                border-color: currentColor;
+            }
+        }
     }
 
     a[href].#{$badge-namespace}badge {

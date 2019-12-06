@@ -204,9 +204,9 @@ $ff-min-widths: (
 
 @import "../bower_components/NPEU-layout-patterns/dist/scss/_ff-widths.scss";
 
-@import "../bower_components/NPEU-layout-patterns/dist/scss/_scl--pushed-apart.scss";
+//@import "../bower_components/NPEU-layout-patterns/dist/scss/_scl--pushed-apart.scss";
 
-@import "../bower_components/NPEU-layout-patterns/dist/scss/_scl--n-up.scss";
+//@import "../bower_components/NPEU-layout-patterns/dist/scss/_scl--n-up.scss";
 
 
 $gallery-grid-spacing-unit: $f__base-rem-space-unit;
@@ -248,6 +248,7 @@ $primary-content-pull-out-side-space: 0 $primary-content-spacing-unit;
 @import "layout-patterns/_primary-content.scss";
 
 @import "layout-patterns/_distribute.scss";
+@import "layout-patterns/_n-up.scss";
 
 @import "layout-patterns/_proportional-container.scss";
 .proportional-container--1-1_4::before {
