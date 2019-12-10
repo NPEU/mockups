@@ -90,7 +90,7 @@ $theme: map-merge(
 */
 button.#{$theme-namespace}#{$theme-name}:not(.over-panel__overlay):not(.dropdown__button),
 a[href].button.#{$theme-namespace}#{$theme-name}:not(.over-panel__overlay):not(.dropdown__button),
-a[href].cta.#{$theme-namespace}#{$theme-name}:not(.over-panel__overlay):not(.dropdown__button),
+a[href].c-cta.#{$theme-namespace}#{$theme-name}:not(.over-panel__overlay):not(.dropdown__button),
 .cookie_notice__action button {
     border-color: map-get($theme, border-color) !important;
     color: map-get($theme, cta-text-color) !important;
@@ -272,7 +272,7 @@ table.#{$theme-namespace}#{$theme-name} tr:nth-child(odd) > th,
 }
 */
 /*
-:not(.overpanel) .#{$theme-namespace}#{$theme-name} a[href].cta {
+:not(.overpanel) .#{$theme-namespace}#{$theme-name} a[href].c-cta {
 
     border-color: map-get($theme, border-color);
     color: #fff;
@@ -401,9 +401,9 @@ $theme--very-dark: $theme;
     div[data-display-as="themed-box"] {
 		background: map-get($theme--normal, primary-color);
        
-        a[href].cta:hover,
-        a[href].cta:active,
-        a[href].cta:focus {
+        a[href].c-cta:hover,
+        a[href].c-cta:active,
+        a[href].c-cta:focus {
             @if f__color_light_or_dark(map-get($theme, primary-color)) == 'light' {
                 background-color: rgba(0,0,0,0.1);
             } @else {

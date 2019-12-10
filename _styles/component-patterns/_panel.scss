@@ -62,15 +62,15 @@ $theme-only: false !default;
             color: $text-color;
         }
         
-        a[href].cta {
+        a[href].c-cta {
             border-color: $text-color;
             color: $text-color;
             background-color: transparent;
         }
         
-        a[href].cta:hover,
-        a[href].cta:active,
-        a[href].cta:focus {
+        a[href].c-cta:hover,
+        a[href].c-cta:active,
+        a[href].c-cta:focus {
             @if f__color_light_or_dark(map-get($theme, background-color)) == 'light' {
                 background-color: rgba(0,0,0,0.1);
             } @else {

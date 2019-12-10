@@ -121,7 +121,7 @@ $patterns: (
         }
     }
 
-    :not(.overpanel) .#{$theme-namespace}#{$name} a[href].cta {
+    :not(.overpanel) .#{$theme-namespace}#{$name} a[href].c-cta {
 
         border-color: map-get($theme, border-color);
         color: map-get($theme, text-color);

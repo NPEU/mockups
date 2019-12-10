@@ -252,6 +252,15 @@ $primary-content-pull-out-side: right;
 $primary-content-pull-out-side-space: 0 $primary-content-spacing-unit;
 @import "layout-patterns/_primary-content.scss";
 
+// Special adjustment to framed c-panels in pulled-out-context:
+@media only screen and (min-width: $primary-content-breakpoint) {
+    .l-primary-content.l-primary-content--has-pull-outs .c-panel--framed {
+        padding: 0;
+    }
+}
+
+
+
 @import "layout-patterns/_distribute.scss";
 @import "layout-patterns/_n-up.scss";
 

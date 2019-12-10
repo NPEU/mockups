@@ -393,15 +393,15 @@ $patterns: (
   color: #fff !important;
 }
 
-.d-background--very-light.t-pru-mnhc a[href].cta {
+.d-background--very-light.t-pru-mnhc a[href].c-cta {
   border-color: #fff !important;
   color: #fff !important;
   background-color: transparent !important;
 }
 
-.d-background--very-light.t-pru-mnhc a[href].cta:hover,
-.d-background--very-light.t-pru-mnhc a[href].cta:active,
-.d-background--very-light.t-pru-mnhc a[href].cta:focus {
+.d-background--very-light.t-pru-mnhc a[href].c-cta:hover,
+.d-background--very-light.t-pru-mnhc a[href].c-cta:active,
+.d-background--very-light.t-pru-mnhc a[href].c-cta:focus {
   background-color: rgba(255, 255, 255, 0.1) !important;
 }
 
@@ -420,15 +420,15 @@ $patterns: (
   color: #fff !important;
 }
 
-.d-background--light.t-pru-mnhc a[href].cta {
+.d-background--light.t-pru-mnhc a[href].c-cta {
   border-color: #fff !important;
   color: #fff !important;
   background-color: transparent !important;
 }
 
-.d-background--light.t-pru-mnhc a[href].cta:hover,
-.d-background--light.t-pru-mnhc a[href].cta:active,
-.d-background--light.t-pru-mnhc a[href].cta:focus {
+.d-background--light.t-pru-mnhc a[href].c-cta:hover,
+.d-background--light.t-pru-mnhc a[href].c-cta:active,
+.d-background--light.t-pru-mnhc a[href].c-cta:focus {
   background-color: rgba(255, 255, 255, 0.1) !important;
 }
 
@@ -447,15 +447,15 @@ $patterns: (
   color: #fff !important;
 }
 
-.d-background.t-pru-mnhc a[href].cta {
+.d-background.t-pru-mnhc a[href].c-cta {
   border-color: #fff !important;
   color: #fff !important;
   background-color: transparent !important;
 }
 
-.d-background.t-pru-mnhc a[href].cta:hover,
-.d-background.t-pru-mnhc a[href].cta:active,
-.d-background.t-pru-mnhc a[href].cta:focus {
+.d-background.t-pru-mnhc a[href].c-cta:hover,
+.d-background.t-pru-mnhc a[href].c-cta:active,
+.d-background.t-pru-mnhc a[href].c-cta:focus {
   background-color: rgba(255, 255, 255, 0.1) !important;
 }
 
@@ -474,15 +474,15 @@ $patterns: (
   color: #fff !important;
 }
 
-.d-background--dark.t-pru-mnhc a[href].cta {
+.d-background--dark.t-pru-mnhc a[href].c-cta {
   border-color: #fff !important;
   color: #fff !important;
   background-color: transparent !important;
 }
 
-.d-background--dark.t-pru-mnhc a[href].cta:hover,
-.d-background--dark.t-pru-mnhc a[href].cta:active,
-.d-background--dark.t-pru-mnhc a[href].cta:focus {
+.d-background--dark.t-pru-mnhc a[href].c-cta:hover,
+.d-background--dark.t-pru-mnhc a[href].c-cta:active,
+.d-background--dark.t-pru-mnhc a[href].c-cta:focus {
   background-color: rgba(255, 255, 255, 0.1) !important;
 }
 
@@ -501,15 +501,15 @@ $patterns: (
   color: #fff !important;
 }
 
-.d-background--very-dark.t-pru-mnhc a[href].cta {
+.d-background--very-dark.t-pru-mnhc a[href].c-cta {
   border-color: #fff !important;
   color: #fff !important;
   background-color: transparent !important;
 }
 
-.d-background--very-dark.t-pru-mnhc a[href].cta:hover,
-.d-background--very-dark.t-pru-mnhc a[href].cta:active,
-.d-background--very-dark.t-pru-mnhc a[href].cta:focus {
+.d-background--very-dark.t-pru-mnhc a[href].c-cta:hover,
+.d-background--very-dark.t-pru-mnhc a[href].c-cta:active,
+.d-background--very-dark.t-pru-mnhc a[href].c-cta:focus {
   background-color: rgba(255, 255, 255, 0.1) !important;
 }
 
@@ -584,15 +584,15 @@ $patterns: (
   color: #333;
 }
 
-.c-panel.c-panel.t-pru-mnhc a[href].cta {
+.c-panel.c-panel.t-pru-mnhc a[href].c-cta {
   border-color: #333;
   color: #333;
   background-color: transparent;
 }
 
-.c-panel.c-panel.t-pru-mnhc a[href].cta:hover,
-.c-panel.c-panel.t-pru-mnhc a[href].cta:active,
-.c-panel.c-panel.t-pru-mnhc a[href].cta:focus {
+.c-panel.c-panel.t-pru-mnhc a[href].c-cta:hover,
+.c-panel.c-panel.t-pru-mnhc a[href].c-cta:active,
+.c-panel.c-panel.t-pru-mnhc a[href].c-cta:focus {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
@@ -635,7 +635,7 @@ $patterns: (
 */
 button.t-pru-mnhc:not(.over-panel__overlay):not(.dropdown__button),
 a[href].button.t-pru-mnhc:not(.over-panel__overlay):not(.dropdown__button),
-a[href].cta.t-pru-mnhc:not(.over-panel__overlay):not(.dropdown__button),
+a[href].c-cta.t-pru-mnhc:not(.over-panel__overlay):not(.dropdown__button),
 .cookie_notice__action button {
   border-color: #5d4777 !important;
   color: #ffffff !important;
@@ -645,8 +645,8 @@ a[href].cta.t-pru-mnhc:not(.over-panel__overlay):not(.dropdown__button),
 button.t-pru-mnhc:not(.over-panel__overlay):not(.dropdown__button):hover, button.t-pru-mnhc:not(.over-panel__overlay):not(.dropdown__button):active,
 a[href].button.t-pru-mnhc:not(.over-panel__overlay):not(.dropdown__button):hover,
 a[href].button.t-pru-mnhc:not(.over-panel__overlay):not(.dropdown__button):active,
-a[href].cta.t-pru-mnhc:not(.over-panel__overlay):not(.dropdown__button):hover,
-a[href].cta.t-pru-mnhc:not(.over-panel__overlay):not(.dropdown__button):active,
+a[href].c-cta.t-pru-mnhc:not(.over-panel__overlay):not(.dropdown__button):hover,
+a[href].c-cta.t-pru-mnhc:not(.over-panel__overlay):not(.dropdown__button):active,
 .cookie_notice__action button:hover,
 .cookie_notice__action button:active {
   background-color: #443457 !important;
@@ -654,7 +654,7 @@ a[href].cta.t-pru-mnhc:not(.over-panel__overlay):not(.dropdown__button):active,
 
 button.t-pru-mnhc:not(.over-panel__overlay):not(.dropdown__button):focus,
 a[href].button.t-pru-mnhc:not(.over-panel__overlay):not(.dropdown__button):focus,
-a[href].cta.t-pru-mnhc:not(.over-panel__overlay):not(.dropdown__button):focus,
+a[href].c-cta.t-pru-mnhc:not(.over-panel__overlay):not(.dropdown__button):focus,
 .cookie_notice__action button:focus {
   outline: 0;
   box-shadow: 0 0 0 3px rgba(93, 71, 119, 0.5);
@@ -792,7 +792,7 @@ input:not([type]):focus,
 }
 */
 /*
-:not(.overpanel) .t-pru-mnhc a[href].cta {
+:not(.overpanel) .t-pru-mnhc a[href].c-cta {
 
     border-color: map-get($theme, border-color);
     color: #fff;
@@ -844,15 +844,15 @@ input:not([type]):focus,
   color: #fff !important;
 }
 
-.d-background--very-light.t-pru-mnhc--alt a[href].cta {
+.d-background--very-light.t-pru-mnhc--alt a[href].c-cta {
   border-color: #fff !important;
   color: #fff !important;
   background-color: transparent !important;
 }
 
-.d-background--very-light.t-pru-mnhc--alt a[href].cta:hover,
-.d-background--very-light.t-pru-mnhc--alt a[href].cta:active,
-.d-background--very-light.t-pru-mnhc--alt a[href].cta:focus {
+.d-background--very-light.t-pru-mnhc--alt a[href].c-cta:hover,
+.d-background--very-light.t-pru-mnhc--alt a[href].c-cta:active,
+.d-background--very-light.t-pru-mnhc--alt a[href].c-cta:focus {
   background-color: rgba(255, 255, 255, 0.1) !important;
 }
 
@@ -871,15 +871,15 @@ input:not([type]):focus,
   color: #fff !important;
 }
 
-.d-background--light.t-pru-mnhc--alt a[href].cta {
+.d-background--light.t-pru-mnhc--alt a[href].c-cta {
   border-color: #fff !important;
   color: #fff !important;
   background-color: transparent !important;
 }
 
-.d-background--light.t-pru-mnhc--alt a[href].cta:hover,
-.d-background--light.t-pru-mnhc--alt a[href].cta:active,
-.d-background--light.t-pru-mnhc--alt a[href].cta:focus {
+.d-background--light.t-pru-mnhc--alt a[href].c-cta:hover,
+.d-background--light.t-pru-mnhc--alt a[href].c-cta:active,
+.d-background--light.t-pru-mnhc--alt a[href].c-cta:focus {
   background-color: rgba(255, 255, 255, 0.1) !important;
 }
 
@@ -898,15 +898,15 @@ input:not([type]):focus,
   color: #fff !important;
 }
 
-.d-background.t-pru-mnhc--alt a[href].cta {
+.d-background.t-pru-mnhc--alt a[href].c-cta {
   border-color: #fff !important;
   color: #fff !important;
   background-color: transparent !important;
 }
 
-.d-background.t-pru-mnhc--alt a[href].cta:hover,
-.d-background.t-pru-mnhc--alt a[href].cta:active,
-.d-background.t-pru-mnhc--alt a[href].cta:focus {
+.d-background.t-pru-mnhc--alt a[href].c-cta:hover,
+.d-background.t-pru-mnhc--alt a[href].c-cta:active,
+.d-background.t-pru-mnhc--alt a[href].c-cta:focus {
   background-color: rgba(255, 255, 255, 0.1) !important;
 }
 
@@ -925,15 +925,15 @@ input:not([type]):focus,
   color: #fff !important;
 }
 
-.d-background--dark.t-pru-mnhc--alt a[href].cta {
+.d-background--dark.t-pru-mnhc--alt a[href].c-cta {
   border-color: #fff !important;
   color: #fff !important;
   background-color: transparent !important;
 }
 
-.d-background--dark.t-pru-mnhc--alt a[href].cta:hover,
-.d-background--dark.t-pru-mnhc--alt a[href].cta:active,
-.d-background--dark.t-pru-mnhc--alt a[href].cta:focus {
+.d-background--dark.t-pru-mnhc--alt a[href].c-cta:hover,
+.d-background--dark.t-pru-mnhc--alt a[href].c-cta:active,
+.d-background--dark.t-pru-mnhc--alt a[href].c-cta:focus {
   background-color: rgba(255, 255, 255, 0.1) !important;
 }
 
@@ -952,15 +952,15 @@ input:not([type]):focus,
   color: #fff !important;
 }
 
-.d-background--very-dark.t-pru-mnhc--alt a[href].cta {
+.d-background--very-dark.t-pru-mnhc--alt a[href].c-cta {
   border-color: #fff !important;
   color: #fff !important;
   background-color: transparent !important;
 }
 
-.d-background--very-dark.t-pru-mnhc--alt a[href].cta:hover,
-.d-background--very-dark.t-pru-mnhc--alt a[href].cta:active,
-.d-background--very-dark.t-pru-mnhc--alt a[href].cta:focus {
+.d-background--very-dark.t-pru-mnhc--alt a[href].c-cta:hover,
+.d-background--very-dark.t-pru-mnhc--alt a[href].c-cta:active,
+.d-background--very-dark.t-pru-mnhc--alt a[href].c-cta:focus {
   background-color: rgba(255, 255, 255, 0.1) !important;
 }
 
@@ -991,15 +991,15 @@ input:not([type]):focus,
   color: #333;
 }
 
-.c-panel.c-panel--very-light.t-pru-mnhc a[href].cta {
+.c-panel.c-panel--very-light.t-pru-mnhc a[href].c-cta {
   border-color: #333;
   color: #333;
   background-color: transparent;
 }
 
-.c-panel.c-panel--very-light.t-pru-mnhc a[href].cta:hover,
-.c-panel.c-panel--very-light.t-pru-mnhc a[href].cta:active,
-.c-panel.c-panel--very-light.t-pru-mnhc a[href].cta:focus {
+.c-panel.c-panel--very-light.t-pru-mnhc a[href].c-cta:hover,
+.c-panel.c-panel--very-light.t-pru-mnhc a[href].c-cta:active,
+.c-panel.c-panel--very-light.t-pru-mnhc a[href].c-cta:focus {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
@@ -1047,15 +1047,15 @@ input:not([type]):focus,
   color: #333;
 }
 
-.c-panel.c-panel--light.t-pru-mnhc a[href].cta {
+.c-panel.c-panel--light.t-pru-mnhc a[href].c-cta {
   border-color: #333;
   color: #333;
   background-color: transparent;
 }
 
-.c-panel.c-panel--light.t-pru-mnhc a[href].cta:hover,
-.c-panel.c-panel--light.t-pru-mnhc a[href].cta:active,
-.c-panel.c-panel--light.t-pru-mnhc a[href].cta:focus {
+.c-panel.c-panel--light.t-pru-mnhc a[href].c-cta:hover,
+.c-panel.c-panel--light.t-pru-mnhc a[href].c-cta:active,
+.c-panel.c-panel--light.t-pru-mnhc a[href].c-cta:focus {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
@@ -1103,15 +1103,15 @@ input:not([type]):focus,
   color: #fff;
 }
 
-.c-panel.c-panel--dark.t-pru-mnhc a[href].cta {
+.c-panel.c-panel--dark.t-pru-mnhc a[href].c-cta {
   border-color: #fff;
   color: #fff;
   background-color: transparent;
 }
 
-.c-panel.c-panel--dark.t-pru-mnhc a[href].cta:hover,
-.c-panel.c-panel--dark.t-pru-mnhc a[href].cta:active,
-.c-panel.c-panel--dark.t-pru-mnhc a[href].cta:focus {
+.c-panel.c-panel--dark.t-pru-mnhc a[href].c-cta:hover,
+.c-panel.c-panel--dark.t-pru-mnhc a[href].c-cta:active,
+.c-panel.c-panel--dark.t-pru-mnhc a[href].c-cta:focus {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
@@ -1130,15 +1130,15 @@ input:not([type]):focus,
   color: #fff;
 }
 
-.c-panel.c-panel--very-dark.t-pru-mnhc a[href].cta {
+.c-panel.c-panel--very-dark.t-pru-mnhc a[href].c-cta {
   border-color: #fff;
   color: #fff;
   background-color: transparent;
 }
 
-.c-panel.c-panel--very-dark.t-pru-mnhc a[href].cta:hover,
-.c-panel.c-panel--very-dark.t-pru-mnhc a[href].cta:active,
-.c-panel.c-panel--very-dark.t-pru-mnhc a[href].cta:focus {
+.c-panel.c-panel--very-dark.t-pru-mnhc a[href].c-cta:hover,
+.c-panel.c-panel--very-dark.t-pru-mnhc a[href].c-cta:active,
+.c-panel.c-panel--very-dark.t-pru-mnhc a[href].c-cta:focus {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
@@ -1150,9 +1150,9 @@ input:not([type]):focus,
   background: #5d4777;
 }
 
-.t-pru-mnhc div[data-display-as="themed-box"] a[href].cta:hover,
-.t-pru-mnhc div[data-display-as="themed-box"] a[href].cta:active,
-.t-pru-mnhc div[data-display-as="themed-box"] a[href].cta:focus {
+.t-pru-mnhc div[data-display-as="themed-box"] a[href].c-cta:hover,
+.t-pru-mnhc div[data-display-as="themed-box"] a[href].c-cta:active,
+.t-pru-mnhc div[data-display-as="themed-box"] a[href].c-cta:focus {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
