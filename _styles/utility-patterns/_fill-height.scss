@@ -16,6 +16,9 @@ $fill-height-namespace: u- !default;
     
     display: -webkit-flex;
     display: flex;
+    
+    -webkit-flex-direction: column;
+            flex-direction: column;
 }
 
 @media #{$f__ie10-11} {
