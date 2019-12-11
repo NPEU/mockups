@@ -127,7 +127,7 @@ $f__nav-bar-divider-first-item:            true;
 @import "../bower_components/Fall-Back-Patterns/Nav Bar/scss/_nav-bar";
 // Not sure about this. It allows the sloped background set up in the theme to show through, but
 // if it's ok that this is transparent, why is it needed in the first place? May be missing
-// something here? Either it should be configurable or removed, really, or the sloped bakground
+// something here? Either it should be configurable or removed, really, or the sloped background
 // applied to the ::before instead.
 
 .js-nav-bar .nav-bar::before {

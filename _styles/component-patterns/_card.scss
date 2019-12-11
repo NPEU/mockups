@@ -130,7 +130,9 @@ $theme-only: false !default;
 		background-color: map-get($theme, card-background-color);
 	}
 
-    .#{$card-namespace}card#{$pattern-varient}#{$theme-class} .#{$card-namespace}card__main {
+    .#{$card-namespace}card#{$pattern-varient}#{$theme-class} .#{$card-namespace}card__main .#{$card-namespace}card__title,
+    .#{$card-namespace}card#{$pattern-varient}#{$theme-class} .#{$card-namespace}card__main .#{$card-namespace}card__body,
+    .#{$card-namespace}card#{$pattern-varient}#{$theme-class} .#{$card-namespace}card__main .#{$card-namespace}card__footer {
         color: map-get($theme, card-text-color);
         background-color: map-get($theme, card-main-background-color);
         

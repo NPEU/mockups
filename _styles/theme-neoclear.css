@@ -540,17 +540,27 @@ $patterns: (
   background-color: #00716d;
 }
 
-.c-card.t-neoclear .c-card__main {
+.c-card.t-neoclear .c-card__main .c-card__title,
+.c-card.t-neoclear .c-card__main .c-card__body,
+.c-card.t-neoclear .c-card__main .c-card__footer {
   color: #fff;
   background-color: #009590;
 }
 
-.c-card.t-neoclear .c-card__main a[href] {
+.c-card.t-neoclear .c-card__main .c-card__title a[href],
+.c-card.t-neoclear .c-card__main .c-card__body a[href],
+.c-card.t-neoclear .c-card__main .c-card__footer a[href] {
   background-color: #009590;
   color: #fff;
 }
 
-.c-card.t-neoclear .c-card__main a[href]:hover, .c-card.t-neoclear .c-card__main a[href]:active, .c-card.t-neoclear .c-card__main a[href]:focus {
+.c-card.t-neoclear .c-card__main .c-card__title a[href]:hover, .c-card.t-neoclear .c-card__main .c-card__title a[href]:active, .c-card.t-neoclear .c-card__main .c-card__title a[href]:focus,
+.c-card.t-neoclear .c-card__main .c-card__body a[href]:hover,
+.c-card.t-neoclear .c-card__main .c-card__body a[href]:active,
+.c-card.t-neoclear .c-card__main .c-card__body a[href]:focus,
+.c-card.t-neoclear .c-card__main .c-card__footer a[href]:hover,
+.c-card.t-neoclear .c-card__main .c-card__footer a[href]:active,
+.c-card.t-neoclear .c-card__main .c-card__footer a[href]:focus {
   background-color: #009590;
   color: #fff;
 }
@@ -1013,17 +1023,27 @@ input:not([type]):focus,
   background-color: #00716d;
 }
 
-.c-card--very-light.t-neoclear .c-card__main {
+.c-card--very-light.t-neoclear .c-card__main .c-card__title,
+.c-card--very-light.t-neoclear .c-card__main .c-card__body,
+.c-card--very-light.t-neoclear .c-card__main .c-card__footer {
   color: #333;
   background-color: #009590;
 }
 
-.c-card--very-light.t-neoclear .c-card__main a[href] {
+.c-card--very-light.t-neoclear .c-card__main .c-card__title a[href],
+.c-card--very-light.t-neoclear .c-card__main .c-card__body a[href],
+.c-card--very-light.t-neoclear .c-card__main .c-card__footer a[href] {
   background-color: #009590;
   color: #333;
 }
 
-.c-card--very-light.t-neoclear .c-card__main a[href]:hover, .c-card--very-light.t-neoclear .c-card__main a[href]:active, .c-card--very-light.t-neoclear .c-card__main a[href]:focus {
+.c-card--very-light.t-neoclear .c-card__main .c-card__title a[href]:hover, .c-card--very-light.t-neoclear .c-card__main .c-card__title a[href]:active, .c-card--very-light.t-neoclear .c-card__main .c-card__title a[href]:focus,
+.c-card--very-light.t-neoclear .c-card__main .c-card__body a[href]:hover,
+.c-card--very-light.t-neoclear .c-card__main .c-card__body a[href]:active,
+.c-card--very-light.t-neoclear .c-card__main .c-card__body a[href]:focus,
+.c-card--very-light.t-neoclear .c-card__main .c-card__footer a[href]:hover,
+.c-card--very-light.t-neoclear .c-card__main .c-card__footer a[href]:active,
+.c-card--very-light.t-neoclear .c-card__main .c-card__footer a[href]:focus {
   background-color: #009590;
   color: #333;
 }
@@ -1069,17 +1089,27 @@ input:not([type]):focus,
   background-color: #00716d;
 }
 
-.c-card--light.t-neoclear .c-card__main {
+.c-card--light.t-neoclear .c-card__main .c-card__title,
+.c-card--light.t-neoclear .c-card__main .c-card__body,
+.c-card--light.t-neoclear .c-card__main .c-card__footer {
   color: #333;
   background-color: #009590;
 }
 
-.c-card--light.t-neoclear .c-card__main a[href] {
+.c-card--light.t-neoclear .c-card__main .c-card__title a[href],
+.c-card--light.t-neoclear .c-card__main .c-card__body a[href],
+.c-card--light.t-neoclear .c-card__main .c-card__footer a[href] {
   background-color: #009590;
   color: #333;
 }
 
-.c-card--light.t-neoclear .c-card__main a[href]:hover, .c-card--light.t-neoclear .c-card__main a[href]:active, .c-card--light.t-neoclear .c-card__main a[href]:focus {
+.c-card--light.t-neoclear .c-card__main .c-card__title a[href]:hover, .c-card--light.t-neoclear .c-card__main .c-card__title a[href]:active, .c-card--light.t-neoclear .c-card__main .c-card__title a[href]:focus,
+.c-card--light.t-neoclear .c-card__main .c-card__body a[href]:hover,
+.c-card--light.t-neoclear .c-card__main .c-card__body a[href]:active,
+.c-card--light.t-neoclear .c-card__main .c-card__body a[href]:focus,
+.c-card--light.t-neoclear .c-card__main .c-card__footer a[href]:hover,
+.c-card--light.t-neoclear .c-card__main .c-card__footer a[href]:active,
+.c-card--light.t-neoclear .c-card__main .c-card__footer a[href]:focus {
   background-color: #009590;
   color: #333;
 }

@@ -540,17 +540,27 @@ $patterns: (
   background-color: #4c3a61;
 }
 
-.c-card.t-pru-mnhc .c-card__main {
+.c-card.t-pru-mnhc .c-card__main .c-card__title,
+.c-card.t-pru-mnhc .c-card__main .c-card__body,
+.c-card.t-pru-mnhc .c-card__main .c-card__footer {
   color: #fff;
   background-color: #5d4777;
 }
 
-.c-card.t-pru-mnhc .c-card__main a[href] {
+.c-card.t-pru-mnhc .c-card__main .c-card__title a[href],
+.c-card.t-pru-mnhc .c-card__main .c-card__body a[href],
+.c-card.t-pru-mnhc .c-card__main .c-card__footer a[href] {
   background-color: #5d4777;
   color: #fff;
 }
 
-.c-card.t-pru-mnhc .c-card__main a[href]:hover, .c-card.t-pru-mnhc .c-card__main a[href]:active, .c-card.t-pru-mnhc .c-card__main a[href]:focus {
+.c-card.t-pru-mnhc .c-card__main .c-card__title a[href]:hover, .c-card.t-pru-mnhc .c-card__main .c-card__title a[href]:active, .c-card.t-pru-mnhc .c-card__main .c-card__title a[href]:focus,
+.c-card.t-pru-mnhc .c-card__main .c-card__body a[href]:hover,
+.c-card.t-pru-mnhc .c-card__main .c-card__body a[href]:active,
+.c-card.t-pru-mnhc .c-card__main .c-card__body a[href]:focus,
+.c-card.t-pru-mnhc .c-card__main .c-card__footer a[href]:hover,
+.c-card.t-pru-mnhc .c-card__main .c-card__footer a[href]:active,
+.c-card.t-pru-mnhc .c-card__main .c-card__footer a[href]:focus {
   background-color: #5d4777;
   color: #fff;
 }
@@ -1013,17 +1023,27 @@ input:not([type]):focus,
   background-color: #4c3a61;
 }
 
-.c-card--very-light.t-pru-mnhc .c-card__main {
+.c-card--very-light.t-pru-mnhc .c-card__main .c-card__title,
+.c-card--very-light.t-pru-mnhc .c-card__main .c-card__body,
+.c-card--very-light.t-pru-mnhc .c-card__main .c-card__footer {
   color: #333;
   background-color: #5d4777;
 }
 
-.c-card--very-light.t-pru-mnhc .c-card__main a[href] {
+.c-card--very-light.t-pru-mnhc .c-card__main .c-card__title a[href],
+.c-card--very-light.t-pru-mnhc .c-card__main .c-card__body a[href],
+.c-card--very-light.t-pru-mnhc .c-card__main .c-card__footer a[href] {
   background-color: #5d4777;
   color: #333;
 }
 
-.c-card--very-light.t-pru-mnhc .c-card__main a[href]:hover, .c-card--very-light.t-pru-mnhc .c-card__main a[href]:active, .c-card--very-light.t-pru-mnhc .c-card__main a[href]:focus {
+.c-card--very-light.t-pru-mnhc .c-card__main .c-card__title a[href]:hover, .c-card--very-light.t-pru-mnhc .c-card__main .c-card__title a[href]:active, .c-card--very-light.t-pru-mnhc .c-card__main .c-card__title a[href]:focus,
+.c-card--very-light.t-pru-mnhc .c-card__main .c-card__body a[href]:hover,
+.c-card--very-light.t-pru-mnhc .c-card__main .c-card__body a[href]:active,
+.c-card--very-light.t-pru-mnhc .c-card__main .c-card__body a[href]:focus,
+.c-card--very-light.t-pru-mnhc .c-card__main .c-card__footer a[href]:hover,
+.c-card--very-light.t-pru-mnhc .c-card__main .c-card__footer a[href]:active,
+.c-card--very-light.t-pru-mnhc .c-card__main .c-card__footer a[href]:focus {
   background-color: #5d4777;
   color: #333;
 }
@@ -1069,17 +1089,27 @@ input:not([type]):focus,
   background-color: #4c3a61;
 }
 
-.c-card--light.t-pru-mnhc .c-card__main {
+.c-card--light.t-pru-mnhc .c-card__main .c-card__title,
+.c-card--light.t-pru-mnhc .c-card__main .c-card__body,
+.c-card--light.t-pru-mnhc .c-card__main .c-card__footer {
   color: #333;
   background-color: #5d4777;
 }
 
-.c-card--light.t-pru-mnhc .c-card__main a[href] {
+.c-card--light.t-pru-mnhc .c-card__main .c-card__title a[href],
+.c-card--light.t-pru-mnhc .c-card__main .c-card__body a[href],
+.c-card--light.t-pru-mnhc .c-card__main .c-card__footer a[href] {
   background-color: #5d4777;
   color: #333;
 }
 
-.c-card--light.t-pru-mnhc .c-card__main a[href]:hover, .c-card--light.t-pru-mnhc .c-card__main a[href]:active, .c-card--light.t-pru-mnhc .c-card__main a[href]:focus {
+.c-card--light.t-pru-mnhc .c-card__main .c-card__title a[href]:hover, .c-card--light.t-pru-mnhc .c-card__main .c-card__title a[href]:active, .c-card--light.t-pru-mnhc .c-card__main .c-card__title a[href]:focus,
+.c-card--light.t-pru-mnhc .c-card__main .c-card__body a[href]:hover,
+.c-card--light.t-pru-mnhc .c-card__main .c-card__body a[href]:active,
+.c-card--light.t-pru-mnhc .c-card__main .c-card__body a[href]:focus,
+.c-card--light.t-pru-mnhc .c-card__main .c-card__footer a[href]:hover,
+.c-card--light.t-pru-mnhc .c-card__main .c-card__footer a[href]:active,
+.c-card--light.t-pru-mnhc .c-card__main .c-card__footer a[href]:focus {
   background-color: #5d4777;
   color: #333;
 }

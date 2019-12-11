@@ -9046,17 +9046,27 @@ $patterns: (
   background-color: #ffffff;
 }
 
-.c-card.t-white .c-card__main {
+.c-card.t-white .c-card__main .c-card__title,
+.c-card.t-white .c-card__main .c-card__body,
+.c-card.t-white .c-card__main .c-card__footer {
   color: #333333;
   background-color: #ffffff;
 }
 
-.c-card.t-white .c-card__main a[href] {
+.c-card.t-white .c-card__main .c-card__title a[href],
+.c-card.t-white .c-card__main .c-card__body a[href],
+.c-card.t-white .c-card__main .c-card__footer a[href] {
   background-color: #ffffff;
   color: #333333;
 }
 
-.c-card.t-white .c-card__main a[href]:hover, .c-card.t-white .c-card__main a[href]:active, .c-card.t-white .c-card__main a[href]:focus {
+.c-card.t-white .c-card__main .c-card__title a[href]:hover, .c-card.t-white .c-card__main .c-card__title a[href]:active, .c-card.t-white .c-card__main .c-card__title a[href]:focus,
+.c-card.t-white .c-card__main .c-card__body a[href]:hover,
+.c-card.t-white .c-card__main .c-card__body a[href]:active,
+.c-card.t-white .c-card__main .c-card__body a[href]:focus,
+.c-card.t-white .c-card__main .c-card__footer a[href]:hover,
+.c-card.t-white .c-card__main .c-card__footer a[href]:active,
+.c-card.t-white .c-card__main .c-card__footer a[href]:focus {
   background-color: #ffffff;
   color: #333333;
 }
@@ -9372,17 +9382,27 @@ input:not([type]):focus,
   background-color: #ffffff;
 }
 
-.c-card--very-light.t-white .c-card__main {
+.c-card--very-light.t-white .c-card__main .c-card__title,
+.c-card--very-light.t-white .c-card__main .c-card__body,
+.c-card--very-light.t-white .c-card__main .c-card__footer {
   color: #333;
   background-color: #ffffff;
 }
 
-.c-card--very-light.t-white .c-card__main a[href] {
+.c-card--very-light.t-white .c-card__main .c-card__title a[href],
+.c-card--very-light.t-white .c-card__main .c-card__body a[href],
+.c-card--very-light.t-white .c-card__main .c-card__footer a[href] {
   background-color: #ffffff;
   color: #333;
 }
 
-.c-card--very-light.t-white .c-card__main a[href]:hover, .c-card--very-light.t-white .c-card__main a[href]:active, .c-card--very-light.t-white .c-card__main a[href]:focus {
+.c-card--very-light.t-white .c-card__main .c-card__title a[href]:hover, .c-card--very-light.t-white .c-card__main .c-card__title a[href]:active, .c-card--very-light.t-white .c-card__main .c-card__title a[href]:focus,
+.c-card--very-light.t-white .c-card__main .c-card__body a[href]:hover,
+.c-card--very-light.t-white .c-card__main .c-card__body a[href]:active,
+.c-card--very-light.t-white .c-card__main .c-card__body a[href]:focus,
+.c-card--very-light.t-white .c-card__main .c-card__footer a[href]:hover,
+.c-card--very-light.t-white .c-card__main .c-card__footer a[href]:active,
+.c-card--very-light.t-white .c-card__main .c-card__footer a[href]:focus {
   background-color: #ffffff;
   color: #333;
 }
@@ -9428,17 +9448,27 @@ input:not([type]):focus,
   background-color: #ffffff;
 }
 
-.c-card--light.t-white .c-card__main {
+.c-card--light.t-white .c-card__main .c-card__title,
+.c-card--light.t-white .c-card__main .c-card__body,
+.c-card--light.t-white .c-card__main .c-card__footer {
   color: #333;
   background-color: #ffffff;
 }
 
-.c-card--light.t-white .c-card__main a[href] {
+.c-card--light.t-white .c-card__main .c-card__title a[href],
+.c-card--light.t-white .c-card__main .c-card__body a[href],
+.c-card--light.t-white .c-card__main .c-card__footer a[href] {
   background-color: #ffffff;
   color: #333;
 }
 
-.c-card--light.t-white .c-card__main a[href]:hover, .c-card--light.t-white .c-card__main a[href]:active, .c-card--light.t-white .c-card__main a[href]:focus {
+.c-card--light.t-white .c-card__main .c-card__title a[href]:hover, .c-card--light.t-white .c-card__main .c-card__title a[href]:active, .c-card--light.t-white .c-card__main .c-card__title a[href]:focus,
+.c-card--light.t-white .c-card__main .c-card__body a[href]:hover,
+.c-card--light.t-white .c-card__main .c-card__body a[href]:active,
+.c-card--light.t-white .c-card__main .c-card__body a[href]:focus,
+.c-card--light.t-white .c-card__main .c-card__footer a[href]:hover,
+.c-card--light.t-white .c-card__main .c-card__footer a[href]:active,
+.c-card--light.t-white .c-card__main .c-card__footer a[href]:focus {
   background-color: #ffffff;
   color: #333;
 }
@@ -9708,17 +9738,27 @@ $patterns: (
   background-color: #7b7068;
 }
 
-.c-card.t-neutral .c-card__main {
+.c-card.t-neutral .c-card__main .c-card__title,
+.c-card.t-neutral .c-card__main .c-card__body,
+.c-card.t-neutral .c-card__main .c-card__footer {
   color: #fff;
   background-color: #8e8279;
 }
 
-.c-card.t-neutral .c-card__main a[href] {
+.c-card.t-neutral .c-card__main .c-card__title a[href],
+.c-card.t-neutral .c-card__main .c-card__body a[href],
+.c-card.t-neutral .c-card__main .c-card__footer a[href] {
   background-color: #8e8279;
   color: #fff;
 }
 
-.c-card.t-neutral .c-card__main a[href]:hover, .c-card.t-neutral .c-card__main a[href]:active, .c-card.t-neutral .c-card__main a[href]:focus {
+.c-card.t-neutral .c-card__main .c-card__title a[href]:hover, .c-card.t-neutral .c-card__main .c-card__title a[href]:active, .c-card.t-neutral .c-card__main .c-card__title a[href]:focus,
+.c-card.t-neutral .c-card__main .c-card__body a[href]:hover,
+.c-card.t-neutral .c-card__main .c-card__body a[href]:active,
+.c-card.t-neutral .c-card__main .c-card__body a[href]:focus,
+.c-card.t-neutral .c-card__main .c-card__footer a[href]:hover,
+.c-card.t-neutral .c-card__main .c-card__footer a[href]:active,
+.c-card.t-neutral .c-card__main .c-card__footer a[href]:focus {
   background-color: #8e8279;
   color: #fff;
 }
@@ -10034,17 +10074,27 @@ input:not([type]):focus,
   background-color: #7b7068;
 }
 
-.c-card--very-light.t-neutral .c-card__main {
+.c-card--very-light.t-neutral .c-card__main .c-card__title,
+.c-card--very-light.t-neutral .c-card__main .c-card__body,
+.c-card--very-light.t-neutral .c-card__main .c-card__footer {
   color: #333;
   background-color: #8e8279;
 }
 
-.c-card--very-light.t-neutral .c-card__main a[href] {
+.c-card--very-light.t-neutral .c-card__main .c-card__title a[href],
+.c-card--very-light.t-neutral .c-card__main .c-card__body a[href],
+.c-card--very-light.t-neutral .c-card__main .c-card__footer a[href] {
   background-color: #8e8279;
   color: #333;
 }
 
-.c-card--very-light.t-neutral .c-card__main a[href]:hover, .c-card--very-light.t-neutral .c-card__main a[href]:active, .c-card--very-light.t-neutral .c-card__main a[href]:focus {
+.c-card--very-light.t-neutral .c-card__main .c-card__title a[href]:hover, .c-card--very-light.t-neutral .c-card__main .c-card__title a[href]:active, .c-card--very-light.t-neutral .c-card__main .c-card__title a[href]:focus,
+.c-card--very-light.t-neutral .c-card__main .c-card__body a[href]:hover,
+.c-card--very-light.t-neutral .c-card__main .c-card__body a[href]:active,
+.c-card--very-light.t-neutral .c-card__main .c-card__body a[href]:focus,
+.c-card--very-light.t-neutral .c-card__main .c-card__footer a[href]:hover,
+.c-card--very-light.t-neutral .c-card__main .c-card__footer a[href]:active,
+.c-card--very-light.t-neutral .c-card__main .c-card__footer a[href]:focus {
   background-color: #8e8279;
   color: #333;
 }
@@ -10090,17 +10140,27 @@ input:not([type]):focus,
   background-color: #7b7068;
 }
 
-.c-card--light.t-neutral .c-card__main {
+.c-card--light.t-neutral .c-card__main .c-card__title,
+.c-card--light.t-neutral .c-card__main .c-card__body,
+.c-card--light.t-neutral .c-card__main .c-card__footer {
   color: #333;
   background-color: #8e8279;
 }
 
-.c-card--light.t-neutral .c-card__main a[href] {
+.c-card--light.t-neutral .c-card__main .c-card__title a[href],
+.c-card--light.t-neutral .c-card__main .c-card__body a[href],
+.c-card--light.t-neutral .c-card__main .c-card__footer a[href] {
   background-color: #8e8279;
   color: #333;
 }
 
-.c-card--light.t-neutral .c-card__main a[href]:hover, .c-card--light.t-neutral .c-card__main a[href]:active, .c-card--light.t-neutral .c-card__main a[href]:focus {
+.c-card--light.t-neutral .c-card__main .c-card__title a[href]:hover, .c-card--light.t-neutral .c-card__main .c-card__title a[href]:active, .c-card--light.t-neutral .c-card__main .c-card__title a[href]:focus,
+.c-card--light.t-neutral .c-card__main .c-card__body a[href]:hover,
+.c-card--light.t-neutral .c-card__main .c-card__body a[href]:active,
+.c-card--light.t-neutral .c-card__main .c-card__body a[href]:focus,
+.c-card--light.t-neutral .c-card__main .c-card__footer a[href]:hover,
+.c-card--light.t-neutral .c-card__main .c-card__footer a[href]:active,
+.c-card--light.t-neutral .c-card__main .c-card__footer a[href]:focus {
   background-color: #8e8279;
   color: #333;
 }
@@ -10370,17 +10430,27 @@ $patterns: (
   background-color: #4f3a60;
 }
 
-.c-card.t-npeu .c-card__main {
+.c-card.t-npeu .c-card__main .c-card__title,
+.c-card.t-npeu .c-card__main .c-card__body,
+.c-card.t-npeu .c-card__main .c-card__footer {
   color: #fff;
   background-color: #614776;
 }
 
-.c-card.t-npeu .c-card__main a[href] {
+.c-card.t-npeu .c-card__main .c-card__title a[href],
+.c-card.t-npeu .c-card__main .c-card__body a[href],
+.c-card.t-npeu .c-card__main .c-card__footer a[href] {
   background-color: #614776;
   color: #fff;
 }
 
-.c-card.t-npeu .c-card__main a[href]:hover, .c-card.t-npeu .c-card__main a[href]:active, .c-card.t-npeu .c-card__main a[href]:focus {
+.c-card.t-npeu .c-card__main .c-card__title a[href]:hover, .c-card.t-npeu .c-card__main .c-card__title a[href]:active, .c-card.t-npeu .c-card__main .c-card__title a[href]:focus,
+.c-card.t-npeu .c-card__main .c-card__body a[href]:hover,
+.c-card.t-npeu .c-card__main .c-card__body a[href]:active,
+.c-card.t-npeu .c-card__main .c-card__body a[href]:focus,
+.c-card.t-npeu .c-card__main .c-card__footer a[href]:hover,
+.c-card.t-npeu .c-card__main .c-card__footer a[href]:active,
+.c-card.t-npeu .c-card__main .c-card__footer a[href]:focus {
   background-color: #614776;
   color: #fff;
 }
@@ -10843,17 +10913,27 @@ input:not([type]):focus,
   background-color: #4f3a60;
 }
 
-.c-card--very-light.t-npeu .c-card__main {
+.c-card--very-light.t-npeu .c-card__main .c-card__title,
+.c-card--very-light.t-npeu .c-card__main .c-card__body,
+.c-card--very-light.t-npeu .c-card__main .c-card__footer {
   color: #333;
   background-color: #614776;
 }
 
-.c-card--very-light.t-npeu .c-card__main a[href] {
+.c-card--very-light.t-npeu .c-card__main .c-card__title a[href],
+.c-card--very-light.t-npeu .c-card__main .c-card__body a[href],
+.c-card--very-light.t-npeu .c-card__main .c-card__footer a[href] {
   background-color: #614776;
   color: #333;
 }
 
-.c-card--very-light.t-npeu .c-card__main a[href]:hover, .c-card--very-light.t-npeu .c-card__main a[href]:active, .c-card--very-light.t-npeu .c-card__main a[href]:focus {
+.c-card--very-light.t-npeu .c-card__main .c-card__title a[href]:hover, .c-card--very-light.t-npeu .c-card__main .c-card__title a[href]:active, .c-card--very-light.t-npeu .c-card__main .c-card__title a[href]:focus,
+.c-card--very-light.t-npeu .c-card__main .c-card__body a[href]:hover,
+.c-card--very-light.t-npeu .c-card__main .c-card__body a[href]:active,
+.c-card--very-light.t-npeu .c-card__main .c-card__body a[href]:focus,
+.c-card--very-light.t-npeu .c-card__main .c-card__footer a[href]:hover,
+.c-card--very-light.t-npeu .c-card__main .c-card__footer a[href]:active,
+.c-card--very-light.t-npeu .c-card__main .c-card__footer a[href]:focus {
   background-color: #614776;
   color: #333;
 }
@@ -10899,17 +10979,27 @@ input:not([type]):focus,
   background-color: #4f3a60;
 }
 
-.c-card--light.t-npeu .c-card__main {
+.c-card--light.t-npeu .c-card__main .c-card__title,
+.c-card--light.t-npeu .c-card__main .c-card__body,
+.c-card--light.t-npeu .c-card__main .c-card__footer {
   color: #333;
   background-color: #614776;
 }
 
-.c-card--light.t-npeu .c-card__main a[href] {
+.c-card--light.t-npeu .c-card__main .c-card__title a[href],
+.c-card--light.t-npeu .c-card__main .c-card__body a[href],
+.c-card--light.t-npeu .c-card__main .c-card__footer a[href] {
   background-color: #614776;
   color: #333;
 }
 
-.c-card--light.t-npeu .c-card__main a[href]:hover, .c-card--light.t-npeu .c-card__main a[href]:active, .c-card--light.t-npeu .c-card__main a[href]:focus {
+.c-card--light.t-npeu .c-card__main .c-card__title a[href]:hover, .c-card--light.t-npeu .c-card__main .c-card__title a[href]:active, .c-card--light.t-npeu .c-card__main .c-card__title a[href]:focus,
+.c-card--light.t-npeu .c-card__main .c-card__body a[href]:hover,
+.c-card--light.t-npeu .c-card__main .c-card__body a[href]:active,
+.c-card--light.t-npeu .c-card__main .c-card__body a[href]:focus,
+.c-card--light.t-npeu .c-card__main .c-card__footer a[href]:hover,
+.c-card--light.t-npeu .c-card__main .c-card__footer a[href]:active,
+.c-card--light.t-npeu .c-card__main .c-card__footer a[href]:focus {
   background-color: #614776;
   color: #333;
 }
@@ -11180,17 +11270,27 @@ input:not([type]):focus,
   background-color: #4f3a60;
 }
 
-.c-card--very-light.t-npeu .c-card__main {
+.c-card--very-light.t-npeu .c-card__main .c-card__title,
+.c-card--very-light.t-npeu .c-card__main .c-card__body,
+.c-card--very-light.t-npeu .c-card__main .c-card__footer {
   color: #333;
   background-color: #614776;
 }
 
-.c-card--very-light.t-npeu .c-card__main a[href] {
+.c-card--very-light.t-npeu .c-card__main .c-card__title a[href],
+.c-card--very-light.t-npeu .c-card__main .c-card__body a[href],
+.c-card--very-light.t-npeu .c-card__main .c-card__footer a[href] {
   background-color: #614776;
   color: #333;
 }
 
-.c-card--very-light.t-npeu .c-card__main a[href]:hover, .c-card--very-light.t-npeu .c-card__main a[href]:active, .c-card--very-light.t-npeu .c-card__main a[href]:focus {
+.c-card--very-light.t-npeu .c-card__main .c-card__title a[href]:hover, .c-card--very-light.t-npeu .c-card__main .c-card__title a[href]:active, .c-card--very-light.t-npeu .c-card__main .c-card__title a[href]:focus,
+.c-card--very-light.t-npeu .c-card__main .c-card__body a[href]:hover,
+.c-card--very-light.t-npeu .c-card__main .c-card__body a[href]:active,
+.c-card--very-light.t-npeu .c-card__main .c-card__body a[href]:focus,
+.c-card--very-light.t-npeu .c-card__main .c-card__footer a[href]:hover,
+.c-card--very-light.t-npeu .c-card__main .c-card__footer a[href]:active,
+.c-card--very-light.t-npeu .c-card__main .c-card__footer a[href]:focus {
   background-color: #614776;
   color: #333;
 }
@@ -11236,17 +11336,27 @@ input:not([type]):focus,
   background-color: #4f3a60;
 }
 
-.c-card--light.t-npeu .c-card__main {
+.c-card--light.t-npeu .c-card__main .c-card__title,
+.c-card--light.t-npeu .c-card__main .c-card__body,
+.c-card--light.t-npeu .c-card__main .c-card__footer {
   color: #333;
   background-color: #614776;
 }
 
-.c-card--light.t-npeu .c-card__main a[href] {
+.c-card--light.t-npeu .c-card__main .c-card__title a[href],
+.c-card--light.t-npeu .c-card__main .c-card__body a[href],
+.c-card--light.t-npeu .c-card__main .c-card__footer a[href] {
   background-color: #614776;
   color: #333;
 }
 
-.c-card--light.t-npeu .c-card__main a[href]:hover, .c-card--light.t-npeu .c-card__main a[href]:active, .c-card--light.t-npeu .c-card__main a[href]:focus {
+.c-card--light.t-npeu .c-card__main .c-card__title a[href]:hover, .c-card--light.t-npeu .c-card__main .c-card__title a[href]:active, .c-card--light.t-npeu .c-card__main .c-card__title a[href]:focus,
+.c-card--light.t-npeu .c-card__main .c-card__body a[href]:hover,
+.c-card--light.t-npeu .c-card__main .c-card__body a[href]:active,
+.c-card--light.t-npeu .c-card__main .c-card__body a[href]:focus,
+.c-card--light.t-npeu .c-card__main .c-card__footer a[href]:hover,
+.c-card--light.t-npeu .c-card__main .c-card__footer a[href]:active,
+.c-card--light.t-npeu .c-card__main .c-card__footer a[href]:focus {
   background-color: #614776;
   color: #333;
 }
