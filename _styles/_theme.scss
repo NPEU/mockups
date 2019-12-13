@@ -32,18 +32,18 @@ $patterns: (
 // Set defaults:
 $theme: map-merge(
     (
-        background-color           : map-get($theme, primary-color),
-        band-color                 : map-get($theme, primary-color),
-        border-color               : map-get($theme, primary-color),
-        card-background-color      : darken(map-get($theme, primary-color), 7%),
-        card-main-background-color : map-get($theme, primary-color),
-        card-border-color          : darken(map-get($theme, primary-color), 20%),
-        card-text-color            : #fff,
-        cta-text-color             : #333,
-        cta-background-color       : map-get($theme, primary-color),
-        page-header-color          : map-get($theme, primary-color),
-        signs-background-color     : map-get($theme, primary-color),
-        text-color                 : #333
+        background-color            : map-get($theme, primary-color),
+        band-color                  : map-get($theme, primary-color),
+        border-color                : map-get($theme, primary-color),
+        card-background-color       : darken(map-get($theme, primary-color), 7%),
+        card-main-background-color  : map-get($theme, primary-color),
+        card-border-color           : darken(map-get($theme, primary-color), 20%),
+        card-text-color             : #fff,
+        cta-text-color              : #333,
+        cta-background-color        : map-get($theme, primary-color),
+        page-header-color           : map-get($theme, primary-color),
+        signs-background-color      : map-get($theme, primary-color),
+        text-color                  : #333
     )
     , $theme
 );

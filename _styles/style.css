@@ -610,10 +610,6 @@ details {
   /* N: IE 10/11 */
 }
 
-details > * {
-  box-sizing: border-box;
-}
-
 /*-------------------------------------------------------------------------------------------------|
     Fall-Back Start-CSS Element: dfn
 |-------------------------------------------------------------------------------------------------*/
@@ -632,18 +628,34 @@ dfn {
        (https://paulbakaus.com/tutorials/css/block-formatting-contexts-and-lists)
        a. This causes problems with some decoration. E.g. if the last element in the list is a link,
           bottom borders get cropped, so using b instead.
-       b. `flow-root` is the better option but support is low, so using table.
-          Edge breaks if flow-root is applied, even though it's meant to be ignored.
-          -moz-box / flex causes numbering to mess up (always 0) on FF8-50.
-          This is the only thing that works in early FF. However, width is content-width, not
-          available width so any 'boxy' decoration on the list might look weird.
-          Flex based options cause other problems, i.e. not wrapping properly.
-
+       b. `flow-root` is the better option but support is low, so using table and flex fallbacks
+          instead (Edge breaks if flow-root is applied, even though it's meant to be ignored).
+       Hmmm -moz-box / flex is causing numbering to mess up (always 0) on FF8-50.
+    2. This is the only thing that works in early FF. However, width is content-width, not available
+       width so any 'boxy' decoration on the list might look weird.
+    3. This does a pretty good job of extending coverage:
+       Chrome 29+, Edge 14+ (unable to test earlier), FF48+
 */
 dl {
   margin-bottom: 2.4rem;
   display: table;
-  /* 1b */
+  /* 1b, 2 */
+  display: -webkit-box;
+  /* 1b, 3 */
+  -webkit-box-orient: vertical;
+  /* 1b, 3 */
+}
+
+/*
+    Extend support to IE10-11
+*/
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  ol {
+    display: -ms-flexbox;
+    /* 1b */
+    -ms-flex-direction: column;
+    /* 1b */
+  }
 }
 
 /*-------------------------------------------------------------------------------------------------|
@@ -1259,18 +1271,34 @@ object {
        (https://paulbakaus.com/tutorials/css/block-formatting-contexts-and-lists)
        a. This causes problems with some decoration. E.g. if the last element in the list is a link,
           bottom borders get cropped, so using b instead.
-       b. `flow-root` is the better option but support is low, so using table.
-          Edge breaks if flow-root is applied, even though it's meant to be ignored.
-          -moz-box / flex causes numbering to mess up (always 0) on FF8-50.
-          This is the only thing that works in early FF. However, width is content-width, not
-          available width so any 'boxy' decoration on the list might look weird.
-          Flex based options cause other problems, i.e. not wrapping properly.
-
+       b. `flow-root` is the better option but support is low, so using table and flex fallbacks
+          instead (Edge breaks if flow-root is applied, even though it's meant to be ignored).
+       Hmmm -moz-box / flex is causing numbering to mess up (always 0) on FF8-50.
+    2. This is the only thing that works in early FF. However, width is content-width, not available
+       width so any 'boxy' decoration on the list might look weird.
+    3. This does a pretty good job of extending coverage:
+       Chrome 29+, Edge 14+ (unable to test earlier), FF48+
 */
 ol {
   margin-bottom: 2.4rem;
   display: table;
-  /* 1b */
+  /* 1b, 2 */
+  display: -webkit-box;
+  /* 1b, 3 */
+  -webkit-box-orient: vertical;
+  /* 1b, 3 */
+}
+
+/*
+    Extend support to IE10-11
+*/
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  ol {
+    display: -ms-flexbox;
+    /* 1b */
+    -ms-flex-direction: column;
+    /* 1b */
+  }
 }
 
 /*-------------------------------------------------------------------------------------------------|
@@ -1792,18 +1820,83 @@ th {
        (https://paulbakaus.com/tutorials/css/block-formatting-contexts-and-lists)
        a. This causes problems with some decoration. E.g. if the last element in the list is a link,
           bottom borders get cropped, so using b instead.
-       b. `flow-root` is the better option but support is low, so using table.
-          Edge breaks if flow-root is applied, even though it's meant to be ignored.
-          -moz-box / flex causes numbering to mess up (always 0) on FF8-50.
-          This is the only thing that works in early FF. However, width is content-width, not
-          available width so any 'boxy' decoration on the list might look weird.
-          Flex based options cause other problems, i.e. not wrapping properly.
-
+       b. `flow-root` is the better option but support is low, so using table and flex fallbacks
+          instead (Edge breaks if flow-root is applied, even though it's meant to be ignored).
+       Hmmm -moz-box / flex is causing numbering to mess up (always 0) on FF8-50.
+    2. This is the only thing that works in early FF. However, width is content-width, not available
+       width so any 'boxy' decoration on the list might look weird.
+    3. This does a pretty good job of extending coverage:
+       Chrome 29+, Edge 14+ (unable to test earlier), FF48+
 */
 ul {
   margin-bottom: 2.4rem;
   display: table;
-  /* 1b */
+  /* 1b, 2 */
+  display: -webkit-box;
+  /* 1b, 3 */
+  -webkit-box-orient: vertical;
+  /* 1b, 3 */
+}
+
+/*
+    Extend support to IE10-11
+*/
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  ol {
+    display: -ms-flexbox;
+    /* 1b */
+    -ms-flex-direction: column;
+    /* 1b */
+  }
+}
+
+/*
+    In IE, bullet characters can affect line-height. Also, there are differences in how the bullet
+    characters are displayed, so using custom ones.
+    @TODO - make this configurable.
+    Also - base64 is bad for performance. Using raw svg instead.
+    8px w/h means the bullets won't adjust to font-size.
+    In Chrome, setting w/h to 100% instead gets the desired behavior, but the bullets collapse on
+    other browsers and are invisible. I can't find a fix for this.
+
+    Keep this for reference:
+    ul li {
+        list-style-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 8" width="8px" height="8px"><circle fill="currentColor" cx="4" cy="4" r="3"/></svg>');
+    }
+
+        ul ul li {
+            list-style-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 8" width="8px" height="8px"><circle fill="none" stroke="currentColor" stroke-miterlimit="10" cx="4" cy="4" r="2.5"/></svg>');
+        }
+
+            ul ul ul li {
+                list-style-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 8" width="8px" height="8px"><rect fill="currentColor" x="1" y="1" width="6" height="6"/></svg>');
+            }
+*/
+@media screen and (min-width: 0\0) and (min-resolution: +72dpi) {
+  /*
+            1. 1px at 16px font-size. Should be 0.0625 but IE is 2 decimal-places only.
+        */
+  ul ul li {
+    margin-bottom: -0.06em;
+    /* 1 */
+  }
+  /*
+                1. This is a bit of a magic number. It works - but I'm not sure why.
+                   Probably to do with IE rounding.
+            */
+  ul ul ul li {
+    margin-bottom: -0.02em;
+    /* 1 */
+  }
+}
+
+/*
+    IE9 needs a further tweak to get it on the baseline:
+*/
+@media all and (min-width: 0\0) and (min-resolution: 0.001dpcm) {
+  ul ul ul li {
+    margin-bottom: -0.04em;
+  }
 }
 
 /*-------------------------------------------------------------------------------------------------|
@@ -1854,11 +1947,11 @@ video {
     *
 */
 /*
-        "Buttons" or "CTAs" that are really links should be distinguished from real buttons, so by
-        default we're swapping the foreground and background colors:
-    */
-a[href].c-button,
-a[href].c-cta {
+    "Buttons" or "CTAs" that are really links should be distinguished from real buttons, so by
+    default we're swapping the foreground and background colors:
+*/
+a[href].button,
+a[href].cta {
   display: inline-block;
   /* AK. IE9 needs this. Hmmm, for what exactly?*/
   min-height: 3rem;
@@ -1905,46 +1998,46 @@ a[href].c-cta {
     }*/
 }
 
-a[href].c-button:hover, a[href].c-button:active,
-a[href].c-cta:hover,
-a[href].c-cta:active {
+a[href].button:hover, a[href].button:active,
+a[href].cta:hover,
+a[href].cta:active {
   background-color: white;
 }
 
-a[href].c-button:focus,
-a[href].c-cta:focus {
+a[href].button:focus,
+a[href].cta:focus {
   outline: 0;
   box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5);
 }
 
-a[href].c-button:hover, a[href].c-button:active, a[href].c-button:focus,
-a[href].c-cta:hover,
-a[href].c-cta:active,
-a[href].c-cta:focus {
+a[href].button:hover, a[href].button:active, a[href].button:focus,
+a[href].cta:hover,
+a[href].cta:active,
+a[href].cta:focus {
   background-color: #ebe6f0;
 }
 
-a[href].c-button--has-icon,
-a[href].c-cta--has-icon {
+a[href].button--has-icon,
+a[href].cta--has-icon {
   position: relative;
 }
 
-a[href].c-button--has-icon::after,
-a[href].c-cta--has-icon::after {
+a[href].button--has-icon::after,
+a[href].cta--has-icon::after {
   content: "";
   display: inline;
   padding-left: 1.25em;
   line-height: 0;
 }
 
-a[href].c-button--has-icon .icon,
-a[href].c-cta--has-icon .icon {
+a[href].button--has-icon .icon,
+a[href].cta--has-icon .icon {
   position: absolute;
   bottom: 0;
   transform: translateY(-15%);
 }
 
-.c-button[data-text][aria-hidden="true"] {
+.button[data-text][aria-hidden="true"] {
   display: inline-block;
   /* AK. IE9 needs this. Hmmm, for what exactly?*/
   min-height: 3rem;
@@ -1991,23 +2084,73 @@ a[href].c-cta--has-icon .icon {
     }*/
 }
 
-.c-button[data-text][aria-hidden="true"]:hover, .c-button[data-text][aria-hidden="true"]:active {
+.button[data-text][aria-hidden="true"]:hover, .button[data-text][aria-hidden="true"]:active {
   background-color: #473456;
 }
 
-.c-button[data-text][aria-hidden="true"]:focus {
+.button[data-text][aria-hidden="true"]:focus {
   outline: 0;
   box-shadow: 0 0 0 3px rgba(97, 71, 118, 0.5);
 }
 
-.c-button[data-text][aria-hidden="true"]::before {
+.button[data-text][aria-hidden="true"]::before {
   content: attr(data-text);
 }
 
+.bordered {
+  border-width: 6px;
+  border-style: solid;
+  border-color: #614776;
+  padding-top: 24px;
+  padding-top: -moz-calc(24px - 6px);
+  padding-top: calc(24px - 6px);
+  padding-left: 24px;
+  padding-left: -moz-calc(24px - 6px);
+  padding-left: calc(24px - 6px);
+  padding-right: 24px;
+  padding-right: -moz-calc(24px - 6px);
+  padding-right: calc(24px - 6px);
+}
+
+.bordered::after {
+  display: block;
+  content: "";
+  height: 1px;
+  margin-top: 24px;
+  margin-bottom: -1px;
+  margin-bottom: -moz-calc(-1px - 6px);
+  margin-bottom: calc(-1px - 6px);
+}
+
+.padded {
+  border-width: 0px;
+  border-style: solid;
+  border-color: #614776;
+  padding-top: 2.4rem;
+  padding-top: -moz-calc(2.4rem - 0px);
+  padding-top: calc(2.4rem - 0px);
+  padding-left: 2.4rem;
+  padding-left: -moz-calc(2.4rem - 0px);
+  padding-left: calc(2.4rem - 0px);
+  padding-right: 2.4rem;
+  padding-right: -moz-calc(2.4rem - 0px);
+  padding-right: calc(2.4rem - 0px);
+}
+
+.padded::after {
+  display: block;
+  content: "";
+  height: 1px;
+  margin-top: 2.4rem;
+  margin-bottom: -1px;
+  margin-bottom: -moz-calc(-1px - 0px);
+  margin-bottom: calc(-1px - 0px);
+}
+
 /*
-        1. Prevent element increasing height of parent.
-    */
-b.c-subtitle {
+    1. Prevent element increasing height of parent.
+*/
+b.subtitle {
   font-size: 0.8em;
   font-weight: inherit;
   font-style: normal;
@@ -2016,9 +2159,9 @@ b.c-subtitle {
 }
 
 /*
-        1. Negate heading margin.
-    */
-p.c-subtitle {
+    1. Negate heading margin.
+*/
+p.subtitle {
   font-size: 1.5em;
   font-weight: inherit;
   margin-top: -1.2rem;
@@ -2026,19 +2169,19 @@ p.c-subtitle {
 }
 
 /*
-        1. Negate heading margin.
-    */
-.c-tagline {
+    1. Negate heading margin.
+*/
+.tagline {
   font-size: 1.14285714286em;
   margin-top: -1.2rem;
   /* 1 */
 }
 
 /*
-        1. Collapse whitespace.
-        2. Prevent extra height being added.
-    */
-.c-composite {
+    1. Collapse whitespace.
+    2. Prevent extra height being added.
+*/
+.composite {
   display: -webkit-inline-box;
   /* 1 */
   display: -ms-inline-flexbox;
@@ -2053,9 +2196,9 @@ p.c-subtitle {
 }
 
 /*
-        1. Prevent extra height being added.
-    */
-.c-composite > * {
+    1. Prevent extra height being added.
+*/
+.composite > * {
   vertical-align: top;
   /* 1 */
   -webkit-flex: 0 1 auto;
@@ -2064,15 +2207,15 @@ p.c-subtitle {
 }
 
 /*
-        IE9
+    IE9
 
-        1. Make sure there are no spaces between elements in the markup as the as the white space won't
-           collapse.
+    1. Make sure there are no spaces between elements in the markup as the as the whitespace won't
+       collapse.
 
-        2. Hide button.
-    */
+    2. Hide button.
+*/
 @media screen and (min-width: 0\0) and (min-resolution: 0.001dpcm) {
-  .c-composite {
+  .composite {
     display: inline-block;
     /* 1 */
     white-space: nowrap;
@@ -2080,53 +2223,53 @@ p.c-subtitle {
     overflow: hidden;
     /* 2 */
   }
-  .c-composite > * {
+  .composite > * {
     vertical-align: top;
     display: inline-block;
   }
 }
 
-.c-composite > *:not(:first-child) {
-  border-top-left-radius: 0 !important;
-  border-bottom-left-radius: 0 !important;
+.composite > *:not(:first-child) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }
 
-.c-composite > *:not(:last-child) {
-  border-top-right-radius: 0 !important;
-  border-bottom-right-radius: 0 !important;
-  border-right: 0 !important;
+.composite > *:not(:last-child) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-right: 0;
 }
 
 /* CUSTOM INPUTS: RADIOS AND CHECKBOXES */
 /* Hide the real inputs: */
 /* (note this method is important to persist accessibility and keyboard navigation) */
-.c-custom-input[type="checkbox"],
-.c-custom-input[type="radio"] {
+.custom-input[type="checkbox"],
+.custom-input[type="radio"] {
   position: absolute;
   opacity: 0;
 }
 
 /* Prepare for positioning the pseudo-elements: */
-.c-custom-input-label {
+.custom-input-label {
   position: relative;
   vertical-align: top;
   /*display: -webkit-inline-flex;
-        display: -ms-inline-flexbox;
-        display: inline-flex;
-        -webkit-align-items: center;
-             -ms-flex-align: center;
-               align-items: center;*/
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-align-items: center;
+         -ms-flex-align: center;
+           align-items: center;*/
   padding-left: 1.5em;
 }
 
-.c-custom-input:focus + .cc-ustom-input-label::before {
+.custom-input:focus + .custom-input-label::before {
   box-shadow: 0 0 0 2px #9476ad;
   outline: 0;
 }
 
 /* Common psuedo-element styles: */
-.c-custom-input[type="checkbox"] + .c-custom-input-label::before,
-.c-custom-input[type="radio"] + .c-custom-input-label::before {
+.custom-input[type="checkbox"] + .custom-input-label::before,
+.custom-input[type="radio"] + .custom-input-label::before {
   display: inline-block;
   content: "";
   width: 1em;
@@ -2142,17 +2285,17 @@ p.c-subtitle {
 }
 
 /* Make the radio elements circular: */
-.c-custom-input[type="radio"] + .c-custom-input-label::before {
+.custom-input[type="radio"] + .custom-input-label::before {
   border-radius: 50%;
 }
 
 /* Define the checkbox :checked state: */
-.c-custom-input[type="checkbox"]:checked + .c-custom-input-label::before {
+.custom-input[type="checkbox"]:checked + .custom-input-label::before {
   background: #614776;
 }
 
 /* Define the checkbox 'tick': */
-.c-custom-input[type="checkbox"]:checked + .c-custom-input-label::after {
+.custom-input[type="checkbox"]:checked + .custom-input-label::after {
   content: "";
   display: inline-block;
   width: 0.6em;
@@ -2168,7 +2311,7 @@ p.c-subtitle {
 }
 
 /* Define the radio 'dot': */
-.c-custom-input[type="radio"]:checked + .c-custom-input-label::before {
+.custom-input[type="radio"]:checked + .custom-input-label::before {
   background: #fff;
   border-color: #614776;
   border-width: 0.25em;
@@ -2176,26 +2319,26 @@ p.c-subtitle {
 }
 
 /* Adjustments for end (right) alignment: */
-.c-custom-input--align-end[type="checkbox"] + .c-custom-input-label,
-.c-custom-input--align-end[type="radio"] + .c-custom-input-label {
+.custom-input--align-end[type="checkbox"] + .custom-input-label,
+.custom-input--align-end[type="radio"] + .custom-input-label {
   padding-left: 0;
   padding-right: 1.5em;
 }
 
-.c-custom-input--align-end[type="checkbox"] + .c-custom-input-label::before,
-.c-custom-input--align-end[type="radio"] + .c-custom-input-label::before {
+.custom-input--align-end[type="checkbox"] + .custom-input-label::before,
+.custom-input--align-end[type="radio"] + .custom-input-label::before {
   left: auto;
   right: 0;
 }
 
-.c-custom-input--align-end[type="checkbox"]:checked + .c-custom-input-label::after {
+.custom-input--align-end[type="checkbox"]:checked + .custom-input-label::after {
   left: auto;
   right: 0.16em;
 }
 
 /* CUSTOM INPUTS: FILE */
 /* -webkit hide the button: */
-.c-custom-input[type="file"]::-webkit-file-upload-button {
+.custom-input[type="file"]::-webkit-file-upload-button {
   border: 0;
   padding: 0;
   margin: 0;
@@ -2205,14 +2348,14 @@ p.c-subtitle {
 
 /* Firefox hide the button: */
 @supports (-moz-appearance: meterbar) {
-  .c-custom-input[type=file] {
+  .custom-input[type=file] {
     text-indent: -5.6em;
     padding-right: 0.375rem;
   }
 }
 
 /* IE10-11, Edge hide the button: */
-.c-custom-input[type=file]::-ms-browse {
+.custom-input[type=file]::-ms-browse {
   padding: 0;
   margin: -1px;
   width: 0;
@@ -2223,16 +2366,23 @@ p.c-subtitle {
 /* IE9 hide the button: (https://jeffclayton.wordpress.com/2014/07/22/internet-explorer-css-hacks-collection/) */
 @media screen and (min-width: 0\0) and (min-resolution: 0.001dpcm) {
   /*
-                So far I haven't managed to get this arrangement working properly in IE9, so hiding it:
-            */
-  .c-button + .c-custom-input[type=file] {
+            So far I haven't managed to get this arrangment working properly in IE9, so hiding it:
+        */
+  .button + .custom-input[type=file] {
     margin-left: -5.35em;
   }
-  .c-custom-input[type="file"] + .c-button {
+  .custom-input[type="file"] + .button {
     min-width: 7em;
     margin-left: -7em;
     text-align: center;
   }
+}
+
+.poem {
+  font-family: cursive;
+  background: #fff;
+  overflow: auto;
+  margin-bottom: 2.4rem;
 }
 
 /*! Start CSS Accessibility. See SCSS file for documentation. */
@@ -4952,7 +5102,6 @@ $fallback-svg--link-bg-color-alt: #fff;
 }
 
 .gallery-grid .gallery-grid__item {
-  margin: 0;
   -webkit-flex: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
@@ -5025,9 +5174,6 @@ $fallback-svg--link-bg-color-alt: #fff;
   }
   .gallery-grid.gallery-grid {
     display: grid;
-  }
-  .gallery-grid .gallery-grid__item.gallery-grid__item {
-    max-width: none;
   }
   .gallery-grid.gallery-grid--basis-20 {
     grid-template-columns: repeat(auto-fit, minmax(20em, 1fr));
@@ -9735,7 +9881,7 @@ $patterns: (
 
 .c-card.t-neutral,
 .c-card.t-neutral .c-card__main {
-  background-color: #7b7068;
+  background-color: #8e8279;
 }
 
 .c-card.t-neutral .c-card__main .c-card__title,
@@ -10071,7 +10217,7 @@ input:not([type]):focus,
 
 .c-card--very-light.t-neutral,
 .c-card--very-light.t-neutral .c-card__main {
-  background-color: #7b7068;
+  background-color: #8e8279;
 }
 
 .c-card--very-light.t-neutral .c-card__main .c-card__title,
@@ -10137,7 +10283,7 @@ input:not([type]):focus,
 
 .c-card--light.t-neutral,
 .c-card--light.t-neutral .c-card__main {
-  background-color: #7b7068;
+  background-color: #8e8279;
 }
 
 .c-card--light.t-neutral .c-card__main .c-card__title,
@@ -10269,7 +10415,7 @@ $patterns: (
 }
 */
 .d-background--very-light.t-npeu {
-  background-color: #d2c6dd !important;
+  background-color: #d1c6dd !important;
   color: #333 !important;
 }
 
@@ -10296,7 +10442,7 @@ $patterns: (
 }
 
 .d-background--light.t-npeu {
-  background-color: #baa6c9 !important;
+  background-color: #b7a6ca !important;
   color: #333 !important;
 }
 
@@ -10323,7 +10469,7 @@ $patterns: (
 }
 
 .d-background.t-npeu {
-  background-color: #614776 !important;
+  background-color: #5d4777 !important;
   color: #fff !important;
 }
 
@@ -10350,7 +10496,7 @@ $patterns: (
 }
 
 .d-background--dark.t-npeu {
-  background-color: #473456 !important;
+  background-color: #443457 !important;
   color: #fff !important;
 }
 
@@ -10377,7 +10523,7 @@ $patterns: (
 }
 
 .d-background--very-dark.t-npeu {
-  background-color: #2d2136 !important;
+  background-color: #2b2137 !important;
   color: #fff !important;
 }
 
@@ -10404,9 +10550,9 @@ $patterns: (
 }
 
 .d-background--sloped.t-npeu {
-  background: -moz-linear-gradient(45deg, #543d66 0%, #573f69 50%, #5c4370 50%, #59416c 100%) !important;
-  background: -webkit-linear-gradient(45deg, #543d66 0%, #573f69 50%, #5c4370 50%, #59416c 100%) !important;
-  background: linear-gradient(45deg, #543d66 0%, #573f69 50%, #5c4370 50%, #59416c 100%) !important;
+  background: -moz-linear-gradient(45deg, #513d67 0%, #533f6a 50%, #584371 50%, #56416d 100%) !important;
+  background: -webkit-linear-gradient(45deg, #513d67 0%, #533f6a 50%, #584371 50%, #56416d 100%) !important;
+  background: linear-gradient(45deg, #513d67 0%, #533f6a 50%, #584371 50%, #56416d 100%) !important;
 }
 
 .d-bands.t-npeu,
@@ -10417,30 +10563,30 @@ $patterns: (
 .d-bands--above.t-npeu,
 .d-bands--bottom.t-npeu,
 .d-bands--below.t-npeu {
-  border-color: #614776 !important;
+  border-color: #5d4777 !important;
 }
 
 .c-card .c-card__full-link.t-npeu,
 .c-card .c-card__full-link.t-npeu:hover {
-  background: #4f3a60;
+  background: #4c3a61;
 }
 
 .c-card.t-npeu,
 .c-card.t-npeu .c-card__main {
-  background-color: #4f3a60;
+  background-color: #5d4777;
 }
 
 .c-card.t-npeu .c-card__main .c-card__title,
 .c-card.t-npeu .c-card__main .c-card__body,
 .c-card.t-npeu .c-card__main .c-card__footer {
   color: #fff;
-  background-color: #614776;
+  background-color: #5d4777;
 }
 
 .c-card.t-npeu .c-card__main .c-card__title a[href],
 .c-card.t-npeu .c-card__main .c-card__body a[href],
 .c-card.t-npeu .c-card__main .c-card__footer a[href] {
-  background-color: #614776;
+  background-color: #5d4777;
   color: #fff;
 }
 
@@ -10451,17 +10597,17 @@ $patterns: (
 .c-card.t-npeu .c-card__main .c-card__footer a[href]:hover,
 .c-card.t-npeu .c-card__main .c-card__footer a[href]:active,
 .c-card.t-npeu .c-card__main .c-card__footer a[href]:focus {
-  background-color: #614776;
+  background-color: #5d4777;
   color: #fff;
 }
 
 .c-card.t-npeu {
-  border-color: #2d2136;
+  border-color: #2b2137;
 }
 
 .c-featurette.t-npeu,
 .c-featurette.t-npeu * {
-  background-color: #614776;
+  background-color: #5d4777;
   color: #fff;
 }
 
@@ -10471,7 +10617,7 @@ $patterns: (
 	}*/
 .c-panel.c-panel.t-npeu {
   color: #333;
-  background: #614776;
+  background: #5d4777;
 }
 
 .c-panel.c-panel.t-npeu a[href] {
@@ -10498,7 +10644,7 @@ $patterns: (
 
 .c-primary-cta.t-npeu[href] {
   color: #ffffff;
-  background-color: #614776;
+  background-color: #5d4777;
 }
 
 .c-primary-cta.t-npeu[href]:hover, .c-primary-cta.t-npeu[href]:active, .c-primary-cta.t-npeu[href]:focus {
@@ -10514,13 +10660,13 @@ $patterns: (
                 }
             }
             */
-  background-color: #473456;
+  background-color: #443457;
 }
 
 .c-sign.t-npeu {
-  background: -moz-linear-gradient(45deg, #543d66 0%, #573f69 50%, #5c4370 50%, #59416c 100%) !important;
-  background: -webkit-linear-gradient(45deg, #543d66 0%, #573f69 50%, #5c4370 50%, #59416c 100%) !important;
-  background: linear-gradient(45deg, #543d66 0%, #573f69 50%, #5c4370 50%, #59416c 100%) !important;
+  background: -moz-linear-gradient(45deg, #513d67 0%, #533f6a 50%, #584371 50%, #56416d 100%) !important;
+  background: -webkit-linear-gradient(45deg, #513d67 0%, #533f6a 50%, #584371 50%, #56416d 100%) !important;
+  background: linear-gradient(45deg, #513d67 0%, #533f6a 50%, #584371 50%, #56416d 100%) !important;
 }
 
 /*.t-npeu.t-color {
@@ -10537,9 +10683,9 @@ button.t-npeu:not(.over-panel__overlay):not(.dropdown__button),
 a[href].button.t-npeu:not(.over-panel__overlay):not(.dropdown__button),
 a[href].c-cta.t-npeu:not(.over-panel__overlay):not(.dropdown__button),
 .cookie_notice__action button {
-  border-color: #614776 !important;
+  border-color: #5d4777 !important;
   color: #ffffff !important;
-  background-color: #614776 !important;
+  background-color: #5d4777 !important;
 }
 
 button.t-npeu:not(.over-panel__overlay):not(.dropdown__button):hover, button.t-npeu:not(.over-panel__overlay):not(.dropdown__button):active,
@@ -10549,7 +10695,7 @@ a[href].c-cta.t-npeu:not(.over-panel__overlay):not(.dropdown__button):hover,
 a[href].c-cta.t-npeu:not(.over-panel__overlay):not(.dropdown__button):active,
 .cookie_notice__action button:hover,
 .cookie_notice__action button:active {
-  background-color: #473456 !important;
+  background-color: #443457 !important;
 }
 
 button.t-npeu:not(.over-panel__overlay):not(.dropdown__button):focus,
@@ -10557,12 +10703,12 @@ a[href].button.t-npeu:not(.over-panel__overlay):not(.dropdown__button):focus,
 a[href].c-cta.t-npeu:not(.over-panel__overlay):not(.dropdown__button):focus,
 .cookie_notice__action button:focus {
   outline: 0;
-  box-shadow: 0 0 0 3px rgba(97, 71, 118, 0.5);
+  box-shadow: 0 0 0 3px rgba(93, 71, 119, 0.5);
 }
 
 table.t-npeu caption,
 .t-npeu + .highcharts-data-table caption {
-  background-color: #614776;
+  background-color: #5d4777;
 }
 
 table.t-npeu th,
@@ -10574,7 +10720,7 @@ table.t-npeu td,
 .t-npeu + .highcharts-data-table td,
 table.t-npeu th,
 .t-npeu + .highcharts-data-table th {
-  border: 1px solid #614776;
+  border: 1px solid #5d4777;
 }
 
 table.t-npeu tr:nth-child(odd) > td,
@@ -10585,19 +10731,19 @@ table.t-npeu tr:nth-child(odd) > th,
 }
 
 .t-npeu.nav-bar {
-  background: -moz-linear-gradient(45deg, #543d66 0%, #573f69 50%, #5c4370 50%, #59416c 100%) !important;
-  background: -webkit-linear-gradient(45deg, #543d66 0%, #573f69 50%, #5c4370 50%, #59416c 100%) !important;
-  background: linear-gradient(45deg, #543d66 0%, #573f69 50%, #5c4370 50%, #59416c 100%) !important;
+  background: -moz-linear-gradient(45deg, #513d67 0%, #533f6a 50%, #584371 50%, #56416d 100%) !important;
+  background: -webkit-linear-gradient(45deg, #513d67 0%, #533f6a 50%, #584371 50%, #56416d 100%) !important;
+  background: linear-gradient(45deg, #513d67 0%, #533f6a 50%, #584371 50%, #56416d 100%) !important;
 }
 
 .t-npeu.subnav__items {
-  background-color: #614776;
+  background-color: #5d4777;
 }
 
 .t-npeu.over-panel__contents {
-  background: -moz-linear-gradient(45deg, #543d66 0%, #573f69 50%, #5c4370 50%, #59416c 100%) !important;
-  background: -webkit-linear-gradient(45deg, #543d66 0%, #573f69 50%, #5c4370 50%, #59416c 100%) !important;
-  background: linear-gradient(45deg, #543d66 0%, #573f69 50%, #5c4370 50%, #59416c 100%) !important;
+  background: -moz-linear-gradient(45deg, #513d67 0%, #533f6a 50%, #584371 50%, #56416d 100%) !important;
+  background: -webkit-linear-gradient(45deg, #513d67 0%, #533f6a 50%, #584371 50%, #56416d 100%) !important;
+  background: linear-gradient(45deg, #513d67 0%, #533f6a 50%, #584371 50%, #56416d 100%) !important;
 }
 
 /*
@@ -10606,7 +10752,7 @@ table.t-npeu tr:nth-child(odd) > th,
 }
 */
 .t-npeu.search-form .search-form__submit {
-  background-color: #543d66;
+  background-color: #513d67;
   /*&:hover,
     &:active,
     &:focus {
@@ -10624,7 +10770,7 @@ table.t-npeu tr:nth-child(odd) > th,
 }
 
 .t-npeu.search-form .search-form__submit:hover, .t-npeu.search-form .search-form__submit:focus {
-  background-color: #3a2a46;
+  background-color: #382a47;
 }
 
 .t-npeu.search-form .search-form__field {
@@ -10664,7 +10810,7 @@ input:not([type]):focus,
 [type="time"]:focus,
 [type="url"]:focus,
 [type="week"]:focus {
-  box-shadow: 0 0 0 3px #694d80;
+  box-shadow: 0 0 0 3px #644d81;
 }
 
 /*
@@ -10673,7 +10819,7 @@ input:not([type]):focus,
     */
 [type="checkbox"]:focus,
 [type="radio"]:focus {
-  box-shadow: 0 0 0 3px rgba(97, 71, 118, 0.5);
+  box-shadow: 0 0 0 3px rgba(93, 71, 119, 0.5);
 }
 
 /* - Don't do this, it's too generic and results in equal specificity that's resolved in source
@@ -10730,7 +10876,7 @@ input:not([type]):focus,
 }
 */
 .d-background--very-light.t-npeu--alt {
-  background-color: white !important;
+  background-color: #fefdfc !important;
   color: #333 !important;
 }
 
@@ -10757,7 +10903,7 @@ input:not([type]):focus,
 }
 
 .d-background--light.t-npeu--alt {
-  background-color: #f0e7da !important;
+  background-color: #eee6d8 !important;
   color: #333 !important;
 }
 
@@ -10784,7 +10930,7 @@ input:not([type]):focus,
 }
 
 .d-background.t-npeu--alt {
-  background-color: #be945a !important;
+  background-color: #b9975b !important;
   color: #333 !important;
 }
 
@@ -10811,7 +10957,7 @@ input:not([type]):focus,
 }
 
 .d-background--dark.t-npeu--alt {
-  background-color: #a47a41 !important;
+  background-color: #9e7d43 !important;
   color: #333 !important;
 }
 
@@ -10838,7 +10984,7 @@ input:not([type]):focus,
 }
 
 .d-background--very-dark.t-npeu--alt {
-  background-color: #805f32 !important;
+  background-color: #7a6134 !important;
   color: #fff !important;
 }
 
@@ -10865,20 +11011,20 @@ input:not([type]):focus,
 }
 
 .d-background--sloped.t-npeu--alt {
-  background: -moz-linear-gradient(45deg, #b78848 0%, #b88b4b 50%, #bb8f53 50%, #ba8d4f 100%) !important;
-  background: -webkit-linear-gradient(45deg, #b78848 0%, #b88b4b 50%, #bb8f53 50%, #ba8d4f 100%) !important;
-  background: linear-gradient(45deg, #b78848 0%, #b88b4b 50%, #bb8f53 50%, #ba8d4f 100%) !important;
+  background: -moz-linear-gradient(45deg, #b08b4b 0%, #b38e4d 50%, #b69254 50%, #b49050 100%) !important;
+  background: -webkit-linear-gradient(45deg, #b08b4b 0%, #b38e4d 50%, #b69254 50%, #b49050 100%) !important;
+  background: linear-gradient(45deg, #b08b4b 0%, #b38e4d 50%, #b69254 50%, #b49050 100%) !important;
 }
 
 .c-sign.t-npeu--alt {
-  background: -moz-linear-gradient(45deg, #b78848 0%, #b88b4b 50%, #bb8f53 50%, #ba8d4f 100%) !important;
-  background: -webkit-linear-gradient(45deg, #b78848 0%, #b88b4b 50%, #bb8f53 50%, #ba8d4f 100%) !important;
-  background: linear-gradient(45deg, #b78848 0%, #b88b4b 50%, #bb8f53 50%, #ba8d4f 100%) !important;
+  background: -moz-linear-gradient(45deg, #b08b4b 0%, #b38e4d 50%, #b69254 50%, #b49050 100%) !important;
+  background: -webkit-linear-gradient(45deg, #b08b4b 0%, #b38e4d 50%, #b69254 50%, #b49050 100%) !important;
+  background: linear-gradient(45deg, #b08b4b 0%, #b38e4d 50%, #b69254 50%, #b49050 100%) !important;
 }
 
 .c-panel.c-panel--very-light.t-npeu {
   color: #333;
-  background: #d2c6dd;
+  background: #d1c6dd;
 }
 
 .c-panel.c-panel--very-light.t-npeu a[href] {
@@ -10905,25 +11051,25 @@ input:not([type]):focus,
 
 .c-card--very-light .c-card__full-link.t-npeu,
 .c-card--very-light .c-card__full-link.t-npeu:hover {
-  background: #4f3a60;
+  background: #4c3a61;
 }
 
 .c-card--very-light.t-npeu,
 .c-card--very-light.t-npeu .c-card__main {
-  background-color: #4f3a60;
+  background-color: #5d4777;
 }
 
 .c-card--very-light.t-npeu .c-card__main .c-card__title,
 .c-card--very-light.t-npeu .c-card__main .c-card__body,
 .c-card--very-light.t-npeu .c-card__main .c-card__footer {
   color: #333;
-  background-color: #614776;
+  background-color: #5d4777;
 }
 
 .c-card--very-light.t-npeu .c-card__main .c-card__title a[href],
 .c-card--very-light.t-npeu .c-card__main .c-card__body a[href],
 .c-card--very-light.t-npeu .c-card__main .c-card__footer a[href] {
-  background-color: #614776;
+  background-color: #5d4777;
   color: #333;
 }
 
@@ -10934,17 +11080,17 @@ input:not([type]):focus,
 .c-card--very-light.t-npeu .c-card__main .c-card__footer a[href]:hover,
 .c-card--very-light.t-npeu .c-card__main .c-card__footer a[href]:active,
 .c-card--very-light.t-npeu .c-card__main .c-card__footer a[href]:focus {
-  background-color: #614776;
+  background-color: #5d4777;
   color: #333;
 }
 
 .c-card--very-light.t-npeu {
-  border-color: #2d2136;
+  border-color: #2b2137;
 }
 
 .c-panel.c-panel--light.t-npeu {
   color: #333;
-  background: #baa6c9;
+  background: #b7a6ca;
 }
 
 .c-panel.c-panel--light.t-npeu a[href] {
@@ -10971,25 +11117,25 @@ input:not([type]):focus,
 
 .c-card--light .c-card__full-link.t-npeu,
 .c-card--light .c-card__full-link.t-npeu:hover {
-  background: #4f3a60;
+  background: #4c3a61;
 }
 
 .c-card--light.t-npeu,
 .c-card--light.t-npeu .c-card__main {
-  background-color: #4f3a60;
+  background-color: #5d4777;
 }
 
 .c-card--light.t-npeu .c-card__main .c-card__title,
 .c-card--light.t-npeu .c-card__main .c-card__body,
 .c-card--light.t-npeu .c-card__main .c-card__footer {
   color: #333;
-  background-color: #614776;
+  background-color: #5d4777;
 }
 
 .c-card--light.t-npeu .c-card__main .c-card__title a[href],
 .c-card--light.t-npeu .c-card__main .c-card__body a[href],
 .c-card--light.t-npeu .c-card__main .c-card__footer a[href] {
-  background-color: #614776;
+  background-color: #5d4777;
   color: #333;
 }
 
@@ -11000,17 +11146,17 @@ input:not([type]):focus,
 .c-card--light.t-npeu .c-card__main .c-card__footer a[href]:hover,
 .c-card--light.t-npeu .c-card__main .c-card__footer a[href]:active,
 .c-card--light.t-npeu .c-card__main .c-card__footer a[href]:focus {
-  background-color: #614776;
+  background-color: #5d4777;
   color: #333;
 }
 
 .c-card--light.t-npeu {
-  border-color: #2d2136;
+  border-color: #2b2137;
 }
 
 .c-panel.c-panel--dark.t-npeu {
   color: #fff;
-  background: #473456;
+  background: #443457;
 }
 
 .c-panel.c-panel--dark.t-npeu a[href] {
@@ -11037,7 +11183,7 @@ input:not([type]):focus,
 
 .c-panel.c-panel--very-dark.t-npeu {
   color: #fff;
-  background: #2d2136;
+  background: #2b2137;
 }
 
 .c-panel.c-panel--very-dark.t-npeu a[href] {
@@ -11063,11 +11209,11 @@ input:not([type]):focus,
 }
 
 .t-npeu img[src*="/img/avatars/"] {
-  border-color: #614776 !important;
+  border-color: #5d4777 !important;
 }
 
 .t-npeu div[data-display-as="themed-box"] {
-  background: #614776;
+  background: #5d4777;
 }
 
 .t-npeu div[data-display-as="themed-box"] a[href].c-cta:hover,
@@ -11081,19 +11227,19 @@ input:not([type]):focus,
 }
 
 .nav-bar {
-  background: -moz-linear-gradient(45deg, #543d66 0%, #573f69 50%, #5c4370 50%, #59416c 100%) !important;
-  background: -webkit-linear-gradient(45deg, #543d66 0%, #573f69 50%, #5c4370 50%, #59416c 100%) !important;
-  background: linear-gradient(45deg, #543d66 0%, #573f69 50%, #5c4370 50%, #59416c 100%) !important;
+  background: -moz-linear-gradient(45deg, #513d67 0%, #533f6a 50%, #584371 50%, #56416d 100%) !important;
+  background: -webkit-linear-gradient(45deg, #513d67 0%, #533f6a 50%, #584371 50%, #56416d 100%) !important;
+  background: linear-gradient(45deg, #513d67 0%, #533f6a 50%, #584371 50%, #56416d 100%) !important;
 }
 
 .over-panel__contents {
-  background: -moz-linear-gradient(45deg, #543d66 0%, #573f69 50%, #5c4370 50%, #59416c 100%) !important;
-  background: -webkit-linear-gradient(45deg, #543d66 0%, #573f69 50%, #5c4370 50%, #59416c 100%) !important;
-  background: linear-gradient(45deg, #543d66 0%, #573f69 50%, #5c4370 50%, #59416c 100%) !important;
+  background: -moz-linear-gradient(45deg, #513d67 0%, #533f6a 50%, #584371 50%, #56416d 100%) !important;
+  background: -webkit-linear-gradient(45deg, #513d67 0%, #533f6a 50%, #584371 50%, #56416d 100%) !important;
+  background: linear-gradient(45deg, #513d67 0%, #533f6a 50%, #584371 50%, #56416d 100%) !important;
 }
 
 .d-background--very-light.t-npeu--alt {
-  background-color: white !important;
+  background-color: #fefdfc !important;
   color: #333 !important;
 }
 
@@ -11120,7 +11266,7 @@ input:not([type]):focus,
 }
 
 .d-background--light.t-npeu--alt {
-  background-color: #f0e7da !important;
+  background-color: #eee6d8 !important;
   color: #333 !important;
 }
 
@@ -11147,7 +11293,7 @@ input:not([type]):focus,
 }
 
 .d-background.t-npeu--alt {
-  background-color: #be945a !important;
+  background-color: #b9975b !important;
   color: #333 !important;
 }
 
@@ -11174,7 +11320,7 @@ input:not([type]):focus,
 }
 
 .d-background--dark.t-npeu--alt {
-  background-color: #a47a41 !important;
+  background-color: #9e7d43 !important;
   color: #333 !important;
 }
 
@@ -11201,7 +11347,7 @@ input:not([type]):focus,
 }
 
 .d-background--very-dark.t-npeu--alt {
-  background-color: #805f32 !important;
+  background-color: #7a6134 !important;
   color: #fff !important;
 }
 
@@ -11228,14 +11374,14 @@ input:not([type]):focus,
 }
 
 .d-background--sloped.t-npeu--alt {
-  background: -moz-linear-gradient(45deg, #b78848 0%, #b88b4b 50%, #bb8f53 50%, #ba8d4f 100%) !important;
-  background: -webkit-linear-gradient(45deg, #b78848 0%, #b88b4b 50%, #bb8f53 50%, #ba8d4f 100%) !important;
-  background: linear-gradient(45deg, #b78848 0%, #b88b4b 50%, #bb8f53 50%, #ba8d4f 100%) !important;
+  background: -moz-linear-gradient(45deg, #b08b4b 0%, #b38e4d 50%, #b69254 50%, #b49050 100%) !important;
+  background: -webkit-linear-gradient(45deg, #b08b4b 0%, #b38e4d 50%, #b69254 50%, #b49050 100%) !important;
+  background: linear-gradient(45deg, #b08b4b 0%, #b38e4d 50%, #b69254 50%, #b49050 100%) !important;
 }
 
 .c-panel.c-panel--very-light {
   color: #333;
-  background: #f8f6f9;
+  background: #f8f6fa;
 }
 
 .c-panel.c-panel--very-light a[href] {
@@ -11262,25 +11408,25 @@ input:not([type]):focus,
 
 .c-card--very-light .c-card__full-link.t-npeu,
 .c-card--very-light .c-card__full-link.t-npeu:hover {
-  background: #4f3a60;
+  background: #4c3a61;
 }
 
 .c-card--very-light.t-npeu,
 .c-card--very-light.t-npeu .c-card__main {
-  background-color: #4f3a60;
+  background-color: #5d4777;
 }
 
 .c-card--very-light.t-npeu .c-card__main .c-card__title,
 .c-card--very-light.t-npeu .c-card__main .c-card__body,
 .c-card--very-light.t-npeu .c-card__main .c-card__footer {
   color: #333;
-  background-color: #614776;
+  background-color: #5d4777;
 }
 
 .c-card--very-light.t-npeu .c-card__main .c-card__title a[href],
 .c-card--very-light.t-npeu .c-card__main .c-card__body a[href],
 .c-card--very-light.t-npeu .c-card__main .c-card__footer a[href] {
-  background-color: #614776;
+  background-color: #5d4777;
   color: #333;
 }
 
@@ -11291,17 +11437,17 @@ input:not([type]):focus,
 .c-card--very-light.t-npeu .c-card__main .c-card__footer a[href]:hover,
 .c-card--very-light.t-npeu .c-card__main .c-card__footer a[href]:active,
 .c-card--very-light.t-npeu .c-card__main .c-card__footer a[href]:focus {
-  background-color: #614776;
+  background-color: #5d4777;
   color: #333;
 }
 
 .c-card--very-light.t-npeu {
-  border-color: #2d2136;
+  border-color: #2b2137;
 }
 
 .c-panel.c-panel--light {
   color: #333;
-  background: #baa6c9;
+  background: #b7a6ca;
 }
 
 .c-panel.c-panel--light a[href] {
@@ -11328,25 +11474,25 @@ input:not([type]):focus,
 
 .c-card--light .c-card__full-link.t-npeu,
 .c-card--light .c-card__full-link.t-npeu:hover {
-  background: #4f3a60;
+  background: #4c3a61;
 }
 
 .c-card--light.t-npeu,
 .c-card--light.t-npeu .c-card__main {
-  background-color: #4f3a60;
+  background-color: #5d4777;
 }
 
 .c-card--light.t-npeu .c-card__main .c-card__title,
 .c-card--light.t-npeu .c-card__main .c-card__body,
 .c-card--light.t-npeu .c-card__main .c-card__footer {
   color: #333;
-  background-color: #614776;
+  background-color: #5d4777;
 }
 
 .c-card--light.t-npeu .c-card__main .c-card__title a[href],
 .c-card--light.t-npeu .c-card__main .c-card__body a[href],
 .c-card--light.t-npeu .c-card__main .c-card__footer a[href] {
-  background-color: #614776;
+  background-color: #5d4777;
   color: #333;
 }
 
@@ -11357,17 +11503,17 @@ input:not([type]):focus,
 .c-card--light.t-npeu .c-card__main .c-card__footer a[href]:hover,
 .c-card--light.t-npeu .c-card__main .c-card__footer a[href]:active,
 .c-card--light.t-npeu .c-card__main .c-card__footer a[href]:focus {
-  background-color: #614776;
+  background-color: #5d4777;
   color: #333;
 }
 
 .c-card--light.t-npeu {
-  border-color: #2d2136;
+  border-color: #2b2137;
 }
 
 .c-panel.c-panel--dark {
   color: #fff;
-  background: #473456;
+  background: #443457;
 }
 
 .c-panel.c-panel--dark a[href] {
@@ -11394,7 +11540,7 @@ input:not([type]):focus,
 
 .c-panel.c-panel--very-dark {
   color: #fff;
-  background: #2d2136;
+  background: #2b2137;
 }
 
 .c-panel.c-panel--very-dark a[href] {
@@ -11858,7 +12004,7 @@ html.wireframe {
 
 .c-user-content [data-display-as~="themed-box"] {
   color: #fff;
-  background: #614776;
+  background: #5d4777;
 }
 
 .c-user-content [data-display-as~="themed-box"] a[href] {
@@ -11884,8 +12030,8 @@ html.wireframe {
 }
 
 .c-user-content [data-display-as~="notice-box"] {
-  border: 6px solid #be945a;
-  background: #faf8f3;
+  border: 6px solid #b9975b;
+  background: #faf8f4;
 }
 
 .c-user-content [data-display-as~="notice-box"] a[href].c-cta:hover,
@@ -11992,7 +12138,7 @@ html.wireframe {
 }
 
 .c-user-content [data-display-as~="smallprint"] {
-  font-size: 0.75em;
+  font-size: 0.875em;
 }
 
 .c-user-content [data-display-as~="strapline"] {

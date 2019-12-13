@@ -41,7 +41,7 @@ $card-main--background-color: $card--background-color !default;
 // Card title:
 
 $card-title--text-color: $card--text-color !default;
-$card-title--background-color: $card--background-color !default;
+$card-title--background-color: $card-main--background-color !default;
 
 
 $card--padding: 0 !default;
@@ -127,7 +127,7 @@ $theme-only: false !default;
     
     .#{$card-namespace}card#{$pattern-varient}#{$theme-class},
     .#{$card-namespace}card#{$pattern-varient}#{$theme-class} .#{$card-namespace}card__main {
-		background-color: map-get($theme, card-background-color);
+		background-color: map-get($theme, card-main-background-color);
 	}
 
     .#{$card-namespace}card#{$pattern-varient}#{$theme-class} .#{$card-namespace}card__main .#{$card-namespace}card__title,

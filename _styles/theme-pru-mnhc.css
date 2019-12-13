@@ -537,7 +537,7 @@ $patterns: (
 
 .c-card.t-pru-mnhc,
 .c-card.t-pru-mnhc .c-card__main {
-  background-color: #4c3a61;
+  background-color: #5d4777;
 }
 
 .c-card.t-pru-mnhc .c-card__main .c-card__title,
@@ -1020,7 +1020,7 @@ input:not([type]):focus,
 
 .c-card--very-light.t-pru-mnhc,
 .c-card--very-light.t-pru-mnhc .c-card__main {
-  background-color: #4c3a61;
+  background-color: #5d4777;
 }
 
 .c-card--very-light.t-pru-mnhc .c-card__main .c-card__title,
@@ -1086,7 +1086,7 @@ input:not([type]):focus,
 
 .c-card--light.t-pru-mnhc,
 .c-card--light.t-pru-mnhc .c-card__main {
-  background-color: #4c3a61;
+  background-color: #5d4777;
 }
 
 .c-card--light.t-pru-mnhc .c-card__main .c-card__title,

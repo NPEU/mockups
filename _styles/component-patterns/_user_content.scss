@@ -130,7 +130,7 @@ $uc-breakpoint: 35em !default;
         [data-display-is~="pulled-left"],
         [data-display-is~="pulled-right"] {
             margin-bottom: $sz-m;
-        
+
             display: -webkit-flex;
             display: -ms-flexbox;
             display: flex;
@@ -239,7 +239,7 @@ $uc-breakpoint: 35em !default;
 
         // Text content:
         [data-display-as~="smallprint"] {
-            font-size: 0.75em;
+            font-size: 0.875em;
         }
 
         [data-display-as~="strapline"] {
