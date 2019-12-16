@@ -717,6 +717,18 @@ var cookie_html                   =
             var filterable_groups = document.querySelectorAll('[filterable_group]');
 
             Array.prototype.forEach.call(filterable_groups, function(filterable_group, i) {
+                // Store items:
+                filterable_group.items = filterable_group.querySelectorAll('[filterable_item]');
+
+                // Action 'remove' selector:
+                var remove_selector = filterable_group.getAttribute('filterable_remove');
+                if (remove_selector !== '') {
+                    var remove_els = document.querySelectorAll(remove_selector);
+                    Array.prototype.forEach.call(remove_els, function(remove_el, i) {
+                        remove_el.remove();
+                    });
+                }
+
 				// Expose the form if necessary:
 				var filterable_form_template = filterable_group.querySelector('[filterable_form_template]');
 				if (filterable_form_template) {
@@ -747,26 +759,41 @@ var cookie_html                   =
                     filterable_list.insertAdjacentHTML('afterend', filterable_empty_list);
                 });
 
-
-                // Attach search input handler:
-                // @TODO: Could allow for different input actions to trigger this.
-                // E.g. user may want to choose from a list of predefined options by which to filter
-                // the list(s) so a select or checkbox change should work as well.
+                // Get the input:
                 var filterable_input = filterable_group.querySelector('[filterable_input]');
-                filterable_input.addEventListener('keyup', function(){
-                    filterability.filterList(filterable_group, this.value);
-                });
+                
+                // Check for presence of a submit button:
+                var filterable_submit = filterable_group.querySelector('[filterable_submit]');
+                
+                // If there is one, we want to attach the hander, otherwise, filter on keyup:
+                if (filterable_submit) {
+                    filterable_submit.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        filterability.filterList(filterable_group, filterable_input.value);
+                        return false;
+                    });
+                } else {
+                    
+                    // Attach search input handler:
+                    // @TODO: Could allow for different input actions to trigger this.
+                    // E.g. user may want to choose from a list of predefined options by which to filter
+                    // the list(s) so a select or checkbox change should work as well.
+                    
+                    filterable_input.addEventListener('keyup', function() {
+                        filterability.filterList(filterable_group, this.value);
+                    });
+                }
 
 
                 // Toggler stuff:
                 var filterable_toggles = filterable_group.querySelectorAll('[filterable_toggle]');
-                
+
                 if (filterable_toggles.length > 0) {
                     var els = filterable_group.querySelector('[filterable_item]').querySelectorAll('[filterable_index_name]');
                     filterability.filterable_index_names = Array.prototype.map.call(els, function(obj) {
                         return obj.getAttribute('filterable_index_name');
                     });
-           
+
                     Array.prototype.forEach.call(filterable_toggles, function(filterable_toggle, i) {
                         var el_tagName = filterable_toggle.tagName.toLowerCase();
                         var el_type = filterable_toggle.type;
@@ -788,13 +815,13 @@ var cookie_html                   =
                             }
                         }
                     });
-                
+
                 }
-                
-                
+
+
                 // Exclusion stuff:
                 var excludable_toggles = filterable_group.querySelectorAll('[filterable_exclude_container][filterable_exclude_match]');
-                
+
                 if (excludable_toggles.length > 0) {
                     Array.prototype.forEach.call(excludable_toggles, function(excludable_toggle, i) {
                         var el_tagName = excludable_toggle.tagName.toLowerCase();
@@ -805,21 +832,17 @@ var cookie_html                   =
                         // Check element is of valid / supported type:
                         if (el_tagName == 'input' && ['checkbox'].indexOf(el_type) > -1) {
                             excludable_toggle.addEventListener('change', function(){
-                                
+
                                 // Find the element the toggle corresponds to:
                                 var ex_els = filterable_group.querySelectorAll(this.getAttribute('filterable_exclude_container'));
                                 var is_checked = this.checked;
                                 var ex_match = this.getAttribute('filterable_exclude_match');
-                                //console.log(ex_els);
                                 Array.prototype.forEach.call(ex_els, function(ex_el, i) {
 
                                     var re = new RegExp(ex_match);
                                     var match = re.exec(ex_el.innerHTML);
-                                    //console.log(match !== null);
                                     if (match !== null) {
                                         var parent_filterable_item = filterability.closest(ex_el, '[filterable_item]', '[filterable_list]');
-                                        //console.log(is_checked);
-                                        //parent_filterable_item.removeAttribute('filterable_index');
                                         if (is_checked) {
                                             parent_filterable_item.removeAttribute('hidden');
                                         } else {
@@ -827,10 +850,10 @@ var cookie_html                   =
                                         }
                                     }
                                 });
-                                
+
                                 filterability.checkListEmpty(filterable_group);
                             });
-                            
+
                         }
                     });
                 }
@@ -839,7 +862,7 @@ var cookie_html                   =
         },
 
         generateIndex: function(group) {
-            var items = group.querySelectorAll('[filterable_item]');
+            var items = group.items;
             Array.prototype.forEach.call(items, function(item, i){
                 if (item.getAttribute('filterable_index') === '') {
                     var index_string = item.textContent;
@@ -853,7 +876,7 @@ var cookie_html                   =
                         index_string += index.textContent + ' ';
                     });
                 }
-                
+
                 item.setAttribute('filterable_index_string', index_string.toLowerCase().trim());
             });
         },
@@ -861,16 +884,16 @@ var cookie_html                   =
         filterList: function(group, query) {
 
             query = query.toLowerCase().trim();
-            var items = group.querySelectorAll('[filterable_item]');
+            var items = group.items;
             Array.prototype.forEach.call(items, function(item, i){
                 if (item.getAttribute('filterable_index_string').indexOf(query) > -1) {
                     item.removeAttribute('hidden');
 
                     // Check we want to highlight results:
                     if (group.getAttribute('filterable_mark_results') === '') {
-                        filterability.highlight_results(item, query);
+                        filterability.debounce(filterability.highlight_results(item, query), 250);
                     }
-                    
+
                 } else {
                     item.setAttribute('hidden', '');
                 }
@@ -879,7 +902,7 @@ var cookie_html                   =
 
             filterability.checkListEmpty(group);
         },
-        
+
         checkListEmpty: function(group) {
             // After filtering, if a list is empty, show the 'empty' message:
             var lists = group.querySelectorAll('[filterable_list]');
@@ -897,7 +920,7 @@ var cookie_html                   =
                 }
             });
         },
-        
+
         // Allow user-selected indexes:
         toggle_index: function(group, index_name) {
             var items = group.querySelectorAll('[filterable_index_name]');
@@ -913,16 +936,13 @@ var cookie_html                   =
                 }
             });
         },
-        
+
         highlight_results: function(item, query) {
-            //console.log(item);
-           //console.log(query);
+            // Note this can be really slow on large lists.
             if (window.Mark) {
-                //console.log('Highlighting...');
                 var markInstance = new Mark(item.querySelectorAll('[filterable_index], [filterable_index_name]'));
                 markInstance.unmark({
                     done: function(){
-                        //console.log(query);
                         markInstance.mark(query);
                     }
                 });
@@ -933,7 +953,7 @@ var cookie_html                   =
                 }
             }
         },
-        
+
         closest: function(el, selector, stopSelector) {
             var retval = null;
             while (el) {
@@ -946,6 +966,21 @@ var cookie_html                   =
                 el = el.parentElement;
             }
             return retval;
+        },
+        
+        debounce: function(func, wait, immediate) {
+            var timeout;
+            return function() {
+                var context = this, args = arguments;
+                var later = function() {
+                    timeout = null;
+                    if (!immediate) func.apply(context, args);
+                };
+                var callNow = immediate && !timeout;
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+                if (callNow) func.apply(context, args);
+            };
         }
 	}
 
