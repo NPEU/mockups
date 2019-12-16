@@ -167,10 +167,11 @@ exports.img = series(do_svg2png, do_imagemin, do_svgmin);
 /*------------------------------------------------------------------------------------------------*\
     JS
 \*------------------------------------------------------------------------------------------------*/
-const js_src          = './_scripts/';
-const js_dest         = './js/';
-const js_filename     = 'script.js';
-const js_map_filename = 'map.js';
+const js_src             = './_scripts/';
+const js_dest            = './js/';
+const js_filename        = 'script.js';
+const js_map_filename    = 'map.js';
+const js_filter_filename = 'filter.js';
 
 const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
@@ -189,9 +190,7 @@ function do_concat_js(cb) {
         './bower_components/Fall-Back-Patterns/Nav Bar/js/nav-bar.js',
         './bower_components/Fall-Back-Patterns/Over Panel/js/over-panel.js',
         './bower_components/Fall-Back-Patterns/Dropdown/js/dropdown.js',
-        './bower_components/Fall-Back-Filterability/filterability.js',
-        './bower_components/Details-Polyfill/dist/details-element-polyfill.js',
-        './bower_components/Mark-JS/dist/mark.js'
+        './bower_components/Details-Polyfill/dist/details-element-polyfill.js'
     ])
     .pipe(concat(js_filename))
     .pipe(gulp.dest(js_src));
@@ -206,6 +205,16 @@ function do_concat_js(cb) {
 
     .pipe(concat(js_map_filename))
     .pipe(gulp.dest(js_src));
+    
+    // Separate filter script:
+    gulp.src([
+        './bower_components/Mark-JS/dist/mark.js',
+        './bower_components/Fall-Back-Filterability/filterability.js'
+    ])
+
+    .pipe(concat(js_filter_filename))
+    .pipe(gulp.dest(js_src));
+
 
     // Callback:
     cb();
@@ -218,7 +227,8 @@ function do_uglify(cb) {
     pump([
         gulp.src([
             js_src + js_filename,
-            js_src + js_map_filename
+            js_src + js_map_filename,
+            js_src + js_filter_filename
         ]),
         uglify(),
         rename({extname: '.min.js'}),
