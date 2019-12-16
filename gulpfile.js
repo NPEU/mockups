@@ -220,7 +220,7 @@ function do_concat_js(cb) {
     cb();
 }
 
-// And minifiy them.
+// And minify them.
 function do_uglify(cb) {
     console.log('Running uglify...');
 
