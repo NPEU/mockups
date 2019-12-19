@@ -5141,10 +5141,14 @@ $fallback-svg--link-bg-color-alt: #fff;
   height: auto;
   width: auto;
   max-width: 100%;
-  max-height: 8rem;
   border-style: none;
+  background-color: transparent;
   margin: 0 auto;
   /* [3] */
+}
+
+.c-badge.c-badge--limit-height img {
+  max-height: 8rem;
 }
 
 .c-badge.c-badge--small {
@@ -5198,8 +5202,8 @@ a[href].c-badge:hover, a[href].c-badge:active, a[href].c-badge:focus {
 
 a[href][rel=external].c-badge::after {
   position: absolute;
-  right: 0;
-  top: 0;
+  right: -1em;
+  top: -1em;
   width: 1.25em;
   height: 1.25em;
   display: block;
@@ -11970,6 +11974,59 @@ html.wireframe {
   max-width: 100%;
   width: calc((35em - 100%) * 1000);
   min-width: 67%;
+}
+
+.c-user-content [data-contains~="image"] {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  /* [1] */
+}
+
+.c-user-content [data-contains~="image"] svg {
+  max-width: 100%;
+}
+
+.c-user-content [data-contains~="image"] img {
+  /*
+                    1. This is to provide positioning context for the ::after pseudo-element.
+                    2. This is so a broken image is still 100%.
+                    3. Center in container.
+                */
+  position: relative;
+  /* [1] */
+  display: block;
+  /* [2] */
+  height: auto;
+  width: auto;
+  max-width: 100%;
+  border-style: none;
+  margin: 0 auto;
+  /* [3] */
+}
+
+.c-user-content a[href][data-contains~="image"] {
+  border: 0;
+  padding: 0;
+}
+
+.c-user-content a[href][data-contains~="image"]:hover, .c-user-content a[href][data-contains~="image"]:active, .c-user-content a[href][data-contains~="image"]:focus {
+  border: 0;
+  box-shadow: 0 0 0 0.6rem #fff, 0 0 0 1.2rem rgba(0, 0, 0, 0.2);
+}
+
+.c-user-content a[href][rel=external][data-contains~="image"]::after {
+  position: absolute;
+  right: -1em;
+  top: -1em;
+  width: 1.25em;
+  height: 1.25em;
+  display: block;
+}
+
+.c-user-content [data-contains~="logo"] img {
+  max-height: 8rem;
+  background-color: transparent;
 }
 
 .c-user-content img {
