@@ -134,9 +134,14 @@ $uc-breakpoint: 35em !default;
             display: -webkit-flex;
             display: -ms-flexbox;
             display: flex;
+
             -webkit-justify-content: center;
                       -ms-flex-pack: center;
                     justify-content: center;
+
+            -webkit-flex-direction: column;
+                -ms-flex-direction: column;
+                    flex-direction: column;
 
 
             // We want some space on the right, but not when narrow screens effectively turn the
@@ -244,6 +249,13 @@ $uc-breakpoint: 35em !default;
 
         [data-display-as~="strapline"] {
             font-size: 1.125em;
+        }
+        
+        // Figures
+        
+        figcaption {
+            text-align: center;
+            font-size: 0.875em;
         }
 
     }

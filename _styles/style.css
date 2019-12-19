@@ -11909,6 +11909,9 @@ html.wireframe {
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   /*&::before,
             &::after {
                 content: "";
@@ -11997,6 +12000,11 @@ html.wireframe {
 
 .c-user-content [data-display-as~="strapline"] {
   font-size: 1.125em;
+}
+
+.c-user-content figcaption {
+  text-align: center;
+  font-size: 0.875em;
 }
 
 /* ---------------------------------------------------------------------------------------------- */
