@@ -1854,11 +1854,11 @@ video {
     *
 */
 /*
-        "Buttons" or "CTAs" that are really links should be distinguished from real buttons, so by
-        default we're swapping the foreground and background colors:
-    */
-a[href].c-button,
-a[href].c-cta {
+    "Buttons" or "CTAs" that are really links should be distinguished from real buttons, so by
+    default we're swapping the foreground and background colors:
+*/
+a[href].button,
+a[href].cta {
   display: inline-block;
   /* AK. IE9 needs this. Hmmm, for what exactly?*/
   min-height: 3rem;
@@ -1905,46 +1905,46 @@ a[href].c-cta {
     }*/
 }
 
-a[href].c-button:hover, a[href].c-button:active,
-a[href].c-cta:hover,
-a[href].c-cta:active {
+a[href].button:hover, a[href].button:active,
+a[href].cta:hover,
+a[href].cta:active {
   background-color: white;
 }
 
-a[href].c-button:focus,
-a[href].c-cta:focus {
+a[href].button:focus,
+a[href].cta:focus {
   outline: 0;
   box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5);
 }
 
-a[href].c-button:hover, a[href].c-button:active, a[href].c-button:focus,
-a[href].c-cta:hover,
-a[href].c-cta:active,
-a[href].c-cta:focus {
+a[href].button:hover, a[href].button:active, a[href].button:focus,
+a[href].cta:hover,
+a[href].cta:active,
+a[href].cta:focus {
   background-color: #ebe6f0;
 }
 
-a[href].c-button--has-icon,
-a[href].c-cta--has-icon {
+a[href].button--has-icon,
+a[href].cta--has-icon {
   position: relative;
 }
 
-a[href].c-button--has-icon::after,
-a[href].c-cta--has-icon::after {
+a[href].button--has-icon::after,
+a[href].cta--has-icon::after {
   content: "";
   display: inline;
   padding-left: 1.25em;
   line-height: 0;
 }
 
-a[href].c-button--has-icon .icon,
-a[href].c-cta--has-icon .icon {
+a[href].button--has-icon .icon,
+a[href].cta--has-icon .icon {
   position: absolute;
   bottom: 0;
   transform: translateY(-15%);
 }
 
-.c-button[data-text][aria-hidden="true"] {
+.button[data-text][aria-hidden="true"] {
   display: inline-block;
   /* AK. IE9 needs this. Hmmm, for what exactly?*/
   min-height: 3rem;
@@ -1991,23 +1991,73 @@ a[href].c-cta--has-icon .icon {
     }*/
 }
 
-.c-button[data-text][aria-hidden="true"]:hover, .c-button[data-text][aria-hidden="true"]:active {
+.button[data-text][aria-hidden="true"]:hover, .button[data-text][aria-hidden="true"]:active {
   background-color: #473456;
 }
 
-.c-button[data-text][aria-hidden="true"]:focus {
+.button[data-text][aria-hidden="true"]:focus {
   outline: 0;
   box-shadow: 0 0 0 3px rgba(97, 71, 118, 0.5);
 }
 
-.c-button[data-text][aria-hidden="true"]::before {
+.button[data-text][aria-hidden="true"]::before {
   content: attr(data-text);
 }
 
+.bordered {
+  border-width: 6px;
+  border-style: solid;
+  border-color: #614776;
+  padding-top: 24px;
+  padding-top: -moz-calc(24px - 6px);
+  padding-top: calc(24px - 6px);
+  padding-left: 24px;
+  padding-left: -moz-calc(24px - 6px);
+  padding-left: calc(24px - 6px);
+  padding-right: 24px;
+  padding-right: -moz-calc(24px - 6px);
+  padding-right: calc(24px - 6px);
+}
+
+.bordered::after {
+  display: block;
+  content: "";
+  height: 1px;
+  margin-top: 24px;
+  margin-bottom: -1px;
+  margin-bottom: -moz-calc(-1px - 6px);
+  margin-bottom: calc(-1px - 6px);
+}
+
+.padded {
+  border-width: 0px;
+  border-style: solid;
+  border-color: #614776;
+  padding-top: 2.4rem;
+  padding-top: -moz-calc(2.4rem - 0px);
+  padding-top: calc(2.4rem - 0px);
+  padding-left: 2.4rem;
+  padding-left: -moz-calc(2.4rem - 0px);
+  padding-left: calc(2.4rem - 0px);
+  padding-right: 2.4rem;
+  padding-right: -moz-calc(2.4rem - 0px);
+  padding-right: calc(2.4rem - 0px);
+}
+
+.padded::after {
+  display: block;
+  content: "";
+  height: 1px;
+  margin-top: 2.4rem;
+  margin-bottom: -1px;
+  margin-bottom: -moz-calc(-1px - 0px);
+  margin-bottom: calc(-1px - 0px);
+}
+
 /*
-        1. Prevent element increasing height of parent.
-    */
-b.c-subtitle {
+    1. Prevent element increasing height of parent.
+*/
+b.subtitle {
   font-size: 0.8em;
   font-weight: inherit;
   font-style: normal;
@@ -2016,9 +2066,9 @@ b.c-subtitle {
 }
 
 /*
-        1. Negate heading margin.
-    */
-p.c-subtitle {
+    1. Negate heading margin.
+*/
+p.subtitle {
   font-size: 1.5em;
   font-weight: inherit;
   margin-top: -1.2rem;
@@ -2026,19 +2076,19 @@ p.c-subtitle {
 }
 
 /*
-        1. Negate heading margin.
-    */
-.c-tagline {
+    1. Negate heading margin.
+*/
+.tagline {
   font-size: 1.14285714286em;
   margin-top: -1.2rem;
   /* 1 */
 }
 
 /*
-        1. Collapse whitespace.
-        2. Prevent extra height being added.
-    */
-.c-composite {
+    1. Collapse whitespace.
+    2. Prevent extra height being added.
+*/
+.composite {
   display: -webkit-inline-box;
   /* 1 */
   display: -ms-inline-flexbox;
@@ -2053,9 +2103,9 @@ p.c-subtitle {
 }
 
 /*
-        1. Prevent extra height being added.
-    */
-.c-composite > * {
+    1. Prevent extra height being added.
+*/
+.composite > * {
   vertical-align: top;
   /* 1 */
   -webkit-flex: 0 1 auto;
@@ -2064,15 +2114,15 @@ p.c-subtitle {
 }
 
 /*
-        IE9
+    IE9
 
-        1. Make sure there are no spaces between elements in the markup as the as the white space won't
-           collapse.
+    1. Make sure there are no spaces between elements in the markup as the as the whitespace won't
+       collapse.
 
-        2. Hide button.
-    */
+    2. Hide button.
+*/
 @media screen and (min-width: 0\0) and (min-resolution: 0.001dpcm) {
-  .c-composite {
+  .composite {
     display: inline-block;
     /* 1 */
     white-space: nowrap;
@@ -2080,53 +2130,53 @@ p.c-subtitle {
     overflow: hidden;
     /* 2 */
   }
-  .c-composite > * {
+  .composite > * {
     vertical-align: top;
     display: inline-block;
   }
 }
 
-.c-composite > *:not(:first-child) {
-  border-top-left-radius: 0 !important;
-  border-bottom-left-radius: 0 !important;
+.composite > *:not(:first-child) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }
 
-.c-composite > *:not(:last-child) {
-  border-top-right-radius: 0 !important;
-  border-bottom-right-radius: 0 !important;
-  border-right: 0 !important;
+.composite > *:not(:last-child) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-right: 0;
 }
 
 /* CUSTOM INPUTS: RADIOS AND CHECKBOXES */
 /* Hide the real inputs: */
 /* (note this method is important to persist accessibility and keyboard navigation) */
-.c-custom-input[type="checkbox"],
-.c-custom-input[type="radio"] {
+.custom-input[type="checkbox"],
+.custom-input[type="radio"] {
   position: absolute;
   opacity: 0;
 }
 
 /* Prepare for positioning the pseudo-elements: */
-.c-custom-input-label {
+.custom-input-label {
   position: relative;
   vertical-align: top;
   /*display: -webkit-inline-flex;
-        display: -ms-inline-flexbox;
-        display: inline-flex;
-        -webkit-align-items: center;
-             -ms-flex-align: center;
-               align-items: center;*/
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-align-items: center;
+         -ms-flex-align: center;
+           align-items: center;*/
   padding-left: 1.5em;
 }
 
-.c-custom-input:focus + .cc-ustom-input-label::before {
+.custom-input:focus + .custom-input-label::before {
   box-shadow: 0 0 0 2px #9476ad;
   outline: 0;
 }
 
 /* Common psuedo-element styles: */
-.c-custom-input[type="checkbox"] + .c-custom-input-label::before,
-.c-custom-input[type="radio"] + .c-custom-input-label::before {
+.custom-input[type="checkbox"] + .custom-input-label::before,
+.custom-input[type="radio"] + .custom-input-label::before {
   display: inline-block;
   content: "";
   width: 1em;
@@ -2142,17 +2192,17 @@ p.c-subtitle {
 }
 
 /* Make the radio elements circular: */
-.c-custom-input[type="radio"] + .c-custom-input-label::before {
+.custom-input[type="radio"] + .custom-input-label::before {
   border-radius: 50%;
 }
 
 /* Define the checkbox :checked state: */
-.c-custom-input[type="checkbox"]:checked + .c-custom-input-label::before {
+.custom-input[type="checkbox"]:checked + .custom-input-label::before {
   background: #614776;
 }
 
 /* Define the checkbox 'tick': */
-.c-custom-input[type="checkbox"]:checked + .c-custom-input-label::after {
+.custom-input[type="checkbox"]:checked + .custom-input-label::after {
   content: "";
   display: inline-block;
   width: 0.6em;
@@ -2168,7 +2218,7 @@ p.c-subtitle {
 }
 
 /* Define the radio 'dot': */
-.c-custom-input[type="radio"]:checked + .c-custom-input-label::before {
+.custom-input[type="radio"]:checked + .custom-input-label::before {
   background: #fff;
   border-color: #614776;
   border-width: 0.25em;
@@ -2176,26 +2226,26 @@ p.c-subtitle {
 }
 
 /* Adjustments for end (right) alignment: */
-.c-custom-input--align-end[type="checkbox"] + .c-custom-input-label,
-.c-custom-input--align-end[type="radio"] + .c-custom-input-label {
+.custom-input--align-end[type="checkbox"] + .custom-input-label,
+.custom-input--align-end[type="radio"] + .custom-input-label {
   padding-left: 0;
   padding-right: 1.5em;
 }
 
-.c-custom-input--align-end[type="checkbox"] + .c-custom-input-label::before,
-.c-custom-input--align-end[type="radio"] + .c-custom-input-label::before {
+.custom-input--align-end[type="checkbox"] + .custom-input-label::before,
+.custom-input--align-end[type="radio"] + .custom-input-label::before {
   left: auto;
   right: 0;
 }
 
-.c-custom-input--align-end[type="checkbox"]:checked + .c-custom-input-label::after {
+.custom-input--align-end[type="checkbox"]:checked + .custom-input-label::after {
   left: auto;
   right: 0.16em;
 }
 
 /* CUSTOM INPUTS: FILE */
 /* -webkit hide the button: */
-.c-custom-input[type="file"]::-webkit-file-upload-button {
+.custom-input[type="file"]::-webkit-file-upload-button {
   border: 0;
   padding: 0;
   margin: 0;
@@ -2205,14 +2255,14 @@ p.c-subtitle {
 
 /* Firefox hide the button: */
 @supports (-moz-appearance: meterbar) {
-  .c-custom-input[type=file] {
+  .custom-input[type=file] {
     text-indent: -5.6em;
     padding-right: 0.375rem;
   }
 }
 
 /* IE10-11, Edge hide the button: */
-.c-custom-input[type=file]::-ms-browse {
+.custom-input[type=file]::-ms-browse {
   padding: 0;
   margin: -1px;
   width: 0;
@@ -2223,16 +2273,23 @@ p.c-subtitle {
 /* IE9 hide the button: (https://jeffclayton.wordpress.com/2014/07/22/internet-explorer-css-hacks-collection/) */
 @media screen and (min-width: 0\0) and (min-resolution: 0.001dpcm) {
   /*
-                So far I haven't managed to get this arrangement working properly in IE9, so hiding it:
-            */
-  .c-button + .c-custom-input[type=file] {
+            So far I haven't managed to get this arrangment working properly in IE9, so hiding it:
+        */
+  .button + .custom-input[type=file] {
     margin-left: -5.35em;
   }
-  .c-custom-input[type="file"] + .c-button {
+  .custom-input[type="file"] + .button {
     min-width: 7em;
     margin-left: -7em;
     text-align: center;
   }
+}
+
+.poem {
+  font-family: cursive;
+  background: #fff;
+  overflow: auto;
+  margin-bottom: 2.4rem;
 }
 
 /*! Start CSS Accessibility. See SCSS file for documentation. */
@@ -11936,6 +11993,7 @@ html.wireframe {
 
 .c-user-content [data-display-is~="pulled-left"] {
   float: left;
+  clear: left;
   margin-right: 2.4rem;
 }
 
@@ -11945,6 +12003,7 @@ html.wireframe {
 
 .c-user-content [data-display-is~="pulled-right"] {
   float: right;
+  clear: right;
   margin-left: 2.4rem;
 }
 
@@ -12035,7 +12094,7 @@ html.wireframe {
 
 .c-user-content b > img,
 .c-user-content b > i > img {
-  border: 3px solid #a59c95;
+  border: 3px solid #a59c95 !important;
 }
 
 .c-user-content b > i > img {

@@ -143,7 +143,6 @@ $uc-breakpoint: 35em !default;
                 -ms-flex-direction: column;
                     flex-direction: column;
 
-
             // We want some space on the right, but not when narrow screens effectively turn the
             // floating off:
             /*&::before,
@@ -166,6 +165,7 @@ $uc-breakpoint: 35em !default;
 
         [data-display-is~="pulled-left"] {
             float: left;
+            clear: left;
             margin-right: $sz-m;
 
             &::before {
@@ -175,6 +175,7 @@ $uc-breakpoint: 35em !default;
 
         [data-display-is~="pulled-right"] {
             float: right;
+            clear: right;
             margin-left: $sz-m;
 
             &::after {
@@ -205,7 +206,7 @@ $uc-breakpoint: 35em !default;
             display: inline-block;
             vertical-align: middle;
             position: relative; /* [1] */
-           
+
 
             svg {
                 max-width: 100%;
@@ -233,7 +234,7 @@ $uc-breakpoint: 35em !default;
 
             }
         }
-        
+
         a[href][data-contains~="image"] {
             border: 0;
             padding: 0;
@@ -254,9 +255,9 @@ $uc-breakpoint: 35em !default;
             height: 1.25em;
             display: block;
         }
-        
-        
-        
+
+
+
         [data-contains~="logo"] img {
             max-height: 8rem;
             background-color: transparent;
@@ -281,7 +282,7 @@ $uc-breakpoint: 35em !default;
 
         b > img,
         b > i > img {
-            border: 3px solid lighten(map-get(map-get($themes, neutral), primary-color), 10%);
+            border: 3px solid lighten(map-get(map-get($themes, neutral), primary-color), 10%) !important;
         }
 
         b > i > img {
@@ -312,9 +313,9 @@ $uc-breakpoint: 35em !default;
         [data-display-as~="strapline"] {
             font-size: 1.125em;
         }
-        
+
         // Figures
-        
+
         figcaption {
             text-align: center;
             font-size: 0.875em;
