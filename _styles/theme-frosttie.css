@@ -1172,7 +1172,8 @@ input:not([type]):focus,
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-.t-frosttie img[src*="/img/avatars/"] {
+.t-frosttie img[src*="/img/avatars/"],
+.t-frosttie [data-contains~="portrait"] img {
   border-color: #2b3383 !important;
 }
 

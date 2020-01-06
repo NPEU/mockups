@@ -9547,7 +9547,8 @@ input:not([type]):focus,
   background-color: rgba(0, 0, 0, 0.1);
 }
 
-.t-white img[src*="/img/avatars/"] {
+.t-white img[src*="/img/avatars/"],
+.t-white [data-contains~="portrait"] img {
   border-color: #ffffff !important;
 }
 
@@ -10239,7 +10240,8 @@ input:not([type]):focus,
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-.t-neutral img[src*="/img/avatars/"] {
+.t-neutral img[src*="/img/avatars/"],
+.t-neutral [data-contains~="portrait"] img {
   border-color: #8e8279 !important;
 }
 
@@ -11078,7 +11080,8 @@ input:not([type]):focus,
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-.t-npeu img[src*="/img/avatars/"] {
+.t-npeu img[src*="/img/avatars/"],
+.t-npeu [data-contains~="portrait"] img {
   border-color: #5d4777 !important;
 }
 
@@ -11826,6 +11829,18 @@ html.wireframe {
 /*
 
 */
+.c-user-content {
+  /*
+            Note this original method just assumed that images are square.
+            MaatHRI team page proves this is not the case, so the above, explicit portrait
+            declaration is needed.
+            It's still ok to assume square images in templates, though, where I know I'm just using
+            the avatars folder (where square is forced on upload).
+            So, it's really just user content that's the problem, so keep things as they are for
+            now.
+        */
+}
+
 .c-user-content [data-display-is~="width-one-quarter"] + [data-contains~="contact-details"] {
   max-width: 100%;
   width: calc((35em - 100%) * 1000);
@@ -12109,7 +12124,31 @@ html.wireframe {
   padding: 1.2rem;
 }
 
-.c-user-content img[src*="/img/avatars/"] {
+.c-user-content [data-contains~="portrait"]::before {
+  content: "";
+  width: 1px;
+  margin-left: -1px;
+  float: left;
+  height: 0;
+  padding-top: 100%;
+}
+
+.c-user-content [data-contains~="portrait"]::after {
+  /* to clear float */
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.c-user-content [data-contains~="portrait"] img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.c-user-content img[src*="/img/avatars/"],
+.c-user-content [data-contains~="portrait"] img {
   display: block;
   width: 100%;
   max-width: 16em;

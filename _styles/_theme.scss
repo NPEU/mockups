@@ -394,7 +394,8 @@ $theme--very-dark: $theme;
 // User Content:
 .#{$theme-namespace}#{$theme-name} {
 
-    img[src*="/img/avatars/"] {
+    img[src*="/img/avatars/"],
+    [data-contains~="portrait"] img {
         border-color: map-get($theme, primary-color) !important;
     }
 
