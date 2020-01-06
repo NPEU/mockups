@@ -7322,7 +7322,14 @@ _:-ms-lang(x), .l-col-to-row__item  {
   width: 100%;
 }
 
+.l-primary-content .l-primary-content__pull-out__padded--small {
+  padding: 0 2.4rem;
+}
+
 @media only screen and (min-width: 60em) {
+  .l-primary-content .l-primary-content__pull-out__padded--small {
+    padding: 0;
+  }
   .l-primary-content.l-primary-content {
     padding: 0 2.4rem;
   }
