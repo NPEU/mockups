@@ -19,6 +19,11 @@ $fill-height-namespace: u- !default;
     
     -webkit-flex-direction: column;
             flex-direction: column;
+            
+    & > * {
+        -webkit-flex: 1 0 auto;
+                flex: 1 0 auto;
+    }
 }
 
 @media #{$f__ie10-11} {
