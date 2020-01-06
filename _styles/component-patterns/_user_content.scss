@@ -338,6 +338,10 @@ $uc-breakpoint: 35em !default;
 
 
         // Avatar / portrait:
+        [data-contains~="portrait"] {
+            max-width: 16em;
+        }
+        
         [data-contains~="portrait"]::before {
             content: "";
             width: 1px;

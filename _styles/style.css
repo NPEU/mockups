@@ -12124,6 +12124,10 @@ html.wireframe {
   padding: 1.2rem;
 }
 
+.c-user-content [data-contains~="portrait"] {
+  max-width: 16em;
+}
+
 .c-user-content [data-contains~="portrait"]::before {
   content: "";
   width: 1px;
