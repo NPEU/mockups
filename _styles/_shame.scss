@@ -235,3 +235,41 @@ details:not([open]) > *:not(summary) {
     min-height: 0;
 }
 */
+
+
+.recruitment {
+    padding: $panel--padding;
+        
+    @include bottom-space-fix();
+    
+    border: 1px solid #aaa;
+}
+
+.recruitment figcaption {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+
+
+.recruitment .recruitment__info {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+}
+
+.recruitment .recruitment__info dt {
+    -webkit-flex: 1 0 4em;
+        -ms-flex: 1 0 4em;
+            flex: 1 0 4em;
+}
+
+.recruitment .recruitment__info dd {
+    -webkit-flex: 1 0 -webkit-calc(100% - 4em);
+        -ms-flex: 1 0 calc(100% - 4em);
+            flex: 1 0 calc(100% - 4em);
+    margin: 0;
+}
