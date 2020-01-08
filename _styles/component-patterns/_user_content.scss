@@ -21,19 +21,23 @@ $uc-breakpoint: 35em !default;
         }
 
         [data-display-is~="width-one-quarter"] + [data-contains~="contact-details"] {
-            @include ff-width(100%, $uc-breakpoint, 75%);
+            @include ff-width(100%, $uc-breakpoint, unquote("calc(75% - #{$sz-m})"));
         }
 
         [data-display-is~="width-one-third"] + [data-contains~="contact-details"] {
-            @include ff-width(100%, $uc-breakpoint, 67%);
+            @include ff-width(100%, $uc-breakpoint, unquote("calc(67% - #{$sz-m})"));
         }
 
         [data-display-is~="width-one-half"] + [data-contains~="contact-details"] {
-            @include ff-width(100%, $uc-breakpoint, 50%);
+            @include ff-width(100%, $uc-breakpoint, unquote("calc(50% - #{$sz-m})"));
         }
 
         [data-display-is~="width-two-thirds"] + [data-contains~="contact-details"] {
-            @include ff-width(100%, $uc-breakpoint, 33%);
+            @include ff-width(100%, $uc-breakpoint, unquote("calc(33% - #{$sz-m})"));
+        }
+        
+        [data-display-is*="width-"] + [data-contains~="contact-details"] + * {
+            clear: both;
         }
 
 
