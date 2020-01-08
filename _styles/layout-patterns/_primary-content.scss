@@ -39,7 +39,7 @@ $primary-content-pull-out-side-space: 0 $primary-content-spacing-unit 0 0 !defau
         //margin-right: auto;
     }
 
-    #{&}__pull-out__padded--small {
+    #{&}__pull-out__padded--\@small {
         padding: 0 $primary-content-spacing-unit;
     }
 }
@@ -48,7 +48,7 @@ $primary-content-pull-out-side-space: 0 $primary-content-spacing-unit 0 0 !defau
 
     .#{$primary-content-namespace}primary-content {
     
-        #{&}__pull-out__padded--small {
+        #{&}__pull-out__padded--\@small {
             padding: 0;
         }
 
@@ -90,7 +90,11 @@ $primary-content-pull-out-side-space: 0 $primary-content-spacing-unit 0 0 !defau
                 width: 100%;
             }
 
-            .#{$primary-content-namespace}primary-content__main {
+            /*
+                If an area has a SUPER pull-out, we need to float the header too.
+            */
+            .#{$primary-content-namespace}primary-content__main,
+            .#{$primary-content-namespace}primary-content__pull-out--super + .#{$primary-content-namespace}primary-content__header {
                /* -ms-grid-column: 1;
                     grid-column: 1;
                      -ms-grid-row: 2;
@@ -103,6 +107,7 @@ $primary-content-pull-out-side-space: 0 $primary-content-spacing-unit 0 0 !defau
                 clear: left;
             }
 
+            .#{$primary-content-namespace}primary-content__pull-out--super,
             .#{$primary-content-namespace}primary-content__pull-out--top {
                 /*-ms-grid-column: 2;
                     grid-column: 2;
@@ -111,7 +116,7 @@ $primary-content-pull-out-side-space: 0 $primary-content-spacing-unit 0 0 !defau
 
                 width: 34%;
                 float: right;
-
+                clear: right;
 
                 padding: 0 $primary-content-spacing-unit;
             }

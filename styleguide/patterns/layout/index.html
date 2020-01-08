@@ -3,6 +3,16 @@ layout: structure--pattern
 title: NPEU Layout Patterns
 project_base_url: styleguide
 ---
+
+<ul>
+    <li><a href="/styleguide/patterns/layout/primary-content--main-only">Primary content - main only</a></li>
+    <li><a href="/styleguide/patterns/layout/primary-content--pull-outs">Primary content - with pull-outs</a></li>
+    <li><a href="/styleguide/patterns/layout/primary-content--pull-outs--super">Primary content - with pull-outs and super pull-out</a></li>
+    <li><a href="/styleguide/patterns/layout/primary-content--pull-outs--super-only">Primary content - with super pull-out only</a></li>
+</ul>
+
+<hr>
+
 <h2 class="u-padding--sides">A note on Blockrow</h2>
 
 <p class="u-padding--sides">
@@ -963,17 +973,30 @@ This pattern should only really be used once per page, where the primary content
 
 <div class="l-primary-content  l-primary-content--has-pull-outs  d-background  t-white  u-space--below">
 
+    <div class="l-primary-content__pull-out  l-primary-content__pull-out--super  u-space--below">
+        <div class="l-primary-content__pull-out__padded--@small">
+    
+        <a href="https://dev.npeu.ox.ac.uk/maathri" class="c-badge  u-fill-width">
+            <img src="https://dev.npeu.ox.ac.uk/img/brand-logos/unit/maathri-logo.svg" onerror="this.src='https://dev.npeu.ox.ac.uk/img/brand-logos/unit/maathri-logo.png'; this.onerror=null;" alt="MaatHRI Logo Badge" height="80" class="u-fill-width">
+        </a>
+        </div>
+    </div>
+
     <div class="l-primary-content__header">
-        <h1>Main heading</h1>
+        <h1 style="border-bottom: 1px solid #aaa;">Main heading</h1>
         <p>- By line (or whatever)</p>
     </div>
 
     <div class="l-primary-content__pull-out  l-primary-content__pull-out--top" style="background-color: #eee;">
-        <h2>Side bar - top section</h2>
-        
-         <p>
-            Suspendisse pellentesque, elit et laoreet gravida, nunc arcu eleifend sem.
-        </p>
+        <div class="l-primary-content__pull-out__padded--@small">
+            <h2>Side bar - top section</h2>
+            
+             <p>
+                This area includes padding @small screen widths. We want to apply this on a
+                case-by-case basis as there are plenty of pull-outs that don't need padding at this
+                width and should snap to full-width.
+            </p>
+        </div>
     </div>  
 
     <div class="l-primary-content__main">
@@ -1009,7 +1032,7 @@ This pattern should only really be used once per page, where the primary content
     
     <div class="l-primary-content__pull-out  l-primary-content__pull-out--bottom" style="background-color: #eee;">
         <h2>Side bar - bottom section</h2>
-            <p>
+        <p>
             Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque tincidunt lorem sit amet enim congue, non molestie arcu aliquam. Vestibulum sagittis feugiat vulputate. Sed pharetra aliquam diam, eu euismod quam ullamcorper in. Sed a tempor tellus. Suspendisse in tellus hendrerit, aliquam ipsum nec, faucibus neque. Fusce a neque urna.
         </p>
 
