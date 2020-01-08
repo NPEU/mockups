@@ -2767,6 +2767,7 @@ blockquote::after {
   display: block;
   height: 1px;
   margin-top: calc(2.4rem - 1px);
+  clear: both;
 }
 
 blockquote :first-child:before, blockquote :last-child:after {
@@ -6389,6 +6390,7 @@ $glimpse--link-border-bottom--hover: false !default;*/
   display: block;
   height: 1px;
   margin-top: calc(2.4rem - 1px);
+  clear: both;
 }
 
 .c-panel h1 {
@@ -11850,25 +11852,29 @@ html.wireframe {
 .c-user-content [data-display-is~="width-one-quarter"] + [data-contains~="contact-details"] {
   max-width: 100%;
   width: calc((35em - 100%) * 1000);
-  min-width: 75%;
+  min-width: calc(75% - 2.4rem);
 }
 
 .c-user-content [data-display-is~="width-one-third"] + [data-contains~="contact-details"] {
   max-width: 100%;
   width: calc((35em - 100%) * 1000);
-  min-width: 67%;
+  min-width: calc(67% - 2.4rem);
 }
 
 .c-user-content [data-display-is~="width-one-half"] + [data-contains~="contact-details"] {
   max-width: 100%;
   width: calc((35em - 100%) * 1000);
-  min-width: 50%;
+  min-width: calc(50% - 2.4rem);
 }
 
 .c-user-content [data-display-is~="width-two-thirds"] + [data-contains~="contact-details"] {
   max-width: 100%;
   width: calc((35em - 100%) * 1000);
-  min-width: 33%;
+  min-width: calc(33% - 2.4rem);
+}
+
+.c-user-content [data-display-is*="width-"] + [data-contains~="contact-details"] + * {
+  clear: both;
 }
 
 .c-user-content [data-display-as~="box"],
@@ -11887,6 +11893,7 @@ html.wireframe {
   display: block;
   height: 1px;
   margin-top: calc(2.4rem - 1px);
+  clear: both;
 }
 
 .c-user-content [data-display-as~="box"]::before,
@@ -12403,6 +12410,7 @@ details:not([open]) > *:not(summary) {
   display: block;
   height: 1px;
   margin-top: calc(2.4rem - 1px);
+  clear: both;
 }
 
 .recruitment figcaption {
@@ -12430,6 +12438,15 @@ details:not([open]) > *:not(summary) {
   -ms-flex: 1 0 calc(100% - 4em);
   flex: 1 0 calc(100% - 4em);
   margin: 0;
+}
+
+.filelist {
+  list-style-type: none;
+}
+
+.filelist li {
+  margin-left: 0;
+  margin-bottom: 2.4rem;
 }
 
 /* ---------------------------------------------------------------------------------------------- */
