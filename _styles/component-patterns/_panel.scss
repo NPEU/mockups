@@ -23,11 +23,11 @@ $theme-only: false !default;
 		$theme-class: unquote('.')#{$theme-namespace}#{$theme-name};
 	}
 	//@debug $theme-class;
-	
+
     $text-color       : map-get($theme, text-color);
     $background-color : map-get($theme, background-color);
     $border-color     : map-get($theme, border-color);
-    
+
 	@if $border-color == null {
 		$border-color: darken($background-color, 10%);
     }
@@ -50,24 +50,24 @@ $theme-only: false !default;
 		background: $background-color;
 
 		//outline: 1px solid $border-color;
-        
+
         a[href] {
             color: $text-color;
             //background-color: $background-color;
         }
-        
+
         a[href]:hover,
         a[href]:active,
         a[href]:focus {
             color: $text-color;
         }
-        
+
         a[href].c-cta {
             border-color: $text-color;
             color: $text-color;
             background-color: transparent;
         }
-        
+
         a[href].c-cta:hover,
         a[href].c-cta:active,
         a[href].c-cta:focus {
@@ -89,29 +89,35 @@ $theme-only: false !default;
 
         &#{&} {
             padding: $panel--padding;
-        
+
             @include bottom-space-fix();
         }
-        
+
             h1 {
                 border-bottom: 1px solid #bbb;
                 margin-bottom: calc(#{$f__base-rem-space-unit} - 1px);
             }
-        
+
         &__banner {
             margin-top: -$panel--padding;
             margin-right: -$panel--padding;
             margin-bottom: $panel--padding;
             margin-left: -$panel--padding;
         }
-        
+
         &__module {
             margin-bottom:0;
             width: 100%;
             //margin-bottom: $f__base-rem-space-unit / 2;
-            
+
             h2 {
                 font-size: 24px / $f__base-font-size * 1em;
+                //margin-bottom: $f__base-rem-space-unit / 2;
+                margin-bottom: 0;
+            }
+
+            h3 {
+                font-size: 20px / $f__base-font-size * 1em;
                 //margin-bottom: $f__base-rem-space-unit / 2;
                 margin-bottom: 0;
             }

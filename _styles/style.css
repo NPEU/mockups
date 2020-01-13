@@ -6415,6 +6415,11 @@ $glimpse--link-border-bottom--hover: false !default;*/
   margin-bottom: 0;
 }
 
+.c-panel__module h3 {
+  font-size: 1.25em;
+  margin-bottom: 0;
+}
+
 .c-panel.c-panel {
   color: #333;
   background: #fff;
