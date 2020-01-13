@@ -28,6 +28,14 @@ $primary-content-pull-out-side-space: 0 $primary-content-spacing-unit 0 0 !defau
 
     &#{&} {
         margin: 0;
+        
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+
+        -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+                flex-direction: column;
     }
 
     #{&}__header,
@@ -37,6 +45,12 @@ $primary-content-pull-out-side-space: 0 $primary-content-spacing-unit 0 0 !defau
         //max-width: $primary-content-max-width;
         //margin-left: auto;
         //margin-right: auto;
+    }
+    
+    .#{$primary-content-namespace}primary-content__pull-out--super {
+         -webkit-order: -1;
+        -ms-flex-order: -1;
+                 order: -1;
     }
 
     #{&}__pull-out__padded--\@small {
@@ -83,18 +97,19 @@ $primary-content-pull-out-side-space: 0 $primary-content-spacing-unit 0 0 !defau
                 -ms-grid-row: 1;
                     grid-row: 1;*/
 
-                /*width: 66%;
+                width: 66%;
                 float: left;
-                clear: left;*/
+                //clear: left;
 
-                width: 100%;
+                //width: 100%;
             }
 
             /*
-                If an area has a SUPER pull-out, we need to float the header too.
+                --If an area has a SUPER pull-out, we need to float the header too.--
             */
-            .#{$primary-content-namespace}primary-content__main,
-            .#{$primary-content-namespace}primary-content__pull-out--super + .#{$primary-content-namespace}primary-content__header {
+            //.#{$primary-content-namespace}primary-content__main,
+            //.#{$primary-content-namespace}primary-content__pull-out--super + .#{$primary-content-namespace}primary-content__header {
+            .#{$primary-content-namespace}primary-content__main {
                /* -ms-grid-column: 1;
                     grid-column: 1;
                      -ms-grid-row: 2;
@@ -104,22 +119,25 @@ $primary-content-pull-out-side-space: 0 $primary-content-spacing-unit 0 0 !defau
 
                 width: 66%;
                 float: left;
-                clear: left;
+                //clear: left;
             }
 
-            .#{$primary-content-namespace}primary-content__pull-out--super,
-            .#{$primary-content-namespace}primary-content__pull-out--top {
-                /*-ms-grid-column: 2;
-                    grid-column: 2;
-                -ms-grid-row: 2;
-                grid-row: 2;*/
-
+            .#{$primary-content-namespace}primary-content__pull-out--super {
                 width: 34%;
                 float: right;
-                clear: right;
+                //clear: right;
 
                 padding: 0 $primary-content-spacing-unit;
             }
+
+            .#{$primary-content-namespace}primary-content__pull-out--top {
+                width: 34%;
+                float: right;
+                clear: both;
+
+                padding: 0 $primary-content-spacing-unit;
+            }
+
 
             .#{$primary-content-namespace}primary-content__pull-out--bottom {
                 /*-ms-grid-column: 2;
@@ -129,7 +147,7 @@ $primary-content-pull-out-side-space: 0 $primary-content-spacing-unit 0 0 !defau
 
                 width: 34%;
                 float: right;
-                clear: right;
+                //clear: right;
 
 
                 padding: 0 $primary-content-spacing-unit;

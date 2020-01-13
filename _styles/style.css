@@ -7316,12 +7316,24 @@ _:-ms-lang(x), .l-col-to-row__item  {
 */
 .l-primary-content.l-primary-content {
   margin: 0;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 .l-primary-content .l-primary-content__header,
 .l-primary-content .l-primary-content__main,
 .l-primary-content .l-primary-content__pull-out {
   width: 100%;
+}
+
+.l-primary-content .l-primary-content__pull-out--super {
+  -webkit-order: -1;
+  -ms-flex-order: -1;
+  order: -1;
 }
 
 .l-primary-content .l-primary-content__pull-out__padded--\@small {
@@ -7345,7 +7357,7 @@ _:-ms-lang(x), .l-col-to-row__item  {
     display: flow-root;
     clear: both;
     /*
-                If an area has a SUPER pull-out, we need to float the header too.
+                --If an area has a SUPER pull-out, we need to float the header too.--
             */
   }
   .l-primary-content.l-primary-content--has-pull-outs:before, .l-primary-content.l-primary-content--has-pull-outs:after {
@@ -7360,13 +7372,10 @@ _:-ms-lang(x), .l-col-to-row__item  {
                     grid-column: 1;
                 -ms-grid-row: 1;
                     grid-row: 1;*/
-    /*width: 66%;
-                float: left;
-                clear: left;*/
-    width: 100%;
+    width: 66%;
+    float: left;
   }
-  .l-primary-content.l-primary-content--has-pull-outs .l-primary-content__main,
-  .l-primary-content.l-primary-content--has-pull-outs .l-primary-content__pull-out--super + .l-primary-content__header {
+  .l-primary-content.l-primary-content--has-pull-outs .l-primary-content__main {
     /* -ms-grid-column: 1;
                     grid-column: 1;
                      -ms-grid-row: 2;
@@ -7375,17 +7384,16 @@ _:-ms-lang(x), .l-col-to-row__item  {
     padding-right: 2.4rem;
     width: 66%;
     float: left;
-    clear: left;
   }
-  .l-primary-content.l-primary-content--has-pull-outs .l-primary-content__pull-out--super,
-  .l-primary-content.l-primary-content--has-pull-outs .l-primary-content__pull-out--top {
-    /*-ms-grid-column: 2;
-                    grid-column: 2;
-                -ms-grid-row: 2;
-                grid-row: 2;*/
+  .l-primary-content.l-primary-content--has-pull-outs .l-primary-content__pull-out--super {
     width: 34%;
     float: right;
-    clear: right;
+    padding: 0 2.4rem;
+  }
+  .l-primary-content.l-primary-content--has-pull-outs .l-primary-content__pull-out--top {
+    width: 34%;
+    float: right;
+    clear: both;
     padding: 0 2.4rem;
   }
   .l-primary-content.l-primary-content--has-pull-outs .l-primary-content__pull-out--bottom {
@@ -7395,7 +7403,6 @@ _:-ms-lang(x), .l-col-to-row__item  {
                 grid-row: 3;*/
     width: 34%;
     float: right;
-    clear: right;
     padding: 0 2.4rem;
   }
 }
