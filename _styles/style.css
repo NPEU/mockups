@@ -7403,6 +7403,7 @@ _:-ms-lang(x), .l-col-to-row__item  {
                 grid-row: 3;*/
     width: 34%;
     float: right;
+    clear: right;
     padding: 0 2.4rem;
   }
 }
