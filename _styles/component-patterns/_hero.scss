@@ -55,6 +55,36 @@ $theme-only: false !default;
         #{&}__message > #{&}__message--fluid_heading {
             @include fluid-type(strip-unit($hero-breakpoint) * 16px, strip-unit($hero-max-message-breakpoint) * 16px, $hero-min-heading-size, $hero-max-heading-size);
         }
+        
+        #{&}__image-credit {
+            font-size: 0.875em;
+            line-height: 1.3;
+            padding: 0.2em 0.5em;
+            color: #fff;
+            background-color: rgba(0,0,0,0.4);
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            max-width: 50%;
+            
+            a[href] {
+                background-color: transparent;
+                color: #fff;
+                border-width: 1px;
+
+                &:hover,
+                &:active,
+                &:focus {
+                    background-color: transparent;
+                    color: #fff;
+                }
+            }
+        }
+    }
+    
+    .#{$hero-namespace}hero--reversed .#{$hero-namespace}hero__image-credit {
+        right: auto;
+        left: 0;
     }
 
     @media only screen and (max-width:#{$hero-breakpoint}) {
