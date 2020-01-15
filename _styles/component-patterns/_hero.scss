@@ -57,6 +57,32 @@ $theme-only: false !default;
         }
     }
 
+    @media only screen and (max-width:#{$hero-breakpoint}) {
+        .#{$hero-namespace}hero {
+            #{&}__message {
+                /*
+                    1. This is here to override the inline style width declaration.
+                       Allowing Joomla interface to specify width so it can be tweaked to suit the text,
+                       but we want it full-width on narrow screens and we can't do MQ's in inline styles,
+                */
+                width: 100% !important; /* [1] */
+            }
+        }
+    }
+    
+    @media only screen and (max-width:#{$hero-breakpoint-wide}) {
+        .#{$hero-namespace}hero {
+            #{&}__message--wide {
+                /*
+                    1. This is here to override the inline style width declaration.
+                       Allowing Joomla interface to specify width so it can be tweaked to suit the text,
+                       but we want it full-width on narrow screens and we can't do MQ's in inline styles,
+                */
+                width: 100% !important; /* [1] */
+            }
+        }
+    }
+    
     @media only screen and (min-width:#{$hero-breakpoint}) {
 
         .#{$hero-namespace}hero {
