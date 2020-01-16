@@ -225,7 +225,30 @@ $thumbnail--border-color: lighten(map-get(map-get($themes, neutral), primary-col
 
 /* --| Component Patterns |---------------------------------------------------------------------- */
 // These patterns are themeable and so are included via '_themeable_patterns.scss' above.
+$system-message-spacing-unit: $f__base-rem-space-unit / 2;
+$system-message--color: #69b3e7;
+@import "component-patterns/_system-messages.scss";
 
+@include system-message-theme(
+    "success",
+    (
+        system-message-color : #789d4a,
+    )
+);
+
+@include system-message-theme(
+    "warning",
+    (
+        system-message-color : #ff9e1b,
+    )
+);
+
+@include system-message-theme(
+    "error",
+    (
+        system-message-color : #9b3259,
+    )
+);
 /* ---------------------------------------------------------------------------------------------- */
 
 

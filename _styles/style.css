@@ -7054,6 +7054,61 @@ ul.c-utilitext li + li, ol.c-utilitext li + li {
 }
 
 /* --| Component Patterns |---------------------------------------------------------------------- */
+/*
+*/
+.c-system-message.c-system-message {
+  color: #333;
+  padding: 1.2rem;
+  padding-bottom: 0 !important;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 0.5em;
+  /*a[href] {
+                background-color: transparent;
+                color: #fff;
+                //border-width: 1px;
+
+                &:hover,
+                &:active,
+                &:focus {
+                    background-color: transparent;
+                    color: #fff;
+                }
+            }*/
+}
+
+.c-system-message.c-system-message::after {
+  content: "";
+  display: block;
+  height: 1px;
+  margin-top: calc(1.2rem - 1px);
+  clear: both;
+}
+
+.c-system-message.c-system-message > * {
+  margin-bottom: 1.2rem;
+}
+
+.c-system-message {
+  background-color: #edf6fc;
+  border-color: #69b3e7;
+}
+
+.c-system-message.t-success {
+  background-color: #c2d7a9;
+  border-color: #789d4a;
+}
+
+.c-system-message.t-warning {
+  background-color: #ffdfb4;
+  border-color: #ff9e1b;
+}
+
+.c-system-message.t-error {
+  background-color: #da8ca9;
+  border-color: #9b3259;
+}
+
 /* ---------------------------------------------------------------------------------------------- */
 /* --| Decoration Patterns |--------------------------------------------------------------------- */
 .d-background--very-light.t-neutral {
@@ -8892,7 +8947,7 @@ $pagination-button--border-color: darken($pagination--base-color, 20%) !default;
     Attempts to improve where text wraps.
 
 */
-.u-word-wrap, .c-hero .c-hero__message, h1,
+.u-word-wrap, .c-hero .c-hero__message, h1, h2,
 .u-word-wrap--inside * {
   /* These are technically the same, but use both */
   overflow-wrap: break-word;
@@ -12402,6 +12457,22 @@ h1 {
 @media screen and (min-width: 672px) {
   h1 {
     font-size: 52px;
+  }
+}
+
+h2 {
+  font-size: 20px;
+}
+
+@media screen and (min-width: 250px) {
+  h2 {
+    font-size: calc(20px + 20 * ((100vw - 250px) / 422));
+  }
+}
+
+@media screen and (min-width: 672px) {
+  h2 {
+    font-size: 40px;
   }
 }
 

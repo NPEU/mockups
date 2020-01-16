@@ -159,6 +159,14 @@ h1 {
     
 }
 
+h2 {
+    @extend .u-word-wrap;
+    
+    //@include fluid-type(250px, 672px, 16px, (strip-unit($f__h1-height) * 16px));
+    @include fluid-type(250px, 672px, 20px, 40px);
+    
+}
+
 @media screen and (max-width: 672px) {
     h1 {
         line-height: 1.15384615385;

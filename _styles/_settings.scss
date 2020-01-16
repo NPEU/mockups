@@ -26,7 +26,7 @@ $hover-effect-width: $f__base-rem-space-unit / 4;
 
 /* --| FUNCTIONS AND MIXINS |-------------------------------------------------------------------- */
 
-@mixin bottom-space-fix () {
+@mixin bottom-space-fix ($size: $f__base-rem-space-unit) {
 
 	padding-bottom: 0 !important;
 
@@ -34,7 +34,7 @@ $hover-effect-width: $f__base-rem-space-unit / 4;
 		content: "";
 		display: block;
 		height: 1px;
-        margin-top: calc(#{$f__base-rem-space-unit} - 1px);
+        margin-top: calc(#{$size} - 1px);
         clear: both;
 	}
 

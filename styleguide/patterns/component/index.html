@@ -14,7 +14,7 @@ has_map: true
 <h3 class="u-padding--sides">Badge - standard</h3>
 
 <div class="u-space--below  u-padding--s  l-center">
-    <a href="https://www.npeu.ox.ac.uk/ctu" class="c-badge">
+    <a href="https://www.npeu.ox.ac.uk/ctu" class="c-badge  c-badge--limit-height">
         <img src="/img/unit-logos/npeu-ctu-logo.svg" onerror="this.src='/img/unit-logos/npeu-ctu-logo.png'; this.onerror=null;" alt="Logo: NPEU CTU" height="80">
     </a>
 </div>
@@ -22,7 +22,7 @@ has_map: true
 <div class="u-padding--s">
     <details class="u-padding--s  d-background--light">
         <summary>Show code:</summary>
-<pre><code class="html">&lt;a href=&quot;https://www.npeu.ox.ac.uk/ctu&quot; class=&quot;c-badge&quot;&gt;
+<pre><code class="html">&lt;a href=&quot;https://www.npeu.ox.ac.uk/ctu&quot; class=&quot;c-badge  c-badge--limit-height&quot;&gt;
     &lt;img src=&quot;/img/unit-logos/npeu-ctu-logo.svg&quot; onerror=&quot;this.src=&apos;/img/unit-logos/npeu-ctu-logo.png&apos;; this.onerror=null;&quot; alt=&quot;Logo: NPEU CTU&quot; height=&quot;80&quot;&gt;
 &lt;/a&gt;</code></pre>
     </details>
@@ -35,7 +35,7 @@ has_map: true
 <h3 class="u-padding--sides">Badge - decorated</h3>
 
 <div class="u-space--below  u-padding--s  l-center">
-    <a href="https://www.npeu.ox.ac.uk/ctu" class="c-badge  c-badge--decorated" style="color: #BC945C;">
+    <a href="https://www.npeu.ox.ac.uk/ctu" class="c-badge  c-badge--decorated  c-badge--limit-height" style="color: #BC945C;">
         <img src="/img/unit-logos/npeu-ctu-logo.svg" onerror="this.src='/img/unit-logos/npeu-ctu-logo.png'; this.onerror=null;" alt="Logo: NPEU CTU" height="80">
     </a>
 </div>
@@ -1428,6 +1428,66 @@ leafletMapInitialize(&apos;test_map&apos;, {&quot;lat&quot;:51.75161383900000089
 
     &lt;/div&gt;
 &lt;/div&gt;</code></pre>
+    </details>
+</div>
+
+
+<hr>
+<h2 class="u-padding--sides" id="system-messages">System Messages</h2>
+
+<p class="u-padding--sides">The usual culprits - notice, warning, error, success.</p>
+
+<div class="u-padding--s  u-space--below">
+    <div class="c-system-message">
+        <p><strong>Notice</strong></p>
+        <p>This lets you know something happened. For information only. <a href="#">Here's a link</a></p>
+    </div>
+</div>
+
+<div class="u-padding--s  u-space--below">
+    <div class="c-system-message  t-success">
+        <p><strong>Success!</strong></p>
+        <p>This lets you know something successfully completed. <a href="#">Here's a link</a></p>
+    </div>
+</div>
+
+<div class="u-padding--s  u-space--below">
+    <div class="c-system-message  t-warning">
+        <p><strong>Warning</strong></p>
+        <p>This lets you know something bad may happen if you're not careful. <a href="#">Here's a link</a></p>
+    </div>
+</div>
+
+<div class="u-padding--s  u-space--below">
+    <div class="c-system-message  t-error">
+        <p><strong>Error</strong></p>
+        <p>This lets you know something did <strong>NOT</strong> successfully complete - and that it's a problem. <a href="#">Here's a link</a></p>
+    </div>
+</div>
+
+<div class="u-padding--s">
+    <details class="u-padding--s  d-background--light">
+        <summary>Show code:</summary>
+<pre><code class="html">&lt;div class=&quot;c-system-message&quot;&gt;
+    &lt;p&gt;&lt;strong&gt;Notice&lt;/strong&gt;&lt;/p&gt;
+    &lt;p&gt;This lets you know something happened. For information only. &lt;a href=&quot;#&quot;&gt;Here&apos;s a link&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;c-system-message  t-success&quot;&gt;
+    &lt;p&gt;&lt;strong&gt;Success!&lt;/strong&gt;&lt;/p&gt;
+    &lt;p&gt;This lets you know something successfully completed. &lt;a href=&quot;#&quot;&gt;Here&apos;s a link&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;c-system-message  t-warning&quot;&gt;
+    &lt;p&gt;&lt;strong&gt;Warning&lt;/strong&gt;&lt;/p&gt;
+    &lt;p&gt;This lets you know something bad may happen if you&apos;re not careful. &lt;a href=&quot;#&quot;&gt;Here&apos;s a link&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;c-system-message  t-error&quot;&gt;
+    &lt;p&gt;&lt;strong&gt;Error&lt;/strong&gt;&lt;/p&gt;
+    &lt;p&gt;This lets you know something did &lt;strong&gt;NOT&lt;/strong&gt; successfully complete - and that it&apos;s a problem. &lt;a href=&quot;#&quot;&gt;Here&apos;s a link&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
     </details>
 </div>
 
