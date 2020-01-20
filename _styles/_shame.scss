@@ -120,6 +120,18 @@ img[height] {
 
 /*------------------*/
 
+/* User profile form uses headings (h2) inside Legends.
+Check the a11y of this, and move margin removal to StartCSS if appropriate. */
+legend h1,
+legend h2,
+legend h3,
+legend h4,
+legend h5,
+legend h6 {
+    margin-bottom: 0;
+}
+
+/*------------------*/
 
 /*------------------*/
 
