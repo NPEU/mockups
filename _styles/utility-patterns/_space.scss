@@ -184,3 +184,7 @@ $space-namespace: u- !default;
 .#{$space-namespace}space--below--auto {
     margin-bottom: auto !important;
 }
+
+.#{$space-namespace}last-child--space--below--none > :last-child {
+    margin-bottom: 0 !important;
+}
