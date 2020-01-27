@@ -1,0 +1,168 @@
+/*
+    Distribute items inside a container.
+
+*/
+$gallery-grid-namespace: l- !default;
+
+$gallery-grid-spacing-unit: 1rem !default;
+$gallery-grid-spacing-unit--small: ($gallery-grid-spacing-unit / 2) !default;
+$gallery-grid-spacing-unit--large: ($gallery-grid-spacing-unit * 2) !default;
+
+.#{$gallery-grid-namespace}gallery-grid {
+
+    &#{&} {
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+
+        -webkit-flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
+
+
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+    }
+
+
+        .#{$gallery-grid-namespace}gallery-grid__item {
+            margin: 0;
+                 -webkit-flex: 1;
+            -ms-flex-positive: 1;
+                    flex-grow: 1;
+
+            -webkit-flex-shrink: 0;
+              -ms-flex-negative: 0;
+                    flex-shrink: 0;
+
+                 -webkit-flex-basis: auto;
+            -ms-flex-preferred-size: auto;
+                         flex-basis: auto;
+        }
+
+    /* MODIFIERS */
+
+    /* Widths */
+
+    &.#{$gallery-grid-namespace}gallery-grid--basis-20 .#{$gallery-grid-namespace}gallery-grid__item {
+             -webkit-flex-basis: 20em;
+        -ms-flex-preferred-size: 20em;
+                     flex-basis: 20em;
+        max-width: 20em;
+    }
+
+    &.#{$gallery-grid-namespace}gallery-grid--basis-15 .#{$gallery-grid-namespace}gallery-grid__item {
+             -webkit-flex-basis: 15em;
+        -ms-flex-preferred-size: 15em;
+                     flex-basis: 15em;
+        max-width: 15em;
+    }
+
+    &.#{$gallery-grid-namespace}gallery-grid--basis-10 .#{$gallery-grid-namespace}gallery-grid__item {
+             -webkit-flex-basis: 10em;
+        -ms-flex-preferred-size: 10em;
+                     flex-basis: 10em;
+        max-width: 10em;
+    }
+    /* @TODO make breakpoint a variable */
+
+
+    /* Gutters */
+
+    &.#{$gallery-grid-namespace}gallery-grid--gutter--small {
+        margin-left: -($gallery-grid-spacing-unit--small / 2);
+        margin-right: -($gallery-grid-spacing-unit--small / 2);
+
+        .#{$gallery-grid-namespace}gallery-grid__item {
+            padding: 0 ($gallery-grid-spacing-unit--small / 2) $gallery-grid-spacing-unit--small ($gallery-grid-spacing-unit--small / 2);
+        }
+    }
+
+    &.#{$gallery-grid-namespace}gallery-grid--gutter--medium {
+        margin-left: -($gallery-grid-spacing-unit / 2);
+        margin-right: -($gallery-grid-spacing-unit / 2);
+
+        .#{$gallery-grid-namespace}gallery-grid__item {
+            padding: 0 ($gallery-grid-spacing-unit / 2) $gallery-grid-spacing-unit ($gallery-grid-spacing-unit / 2);
+        }
+    }
+
+
+    &.#{$gallery-grid-namespace}gallery-grid--gutter--large {
+        margin-left: -($gallery-grid-spacing-unit--large / 2);
+        margin-right: -($gallery-grid-spacing-unit--large / 2);
+
+        .#{$gallery-grid-namespace}gallery-grid__item {
+            padding: 0 ($gallery-grid-spacing-unit--large / 2) $gallery-grid-spacing-unit--large ($gallery-grid-spacing-unit--large / 2);
+        }
+    }
+
+
+    /* Alignment */
+
+    &.#{$gallery-grid-namespace}gallery-grid--align-center {
+                      -ms-flex-pack: center;
+        -webkit-justify-content: center;
+                justify-content: center;
+    }
+
+
+}
+
+
+/* GRID */
+@supports (display: grid) {
+    .#{$gallery-grid-namespace}gallery-grid {
+        &#{&} {
+            display: grid;
+        }
+
+        .#{$gallery-grid-namespace}gallery-grid__item.#{$gallery-grid-namespace}gallery-grid__item {
+            max-width: none;
+        }
+
+        &.#{$gallery-grid-namespace}gallery-grid--basis-20 {
+            grid-template-columns: repeat(auto-fit, minmax(20em, 1fr));
+        }
+
+        &.#{$gallery-grid-namespace}gallery-grid--basis-15 {
+            grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
+        }
+
+        &.#{$gallery-grid-namespace}gallery-grid--basis-10 {
+            grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
+        }
+
+
+        /* Gutters */
+
+        &.#{$gallery-grid-namespace}gallery-grid--gutter--small {
+            margin: 0;
+            grid-gap: $gallery-grid-spacing-unit--small;
+
+            .#{$gallery-grid-namespace}gallery-grid__item {
+                padding: 0;
+            }
+        }
+
+        &.#{$gallery-grid-namespace}gallery-grid--gutter--medium {
+            margin: 0;
+            grid-gap: $gallery-grid-spacing-unit;
+
+            .#{$gallery-grid-namespace}gallery-grid__item {
+                padding: 0;
+            }
+        }
+
+
+        &.#{$gallery-grid-namespace}gallery-grid--gutter--large {
+            margin: 0;
+            grid-gap: $gallery-grid-spacing-unit--large;
+
+            .#{$gallery-grid-namespace}gallery-grid__item {
+                padding: 0;
+            }
+        }
+    }
+}

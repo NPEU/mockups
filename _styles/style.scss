@@ -26,9 +26,9 @@ $f__anchor-text-color: #333;
 $f__anchor-text-color--alt: #333;
 
 
+
 $f__selection-background-color: lighten(map-get(map-get($themes, neutral), primary-color), 10%) !default;
 $f__experimental_checkradios: true;
-
 
 
 
@@ -209,15 +209,15 @@ $ff-min-widths: (
     80%
 ) !default;
 
-@import "../bower_components/NPEU-layout-patterns/dist/scss/_ff-widths.scss";
+//@import "../bower_components/NPEU-layout-patterns/dist/scss/_ff-widths.scss";
 
 //@import "../bower_components/NPEU-layout-patterns/dist/scss/_scl--pushed-apart.scss";
 
 //@import "../bower_components/NPEU-layout-patterns/dist/scss/_scl--n-up.scss";
 
 
-$gallery-grid-spacing-unit: $f__base-rem-space-unit;
-@import "../bower_components/NPEU-layout-patterns/dist/scss/_gallery-grid.scss";
+//$gallery-grid-spacing-unit: $f__base-rem-space-unit;
+//@import "../bower_components/NPEU-layout-patterns/dist/scss/_gallery-grid.scss";
 
 /* --| Themeable Patterns |---------------------------------------------------------------------- */
 $thumbnail--border-color: lighten(map-get(map-get($themes, neutral), primary-color), 10%);
@@ -285,8 +285,11 @@ $primary-content-pull-out-side-space: 0 $primary-content-spacing-unit;
 }
 
 
-
 @import "layout-patterns/_distribute.scss";
+
+$gallery-grid-spacing-unit: $f__base-rem-space-unit;
+@import "layout-patterns/_gallery-grid.scss";
+
 @import "layout-patterns/_n-up.scss";
 
 @import "layout-patterns/_proportional-container.scss";
@@ -346,6 +349,13 @@ $max-measure-limit: $f__measure;
 @import "utility-patterns/_text-groups.scss";
 @import "utility-patterns/_text-size.scss";
 @import "utility-patterns/_word-wrap.scss";
+
+
+
+/* --| Special Patterns |------------------------------------------------------------------------ */
+// Special patterns are intended to be utility patterns that work in isolation from anything else,
+// and/or do not share the u- prefix naming convention.
+@import "special-patterns/_ff-widths.scss";
 
 
 /*
