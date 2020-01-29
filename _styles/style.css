@@ -12366,6 +12366,11 @@ html.wireframe {
   width: 100%;
 }
 
+.footnotes cite {
+  font-style: normal;
+  font-size: 0.875em;
+}
+
 img[width],
 img[height] {
   max-width: 100%;
