@@ -66,7 +66,7 @@ function do_concat_css(cb) {
 // Then create a minified version in the output folder.
 function do_cssmin(cb) {
     console.log('Running cssmin...');
-    
+
     var now = Date.now();
 
     pump([
@@ -184,6 +184,7 @@ function do_concat_js(cb) {
     // Common script:
     gulp.src([
         './_scripts/js/cookie-notice-settings.js',
+        './_scripts/js/fit-contents.js',
         './_scripts/js/layout-adjustments.js',
         './_scripts/js/image-cover.js',
         './bower_components/Fall-Back-Cookie-Notice/cookie-notice.js',
@@ -205,7 +206,7 @@ function do_concat_js(cb) {
 
     .pipe(concat(js_map_filename))
     .pipe(gulp.dest(js_src));
-    
+
     // Separate filter script:
     gulp.src([
         './bower_components/Mark-JS/dist/mark.js',

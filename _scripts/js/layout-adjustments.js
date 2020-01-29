@@ -2,6 +2,7 @@
     Can't be totally sure what this is for, now...
     It'll come back to me...
 */
+
 (function() {
     var ready = function(fn) {
         if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {

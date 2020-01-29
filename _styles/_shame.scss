@@ -1,5 +1,12 @@
 // Hmmm. THere's way too much in here already. Needs sorting.
 
+// Used for 'invisible' iframe on https://www.npeu.ox.ac.uk/privacy-cookies
+.fluid-frame {
+    border: 0;
+    width: 100%;
+}
+
+
 // StartCSS turns off max-width for images with a width or height attribute.
 // I can sort of imagine why I did that, but I dont' have a test case for it, and inline with
 // FallBack guideance, all images SHOULD have a height or width to make them sensible in no-CSS

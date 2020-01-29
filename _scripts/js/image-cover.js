@@ -1,6 +1,7 @@
 /*
     Object-fit polyfill.
 */
+
 (function() {
     if(('objectFit' in document.documentElement.style !== false) || !(navigator.userAgent.indexOf('UCBrowser') > -1)) {
         return;

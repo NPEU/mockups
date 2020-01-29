@@ -1,3 +1,7 @@
+/*
+    Leaflet maps.
+*/
+
 function leafletMapInitialize(map_container_id, map_data, markers) {
     // @TODO: should check for SVG support before proceeding.
 
