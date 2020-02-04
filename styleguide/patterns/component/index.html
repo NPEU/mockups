@@ -40,6 +40,16 @@ has_map: true
     </a>
 </div>
 
+<div class="u-padding--s">
+    <details class="u-padding--s  d-background--light">
+        <summary>Show code:</summary>
+<pre><code class="html">&lt;a ... class=&quot;c-badge  <strong>c-badge--decorated</strong>  c-badge--limit-height&quot;&gt;
+    ...
+&lt;/a&gt;</code></pre>
+    </details>
+</div>
+
+
 <h3 class="u-padding--sides">Badge - primary logo</h3>
 
 <p class="u-padding--sides">A badge that represents the main brand of a page should use this following markup instead.</p>
@@ -95,7 +105,7 @@ has_map: true
 <p class="u-padding--sides">Note that this pattern does not introduce any new classes, it's built entirely from existing ones.</p>
 
 <div class="l-col-to-row-wrap  u-space--below">
-    <section class="l-col-to-row  d-bands--bottom  d-bands--top">
+    <div class="l-col-to-row  d-bands--bottom  d-bands--top">
         <div class="l-col-to-row__item  ff-width-100--50--50">
             <div class="c-panel  u-padding--sides--l">
                 <div class="u-max-measure">
@@ -119,13 +129,13 @@ has_map: true
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 </div>
 
 <p class="u-padding--sides">Oooh, happy accident. I really like this. Keep for reference for now.</p>
 
 <div class="l-col-to-row-wrap  u-space--below">
-    <section class="l-col-to-row  d-bands--bottom  d-bands--top">
+    <div class="l-col-to-row  d-bands--bottom  d-bands--top">
         <div class="l-col-to-row__item  ff-width-100--50--33-333">
             <div class="c-panel  u-padding--sides--l">
                 <div class="u-max-measure">
@@ -165,14 +175,14 @@ has_map: true
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 </div>
 
 <div class="u-padding--s">
     <details class="u-padding--s  d-background--light">
         <summary>Show code:</summary>
         <pre><code class="html">&lt;div class=&quot;l-col-to-row-wrap&quot;&gt;
-    &lt;section class=&quot;l-col-to-row  d-bands--bottom  d-bands--top&quot;&gt;
+    &lt;div class=&quot;l-col-to-row  d-bands--bottom  d-bands--top&quot;&gt;
         &lt;div class=&quot;l-col-to-row__item  ff-width-100--50--50&quot;&gt;
             &lt;div class=&quot;c-panel  u-padding--sides--l&quot;&gt;
                 &lt;div class=&quot;u-max-measure&quot;&gt;
@@ -196,7 +206,7 @@ has_map: true
                 &lt;/div&gt;
             &lt;/div&gt;
         &lt;/div&gt;
-    &lt;/section&gt;
+    &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
     </details>
@@ -206,7 +216,7 @@ has_map: true
 
 <div class="l-col-to-row-wrap  u-space--below">
     <div class="l-col-to-row">
-        <section class="l-col-to-row  l-col-to-row--reversed  d-bands--bottom  d-bands--top">
+        <div class="l-col-to-row  l-col-to-row--reversed  d-bands--bottom  d-bands--top">
             <div class="l-col-to-row__item  ff-width-100--60--50">
                 <div class="c-panel  u-padding--sides--l">
                     <div class="u-max-measure">
@@ -227,14 +237,14 @@ has_map: true
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
     </div>
 </div>
 
 <div class="u-padding--s">
     <details class="u-padding--s  d-background--light">
         <summary>Show code:</summary>
-<pre><code class="html">&lt;section class=&quot;l-col-to-row  <strong>l-col-to-row--reversed</strong>  d-bands--bottom  d-bands--top&quot;&gt;
+<pre><code class="html">&lt;div class=&quot;l-col-to-row  <strong>l-col-to-row--reversed</strong>  d-bands--bottom  d-bands--top&quot;&gt;
 ...</code></pre>
     </details>
 </div>
@@ -687,7 +697,7 @@ Here a span is used instead, to help avoid any confusio (whole thing is a link, 
 
 <div class="u-padding--sides  u-space--below">
     <div class="c-featurette-wrap">
-        <section class="c-featurette">
+        <div class="c-featurette">
             <div class="c-featurette__body  c-featurette__body--80">
                 <h2>
                     Featurette Title
@@ -708,7 +718,7 @@ Here a span is used instead, to help avoid any confusio (whole thing is a link, 
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
     </div>
 </div>
 
@@ -716,7 +726,7 @@ Here a span is used instead, to help avoid any confusio (whole thing is a link, 
     <details class="u-padding--s  d-background--light">
         <summary>Show code:</summary>
         <pre><code class="html">&lt;div class=&quot;c-featurette-wrap&quot;&gt;
-    &lt;section class=&quot;c-featurette&quot;&gt;
+    &lt;div class=&quot;c-featurette&quot;&gt;
         &lt;div class=&quot;c-featurette__body  c-featurette__body--80&quot;&gt;
             &lt;h2&gt;
                 Featurette Title
@@ -737,7 +747,7 @@ Here a span is used instead, to help avoid any confusio (whole thing is a link, 
                 &lt;/div&gt;
             &lt;/div&gt;
         &lt;/div&gt;
-    &lt;/section&gt;
+    &lt;/div&gt;
 &lt;/div&gt;</code></pre>
     </details>
 </div>
@@ -799,7 +809,7 @@ Here a span is used instead, to help avoid any confusio (whole thing is a link, 
 
 <div class="u-padding--sides  u-space--below">
     <div class="c-featurette-wrap">
-        <section class="c-featurette  t-featurette--dark  u-text-align--center">
+        <div class="c-featurette  t-featurette--dark  u-text-align--center">
             <div class="text-content  c-featurette__body  c-featurette__body--fill">
                 <h2>
                     Featurette Title
@@ -809,7 +819,7 @@ Here a span is used instead, to help avoid any confusio (whole thing is a link, 
                     <a href="#">Read the notice</a>
                 </p>
             </div>
-        </section>
+        </div>
     </div>
 </div>
 
@@ -817,7 +827,7 @@ Here a span is used instead, to help avoid any confusio (whole thing is a link, 
     <details class="u-padding--s  d-background--light">
         <summary>Show code:</summary>
         <pre><code class="html">&lt;div class=&quot;c-featurette-wrap&quot;&gt;
-    &lt;section class=&quot;c-featurette  t-featurette--dark  u-text-align--center&quot;&gt;
+    &lt;div class=&quot;c-featurette  t-featurette--dark  u-text-align--center&quot;&gt;
         &lt;div class=&quot;text-content  c-featurette__body  c-featurette__body--fill&quot;&gt;
             &lt;h2&gt;
                 Featurette Title
@@ -827,7 +837,7 @@ Here a span is used instead, to help avoid any confusio (whole thing is a link, 
                 &lt;a href=&quot;#&quot;&gt;Read the notice&lt;/a&gt;
             &lt;/p&gt;
         &lt;/div&gt;
-    &lt;/section&gt;
+    &lt;/div&gt;
 &lt;/div&gt;</code></pre>
     </details>
 </div>
@@ -1218,15 +1228,22 @@ leafletMapInitialize(&apos;test_map&apos;, {&quot;lat&quot;:51.75161383900000089
         <p>Some panel content.</p>
     </div>
     <div class="c-panel">
-        <p>Another panel content.</p>
+        <p>Another panel content <a href="#">with a link</a>.</p>
     </div>
 </div>
 
 <div class="u-padding--s">
-    <div class="c-panel  t-neutral--dark">
-        <p>Some different panel content.</p>
+    <div class="c-panel  d-background">
+        <p>Some different panel content, also <a href="#">with a link</a>.</p>
     </div>
 </div>
+
+<div class="u-padding--s">
+    <div class="c-panel  d-bands  u-text-align--center  u-text-size--large">
+        <p>A banded panel content, also <a href="#">with a link</a>.</p>
+    </div>
+</div>
+
 
 
 <div class="u-padding--s">
