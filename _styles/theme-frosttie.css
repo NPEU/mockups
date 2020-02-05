@@ -1191,4 +1191,17 @@ input:not([type]):focus,
   outline: 2px solid rgba(255, 255, 255, 0.5);
 }
 
+[data-brand="frosttie"] [data-display-as~="themed-box--background"],
+[data-brand="frosttie"] [data-display-as~="themed-box--border"] {
+  color: #2b3383;
+}
+
+[data-brand="frosttie"] [data-display-as~="themed-box--background"] > * {
+  color: #fff;
+}
+
+[data-brand="frosttie"] [data-display-as~="themed-box--border"] > * {
+  color: #333;
+}
+
 /* ---------------------------------------------------------------------------------------------- */

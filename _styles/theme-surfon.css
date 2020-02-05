@@ -1191,4 +1191,17 @@ input:not([type]):focus,
   outline: 2px solid rgba(255, 255, 255, 0.5);
 }
 
+[data-brand="surfon"] [data-display-as~="themed-box--background"],
+[data-brand="surfon"] [data-display-as~="themed-box--border"] {
+  color: #5c6dab;
+}
+
+[data-brand="surfon"] [data-display-as~="themed-box--background"] > * {
+  color: #fff;
+}
+
+[data-brand="surfon"] [data-display-as~="themed-box--border"] > * {
+  color: #333;
+}
+
 /* ---------------------------------------------------------------------------------------------- */

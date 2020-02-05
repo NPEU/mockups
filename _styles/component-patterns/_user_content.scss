@@ -45,7 +45,8 @@ $uc-breakpoint: 35em !default;
         // Note this is identical to Panel, but that mixin can't be use because of the way it adds
         // classes. May need to rethink things.
         [data-display-as~="box"],
-        [data-display-as~="themed-box"],
+        [data-display-as~="themed-box--background"],
+        [data-display-as~="themed-box--border"],
         [data-display-as~="notice-box"] {
             padding: $panel--padding;
 
@@ -64,15 +65,17 @@ $uc-breakpoint: 35em !default;
             &::after {
                 clear: both;
             }
+
         }
 
         [data-display-as~="box"] {
             border: 1px solid map-get(map-get($themes, neutral), primary-color);
         }
 
-        [data-display-as~="themed-box"] {
-            color: #fff;
-            background: map-get(map-get($themes, npeu), primary-color);
+        [data-display-as~="themed-box--background"] {
+            //color: #fff;
+            //background: map-get(map-get($themes, npeu), primary-color);
+            background: currentColor;
 
             //outline: 1px solid $border-color;
 
@@ -102,6 +105,12 @@ $uc-breakpoint: 35em !default;
                     background-color: rgba(255,255,255,0.1);
                 }
             }
+        }
+        
+        [data-display-as~="themed-box--border"] {
+            border-color: currentColor;
+            border-style: solid;
+            border-width: 3px;
         }
 
         [data-display-as~="notice-box"] {
@@ -408,6 +417,33 @@ $uc-breakpoint: 35em !default;
             text-align: center;
             font-size: 0.875em;
         }
+    }
 
+    // Priority content:
+    // (Note these are quite hacky and apply styles based on content rather than author intent
+    // Ideally these could be controlled via CKEditor div plugin, but there isn't currently a 
+    // mechanism for altering the dialog form, and I don't want to create a custom version of
+    // this plugin - at least not now.
+    [data-contains="priority-content"] [data-display-as*="themed-box"]{
+        text-align: center;
+    
+        // Reduce heading sizes (esp for sidebars)
+        h2 {
+            font-size: 24px / $f__base-font-size * 1em;
+            //margin-bottom: $f__base-rem-space-unit / 2;
+            margin-bottom: 0;
+        }
+
+        h3 {
+            font-size: 20px / $f__base-font-size * 1em;
+            //margin-bottom: $f__base-rem-space-unit / 2;
+            margin-bottom: 0;
+        }
+        
+        // If the only child is a paragraph, bump up the font size
+        // (note I may need to change this to all elements so long as there isn't a heading)
+        p:only-child {
+            font-size: 1.25em;
+        }
     }
 }

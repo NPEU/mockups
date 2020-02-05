@@ -9739,6 +9739,19 @@ input:not([type]):focus,
   outline: 2px solid rgba(0, 0, 0, 0.5);
 }
 
+[data-brand="white"] [data-display-as~="themed-box--background"],
+[data-brand="white"] [data-display-as~="themed-box--border"] {
+  color: #ffffff;
+}
+
+[data-brand="white"] [data-display-as~="themed-box--background"] > * {
+  color: #fff;
+}
+
+[data-brand="white"] [data-display-as~="themed-box--border"] > * {
+  color: #333;
+}
+
 /*
 Note - this won't work until SASS supports dynamic calling of mixins. It's close, but hasn't been
 merged yet. Hoping that will be done soon so I can change this.
@@ -10430,6 +10443,19 @@ input:not([type]):focus,
 
 .t-neutral summary:focus {
   outline: 2px solid rgba(0, 0, 0, 0.5);
+}
+
+[data-brand="neutral"] [data-display-as~="themed-box--background"],
+[data-brand="neutral"] [data-display-as~="themed-box--border"] {
+  color: #8e8279;
+}
+
+[data-brand="neutral"] [data-display-as~="themed-box--background"] > * {
+  color: #fff;
+}
+
+[data-brand="neutral"] [data-display-as~="themed-box--border"] > * {
+  color: #333;
 }
 
 /*
@@ -11272,6 +11298,19 @@ input:not([type]):focus,
   outline: 2px solid rgba(255, 255, 255, 0.5);
 }
 
+[data-brand="npeu"] [data-display-as~="themed-box--background"],
+[data-brand="npeu"] [data-display-as~="themed-box--border"] {
+  color: #5d4777;
+}
+
+[data-brand="npeu"] [data-display-as~="themed-box--background"] > * {
+  color: #fff;
+}
+
+[data-brand="npeu"] [data-display-as~="themed-box--border"] > * {
+  color: #333;
+}
+
 .nav-bar {
   background: -moz-linear-gradient(45deg, #513d67 0%, #533f6a 50%, #584371 50%, #56416d 100%) !important;
   background: -webkit-linear-gradient(45deg, #513d67 0%, #533f6a 50%, #584371 50%, #56416d 100%) !important;
@@ -12043,7 +12082,8 @@ html.wireframe {
 }
 
 .c-user-content [data-display-as~="box"],
-.c-user-content [data-display-as~="themed-box"],
+.c-user-content [data-display-as~="themed-box--background"],
+.c-user-content [data-display-as~="themed-box--border"],
 .c-user-content [data-display-as~="notice-box"] {
   padding: 2.4rem;
   margin-bottom: 2.4rem;
@@ -12052,7 +12092,8 @@ html.wireframe {
 }
 
 .c-user-content [data-display-as~="box"]::after,
-.c-user-content [data-display-as~="themed-box"]::after,
+.c-user-content [data-display-as~="themed-box--background"]::after,
+.c-user-content [data-display-as~="themed-box--border"]::after,
 .c-user-content [data-display-as~="notice-box"]::after {
   content: "";
   display: block;
@@ -12062,15 +12103,18 @@ html.wireframe {
 }
 
 .c-user-content [data-display-as~="box"]::before,
-.c-user-content [data-display-as~="themed-box"]::before,
+.c-user-content [data-display-as~="themed-box--background"]::before,
+.c-user-content [data-display-as~="themed-box--border"]::before,
 .c-user-content [data-display-as~="notice-box"]::before {
   content: " ";
   display: table;
 }
 
 .c-user-content [data-display-as~="box"], .c-user-content [data-display-as~="box"]::after,
-.c-user-content [data-display-as~="themed-box"],
-.c-user-content [data-display-as~="themed-box"]::after,
+.c-user-content [data-display-as~="themed-box--background"],
+.c-user-content [data-display-as~="themed-box--background"]::after,
+.c-user-content [data-display-as~="themed-box--border"],
+.c-user-content [data-display-as~="themed-box--border"]::after,
 .c-user-content [data-display-as~="notice-box"],
 .c-user-content [data-display-as~="notice-box"]::after {
   clear: both;
@@ -12080,31 +12124,36 @@ html.wireframe {
   border: 1px solid #8e8279;
 }
 
-.c-user-content [data-display-as~="themed-box"] {
-  color: #fff;
-  background: #5d4777;
+.c-user-content [data-display-as~="themed-box--background"] {
+  background: currentColor;
 }
 
-.c-user-content [data-display-as~="themed-box"] a[href] {
-  color: #fff;
-}
-
-.c-user-content [data-display-as~="themed-box"] a[href]:hover,
-.c-user-content [data-display-as~="themed-box"] a[href]:active,
-.c-user-content [data-display-as~="themed-box"] a[href]:focus {
+.c-user-content [data-display-as~="themed-box--background"] a[href] {
   color: #fff;
 }
 
-.c-user-content [data-display-as~="themed-box"] a[href].c-cta {
+.c-user-content [data-display-as~="themed-box--background"] a[href]:hover,
+.c-user-content [data-display-as~="themed-box--background"] a[href]:active,
+.c-user-content [data-display-as~="themed-box--background"] a[href]:focus {
+  color: #fff;
+}
+
+.c-user-content [data-display-as~="themed-box--background"] a[href].c-cta {
   border-color: #fff;
   color: #fff;
   background-color: transparent;
 }
 
-.c-user-content [data-display-as~="themed-box"] a[href].c-cta:hover,
-.c-user-content [data-display-as~="themed-box"] a[href].c-cta:active,
-.c-user-content [data-display-as~="themed-box"] a[href].c-cta:focus {
+.c-user-content [data-display-as~="themed-box--background"] a[href].c-cta:hover,
+.c-user-content [data-display-as~="themed-box--background"] a[href].c-cta:active,
+.c-user-content [data-display-as~="themed-box--background"] a[href].c-cta:focus {
   background-color: rgba(255, 255, 255, 0.1);
+}
+
+.c-user-content [data-display-as~="themed-box--border"] {
+  border-color: currentColor;
+  border-style: solid;
+  border-width: 3px;
 }
 
 .c-user-content [data-display-as~="notice-box"] {
@@ -12351,6 +12400,24 @@ html.wireframe {
 .c-user-content figcaption {
   text-align: center;
   font-size: 0.875em;
+}
+
+[data-contains="priority-content"] [data-display-as*="themed-box"] {
+  text-align: center;
+}
+
+[data-contains="priority-content"] [data-display-as*="themed-box"] h2 {
+  font-size: 1.5em;
+  margin-bottom: 0;
+}
+
+[data-contains="priority-content"] [data-display-as*="themed-box"] h3 {
+  font-size: 1.25em;
+  margin-bottom: 0;
+}
+
+[data-contains="priority-content"] [data-display-as*="themed-box"] p:only-child {
+  font-size: 1.25em;
 }
 
 /* ---------------------------------------------------------------------------------------------- */

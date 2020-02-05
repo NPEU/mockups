@@ -421,3 +421,26 @@ $theme--very-dark: $theme;
         }
     }
 }
+
+
+// This next bit is an experiment with a different approach. If successful, migrate the above to this
+// format (and possibly other stuff too)
+// The idea is that we want to declare a brand colour for stuff to inherit, but avoiding custom
+// properties (for now).`inhert` or `currentColor` are the only options for this, really, but this
+// affects more than we'd really like (we can't specify to inherit from somewhere else), so we need
+// reset text colour etc. NEED TO BE VERY CAREFUL!
+[data-brand="#{$theme-name}"] {
+
+    [data-display-as~="themed-box--background"],
+    [data-display-as~="themed-box--border"] {
+        color: map-get($theme, primary-color);
+    }
+
+    [data-display-as~="themed-box--background"] > * {
+        color: #fff;
+    }
+
+    [data-display-as~="themed-box--border"] > * {
+        color: $f__base-text-color;
+    }
+}
