@@ -12082,6 +12082,7 @@ html.wireframe {
 }
 
 .c-user-content [data-display-as~="box"],
+.c-user-content [data-display-as~="pale-box"],
 .c-user-content [data-display-as~="themed-box--background"],
 .c-user-content [data-display-as~="themed-box--border"],
 .c-user-content [data-display-as~="notice-box"] {
@@ -12092,6 +12093,7 @@ html.wireframe {
 }
 
 .c-user-content [data-display-as~="box"]::after,
+.c-user-content [data-display-as~="pale-box"]::after,
 .c-user-content [data-display-as~="themed-box--background"]::after,
 .c-user-content [data-display-as~="themed-box--border"]::after,
 .c-user-content [data-display-as~="notice-box"]::after {
@@ -12103,6 +12105,7 @@ html.wireframe {
 }
 
 .c-user-content [data-display-as~="box"]::before,
+.c-user-content [data-display-as~="pale-box"]::before,
 .c-user-content [data-display-as~="themed-box--background"]::before,
 .c-user-content [data-display-as~="themed-box--border"]::before,
 .c-user-content [data-display-as~="notice-box"]::before {
@@ -12111,6 +12114,8 @@ html.wireframe {
 }
 
 .c-user-content [data-display-as~="box"], .c-user-content [data-display-as~="box"]::after,
+.c-user-content [data-display-as~="pale-box"],
+.c-user-content [data-display-as~="pale-box"]::after,
 .c-user-content [data-display-as~="themed-box--background"],
 .c-user-content [data-display-as~="themed-box--background"]::after,
 .c-user-content [data-display-as~="themed-box--border"],
@@ -12122,6 +12127,10 @@ html.wireframe {
 
 .c-user-content [data-display-as~="box"] {
   border: 1px solid #8e8279;
+}
+
+.c-user-content [data-display-as~="pale-box"] {
+  background-color: #f7f6f6;
 }
 
 .c-user-content [data-display-as~="themed-box--background"] {
@@ -12402,20 +12411,24 @@ html.wireframe {
   font-size: 0.875em;
 }
 
+[data-contains="priority-content"] [data-display-as*="pale-box"],
 [data-contains="priority-content"] [data-display-as*="themed-box"] {
   text-align: center;
 }
 
+[data-contains="priority-content"] [data-display-as*="pale-box"] h2,
 [data-contains="priority-content"] [data-display-as*="themed-box"] h2 {
   font-size: 1.5em;
   margin-bottom: 0;
 }
 
+[data-contains="priority-content"] [data-display-as*="pale-box"] h3,
 [data-contains="priority-content"] [data-display-as*="themed-box"] h3 {
   font-size: 1.25em;
   margin-bottom: 0;
 }
 
+[data-contains="priority-content"] [data-display-as*="pale-box"] p:only-child,
 [data-contains="priority-content"] [data-display-as*="themed-box"] p:only-child {
   font-size: 1.25em;
 }
