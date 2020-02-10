@@ -6541,7 +6541,16 @@ _:-ms-lang(x), .l-col-to-row__item  {
   padding: 0 2.4rem;
 }
 
+@media only screen and (max-width: 60em) {
+  .l-primary-content .l-primary-content__hidden--narrow {
+    display: none;
+  }
+}
+
 @media only screen and (min-width: 60em) {
+  .l-primary-content .l-primary-content__hidden--wide {
+    display: none;
+  }
   .l-primary-content .l-primary-content__pull-out__padded--\@small {
     padding: 0;
   }
@@ -12409,6 +12418,26 @@ html.wireframe {
 .c-user-content figcaption {
   text-align: center;
   font-size: 0.875em;
+}
+
+.c-user-content a[href$=".pdf"]:not([data-contains="thumbnail"])::before,
+.c-user-content a[href$=".doc"]:not([data-contains="thumbnail"])::before,
+.c-user-content a[href$=".docx"]:not([data-contains="thumbnail"])::before,
+.c-user-content a[href$=".ppt"]:not([data-contains="thumbnail"])::before,
+.c-user-content a[href$=".pptx"]:not([data-contains="thumbnail"])::before,
+.c-user-content a[href$=".ppsx"]:not([data-contains="thumbnail"])::before,
+.c-user-content a[href$=".xls"]:not([data-contains="thumbnail"])::before,
+.c-user-content a[href$=".xlsx"]:not([data-contains="thumbnail"])::before,
+.c-user-content a[href$=".zip"]:not([data-contains="thumbnail"])::before {
+  content: "[FILE] ";
+  position: relative;
+  display: inline-block;
+  font-size: 0.75em;
+  vertical-align: middle;
+  line-height: 1;
+  opacity: .6;
+  margin-right: 0.5em;
+  margin-top: -0.3125em;
 }
 
 [data-contains="priority-content"] [data-display-as*="pale-box"],

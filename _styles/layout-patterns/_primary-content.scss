@@ -56,11 +56,26 @@ $primary-content-pull-out-side-space: 0 $primary-content-spacing-unit 0 0 !defau
     #{&}__pull-out__padded--\@small {
         padding: 0 $primary-content-spacing-unit;
     }
+    
+
+}
+
+@media only screen and (max-width: $primary-content-breakpoint) {
+
+    .#{$primary-content-namespace}primary-content {
+        #{&}__hidden--narrow {
+            display: none;
+        }
+    }
 }
 
 @media only screen and (min-width: $primary-content-breakpoint) {
 
     .#{$primary-content-namespace}primary-content {
+    
+        #{&}__hidden--wide {
+            display: none;
+        }
     
         #{&}__pull-out__padded--\@small {
             padding: 0;

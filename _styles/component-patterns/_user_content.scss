@@ -422,6 +422,28 @@ $uc-breakpoint: 35em !default;
             text-align: center;
             font-size: 0.875em;
         }
+        
+        // Links
+        a[href$=".pdf"]:not([data-contains="thumbnail"])::before,
+        a[href$=".doc"]:not([data-contains="thumbnail"])::before,
+        a[href$=".docx"]:not([data-contains="thumbnail"])::before,
+        a[href$=".ppt"]:not([data-contains="thumbnail"])::before,
+        a[href$=".pptx"]:not([data-contains="thumbnail"])::before,
+        a[href$=".ppsx"]:not([data-contains="thumbnail"])::before,
+        a[href$=".xls"]:not([data-contains="thumbnail"])::before,
+        a[href$=".xlsx"]:not([data-contains="thumbnail"])::before,
+        a[href$=".zip"]:not([data-contains="thumbnail"])::before {
+            content: "[FILE] ";
+            position: relative;
+            display: inline-block;
+            font-size: 0.75em;
+            vertical-align: middle;
+            line-height: 1;
+            //color: #999;
+            opacity: .6;
+            margin-right: 0.5em;
+            margin-top: -0.3125em;
+        }
     }
 
     // Priority content:
