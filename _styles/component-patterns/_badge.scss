@@ -50,9 +50,22 @@ $theme-only: false !default;
 
             }
 
-        &#{&}--limit-height {
+        &#{&}--limit-height,
+        &#{&}--limit-height--8 {
             img {
                 max-height: 8rem;
+            }
+        }
+        
+        &#{&}--limit-height--6 {
+            img {
+                max-height: 6rem;
+            }
+        }
+        
+        &#{&}--limit-height--4 {
+            img {
+                max-height: 4rem;
             }
         }
 

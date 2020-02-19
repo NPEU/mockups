@@ -4235,8 +4235,16 @@ $fallback-svg--link-bg-color-alt: #fff;
   /* [3] */
 }
 
-.c-badge.c-badge--limit-height img {
+.c-badge.c-badge--limit-height img, .c-badge.c-badge--limit-height--8 img {
   max-height: 8rem;
+}
+
+.c-badge.c-badge--limit-height--6 img {
+  max-height: 6rem;
+}
+
+.c-badge.c-badge--limit-height--4 img {
+  max-height: 4rem;
 }
 
 .c-badge.c-badge--small {
