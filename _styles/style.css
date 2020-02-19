@@ -12208,7 +12208,7 @@ html.wireframe {
 .c-user-content [data-display-is~="pulled-left"],
 .c-user-content [data-display-is~="pulled-right"],
 .c-user-content [data-display-is~="pulled-center"] {
-  margin-bottom: 2.4rem;
+  margin-bottom: 1.2rem;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;

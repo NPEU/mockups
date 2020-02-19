@@ -158,7 +158,7 @@ $uc-breakpoint: 35em !default;
         [data-display-is~="pulled-left"],
         [data-display-is~="pulled-right"],
         [data-display-is~="pulled-center"] {
-            margin-bottom: $sz-m;
+            margin-bottom: $sz-s;
 
             display: -webkit-flex;
             display: -ms-flexbox;
