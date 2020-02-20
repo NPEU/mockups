@@ -12492,6 +12492,45 @@ html.wireframe {
 
 /* ---------------------------------------------------------------------------------------------- */
 /* --| SHAME |----------------------------------------------------------------------------------- */
+.c-single-link-form.c-single-link-form,
+.c-single-link-form * {
+  display: inline;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  color: #333;
+}
+
+.c-single-link-form button {
+  border-radius: 0;
+  min-height: 0;
+  color: #333;
+  background-color: transparent;
+  vertical-align: baseline;
+  line-height: normal;
+  text-decoration: none;
+  -webkit-text-decoration-skip: objects;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+}
+
+.c-single-link-form button span {
+  border-width: 0 0 1px 0;
+  border-style: solid;
+  margin-bottom: -1px;
+  padding-bottom: 2px;
+}
+
+.c-single-link-form button:focus {
+  outline: 0;
+  box-shadow: 0 0 0 3px rgba(51, 51, 51, 0.5);
+}
+
+.c-single-link-form button:hover span, .c-single-link-form button:active span, .c-single-link-form button:focus span {
+  border-style: dashed;
+}
+
 .fluid-frame {
   border: 0;
   width: 100%;
