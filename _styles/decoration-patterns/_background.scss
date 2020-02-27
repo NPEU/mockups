@@ -87,9 +87,9 @@ $theme-only: false !default;
 	}
 
     .#{$backgrounds-namespace}background--sloped#{$theme-class} {
-        background: -moz-linear-gradient(45deg, darken(map-get($theme, background-color), 5%) 0%, darken(map-get($theme, background-color), 4%) 50%, darken(map-get($theme, background-color), 2%) 50%,darken(map-get($theme, background-color), 3%) 100%) !important;
-        background: -webkit-linear-gradient(45deg, darken(map-get($theme, background-color), 5%) 0%,darken(map-get($theme, background-color), 4%) 50%,darken(map-get($theme, background-color), 2%) 50%,darken(map-get($theme, background-color), 3%) 100%) !important;
-        background: linear-gradient(45deg, darken(map-get($theme, background-color), 5%) 0%,darken(map-get($theme, background-color), 4%) 50%,darken(map-get($theme, background-color), 2%) 50%,darken(map-get($theme, background-color), 3%) 100%) !important;
+        background:    -moz-linear-gradient(45deg, darken(map-get($theme, background-color), 5%) 0%, darken(map-get($theme, background-color), 4%) 50%, darken(map-get($theme, background-color), 2%) 50%, darken(map-get($theme, background-color), 3%) 100%) !important;
+        background: -webkit-linear-gradient(45deg, darken(map-get($theme, background-color), 5%) 0%, darken(map-get($theme, background-color), 4%) 50%, darken(map-get($theme, background-color), 2%) 50%, darken(map-get($theme, background-color), 3%) 100%) !important;
+        background:         linear-gradient(45deg, darken(map-get($theme, background-color), 5%) 0%, darken(map-get($theme, background-color), 4%) 50%, darken(map-get($theme, background-color), 2%) 50%, darken(map-get($theme, background-color), 3%) 100%) !important;
     }
 }
 

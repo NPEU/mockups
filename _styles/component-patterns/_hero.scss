@@ -28,7 +28,7 @@ $theme-only: false !default;
         }
 
         #{&}__message {
-            @extend .u-word-wrap;
+            //@extend .u-word-wrap;
         
             padding: $sz-xs $sz-m;
         }

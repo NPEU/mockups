@@ -6155,9 +6155,18 @@ ul.c-utilitext li + li, ol.c-utilitext li + li {
   color: #333;
   padding: 1.2rem;
   padding-bottom: 0 !important;
-  border-style: solid;
-  border-width: 1px;
-  border-radius: 0.5em;
+  /*
+            @if $system-message--border-or-outline == 'outline' {
+                outline: $system-message--border-width $system-message--border-style $system-message--color;
+            }
+
+            @if $system-message--border-or-outline == 'border' {
+                //border-color:  $system-message--border-color;
+                border-style:  $system-message--border-style;
+                border-width:  $system-message--border-width;
+                border-radius: $system-message--border-radius;
+            }
+            */
   /*a[href] {
                 background-color: transparent;
                 color: #fff;
@@ -6185,23 +6194,47 @@ ul.c-utilitext li + li, ol.c-utilitext li + li {
 }
 
 .c-system-message {
-  background-color: #edf6fc;
-  border-color: #69b3e7;
+  background: -moz-linear-gradient(45deg, #c1e0f5 0%, #c5e2f6 50%, #bdddf4 50%, #b8dbf4 100%) !important;
+  background: -webkit-linear-gradient(45deg, #c1e0f5 0%, #c5e2f6 50%, #bdddf4 50%, #b8dbf4 100%) !important;
+  background: linear-gradient(45deg, #c1e0f5 0%, #c5e2f6 50%, #bdddf4 50%, #b8dbf4 100%) !important;
+  color: #333;
+}
+
+.c-system-message a[href] {
+  color: inherit;
 }
 
 .c-system-message.t-success {
-  background-color: #c2d7a9;
-  border-color: #789d4a;
+  background: -moz-linear-gradient(45deg, #aac687 0%, #acc88a 50%, #a7c583 50%, #a5c380 100%) !important;
+  background: -webkit-linear-gradient(45deg, #aac687 0%, #acc88a 50%, #a7c583 50%, #a5c380 100%) !important;
+  background: linear-gradient(45deg, #aac687 0%, #acc88a 50%, #a7c583 50%, #a5c380 100%) !important;
+  color: #333;
+}
+
+.c-system-message.t-success a[href] {
+  color: inherit;
 }
 
 .c-system-message.t-warning {
-  background-color: #ffdfb4;
-  border-color: #ff9e1b;
+  background: -moz-linear-gradient(45deg, #ffc981 0%, #ffcc86 50%, #ffc77c 50%, #ffc577 100%) !important;
+  background: -webkit-linear-gradient(45deg, #ffc981 0%, #ffcc86 50%, #ffc77c 50%, #ffc577 100%) !important;
+  background: linear-gradient(45deg, #ffc981 0%, #ffcc86 50%, #ffc77c 50%, #ffc577 100%) !important;
+  color: #333;
+}
+
+.c-system-message.t-warning a[href] {
+  color: inherit;
 }
 
 .c-system-message.t-error {
-  background-color: #da8ca9;
-  border-color: #9b3259;
+  background: -moz-linear-gradient(45deg, #cd668c 0%, #cf698f 50%, #cc6289 50%, #cb5e86 100%) !important;
+  background: -webkit-linear-gradient(45deg, #cd668c 0%, #cf698f 50%, #cc6289 50%, #cb5e86 100%) !important;
+  background: linear-gradient(45deg, #cd668c 0%, #cf698f 50%, #cc6289 50%, #cb5e86 100%) !important;
+  color: #fff;
+}
+
+.c-system-message.t-error a[href] {
+  color: inherit;
 }
 
 /* ---------------------------------------------------------------------------------------------- */
@@ -6586,6 +6619,7 @@ _:-ms-lang(x), .l-col-to-row__item  {
             grid-template-rows: auto auto 1fr;
                  -ms-grid-columns: 2fr 1fr;
             grid-template-columns: 2fr 1fr;*/
+    display: block;
     display: flow-root;
     clear: both;
     /*
@@ -8189,7 +8223,7 @@ $pagination-button--border-color: darken($pagination--base-color, 20%) !default;
     Attempts to improve where text wraps.
 
 */
-.u-word-wrap, .c-hero .c-hero__message, h1, h2,
+.u-word-wrap, h1, h2,
 .u-word-wrap--inside * {
   /* These are technically the same, but use both */
   overflow-wrap: break-word;

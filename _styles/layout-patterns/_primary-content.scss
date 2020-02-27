@@ -93,6 +93,7 @@ $primary-content-pull-out-side-space: 0 $primary-content-spacing-unit 0 0 !defau
                  -ms-grid-columns: 2fr 1fr;
             grid-template-columns: 2fr 1fr;*/
 
+            display: block;
             display: flow-root;
             clear: both;
 

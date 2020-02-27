@@ -27,10 +27,24 @@ $theme-only: false !default;
 
 	.#{$system-message-namespace}system-message#{$theme-class} {
 
-		background-color: lighten(map-get($theme, system-message-color), 30%);
-        border-color: map-get($theme, system-message-color);
-
-		//outline: 1px solid $border-color;
+		//background-color: map-get($theme, system-message-color);
+		//background-color: lighten(map-get($theme, system-message-color), 20%);
+        //border-color: map-get($theme, system-message-color);
+        
+        background:    -moz-linear-gradient(45deg, lighten(map-get($theme, system-message-color), 20%) 0%, lighten(map-get($theme, system-message-color), 21%) 50%, lighten(map-get($theme, system-message-color), 19%) 50%, lighten(map-get($theme, system-message-color), 18%) 100%) !important;
+        background: -webkit-linear-gradient(45deg, lighten(map-get($theme, system-message-color), 20%) 0%, lighten(map-get($theme, system-message-color), 21%) 50%, lighten(map-get($theme, system-message-color), 19%) 50%, lighten(map-get($theme, system-message-color), 18%) 100%) !important;
+        background:         linear-gradient(45deg, lighten(map-get($theme, system-message-color), 20%) 0%, lighten(map-get($theme, system-message-color), 21%) 50%, lighten(map-get($theme, system-message-color), 19%) 50%, lighten(map-get($theme, system-message-color), 18%) 100%) !important;
+        
+        //@if f__color_light_or_dark(lighten(map-get($theme, system-message-color), 20%)) == 'light' {
+        @if f__color_light_or_dark(map-get($theme, system-message-color)) == 'light' {
+            color: $f__base-text-color;
+        } @else {
+            color: #fff;
+        }
+        
+        a[href] {
+            color: inherit;
+        }
 	}
 
 }
@@ -47,7 +61,7 @@ $theme-only: false !default;
             
             @include bottom-space-fix($system-message-spacing-unit);
 
-
+            /*
             @if $system-message--border-or-outline == 'outline' {
                 outline: $system-message--border-width $system-message--border-style $system-message--color;
             }
@@ -58,7 +72,7 @@ $theme-only: false !default;
                 border-width:  $system-message--border-width;
                 border-radius: $system-message--border-radius;
             }
-
+            */
             /*a[href] {
                 background-color: transparent;
                 color: #fff;
