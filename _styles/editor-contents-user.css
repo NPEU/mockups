@@ -1,0 +1,148 @@
+/*
+
+*/
+/*-------------------------------------------------------------------------------------------------|
+    Fall-Back Start-CSS Settings
+
+    Fall-Back is designed for use with the basic
+    [CSS Mustard Cut](https://github.com/Fall-Back/CSS-Mustard-Cut)
+
+    This determines a browser support base of:
+
+    IE 9+, FF 8+, Opera 12, [Chrome 29+, Android ~4.4+]
+    Chrome 29+, Opera 16+, Safari 6.1+, iOS 7+, Android ~4.4+
+
+
+    Any double-classing (e.g. `.class.class`) is deliberate and intended to increase specifity.
+    This allows any applicable Start-CSS declarations to be overidden.
+    E.g. `.{pattern} .{pattern}__child` would `a[href]`, but just `.{pattern}` wouldn't, so we use
+    `.{pattern}.{pattren}`
+
+    https://coolors.co/50514f-f25f5c-ffe066-247ba0-70c1b3
+
+|-------------------------------------------------------------------------------------------------*/
+/* --| FUNCTIONS AND MIXINS |-------------------------------------------------------------------- */
+/*
+    Global sizes
+*/
+/*
+    Fab Four Widths
+
+    https://medium.freecodecamp.com/the-fab-four-technique-to-create-responsive-emails-without-media-queries-baf11fdfa848#.dtpllw1lf
+    https://www.sitepoint.com/responsive-css-patterns-without-media-queries/
+
+*/
+/*
+@import "component-patterns/_contact-list.scss";
+
+@import "component-patterns/_thumbnail.scss";
+
+$theme-only: true;
+@import "component-patterns/_panel.scss";
+
+@import "layout-patterns/_distribute.scss";
+
+@import "utility-patterns/_padding.scss";
+
+@import "utility-patterns/_space.scss";
+
+@import "utility-patterns/_text-align.scss";
+*/
+/*
+    NOTE: data-width and data-position are currently unused.
+    I'm considering their use. An (abandoned) attempt at customising the CKEditor div plugin
+    would have required these.
+*/
+[data-display-is~="pulled-left"],
+[data-position="left"] {
+  float: left;
+  clear: left;
+  margin-right: 2.4rem;
+}
+
+[data-display-is~="pulled-left"]::before,
+[data-position="left"]::before {
+  display: none;
+}
+
+[data-display-is~="pulled-left"] + ::before,
+[data-display-is~="pulled-left"] + ::after,
+[data-position="left"] + ::before,
+[data-position="left"] + ::after {
+  content: " ";
+  display: table;
+}
+
+[data-display-is~="pulled-left"] + ::after,
+[data-position="left"] + ::after {
+  clear: both;
+}
+
+[data-display-is~="pulled-right"],
+[data-position="right"] {
+  float: right;
+  clear: right;
+  margin-left: 2.4rem;
+}
+
+[data-display-is~="pulled-right"]::after,
+[data-position="right"]::after {
+  display: none;
+}
+
+[data-display-is~="pulled-right"] + ::before,
+[data-display-is~="pulled-right"] + ::after,
+[data-position="right"] + ::before,
+[data-position="right"] + ::after {
+  content: " ";
+  display: table;
+}
+
+[data-display-is~="pulled-right"] + ::after,
+[data-position="right"] + ::after {
+  clear: both;
+}
+
+[data-display-is~="pulled-center"],
+[data-position="center"] {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+[data-display-is~="pulled-center"]::after,
+[data-position="center"]::after {
+  display: none;
+}
+
+[data-display-is~="width-one-quarter"],
+[data-width="one-quarter"] {
+  max-width: 100%;
+  width: calc((35em - 100%) * 1000);
+  min-width: 25%;
+}
+
+[data-display-is~="width-one-third"],
+[data-width="one-third"] {
+  max-width: 100%;
+  width: calc((35em - 100%) * 1000);
+  min-width: 33%;
+}
+
+[data-display-is~="width-one-half"],
+[data-width="one-half"] {
+  max-width: 100%;
+  width: calc((35em - 100%) * 1000);
+  min-width: 50%;
+}
+
+[data-display-is~="width-two-thirds"],
+[data-width="two-thirds"] {
+  max-width: 100%;
+  width: calc((35em - 100%) * 1000);
+  min-width: 67%;
+}
+
+[data-display-is~="width-one-whole"],
+[data-width="one-whole"] {
+  width: 100%;
+}

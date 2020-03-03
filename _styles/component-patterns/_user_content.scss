@@ -1,15 +1,19 @@
 /*
-
+    NOTE: data-width and data-position are currently unused.
+    I'm considering their use. An (abandoned) attempt at customising the CKEditor div plugin
+    would have required these.
 */
 
 $user-content-namespace: c- !default;
 
 $theme-namespace: t- !default;
 
-$theme-only: false !default;
+//$theme-only: false !default;
 
 $uc-breakpoint: 35em !default;
 // Note - no theme yet!
+
+
 
 // We don't need this if we're only themeing the pattern:
 @if $theme-only == false {
@@ -20,23 +24,28 @@ $uc-breakpoint: 35em !default;
             @extend .c-contact-list;
         }
 
-        [data-display-is~="width-one-quarter"] + [data-contains~="contact-details"] {
+        [data-display-is~="width-one-quarter"] + [data-contains~="contact-details"],
+        [data-width="one-quarter"] + [data-contains~="contact-details"] {
             @include ff-width(100%, $uc-breakpoint, unquote("calc(75% - #{$sz-m})"));
         }
 
-        [data-display-is~="width-one-third"] + [data-contains~="contact-details"] {
+        [data-display-is~="width-one-third"] + [data-contains~="contact-details"],
+        [data-width="one-third"] + [data-contains~="contact-details"] {
             @include ff-width(100%, $uc-breakpoint, unquote("calc(67% - #{$sz-m})"));
         }
 
-        [data-display-is~="width-one-half"] + [data-contains~="contact-details"] {
+        [data-display-is~="width-one-half"] + [data-contains~="contact-details"],
+        [data-width="one-half"] + [data-contains~="contact-details"] {
             @include ff-width(100%, $uc-breakpoint, unquote("calc(50% - #{$sz-m})"));
         }
 
-        [data-display-is~="width-two-thirds"] + [data-contains~="contact-details"] {
+        [data-display-is~="width-two-thirds"] + [data-contains~="contact-details"],
+        [data-width="two-thirds"] + [data-contains~="contact-details"] {
             @include ff-width(100%, $uc-breakpoint, unquote("calc(33% - #{$sz-m})"));
         }
 
-        [data-display-is*="width-"] + [data-contains~="contact-details"] + * {
+        [data-display-is*="width-"] + [data-contains~="contact-details"] + *,
+        [data-width] + [data-contains~="contact-details"] + * {
             clear: both;
         }
 
@@ -157,7 +166,8 @@ $uc-breakpoint: 35em !default;
 
         [data-display-is~="pulled-left"],
         [data-display-is~="pulled-right"],
-        [data-display-is~="pulled-center"] {
+        [data-display-is~="pulled-center"],
+        [data-position] {
             margin-bottom: $sz-s;
 
             display: -webkit-flex;
@@ -192,7 +202,8 @@ $uc-breakpoint: 35em !default;
             }*/
         }
 
-        [data-display-is~="pulled-left"] {
+        [data-display-is~="pulled-left"],
+        [data-position="left"] {
             float: left;
             clear: left;
             margin-right: $sz-m;
@@ -212,7 +223,8 @@ $uc-breakpoint: 35em !default;
             }
         }
 
-        [data-display-is~="pulled-right"] {
+        [data-display-is~="pulled-right"],
+        [data-position="right"] {
             float: right;
             clear: right;
             margin-left: $sz-m;
@@ -232,7 +244,8 @@ $uc-breakpoint: 35em !default;
             }
         }
 
-        [data-display-is~="pulled-center"] {
+        [data-display-is~="pulled-center"],
+        [data-position="center"] {
             margin-left: auto;
             margin-right: auto;
 
@@ -241,23 +254,28 @@ $uc-breakpoint: 35em !default;
             }
         }
 
-        [data-display-is~="width-one-quarter"] {
+        [data-display-is~="width-one-quarter"],
+        [data-width="one-quarter"] {
             @include ff-width(100%, $uc-breakpoint, 25%);
         }
 
-        [data-display-is~="width-one-third"] {
+        [data-display-is~="width-one-third"],
+        [data-width="one-third"] {
             @include ff-width(100%, $uc-breakpoint, 33%);
         }
 
-        [data-display-is~="width-one-half"] {
+        [data-display-is~="width-one-half"],
+        [data-width="one-half"] {
             @include ff-width(100%, $uc-breakpoint, 50%);
         }
 
-        [data-display-is~="width-two-thirds"] {
+        [data-display-is~="width-two-thirds"],
+        [data-width="two-thirds"] {
             @include ff-width(100%, $uc-breakpoint, 67%);
         }
 
-        [data-display-is~="width-one-whole"] {
+        [data-display-is~="width-one-whole"],
+        [data-width="one-whole"] {
             width: 100%;
         }
 

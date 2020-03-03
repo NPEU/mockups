@@ -6782,7 +6782,7 @@ _:-ms-lang(x), .l-col-to-row__item  {
 .l-distribute.l-distribute--gutter--small, .c-user-content [data-display-as~="blocks"] > .l-distribute--gutter--small,
 .l-distribute.l-distribute--gutter--small > *,
 .c-user-content [data-display-as~="blocks"] > .l-distribute--gutter--small > * {
-  padding: 0.6rem;
+  padding: 0.5rem;
 }
 
 .l-distribute.l-distribute--gutter, .c-user-content [data-display-as~="blocks"] > .l-distribute--gutter,
@@ -6790,13 +6790,13 @@ _:-ms-lang(x), .l-col-to-row__item  {
 .c-user-content [data-display-as~="blocks"] > .l-distribute--gutter > *, .l-distribute.l-distribute--gutter--medium, .c-user-content [data-display-as~="blocks"] > .l-distribute--gutter--medium,
 .l-distribute.l-distribute--gutter--medium > *,
 .c-user-content [data-display-as~="blocks"] > .l-distribute--gutter--medium > * {
-  padding: 1.2rem;
+  padding: 1rem;
 }
 
 .l-distribute.l-distribute--gutter--large, .c-user-content [data-display-as~="blocks"] > .l-distribute--gutter--large,
 .l-distribute.l-distribute--gutter--large > *,
 .c-user-content [data-display-as~="blocks"] > .l-distribute--gutter--large > * {
-  padding: 2.4rem;
+  padding: 2rem;
 }
 
 .l-distribute--flush-edge-gutters {
@@ -6806,18 +6806,18 @@ _:-ms-lang(x), .l-col-to-row__item  {
 }
 
 .l-distribute--flush-edge-gutters .l-distribute.l-distribute--gutter--small, .l-distribute--flush-edge-gutters .c-user-content [data-display-as~="blocks"] > .l-distribute--gutter--small, .c-user-content .l-distribute--flush-edge-gutters [data-display-as~="blocks"] > .l-distribute--gutter--small {
-  margin: -1.2rem;
+  margin: -1rem;
 }
 
 .l-distribute--flush-edge-gutters .l-distribute.l-distribute--gutter, .l-distribute--flush-edge-gutters .c-user-content [data-display-as~="blocks"] > .l-distribute--gutter, .c-user-content .l-distribute--flush-edge-gutters [data-display-as~="blocks"] > .l-distribute--gutter,
 .l-distribute--flush-edge-gutters .l-distribute.l-distribute--gutter--medium,
 .l-distribute--flush-edge-gutters .c-user-content [data-display-as~="blocks"] > .l-distribute--gutter--medium,
 .c-user-content .l-distribute--flush-edge-gutters [data-display-as~="blocks"] > .l-distribute--gutter--medium {
-  margin: -2.4rem;
+  margin: -2rem;
 }
 
 .l-distribute--flush-edge-gutters .l-distribute.l-distribute--gutter--large, .l-distribute--flush-edge-gutters .c-user-content [data-display-as~="blocks"] > .l-distribute--gutter--large, .c-user-content .l-distribute--flush-edge-gutters [data-display-as~="blocks"] > .l-distribute--gutter--large {
-  margin: -4.8rem;
+  margin: -4rem;
 }
 
 /* IE10-11 */
@@ -12104,7 +12104,9 @@ html.wireframe {
 /* ---------------------------------------------------------------------------------------------- */
 /* --| USER CONTENT |---------------------------------------------------------------------------- */
 /*
-
+    NOTE: data-width and data-position are currently unused.
+    I'm considering their use. An (abandoned) attempt at customising the CKEditor div plugin
+    would have required these.
 */
 .c-user-content {
   /*
@@ -12118,31 +12120,36 @@ html.wireframe {
         */
 }
 
-.c-user-content [data-display-is~="width-one-quarter"] + [data-contains~="contact-details"] {
+.c-user-content [data-display-is~="width-one-quarter"] + [data-contains~="contact-details"],
+.c-user-content [data-width="one-quarter"] + [data-contains~="contact-details"] {
   max-width: 100%;
   width: calc((35em - 100%) * 1000);
   min-width: calc(75% - 2.4rem);
 }
 
-.c-user-content [data-display-is~="width-one-third"] + [data-contains~="contact-details"] {
+.c-user-content [data-display-is~="width-one-third"] + [data-contains~="contact-details"],
+.c-user-content [data-width="one-third"] + [data-contains~="contact-details"] {
   max-width: 100%;
   width: calc((35em - 100%) * 1000);
   min-width: calc(67% - 2.4rem);
 }
 
-.c-user-content [data-display-is~="width-one-half"] + [data-contains~="contact-details"] {
+.c-user-content [data-display-is~="width-one-half"] + [data-contains~="contact-details"],
+.c-user-content [data-width="one-half"] + [data-contains~="contact-details"] {
   max-width: 100%;
   width: calc((35em - 100%) * 1000);
   min-width: calc(50% - 2.4rem);
 }
 
-.c-user-content [data-display-is~="width-two-thirds"] + [data-contains~="contact-details"] {
+.c-user-content [data-display-is~="width-two-thirds"] + [data-contains~="contact-details"],
+.c-user-content [data-width="two-thirds"] + [data-contains~="contact-details"] {
   max-width: 100%;
   width: calc((35em - 100%) * 1000);
   min-width: calc(33% - 2.4rem);
 }
 
-.c-user-content [data-display-is*="width-"] + [data-contains~="contact-details"] + * {
+.c-user-content [data-display-is*="width-"] + [data-contains~="contact-details"] + *,
+.c-user-content [data-width] + [data-contains~="contact-details"] + * {
   clear: both;
 }
 
@@ -12249,7 +12256,8 @@ html.wireframe {
 
 .c-user-content [data-display-is~="pulled-left"],
 .c-user-content [data-display-is~="pulled-right"],
-.c-user-content [data-display-is~="pulled-center"] {
+.c-user-content [data-display-is~="pulled-center"],
+.c-user-content [data-position] {
   margin-bottom: 1.2rem;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -12278,80 +12286,97 @@ html.wireframe {
             }*/
 }
 
-.c-user-content [data-display-is~="pulled-left"] {
+.c-user-content [data-display-is~="pulled-left"],
+.c-user-content [data-position="left"] {
   float: left;
   clear: left;
   margin-right: 2.4rem;
 }
 
-.c-user-content [data-display-is~="pulled-left"]::before {
+.c-user-content [data-display-is~="pulled-left"]::before,
+.c-user-content [data-position="left"]::before {
   display: none;
 }
 
 .c-user-content [data-display-is~="pulled-left"] + ::before,
-.c-user-content [data-display-is~="pulled-left"] + ::after {
+.c-user-content [data-display-is~="pulled-left"] + ::after,
+.c-user-content [data-position="left"] + ::before,
+.c-user-content [data-position="left"] + ::after {
   content: " ";
   display: table;
 }
 
-.c-user-content [data-display-is~="pulled-left"] + ::after {
+.c-user-content [data-display-is~="pulled-left"] + ::after,
+.c-user-content [data-position="left"] + ::after {
   clear: both;
 }
 
-.c-user-content [data-display-is~="pulled-right"] {
+.c-user-content [data-display-is~="pulled-right"],
+.c-user-content [data-position="right"] {
   float: right;
   clear: right;
   margin-left: 2.4rem;
 }
 
-.c-user-content [data-display-is~="pulled-right"]::after {
+.c-user-content [data-display-is~="pulled-right"]::after,
+.c-user-content [data-position="right"]::after {
   display: none;
 }
 
 .c-user-content [data-display-is~="pulled-right"] + ::before,
-.c-user-content [data-display-is~="pulled-right"] + ::after {
+.c-user-content [data-display-is~="pulled-right"] + ::after,
+.c-user-content [data-position="right"] + ::before,
+.c-user-content [data-position="right"] + ::after {
   content: " ";
   display: table;
 }
 
-.c-user-content [data-display-is~="pulled-right"] + ::after {
+.c-user-content [data-display-is~="pulled-right"] + ::after,
+.c-user-content [data-position="right"] + ::after {
   clear: both;
 }
 
-.c-user-content [data-display-is~="pulled-center"] {
+.c-user-content [data-display-is~="pulled-center"],
+.c-user-content [data-position="center"] {
   margin-left: auto;
   margin-right: auto;
 }
 
-.c-user-content [data-display-is~="pulled-center"]::after {
+.c-user-content [data-display-is~="pulled-center"]::after,
+.c-user-content [data-position="center"]::after {
   display: none;
 }
 
-.c-user-content [data-display-is~="width-one-quarter"] {
+.c-user-content [data-display-is~="width-one-quarter"],
+.c-user-content [data-width="one-quarter"] {
   max-width: 100%;
   width: calc((35em - 100%) * 1000);
   min-width: 25%;
 }
 
-.c-user-content [data-display-is~="width-one-third"] {
+.c-user-content [data-display-is~="width-one-third"],
+.c-user-content [data-width="one-third"] {
   max-width: 100%;
   width: calc((35em - 100%) * 1000);
   min-width: 33%;
 }
 
-.c-user-content [data-display-is~="width-one-half"] {
+.c-user-content [data-display-is~="width-one-half"],
+.c-user-content [data-width="one-half"] {
   max-width: 100%;
   width: calc((35em - 100%) * 1000);
   min-width: 50%;
 }
 
-.c-user-content [data-display-is~="width-two-thirds"] {
+.c-user-content [data-display-is~="width-two-thirds"],
+.c-user-content [data-width="two-thirds"] {
   max-width: 100%;
   width: calc((35em - 100%) * 1000);
   min-width: 67%;
 }
 
-.c-user-content [data-display-is~="width-one-whole"] {
+.c-user-content [data-display-is~="width-one-whole"],
+.c-user-content [data-width="one-whole"] {
   width: 100%;
 }
 
