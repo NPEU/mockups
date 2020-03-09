@@ -53,11 +53,21 @@ $theme-only: true;
     I'm considering their use. An (abandoned) attempt at customising the CKEditor div plugin
     would have required these.
 */
+.cke_widget_wrapper.cke_widget_block::before, .cke_widget_wrapper.cke_widget_block::after {
+  content: " ";
+  display: table;
+}
+
+.cke_widget_wrapper.cke_widget_block::after {
+  clear: both;
+}
+
 [data-display-is~="pulled-left"],
 [data-position="left"] {
   float: left;
   clear: left;
-  margin-right: 2.4rem;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 [data-display-is~="pulled-left"]::before,
@@ -82,7 +92,8 @@ $theme-only: true;
 [data-position="right"] {
   float: right;
   clear: right;
-  margin-left: 2.4rem;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 [data-display-is~="pulled-right"]::after,

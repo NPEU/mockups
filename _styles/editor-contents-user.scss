@@ -28,11 +28,27 @@ $theme-only: true;
 @import "component-patterns/_user_content";
 
 
+
+.cke_widget_wrapper.cke_widget_block{ 
+
+    &::before,
+    &::after {
+        content: " ";
+        display: table;
+    }
+
+    &::after {
+        clear: both;
+    }
+}
+
 [data-display-is~="pulled-left"],
 [data-position="left"] {
     float: left;
     clear: left;
-    margin-right: $sz-m;
+    //margin-right: $sz-m;
+    margin-left: 0;
+    margin-right: 0;
 
     &::before {
         display: none;
@@ -53,7 +69,9 @@ $theme-only: true;
 [data-position="right"] {
     float: right;
     clear: right;
-    margin-left: $sz-m;
+    //margin-left: $sz-m;
+    margin-left: 0;
+    margin-right: 0;
 
     &::after {
         display: none;
