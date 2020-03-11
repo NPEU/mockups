@@ -4239,12 +4239,20 @@ $fallback-svg--link-bg-color-alt: #fff;
   max-height: 8rem;
 }
 
+.c-badge.c-badge--limit-height--4 img {
+  max-height: 4rem;
+}
+
 .c-badge.c-badge--limit-height--6 img {
   max-height: 6rem;
 }
 
-.c-badge.c-badge--limit-height--4 img {
-  max-height: 4rem;
+.c-badge.c-badge--limit-height--10 img {
+  max-height: 10rem;
+}
+
+.c-badge.c-badge--limit-height--12 img {
+  max-height: 12rem;
 }
 
 .c-badge.c-badge--small {
@@ -12432,9 +12440,26 @@ html.wireframe {
   display: block;
 }
 
-.c-user-content [data-contains~="logo"] img {
+.c-user-content [data-contains~="logo"] img,
+.c-user-content [data-contains~="logo-medium"] img {
   max-height: 8rem;
   background-color: transparent;
+}
+
+.c-user-content [data-contains~="logo-xsmall"] img {
+  max-height: 4rem;
+}
+
+.c-user-content [data-contains~="logo-small"] img {
+  max-height: 6rem;
+}
+
+.c-user-content [data-contains~="logo-large"] img {
+  max-height: 10rem;
+}
+
+.c-user-content [data-contains~="logo-xlarge"] img {
+  max-height: 12rem;
 }
 
 .c-user-content img {

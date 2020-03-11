@@ -57,17 +57,30 @@ $theme-only: false !default;
             }
         }
         
+        &#{&}--limit-height--4 {
+            img {
+                max-height: 4rem;
+            }
+        }
+        
         &#{&}--limit-height--6 {
             img {
                 max-height: 6rem;
             }
         }
         
-        &#{&}--limit-height--4 {
+        &#{&}--limit-height--10 {
             img {
-                max-height: 4rem;
+                max-height: 10rem;
             }
         }
+        
+        &#{&}--limit-height--12 {
+            img {
+                max-height: 12rem;
+            }
+        }
+        
 
         &#{&}--small {
             height: 2em;

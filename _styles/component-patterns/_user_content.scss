@@ -341,9 +341,26 @@ $uc-breakpoint: 35em !default;
 
 
 
-        [data-contains~="logo"] img {
+        [data-contains~="logo"] img,
+        [data-contains~="logo-medium"] img {
             max-height: 8rem;
             background-color: transparent;
+        }
+        
+        [data-contains~="logo-xsmall"] img {
+            max-height: 4rem;
+        }
+        
+        [data-contains~="logo-small"] img {
+            max-height: 6rem;
+        }
+        
+        [data-contains~="logo-large"] img {
+            max-height: 10rem;
+        }
+        
+        [data-contains~="logo-xlarge"] img {
+            max-height: 12rem;
         }
 
         [data-contains~="thumbnail"] {
