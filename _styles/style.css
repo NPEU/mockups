@@ -12440,26 +12440,37 @@ html.wireframe {
   display: block;
 }
 
-.c-user-content [data-contains~="logo"] img,
-.c-user-content [data-contains~="logo-medium"] img {
-  max-height: 8rem;
+.c-user-content [data-contains~="logo"] img {
+  max-height: 9rem;
   background-color: transparent;
 }
 
 .c-user-content [data-contains~="logo-xsmall"] img {
-  max-height: 4rem;
+  max-height: 5.4rem;
 }
 
 .c-user-content [data-contains~="logo-small"] img {
-  max-height: 6rem;
+  max-height: 7.2rem;
+}
+
+.c-user-content [data-contains~="logo-medium"] img {
+  max-height: 9rem;
 }
 
 .c-user-content [data-contains~="logo-large"] img {
-  max-height: 10rem;
+  max-height: 10.8rem;
 }
 
 .c-user-content [data-contains~="logo-xlarge"] img {
-  max-height: 12rem;
+  max-height: 14.4rem;
+}
+
+.c-user-content [data-contains~="logo-xxlarge"] img {
+  max-height: 18rem;
+}
+
+.c-user-content [data-contains~="logo-xxxlarge"] img {
+  max-height: 21.6rem;
 }
 
 .c-user-content img {

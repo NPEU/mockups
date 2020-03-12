@@ -164,46 +164,67 @@ $theme-only: true;
     }
 }
 
-[data-contains~="logo"] img,
-[data-contains~="logo-medium"] img {
-    max-height: 8rem;
+// Scale 16, 18, 24, 30, 36, 48, 60, 72  *3 =
+// 48, 54, 72, 90, 108, 144, 180, 216 
+
+[data-contains~="logo"] img {
     background-color: transparent;
 }
 
 [data-contains~="logo-xsmall"] img {
-    max-height: 4rem;
+    max-height: 5.4rem;
 }
 
 [data-contains~="logo-small"] img {
-    max-height: 6rem;
+    max-height: 7.2rem;
+}
+
+[data-contains~="logo-medium"] img {
+    max-height: 9rem;
 }
 
 [data-contains~="logo-large"] img {
-    max-height: 10rem;
+    max-height: 10.8rem;
 }
 
 [data-contains~="logo-xlarge"] img {
-    max-height: 12rem;
+    max-height: 14.4rem;
+}
+
+[data-contains~="logo-xxlarge"] img {
+    max-height: 18rem;
+}
+
+[data-contains~="logo-xxlarge"] img {
+    max-height: 21.6rem;
 }
 
 
-
-[data-contains~="logo-medium"] {
-    height: 8rem;
-}
 
 [data-contains~="logo-xsmall"] {
-    height: 4rem;
+    height: 5.4rem;
 }
 
 [data-contains~="logo-small"] {
-    height: 6rem;
+    height: 7.2rem;
+}
+
+[data-contains~="logo-medium"] {
+    height: 9rem;
 }
 
 [data-contains~="logo-large"] {
-    height: 10rem;
+    height: 10.8rem;
 }
 
 [data-contains~="logo-xlarge"] {
-    height: 12rem;
+    height: 14.4rem;
+}
+
+[data-contains~="logo-xxlarge"] {
+    height: 18rem;
+}
+
+[data-contains~="logo-xxxlarge"] {
+    height: 21.6erm;
 }

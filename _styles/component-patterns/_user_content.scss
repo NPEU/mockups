@@ -339,28 +339,41 @@ $uc-breakpoint: 35em !default;
             display: block;
         }
 
+        // Scale 16, 18, 24, 30, 36, 48, 60, 72  *3 =
+        // 48, 54, 72, 90, 108, 144, 180, 216 
 
-
-        [data-contains~="logo"] img,
-        [data-contains~="logo-medium"] img {
-            max-height: 8rem;
+        [data-contains~="logo"] img {
+            max-height: 9rem;
             background-color: transparent;
         }
         
         [data-contains~="logo-xsmall"] img {
-            max-height: 4rem;
+            max-height: 5.4rem;
         }
         
         [data-contains~="logo-small"] img {
-            max-height: 6rem;
+            max-height: 7.2rem;
+        }
+        
+        [data-contains~="logo-medium"] img {
+            // Repetition for clarity.
+            max-height: 9rem;
         }
         
         [data-contains~="logo-large"] img {
-            max-height: 10rem;
+            max-height: 10.8rem;
         }
         
         [data-contains~="logo-xlarge"] img {
-            max-height: 12rem;
+            max-height: 14.4rem;
+        }
+        
+        [data-contains~="logo-xxlarge"] img {
+            max-height: 18rem;
+        }
+        
+        [data-contains~="logo-xxxlarge"] img {
+            max-height: 21.6rem;
         }
 
         [data-contains~="thumbnail"] {
