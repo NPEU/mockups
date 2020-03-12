@@ -1,0 +1,5 @@
+This folder is now old and shouldn't be used for logos. 
+
+Logo SVG's are now handled via Brands component.
+
+Original SVGs at 100mm high are kept in K:\NPEU\Design Team\NPEU\Logo Repository\_SVGs

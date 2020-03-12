@@ -4297,6 +4297,8 @@ $fallback-svg--link-bg-color-alt: #fff;
 a[href].c-badge {
   border: 0;
   padding: 0;
+  width: 100%;
+  height: 100%;
 }
 
 a[href].c-badge:hover, a[href].c-badge:active, a[href].c-badge:focus {
