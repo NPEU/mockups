@@ -12537,6 +12537,7 @@ html.wireframe {
 .c-user-content figcaption {
   text-align: center;
   font-size: 0.875em;
+  margin-top: 1.2rem;
 }
 
 .c-user-content a[href$=".pdf"]:not([data-contains="thumbnail"])::before,
