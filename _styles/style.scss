@@ -52,7 +52,8 @@ a[href][rel=external]::after {
 blockquote {
     border-top: 1px dotted map-get(map-get($themes, neutral), primary-color);
     border-bottom: 1px dotted map-get(map-get($themes, neutral), primary-color);
-    background-color: scale-color(map-get(map-get($themes, neutral), primary-color), $lightness: 90%);
+    //background-color: scale-color(map-get(map-get($themes, neutral), primary-color), $lightness: 90%);
+    background-color: rgba(0,0,0,0.1);
 
     padding: $f__base-rem-space-unit $f__base-rem-space-unit * 2;
 

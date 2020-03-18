@@ -2770,7 +2770,7 @@ a[href][rel="external"]::after {
 blockquote {
   border-top: 1px dotted #8e8279;
   border-bottom: 1px dotted #8e8279;
-  background-color: #f4f3f2;
+  background-color: rgba(0, 0, 0, 0.1);
   padding: 2.4rem 4.8rem;
   padding-bottom: 0 !important;
 }
