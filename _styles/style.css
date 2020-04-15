@@ -12262,6 +12262,20 @@ html.wireframe {
   -webkit-flex-basis: 15em;
   flex-basis: 11.25em;
   max-width: 15em;
+  align-self: stretch;
+}
+
+.c-user-content [data-display-as~="blocks"] > * > * > span {
+  display: flex;
+  flex-direction: column;
+}
+
+.c-user-content [data-display-as~="blocks"] > * > * > span > a {
+  flex: 0 0 auto;
+}
+
+.c-user-content [data-display-as~="blocks"] > * > * > span > a:first-child {
+  flex: 1 0 auto;
 }
 
 .c-user-content [data-display-is~="pulled-left"],

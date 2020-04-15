@@ -160,8 +160,25 @@ $uc-breakpoint: 35em !default;
             -webkit-flex-basis: 15em;
                     flex-basis: 11.25em;
                      max-width: 15em;
+                     
+            align-self: stretch;
         }
-
+        
+        [data-display-as~="blocks"] > * > * > span {
+            display: flex;
+            flex-direction: column;
+            
+        }
+        
+        [data-display-as~="blocks"] > * > * > span > a {
+            flex: 0 0 auto;
+            
+        }
+        
+        [data-display-as~="blocks"] > * > * > span > a:first-child {
+            flex: 1 0 auto;
+            
+        }
 
 
         [data-display-is~="pulled-left"],
